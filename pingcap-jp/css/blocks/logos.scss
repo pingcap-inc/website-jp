@@ -1,0 +1,56 @@
+.block-logos {
+	&__logo {
+		padding: .8rem;
+		overflow: hidden;
+	}
+
+	&__logo-grid {
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+		gap: var(--grid-column-gutter);
+
+		@include media-min($large) {
+			grid-template-columns: repeat(6, 1fr);
+		}
+	}
+
+	&__logo-wrapper {
+		width: 263.2rem;
+		display: flex;
+		gap: 3.2rem;
+		animation: scrollToRight 30s linear infinite;
+		.block-logos__column {
+			width: 19rem;
+			height: 8rem;
+			flex: 1;
+		}
+		& + .block-logos__logo-wrapper {
+			padding-top: 3.2rem;
+		}
+	}
+
+	@keyframes scrollToRight {
+		from {
+			-webkit-transform: translate3d(-50%, 0, 0);
+		}
+		to {
+			-webkit-transform: translate3d(0, 0, 0);
+		}
+	}
+
+	&__column {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		a:hover {
+			border-color: var(--default-border-color);
+			box-shadow: var(--default-box-shadow);
+		}
+	}
+
+	&__logo-image {
+		flex: 1;
+		border: 1px solid transparent;
+		transition: box-shadow var(--default-transition-params);
+	}
+}

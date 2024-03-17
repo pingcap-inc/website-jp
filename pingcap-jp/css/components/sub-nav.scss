@@ -1,0 +1,31 @@
+.sub-nav {
+	position: sticky;
+
+	--sub-nav-top-offset: calc(var(--header-height) + var(--admin-bar-height, 0px));
+	top: var(--sub-nav-top-offset);
+	z-index: 1;
+	background: var(--sub-nav-bg-color);
+	margin-top: -60px;
+
+	&__container {
+		display: flex;
+		gap: 4rem;
+		overflow-x: auto;
+	}
+	&__item {
+		padding: 1.8rem 0;
+	}
+	&__link {
+		color: var(--color-white);
+		text-decoration: none;
+		border-bottom: 2px solid transparent;
+		font-size: 1.4rem;
+		font-weight: var(--font-weight-bold);
+		padding-bottom: 0.4rem;
+		white-space: nowrap;
+		transition: all var(--default-transition-speed) ease-in-out;
+		&.active {
+			border-bottom-color: var(--color-white);
+		}
+	}
+}

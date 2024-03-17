@@ -1,0 +1,33 @@
+.block-case-study {
+	&__grid {
+		display: grid;
+		grid-template-columns: 1fr;
+		gap: var(--grid-column-gutter);
+
+		@include media-min($medium) {
+			grid-template-columns: 7fr 5fr;
+			align-items: center;
+		}
+	}
+
+	&__logo-image {
+		@include media-min($medium) {
+			max-width: 150px;
+		}
+	}
+
+	&__btn-container {
+		margin-top: 4rem;
+	}
+
+	&__box-content {
+		height: fit-content;
+		box-shadow: var(--card-box-shadow);
+		border-radius: var(--card-border-radius);
+		padding: 4rem;
+	}
+
+	.basic-stat + .basic-stat {
+		margin-top: 3rem;
+	}
+}

@@ -1,0 +1,15 @@
+.card-search {
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	padding: 3.2rem;
+	text-decoration: none;
+	color: var(--color-gray-dark);
+	border-radius: var(--card-border-radius);
+	border: 1px solid var(--card-border-color);
+	transition: all var(--default-transition-params);
+
+	&:hover {
+		box-shadow: var(--card-box-shadow);
+	}
+}

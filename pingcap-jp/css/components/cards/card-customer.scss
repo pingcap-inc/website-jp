@@ -1,0 +1,37 @@
+.card-customer {
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	text-decoration: none;
+	padding: 2rem 3.2rem 3.2rem;
+	border-radius: var(--card-border-radius);
+	border: 1px solid var(--card-border-color);
+	transition: all var(--default-transition-params);
+
+	&:hover {
+		box-shadow: var(--card-box-shadow);
+		transform:var(--card-transform);
+	}
+
+	&__image-container {
+		position: relative;
+		width: 100%;
+		height: 120px;
+	}
+
+	&__image {
+		@include image-cover-entire-container("contain");
+	}
+
+	&__customer-name {
+		margin-top: 0;
+	}
+
+	&__customer-description {
+		flex-grow: 1;
+		margin-top: 0.5rem;
+		font-size: 1.4rem;
+		color: var(--color-gray-dark);
+	}
+}

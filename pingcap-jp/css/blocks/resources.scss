@@ -1,0 +1,74 @@
+.block-resources {
+	&__cards {
+		display: none;
+
+		@include media-min($large) {
+			display: grid;
+			grid-template-columns: repeat(3, 1fr);
+			gap: var(--grid-column-gutter);
+		}
+	}
+
+	&__cards-mobile {
+		display: block;
+		overflow: hidden;
+
+		@include media-min($large) {
+			display: none;
+		}
+	}
+
+	&__mobile-slides {
+		--resource-card-gap: var(--grid-column-gutter);
+		--resource-card-width: var(--container-max-width);
+
+		padding-top: 1rem; // prevent card top shadows from being cutoff
+
+		@include media-min($medium) {
+			--resource-card-width: 360px;
+		}
+
+		.card-resource {
+			width: var(--resource-card-width);
+			height: 100%;
+		}
+
+		.embla {
+			overflow: visible;
+		}
+
+		.embla__container {
+			margin-left: calc(var(--resource-card-gap) * -1);
+		}
+
+		.embla__slide {
+			min-width: calc(var(--resource-card-width) + var(--resource-card-gap));
+			padding-left: var(--resource-card-gap);
+		}
+	}
+
+	&__mobile-nav {
+		display: flex;
+		justify-content: center;
+		margin-top: 2rem;
+
+		.embla__nav-button {
+			width: 8px;
+		}
+
+		.embla__pagination {
+			margin: 0 1.4rem;
+		}
+	}
+
+	// Apply a bit more top offset to this block on desktop when the split background
+	// mode is being used
+	@include media-min($large) {
+		&--has-title.block-bg-split {
+			&::before,
+			&::after {
+				top: 60%;
+			}
+		}
+	}
+}

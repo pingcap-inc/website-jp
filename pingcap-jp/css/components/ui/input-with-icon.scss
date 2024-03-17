@@ -1,0 +1,85 @@
+.input-with-icon {
+	position: relative;
+	width: 100%;
+	height: var(--default-input-min-height);
+
+	// NOTE: specificity bump for selector
+	input.input-with-icon__input {
+		position: absolute;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
+
+		width: 100%;
+
+		padding-right: 32px;
+
+		background-color: var(--form-control-background-color);
+		color: var(--form-control-text-color);
+
+		&:focus,
+		&:focus-visible {
+			color: var(--form-control-focus-text-color);
+		}
+	}
+
+	&__submit {
+		position: absolute;
+		top: 0;
+		right: 0;
+		bottom: 0;
+
+		display: flex;
+		justify-content: center;
+		align-items: center;
+
+		width: 32px;
+
+		cursor: pointer;
+
+		&:hover {
+			.input-with-icon__icon {
+				color: var(--form-control-icon-color);
+			}
+		}
+	}
+
+	&__icon {
+		width: 14px;
+		height: 14px;
+		color: var(--form-control-icon-color);
+		opacity: 1;
+		transition: all var(--default-transition-params);
+	}
+
+	.ui__spin-loader {
+		position: absolute;
+		top: 8px;
+		right: 8px;
+		border-width: 0.3rem;
+
+		opacity: 0;
+		pointer-events: none;
+		animation-play-state: paused;
+		transition: opacity var(--default-transition-params);
+
+		&,
+		&::after {
+			width: 24px;
+			height: 24px;
+		}
+	}
+
+	&.loading {
+		.ui__spin-loader {
+			opacity: 1;
+			animation-play-state: running;
+		}
+
+		.input-with-icon__icon {
+			opacity: 0;
+			pointer-events: none;
+		}
+	}
+}

@@ -1,0 +1,25 @@
+.menu-dropdown-resources {
+	&__inner {
+		display: grid;
+		grid-template-columns: 1fr 1fr 1fr;
+		gap: var(--grid-column-gutter);
+	}
+
+	&__links-column {
+		display: flex;
+		flex-direction: column;
+		gap: 1rem;
+
+		a {
+			font-size: 1.4rem;
+			color: var(--anchor-link-normal-color);
+			text-decoration: none;
+			transition: color var(--default-transition-params);
+
+			&:hover,
+			&:active {
+				color: var(--anchor-link-hover-color);
+			}
+		}
+	}
+}

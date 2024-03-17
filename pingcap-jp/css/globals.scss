@@ -1,0 +1,409 @@
+:root {
+	box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+	box-sizing: inherit;
+}
+
+html {
+	scroll-padding-top: var(--header-height);
+}
+
+body {
+	--body-top-offset: var(--header-height);
+
+	position: relative;
+	margin-top: var(--body-top-offset);
+
+	// prevent flash of white content before the header has fully animated
+	// when scrolling up quickly
+	&::before {
+		content: "";
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		height: var(--body-top-offset);
+		background-color: var(--color-black);
+		transform: translateY(-100%);
+	}
+
+	&.admin-bar {
+		--admin-bar-height: 46px;
+
+		@include media-min($medium) {
+			--admin-bar-height: 32px;
+		}
+	}
+}
+
+// Apple believes it has the authority to adjust font sizes it deems as "too small"
+// on iOS. This removes that hostile behavior.
+@media screen and (max-device-width: $medium) {
+	body {
+		-webkit-text-size-adjust: 100%;
+	}
+}
+
+img {
+	max-width: 100%;
+	height: auto;
+}
+
+button {
+	background-color: transparent;
+	border: 0;
+	padding: 0;
+}
+
+ul {
+	padding: 0;
+
+	nav & {
+		list-style: none;
+		list-style-position: inside;
+	}
+}
+
+table {
+	width: 100%;
+	border-collapse: collapse;
+
+	box-shadow: var(--default-box-shadow);
+	border-radius: var(--default-border-radius);
+
+	background-color: var(--color-white);
+	color: var(--body-font-color);
+
+	th,
+	td {
+		color: var(--color-black);
+		padding: 1rem 1.5rem;
+		text-align: left;
+	}
+
+	th {
+		border-bottom: 1px solid var(--table-border-color);
+	}
+
+	tr + tr td {
+		border-top: 1px solid var(--table-border-color);
+	}
+
+	th + th,
+	td + td {
+		border-left: 1px solid var(--table-border-color);
+	}
+
+	td[rowspan] {
+		border-right: 1px solid var(--table-border-color);
+	}
+
+	tr.table--row-gray-bg {
+		th,
+		td {
+			background-color: var(--color-off-white);
+		}
+	}
+
+	&.table--black-header {
+		thead th {
+			background-color: var(--color-black);
+			color: var(--color-white);
+		}
+	}
+
+	&.table--header-align-bottom {
+		thead th {
+			vertical-align: bottom;
+		}
+	}
+
+	&.table--has-no-border {
+		th + th,
+		td + td {
+			border-left: none;
+		}
+
+		tr:last-child td {
+			border-bottom: 1px solid var(--table-border-color);
+		}
+	}
+
+	&.table--has-no-box-shadow {
+		box-shadow: none;
+	}
+}
+
+blockquote {
+	display: flex;
+	flex-direction: column;
+	margin-left: 0;
+	margin-right: 0;
+
+	font: var(--body-font);
+	color: var(--body-font-color);
+
+	p {
+		position: relative;
+		font-size: 2.8rem;
+		font-family: var(--font-prompt);
+		font-weight: var(--font-weight-bold);
+		font-style: italic;
+
+		&::before {
+			content: "\201C";
+
+			position: absolute;
+			left: -16px;
+		}
+
+		&::after {
+			content: "\201D";
+		}
+	}
+
+	&.testimonial {
+		margin: 0;
+
+		p {
+			font-size: 1.6rem;
+			font-weight: var(--font-weight-regular);
+			text-transform: none;
+
+			&::before {
+				top: -15px;
+				left: -15px;
+				font-size: 3rem;
+				color: var(--color-blockquote-highlight);
+			}
+
+			&::after {
+				color: var(--color-blockquote-highlight);
+			}
+		}
+	}
+
+	cite {
+		position: relative;
+		margin-top: 1.6rem;
+
+		font-weight: var(--font-weight-medium);
+		font-size: 2rem;
+		font-style: normal;
+		line-height: 1.5;
+		text-align: right;
+
+		&::before {
+			content: "\2014";
+			margin-right: 2px;
+		}
+	}
+}
+
+code {
+	background: var(--color-black);
+	color: var(--color-white);
+	padding: 0.1rem 0.25rem;
+}
+
+strong {
+	font-weight: var(--font-weight-semibold);
+}
+
+video,
+iframe {
+	max-width: 100%;
+}
+
+pre {
+	color: var(--body-font-color);
+	white-space: normal;
+}
+
+// helper class from the foundation framework
+.hide {
+	display: none !important;
+}
+
+.is-mobile-hide {
+	display: block;
+	@include media-max($medium) {
+		display: none;
+	}
+}
+
+.is-desktop-hide {
+	display: none;
+	@include media-max($large) {
+		display: block;
+	}
+}
+
+.tmpl-single-case-study__term-links-container {
+	.tmpl-single-case-study__term-link {
+		@extend %button;
+	}
+}
+
+.tmpl-single-case-study__term-links-container,
+.tmpl-single-post .meta-tags,
+.tmpl-archive-sidebar .tags {
+	.tmpl-single-case-study__term-link,
+	.button {
+		background-color: var(--color-off-white);
+		background-image: none;
+		border-radius: 4px;
+		border: 1px solid transparent;
+		color: var(--color-gray-dark);
+		font-size: 1.4rem;
+		font-weight: 400;
+		letter-spacing: 0;
+		line-height: 1.2;
+		margin: 0.5rem 0.5rem 0 0;
+		min-height: 28px;
+		min-width: unset;
+		height: unset;
+		padding: 0 0.8rem;
+		&.active,
+		&:focus,
+		&:hover {
+			background-color: var(--color-blue);
+			color: var(--color-white);
+			border-color: var(--color-blue);
+		}
+	}
+}
+
+.media {
+	display: flex;
+	align-items: flex-start;
+}
+
+body.page-id-1550 {
+	.block-media-content {
+		&__image-container {
+			margin: auto 0px;
+		}
+	}
+}
+
+.wp-block-table {
+	overflow-x: auto;
+	margin: 0 0 1em;
+}
+
+p.code-line strong {
+	word-wrap: break-word;
+}
+
+body.page-id-1544 {
+	div.banner-default__text-content {
+		padding-bottom: 10rem;
+
+		@media only screen and (min-width: $medium) {
+			padding-bottom: 7.5rem;
+		}
+
+		@media only screen and (min-width: $large) {
+			padding-bottom: 18rem;
+		}
+	}
+
+	#tidb:before {
+		content: "";
+		display: block;
+		height: 180px; /* fixed header height*/
+		margin: -180px 0 0; /* negative fixed header height */
+	}
+}
+
+body.page-id-1558 {
+	span.accordion__plus-icon::after,
+	span.accordion__plus-icon::before {
+		background-color: white !important;
+	}
+
+	span.accordion__section-title-text {
+		color: white;
+		&:focus {
+			color: white;
+		}
+		&:active {
+			color: white;
+		}
+	}
+}
+
+input#firstname-125bf70d-1eba-4cf8-bb1d-2e4a422a875d[type="text"] {
+	width: 100%;
+}
+
+.hs-input {
+	border-width: 1px !important;
+}
+
+#contact-us-form-container {
+	box-shadow: var(--default-box-shadow);
+}
+
+#ct-ultimate-cookie-close-modal {
+	padding: 5px 10px;
+}
+
+.cli-style-v2 .cli-plugin-main-link {
+	color: var(--color-white) !important;
+}
+
+.is-w-8 {
+	width: 80%;
+	margin: auto;
+}
+
+.is-h-48 {
+	height: 4.8rem;
+}
+
+.is-80x80 {
+	width: 8rem;
+	height: 8rem;
+}
+
+.is-128x128 {
+	width: 12.8rem;
+	height: 12.8rem;
+}
+
+.is-180x120 {
+	width: 18rem;
+	height: 12rem;
+}
+
+.mt-xl {
+	margin-top: 0.8rem;
+}
+
+.mt-2xl {
+	margin-top: 1.6rem;
+}
+
+.mt-3xl {
+	margin-top: 2.4rem;
+}
+
+.mt-4xl {
+	margin-top: 3.2rem;
+}
+
+.tidb-logo {
+	background: url(https://static.pingcap.com/files/2023/11/07210859/TiDB.svg) no-repeat center;
+	background-size: contain;
+	height: 52px;
+	width: 128px;
+	display: inline-block;
+	vertical-align: middle;
+	margin-top: -2px;
+}

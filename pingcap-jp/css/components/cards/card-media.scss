@@ -1,0 +1,32 @@
+.card-media {
+	background-color: var(--card-background-color);
+	border-radius: var(--card-border-radius);
+	padding: 3.2rem;
+	display: flex;
+	text-decoration: none;
+	transition: all var(--default-transition-params);
+
+	&:hover {
+		transform: var(--card-transform);
+	}
+
+	&__icon-image {
+		width: 6.4rem;
+		height: 6.4rem;
+		margin-right: 3.2rem;
+	}
+
+	&__icon-font {
+		font-size: 6.4rem;
+		margin-right: 3.2rem;
+	}
+
+	&__content {
+		h5 {
+			margin-bottom: 2rem;
+		}
+		p {
+			margin-bottom: 1rem;
+		}
+	}
+}

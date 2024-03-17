@@ -1,0 +1,139 @@
+.block-cta {
+	&[data-display-type="normal"] {
+		.block-inner {
+			display: grid;
+			grid-template-columns: 1fr;
+			gap: 6rem;
+
+			@include media-min($medium) {
+				grid-template-columns: repeat(12, 1fr);
+				gap: var(--grid-column-gutter);
+			}
+		}
+	}
+
+	&__column {
+		@include media-min($medium) {
+			grid-column: span 6;
+
+			[data-num-cols="1"] & {
+				grid-column: span 12;
+			}
+		}
+
+		@include media-min($large) {
+			[data-num-cols="1"] & {
+				grid-column: 4 / span 6;
+			}
+		}
+	}
+
+	&__column-title-container {
+		display: flex;
+		align-items: center;
+		gap: 1.7rem;
+		margin-bottom: 1.5rem;
+	}
+
+	&__column-title {
+		margin-top: 0;
+	}
+
+	&__column-icon-image {
+		height: 50px;
+		min-height: 50px;
+		color: var(--color-white);
+	}
+
+	&__column-buttons {
+		display: flex;
+		align-items: center;
+		gap: 2rem;
+		margin-top: 2rem;
+	}
+
+	&__slim-container {
+		display: flex;
+		gap: 1.6rem;
+		flex-direction: column;
+		justify-content: space-between;
+		align-items: center;
+		padding: 4rem 3rem;
+		border-radius: var(--card-border-radius);
+		background-size: cover;
+		background-position: center;
+
+		@include media-min($large) {
+			flex-direction: row;
+			padding: 8rem 9rem;
+		}
+
+		&--has-center {
+			justify-content: center;
+			@include media-min($large) {
+				flex-direction: column;
+			}
+			.button {
+				margin-top: 1.6rem;
+			}
+		}
+	}
+
+	&__slim-heading {
+		text-align: center;
+		margin-bottom: 1.6rem;
+		flex: 1;
+
+		@include media-min($large) {
+			text-align: left;
+			margin-bottom: 0;
+		}
+	}
+
+	&__subscribe-form {
+		position: relative;
+		margin-top: 0;
+
+		display: flex;
+		flex-direction: column;
+		gap: 1.6rem;
+		width: 100%;
+
+		input {
+			width: 100%;
+		}
+
+		@include media-min($medium) {
+			flex-direction: row;
+		}
+
+		@include media-min($large) {
+			width: auto;
+
+			input {
+				max-width: 210px;
+			}
+		}
+
+		&[data-error] {
+			&::after {
+				content: attr(data-error);
+				position: absolute;
+				bottom: 0;
+				left: 0;
+				width: 100%;
+				transform: translateY(calc(100% + 5px));
+				font-size: 1.4rem;
+				color: var(--error-text);
+			}
+		}
+	}
+
+	&__subscribe-success {
+		margin-top: 0;
+	}
+
+	.button {
+		min-width: unset;
+	}
+}

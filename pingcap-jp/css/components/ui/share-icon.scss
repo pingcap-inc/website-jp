@@ -1,0 +1,31 @@
+.share-icon {
+	width: 40px;
+	height: 40px;
+	border-radius: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	color: var(--color-white);
+	cursor: pointer;
+	background-color: var(--color-share-icon);
+	transition: background-color var(--default-transition-params);
+
+	&--twitter:hover {
+		background-color: var(--color-twitter);
+	}
+
+	&--facebook:hover {
+		background-color: var(--color-facebook);
+	}
+
+	&--linkedin:hover {
+		background-color: var(--color-linkedin);
+	}
+
+	&__icon {
+		min-width: 20px;
+		min-height: 20px;
+		max-width: 20px;
+		max-height: 20px;
+	}
+}

@@ -1,0 +1,13 @@
+.basic-stat {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+
+	&__value {
+		color: var(--color-blue-dark);
+	}
+
+	&__desc {
+		margin-top: 0;
+	}
+}

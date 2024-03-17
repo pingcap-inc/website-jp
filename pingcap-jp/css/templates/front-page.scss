@@ -1,0 +1,21 @@
+.tmpl-front-page {
+	&.case-study--featured{
+		margin-top: -6rem;
+		@include media-min($medium){
+			margin-top: -12rem;
+		}
+	}
+	
+	&__button-section {
+		.button-group{
+			flex-direction: column;
+		}
+		@include media-min($medium){
+			margin-top: -11rem;
+			.button-group{
+				flex-direction: row;
+				gap: 4.8rem;
+			}
+		}
+	}
+}

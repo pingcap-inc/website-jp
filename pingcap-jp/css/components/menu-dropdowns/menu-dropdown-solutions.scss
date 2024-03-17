@@ -1,0 +1,13 @@
+.menu-dropdown-solutions {
+	&__inner {
+		display: grid;
+		grid-template-columns: repeat(4, 1fr);
+		gap: var(--grid-column-gutter);
+
+		@for $i from 1 through 4 {
+			&[data-card-count="#{$i}"] {
+				grid-template-columns: repeat(#{$i}, 1fr);
+			}
+		}
+	}
+}

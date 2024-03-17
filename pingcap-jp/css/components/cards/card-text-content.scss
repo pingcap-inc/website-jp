@@ -1,0 +1,41 @@
+.card-text-content {
+	padding: 3.2rem;
+	border-radius: var(--card-border-radius);
+	border: 1px solid var(--card-border-color);
+	transition: all var(--default-transition-params);
+
+	&:hover {
+		box-shadow: var(--card-box-shadow);
+		transform:var(--card-transform);
+	}
+
+	&__label{
+		margin-bottom: 1.6rem;
+		color: var(--color-black);
+	}
+
+
+	&__title-container {
+		display: flex;
+		align-items: center;
+		gap: 2rem;
+	}
+
+	h5{
+		color: #303EAB;
+	}
+
+	&__icon {
+		width: 40px;
+		height: 40px;
+		color: currentColor;
+	}
+
+	&__content {
+		margin-top: 1rem;
+	}
+
+	&__link {
+		margin-top: 1rem;
+	}
+}

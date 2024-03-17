@@ -1,0 +1,207 @@
+.block-media-content {
+	--grid-areas: "img" "txt";
+	position: relative;
+
+	&.last {
+		margin-bottom: 8rem;
+	}
+
+	&__container {
+		display: grid;
+		grid-template-columns: 1fr;
+		grid-template-areas: var(--grid-areas);
+		gap: var(--grid-column-gutter);
+
+		@include media-min($medium) {
+			grid-template-columns: repeat(12, 1fr);
+		}
+	}
+
+	[data-image-alignment="left"] {
+		@include media-min($medium) {
+			&[data-image-size="small"] {
+				--grid-areas: "img img img txt txt txt txt txt txt txt txt txt";
+			}
+
+			&[data-image-size="medium"] {
+				--grid-areas: "img img img img img img . txt txt txt txt txt";
+			}
+
+			&[data-image-size="large"] {
+				--grid-areas: "img img img img img img txt txt txt txt txt txt";
+			}
+
+			&[data-image-size="xlarge"] {
+				--grid-areas: "img img img img img img img txt txt txt txt txt";
+			}
+		}
+
+		@include media-min($large) {
+			&[data-image-size="small"] {
+				--grid-areas: ". img img txt txt txt txt txt txt txt txt .";
+			}
+
+			&[data-image-size="medium"] {
+				--grid-areas: "img img img img img img . txt txt txt txt txt";
+			}
+
+			&[data-image-size="large"] {
+				--grid-areas: "img img img img img img txt txt txt txt txt txt";
+			}
+
+			&[data-image-size="xlarge"] {
+				--grid-areas: "img img img img img img img txt txt txt txt txt";
+			}
+		}
+	}
+
+	[data-image-alignment="right"] {
+		@include media-min($medium) {
+			&[data-image-size="small"] {
+				--grid-areas: "txt txt txt txt txt txt txt txt txt img img img";
+			}
+
+			&[data-image-size="medium"] {
+				--grid-areas: ". txt txt txt txt txt img img img img img img";
+			}
+
+			&[data-image-size="large"] {
+				--grid-areas: "txt txt txt txt txt txt img img img img img img";
+			}
+
+			&[data-image-size="xlarge"] {
+				--grid-areas: "txt txt txt txt txt img img img img img img img";
+			}
+		}
+
+		@include media-min($large) {
+			&[data-image-size="small"] {
+				--grid-areas: ". txt txt txt txt txt txt txt img img . .";
+			}
+
+			&[data-image-size="medium"] {
+				--grid-areas: ". txt txt txt txt txt img img img img img img";
+			}
+
+			&[data-image-size="large"] {
+				--grid-areas: "txt txt txt txt txt txt img img img img img img";
+			}
+
+			&[data-image-size="xlarge"] {
+				--grid-areas: "txt txt txt txt txt img img img img img img img";
+			}
+		}
+	}
+
+	&__image-container {
+		grid-area: img;
+		position: relative;
+		width: 60%;
+		margin: auto;
+		max-width: 450px;
+
+		@include media-min($medium) {
+			width: 100%;
+		}
+
+		&--constrain {
+			@include media-min($medium) {
+				position: relative;
+				height: 0;
+				padding-top: 68%;
+
+				[data-image-size="small"] & {
+					padding-top: 100%;
+				}
+
+				[data-image-size="medium"] & {
+					padding-top: 84%;
+				}
+
+				[data-image-size="large"] & {
+					padding-top: 65%;
+				}
+
+				[data-image-size="xlarge"] & {
+					padding-top: 68%;
+				}
+			}
+		}
+	}
+
+	&__content-container {
+		grid-area: txt;
+		padding-bottom: 4rem;
+		padding-left: 1.6rem;
+
+		@include media-min($medium) {
+			padding-left: 0;
+			padding-bottom: 0;
+			&--vertical-center {
+				align-self: center;
+			}
+		}
+		@include media-min($large) {
+			p,
+			ul {
+				width: 80%;
+			}
+		}
+	}
+
+	[data-image-size="small"] {
+		.block-media-content__content-container {
+			p,
+			ul {
+				width: 100%;
+			}
+		}
+	}
+
+	&__image {
+		.block-media-content__image-container--constrain & {
+			@include media-min($medium) {
+				@include image-cover-entire-container("contain");
+			}
+		}
+
+		&--shadow {
+			border-radius: var(--default-border-radius);
+			box-shadow: var(--default-box-shadow);
+		}
+	}
+
+	&__bg {
+		position: absolute;
+		left: 0;
+		top: 0;
+		bottom: 0;
+		right: 0;
+		background-repeat: no-repeat;
+		background-size: contain;
+		background-position: left bottom;
+		z-index: -1;
+		&.is-desktop-hide {
+			right: 10px;
+		}
+		@include media-min($medium) {
+			background-size: 48% 100%;
+			background-position: left center;
+		}
+
+		@include media-min($xlarge) {
+			background-size: 60% 100%;
+		}
+
+		&[data-image-alignment="left"] {
+			background-position: right bottom;
+			&.is-desktop-hide {
+				right: 0px;
+				left: 10px;
+			}
+			@include media-min($medium) {
+				background-position: right center;
+			}
+		}
+	}
+}

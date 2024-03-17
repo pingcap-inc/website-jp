@@ -1,0 +1,8 @@
+.posts-list-search {
+	.posts-list__cards-container {
+		display: flex;
+		flex-direction: column;
+		justify-content: flex-start;
+		gap: var(--grid-column-gutter);
+	}
+}

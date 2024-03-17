@@ -1,0 +1,47 @@
+.banner--no-bottom-arc .banner-default__inner {
+    padding-bottom: 0;
+}
+
+.block-tabs-pricing {
+	&__tabs-wrapper {
+		background: #282a36;
+		ul {
+			list-style: none;
+			display: flex;
+            padding: 1.6rem 0;
+			li {
+				font-weight: 600;
+				font-size: 14px;
+				line-height: 24px;
+				color: #ffffff;
+				margin-right: 5rem;
+                border-bottom: 2px solid transparent;
+                transition: all var(--default-transition-params);
+				cursor: pointer;
+				&.active {
+					border-bottom-color: #ffffff;
+				}
+			}
+		}
+	}
+    &__tabs-content {
+        padding-top: 5rem;
+        display: none;
+        transition: all var(--default-transition-params);
+        &.active {
+            display: block;
+        }
+    }
+}
+
+.block-tiers__cards {
+    --num-cols: 1;
+	
+	display: grid;
+	gap: var(--grid-column-gutter);
+    grid-template-columns: repeat(--num-cols, 1fr);
+    
+	@include media-min($medium) {
+        grid-template-columns: 40% 60%;
+	}
+}

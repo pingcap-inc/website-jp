@@ -1,0 +1,96 @@
+.block-testimonials {
+	&__title-container {
+		display: flex;
+		gap: 2rem;
+		align-items: center;
+		margin-bottom: 2rem;
+	}
+
+	&__nav-mobile {
+		display: flex;
+		justify-content: center;
+		margin-top: 2rem;
+
+		@include media-min($large) {
+			display: none;
+		}
+	}
+
+	&__nav-desktop {
+		display: none;
+
+		@include media-min($large) {
+			display: flex;
+			flex-grow: 1;
+			justify-content: flex-end;
+		}
+	}
+
+	blockquote {
+		width: 100%;
+
+		@include media-min($large) {
+			max-width: 680px;
+		}
+	}
+
+	&__testimonial {
+		position: relative;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+
+		padding: 3rem 4rem;
+
+		border-radius: var(--default-border-radius);
+		box-shadow: var(--default-box-shadow);
+
+		@include media-min($medium) {
+			flex-direction: row;
+		}
+
+		@include media-min($large) {
+			padding: 5rem 11rem;
+		}
+	}
+
+	&__image {
+		display: none;
+
+		@include media-min($large) {
+			display: block;
+			position: absolute;
+			top: 50%;
+			left: -30px;
+			transform: translateY(-50%);
+
+			min-width: 120px;
+			min-height: 120px;
+			max-width: 120px;
+			max-height: 120px;
+
+			object-fit: cover;
+			border-radius: 100%;
+		}
+	}
+
+	.embla__nav-button {
+		width: 8px;
+	}
+
+	.embla__pagination {
+		margin: 0 1.4rem;
+	}
+
+	.embla__container {
+		min-height: 1px;
+		align-items: flex-start;
+		transition: height var(--default-transition-params);
+	}
+
+	.embla__slide {
+		padding-top: 1rem;
+		padding-bottom: 1rem;
+	}
+}

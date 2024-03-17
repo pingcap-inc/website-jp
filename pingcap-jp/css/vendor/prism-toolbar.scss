@@ -1,0 +1,78 @@
+div.code-toolbar {
+	position: relative;
+
+	.toolbar {
+		position: absolute;
+		top: 1rem;
+		right: 0.7rem;
+		transition: opacity var(--default-transition-params);
+		opacity: 0;
+		pointer-events: none;
+
+		.toolbar-item {
+			display: inline-block;
+
+			a {
+				cursor: pointer;
+			}
+
+			button {
+				min-width: unset;
+				height: unset;
+				background-image: none;
+				color: var(--color-blue-dark);
+				background-color: rgba(var(--color-rgb-black), 0.6);
+				border: 0;
+				font: inherit;
+				line-height: normal;
+				overflow: visible;
+				padding: 0 0.8rem;
+				min-height: 0;
+				-webkit-user-select: none; /* for button */
+				-moz-user-select: none;
+				-ms-user-select: none;
+			}
+
+			span {
+				position: relative;
+				font-size: 1.4rem;
+				color: var(--color-blue-dark);
+				letter-spacing: 0.5px;
+				padding-right: 1.2rem;
+
+				&::before,
+				&::after {
+					content: "";
+					position: absolute;
+					top: 50%;
+					right: 0;
+					width: 6px;
+					height: 2px;
+					background-color: var(--button-secondary-normal-text-color);
+					border-radius: 100px;
+					transition: background-color var(--default-transition-params);
+				}
+
+				&::before {
+					transform: translateY(1px) rotate(-45deg);
+				}
+
+				&::after {
+					transform: translateY(-3px) rotate(45deg);
+				}
+			}
+		}
+	}
+
+	&:hover .toolbar {
+		opacity: 1;
+		pointer-events: all;
+	}
+
+	/* Separate line b/c rules are thrown out if selector is invalid.
+	   IE11 and old Edge versions don't support :focus-within. */
+	&:focus-within .toolbar {
+		opacity: 1;
+		pointer-events: all;
+	}
+}

@@ -1,0 +1,28 @@
+.card-illustration {
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	padding: 2.5rem 3.2rem 3.2rem;
+	text-decoration: none;
+	border: 1px solid var(--card-border-color);
+	border-radius: var(--card-border-radius);
+	transition: all var(--default-transition-params);
+
+	&:hover {
+		box-shadow: var(--card-box-shadow);
+		transform:var(--card-transform);
+	}
+
+	&__image,
+	&__video {
+		width: 100%;
+		height: 210px;
+		object-fit: contain;
+		object-position: center bottom;
+	}
+
+	&__title {
+		text-align: center;
+	}
+}

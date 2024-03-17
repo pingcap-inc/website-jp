@@ -1,0 +1,23 @@
+.banner-resource {
+	padding-top: 5rem;
+
+	&__title {
+		margin-top: 0;
+	}
+
+	&__text-content {
+		padding-bottom: 18rem;
+	}
+
+	&__meta {
+		display: flex;
+		gap: 2rem;
+		flex-wrap: wrap;
+	}
+
+	&__authors {
+		display: flex;
+		gap: 1.6rem;
+		padding-top: 1.6rem;
+	}
+}

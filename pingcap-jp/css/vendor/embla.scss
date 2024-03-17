@@ -1,0 +1,106 @@
+.embla-instance {
+	position: relative;
+}
+
+.embla {
+	position: relative;
+	overflow: hidden;
+	width: 100%;
+
+	&.is-draggable {
+		cursor: move;
+		cursor: grab;
+	}
+
+	&.is-dragging {
+		cursor: grabbing;
+	}
+
+	&__container {
+		display: flex;
+		user-select: none;
+		-webkit-touch-callout: none;
+		-khtml-user-select: none;
+		-webkit-tap-highlight-color: transparent;
+	}
+
+	&__slide {
+		position: relative;
+		min-width: 100%;
+	}
+
+	&--fade {
+		.embla__container {
+			transform: none !important;
+		}
+
+		.embla__slide {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			opacity: 0;
+			transition: opacity 0.5s;
+
+			&.is-selected {
+				z-index: 1;
+				opacity: 1;
+				transition: opacity 0.3s;
+			}
+		}
+	}
+
+	&__controls {
+		display: flex;
+	}
+
+	&__nav-button {
+		width: 15px;
+		cursor: pointer;
+
+		@include media-min($large) {
+			width: 20px;
+		}
+	}
+
+	&__nav-arrow {
+		width: 100%;
+		height: 100%;
+
+		color: var(--carousel-nav-color);
+	}
+
+	&__pagination {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+
+	&__pagination-button {
+		width: 16px;
+		height: 16px;
+		border: 1px solid var(--carousel-nav-border-color);
+		border-radius: 100%;
+		margin: 0 1rem;
+		cursor: pointer;
+
+		background-color: var(--carousel-nav-color);
+
+		transition: background-color var(--default-transition-speed)
+			var(--default-transition-easing);
+
+		&.active {
+			background-color: var(--carousel-nav-active-color);
+			border-color: var(--carousel-nav-border-active-color);
+		}
+
+		&:first-child {
+			margin-left: 0;
+		}
+
+		&:last-child {
+			margin-right: 0;
+		}
+	}
+}

@@ -1,0 +1,113 @@
+@use "sass:math";
+
+.block-table {
+	table-layout: fixed;
+	.block-inner {
+		overflow-x: scroll;
+	}
+
+	&__table {
+		position: relative;
+		max-width: 100%;
+		margin: 0 var(--container-margin);
+
+		// invisible pseudo-element to add margin to the right side of the table
+		// on mobile/tablet when horizontally scrolled
+		&::after {
+			content: "";
+			position: absolute;
+			top: 0;
+			right: calc(var(--container-margin) * -1);
+			bottom: 0;
+			width: var(--container-margin);
+		}
+
+		@include media-min($large) {
+			max-width: var(--container-max-width);
+			margin: 0 auto;
+
+			&::after {
+				display: none;
+			}
+		}
+	}
+
+	&__first-col-cell {
+		background-color: var(--color-black);
+		color: var(--color-white);
+	}
+
+	th.block-table__first-col-cell {
+		border-top-left-radius: var(--default-border-radius);
+	}
+
+	tbody tr:last-child td:first-child {
+		border-bottom-left-radius: var(--default-border-radius);
+	}
+
+	&__icon-container {
+		display: flex;
+		justify-content: center;
+	}
+
+	&__icon {
+		width: 30px;
+		height: 30px;
+
+		color: var(--color-blue);
+
+		&--x {
+			color: var(--color-pink);
+		}
+
+		&--green {
+			color: var(--color-green);
+		}
+	}
+
+	th:first-child + th,
+	td:first-child + td {
+		border-left: 0;
+	}
+
+	th {
+		vertical-align: bottom;
+	}
+
+	td {
+		vertical-align: middle;
+	}
+
+	td:not(.block-table__first-col-cell) {
+		text-align: center;
+	}
+
+	th,
+	td {
+		padding: 2rem;
+
+		min-width: 170px;
+		max-width: 170px;
+
+		@include media-min($large) {
+			min-width: 0;
+			max-width: none;
+		}
+	}
+
+	@include media-min($large) {
+		@for $i from 1 to 6 {
+			.block-table__table[data-num-cols="#{$i}"] {
+				th,
+				td {
+					width: #{math.div(78, $i) + "%"};
+				}
+			}
+		}
+
+		.block-table__table[data-num-cols] tr th:first-child,
+		.block-table__table[data-num-cols] tr td:first-child {
+			width: 22%;
+		}
+	}
+}

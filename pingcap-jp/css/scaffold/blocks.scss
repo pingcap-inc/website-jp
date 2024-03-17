@@ -1,0 +1,227 @@
+// remove default 'block-inner' top padding from the second block
+// in a series of two with the same background color
+@each $color_name in $bg-color-names {
+	/* prettier-ignore */
+	.block-container.bg-#{"" + $color_name} + .block-container.bg-#{"" + $color_name} {
+		.block-inner:not(.block-inner--has-box-container) {
+			padding-top: 0;
+		}
+	}
+}
+
+.block-padding-xsmall {
+	.block-inner {
+		padding-top: var(--block-padding-xsm-top) !important;
+		padding-bottom: var(--block-padding-xsm-bottom) !important;
+	}
+}
+
+.block-padding-small {
+	.block-inner {
+		padding-top: var(--block-padding-sm-top) !important;
+		padding-bottom: var(--block-padding-sm-bottom) !important;
+	}
+}
+
+.block-padding-bottom-xlarge {
+	.block-inner {
+		padding-bottom: var(--block-padding-xlg-bottom) !important;
+	}
+}
+
+// .block-container.block-bg-none + .block-container.block-bg-none {
+// 	.block-inner:not(.block-inner--has-box-container) {
+// 		padding-top: 0;
+// 	}
+// }
+
+// special conditions for blocks following a split background block that are
+// not the same color as the bottom color of the split background
+.block-container.block-bg-split + .block-container:not(.bg-black),
+.block-container.block-bg-split--black + .block-container:not(.bg-black),
+.block-container.block-bg-split--blue + .block-container:not(.bg-blue),
+.block-container.block-bg-split--white + .block-container:not(.block-bg-none) {
+	.block-inner:not(.block-inner--has-box-container) {
+		padding-top: var(--block-padding-sm-top);
+		padding-bottom: var(--block-padding-sm-bottom);
+
+		@include media-min($medium) {
+			padding-top: var(--block-padding-md-top);
+			padding-bottom: var(--block-padding-md-bottom);
+		}
+
+		@include media-min($large) {
+			padding-top: var(--block-padding-lg-top);
+			padding-bottom: var(--block-padding-lg-bottom);
+		}
+	}
+}
+
+.block-container {
+	z-index: 0;
+	position: relative;
+
+	transition: transform 1s ease-in-out, opacity 1s ease-in-out;
+
+	.block-inner {
+		padding-top: var(--block-padding-sm-top);
+		padding-bottom: var(--block-padding-sm-bottom);
+
+		@include media-min($medium) {
+			padding-top: var(--block-padding-md-top);
+			padding-bottom: var(--block-padding-md-bottom);
+		}
+
+		@include media-min($large) {
+			padding-top: var(--block-padding-lg-top);
+			padding-bottom: var(--block-padding-lg-bottom);
+		}
+	}
+
+	&.block-animate {
+		transform: translateY(25%);
+		opacity: 0;
+	}
+}
+
+.block-options-padding-medium .block-inner {
+	padding-top: 6rem;
+}
+
+.block-options-padding-remove-top .block-inner {
+	padding-top: 0;
+}
+
+.block-options-padding-remove-bottom .block-inner {
+	padding-bottom: 0;
+}
+
+.block-container--increase-bottom-padding .block-inner {
+	padding-bottom: calc(var(--block-padding-sm-bottom) * 2);
+
+	@include media-min($medium) {
+		padding-bottom: calc(var(--block-padding-md-bottom) * 2);
+	}
+
+	@include media-min($large) {
+		padding-bottom: calc(var(--block-padding-lg-bottom) * 2);
+	}
+}
+
+.block-content-pull-up {
+	--block-content-pull-up-value: calc(var(--block-padding-sm-top) * -1 - 6rem);
+
+	@include media-min($medium) {
+		--block-content-pull-up-value: calc(var(--block-padding-md-top) * -1 - 8rem);
+	}
+
+	@include media-min($large) {
+		--block-content-pull-up-value: calc(var(--block-padding-lg-top) * -1 - 10rem);
+	}
+
+	.block-inner {
+		transform: translateY(var(--block-content-pull-up-value));
+		margin-bottom: var(--block-content-pull-up-value);
+	}
+
+	+ .block-container {
+		z-index: 1;
+	}
+}
+
+.block-bg-split {
+	position: relative;
+
+	&::before,
+	&::after {
+		z-index: -1;
+		content: "";
+		position: absolute;
+		top: 40%;
+		right: 0;
+		left: 0;
+	}
+
+	&::before {
+		height: 35px;
+		transform: translateY(-100%);
+		clip-path: ellipse(60% 220% at 50% 220%);
+
+		background-color: var(--color-black);
+
+		@include media-min($medium) {
+			height: 45px;
+		}
+
+		@include media-min($large) {
+			height: 60px;
+		}
+	}
+
+	&::after {
+		bottom: 0;
+
+		background-color: var(--color-black);
+	}
+
+	&--black {
+		&::before,
+		&::after {
+			background-color: var(--color-black);
+		}
+	}
+
+	&--blue {
+		&::before,
+		&::after {
+			background-color: var(--color-blue);
+		}
+	}
+
+	&--white {
+		&::before,
+		&::after {
+			background-color: var(--color-white);
+		}
+	}
+}
+
+.block-section {
+	&__title {
+		text-align: center;
+		@include media-min($medium) {
+			grid-column: 1/span 12;
+		}
+
+		&-container {
+			--num-cols: 1;
+
+			display: grid;
+			grid-template-columns: repeat(var(--num-cols), 1fr);
+			gap: 3.2rem;
+			padding-bottom: 5rem;
+			
+			@include media-min($medium) {
+				--num-cols: 12;
+				gap: var(--grid-column-gutter);
+			}
+		}
+
+		&-desc {
+			text-align: center;
+			margin-top: -2.4rem;
+			color: var(--body-font-color);
+			@include media-min($medium) {
+				grid-column: 2/span 10;
+			}
+			@include media-min($large) {
+				grid-column: 3/span 8;
+			}
+		}
+	}
+
+	&__more {
+		text-align: center;
+		padding-top: 4rem;
+	}
+}

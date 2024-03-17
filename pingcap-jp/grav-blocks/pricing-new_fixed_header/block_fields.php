@@ -1,0 +1,418 @@
+<?php
+/*
+* Gravitate Content Block
+*
+* Available Variables:
+* $block                  = Name of Block Folder
+* $block_backgrounds      = Array for Background Options
+* $block_background_image = Array for Background Image Option
+*
+* This file must return an array();
+*/
+
+$block_fields = array(
+	array (
+		'key' => 'field_' . $block . '_block_title',
+		'label' => 'Block Title',
+		'name' => 'block_title',
+		'type' => 'text',
+		'instructions' => '',
+		'required' => 0,
+		'conditional_logic' => 0,
+		'wrapper' => array (
+			'width' => '',
+			'class' => '',
+			'id' => '',
+		),
+		'default_value' => 'Pricing',
+		'placeholder' => '',
+		'formatting' => 'none',       // none | html
+		'prepend' => '',
+		'append' => '',
+		'maxlength' => '',
+		'readonly' => 0,
+		'disabled' => 0,
+	),
+	array (
+		'key' => 'field_' . $block . '_provider_selector_title',
+		'label' => 'Provider Selector Title',
+		'name' => 'provider_selector_title',
+		'type' => 'text',
+		'instructions' => '',
+		'required' => 1,
+		'conditional_logic' => 0,
+		'wrapper' => array (
+			'width' => '50',
+			'class' => '',
+			'id' => '',
+		),
+		'default_value' => '1. Choose Your Provider',
+		'placeholder' => '',
+		'formatting' => 'none', // none | html
+		'prepend' => '',
+		'append' => '',
+		'maxlength' => '',
+		'readonly' => 0,
+		'disabled' => 0,
+	),
+	array (
+		'key' => 'field_' . $block . '_region_selector_title',
+		'label' => 'Region Selector Title',
+		'name' => 'region_selector_title',
+		'type' => 'text',
+		'instructions' => '',
+		'required' => 1,
+		'conditional_logic' => 0,
+		'wrapper' => array (
+			'width' => '50',
+			'class' => '',
+			'id' => '',
+		),
+		'default_value' => '2. Select Region',
+		'placeholder' => '',
+		'formatting' => 'none', // none | html
+		'prepend' => '',
+		'append' => '',
+		'maxlength' => '',
+		'readonly' => 0,
+		'disabled' => 0,
+	),
+	array (
+		'key' => 'field_' . $block . '_region_selector_content',
+		'label' => 'Region Selector Content',
+		'name' => 'region_selector_content',
+		'type' => 'wysiwyg',
+		'instructions' => '',
+		'required' => 0,
+		'conditional_logic' => 0,
+		'wrapper' => array (
+			'width' => '',
+			'class' => '',
+			'id' => '',
+		),
+		'default_value' => '',
+		'tabs' => 'all',         // all | visual | text
+		'toolbar' => 'full',     // full | basic
+		'media_upload' => 0,
+	),
+
+	array (
+		'key' => 'field_' . $block . '_providers',
+		'label' => 'Providers',
+		'name' => 'providers',
+		'type' => 'repeater',
+		'instructions' => '',
+		'required' => 1,
+		'conditional_logic' => 0,
+		'wrapper' => array (
+			'width' => '',
+			'class' => '',
+			'id' => '',
+		),
+		'collapsed' => '',
+		'min' => 1,
+		'max' => '',
+		'layout' => 'block',         // table | block | row
+		'button_label' => 'Add Provider',
+		'sub_fields' => array (
+			array (
+				'key' => 'field_' . $block . '_provider_title',
+				'label' => 'Title',
+				'name' => 'title',
+				'type' => 'text',
+				'instructions' => '',
+				'required' => 1,
+				'conditional_logic' => 0,
+				'wrapper' => array (
+					'width' => '',
+					'class' => '',
+					'id' => '',
+				),
+				'default_value' => '',
+				'placeholder' => '',
+				'formatting' => 'none', // none | html
+				'prepend' => '',
+				'append' => '',
+				'maxlength' => '',
+				'readonly' => 0,
+				'disabled' => 0,
+			),
+			array (
+				'key' => 'field_' . $block . '_provider_logo',
+				'label' => 'Logo',
+				'name' => 'logo',
+				'instructions' => '',
+				'type' => 'image',
+				'required' => 1,
+				'conditional_logic' => 0,
+				'wrapper' => array (
+					'width' => '',
+					'class' => '',
+					'id' => '',
+				),
+				'return_format' => 'object',       // array | url | id
+				'preview_size' => 'thumbnail',
+				'library' => 'all',       // all | uploadedTo
+				'min_width' => '',
+				'min_height' => '',
+				'min_size' => '',
+				'max_width' => '',
+				'max_height' => '',
+				'max_size' => '',
+				'mime_types' => '',
+			),
+			array (
+				'key' => 'field_' . $block . '_provider_regions',
+				'label' => 'Regions',
+				'name' => 'regions',
+				'type' => 'repeater',
+				'instructions' => '',
+				'required' => 1,
+				'conditional_logic' => 0,
+				'wrapper' => array (
+					'width' => '',
+					'class' => '',
+					'id' => '',
+				),
+				'collapsed' => '',
+				'min' => 1,
+				'max' => '',
+				'layout' => 'block',         // table | block | row
+				'button_label' => 'Add Region',
+				'sub_fields' => array (
+					array (
+						'key' => 'field_' . $block . '_provider_region_name',
+						'label' => 'Name',
+						'name' => 'name',
+						'type' => 'text',
+						'instructions' => '',
+						'required' => 1,
+						'conditional_logic' => 0,
+						'wrapper' => array (
+							'width' => '',
+							'class' => '',
+							'id' => '',
+						),
+						'default_value' => '',
+						'placeholder' => '',
+						'formatting' => 'none', // none | html
+						'prepend' => '',
+						'append' => '',
+						'maxlength' => '',
+						'readonly' => 0,
+						'disabled' => 0,
+					),
+					array (
+						'key' => 'field_' . $block . '_provider_region_tiers',
+						'label' => 'Tiers',
+						'name' => 'tiers',
+						'type' => 'repeater',
+						'instructions' => '',
+						'required' => 1,
+						'conditional_logic' => 0,
+						'wrapper' => array (
+							'width' => '',
+							'class' => '',
+							'id' => '',
+						),
+						'collapsed' => '',
+						'min' => 1,
+						'max' => '',
+						'layout' => 'block',         // table | block | row
+						'button_label' => 'Add Tier',
+						'sub_fields' => array (
+							array (
+								'key' => 'field_' . $block . '_provider_region_tier_name',
+								'label' => 'Tier Name',
+								'name' => 'name',
+								'type' => 'text',
+								'instructions' => '',
+								'required' => 1,
+								'conditional_logic' => 0,
+								'wrapper' => array (
+									'width' => '',
+									'class' => '',
+									'id' => '',
+								),
+								'default_value' => '',
+								'placeholder' => '',
+								'formatting' => 'none', // none | html
+								'prepend' => '',
+								'append' => '',
+								'maxlength' => '',
+								'readonly' => 0,
+								'disabled' => 0,
+							),
+							array (
+								'key' => 'field_' . $block . '_provider_region_tier_rows',
+								'label' => 'Rows',
+								'name' => 'rows',
+								'type' => 'repeater',
+								'instructions' => '',
+								'required' => 1,
+								'conditional_logic' => 0,
+								'wrapper' => array (
+									'width' => '',
+									'class' => '',
+									'id' => '',
+								),
+								'collapsed' => '',
+								'min' => 1,
+								'max' => '',
+								'layout' => 'block',         // table | block | row
+								'button_label' => 'Add Row',
+								'sub_fields' => array (
+									array (
+										'key' => 'field_' . $block . '_provider_region_tier_row_node',
+										'label' => 'Node',
+										'name' => 'node',
+										'type' => 'text',
+										'instructions' => '',
+										'required' => 1,
+										'conditional_logic' => 0,
+										'wrapper' => array (
+											'width' => '',
+											'class' => '',
+											'id' => '',
+										),
+										'default_value' => '',
+										'placeholder' => '',
+										'formatting' => 'none', // none | html
+										'prepend' => '',
+										'append' => '',
+										'maxlength' => '',
+										'readonly' => 0,
+										'disabled' => 0,
+									),
+									array (
+										'key' => 'field_' . $block . '_provider_region_tier_row_cpu',
+										'label' => 'CPU',
+										'name' => 'cpu',
+										'type' => 'text',
+										'instructions' => '',
+										'required' => 1,
+										'conditional_logic' => 0,
+										'wrapper' => array (
+											'width' => '',
+											'class' => '',
+											'id' => '',
+										),
+										'default_value' => '',
+										'placeholder' => '',
+										'formatting' => 'none', // none | html
+										'prepend' => '',
+										'append' => '',
+										'maxlength' => '',
+										'readonly' => 0,
+										'disabled' => 0,
+									),
+									array (
+										'key' => 'field_' . $block . '_provider_region_tier_row_storage',
+										'label' => 'Storage',
+										'name' => 'storage',
+										'type' => 'text',
+										'instructions' => '',
+										'required' => 1,
+										'conditional_logic' => 0,
+										'wrapper' => array (
+											'width' => '',
+											'class' => '',
+											'id' => '',
+										),
+										'default_value' => '',
+										'placeholder' => '',
+										'formatting' => 'none', // none | html
+										'prepend' => '',
+										'append' => '',
+										'maxlength' => '',
+										'readonly' => 0,
+										'disabled' => 0,
+									),
+									array (
+										'key' => 'field_' . $block . '_provider_region_tier_row_hcpn',
+										'label' => 'Node Cost Per Hour',
+										'name' => 'hcpn',
+										'type' => 'text',
+										'instructions' => '',
+										'required' => 1,
+										'conditional_logic' => 0,
+										'wrapper' => array (
+											'width' => '',
+											'class' => '',
+											'id' => '',
+										),
+										'default_value' => '',
+										'placeholder' => '',
+										'formatting' => 'none', // none | html
+										'prepend' => '',
+										'append' => '',
+										'maxlength' => '',
+										'readonly' => 0,
+										'disabled' => 0,
+									),
+									array (
+										'key' => 'field_' . $block . '_provider_region_tier_row_sbph',
+										'label' => 'Storage Base Price per Hour',
+										'name' => 'sbph',
+										'type' => 'text',
+										'instructions' => '',
+										'required' => 1,
+										'conditional_logic' => 0,
+										'wrapper' => array (
+											'width' => '',
+											'class' => '',
+											'id' => '',
+										),
+										'default_value' => '',
+										'placeholder' => '',
+										'formatting' => 'none', // none | html
+										'prepend' => '',
+										'append' => '',
+										'maxlength' => '',
+										'readonly' => 0,
+										'disabled' => 0,
+									),
+									array (
+										'key' => 'field_' . $block . '_provider_region_tier_row_scgbh',
+										'label' => 'Storage Cost per GB Hour',
+										'name' => 'scgbh',
+										'type' => 'text',
+										'instructions' => '',
+										'required' => 1,
+										'conditional_logic' => 0,
+										'wrapper' => array (
+											'width' => '',
+											'class' => '',
+											'id' => '',
+										),
+										'default_value' => '',
+										'placeholder' => '',
+										'formatting' => 'none', // none | html
+										'prepend' => '',
+										'append' => '',
+										'maxlength' => '',
+										'readonly' => 0,
+										'disabled' => 0,
+									)
+								),
+							),
+						),
+					),
+				),
+			),
+		),
+	),
+);
+
+return array (
+	'label' => 'Pricing - New',
+	'name' => $block,
+	'display' => 'block',
+	'min' => '',
+	'max' => '',
+	'sub_fields' => $block_fields,
+	'grav_blocks_settings' => array(
+		'icon' => 'gravicon-title',
+		'description' => ''
+	)
+);

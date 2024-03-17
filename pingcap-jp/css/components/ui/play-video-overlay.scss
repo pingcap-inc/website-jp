@@ -1,0 +1,22 @@
+.play-video-overlay {
+	z-index: 1;
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	&__play-icon {
+		width: min(200px, 45%);
+		height: min(200px, 45%);
+		color: var(--color-primary);
+		transition: transform var(--default-transition-params);
+
+		.play-video-overlay:hover & {
+			transform: scale(1.2);
+		}
+	}
+}

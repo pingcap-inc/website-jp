@@ -1,0 +1,49 @@
+.pricing-search {
+	padding: 2rem 0 1.6rem;
+	border-top: 1px solid #3d3fea;
+	width: 80%;
+	margin: auto;
+	&__inner {
+		display: flex;
+		align-items: flex-end;
+		justify-content: center;
+	}
+	&__tabs {
+		display: flex;
+		border-radius: 6px;
+		overflow: hidden;
+		height: 5rem;
+		margin-right: 1.4rem;
+		.tab {
+			width: 6.8rem;
+			border: 1px solid #707070;
+			background: #d9d9d9;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			cursor: pointer;
+			&.active {
+				background: #fff;
+				border-color: var(--color-blue);
+			}
+			img {
+				width: 4.4rem;
+			}
+		}
+	}
+	select {
+		border-radius: 6px;
+		border: 1px solid #00aeef;
+		background-color: #fff;
+		height: 3rem;
+		color: #33353d;
+	}
+	&__result {
+		text-align: center;
+		margin-top: 2.4rem;
+	}
+	&__tip {
+		color: #fff;
+		opacity: 0.5;
+	}
+}

@@ -1,0 +1,101 @@
+.banner-home {
+	position: relative;
+	padding-top: 3rem;
+
+	&__title {
+		color: var(--color-black);
+	}
+
+	&__content {
+		margin-top: 1.6rem;
+		padding-right: 3.2rem;
+		p {
+			font-weight: 700;
+			font-size: 30px;
+			color: #8b8c93;
+		}
+		h3 {
+			color: #8b8c93;
+		}
+	}
+
+	&__inner {
+		display: grid;
+		grid-template-columns: 1fr;
+		gap: var(--grid-column-gutter);
+
+		@include media-min(700px) {
+			grid-template-columns: repeat(12, 1fr);
+		}
+	}
+
+	&__text-content {
+		padding: 3.2rem 0;
+		@include media-min(700px) {
+			padding: 7rem 0;
+			grid-column: 1 / span 7;
+		}
+		@include media-min($large) {
+			padding-bottom: 10rem;
+		}
+
+		img {
+			vertical-align: middle;
+			height: 4.5rem;
+			width: auto;
+			margin-top: -2px;
+		}
+	}
+
+	&__video {
+		@include media-min(700px) {
+			grid-column: 8 / span 5;
+		}
+		&-content {
+			@include media-min(700px) {
+				padding-top: 6.8rem;
+			}
+		}
+		&-wrapper {
+			margin-bottom: 3.2rem;
+			@include media-min($large) {
+				position: absolute;
+				top: 10rem;
+				right: 0;
+				width: 44vw;
+				max-width: 58rem;
+				margin-bottom: 4rem;
+			}
+			@include media-min($xlarge) {
+				position: relative;
+				top: 0;
+				width: unset;
+			}
+		}
+		&-image {
+			position: absolute;
+			left: 0;
+			right: 0;
+			top: 0;
+			bottom: 0;
+			z-index: 1;
+			max-width: 60rem;
+			cursor: pointer;
+		}
+
+		.play-video-overlay__play-icon {
+			position: absolute;
+			left: 0;
+			right: 0;
+			top: 0;
+			bottom: 0;
+			z-index: 2;
+			margin: auto;
+		}
+		video {
+			display: block;
+			width: 100%;
+			max-width: 60rem;
+		}
+	}
+}

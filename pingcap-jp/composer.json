@@ -1,0 +1,14 @@
+{
+	"name": "gravitate/blueprint-theme",
+	"description": "Gravitate WordPress Starter Theme",
+	"type": "wordpress-theme",
+	"autoload": {
+		"psr-4": {
+			"Blueprint\\": "inc/Blueprint/",
+			"PingCAP\\": "inc/PingCAP/"
+		}
+	},
+	"require": {
+		"dfrei/wp-util": "^2.1.2"
+	}
+}

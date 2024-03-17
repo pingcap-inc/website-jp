@@ -1,0 +1,99 @@
+.style-testing {
+	&__row {
+		display: grid;
+		gap: var(--grid-column-gutter);
+
+		&:first-child {
+			padding-top: 4rem;
+		}
+
+		&:last-child {
+			padding-bottom: 4rem;
+		}
+
+		& + & {
+			margin-top: 4rem;
+		}
+
+		@include media-min($medium) {
+			&--two-col {
+				grid-template-columns: repeat(2, 1fr);
+			}
+		}
+	}
+
+	&__icon-container {
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+		grid-gap: 2rem;
+		color: var(--body-font-color);
+
+		@include media-min($medium) {
+			grid-template-columns: repeat(3, 1fr);
+		}
+
+		@include media-min($large) {
+			grid-template-columns: repeat(4, 1fr);
+		}
+	}
+
+	&__icon-row {
+		display: flex;
+		align-items: center;
+	}
+
+	&__icon {
+		width: 48px;
+		height: 48px;
+	}
+
+	&__icon-name {
+		margin-left: 1rem;
+	}
+
+	&__color-selector {
+		position: fixed;
+		bottom: 0;
+		left: 0;
+		width: 100%;
+		padding-top: 0.5rem;
+		padding-bottom: 0.5rem;
+		display: flex;
+		align-items: center;
+		background: var(--color-white);
+		box-shadow: 0 0 5px rgba(var(--color-rgb-black), 0.4);
+
+		body.admin-bar & {
+			bottom: 46px;
+
+			@include media-min(783px) {
+				bottom: 32px;
+			}
+		}
+	}
+
+	&__select--color {
+		margin: 0 0 0 1rem;
+		width: auto;
+	}
+
+	&__buttons-container {
+		display: flex;
+		flex-direction: column;
+		gap: 2rem;
+
+		@include media-min($large) {
+			flex-direction: row;
+		}
+	}
+
+	&__form-fields-container {
+		display: grid;
+		grid-template-columns: 1fr;
+		gap: 2rem;
+
+		@include media-min($large) {
+			grid-template-columns: 1fr 1fr;
+		}
+	}
+}

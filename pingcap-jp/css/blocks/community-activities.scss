@@ -1,0 +1,21 @@
+.block-community-activities {
+	&__title {
+		margin-bottom: 2rem;
+	}
+
+	&__cards {
+		--num-cols: 1;
+
+		display: grid;
+		grid-template-columns: repeat(var(--num-cols), 1fr);
+		gap: var(--grid-column-gutter);
+
+		@include media-min($medium) {
+			--num-cols: 2;
+		}
+
+		@include media-min($large) {
+			--num-cols: 3;
+		}
+	}
+}

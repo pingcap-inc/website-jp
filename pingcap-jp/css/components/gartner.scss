@@ -1,0 +1,27 @@
+.gartner {
+	--num-cols: 1;
+	display: grid;
+	grid-template-columns: repeat(var(--num-cols), 1fr);
+	gap: var(--grid-column-gutter);
+	@include media-min($large) {
+		--num-cols: 12;
+	}
+	> div {
+		grid-column: span 7;
+	}
+	.widget-container {
+		@include media-min($large) {
+			grid-column: span 5 / span 5;
+			grid-column-start: 8;
+		}
+		@include media-min(1150px) {
+			grid-column: span 4 / span 4;
+			grid-column-start: 9;
+		}
+
+		[id^="gartner-pi-widget"][data-size="line"] {
+			width: 100%;
+			max-width: 425px;
+		}
+	}
+}

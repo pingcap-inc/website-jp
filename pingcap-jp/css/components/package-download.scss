@@ -1,0 +1,26 @@
+.package-download {
+	padding-top: 6rem;
+	&__row-selectors {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 2rem;
+		margin-bottom: 1rem;
+	}
+	&__download-checkbox {
+		display: flex;
+		align-items: center;
+		gap: 1rem;
+		margin-bottom: 1rem;
+		line-height: 1.2;
+		a {
+			color: var(--button-secondary-normal-text-color);
+		}
+	}
+	&__download-error-message {
+		color: var(--color-red);
+		font-size: 1.4rem;
+	}
+	&__download-button {
+		margin-right: 1rem;
+	}
+}

@@ -1,0 +1,254 @@
+/**
+ *	Set base font size to 10px
+ *	This makes calculating rem values very easy
+ *	Just divide your pixel value by 10
+ *	Need an rem value that matches 13px? 1.3rem
+ *	Need an rem value that matches 27px? 2.7rem
+ */
+:root {
+	font-size: 10px;
+}
+
+/**
+ *	Reset element margins
+ */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul,
+ol,
+li {
+	margin: 0;
+}
+
+/**
+ *  Vertical spacing
+ */
+ol,
+ul,
+table,
+blockquote {
+	* + & {
+		margin-top: 3rem;
+	}
+
+	+ * {
+		margin-top: 2.5rem;
+	}
+}
+
+h1 {
+	+ * {
+		margin-top: 3.2rem;
+	}
+
+	* + & {
+		margin-top: 4rem;
+	}
+}
+
+h2 {
+	+ * {
+		margin-top: 1.6rem;
+	}
+
+	* + & {
+		margin-top: 1.6rem;
+	}
+}
+
+h3 {
+	+ * {
+		margin-top: 2rem;
+	}
+
+	* + & {
+		margin-top: 1.6rem;
+	}
+}
+
+h4 {
+	+ * {
+		margin-top: 1rem;
+	}
+
+	* + & {
+		margin-top: 1.6rem;
+	}
+}
+
+h5 {
+	+ * {
+		margin-top: 1rem;
+	}
+
+	* + & {
+		margin-top: 1.6rem;
+	}
+}
+
+h6 {
+	+ * {
+		margin-top: 1rem;
+	}
+
+	* + & {
+		margin-top: 2rem;
+	}
+}
+
+p + p {
+	margin-top: 1.6rem;
+}
+
+/**
+ *	Global element styling
+ */
+body,
+p {
+	font: var(--body-font);
+	color: var(--body-font-color);
+}
+
+span {
+	color: var(--body-font-color);
+}
+
+h1 {
+	font: normal normal var(--font-weight-semibold) 36px / 100%
+			var(--font-prompt);
+	color: var(--h1-color);
+	@include media-min($medium) {
+		font-size: clamp(36px, 3.65vw, 52px);
+	}
+
+	span.long-text {
+		display: inline-block;
+		font-size: clamp(24px, 3.25vw, 40px);
+		line-height: 125%;
+		font-weight: 600;
+		color: #8b8c93;
+		&.inline {
+			display: inline;
+			color: var(--h1-color);
+		}
+	}
+}
+
+h2 {
+	font: normal normal var(--font-weight-semibold) 30px / 125%
+		var(--font-prompt);
+	color: var(--h2-color);
+	@include media-min($medium) {
+		font-size: clamp(30px, 3.25vw, 42px);
+	}
+}
+
+h3 {
+	font: normal normal var(--font-weight-semibold) 24px / 125% var(--font-prompt);
+	color: var(--h3-color);
+	@include media-min($medium) {
+		font-size: clamp(24px, 3vw, 34px);
+	}
+}
+
+h4 {
+	font: normal normal var(--font-weight-semibold) 2rem / 125% var(--font-prompt);
+	color: var(--h4-color);
+	@include media-min($medium) {
+		font-size: 24px;
+	}
+
+	&.top-line {
+		position: relative;
+
+		&::before {
+			content: "";
+			position: absolute;
+			top: -2px;
+			left: 0;
+			width: 20px;
+			height: 2px;
+			background-color: var(--h4-color);
+			opacity: 0.3;
+		}
+	}
+}
+
+h5 {
+	font: normal normal var(--font-weight-bold) 1.8rem / 125% var(--font-prompt);
+	color: var(--h5-color);
+	@include media-min($medium) {
+		font-size: 20px;
+	}
+}
+
+h6 {
+	font: normal normal var(--font-weight-bold) 1.4rem / 150% var(--font-prompt);
+	color: var(--h6-color);
+}
+
+/**
+ *	Text size modifiers - usually used with paragaph elements
+ */
+.xxlarge,
+%xxlarge-text {
+	font-size: calc(var(--body-font-size) + 0.6rem) !important;
+	line-height: 1.5;
+}
+
+.xlarge,
+%xlarge-text {
+	font-size: calc(var(--body-font-size) + 0.4rem) !important;
+	line-height: 1.5;
+}
+
+.large,
+%large-text {
+	font-size: calc(var(--body-font-size) + 0.2rem);
+	line-height: 1.44;
+}
+
+small,
+.small,
+%small-text {
+	font-size: calc(var(--body-font-size) - 0.2rem);
+	line-height: 1.57;
+}
+
+.bold {
+	font-weight: 700 !important;
+}
+
+// Useful classes that are missing without the Foundation typography styles
+.text-left {
+	text-align: left;
+}
+
+.text-center {
+	text-align: center;
+}
+
+.text-right {
+	text-align: right;
+}
+
+.text-white {
+	color: var(--color-white) !important;
+}
+
+.text-blue {
+	color: var(--color-blue-dark);
+}
+
+.text-blue-gradient {
+	background: linear-gradient(90deg, #80a3fd 0%, #3a40e1 100%);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	background-clip: text;
+	text-fill-color: transparent;
+}

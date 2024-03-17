@@ -1,0 +1,176 @@
+.banner-case-study {
+	overflow-x: hidden; // see "hack" note below
+	padding-top: 5rem;
+
+	// -- begin hack
+	//
+	// The "overflow-x: hidden" property above is needed so that horizontal
+	// scrolling does not occur when the testimonial/image is transformed off-screen
+	// before being animated in once the DOM is ready. Unfortunately, overflow-x
+	// will also apply a harsh cutoff on the y-axis of the banner causing the bottom
+	// part of the box-shadow on the testimonial/image to be hidden. This hack places
+	// a 15px ::after pseudo-element at the bottom of the banner so that the bottom
+	// of the box-shadow is visible while still being able to use "overflow-x: hidden".
+	//
+	// Normally this could be dealt with by specifying "overflow-x: hidden" on both
+	// the "html" and "body" elements. However, that breaks the use of "position: sticky"
+	// which is used on this site for the sticky elements such as the blog share links.
+	//
+	// If Safari could support "overflow-x: clip" none of this would be necessary (ノಠ益ಠ)ノ彡┻━┻
+	//
+
+	padding-bottom: 4rem;
+
+	// -- end hack
+
+	.banner-default__text-content {
+		@include media-min($medium) {
+			grid-column: 2 / span 10;
+			&.has-image {
+				grid-column: 2 / span 6;
+			}
+		}
+	}
+
+	&__inner {
+		display: grid;
+		grid-template-columns: 1fr;
+		gap: var(--grid-column-gutter);
+
+		@include media-min($medium) {
+			grid-template-columns: repeat(12, 1fr);
+		}
+	}
+
+	&__text-content {
+		padding-bottom: 4rem;
+
+		@include media-min($medium) {
+			grid-column: span 6;
+			padding-bottom: 10rem;
+		}
+
+		@include media-min($large) {
+			grid-column: 2 / span 5;
+		}
+	}
+
+	&__video-link {
+		display: flex;
+		gap: 2rem;
+		align-items: center;
+		margin-top: 2.5rem;
+
+		text-decoration: none;
+
+		span {
+			font-weight: var(--font-weight-bold);
+			color: var(--color-primary);
+		}
+	}
+
+	&__video-link-icon {
+		width: 46px;
+		height: 46px;
+		color: var(--color-primary);
+		transition: transform var(--default-transition-params);
+
+		.banner-case-study__video-link:hover & {
+			transform: scale(1.1);
+		}
+	}
+
+	// .banner__breadcrumbs {
+	// 	margin-bottom: 1.5rem;
+	// }
+
+	&__customer-name {
+		margin-top: 0;
+	}
+
+	&__title {
+		margin-top: 2rem;
+		font-size: clamp(24px,3vw,34px);
+	}
+
+	&__testimonial,
+	&__image-container {
+		align-self: center;
+
+		position: relative;
+
+		transition: transform 1s ease-in-out, opacity 1.25s ease-in-out;
+
+		@include media-min($medium) {
+			grid-column: span 5;
+		}
+
+		&.banner-animate {
+			transform: translateX(125%);
+			opacity: 0;
+			pointer-events: none;
+		}
+	}
+
+	&__testimonial {
+		display: flex;
+		flex-direction: column;
+		align-items: flex-start;
+		gap: 1rem;
+
+		padding: 3rem;
+
+		border-radius: var(--default-border-radius);
+		box-shadow: var(--default-box-shadow);
+
+		@include media-min($large) {
+			grid-column: 8 / span 5;
+			padding: 4rem;
+		}
+
+		&--has-image {
+			padding-top: 0;
+		}
+	}
+
+	&__testimonial-image {
+		object-fit: cover;
+		border-radius: 100%;
+		min-width: 80px;
+		min-height: 80px;
+		max-width: 80px;
+		max-height: 80px;
+		box-shadow: var(--default-box-shadow);
+
+		margin-top: -3rem;
+
+		@include media-min($medium) {
+			min-width: 120px;
+			min-height: 120px;
+			max-width: 120px;
+			max-height: 120px;
+		}
+	}
+
+	&__image-container {
+		padding-top: 56.25%;
+	}
+
+	&__image {
+		@include image-cover-entire-container;
+		left: auto;
+		width: auto;
+		height: auto;
+		object-position: var(--pos-x, 50%) var(--pos-y, 50%);
+		border-radius: var(--default-border-radius);
+		box-shadow: var(--default-box-shadow);
+	}
+
+	&__additional-content {
+		margin-top: 2.5rem;
+		padding-bottom: 2rem;
+		@media screen and (min-width: $medium) {
+			padding-bottom: 0;
+		}
+	}
+}

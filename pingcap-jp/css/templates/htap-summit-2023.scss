@@ -1,0 +1,453 @@
+.tmpl-htap-summit {
+	--header-height: 82px;
+	&::before {
+		background: #fff;
+	}
+	&.customize-support {
+		--admin-bar-height: 46px;
+
+		@include media-min($medium) {
+			--admin-bar-height: 32px;
+		}
+	}
+	header {
+		position: fixed;
+		top: var(--admin-bar-height, 0);
+		left: 0;
+		right: 0;
+		background-color: #fff;
+		z-index: 2;
+		box-shadow: -15px 0 15px 0 rgb(0 0 0 / 15%);
+		&.summary {
+			background-color: #15094d;
+			.nav-menu {
+				color: #fff;
+				background-color: transparent;
+				&:hover {
+					color: #936ff5;
+				}
+			}
+			.navbar-toggle span {
+				background-color: #fff;
+			}
+			.navbar-collapse.active {
+				height: 22rem;
+			}
+		}
+		&.replay {
+			background-color: #15094d;
+			.nav-menu {
+				color: #fff;
+				background-color: transparent;
+				&:hover {
+					color: #936ff5;
+				}
+			}
+			.nav {
+				display: block;
+			}
+		}
+	}
+	.header-wrapper {
+		position: relative;
+		padding: 1.6rem 0;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		img {
+			height: 50px;
+			width: auto;
+			margin-right: 36px;
+			padding-left: 1.6rem;
+			display: block;
+			@include media-min($medium) {
+				padding-left: 0;
+			}
+		}
+	}
+
+	.nav {
+		display: none;
+		@include media-min(1200px) {
+			display: flex;
+			align-items: center;
+			gap: 3.2rem;
+		}
+
+		.main-button {
+			font-family: "Poppins", sans-serif;
+			font-weight: bold;
+			font-size: 1.6rem;
+			border-radius: 4px;
+			background-color: rgba(82, 72, 221, 1);
+			color: rgba(255, 255, 255, 1);
+			border-color: rgba(0, 0, 0, 0);
+			max-width: 340px;
+			white-space: nowrap;
+			color: #fff;
+			text-decoration: none;
+			padding: 1.2rem 1.6rem;
+			cursor: pointer;
+		}
+
+		&-arrow {
+			color: #5248dd;
+			width: 16px;
+			height: 16px;
+		}
+		&-menu {
+			background-color: #000;
+			padding: 1rem 3.2rem;
+			color: #fff;
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			@include media-min(1200px) {
+				color: #000;
+				background-color: #fff;
+				padding: 0;
+			}
+			font-size: 16px;
+			line-height: 36px;
+			text-decoration: none;
+			cursor: pointer;
+			transition: 0.2s ease-in-out;
+			&.active {
+				border-bottom: 1px solid #000;
+			}
+		}
+		&-dropper {
+			@include media-min(1200px) {
+				position: absolute;
+				top: 100%;
+				left: -66px;
+				margin: 0 auto;
+				width: 200px;
+				display: none;
+			}
+			transition: 0.2s ease-in-out;
+			&__wrapper {
+				position: relative;
+				&:hover {
+					.nav-dropper {
+						display: block;
+					}
+				}
+			}
+			&__content {
+				background-color: #2e2e2e;
+				border-radius: 4px;
+				font-size: 14px;
+				padding: 1rem 3.2rem 1rem 4.8rem;
+				@include media-min(1200px) {
+					margin-top: 1rem;
+					background-color: #000;
+					padding: 2rem 0 2rem 2.2rem;
+				}
+				a {
+					color: #fff;
+					font-size: 14px;
+					line-height: 36px;
+					text-decoration: none;
+					transition: 0.2s ease-in-out;
+					display: block;
+					&:hover {
+						color: #5248dd;
+						padding-left: 0.9rem;
+					}
+				}
+			}
+		}
+	}
+	.navbar-toggle {
+		@include media-min(1200px) {
+			display: none;
+		}
+
+		padding: 1rem;
+		display: flex;
+		flex-direction: column;
+		gap: 4px;
+		cursor: pointer;
+		span {
+			width: 2rem;
+			height: 2px;
+			background-color: rgb(89, 90, 92);
+		}
+	}
+	.navbar-collapse {
+		display: flex;
+		flex-direction: column;
+		background-color: #000;
+		height: 0;
+		transition: all 0.3s;
+		overflow: hidden;
+		@include media-min(1200px) {
+			display: none;
+		}
+		&.active {
+			height: 32rem;
+		}
+		.nav-menu.active {
+			color: #5248dd;
+		}
+		.main-button {
+			font-family: "Poppins", sans-serif;
+			font-weight: bold;
+			font-size: 1.6rem;
+			border-radius: 4px;
+			background-color: rgba(82, 72, 221, 1);
+			color: rgba(255, 255, 255, 1);
+			border-color: rgba(0, 0, 0, 0);
+			align-self: baseline;
+			white-space: nowrap;
+			color: #fff;
+			text-decoration: none;
+			padding: 1.2rem 1.6rem;
+			cursor: pointer;
+			margin-left: 3.2rem;
+			margin-top: 2rem;
+		}
+	}
+
+	.banner {
+		background: url(https://static.pingcap.com/files/2023/07/19200144/banner-bg.png) no-repeat 0
+			60px;
+		background-size: 30%;
+		padding: 16px 0 32px;
+		position: relative;
+		&-wrapper {
+			display: flex;
+			justify-content: center;
+			@include media-min($large) {
+				justify-content: flex-end;
+			}
+		}
+		&-content {
+			@include media-min($large) {
+				width: 58%;
+				img {
+					width: 76%;
+				}
+			}
+			position: relative;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+		}
+		&-text {
+			position: absolute;
+			left: 0;
+			right: 0;
+			margin: auto;
+			text-align: center;
+		}
+		&-sold-out {
+			position: absolute;
+			bottom: 6rem;
+			@include media-min($medium) {
+				bottom: 20%;
+			}
+			width: 100%;
+			height: 10rem;
+			opacity: 0.6;
+			background: linear-gradient(270deg, #5248dd 0%, #956ff6 100%);
+			.contain {
+				display: flex;
+				justify-content: center;
+				@include media-min($large) {
+					justify-content: flex-end;
+				}
+			}
+			&-text {
+				color: #fff;
+				text-align: center;
+				font-family: Prompt;
+				font-size: 62px;
+				font-style: normal;
+				font-weight: 600;
+				line-height: 10rem;
+				opacity: 100;
+				@include media-min($large) {
+					width: 58%;
+				}
+			}
+		}
+		h1 {
+			color: rgba(0, 0, 0, 1);
+			font-family: "Roboto Mono", sans-serif;
+			font-size: 4.2rem;
+			line-height: 1;
+			@include media-min($medium) {
+				font-size: 9rem;
+			}
+		}
+		h3 {
+			color: rgba(0, 0, 0, 1);
+			font-family: "Roboto Mono", sans-serif;
+			font-style: normal;
+			font-size: 24px;
+			@include media-min($medium) {
+				font-size: 3rem;
+			}
+			margin-top: 0;
+		}
+		p {
+			color: rgba(0, 0, 0, 1);
+			font-family: "Roboto Mono", sans-serif;
+			font-weight: normal;
+			font-style: normal;
+			font-size: 2rem;
+			font-weight: 400;
+			margin-bottom: 0.8rem;
+			margin-top: 0.6rem;
+		}
+		a,
+		.main-button {
+			font-family: "Poppins", sans-serif;
+			font-weight: bold;
+			font-size: 1.6rem;
+			border-radius: 4px;
+			background-color: rgba(82, 72, 221, 1);
+			color: rgba(255, 255, 255, 1);
+			border-color: rgba(0, 0, 0, 0);
+			white-space: nowrap;
+			color: #fff;
+			text-decoration: none;
+			padding: 1.2rem 1.6rem;
+			cursor: pointer;
+		}
+		.main-button {
+			display: inline-block;
+		}
+	}
+	.first-block {
+		margin-top: -20rem;
+		@include media-min($large) {
+			margin-top: 0;
+		}
+	}
+
+	.replay-cta.button {
+		background: transparent;
+		border-color: #fff;
+		&:hover {
+			border-color: #946ff5;
+			background: #946ff5;
+		}
+	}
+
+	.tmpl-replay {
+		.inner {
+			padding-bottom: 4rem;
+		}
+		.htap-demand__card-title h5 {
+			color: #000;
+			font-size: 28px;
+			font-style: normal;
+			font-weight: 600;
+			line-height: normal;
+			@include media-min($medium) {
+				font-size: 34px;
+			}
+			&:after {
+				display: none;
+			}
+			b {
+				color: #fefefe;
+				font-size: 16px;
+				font-style: normal;
+				font-weight: 700;
+				line-height: normal;
+				display: block;
+				padding: 1px 10px;
+				background-color: #6339c9;
+				width: fit-content;
+				margin-bottom: 6px;
+			}
+		}
+
+		.block-columns__video-container {
+			border-radius: 10px;
+			overflow: hidden;
+		}
+	}
+	.tmpl-summary {
+		background: url("https://static.pingcap.com/files/2023/11/06181635/homepage_banner.png")
+			no-repeat center bottom;
+		background-size: cover;
+		min-height: calc(100vh - 200px);
+		max-height: 80rem;
+		display: flex;
+		align-items: center;
+		@include media-min($medium) {
+			min-height: calc(100vh - 80px);
+		}
+		&.case {
+			max-height: none;
+		}
+		.htap-title__container {
+			margin: auto;
+			text-align: center;
+			@include media-min($medium) {
+				width: 77%;
+			}
+			.htap-title {
+				font-size: 32px;
+				background: linear-gradient(180deg, #af45c6 0%, #5248dd 100%);
+				background-clip: text;
+				-webkit-background-clip: text;
+				-webkit-text-fill-color: transparent;
+				@include media-min($medium) {
+					font-size: 42px;
+				}
+				@include media-min($large) {
+					font-size: 52px;
+				}
+			}
+			&.case {
+				padding-top: 4rem;
+				padding-bottom: 0;
+				@include media-min($medium) {
+					width: 88%;
+				}
+				.htap-title {
+					@include media-min($medium) {
+						font-size: 52px;
+					}
+					font-family: Prompt;
+					font-size: 42px;
+					font-style: normal;
+					font-weight: 600;
+					line-height: normal;
+					background: linear-gradient(180deg, #af45c6 0%, #5248dd 100%);
+					background-clip: text;
+					-webkit-background-clip: text;
+					-webkit-text-fill-color: transparent;
+					&.small {
+						@include media-min($medium) {
+							font-size: 24px !important;
+						}
+						font-size: 24px;
+						margin-top: 3.2rem;
+					}
+				}
+			}
+		}
+		.main-button {
+			background-color: #5248dd;
+			margin: auto;
+			color: #fff;
+			font-family: Poppins;
+			font-size: 20px;
+			font-style: normal;
+			font-weight: 700;
+			line-height: normal;
+			padding: 1rem 4rem;
+			border-radius: 4px;
+			margin-top: -2rem;
+			text-decoration: none;
+			cursor: pointer;
+		}
+	}
+}

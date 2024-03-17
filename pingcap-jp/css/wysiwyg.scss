@@ -1,0 +1,245 @@
+.wysiwyg {
+	h6 {
+		font: normal normal var(--font-weight-regular) 1.6rem / 1.5 var(--font-primary);
+		color: var(--color-gray);
+		text-align: center;
+		&::before {
+			content: "";
+			width: 1px;
+			height: 1.6rem;
+			background-color: var(--color-blue);
+			display: inline-block;
+			margin-right: 2rem;
+			vertical-align: middle;
+			margin-top: -2px;
+		}
+	}
+	a:not(.button):not(.ignore-link-styles) {
+		word-wrap: break-word;
+		color: var(--anchor-link-normal-color);
+		line-height: 2.4rem;
+		text-decoration-color: var(--anchor-link-normal-color);
+		text-underline-offset: 2px;
+		transition: all var(--default-transition-params);
+
+		&:hover,
+		&:active {
+			color: var(--anchor-link-hover-color);
+			text-decoration-color: var(--anchor-link-hover-color);
+			text-decoration: underline;
+		}
+	}
+
+	p {
+		.button + .button {
+			margin-left: 1rem;
+		}
+
+		.button + .button--secondary {
+			margin-left: 2rem;
+		}
+
+		.button--secondary + .button--secondary {
+			margin-left: 3rem;
+		}
+	}
+
+	ul,
+	ol {
+		padding-left: 0;
+		color: var(--body-font-color);
+		list-style: none;
+
+		li {
+			position: relative;
+			margin: 0 0 0.8rem 1.5rem;
+
+			// &::marker {
+			// 	color: var(--list-bullet-color);
+			// }
+
+			ul,
+			ol {
+				margin-top: 0.8rem;
+			}
+
+			li {
+				margin-left: 2.5rem;
+			}
+		}
+	}
+
+	ul {
+		li {
+			&::before {
+				content: "";
+				position: absolute;
+				top: 10px;
+				left: -14px;
+				width: 5px;
+				height: 5px;
+				border-radius: 100%;
+				background-color: var(--list-bullet-color);
+			}
+
+			ol {
+				counter-reset: custom-ol-counter;
+
+				li {
+					counter-increment: custom-ol-counter;
+					list-style: none;
+
+					&::before {
+						background-color: transparent;
+						color: var(--list-bullet-color);
+						content: counter(custom-ol-counter) ". ";
+						display: inline-flex;
+						justify-content: center;
+						left: -20px;
+						margin-right: 0.8rem;
+						min-width: 15px;
+						top: inherit;
+					}
+				}
+			}
+		}
+
+		&.check {
+			li {
+				margin-left: 20px;
+				&::before {
+					top: 6px;
+					left: -18px;
+					width: 12px;
+					height: 12px;
+					background: url("#{$theme-url-base}/media/images/check-blue.svg") center
+						no-repeat;
+				}
+			}
+		}
+	}
+
+	ol {
+		counter-reset: custom-ol-counter;
+
+		li {
+			counter-increment: custom-ol-counter;
+			margin-left: 0;
+
+			&::before {
+				content: counter(custom-ol-counter) ". ";
+				display: inline-flex;
+				justify-content: center;
+				min-width: 15px;
+				margin-right: 0.8rem;
+				color: var(--list-bullet-color);
+			}
+
+			ol {
+				// padding-left: 2.5rem;
+				counter-reset: custom-ol-child-counter;
+
+				li {
+					counter-increment: custom-ol-child-counter;
+
+					&::before {
+						content: counter(custom-ol-child-counter, lower-alpha) ". ";
+					}
+				}
+			}
+
+			ul {
+				counter-reset: custom-ol-child-counter;
+				margin-left: 1.5rem;
+
+				li {
+					counter-increment: custom-ul-child-counter;
+
+					&::before {
+						content: "";
+						position: absolute;
+						top: 10px;
+						left: -14px;
+						min-width: 5px;
+						width: 5px;
+						height: 5px;
+						border-radius: 100%;
+						background-color: var(--list-bullet-color);
+					}
+				}
+			}
+		}
+	}
+
+	ul.list-style-image {
+		list-style-image: url("#{$theme-url-base}/media/images/list-image.svg");
+		margin-left: 0.4rem;
+		margin-top: 2rem;
+		li {
+			padding-left: 0.8rem;
+			&::before {
+				display: none;
+			}
+		}
+	}
+
+	&--post-content {
+		> img {
+			width: 100%;
+			margin-top: 3rem;
+
+			&:first-child {
+				margin-top: 0;
+			}
+		}
+
+		.caption-center {
+			margin-bottom: 3rem;
+			font-size: 1.4rem;
+			text-align: center;
+		}
+
+		.trackable-btns {
+			display: flex;
+			gap: 1rem;
+			margin-top: 2.5rem;
+			margin-bottom: 4rem;
+
+			a,
+			a:hover,
+			button {
+				text-decoration: none;
+			}
+		}
+	}
+
+	code {
+		background: var(--post-content-code-bg-color);
+		color: var(--post-content-code-text-color);
+	}
+
+	.flex {
+		display: flex;
+		flex-direction: column;
+		gap: var(--grid-column-gutter);
+		@include media-min($medium) {
+			flex-direction: row;
+			justify-content: center;
+		}
+		> div {
+			flex: 1;
+		}
+		&.flex-row {
+			flex-direction: row;
+		}
+		&.flex-wrap {
+			flex-wrap: wrap;
+		}
+		&.item-center {
+			align-items: center;
+		}
+		&.justify-between {
+			justify-content: space-between;
+		}
+	}
+}

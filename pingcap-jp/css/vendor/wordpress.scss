@@ -1,0 +1,49 @@
+/*************************************
+WordPress Specifics
+**************************************/
+.alignleft,
+.alignright {
+	display: inline-block;
+}
+
+.alignleft {
+	float: left;
+	margin: 0 20px 5px 0;
+}
+
+.alignright {
+	float: right;
+	margin: 0 0 5px 20px;
+}
+
+.alignnone {
+	margin: 5px 15px 15px 0;
+}
+
+.aligncenter {
+	display: block;
+	margin: 15px auto;
+}
+
+.wp-caption {
+	background: rgba(var(--color-rgb-black), 0.1);
+	border: 1px rgba(var(--color-rgb-black), 0.3) solid;
+	padding: 15px;
+	font-size: 1.2rem;
+	text-align: center;
+
+	img {
+		border: 1px rgba(var(--color-rgb-black), 0.3) solid;
+		margin: 0 auto 15px;
+		max-width: 98.5%;
+		width: auto;
+	}
+}
+
+body #wpadminbar {
+	--body-font-color: var(--color-white);
+
+	@include media-max(783px) {
+		position: fixed !important;
+	}
+}

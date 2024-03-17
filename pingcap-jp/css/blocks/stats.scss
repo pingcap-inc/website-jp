@@ -1,0 +1,27 @@
+.block-stats {
+	.block-inner {
+		display: grid;
+		grid-template-columns: 1fr;
+		gap: 4rem;
+	}
+
+	.block-inner--grid {
+		@include media-min($large) {
+			grid-template-columns: 1fr 1fr 1fr;
+		}
+	}
+
+	.block-inner--carousel {
+		@include media-min($large) {
+			grid-template-columns: repeat(12, 1fr);
+
+			.block-stats__content {
+				grid-column: 2 / span 6;
+			}
+
+			.stats-carousel {
+				grid-column: span 4;
+			}
+		}
+	}
+}

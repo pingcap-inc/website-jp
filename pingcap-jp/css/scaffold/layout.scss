@@ -1,0 +1,30 @@
+.contain {
+	width: 100%;
+	max-width: var(--container-max-width);
+	margin: 0 auto;
+}
+
+.layout {
+	&__padded-columns {
+		--grid-num-cols: 12;
+		--start-col: 2;
+		--end-col: 2;
+
+		display: grid;
+		grid-template-columns: 1fr;
+		gap: var(--grid-column-gutter);
+
+		@include media-min($large) {
+			grid-template-columns: repeat(var(--grid-num-cols), 1fr);
+
+			> * {
+				grid-column: var(--start-col) / span calc(var(--grid-num-cols) - var(--end-col));
+			}
+		}
+
+		&--double {
+			--start-col: 3;
+			--end-col: 4;
+		}
+	}
+}

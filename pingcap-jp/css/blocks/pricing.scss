@@ -1,0 +1,128 @@
+.block-pricing {
+	table-layout: fixed;
+
+	&__title-container {
+		margin-bottom: 4rem;
+	}
+
+	&__controls-container {
+		display: grid;
+		grid-template-columns: 1fr;
+		gap: var(--grid-column-gutter);
+		margin-bottom: 4rem;
+
+		@include media-min($medium) {
+			grid-template-columns: 1fr 1fr;
+		}
+	}
+
+	&__control-group {
+		border-radius: var(--default-border-radius);
+		box-shadow: var(--default-box-shadow);
+		padding: 3rem 3rem 4rem;
+	}
+
+	&__providers-container {
+		display: flex;
+		gap: 2rem;
+	}
+
+	&__provider-button {
+		position: relative;
+		width: 100%;
+		height: 108px;
+		border: 2px solid var(--color-gray-xlight);
+		border-radius: var(--default-border-radius);
+		cursor: pointer;
+		transition: border-color var(--default-transition-params);
+
+		&:hover,
+		&.active {
+			border-color: var(--color-blue);
+		}
+	}
+
+	&__provider-logo {
+		position: absolute;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		padding: 25px 20px;
+
+		object-fit: contain;
+	}
+
+	&__region-selector-content {
+		margin-top: 2rem;
+	}
+
+	&__table-container {
+		overflow-x: scroll;
+		@include media-min($medium) {
+			overflow-x: auto;
+		}
+	}
+
+	&__table {
+		position: relative;
+		max-width: 100%;
+		margin: 0 var(--container-margin);
+
+		// invisible pseudo-element to add margin to the right side of the table
+		// on mobile/tablet when horizontally scrolled
+		&::after {
+			content: "";
+			position: absolute;
+			top: 0;
+			right: calc(var(--container-margin) * -1);
+			bottom: 0;
+			width: var(--container-margin);
+		}
+
+		@include media-min($large) {
+			max-width: var(--container-max-width);
+			margin: 0 auto;
+
+			&::after {
+				display: none;
+			}
+		}
+
+		thead th {
+			&:first-child {
+				border-top-left-radius: var(--default-border-radius);
+			}
+
+			&:last-child {
+				border-top-right-radius: var(--default-border-radius);
+			}
+		}
+
+		tbody td {
+			padding-top: 2.5rem;
+			padding-bottom: 2.5rem;
+			white-space: nowrap;
+			@include media-max($medium) {
+				padding-top: 1.5rem;
+				padding-bottom: 1.5rem;
+			}
+		}
+
+		.table--last-group-start td[rowspan] {
+			border-bottom-left-radius: var(--default-border-radius);
+		}
+
+		tbody tr:last-child {
+			td:last-child {
+				border-bottom-right-radius: var(--default-border-radius);
+			}
+		}
+	}
+
+	&__table-desc {
+		margin-top: 1rem;
+	}
+}

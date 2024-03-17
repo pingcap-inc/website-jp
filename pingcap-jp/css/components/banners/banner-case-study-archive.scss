@@ -1,0 +1,47 @@
+.banner-case-study-archive {
+	padding-top: 6rem;
+	padding-bottom: 10rem;
+
+	&__row-filters {
+		display: flex;
+		flex-direction: column;
+		gap: 4rem;
+
+		@include media-min($large) {
+			flex-direction: row;
+			justify-content: space-between;
+			align-items: center;
+			gap: 3rem;
+		}
+	}
+
+	&__filters {
+		display: grid;
+		grid-template-columns: 1fr;
+		gap: 2rem;
+		width: 100%;
+		margin: auto;
+
+		@include media-min($medium) {
+			grid-template-columns: 1fr 1fr 1fr;
+		}
+
+		@include media-min($large) {
+			max-width: 780px;
+		}
+	}
+
+	&__filter-control {
+		margin-top: 0;
+
+		width: 100%;
+
+		@include media-min($large) {
+			max-width: 290px;
+		}
+	}
+
+	&__heading-text {
+		color: var(--color-blue-dark);
+	}
+}

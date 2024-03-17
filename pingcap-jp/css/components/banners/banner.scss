@@ -1,0 +1,20 @@
+.banner {
+	z-index: var(--z-root);
+	position: relative;
+
+	.wysiwyg {
+		margin-top: 3.6rem;
+	}
+
+	--form-select-arrow-img: url("#{$theme-url-base}/media/svg/general/chevron-down-blue.svg");
+
+	&--padding-bottom {
+		padding-bottom: 6rem;
+		@include media-min($medium) {
+			padding-bottom: 3rem;
+		}
+		@include media-min($large) {
+			padding-bottom: 6rem;
+		}
+	}
+}

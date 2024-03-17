@@ -1,0 +1,53 @@
+@mixin image-cover-entire-container($object-fit: "cover", $object-position: "") {
+	object-fit: #{$object-fit};
+
+	@if $object-position != "" {
+		object-position: #{$object-position};
+	}
+
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+
+@mixin media($args...) {
+	$media-type: "only screen";
+	$media-type-key: "media-type";
+	$args: keywords($args);
+	$expr: "";
+
+	@if map-has-key($args, $media-type-key) {
+		$media-type: map-get($args, $media-type-key);
+		$args: map-remove($args, $media-type-key);
+	}
+
+	@each $key, $value in $args {
+		@if $value {
+			$expr: "#{$expr} and (#{$key}: #{$value})";
+		}
+	}
+
+	@media #{$media-type} #{$expr} {
+		@content;
+	}
+}
+
+@mixin media-max($max) {
+	@include media(
+		$max-width: (
+			$max - 1
+		)
+	) {
+		@content;
+	}
+}
+
+@mixin media-min($min) {
+	@include media($min-width: $min) {
+		@content;
+	}
+}

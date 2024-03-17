@@ -1,0 +1,41 @@
+.content-top-curve {
+	z-index: 1;
+	position: relative;
+
+	&::before {
+		content: "";
+		position: absolute;
+		right: 0;
+		left: 0;
+		height: 35px;
+		transform: translateY(-100%);
+		clip-path: ellipse(60% 220% at 50% 220%);
+
+		@include media-min($medium) {
+			height: 45px;
+		}
+
+		@include media-min($large) {
+			height: 60px;
+		}
+	}
+
+	&.block-bg-none,
+	&.bg-white {
+		&::before {
+			background-color: var(--color-white);
+		}
+	}
+
+	&.bg-black {
+		&::before {
+			background-color: var(--color-black);
+		}
+	}
+
+	&.bg-blue {
+		&::before {
+			background-color: var(--color-blue);
+		}
+	}
+}

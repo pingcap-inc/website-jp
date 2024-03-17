@@ -1,0 +1,20 @@
+.menu-dropdown-cta {
+	&__inner {
+		display: grid;
+		grid-template-columns: 1fr;
+		gap: var(--grid-column-gutter);
+
+		@include media-min($medium) {
+			grid-template-columns: 1fr 1fr;
+		}
+
+		@include media-min($large) {
+			grid-template-columns: repeat(4, 1fr);
+			direction: rtl;
+
+			.card-product {
+				direction: ltr;
+			}
+		}
+	}
+}

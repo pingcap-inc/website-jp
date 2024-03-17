@@ -1,0 +1,27 @@
+.case-study-testimonial {
+	--num-cols: 1;
+
+	display: grid;
+	grid-template-columns: repeat(var(--num-cols), 1fr);
+
+	@include media-min($medium) {
+		--num-cols: 12;
+		gap: var(--grid-column-gutter);
+
+		&__blockquote-container {
+			grid-column: 6 / 12;
+			margin-top: 12rem;
+		}
+	}
+
+	&__image-container {
+		width: 80%;
+		margin: auto;
+		@include media-min($medium) {
+			grid-column: 2 / 6;
+			width: 100%;
+			max-width: 40rem;
+			margin: unset;
+		}
+	}
+}

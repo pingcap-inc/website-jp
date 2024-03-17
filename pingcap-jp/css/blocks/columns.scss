@@ -1,0 +1,302 @@
+.block-columns {
+	&.vertical-center {
+		.block-inner {
+			align-items: center;
+		}
+	}
+	.block-inner {
+		display: grid;
+		grid-template-columns: repeat(var(--grid-num-cols, 1), minmax(0, 1fr));
+		gap: var(--grid-column-gutter);
+	}
+
+	[data-num-col="1"] {
+		@include media-min($large) {
+			--grid-num-cols: 12;
+
+			.block-columns__column {
+				grid-column: 3 / span 8;
+			}
+
+			&.is-8 {
+				.block-section__title-desc {
+					grid-column: 2 / span 10;
+				}
+			}
+
+			&.is-10 {
+				.block-columns__column {
+					grid-column: 2 / span 10;
+				}
+				.block-section__title-desc {
+					grid-column: 2 / span 10;
+				}
+			}
+
+			&.is-12 {
+				.block-columns__column {
+					grid-column: span 12;
+				}
+			}
+		}
+	}
+
+	[data-num-col="2"] {
+		@include media-min($medium) {
+			--grid-num-cols: 2;
+		}
+
+		@include media-min($large) {
+			--grid-num-cols: 12;
+
+			.block-columns__column {
+				&:first-child {
+					grid-column: 2 / span 5;
+				}
+
+				&:last-child {
+					grid-column: span 5;
+				}
+			}
+			&.is-12 {
+				.block-columns__column {
+					&:first-child {
+						grid-column: 1 / span 6;
+					}
+
+					&:last-child {
+						grid-column: span 6;
+					}
+				}
+			}
+		}
+	}
+
+	[data-num-col="2"][data-format="sidebar-left"] {
+		@include media-min($medium) {
+			--grid-num-cols: 3;
+
+			.block-columns__column {
+				&:first-child {
+					grid-column: span 1;
+				}
+
+				&:last-child {
+					grid-column: span 2;
+				}
+			}
+		}
+
+		@include media-min($large) {
+			--grid-num-cols: 12;
+
+			.block-columns__column {
+				&:first-child {
+					grid-column: 2 / span 4;
+				}
+
+				&:last-child {
+					grid-column: 6 / span 6;
+				}
+			}
+		}
+	}
+
+	[data-num-col="2"][data-format="sidebar-right"] {
+		@include media-min($medium) {
+			--grid-num-cols: 3;
+
+			.block-columns__column {
+				&:first-child {
+					grid-column: span 2;
+				}
+
+				&:last-child {
+					grid-column: span 1;
+				}
+			}
+		}
+
+		@include media-min($large) {
+			--grid-num-cols: 12;
+
+			.block-columns__column {
+				&:first-child {
+					grid-column: 2 / span 6;
+				}
+
+				&:last-child {
+					grid-column: 8 / span 4;
+				}
+			}
+		}
+	}
+
+	[data-num-col="3"] {
+		@include media-min($large) {
+			--grid-num-cols: 3;
+		}
+	}
+
+	[data-num-col="4"] {
+		@include media-min($medium) {
+			--grid-num-cols: 2;
+		}
+
+		@include media-min($large) {
+			--grid-num-cols: 4;
+		}
+	}
+
+	.block-inner--has-box-container {
+		z-index: 1;
+		position: relative;
+		padding-top: calc(var(--block-padding-sm-top) * 2);
+		padding-bottom: calc(var(--block-padding-sm-bottom) * 2);
+
+		@include media-min($medium) {
+			padding-top: calc(var(--block-padding-md-top) * 2);
+			padding-bottom: calc(var(--block-padding-md-bottom) * 2);
+		}
+
+		@include media-min($large) {
+			padding-top: calc(var(--block-padding-lg-top) * 1.5);
+			padding-bottom: calc(var(--block-padding-lg-bottom) * 1.5);
+		}
+
+		&::before {
+			z-index: -1;
+			content: "";
+			position: absolute;
+			top: var(--block-padding-sm-top);
+			right: 0;
+			bottom: var(--block-padding-sm-bottom);
+			left: 0;
+
+			background-color: var(--color-white);
+			box-shadow: var(--default-box-shadow);
+			border-radius: var(--default-border-radius);
+
+			@include media-min($medium) {
+				top: var(--block-padding-md-top);
+				bottom: var(--block-padding-md-bottom);
+			}
+
+			@include media-min($large) {
+				top: var(--block-padding-lg-top);
+				bottom: var(--block-padding-lg-bottom);
+			}
+		}
+
+		// add padding to the sides of columns when using the container box display
+		.block-columns__column {
+			padding-left: var(--grid-column-gutter);
+			padding-right: var(--grid-column-gutter);
+		}
+
+		@include media-min($medium) {
+			// remove the column padding added on medium viewports for the 2 column mode
+			&[data-num-col="2"] .block-columns__column {
+				&:first-child {
+					padding-right: 0;
+				}
+
+				&:last-child {
+					padding-left: 0;
+				}
+			}
+		}
+
+		@include media-min($large) {
+			// remove the column padding added on large viewports for both 1 and
+			// 2 column modes
+			&[data-num-col="1"] .block-columns__column,
+			&[data-num-col="2"] .block-columns__column {
+				padding-left: 0;
+				padding-right: 0;
+			}
+
+			// reduce the overall width of the container box for single columns
+			// on large viewports
+			&[data-num-col="1"]::before {
+				// right: calc(var(--grid-column-gutter) * 2.5);
+				// left: calc(var(--grid-column-gutter) * 2.5);
+			}
+		}
+	}
+
+	&.block-container--increase-bottom-padding .block-inner--has-box-container {
+		padding-bottom: calc(var(--block-padding-sm-bottom) * 4);
+
+		@include media-min($medium) {
+			padding-bottom: calc(var(--block-padding-md-bottom) * 4);
+		}
+
+		@include media-min($large) {
+			padding-bottom: calc(var(--block-padding-lg-bottom) * 4);
+		}
+
+		&::before {
+			bottom: calc(var(--block-padding-sm-bottom) * 3);
+
+			@include media-min($medium) {
+				bottom: calc(var(--block-padding-md-bottom) * 3);
+			}
+
+			@include media-min($large) {
+				bottom: calc(var(--block-padding-lg-bottom) * 3);
+			}
+		}
+	}
+
+	&.block-options-padding-remove-top .block-inner--has-box-container {
+		padding-top: calc(var(--block-padding-sm-top));
+
+		@include media-min($medium) {
+			padding-top: calc(var(--block-padding-md-top));
+		}
+
+		@include media-min($large) {
+			padding-top: calc(var(--block-padding-lg-top));
+		}
+
+		&::before {
+			top: 0;
+		}
+	}
+
+	&.block-options-padding-remove-bottom .block-inner--has-box-container {
+		padding-bottom: calc(var(--block-padding-sm-bottom));
+
+		@include media-min($medium) {
+			padding-bottom: calc(var(--block-padding-md-bottom));
+		}
+
+		@include media-min($large) {
+			padding-bottom: calc(var(--block-padding-lg-bottom));
+		}
+
+		&::before {
+			bottom: 0;
+		}
+	}
+
+	&__video-container {
+		position: relative;
+		height: 0;
+		margin-bottom: 2rem;
+		padding-top: 56.25%;
+		display: block;
+
+		@include media-min($large) {
+			margin-bottom: 3.2rem;
+		}
+	}
+
+	&__video-image {
+		@include image-cover-entire-container;
+
+		object-fit: contain;
+		border-radius: var(--default-border-radius);
+	}
+}

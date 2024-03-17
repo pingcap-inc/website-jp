@@ -1,0 +1,53 @@
+{
+    "packages": [
+        {
+            "name": "dfrei/wp-util",
+            "version": "2.1.8",
+            "version_normalized": "2.1.8.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/dougfrei/wp-util.git",
+                "reference": "3ca93598059e8c785b6f2431feb5e601cb5f9208"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/dougfrei/wp-util/zipball/3ca93598059e8c785b6f2431feb5e601cb5f9208",
+                "reference": "3ca93598059e8c785b6f2431feb5e601cb5f9208",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.2"
+            },
+            "time": "2021-11-04T21:13:48+00:00",
+            "type": "library",
+            "installation-source": "dist",
+            "autoload": {
+                "psr-4": {
+                    "WPUtil\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Doug Frei",
+                    "email": "dougfrei@gmail.com"
+                }
+            ],
+            "description": "Collection of common functions and utilities for WordPress",
+            "keywords": [
+                "utilities",
+                "wordpress"
+            ],
+            "support": {
+                "issues": "https://github.com/dougfrei/wp-util/issues",
+                "source": "https://github.com/dougfrei/wp-util/tree/2.1.8"
+            },
+            "install-path": "../dfrei/wp-util"
+        }
+    ],
+    "dev": true,
+    "dev-package-names": []
+}

@@ -1,0 +1,21 @@
+.author-box {
+	position: relative;
+	display: flex;
+	align-items: center;
+
+	&__image {
+		width: 3.2rem;
+		height: 3.2rem;
+		border-radius: 100%;
+		background-color: var(--color-white);
+		margin-right: .8rem;
+	}
+
+	&__author-name{
+		color: var(--body-font-color);
+		text-decoration: none;
+		&:hover {
+			color: var(--button-primary-hover-text-color);
+		}
+	}
+}

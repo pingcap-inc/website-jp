@@ -1,0 +1,107 @@
+.card-tier {
+	background: #f9f9f9;
+	border-radius: var(--card-border-radius);
+	border: 1px solid var(--card-border-color);
+	transition: all var(--default-transition-params);
+	padding: 3.2rem;
+	overflow: hidden;
+
+	&:hover {
+		box-shadow: var(--card-box-shadow);
+	}
+
+	&__title-container {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+	}
+	&__button-group {
+		display: flex;
+		flex-direction: column;
+		margin-top: 0;
+		.button-outline {
+			background-color: transparent;
+			color: var(--color-primary);
+		}
+		.button + .button {
+			margin-top: 1rem;
+		}
+		@include media-min($medium) {
+			flex-direction: row;
+			.button + .button {
+				margin-left: 1rem;
+				margin-top: 0;
+			}
+		}
+	}
+
+	&__subtitle {
+		height: 34px;
+		padding-bottom: 1rem;
+		border-bottom: 1px solid var(--color-gray-xlight);
+	}
+
+	&__content {
+		padding: 3rem 0;
+		ul {
+			list-style: none;
+			li + li {
+				margin-top: 2rem;
+			}
+			&.check {
+				li {
+					position: relative;
+					margin-left: 3rem;
+					&::before {
+						content: "";
+						display: block;
+						position: absolute;
+						top: 6px;
+						left: -28px;
+						width: 12px;
+						height: 12px;
+						background: url("#{$theme-url-base}/media/images/check-blue.svg") center
+							no-repeat;
+					}
+				}
+			}
+		}
+	}
+
+	&__tabs {
+		ul {
+			list-style: none;
+			display: flex;
+			padding-bottom: 3.2rem;
+		}
+		li {
+			width: 12rem;
+			height: 4.8rem;
+			border: 1px solid #e9e9ea;
+			overflow: hidden;
+			cursor: pointer;
+			&.active {
+				border-color: var(--color-blue);
+			}
+		}
+		li + li {
+			margin-left: 2.4rem;
+		}
+	}
+
+	&__tabs-content {
+		display: none;
+		overflow: hidden;
+		overflow-x: auto;
+		margin-bottom: 2.4rem;
+		table {
+			border-radius: unset;
+			td + td {
+				border-left: none;
+			}
+		}
+		&.active {
+			display: block;
+		}
+	}
+}

@@ -1,0 +1,142 @@
+.tmpl-single-post {
+	&__featured-image-container {
+		transform: translateY(-12rem);
+		margin-bottom: -12rem;
+	}
+
+	&__featured-image {
+		border-radius: var(--default-border-radius);
+		box-shadow: var(--default-box-shadow);
+		width: 100%;
+	}
+
+	&__container {
+		position: relative;
+		display: grid;
+		grid-template-columns: minmax(0, 1fr);
+		margin-top: 2rem;
+		margin-bottom: 6rem;
+
+		@include media-min($medium) {
+			margin-top: 4rem;
+		}
+
+		@include media-min($large) {
+			grid-template-columns: repeat(6, 1fr);
+			margin-top: 8rem;
+		}
+	}
+
+	@include media-min($large) {
+		&__share-icons {
+			position: absolute;
+			top: 0;
+			left: 0;
+			bottom: 0;
+		}
+
+		&__content {
+			grid-column: 2 / span 4;
+			overflow: hidden;
+		}
+	}
+
+	&__share-icons {
+		margin-top: 3rem;
+
+		@include media-min($large) {
+			margin-top: 0;
+		}
+	}
+
+	&__share-icons-inner {
+		display: flex;
+		align-items: center;
+		gap: 1rem;
+
+		@include media-min($large) {
+			position: sticky;
+			top: calc(12rem + var(--admin-bar-height, 0px));
+			flex-direction: column;
+			transition: top var(--header-transition-speed) ease-in-out;
+
+			html.scroll-up & {
+				top: calc(8rem + var(--header-height));
+			}
+		}
+	}
+
+	&__share-icons-text {
+		font-size: 1.2rem;
+		font-weight: var(--font-weight-bold);
+		text-transform: uppercase;
+		color: var(--color-blue-dark);
+	}
+
+	.meta-tags {
+		margin-top: 3rem;
+	}
+
+	.author-box {
+		margin-top: 14rem;
+		margin-bottom: 3rem;
+
+		+ .author-box {
+			margin-top: 6rem;
+		}
+	}
+
+	&__post-content {
+		code {
+			background: var(--post-content-code-bg-color);
+			color: var(--post-content-code-text-color);
+		}
+	}
+
+	&__cta {
+		color: var(--color-white);
+		@media only screen and (min-width: $large) {
+			margin-left: 1rem;
+		}
+
+		&.sticky {
+			position: sticky;
+			top: calc(12rem + var(--admin-bar-height, 0px));
+		}
+	}
+
+	&__cta-container {
+		padding: 4rem 3rem;
+		text-align: center;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		background-position: center;
+		background-size: cover;
+		background-repeat: no-repeat;
+		background-color: var(--color-black);
+		border-radius: var(--default-border-radius);
+
+		p {
+			color: var(--color-white);
+		}
+	}
+
+	&__cta-title {
+		color: var(--color-white);
+	}
+
+	&__cta-button {
+		margin-top: 2rem;
+	}
+
+	&__cta-form {
+		flex-direction: column !important;
+	}
+
+	&__icon {
+		vertical-align: middle;
+		margin-top: -2px;
+	}
+}

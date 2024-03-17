@@ -1,0 +1,44 @@
+.stats-carousel {
+	display: flex;
+
+	&__nav-col {
+		flex-grow: 1;
+		display: flex;
+		justify-content: center;
+		align-items: flex-start;
+		padding-top: 87px;
+
+		.stats-carousel--small & {
+			padding-top: 69px;
+		}
+	}
+
+	.embla__nav-arrow {
+		min-width: 16px;
+		min-height: 26px;
+		width: 16px;
+		height: 26px;
+	}
+
+	.embla__container {
+		width: 240px;
+		margin-left: -20px;
+		margin-right: -20px;
+
+		.stats-carousel--small & {
+			width: 204px;
+		}
+	}
+
+	.embla__slide {
+		min-width: 240px;
+		width: 240px;
+		padding-left: 20px;
+		padding-right: 20px;
+
+		.stats-carousel--small & {
+			min-width: 204px;
+			width: 204px;
+		}
+	}
+}

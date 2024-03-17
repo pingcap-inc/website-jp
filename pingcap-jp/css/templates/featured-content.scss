@@ -1,0 +1,86 @@
+.tmpl-featured-content {
+	&__container {
+		padding-bottom: 8rem;
+
+		@include media-min($large) {
+			padding-bottom: 14rem;
+		}
+	}
+
+	&__container-inner {
+		--num-cols: 1;
+
+		display: grid;
+		grid-template-columns: repeat(var(--num-cols), minmax(0, 1fr));
+		gap: var(--grid-column-gutter);
+
+		@include media-min($large) {
+			--num-cols: 3;
+		}
+	}
+
+	&__box {
+		--pull-up-value: -4rem;
+
+		box-shadow: var(--default-box-shadow);
+		border-radius: var(--default-border-radius);
+		transform: translateY(var(--pull-up-value));
+		margin-bottom: var(--pull-up-value);
+		padding: 3rem 2rem;
+
+		@include media-min($medium) {
+			--pull-up-value: -8rem;
+
+			padding: 4rem 3rem 6rem;
+		}
+
+		@include media-min($large) {
+			--pull-up-value: -11rem;
+
+			grid-column: 1 / span 2;
+			padding: 6rem 6rem 8rem;
+		}
+	}
+
+	&__sidebar {
+		padding-top: 2rem;
+
+		@include media-min($large) {
+			padding-top: 8rem;
+		}
+	}
+
+	&__sidebar-section {
+		& + & {
+			margin-top: 6rem;
+		}
+	}
+
+	&__sidebar-link {
+		margin-top: 1.5rem;
+	}
+
+	.hs-form-container {
+		margin-top: 4rem;
+
+		@include media-min($large) {
+			max-width: 600px;
+		}
+	}
+
+	.hs-form-field:not(.hs-fieldtype-booleancheckbox) {
+		@include media-min($medium) {
+			display: grid;
+			grid-template-columns: 185px 1fr;
+			gap: 0 1.5rem;
+
+			.hs-error-msgs {
+				grid-column: 2;
+			}
+
+			& > label {
+				align-self: center;
+			}
+		}
+	}
+}

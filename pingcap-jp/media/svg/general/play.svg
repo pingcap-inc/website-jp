@@ -1,0 +1,6 @@
+<svg viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg">
+    <g fill="none" fill-rule="evenodd">
+        <circle fill="currentColor" cx="40" cy="40" r="40"/>
+        <path d="M30.5 21.446 59.657 40 30.5 58.554V21.446z" stroke="var(--icon-play-arrow-color, #fff)" stroke-width="5" fill="var(--icon-play-arrow-color, #fff)" stroke-linejoin="round"/>
+    </g>
+</svg>

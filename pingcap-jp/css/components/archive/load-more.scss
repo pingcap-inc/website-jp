@@ -1,0 +1,9 @@
+.archive__load-more-container {
+	display: flex;
+	justify-content: center;
+	margin-top: var(--grid-column-gutter);
+
+	@include media-min($medium) {
+		margin-top: 4rem;
+	}
+}

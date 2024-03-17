@@ -1,0 +1,37 @@
+.menu-dropdown-products {
+	&__inner {
+		display: grid;
+		grid-template-columns: repeat(12, 1fr);
+		gap: var(--grid-column-gutter);
+	}
+
+	.card-product {
+		grid-column: span 3;
+	}
+
+	&__links-column {
+		grid-column: span 2;
+		display: flex;
+		flex-direction: column;
+		gap: 1rem;
+
+		a {
+			font-size: 1.4rem;
+			color: var(--anchor-link-normal-color);
+			text-decoration: none;
+			transition: color var(--default-transition-params);
+
+			&:hover,
+			&:active {
+				color: var(--anchor-link-hover-color);
+			}
+		}
+	}
+
+	&__links-column-label {
+		font-size: 1.2rem;
+		font-weight: var(--font-weight-bold);
+		color: rgba(var(--color-rgb-white), 0.3);
+		text-transform: uppercase;
+	}
+}

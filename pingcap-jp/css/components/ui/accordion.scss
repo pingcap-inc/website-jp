@@ -1,0 +1,118 @@
+.accordion {
+	display: flex;
+	flex-direction: column;
+	gap: 1.2rem;
+	margin-left: 3.2rem;
+
+	&__section {
+		border-bottom: 1px solid var(--default-border-color);
+	}
+
+	&__section-active {
+		.accordion__section-content {
+			// content is visible
+			transition: all 0.3s cubic-bezier(1, 0, 1, 0);
+			max-height: 9999px;
+			pointer-events: all;
+		}
+		.block-tabs__section-top {
+			display: block;
+		}
+	}
+
+	&__section-title {
+		display: flex;
+		align-items: center;
+		width: 100%;
+		padding: 0 0 1.2rem;
+		cursor: pointer;
+		color: var(--accordion-section-title-color);
+
+		&::before,
+		&::after {
+			display: none;
+		}
+
+		// default form styling overrides
+		input[type="checkbox"] + &,
+		input[type="radio"] + & {
+			display: flex;
+			padding-left: 0;
+		}
+
+		input:checked ~ & {
+			.accordion__plus-icon::after {
+				opacity: 0;
+			}
+		}
+	}
+
+	&__section-title-text {
+		font: normal normal var(--font-weight-semibold) 1.8rem / 1.72 var(--font-poppins);
+		color: var(--color-dark);
+		
+		&:focus,
+		&:hover {
+			color: var(--anchor-link-hover-color);
+		}
+	}
+
+	&__plus-icon {
+		position: relative;
+		width: 2rem;
+		height: 2rem;
+		margin-right: 1.2rem;
+		background-color: var(--color-blue);
+		border-radius: 50%;
+		margin-left: -3.2rem;
+
+		&::before,
+		&::after {
+			content: "";
+			position: absolute;
+			background-color: var(--color-white);
+		}
+
+		&::before {
+			top: 50%;
+			left: 0;
+			transform: translateY(-50%);
+			width: calc(100% - 10px);
+			height: 1px;
+			margin-left: 5px;
+		}
+
+		&::after {
+			top: 0;
+			left: 50%;
+			transform: translateX(-50%);
+			width: 1px;
+			height: calc(100% - 10px);
+			margin-top: 5px;
+			transition: opacity var(--default-transition-params);
+		}
+	}
+
+	&__section-content {
+		position: relative;
+		transition: all 0.3s cubic-bezier(0, 1, 0, 1);
+		max-height: 0;
+		overflow: hidden;
+		pointer-events: none;
+
+		// content is visible
+		input:checked ~ & {
+			transition: all 0.3s cubic-bezier(1, 0, 1, 0);
+			max-height: 9999px;
+			pointer-events: all;
+
+			.block-tabs__section-top {
+				display: block;
+			}
+		}
+	}
+
+	&__section-content-inner {
+		padding-bottom: 1.2rem;
+	}
+}
