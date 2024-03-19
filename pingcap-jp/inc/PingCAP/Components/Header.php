@@ -63,7 +63,7 @@ class Header implements IComponent
 				<div class="site-header__inner contain">
 					<div class="site-header__logo-container">
 						<a href="<?php echo esc_url(site_url()); ?>" title="<?php echo esc_attr(bloginfo('name')); ?>" aria-label="Home">
-							<img class="site-header__logo" src="https://static.pingcap.com/files/2022/09/25230007/PingCAP-logo.png" alt="PingCAP logo"/>
+							<img class="site-header__logo" src="https://static.pingcap.com/files/2022/09/25230007/PingCAP-logo.png" alt="PingCAP logo" />
 						</a>
 					</div>
 					<div class="site-header__menu">
@@ -102,11 +102,11 @@ class Header implements IComponent
 							?>
 						</nav>
 						<div class="site-header__menu-cta">
-							<a href="https://preview-jp.pingcap.com/demo/" data-gtag="event:go_to_lead_form_page,button_name:Book a Demo,position:header" class="button button-blue-outline dropdown-menu-activate">
-								Book a Demo
+							<a href="/contact-us/" data-gtag="event:go_to_lead_form_page,button_name:Book a Demo,position:header" class="button button-blue-outline dropdown-menu-activate">
+								お問い合わせ
 							</a>
-							<a href="https://preview-jp.pingcap.com/get-started-tidb/" data-gtag="event:start_button_click,button_name:Start Instantly,position:header" class="button dropdown-menu-activate">
-								Start Instantly
+							<a href="/get-started-tidb/" data-gtag="event:start_button_click,button_name:Start Instantly,position:header" class="button dropdown-menu-activate">
+								今すぐ始める
 							</a>
 						</div>
 					</div>

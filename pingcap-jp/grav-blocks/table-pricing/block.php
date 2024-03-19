@@ -44,7 +44,7 @@ if ($pricing) {
                     </select>
                 </div>
                 <p>
-                    Want to try TiDB Cloud in another region?
+                    TiDB Cloudを他のリージョンで試したいですか？
                     <br />
                     <?php
                     Component::render(Components\UI\Button::class, [
