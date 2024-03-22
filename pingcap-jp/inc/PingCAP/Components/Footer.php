@@ -95,8 +95,8 @@ class Footer implements IComponent
 						<div class="site-footer__language-links">
 							<i class="ph-globe"></i>
 							<div>
+								<a href="https://www.pingcap.com">English </a>
 								<a href="https://cn.pingcap.com/">中文</a>
-								<a href="https://pingcap.co.jp/">日本語 </a>
 							</div>
 						</div>
 					</div>

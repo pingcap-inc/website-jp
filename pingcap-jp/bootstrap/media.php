@@ -16,7 +16,7 @@ WPUtil\Media::add_upload_mime_types([
 ]);
 
 // enable post thumbnail support
-// WPUtil\ThemeSupport::post_thumbnails(300, 300, true);
+WPUtil\ThemeSupport::post_thumbnails(300, 300, true);
 
 // set image sizes
 // WPUtil\ThemeSupport::image_sizes([
