@@ -332,6 +332,7 @@ abstract class Event
 	public static function getTimeByOffset(string $offset, string $timezone = 'UTC'): string
 	{
 		$offsetMap = [
+			'JST'=> '+9 hours',
 			'PST'=> '-8 hours',
 			'PDT' => '-7 hours',
 			'CST' => '-6 hours',

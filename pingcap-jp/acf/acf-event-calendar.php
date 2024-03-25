@@ -53,6 +53,7 @@ acf_add_local_field_group(array(
 				'id' => '',
 			),
 			'choices' => array(
+				'JST' => 'JST (UTC +9)',
 				'PST' => 'PST (UTC -8)',
 				'PDT' => 'PDT (UTC -7)',
 				'CST' => 'CST (UTC -6)',
@@ -68,7 +69,7 @@ acf_add_local_field_group(array(
 				'CST-2' => 'CST (UTC +8)',
 				'SGT' => 'SGT (UTC +8)'
 			),
-			'default_value' => 'PST',
+			'default_value' => 'JST',
 			'allow_null' => 0,
 			'multiple' => 0,         // allows for multi-select
 			'ui' => 0,               // creates a more stylized UI

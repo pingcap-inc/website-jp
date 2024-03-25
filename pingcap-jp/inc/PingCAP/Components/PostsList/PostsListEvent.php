@@ -100,17 +100,7 @@ class PostsListEvent implements IComponent
                 'current_page' => $this->current_page,
                 'no_results_message' => $this->no_results_message,
                 'filter_render_functions' => [function () {
-                    $post_ids = $this->getValidPostIds();
-                    $tax_params = $post_ids ? ['object_ids' => $post_ids, 'order' => 'DESC'] : [];
-
                     $cur_location = CPT\Event::getLocationQueryParamValue();
-
-                    $cur_region = CPT\Event::getRegionQueryParamValue();
-                    $region_options = Taxonomy::get_taxonomy_filter_options(
-                        Constants\Taxonomies::REGION,
-                        $tax_params
-                    );
-
                     $cur_search = CPT\Event::getSearchQueryParamValue();
             ?>
                 <div class="posts-list__archive-filters">
@@ -119,14 +109,6 @@ class PostsListEvent implements IComponent
                         <option value="in-person" <?php echo $cur_location === 'in-person' ? 'selected' : ''; ?>>In-Person</option>
                         <option value="virtual" <?php echo $cur_location === 'virtual' ? 'selected' : ''; ?>>Virtual</option>
                         <option value="hybrid" <?php echo $cur_location === 'hybrid' ? 'selected' : ''; ?>>Hybrid</option>
-                    </select>
-                    <select class="banner-case-study-archive__filter-control" name="filter_region" id="filter_region" aria-label="<?php esc_attr_e('Region', Constants\TextDomains::DEFAULT); ?>">
-                        <option value=""><?php esc_html_e('Filter by Region', Constants\TextDomains::DEFAULT); ?></option>
-                        <?php
-                        foreach ($region_options as $option) {
-                            echo $option->render($cur_region); // phpcs:ignore
-                        }
-                        ?>
                     </select>
                     <?php
                     Component::render(Components\UI\InputWithIcon::class, [

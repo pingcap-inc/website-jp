@@ -163,10 +163,9 @@
 			text-align: center;
 			color: #20222b;
 			max-width: 16rem;
-			writing-mode: vertical-rl;
+			writing-mode: vertical-lr;
 			padding: 0 3vw;
 			width: 15%;
-			transform: rotate(180deg);
 			@include media-min($large) {
 				font-size: 30px;
 			}
