@@ -79,7 +79,7 @@ abstract class BlueprintBlocks
 			return [];
 		}
 
-		if ($params['supports_button_gtag']) {
+		if (isset($params['supports_button_gtag']) && $params['supports_button_gtag']) {
 			$fields['grav_link_fields'][] = array(
 				'key' => 'field__' . '_' . $params['name'] . '_gtag',
 				'label' => $params['label'] . ' GTag',
