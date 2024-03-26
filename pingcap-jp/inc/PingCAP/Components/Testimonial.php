@@ -36,7 +36,7 @@ class Testimonial implements IComponent
 			if ($this->attribution)
 			{
 				?>
-				<cite><?php echo esc_html($this->attribution); ?></cite>
+				<cite><?php echo $this->attribution; ?></cite>
 				<?php
 			}
 			?>
