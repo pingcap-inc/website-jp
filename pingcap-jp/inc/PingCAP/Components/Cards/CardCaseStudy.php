@@ -71,7 +71,7 @@ class CardCaseStudy implements IComponent
 
 		$this->title = Arrays::get_value_as_string($params, 'title', fn () => get_the_title($this->post_id));
 		$this->permalink = Arrays::get_value_as_string($params, 'permalink', fn () => get_the_permalink($this->post_id));
-		$this->button_text = Arrays::get_value_as_string($params, 'button_text', __('View Case Study', Constants\TextDomains::DEFAULT));
+		$this->button_text = Arrays::get_value_as_string($params, 'button_text', __('ユースケースを読む', Constants\TextDomains::DEFAULT));
 		$this->customer_name = Arrays::get_value_as_string($params, 'customer_name', $customer_term->name ?? '');
 		$this->customer_logo = $params['customer_logo'] ?? ($customer_term ? Taxonomies\Customer::getLogoImageACFObject($customer_term->term_id) : null);
 		$this->is_featured = Arrays::get_value_as_bool($params, 'is_featured', false);

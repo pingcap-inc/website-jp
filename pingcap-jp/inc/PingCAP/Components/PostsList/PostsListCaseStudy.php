@@ -115,12 +115,6 @@ class PostsListCaseStudy implements IComponent
 						$tax_params
 					);
 			
-					$cur_tag = CPT\CaseStudy::getTagQueryParamValue();
-					$tag_options = Taxonomy::get_taxonomy_filter_options(
-						Constants\Taxonomies::BLOG_TAG,
-						$tax_params
-					);
-			
 					$cur_search = CPT\CaseStudy::getSearchQueryParamValue();
 
 					if ($featured_ids) {
@@ -158,14 +152,6 @@ class PostsListCaseStudy implements IComponent
 								<?php
 								foreach ($industry_options as $option) {
 									echo $option->render($cur_industry); // phpcs:ignore
-								}
-								?>
-							</select>
-							<select class="banner-case-study-archive__filter-control" name="filter_tag" id="filter_tag" aria-label="<?php esc_attr_e('Tag', Constants\TextDomains::DEFAULT); ?>">
-								<option value=""><?php esc_html_e('Filter by Tag', Constants\TextDomains::DEFAULT); ?></option>
-								<?php
-								foreach ($tag_options as $option) {
-									echo $option->render($cur_tag); // phpcs:ignore
 								}
 								?>
 							</select>
