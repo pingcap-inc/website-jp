@@ -148,7 +148,7 @@ class PostsListCaseStudy implements IComponent
 					<div class="posts-list-case-study__filters-container contain">
 						<div class="banner-case-study-archive__filters">
 							<select class="banner-case-study-archive__filter-control" name="filter_industry" id="filter_industry" aria-label="<?php esc_attr_e('Industry', Constants\TextDomains::DEFAULT); ?>">
-								<option value=""><?php esc_html_e('Filter by Industry', Constants\TextDomains::DEFAULT); ?></option>
+								<option value=""><?php esc_html_e('業種でフィルタ', Constants\TextDomains::DEFAULT); ?></option>
 								<?php
 								foreach ($industry_options as $option) {
 									echo $option->render($cur_industry); // phpcs:ignore
@@ -167,12 +167,12 @@ class PostsListCaseStudy implements IComponent
 								'add_input_attrs' => [
 									'id' => 'filter_search',
 									'name' => 'filter_search',
-									'placeholder' => __('Search', Constants\TextDomains::DEFAULT),
+									'placeholder' => __('検索', Constants\TextDomains::DEFAULT),
 									'value' => $cur_search,
-									'aria-label' => __('Search text', Constants\TextDomains::DEFAULT)
+									'aria-label' => __('検索', Constants\TextDomains::DEFAULT)
 								],
 								'add_icon_container_attrs' => [
-									'aria-label' => __('Search', Constants\TextDomains::DEFAULT)
+									'aria-label' => __('検索', Constants\TextDomains::DEFAULT)
 								],
 							]);
 							?>

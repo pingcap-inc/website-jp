@@ -37,7 +37,7 @@ class CaseStudyTestimonial implements IComponent
         $this->content = Arrays::get_value_as_string($params, 'content');
         $this->attribution = Arrays::get_value_as_string($params, 'attribution');
         $this->permalink = Arrays::get_value_as_string($params, 'permalink');
-        $this->button_text = Arrays::get_value_as_string($params, 'button_text', 'Get Case Study');
+        $this->button_text = Arrays::get_value_as_string($params, 'button_text', '詳細を見る');
     }
 
     public function render(): void

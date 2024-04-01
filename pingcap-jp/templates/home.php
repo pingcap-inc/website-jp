@@ -67,12 +67,12 @@ Component::render(Components\Banners\BannerResourceArchive::class, [
 				'add_input_attrs' => [
 					'id' => 'filter_search',
 					'name' => 'filter_search',
-					'placeholder' => __('Search', Constants\TextDomains::DEFAULT),
+					'placeholder' => __('検索', Constants\TextDomains::DEFAULT),
 					'value' => $cur_search,
-					'aria-label' => __('Search text', Constants\TextDomains::DEFAULT)
+					'aria-label' => __('検索', Constants\TextDomains::DEFAULT)
 				],
 				'add_icon_container_attrs' => [
-					'aria-label' => __('Search', Constants\TextDomains::DEFAULT)
+					'aria-label' => __('検索', Constants\TextDomains::DEFAULT)
 				],
 			]);
 
