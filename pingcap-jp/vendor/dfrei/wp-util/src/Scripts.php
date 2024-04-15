@@ -171,7 +171,7 @@ abstract class Scripts
 			}
 
 			if (!isset($_SERVER['RUN_ENV'])) {
-				$params['url'] = str_replace(get_template_directory_uri(), 'https://static.pingcap.com', $params['url']);
+				$params['url'] = str_replace(get_template_directory_uri(), 'https://static.pingcap.co.jp', $params['url']);
 			}
 
 			// add a preload tag if a preload hook is specified

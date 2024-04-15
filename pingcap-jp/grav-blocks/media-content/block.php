@@ -69,7 +69,7 @@ if ($image) {
 				Images::safe_image_output($image, ['class' => implode(' ', $image_classes)]);
 
 				if ($image_link->type === 'video') {
-					do_action('grav_blocks_get_video_link_button', $block, '');
+					do_action('grav_blocks_get_video_link_button');
 				}
 				?>
 			</<?php echo esc_attr($image_container_tag); ?>>

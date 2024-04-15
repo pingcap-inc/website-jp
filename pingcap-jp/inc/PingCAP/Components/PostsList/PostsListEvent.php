@@ -105,10 +105,10 @@ class PostsListEvent implements IComponent
             ?>
                 <div class="posts-list__archive-filters">
                     <select class="posts-list__archive-filter-control" name="filter_location" id="filter_location" aria-label="<?php esc_attr_e('Location', Constants\TextDomains::DEFAULT); ?>">
-                        <option value=""><?php esc_html_e('Filter by Event Type', Constants\TextDomains::DEFAULT); ?></option>
-                        <option value="in-person" <?php echo $cur_location === 'in-person' ? 'selected' : ''; ?>>In-Person</option>
-                        <option value="virtual" <?php echo $cur_location === 'virtual' ? 'selected' : ''; ?>>Virtual</option>
-                        <option value="hybrid" <?php echo $cur_location === 'hybrid' ? 'selected' : ''; ?>>Hybrid</option>
+                        <option value=""><?php esc_html_e('イベント形式でフィルタ', Constants\TextDomains::DEFAULT); ?></option>
+                        <option value="in-person" <?php echo $cur_location === 'in-person' ? 'selected' : ''; ?>>会場</option>
+                        <option value="virtual" <?php echo $cur_location === 'virtual' ? 'selected' : ''; ?>>オンライン</option>
+                        <option value="hybrid" <?php echo $cur_location === 'hybrid' ? 'selected' : ''; ?>>ハイブリッド</option>
                     </select>
                     <?php
                     Component::render(Components\UI\InputWithIcon::class, [

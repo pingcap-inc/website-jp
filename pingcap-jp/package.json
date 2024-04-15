@@ -20,8 +20,6 @@
 		"instantsearch.js": "^4.65.0",
 		"normalize.css": "8",
 		"prismjs": "^1.25.0",
-		"qrcode": "^1.5.3",
-		"swiper": "8.4.7",
 		"vanilla-lazyload": "^17.8.3"
 	},
 	"devDependencies": {

@@ -85,7 +85,6 @@ class CardResource implements IComponent
 		$this->is_featured = Arrays::get_value_as_bool($params, 'is_featured', false);
 		$this->add_container_classes = Arrays::get_value_as_array($params, 'add_container_classes');
 		$this->add_container_attrs = Arrays::get_value_as_array($params, 'add_container_attrs');
-		$this->display_region = ACF::get_field_array('display_region',  $this->post_id);
 
 		if (!$this->category) {
 			switch (get_post_type($this->post_id)) {
@@ -172,24 +171,6 @@ class CardResource implements IComponent
 			}
 		}
 
-		if ($this->display_region && function_exists('geot_country_code')) {
-
-			$regions = [];
-
-			foreach ($this->display_region as $cur_region) {
-				$region_mapping = [
-					'apac' => Constants\Region::APAC,
-					'emea' => Constants\Region::EMEA,
-					'na'   => Constants\Region::NA,
-				];
-				$regions = array_merge($regions, $region_mapping[$cur_region] ?? []);
-			}
-
-			if (!in_array(geot_country_code(), $regions)) {
-				$container_classes[] = 'hide';
-			}
-		}
-
 		$container_attrs = array_merge([
 			'class' => esc_attr(implode(' ', $container_classes)),
 			'href' => esc_url($this->permalink)
@@ -217,7 +198,7 @@ class CardResource implements IComponent
 						<div class="card-resource__category"><?php echo esc_html($this->category); ?></div>
 						<?php if (get_post_type($this->post_id) === Constants\CPT::BLOG) { ?>
 							<div class="card-resource__date"><?php echo get_the_date('F j, Y', $this->post_id); ?></div>
-						<? } ?>
+						<?php } ?>
 					</div>
 				<?php
 				}

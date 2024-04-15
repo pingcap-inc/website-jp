@@ -49,7 +49,7 @@ $is_video_mode =  ACF::get_sub_field_bool('video_mode');
                                  <?php
                                  Images::safe_image_output($video_image, ['class' => 'block-columns__video-image']);
  
-                                 do_action('grav_blocks_get_video_link_button', $block, '');
+                                 do_action('grav_blocks_get_video_link_button');
                                  ?>
                              </a>
                          </div>

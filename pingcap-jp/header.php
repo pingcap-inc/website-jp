@@ -21,7 +21,7 @@ use PingCAP\{ Components, Constants };
 	<meta name="referrer" content="no-referrer-when-downgrade" />
 
 	<link rel="apple-touch-icon" sizes="180x180" href="<?php echo esc_url(get_template_directory_uri()); ?>/media/favicon/apple-touch-icon.png">
-	<link rel="manifest" href="<?php echo esc_url(get_template_directory_uri()); ?>/media/favicon/site.webmanifest">
+	<!-- <link rel="manifest" href="<?php echo esc_url(get_template_directory_uri()); ?>/media/favicon/site.webmanifest"> -->
 	<meta name="msapplication-TileColor" content="#ffffff">
 	<meta name="msapplication-config" content="<?php echo esc_url(get_template_directory_uri()); ?>/media/favicon/browserconfig.xml">
 	<meta name="theme-color" content="#ffffff">

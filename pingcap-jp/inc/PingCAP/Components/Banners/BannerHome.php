@@ -99,10 +99,10 @@ class BannerHome implements IComponent
 				<div class="banner-home__video">
 					<div class="banner-home__video-content">
 						<div class="banner-home__video-wrapper">
-							<a class="block-columns__video-container js--trigger-video-modal ignore-link-styles" href="https://static.pingcap.com/files/2023/06/12233132/20230613-143048.mp4">
-								<img class="block-columns__video-image" src="https://static.pingcap.com/files/2023/05/17231954/20230518-141922.png">
+							<a class="block-columns__video-container js--trigger-video-modal ignore-link-styles" href="https://static.pingcap.co.jp/files/2023/06/12233132/20230613-143048.mp4">
+								<img class="block-columns__video-image" src="https://static.pingcap.co.jp/files/2023/05/17231954/20230518-141922.png">
 								<?php
-								do_action('grav_blocks_get_video_link_button', $block, '');
+								do_action('grav_blocks_get_video_link_button');
 								?>
 							</a>
 						</div>

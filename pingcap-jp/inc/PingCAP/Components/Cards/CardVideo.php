@@ -38,7 +38,7 @@ class CardVideo implements IComponent
                     <?php
                     Images::safe_image_output($this->video_image, ['class' => 'block-columns__video-image']);
 
-                    do_action('grav_blocks_get_video_link_button', $block, '');
+                    do_action('grav_blocks_get_video_link_button');
                     ?>
                 </a>
             <?php

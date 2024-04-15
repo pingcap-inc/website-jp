@@ -51,7 +51,7 @@ if ($case_study_id) {
 				?>
 				<div class="block-case-study__content">
 					<h5 class="block-case-study__post-title"><?php echo esc_html(get_the_title($case_study_id)); ?></h5>
-					<?php echo wp_kses_post(wpautop(get_the_excerpt($case_study_id))); ?>
+					<?php echo wp_kses_post(wpautop(wp_strip_all_tags(substr(get_the_excerpt($case_study_id), 0, 200) . '...'))); ?>
 				</div>
 				<div class="block-case-study__btn-container">
 					<a class="button" href="<?php echo esc_url(get_the_permalink($case_study_id)); ?>"><?php echo esc_html($link_text); ?></a>

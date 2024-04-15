@@ -40,7 +40,7 @@ $is_feature_right = Arrays::get_value_as_string($values, 'format');
 				</div>
 			<?php } ?>
 		</div>
-	<? } ?>
+	<?php } ?>
 	<?php
 	foreach ($link_columns as $link_column) {
 		$label = Arrays::get_value_as_string($link_column, 'label');

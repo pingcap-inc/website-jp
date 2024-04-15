@@ -186,7 +186,7 @@ add_filter('grav_blocks_process_video_url', function ($process_video, $url) {
 /**
  * Output the video button markup when requested
  */
-add_action('grav_blocks_get_video_link_button', function ($block, $video_url) {
+add_action('grav_blocks_get_video_link_button', function ($video_url) {
 	WPUtil\Component::render(PingCAP\Components\UI\PlayVideoOverlay::class, [
 		'video_url' => $video_url
 	]);

@@ -6,8 +6,8 @@ const CopyPlugin = require('copy-webpack-plugin');
 const devMode = process.env.NODE_ENV === 'development';
 const PUBLIC_PATH =
   process.env.NODE_ENV === 'prod'
-    ? 'https://static.pingcap.com/dist/'
-    : `/wp-content/themes/pingcap-jp/dist/`;
+    ? 'https://static.pingcap.co.jp/dist'
+    : `/wp-content/themes/pingcap-jp/dist`;
 
 module.exports = {
   mode: devMode ? 'development' : 'production',
@@ -15,7 +15,7 @@ module.exports = {
   devtool: devMode ? 'source-map' : false,
   output: {
     path: path.join(__dirname, '/dist'),
-    publicPath: PUBLIC_PATH,
+    publicPath: PUBLIC_PATH + '/',
     filename: 'js/[name].min.js',
     chunkFilename: 'js/[name].bundle.js',
     clean: true
