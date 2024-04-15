@@ -1,0 +1,41 @@
+name: Deploy CI
+
+on:
+  workflow_dispatch:
+
+jobs:
+  deploy-prod:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 18
+          cache: 'yarn'
+          cache-dependency-path: pingcap-jp/yarn.lock
+      - name: Build
+        run: |
+          cd pingcap-jp
+          yarn install
+          yarn build:prod
+      - name: S3 sync
+        uses: jakejarvis/s3-sync-action@master
+        env:
+          AWS_S3_BUCKET: ${{ secrets.AWS_S3_BUCKET }}
+          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          AWS_REGION: 'us-west-1'
+          SOURCE_DIR: 'pingcap-jp/dist'
+          DEST_DIR: 'dist'
+      - name: Deploy server
+        uses: easingthemes/ssh-deploy@main
+        with:
+          REMOTE_HOST: ${{ secrets.DEPLOY_HOST }}
+          REMOTE_USER: ${{ secrets.DEPLOY_USER }}
+          SSH_PRIVATE_KEY: ${{ secrets.DEPLOY_KEY }}
+          REMOTE_PORT: ${{ secrets.DEPLOY_PORT }}
+          SOURCE: 'pingcap-jp'
+          TARGET: ${{ secrets.DEPLOY_PATH }}
+          EXCLUDE: 'pingcap-jp/node_modules/'
+          SCRIPT_AFTER: sh ${{ secrets.DEPLOY_PATH }}/refresh.sh
+         
