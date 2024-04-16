@@ -88,7 +88,7 @@ class BlockCarousel {
 	}
 
 	setBackgroundColor() {
-		const color = this.el.querySelector('.is-selected').getAttribute('data-color');
+		const color = this.el.querySelector('.is-selected')?.getAttribute('data-color');
 		if(color) {
 			this.el.style.backgroundColor = color;
 		}
