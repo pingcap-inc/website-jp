@@ -23,8 +23,8 @@ window.dataLayer = window.dataLayer || [];
 function gtag(eventLevelVariables) {
 	const path = window.location.pathname.split('/')[1];
 	window.dataLayer.push({
-		site: 'en',
-		page_category: `${PAGE_CATEGORY_MAP[path] || path}-en`,
+		site: 'jp',
+		page_category: `${PAGE_CATEGORY_MAP[path] || path}-jp`,
 		page_category2: PAGE_CATEGORY2_MAP[path] || '',
 		...eventLevelVariables
 	});
