@@ -72,11 +72,6 @@ Component::render(Components\Banners\BannerResource::class, $banner_params);
 						<?php the_content(); ?>
 					</div>
 
-					<?php if ($post_type === 'post' && ACF::get_field_bool('field_blog_button_link_enable_post_button_link')) { ?>
-						<br />
-						<p><a href="<?php echo ACF::get_field_string('field_blog_button_link_post_button_url'); ?>" class="button"><?php echo ACF::get_field_string('field_blog_button_link_post_button_text'); ?></a></p>
-					<?php } ?>
-
 					<?php
 					$posttags = get_the_tags();
 					if ($posttags) {
