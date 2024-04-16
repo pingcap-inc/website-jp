@@ -41,7 +41,7 @@ jobs:
       - name: Invalidate
         uses: chetan/invalidate-cloudfront-action@v2
         env:
-          PATHS: 'dist'
+          PATHS_FROM: 'deploy/.updated_files'
           AWS_REGION: 'us-east-1'
           DISTRIBUTION: ${{ secrets.DISTRIBUTION }}
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
