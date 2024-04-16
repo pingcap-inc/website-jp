@@ -16,6 +16,7 @@
 		"@babel/runtime": "^7.20.1",
 		"algoliasearch": "^4.19.1",
 		"embla-carousel": "^8.0.0",
+		"embla-carousel-class-names": "^8.0.2",
 		"google-libphonenumber": "^3.2.34",
 		"instantsearch.js": "^4.65.0",
 		"normalize.css": "8",

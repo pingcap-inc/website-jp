@@ -2477,6 +2477,11 @@ electron-to-chromium@^1.4.668:
   resolved "https://registry.npmmirror.com/electron-to-chromium/-/electron-to-chromium-1.4.682.tgz#27577b88ccccc810e09b05093345cf1830f1bd65"
   integrity sha512-oCglfs8yYKs9RQjJFOHonSnhikPK3y+0SvSYc/YpYJV//6rqc0/hbwd0c7vgK4vrl6y2gJAwjkhkSGWK+z4KRA==
 
+embla-carousel-class-names@^8.0.2:
+  version "8.0.2"
+  resolved "https://registry.npmmirror.com/embla-carousel-class-names/-/embla-carousel-class-names-8.0.2.tgz#955c0a1299d5560c2e9a0dee103fbad076f3beaf"
+  integrity sha512-MjBco3YM/cBtqp2PLro/LTGiqJCkr0gszvenLzSzMRzo4I6RhPQJ3I7870+K9VoLyMF+CFrwEFxLLIFortOrkw==
+
 embla-carousel@^8.0.0:
   version "8.0.0"
   resolved "https://registry.npmmirror.com/embla-carousel/-/embla-carousel-8.0.0.tgz#164d0faafe3220c2584c08d45a738c9fb4efc344"
