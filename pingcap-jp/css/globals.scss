@@ -229,17 +229,21 @@ pre {
 	display: none !important;
 }
 
-.is-mobile-hide {
-	display: block;
-	@include media-max($medium) {
-		display: none;
+@include media-max($medium) {
+	.is-mobile-hide {
+		display: none !important;
 	}
 }
 
-.is-desktop-hide {
-	display: none;
-	@include media-max($large) {
-		display: block;
+@include media-max($large) {
+	.is-ipad-hide {
+		display: none !important;
+	}
+}
+
+@include media-min($large) {
+	.is-desktop-hide {
+		display: none !important;
 	}
 }
 
@@ -350,6 +354,14 @@ input#firstname-125bf70d-1eba-4cf8-bb1d-2e4a422a875d[type="text"] {
 	box-shadow: var(--default-box-shadow);
 }
 
+#ct-ultimate-cookie-close-modal {
+	padding: 5px 10px;
+}
+
+.cli-style-v2 .cli-plugin-main-link {
+	color: var(--color-white) !important;
+}
+
 .is-w-8 {
 	width: 80%;
 	margin: auto;
@@ -391,11 +403,36 @@ input#firstname-125bf70d-1eba-4cf8-bb1d-2e4a422a875d[type="text"] {
 }
 
 .tidb-logo {
-	background: url('https://static.pingcap.co.jp/files/2023/11/07210859/TiDB.svg') no-repeat center;
+	background: url(https://static.pingcap.com/files/2023/11/07210859/TiDB.svg) no-repeat center;
 	background-size: contain;
 	height: 52px;
 	width: 128px;
 	display: inline-block;
 	vertical-align: middle;
 	margin-top: -2px;
+}
+
+//block cta plugin
+.ub_call_to_action {
+	background-color: #f8f8f8;
+	border-width: 2px;
+	border-color: #ececec;
+	.ub_call_to_action_headline_text {
+		font-size: 30px;
+		color: inherit;
+		text-align: center;
+	}
+	.ub_cta_content_text {
+		font-size: 16px;
+		color: inherit;
+		text-align: center;
+	}
+	.ub_cta_button {
+		background-color: #09a6f2;
+		width: 250px;
+	}
+	.ub_cta_button_text {
+		color: #ffffff;
+		font-size: 16px;
+	}
 }

@@ -1,7 +1,11 @@
 .tmpl-single-post {
 	&__featured-image-container {
-		transform: translateY(-12rem);
-		margin-bottom: -12rem;
+		transform: translateY(-6rem);
+		margin-bottom: -6rem;
+		@include media-min($medium) {
+			transform: translateY(-12rem);
+			margin-bottom: -12rem;
+		}
 	}
 
 	&__featured-image {
@@ -23,7 +27,6 @@
 
 		@include media-min($large) {
 			grid-template-columns: repeat(6, 1fr);
-			margin-top: 8rem;
 		}
 	}
 
@@ -87,6 +90,9 @@
 	}
 
 	&__post-content {
+		@media only screen and (min-width: $large) {
+			padding: 0 0.8rem;
+		}
 		code {
 			background: var(--post-content-code-bg-color);
 			color: var(--post-content-code-text-color);
@@ -95,9 +101,7 @@
 
 	&__cta {
 		color: var(--color-white);
-		@media only screen and (min-width: $large) {
-			margin-left: 1rem;
-		}
+		margin-bottom: 1.6rem;
 
 		&.sticky {
 			position: sticky;
