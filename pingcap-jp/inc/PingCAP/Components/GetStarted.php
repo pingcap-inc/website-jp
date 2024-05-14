@@ -116,6 +116,9 @@ class GetStarted implements IComponent
 				}
 				?>
 			</div>
+			<div class="get-started__footer-content">
+				<a class="button" href="https://github.com/pingcap/tidb" data-gtag="event:product_download,tidb_download_version:view_on_github"><i class="icon-github"></i>View on GitHub</a>
+			</div>
 		</div>
 		<?php
 	}
