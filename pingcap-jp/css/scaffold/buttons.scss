@@ -178,4 +178,14 @@ input[type="submit"],
 			justify-content: center;
 		}
 	}
+
+	.icon-github {
+		background: url("https://static.pingcap.com/files/2024/04/25211345/github.png") no-repeat
+			center/contain;
+		height: 2.4rem;
+		width: 2.4rem;
+		display: inline-block;
+		vertical-align: middle;
+		margin-right: 6px;
+	}
 }

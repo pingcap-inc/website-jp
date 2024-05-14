@@ -7,6 +7,7 @@ use Blueprint\Images;
 
 class GetStarted implements IComponent
 {
+	public string $title = '';
 	public array $platforms = [];
 
 	public function __construct(array $params)
