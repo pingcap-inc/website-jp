@@ -8,7 +8,7 @@ use PingCAP\Models\AccordionSection;
 
 $format = isset($format) && is_string($format) ? $format : ACF::get_sub_field_string('format');
 $columns = isset($columns) && is_array($columns) ? $columns : ACF::get_sub_field_array('columns');
-$column_num = isset($format) && is_string($column_num) ? $column_num : ACF::get_sub_field_string('column_num');
+$column_num = isset($column_num) && is_string($column_num) ? $column_num : ACF::get_sub_field_string('column_num');
 
 if ($columns) {
 	$block_inner_classes = [
