@@ -58,12 +58,12 @@ Component::render(Components\Banners\BannerDefault::class, [
 									'platforms' => ACF::get_field_array('platforms'),
 									'title' => ACF::get_field_string('platform_title')
 								]);
-								Component::render(Components\PackageDownload::class, [
-									'version' => ACF::get_field_array('package_version'),
-									'packages' => ACF::get_field_array('package'),
-									'title' => ACF::get_field_string('package_download_title'),
-									'page_link' => ACF::get_field_array('package_download_page_link')
-								]);
+								// Component::render(Components\PackageDownload::class, [
+								// 	'version' => ACF::get_field_array('package_version'),
+								// 	'packages' => ACF::get_field_array('package'),
+								// 	'title' => ACF::get_field_string('package_download_title'),
+								// 	'page_link' => ACF::get_field_array('package_download_page_link')
+								// ]);
 
 								break;
 						}
