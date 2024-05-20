@@ -678,7 +678,7 @@ class BannerDefault implements IComponent
 		}
 
 	?>
-		<div class="<?php echo esc_attr(implode(' ', $banner_classes)); ?>" style="background-image: url(<?php echo $this->banner_bg["url"]; ?>)">
+		<div class="<?php echo esc_attr(implode(' ', $banner_classes)); ?>" style="background-image: url(<?php echo $this->banner_bg ? $this->banner_bg['url'] : ''; ?>)">
 			<div class="banner-default__inner contain" data-test="<?php echo  $this->banner_bg_color; ?>">
 				<?php
 				if ($this->banner_display_type === 'use-case' && $this->use_case_illustration) {
