@@ -58,7 +58,8 @@ add_filter('grav_blocks_image_tag', function ($default_markup, $tag, $attributes
 
 	$attributes['src'] = '"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGQAAAABCAQAAACC0sM2AAAADElEQVR42mNkGCYAAAGSAAIVQ4IOAAAAAElFTkSuQmCC"'; // 100x1
 	$attributes['data-src'] = $acf_image_object['url'];
-	$attributes['class'] = '"lazy ' . str_replace('"', '', $attributes['class']) . '"';
+	// $attributes['class'] = '"lazy ' . str_replace('"', '', $attributes['class']) . '"';
+	$attributes['class'] = isset($attributes['class']) ? '"lazy ' . str_replace('"', '', $attributes['class']) . '"' : '"lazy"';
 	$attributes['title'] = '""';
 
 	// check for elements specific image instances by classname
