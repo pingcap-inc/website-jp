@@ -87,6 +87,10 @@ module.exports = {
           from: "prism-js",
           to: "prism-js",
         },
+        {
+          from: "tidb-user-day",
+          to: "tidb-user-day",
+        },
       ],
     }),
     new DefinePlugin(
