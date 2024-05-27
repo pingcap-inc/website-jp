@@ -1,9 +1,11 @@
 <?php
-use PingCAP\{ Components, Constants };
+
+use PingCAP\{Components, Constants};
 
 ?>
 <!doctype html>
 <html <?php language_attributes(); ?>>
+
 <head>
 	<?php
 	do_action('global_head_top_content');
@@ -28,6 +30,11 @@ use PingCAP\{ Components, Constants };
 
 	<link rel="pingback" href="<?php bloginfo('pingback_url'); ?>">
 
+	<?php if (is_page_template('templates/page-tidb-user-day.php')) { ?>
+		<link rel="stylesheet" href="<?php echo esc_url(get_template_directory_uri()); ?>/tidb-user-day/assets/css/index.css">
+		<script src="<?php echo esc_url(get_template_directory_uri()); ?>/tidb-user-day/assets/js/main.js" defer></script>
+	<?php } ?>
+
 	<?php
 	wp_head();
 
@@ -36,6 +43,7 @@ use PingCAP\{ Components, Constants };
 	}
 	?>
 </head>
+
 <body id="body" <?php body_class(); ?>>
 	<?php
 	if (!defined('IGNORE_USER_SCRIPTS') || !constant('IGNORE_USER_SCRIPTS')) {
