@@ -837,27 +837,6 @@ get_header();
             </div>
         </section>
         <!-- section -->
-        <section class="l-section tw-py-[4.2rem] md:tw-py-[8rem] tw-bg-[#3d3fea]" id="entry">
-            <div class="l-wrap">
-                <div class="l-content is-w-1172">
-                    <div class="l-inner">
-                        <div class="p-form">
-                            <div class="p-form_left">
-                                <h2 class="a-heading ">
-                                    <span class="a-heading_text-one  tw-text-white tw-text-[4rem] md:tw-text-[5.2rem] tw-leading-tight">TiDB User Day 2024</span>
-                                    <span class="a-heading_text-two  tw-text-white tw-text-[2.4rem] md:tw-text-[3.4rem] tw-leading-normal">イベントの参加申込</span>
-                                </h2>
-                            </div>
-                            <div class="p-form_right">
-                                <div class="p-form_item">
-                                    <!-- フォームはここに記入ください。 -->
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
         <?php
         Vendor\BlueprintBlocks::safe_display();
         ?>
