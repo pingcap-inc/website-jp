@@ -4,6 +4,8 @@
  * Template Name: TiDB User Day 2024
  */
 
+use WPUtil\{Vendor};
+
 get_header();
 
 ?>
