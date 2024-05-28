@@ -126,26 +126,6 @@ get_header();
                                         </span>
                                     </a>
                                 </li>
-                                <li>
-                                    <a href="#day2" class="a-button is-left is-design-square is-type-solid-white tw-font-bold js-scroll">
-                                        <span class="a-button_inner ">
-                                            <span class="a-button_text">7月4日（日）</span><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20">
-                                                <rect width="20" height="20" style="fill:none;" />
-                                                <path d="M8.74,13.34l-2.6-2.6c-.5-.5-1.3-.5-1.8,0s-.5,1.3,0,1.7h0l4.7,4.7c.3,.3,.7,.4,1,.4s.7-.1,.9-.4l4.7-4.7c.2-.2,.4-.5,.4-.9,0-.3-.1-.6-.4-.9-.2-.2-.6-.4-.9-.4s-.7,.1-.9,.4l-2.6,2.6V3.74c0-.3-.1-.6-.4-.9-.5-.5-1.3-.5-1.8,0-.1,.3-.3,.6-.3,.9V13.34h0Z" />
-                                            </svg>
-                                        </span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#day3" class="a-button is-left is-design-square is-type-solid-white tw-font-bold js-scroll">
-                                        <span class="a-button_inner ">
-                                            <span class="a-button_text">7月5日（月）</span><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20">
-                                                <rect width="20" height="20" style="fill:none;" />
-                                                <path d="M8.74,13.34l-2.6-2.6c-.5-.5-1.3-.5-1.8,0s-.5,1.3,0,1.7h0l4.7,4.7c.3,.3,.7,.4,1,.4s.7-.1,.9-.4l4.7-4.7c.2-.2,.4-.5,.4-.9,0-.3-.1-.6-.4-.9-.2-.2-.6-.4-.9-.4s-.7,.1-.9,.4l-2.6,2.6V3.74c0-.3-.1-.6-.4-.9-.5-.5-1.3-.5-1.8,0-.1,.3-.3,.6-.3,.9V13.34h0Z" />
-                                            </svg>
-                                        </span>
-                                    </a>
-                                </li>
                             </ul>
                         </div>
                     </div>
@@ -165,33 +145,15 @@ get_header();
                                         </label>
                                     </li>
                                     <li>
-                                        <input type="checkbox" name="timetable" id="tag1" value="tag1" class="p-timetable-sort_checkbox">
-                                        <label for="tag1">
-                                            タグ1
+                                        <input type="checkbox" name="timetable" id="oltp" value="oltp" class="p-timetable-sort_checkbox">
+                                        <label for="oltp">
+                                            OLTP
                                         </label>
                                     </li>
                                     <li>
-                                        <input type="checkbox" name="timetable" id="tag2" value="tag2" class="p-timetable-sort_checkbox">
-                                        <label for="tag2">
-                                            タグ2
-                                        </label>
-                                    </li>
-                                    <li>
-                                        <input type="checkbox" name="timetable" id="session" value="session" class="p-timetable-sort_checkbox">
-                                        <label for="session">
-                                            セッション
-                                        </label>
-                                    </li>
-                                    <li>
-                                        <input type="checkbox" name="timetable" id="workshop" value="workshop" class="p-timetable-sort_checkbox">
-                                        <label for="workshop">
-                                            ワークショップ
-                                        </label>
-                                    </li>
-                                    <li>
-                                        <input type="checkbox" name="timetable" id="zenkaku" value="zenkaku" class="p-timetable-sort_checkbox">
-                                        <label for="zenkaku">
-                                            全角12文字以内推奨
+                                        <input type="checkbox" name="timetable" id="htap" value="htap" class="p-timetable-sort_checkbox">
+                                        <label for="htap">
+                                            HTAP
                                         </label>
                                     </li>
                                 </ul>
@@ -209,13 +171,29 @@ get_header();
                                         <div class="p-timetable-item_inner">
                                             <div class="p-timetable-item_left">
                                                 <p class="p-timetable-item_date">
-                                                    10:00 - 10:10
+                                                    10:00 - 10:15
                                                 </p>
                                             </div>
                                             <div class="p-timetable-item_right">
                                                 <h4 class="a-heading ">
                                                     <span class="a-heading_text-one  tw-text-[2rem] tw-font-bold tw-leading-snug">ご挨拶</span>
                                                 </h4>
+                                                <div class="tw-mt-[1.2rem] tw-grid tw-grid-cols-1 tw-gap-[1rem]">
+                                                    <div class="p-timetable-item_speaker">
+                                                        <div class="p-timetable-item_speaker-visual">
+                                                            <div class="a-image is-fit">
+                                                                <picture>
+                                                                    <source type="image/webp" srcset="<?php echo esc_url(get_template_directory_uri()); ?>/tidb-user-day/assets/img/speaker_Eri_Han.webp" width="120" height="120">
+                                                                    <img src="<?php echo esc_url(get_template_directory_uri()); ?>/tidb-user-day/assets/img/speaker_Eri_Han.png" class="" width="120" height="120" alt="Eric Han" loading="lazy" decoding="async">
+                                                                </picture>
+                                                            </div>
+                                                        </div>
+                                                        <div class="p-timetable-item_speaker-content">
+                                                            <h5 class="tw-text-[1.6rem] tw-font-bold tw-leading-snug">PingCAP株式会社</h5>
+                                                            <p class="tw-text-[1.4rem] md:tw-text-[1.6rem] tw-mt-1">代表取締役社長 Eric Han</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
@@ -223,102 +201,37 @@ get_header();
                                         <div class="p-timetable-item_inner">
                                             <div class="p-timetable-item_left">
                                                 <p class="p-timetable-item_date">
-                                                    10:10 - 11:10
+                                                    10:15 - 10:45
                                                 </p>
-                                                <ul class="p-timetable-item_tags tw-mt-2">
-                                                    <li data-tags="tag1">
-                                                        <span>タグ1</span>
-                                                    </li>
-                                                    <li data-tags="tag2">
-                                                        <span>タグ2</span>
-                                                    </li>
-                                                </ul>
                                             </div>
                                             <div class="p-timetable-item_right">
                                                 <h4 class="a-heading ">
-                                                    <span class="a-heading_text-one  tw-text-[2rem] tw-font-bold tw-leading-snug">TiDBとMySQLと未来　*同時通訳 (当日のみ)</span>
+                                                    <span class="a-heading_text-one  tw-text-[2rem] tw-font-bold tw-leading-snug">Beyond the Scalability：Subtitle: PingCAP is dedicated to building TiDB, an Open Source, Cloud Native, distributed, MySQL compatible database</span>
                                                 </h4>
-                                                <div class="p-timetable-item_text js-text-more">
-                                                    <div class="p-timetable-item_text-inner">
-                                                        <p>PingCAPのセッションでは、米国本社より共同創業者兼CTOのEd HuangとMySQLのInnoDB元開発者でHeatWaveの開発リードを担っていたシニアアーキテクトのSunny Bainsが来日し、TiDBの最新情報をお届けします。</p>
-                                                    </div>
-                                                    <div class="tw-mt-2 tw-flex tw-justify-end">
-                                                        <button type="button" class="p-timetable-item_text-button js-text-more-button">
-                                                            <span>▼続きをみる</span>
-                                                            <span>▲たたむ</span>
-                                                        </button>
-                                                    </div>
-                                                </div>
                                                 <div class="tw-mt-[1.2rem] tw-grid tw-grid-cols-1 tw-gap-[1rem]">
                                                     <div class="p-timetable-item_speaker">
                                                         <div class="p-timetable-item_speaker-visual">
                                                             <div class="a-image is-fit">
                                                                 <picture>
-                                                                    <source type="image/webp" srcset="<?php echo esc_url(get_template_directory_uri()); ?>/tidb-user-day/assets/img/speaker01.webp" width="120" height="120">
-                                                                    <img src="<?php echo esc_url(get_template_directory_uri()); ?>/tidb-user-day/assets/img/speaker01.png" class="" width="120" height="120" alt="Ed Huang" loading="lazy" decoding="async">
+                                                                    <source type="image/webp" srcset="<?php echo esc_url(get_template_directory_uri()); ?>/tidb-user-day/assets/img/speaker_Max_Liu.webp" width="120" height="120">
+                                                                    <img src="<?php echo esc_url(get_template_directory_uri()); ?>/tidb-user-day/assets/img/speaker_Max_Liu.png" class="" width="120" height="120" alt="Max Liu" loading="lazy" decoding="async">
                                                                 </picture>
                                                             </div>
                                                         </div>
                                                         <div class="p-timetable-item_speaker-content">
-                                                            <h5 class="tw-text-[1.6rem] tw-font-bold tw-leading-snug">PingCAP Inc.</h5>
-                                                            <p class="tw-text-[1.4rem] md:tw-text-[1.6rem] tw-mt-1">共同創業者兼CTO Ed Huang</p>
-                                                        </div>
-                                                    </div>
-                                                    <div class="p-timetable-item_speaker">
-                                                        <div class="p-timetable-item_speaker-visual">
-                                                            <div class="a-image is-fit">
-                                                                <picture>
-                                                                    <source type="image/webp" srcset="<?php echo esc_url(get_template_directory_uri()); ?>/tidb-user-day/assets/img/speaker02.webp" width="120" height="120">
-                                                                    <img src="<?php echo esc_url(get_template_directory_uri()); ?>/tidb-user-day/assets/img/speaker02.png" class="" width="120" height="120" alt="Ed Huang" loading="lazy" decoding="async">
-                                                                </picture>
-                                                            </div>
-                                                        </div>
-                                                        <div class="p-timetable-item_speaker-content">
-                                                            <h5 class="tw-text-[1.6rem] tw-font-bold tw-leading-snug">PingCAP Inc.</h5>
-                                                            <p class="tw-text-[1.4rem] md:tw-text-[1.6rem] tw-mt-1">シニアアーキテクト Sunny Bains</p>
+                                                            <h5 class="tw-text-[1.6rem] tw-font-bold tw-leading-snug">PingCAP (USA) Inc.</h5>
+                                                            <p class="tw-text-[1.4rem] md:tw-text-[1.6rem] tw-mt-1">共同創業者 兼 CEO Max Liu</p>
                                                         </div>
                                                     </div>
                                                 </div>
                                             </div>
-                                        </div>
-                                        <div class="p-timetable-item_bottom">
-                                            <ul class="p-timetable-item_buttons">
-                                                <li>
-                                                    <a href="#" class="a-button is-border is-content-fit is-design-square is-type-grd-secondary is-disabled">
-                                                        <span class="a-button_inner ">
-                                                            <span class="a-button_text">講演資料</span>
-                                                        </span>
-                                                    </a>
-                                                </li>
-                                                <li>
-                                                    <a href="#" class="a-button is-border is-content-fit is-design-square is-type-grd-secondary">
-                                                        <span class="a-button_inner ">
-                                                            <span class="a-button_text">紹介記事</span>
-                                                        </span>
-                                                    </a>
-                                                </li>
-                                                <li>
-                                                    <a href="#" class="a-button is-border is-content-fit is-design-square is-type-grd-secondary is-disabled">
-                                                        <span class="a-button_inner ">
-                                                            <span class="a-button_text">動画：Ed Huang編</span>
-                                                        </span>
-                                                    </a>
-                                                </li>
-                                                <li>
-                                                    <a href="#" class="a-button is-border is-content-fit is-design-square is-type-grd-secondary is-disabled">
-                                                        <span class="a-button_inner ">
-                                                            <span class="a-button_text">動画：Sunny Bains編</span>
-                                                        </span>
-                                                    </a>
-                                                </li>
-                                            </ul>
                                         </div>
                                     </div>
                                     <div class="p-timetable-item is-rest">
                                         <div class="p-timetable-item_inner">
                                             <div class="p-timetable-item_left">
                                                 <p class="p-timetable-item_date">
-                                                    11:10 - 11:20
+                                                    10:45 - 10:50
                                                 </p>
                                             </div>
                                             <div class="p-timetable-item_right">
@@ -332,42 +245,31 @@ get_header();
                                         <div class="p-timetable-item_inner">
                                             <div class="p-timetable-item_left">
                                                 <p class="p-timetable-item_date">
-                                                    11:20 - 12:00
+                                                    10:50 - 11:30
                                                 </p>
                                                 <ul class="p-timetable-item_tags tw-mt-2">
-                                                    <li data-tags="tag1">
-                                                        <span>タグ1</span>
+                                                    <li data-tags="oltp">
+                                                        <span>OLTP</span>
                                                     </li>
                                                 </ul>
                                             </div>
                                             <div class="p-timetable-item_right">
                                                 <h4 class="a-heading ">
-                                                    <span class="a-heading_text-one  tw-text-[2rem] tw-font-bold tw-leading-snug">[事例セッション] TiDBによる大規模ログデータ管理の挑戦！</span>
+                                                    <span class="a-heading_text-one  tw-text-[2rem] tw-font-bold tw-leading-snug">Coming soon</span>
                                                 </h4>
-                                                <div class="p-timetable-item_text js-text-more">
-                                                    <div class="p-timetable-item_text-inner">
-                                                        <p>本セッションでは、TiDBで大量のログデータを管理するRDBとして、MySQL及びTiDBを検証した過程と結果、そしてオンプレでの運用方法について発表します。通常、超大量のデータ挿入や更新が発生する……</p>
-                                                    </div>
-                                                    <div class="tw-mt-2 tw-flex tw-justify-end">
-                                                        <button type="button" class="p-timetable-item_text-button js-text-more-button">
-                                                            <span>▼続きをみる</span>
-                                                            <span>▲たたむ</span>
-                                                        </button>
-                                                    </div>
-                                                </div>
                                                 <div class="tw-mt-[1.2rem] tw-grid tw-grid-cols-1 tw-gap-[1rem]">
                                                     <div class="p-timetable-item_speaker">
                                                         <div class="p-timetable-item_speaker-visual">
                                                             <div class="a-image is-fit">
                                                                 <picture>
-                                                                    <source type="image/webp" srcset="<?php echo esc_url(get_template_directory_uri()); ?>/tidb-user-day/assets/img/speaker01.webp" width="120" height="120">
-                                                                    <img src="<?php echo esc_url(get_template_directory_uri()); ?>/tidb-user-day/assets/img/speaker01.png" class="" width="120" height="120" alt="大塚知亮氏" loading="lazy" decoding="async">
+                                                                    <source type="image/webp" srcset="<?php echo esc_url(get_template_directory_uri()); ?>/tidb-user-day/assets/img/speaker_Ashish_Singhai.webp" width="120" height="120">
+                                                                    <img src="<?php echo esc_url(get_template_directory_uri()); ?>/tidb-user-day/assets/img/speaker_Ashish_Singhai.png" class="" width="120" height="120" alt="Ashish Singhai" loading="lazy" decoding="async">
                                                                 </picture>
                                                             </div>
                                                         </div>
                                                         <div class="p-timetable-item_speaker-content">
-                                                            <h5 class="tw-text-[1.6rem] tw-font-bold tw-leading-snug">LINE株式会社</h5>
-                                                            <p class="tw-text-[1.4rem] md:tw-text-[1.6rem] tw-mt-1">ITSC データベース室 MySQL 1チーム ソフトウェアエンジニア 大塚知亮氏</p>
+                                                            <h5 class="tw-text-[1.6rem] tw-font-bold tw-leading-snug">LinkedIn Corporation</h5>
+                                                            <p class="tw-text-[1.4rem] md:tw-text-[1.6rem] tw-mt-1">SW Engineering Director Ashish Singhai</p>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -379,13 +281,6 @@ get_header();
                                                     <a href="#" class="a-button is-border is-content-fit is-design-square is-type-grd-secondary is-disabled">
                                                         <span class="a-button_inner ">
                                                             <span class="a-button_text">講演資料</span>
-                                                        </span>
-                                                    </a>
-                                                </li>
-                                                <li>
-                                                    <a href="#" class="a-button is-border is-content-fit is-design-square is-type-grd-secondary">
-                                                        <span class="a-button_inner ">
-                                                            <span class="a-button_text">紹介記事</span>
                                                         </span>
                                                     </a>
                                                 </li>
@@ -396,12 +291,12 @@ get_header();
                                         <div class="p-timetable-item_inner">
                                             <div class="p-timetable-item_left">
                                                 <p class="p-timetable-item_date">
-                                                    11:10 - 11:20
+                                                    11:30 - 11:35
                                                 </p>
                                             </div>
                                             <div class="p-timetable-item_right">
                                                 <h4 class="a-heading ">
-                                                    <span class="a-heading_text-one  tw-text-[2rem] tw-font-bold tw-leading-snug">ランチ休憩</span>
+                                                    <span class="a-heading_text-one  tw-text-[2rem] tw-font-bold tw-leading-snug">休憩</span>
                                                 </h4>
                                             </div>
                                         </div>
@@ -410,24 +305,81 @@ get_header();
                                         <div class="p-timetable-item_inner">
                                             <div class="p-timetable-item_left">
                                                 <p class="p-timetable-item_date">
-                                                    16:50 - 17:40
+                                                    11:35 - 12:15
                                                 </p>
                                                 <ul class="p-timetable-item_tags tw-mt-2">
-                                                    <li data-tags="tag2">
-                                                        <span>タグ2</span>
-                                                    </li>
-                                                    <li data-tags="session">
-                                                        <span>セッション</span>
+                                                    <li data-tags="oltp">
+                                                        <span>OLTP</span>
                                                     </li>
                                                 </ul>
                                             </div>
                                             <div class="p-timetable-item_right">
                                                 <h4 class="a-heading ">
-                                                    <span class="a-heading_text-one  tw-text-[2rem] tw-font-bold tw-leading-snug">【パネルディスカッション】ゲーム業界のデータベースを覗いてみよう</span>
+                                                    <span class="a-heading_text-one  tw-text-[2rem] tw-font-bold tw-leading-snug">Coming soon</span>
+                                                </h4>
+                                                <div class="tw-mt-[1.2rem] tw-grid tw-grid-cols-1 tw-gap-[1rem]">
+                                                    <div class="p-timetable-item_speaker">
+                                                        <div class="p-timetable-item_speaker-visual">
+                                                            <div class="a-image is-fit">
+                                                                <picture>
+                                                                    <source type="image/webp" srcset="<?php echo esc_url(get_template_directory_uri()); ?>/tidb-user-day/assets/img/speaker_orb.webp" width="120" height="120">
+                                                                    <img src="<?php echo esc_url(get_template_directory_uri()); ?>/tidb-user-day/assets/img/speaker_orb.png" class="" width="120" height="120" alt="Coming soon" loading="lazy" decoding="async">
+                                                                </picture>
+                                                            </div>
+                                                        </div>
+                                                        <div class="p-timetable-item_speaker-content">
+                                                            <h5 class="tw-text-[1.6rem] tw-font-bold tw-leading-snug">Pinterest, Inc.</h5>
+                                                            <p class="tw-text-[1.4rem] md:tw-text-[1.6rem] tw-mt-1">Coming soon</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="p-timetable-item_bottom">
+                                            <ul class="p-timetable-item_buttons">
+                                                <li>
+                                                    <a href="#" class="a-button is-border is-content-fit is-design-square is-type-grd-secondary is-disabled">
+                                                        <span class="a-button_inner ">
+                                                            <span class="a-button_text">講演資料</span>
+                                                        </span>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="p-timetable-item is-rest">
+                                        <div class="p-timetable-item_inner">
+                                            <div class="p-timetable-item_left">
+                                                <p class="p-timetable-item_date">
+                                                    12:15 - 13:05
+                                                </p>
+                                            </div>
+                                            <div class="p-timetable-item_right">
+                                                <h4 class="a-heading ">
+                                                    <span class="a-heading_text-one  tw-text-[2rem] tw-font-bold tw-leading-snug">ランチ休憩 (LT)</span>
+                                                </h4>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="p-timetable-item">
+                                        <div class="p-timetable-item_inner">
+                                            <div class="p-timetable-item_left">
+                                                <p class="p-timetable-item_date">
+                                                    13:05 - 13:35
+                                                </p>
+                                                <ul class="p-timetable-item_tags tw-mt-2">
+                                                    <li data-tags="oltp">
+                                                        <span>OLTP</span>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                            <div class="p-timetable-item_right">
+                                                <h4 class="a-heading ">
+                                                    <span class="a-heading_text-one  tw-text-[2rem] tw-font-bold tw-leading-snug">TiDBは銀の弾丸になるのか？ ~ レバテックの課題と新たな挑戦 ~</span>
                                                 </h4>
                                                 <div class="p-timetable-item_text js-text-more">
                                                     <div class="p-timetable-item_text-inner">
-                                                        <p>TiDBはゲーム業界の企業で使われ始めています。ゲーム業界ならではの事情と各社がなぜTiDBに注目しているのかを覗いてみましょう。コストメリットをどう考えているか、どういうシナリオに向いているのか……</p>
+                                                        <p>「レバテック」は、ITエンジニアと開発組織の挑戦と成長を加速させるための採用プラットフォームです。ビジョンとして、「日本を、IT先進国に。」を掲げ、多角的に事業拡大を続けています。事業拡大を続ける中で課題となったのが、「DBのリソース・管理効率」と「開発者体験」の低下です。そんな課題を解決できる可能性として現れたのが、「TiDB」です。本セッションでは、レバテックの課題をTiDBを用いてどのように解決しようとしているのか、また、移行時に発生した問題や移行に伴い行っている取り組みについてご紹介します。</p>
                                                     </div>
                                                     <div class="tw-mt-2 tw-flex tw-justify-end">
                                                         <button type="button" class="p-timetable-item_text-button js-text-more-button">
@@ -441,56 +393,28 @@ get_header();
                                                         <div class="p-timetable-item_speaker-visual">
                                                             <div class="a-image is-fit">
                                                                 <picture>
-                                                                    <source type="image/webp" srcset="<?php echo esc_url(get_template_directory_uri()); ?>/tidb-user-day/assets/img/speaker01.webp" width="120" height="120">
-                                                                    <img src="<?php echo esc_url(get_template_directory_uri()); ?>/tidb-user-day/assets/img/speaker01.png" class="" width="120" height="120" alt="PingCAP株式会社" loading="lazy" decoding="async">
+                                                                    <source type="image/webp" srcset="<?php echo esc_url(get_template_directory_uri()); ?>/tidb-user-day/assets/img/speaker_yuki_kawamura.webp" width="120" height="120">
+                                                                    <img src="<?php echo esc_url(get_template_directory_uri()); ?>/tidb-user-day/assets/img/speaker_yuki_kawamura.png" class="" width="120" height="120" alt="河村 勇樹" loading="lazy" decoding="async">
                                                                 </picture>
                                                             </div>
                                                         </div>
                                                         <div class="p-timetable-item_speaker-content">
-                                                            <h5 class="tw-text-[1.6rem] tw-font-bold tw-leading-snug">PingCAP株式会社</h5>
-                                                            <p class="tw-text-[1.4rem] md:tw-text-[1.6rem] tw-mt-1">Japan CTO 林 正記(モデレーター)</p>
+                                                            <h5 class="tw-text-[1.6rem] tw-font-bold tw-leading-snug">レバテック株式会社</h5>
+                                                            <p class="tw-text-[1.4rem] md:tw-text-[1.6rem] tw-mt-1">CTO室 テックリード 河村 勇樹</p>
                                                         </div>
                                                     </div>
                                                     <div class="p-timetable-item_speaker">
                                                         <div class="p-timetable-item_speaker-visual">
                                                             <div class="a-image is-fit">
                                                                 <picture>
-                                                                    <source type="image/webp" srcset="<?php echo esc_url(get_template_directory_uri()); ?>/tidb-user-day/assets/img/speaker02.webp" width="120" height="120">
-                                                                    <img src="<?php echo esc_url(get_template_directory_uri()); ?>/tidb-user-day/assets/img/speaker02.png" class="" width="120" height="120" alt="株式会社Cygames" loading="lazy" decoding="async">
+                                                                    <source type="image/webp" srcset="<?php echo esc_url(get_template_directory_uri()); ?>/tidb-user-day/assets/img/speaker_takuya_yamashita.webp" width="120" height="120">
+                                                                    <img src="<?php echo esc_url(get_template_directory_uri()); ?>/tidb-user-day/assets/img/speaker_takuya_yamashita.png" class="" width="120" height="120" alt="中下 拓也" loading="lazy" decoding="async">
                                                                 </picture>
                                                             </div>
                                                         </div>
                                                         <div class="p-timetable-item_speaker-content">
-                                                            <h5 class="tw-text-[1.6rem] tw-font-bold tw-leading-snug">株式会社Cygames</h5>
-                                                            <p class="tw-text-[1.4rem] md:tw-text-[1.6rem] tw-mt-1">シニアゲームエンジニア/サーバーサイド 宮脇剛史氏 (パネリスト)</p>
-                                                        </div>
-                                                    </div>
-                                                    <div class="p-timetable-item_speaker">
-                                                        <div class="p-timetable-item_speaker-visual">
-                                                            <div class="a-image is-fit">
-                                                                <picture>
-                                                                    <source type="image/webp" srcset="<?php echo esc_url(get_template_directory_uri()); ?>/tidb-user-day/assets/img/speaker01.webp" width="120" height="120">
-                                                                    <img src="<?php echo esc_url(get_template_directory_uri()); ?>/tidb-user-day/assets/img/speaker01.png" class="" width="120" height="120" alt="株式会社スクウェア・エニックス" loading="lazy" decoding="async">
-                                                                </picture>
-                                                            </div>
-                                                        </div>
-                                                        <div class="p-timetable-item_speaker-content">
-                                                            <h5 class="tw-text-[1.6rem] tw-font-bold tw-leading-snug">株式会社スクウェア・エニックス</h5>
-                                                            <p class="tw-text-[1.4rem] md:tw-text-[1.6rem] tw-mt-1">情報システム部 SocialGame Infrastructureチーム 神津和之氏 (パネリスト)</p>
-                                                        </div>
-                                                    </div>
-                                                    <div class="p-timetable-item_speaker">
-                                                        <div class="p-timetable-item_speaker-visual">
-                                                            <div class="a-image is-fit">
-                                                                <picture>
-                                                                    <source type="image/webp" srcset="<?php echo esc_url(get_template_directory_uri()); ?>/tidb-user-day/assets/img/speaker02.webp" width="120" height="120">
-                                                                    <img src="<?php echo esc_url(get_template_directory_uri()); ?>/tidb-user-day/assets/img/speaker02.png" class="" width="120" height="120" alt="ワンダープラネット株式会社" loading="lazy" decoding="async">
-                                                                </picture>
-                                                            </div>
-                                                        </div>
-                                                        <div class="p-timetable-item_speaker-content">
-                                                            <h5 class="tw-text-[1.6rem] tw-font-bold tw-leading-snug">ワンダープラネット株式会社</h5>
-                                                            <p class="tw-text-[1.4rem] md:tw-text-[1.6rem] tw-mt-1">テックリード・エンジニアリング＆デザインマネジメント室 中山智義氏 (パネリスト)</p>
+                                                            <h5 class="tw-text-[1.6rem] tw-font-bold tw-leading-snug">レバテック株式会社</h5>
+                                                            <p class="tw-text-[1.4rem] md:tw-text-[1.6rem] tw-mt-1">レバテック開発部 中下 拓也</p>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -501,14 +425,291 @@ get_header();
                                                 <li>
                                                     <a href="#" class="a-button is-border is-content-fit is-design-square is-type-grd-secondary is-disabled">
                                                         <span class="a-button_inner ">
-                                                            <span class="a-button_text">動画</span>
+                                                            <span class="a-button_text">講演資料</span>
                                                         </span>
                                                     </a>
                                                 </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="p-timetable-item is-rest">
+                                        <div class="p-timetable-item_inner">
+                                            <div class="p-timetable-item_left">
+                                                <p class="p-timetable-item_date">
+                                                    13:35 - 13:40
+                                                </p>
+                                            </div>
+                                            <div class="p-timetable-item_right">
+                                                <h4 class="a-heading ">
+                                                    <span class="a-heading_text-one  tw-text-[2rem] tw-font-bold tw-leading-snug">休憩</span>
+                                                </h4>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="p-timetable-item">
+                                        <div class="p-timetable-item_inner">
+                                            <div class="p-timetable-item_left">
+                                                <p class="p-timetable-item_date">
+                                                    13:40 - 14:20
+                                                </p>
+                                                <ul class="p-timetable-item_tags tw-mt-2">
+                                                    <li data-tags="htap">
+                                                        <span>HTAP</span>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                            <div class="p-timetable-item_right">
+                                                <h4 class="a-heading ">
+                                                    <span class="a-heading_text-one  tw-text-[2rem] tw-font-bold tw-leading-snug">大規模データ処理基盤におけるHBaseからTiDBへの移行事例</span>
+                                                </h4>
+                                                <div class="p-timetable-item_text js-text-more">
+                                                    <div class="p-timetable-item_text-inner">
+                                                        <p>株式会社サイバーエージェントでは、様々なサービスから取得したデータをリアルタイムに分析するための大規模データ処理基盤を開発・運用しています。そして運用負担を軽減するため、OLTPクエリに使用していたHBaseをTiDBに置き換えて約半年運用しています。本発表では、まずHBaseの課題とTiDBの選定理由を説明します。次にHBaseからTiDBへの移行方法を紹介し、移行後の性能と運用面での変化について報告します。また、移行後に発生した大規模データのバッチ書き込みにおける性能問題と、その改善方法についても解説します。</p>
+                                                    </div>
+                                                    <div class="tw-mt-2 tw-flex tw-justify-end">
+                                                        <button type="button" class="p-timetable-item_text-button js-text-more-button">
+                                                            <span>▼続きをみる</span>
+                                                            <span>▲たたむ</span>
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                                <div class="tw-mt-[1.2rem] tw-grid tw-grid-cols-1 tw-gap-[1rem]">
+                                                    <div class="p-timetable-item_speaker">
+                                                        <div class="p-timetable-item_speaker-visual">
+                                                            <div class="a-image is-fit">
+                                                                <picture>
+                                                                    <source type="image/webp" srcset="<?php echo esc_url(get_template_directory_uri()); ?>/tidb-user-day/assets/img/speaker_takayuki_watanabe.webp" width="120" height="120">
+                                                                    <img src="<?php echo esc_url(get_template_directory_uri()); ?>/tidb-user-day/assets/img/speaker_takayuki_watanabe.png" class="" width="120" height="120" alt="渡邉 敬之" loading="lazy" decoding="async">
+                                                                </picture>
+                                                            </div>
+                                                        </div>
+                                                        <div class="p-timetable-item_speaker-content">
+                                                            <h5 class="tw-text-[1.6rem] tw-font-bold tw-leading-snug">株式会社サイバーエージェント</h5>
+                                                            <p class="tw-text-[1.4rem] md:tw-text-[1.6rem] tw-mt-1">グループIT推進本部 データプロダクトユニット 渡邉 敬之</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="p-timetable-item_bottom">
+                                            <ul class="p-timetable-item_buttons">
                                                 <li>
-                                                    <a href="#" class="a-button is-border is-content-fit is-design-square is-type-grd-secondary">
+                                                    <a href="#" class="a-button is-border is-content-fit is-design-square is-type-grd-secondary is-disabled">
                                                         <span class="a-button_inner ">
-                                                            <span class="a-button_text">Cygames社記事</span>
+                                                            <span class="a-button_text">講演資料</span>
+                                                        </span>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="p-timetable-item is-rest">
+                                        <div class="p-timetable-item_inner">
+                                            <div class="p-timetable-item_left">
+                                                <p class="p-timetable-item_date">
+                                                    14:20 - 14:30
+                                                </p>
+                                            </div>
+                                            <div class="p-timetable-item_right">
+                                                <h4 class="a-heading ">
+                                                    <span class="a-heading_text-one  tw-text-[2rem] tw-font-bold tw-leading-snug">休憩</span>
+                                                </h4>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="p-timetable-item">
+                                        <div class="p-timetable-item_inner">
+                                            <div class="p-timetable-item_left">
+                                                <p class="p-timetable-item_date">
+                                                    14:30 - 15:10
+                                                </p>
+                                                <ul class="p-timetable-item_tags tw-mt-2">
+                                                    <li data-tags="oltp">
+                                                        <span>OLTP</span>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                            <div class="p-timetable-item_right">
+                                                <h4 class="a-heading ">
+                                                    <span class="a-heading_text-one  tw-text-[2rem] tw-font-bold tw-leading-snug">音声プラットフォームVoicyがTiDB Cloudを本番運用してみた結果</span>
+                                                </h4>
+                                                <div class="p-timetable-item_text js-text-more">
+                                                    <div class="p-timetable-item_text-inner">
+                                                        <p>音声プラットフォームVoicyは音声コンテンツを配信する会員登録者数200万人を超えるプラットフォームサービスです。Voicyでは2024年4月からサービスの中心となるRDBをTiDBに移管して、本番のワークロード上での運用を開始しました。本セッションではVoicyがTiDB Cloudの採用を決めた背景、既存RDBから本番へのマイグレーション方法、そして実際のワークロード上で運用して得た知見等を紹介しながら、コンテンツメディアを配信しているサービスがどのようにTiDBを活用しているかを紹介します。</p>
+                                                    </div>
+                                                    <div class="tw-mt-2 tw-flex tw-justify-end">
+                                                        <button type="button" class="p-timetable-item_text-button js-text-more-button">
+                                                            <span>▼続きをみる</span>
+                                                            <span>▲たたむ</span>
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                                <div class="tw-mt-[1.2rem] tw-grid tw-grid-cols-1 tw-gap-[1rem]">
+                                                    <div class="p-timetable-item_speaker">
+                                                        <div class="p-timetable-item_speaker-visual">
+                                                            <div class="a-image is-fit">
+                                                                <picture>
+                                                                    <source type="image/webp" srcset="<?php echo esc_url(get_template_directory_uri()); ?>/tidb-user-day/assets/img/speaker_ryosuke_yamamoto.webp" width="120" height="120">
+                                                                    <img src="<?php echo esc_url(get_template_directory_uri()); ?>/tidb-user-day/assets/img/speaker_ryosuke_yamamoto.png" class="" width="120" height="120" alt="山元 亮典" loading="lazy" decoding="async">
+                                                                </picture>
+                                                            </div>
+                                                        </div>
+                                                        <div class="p-timetable-item_speaker-content">
+                                                            <h5 class="tw-text-[1.6rem] tw-font-bold tw-leading-snug">株式会社Voicy</h5>
+                                                            <p class="tw-text-[1.4rem] md:tw-text-[1.6rem] tw-mt-1">エンジニアDivision エンジニア部門責任者 山元 亮典</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="p-timetable-item_bottom">
+                                            <ul class="p-timetable-item_buttons">
+                                                <li>
+                                                    <a href="#" class="a-button is-border is-content-fit is-design-square is-type-grd-secondary is-disabled">
+                                                        <span class="a-button_inner ">
+                                                            <span class="a-button_text">講演資料</span>
+                                                        </span>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="p-timetable-item is-rest">
+                                        <div class="p-timetable-item_inner">
+                                            <div class="p-timetable-item_left">
+                                                <p class="p-timetable-item_date">
+                                                    15:10 - 15:20
+                                                </p>
+                                            </div>
+                                            <div class="p-timetable-item_right">
+                                                <h4 class="a-heading ">
+                                                    <span class="a-heading_text-one  tw-text-[2rem] tw-font-bold tw-leading-snug">休憩</span>
+                                                </h4>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="p-timetable-item">
+                                        <div class="p-timetable-item_inner">
+                                            <div class="p-timetable-item_left">
+                                                <p class="p-timetable-item_date">
+                                                    15:20 - 16:00
+                                                </p>
+                                                <ul class="p-timetable-item_tags tw-mt-2">
+                                                    <li data-tags="htap">
+                                                        <span>HTAP</span>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                            <div class="p-timetable-item_right">
+                                                <h4 class="a-heading ">
+                                                    <span class="a-heading_text-one  tw-text-[2rem] tw-font-bold tw-leading-snug">デジタル通貨に特化した独自分散台帳技術Orb DLTの高度化：CassandraからTiDBへの移行</span>
+                                                </h4>
+                                                <div class="p-timetable-item_text js-text-more">
+                                                    <div class="p-timetable-item_text-inner">
+                                                        <p>株式会社Orbが、決済に特化した分散台帳技術を提供しており、デジタル地域通貨の基盤として累計100を超える自治体で採用 (年間決済額数百億円)。「Orb DLT」のCassandraからTiDBへの移行によりシステムの高度化を実現したプロセスを紹介します。移行の背景と目的、技術的な挑戦と解決策、移行後の運用結果について詳しく説明します。</p>
+                                                    </div>
+                                                    <div class="tw-mt-2 tw-flex tw-justify-end">
+                                                        <button type="button" class="p-timetable-item_text-button js-text-more-button">
+                                                            <span>▼続きをみる</span>
+                                                            <span>▲たたむ</span>
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                                <div class="tw-mt-[1.2rem] tw-grid tw-grid-cols-1 tw-gap-[1rem]">
+                                                    <div class="p-timetable-item_speaker">
+                                                        <div class="p-timetable-item_speaker-visual">
+                                                            <div class="a-image is-fit">
+                                                                <picture>
+                                                                    <source type="image/webp" srcset="<?php echo esc_url(get_template_directory_uri()); ?>/tidb-user-day/assets/img/speaker_orb.webp" width="120" height="120">
+                                                                    <img src="<?php echo esc_url(get_template_directory_uri()); ?>/tidb-user-day/assets/img/speaker_orb.png" class="" width="120" height="120" alt="岸本 吉勝" loading="lazy" decoding="async">
+                                                                </picture>
+                                                            </div>
+                                                        </div>
+                                                        <div class="p-timetable-item_speaker-content">
+                                                            <h5 class="tw-text-[1.6rem] tw-font-bold tw-leading-snug">株式会社Orb</h5>
+                                                            <p class="tw-text-[1.4rem] md:tw-text-[1.6rem] tw-mt-1">CTO 岸本 吉勝</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="p-timetable-item_bottom">
+                                            <ul class="p-timetable-item_buttons">
+                                                <li>
+                                                    <a href="#" class="a-button is-border is-content-fit is-design-square is-type-grd-secondary is-disabled">
+                                                        <span class="a-button_inner ">
+                                                            <span class="a-button_text">講演資料</span>
+                                                        </span>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="p-timetable-item is-rest">
+                                        <div class="p-timetable-item_inner">
+                                            <div class="p-timetable-item_left">
+                                                <p class="p-timetable-item_date">
+                                                    16:00 - 16:10
+                                                </p>
+                                            </div>
+                                            <div class="p-timetable-item_right">
+                                                <h4 class="a-heading ">
+                                                    <span class="a-heading_text-one  tw-text-[2rem] tw-font-bold tw-leading-snug">休憩</span>
+                                                </h4>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="p-timetable-item">
+                                        <div class="p-timetable-item_inner">
+                                            <div class="p-timetable-item_left">
+                                                <p class="p-timetable-item_date">
+                                                    16:10 - 16:50
+                                                </p>
+                                                <ul class="p-timetable-item_tags tw-mt-2">
+                                                    <li data-tags="oltp">
+                                                        <span>OLTP</span>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                            <div class="p-timetable-item_right">
+                                                <h4 class="a-heading ">
+                                                    <span class="a-heading_text-one  tw-text-[2rem] tw-font-bold tw-leading-snug">DMMプラットフォームにおけるTiDBの導入から運用まで</span>
+                                                </h4>
+                                                <div class="p-timetable-item_text js-text-more">
+                                                    <div class="p-timetable-item_text-inner">
+                                                        <p>DMMプラットフォームは認証系のアプリケーションのDBとしてTiDBを採用しました。採用候補としてGoogle Cloud Spannerがありながら、なぜTiDBを採用したのか。実際に本番環境で運用してみてどうだったのか。DMMプラットフォームにおけるTiDBの導入から運用までを体系的に話したいと思います。</p>
+                                                    </div>
+                                                    <div class="tw-mt-2 tw-flex tw-justify-end">
+                                                        <button type="button" class="p-timetable-item_text-button js-text-more-button">
+                                                            <span>▼続きをみる</span>
+                                                            <span>▲たたむ</span>
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                                <div class="tw-mt-[1.2rem] tw-grid tw-grid-cols-1 tw-gap-[1rem]">
+                                                    <div class="p-timetable-item_speaker">
+                                                        <div class="p-timetable-item_speaker-visual">
+                                                            <div class="a-image is-fit">
+                                                                <picture>
+                                                                    <source type="image/webp" srcset="<?php echo esc_url(get_template_directory_uri()); ?>/tidb-user-day/assets/img/speaker_pospome.webp" width="120" height="120">
+                                                                    <img src="<?php echo esc_url(get_template_directory_uri()); ?>/tidb-user-day/assets/img/speaker_pospome.png" class="" width="120" height="120" alt="pospome" loading="lazy" decoding="async">
+                                                                </picture>
+                                                            </div>
+                                                        </div>
+                                                        <div class="p-timetable-item_speaker-content">
+                                                            <h5 class="tw-text-[1.6rem] tw-font-bold tw-leading-snug">合同会社DMM.com</h5>
+                                                            <p class="tw-text-[1.4rem] md:tw-text-[1.6rem] tw-mt-1">プラットフォーム開発本部 アーキテクト pospome</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="p-timetable-item_bottom">
+                                            <ul class="p-timetable-item_buttons">
+                                                <li>
+                                                    <a href="#" class="a-button is-border is-content-fit is-design-square is-type-grd-secondary is-disabled">
+                                                        <span class="a-button_inner ">
+                                                            <span class="a-button_text">講演資料</span>
                                                         </span>
                                                     </a>
                                                 </li>
@@ -519,7 +720,7 @@ get_header();
                                         <div class="p-timetable-item_inner">
                                             <div class="p-timetable-item_left">
                                                 <p class="p-timetable-item_date">
-                                                    17:40 - 18:00
+                                                    16:50 - 17:00
                                                 </p>
                                             </div>
                                             <div class="p-timetable-item_right">
@@ -527,257 +728,6 @@ get_header();
                                                     <span class="a-heading_text-one  tw-text-[2rem] tw-font-bold tw-leading-snug">閉会</span>
                                                 </h4>
                                             </div>
-                                        </div>
-                                    </div>
-                                    <div class="p-timetable-item">
-                                        <div class="p-timetable-item_inner">
-                                            <div class="p-timetable-item_left">
-                                                <p class="p-timetable-item_date">
-                                                    18:00 - 20:00
-                                                </p>
-                                            </div>
-                                            <div class="p-timetable-item_right">
-                                                <h4 class="a-heading ">
-                                                    <span class="a-heading_text-one  tw-text-[2rem] tw-font-bold tw-leading-snug">懇親会　※会場参加者のみ</span>
-                                                </h4>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <p class="tw-text-white tw-text-[1.6rem]">
-                                        ※講演者またはセッション内容は、予告なく変更となる場合がございますのであらかじめご了承ください。
-                                    </p>
-                                </div>
-                                <!-- /section -->
-                            </div>
-                            <div class="p-timetable_block" id="day2">
-                                <div class="p-timetable_head">
-                                    <h3 class="tw-text-white tw-text-[3rem] md:tw-text-[3.2rem] tw-leading-snug">7月4日(日)</h3>
-                                </div>
-                                <div class="p-timetable_body ">
-                                    <div class="p-timetable-item">
-                                        <div class="p-timetable-item_inner">
-                                            <div class="p-timetable-item_left">
-                                                <p class="p-timetable-item_date">
-                                                    10:00 - 10:10
-                                                </p>
-                                            </div>
-                                            <div class="p-timetable-item_right">
-                                                <h4 class="a-heading ">
-                                                    <span class="a-heading_text-one  tw-text-[2rem] tw-font-bold tw-leading-snug">ご挨拶</span>
-                                                </h4>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="p-timetable-item">
-                                        <div class="p-timetable-item_inner">
-                                            <div class="p-timetable-item_left">
-                                                <p class="p-timetable-item_date">
-                                                    10:10 - 11:10
-                                                </p>
-                                                <ul class="p-timetable-item_tags tw-mt-2">
-                                                    <li data-tags="tag1">
-                                                        <span>タグ1</span>
-                                                    </li>
-                                                    <li data-tags="tag2">
-                                                        <span>タグ2</span>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                            <div class="p-timetable-item_right">
-                                                <h4 class="a-heading ">
-                                                    <span class="a-heading_text-one  tw-text-[2rem] tw-font-bold tw-leading-snug">TiDBとMySQLと未来　*同時通訳 (当日のみ)</span>
-                                                </h4>
-                                                <div class="p-timetable-item_text js-text-more">
-                                                    <div class="p-timetable-item_text-inner">
-                                                        <p>PingCAPのセッションでは、米国本社より共同創業者兼CTOのEd HuangとMySQLのInnoDB元開発者でHeatWaveの開発リードを担っていたシニアアーキテクトのSunny Bainsが来日し、TiDBの最新情報をお届けします。</p>
-                                                    </div>
-                                                    <div class="tw-mt-2 tw-flex tw-justify-end">
-                                                        <button type="button" class="p-timetable-item_text-button js-text-more-button">
-                                                            <span>▼続きをみる</span>
-                                                            <span>▲たたむ</span>
-                                                        </button>
-                                                    </div>
-                                                </div>
-                                                <div class="tw-mt-[1.2rem] tw-grid tw-grid-cols-1 tw-gap-[1rem]">
-                                                    <div class="p-timetable-item_speaker">
-                                                        <div class="p-timetable-item_speaker-visual">
-                                                            <div class="a-image is-fit">
-                                                                <picture>
-                                                                    <source type="image/webp" srcset="<?php echo esc_url(get_template_directory_uri()); ?>/tidb-user-day/assets/img/speaker01.webp" width="120" height="120">
-                                                                    <img src="<?php echo esc_url(get_template_directory_uri()); ?>/tidb-user-day/assets/img/speaker01.png" class="" width="120" height="120" alt="Ed Huang" loading="lazy" decoding="async">
-                                                                </picture>
-                                                            </div>
-                                                        </div>
-                                                        <div class="p-timetable-item_speaker-content">
-                                                            <h5 class="tw-text-[1.6rem] tw-font-bold tw-leading-snug">PingCAP Inc.</h5>
-                                                            <p class="tw-text-[1.4rem] md:tw-text-[1.6rem] tw-mt-1">共同創業者兼CTO Ed Huang</p>
-                                                        </div>
-                                                    </div>
-                                                    <div class="p-timetable-item_speaker">
-                                                        <div class="p-timetable-item_speaker-visual">
-                                                            <div class="a-image is-fit">
-                                                                <picture>
-                                                                    <source type="image/webp" srcset="<?php echo esc_url(get_template_directory_uri()); ?>/tidb-user-day/assets/img/speaker02.webp" width="120" height="120">
-                                                                    <img src="<?php echo esc_url(get_template_directory_uri()); ?>/tidb-user-day/assets/img/speaker02.png" class="" width="120" height="120" alt="Ed Huang" loading="lazy" decoding="async">
-                                                                </picture>
-                                                            </div>
-                                                        </div>
-                                                        <div class="p-timetable-item_speaker-content">
-                                                            <h5 class="tw-text-[1.6rem] tw-font-bold tw-leading-snug">PingCAP Inc.</h5>
-                                                            <p class="tw-text-[1.4rem] md:tw-text-[1.6rem] tw-mt-1">シニアアーキテクト Sunny Bains</p>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="p-timetable-item_bottom">
-                                            <ul class="p-timetable-item_buttons">
-                                                <li>
-                                                    <a href="#" class="a-button is-border is-content-fit is-design-square is-type-grd-secondary is-disabled">
-                                                        <span class="a-button_inner ">
-                                                            <span class="a-button_text">講演資料</span>
-                                                        </span>
-                                                    </a>
-                                                </li>
-                                                <li>
-                                                    <a href="#" class="a-button is-border is-content-fit is-design-square is-type-grd-secondary">
-                                                        <span class="a-button_inner ">
-                                                            <span class="a-button_text">紹介記事</span>
-                                                        </span>
-                                                    </a>
-                                                </li>
-                                                <li>
-                                                    <a href="#" class="a-button is-border is-content-fit is-design-square is-type-grd-secondary is-disabled">
-                                                        <span class="a-button_inner ">
-                                                            <span class="a-button_text">動画：Ed Huang編</span>
-                                                        </span>
-                                                    </a>
-                                                </li>
-                                                <li>
-                                                    <a href="#" class="a-button is-border is-content-fit is-design-square is-type-grd-secondary is-disabled">
-                                                        <span class="a-button_inner ">
-                                                            <span class="a-button_text">動画：Sunny Bains編</span>
-                                                        </span>
-                                                    </a>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <p class="tw-text-white tw-text-[1.6rem]">
-                                        ※講演者またはセッション内容は、予告なく変更となる場合がございますのであらかじめご了承ください。
-                                    </p>
-                                </div>
-                                <!-- /section -->
-                            </div>
-                            <div class="p-timetable_block" id="day3">
-                                <div class="p-timetable_head">
-                                    <h3 class="tw-text-white tw-text-[3rem] md:tw-text-[3.2rem] tw-leading-snug">7月5日(月)</h3>
-                                </div>
-                                <div class="p-timetable_body ">
-                                    <div class="p-timetable-item">
-                                        <div class="p-timetable-item_inner">
-                                            <div class="p-timetable-item_left">
-                                                <p class="p-timetable-item_date">
-                                                    10:00 - 10:10
-                                                </p>
-                                            </div>
-                                            <div class="p-timetable-item_right">
-                                                <h4 class="a-heading ">
-                                                    <span class="a-heading_text-one  tw-text-[2rem] tw-font-bold tw-leading-snug">ご挨拶</span>
-                                                </h4>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="p-timetable-item">
-                                        <div class="p-timetable-item_inner">
-                                            <div class="p-timetable-item_left">
-                                                <p class="p-timetable-item_date">
-                                                    10:10 - 11:10
-                                                </p>
-                                                <ul class="p-timetable-item_tags tw-mt-2">
-                                                    <li data-tags="session">
-                                                        <span>セッション</span>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                            <div class="p-timetable-item_right">
-                                                <h4 class="a-heading ">
-                                                    <span class="a-heading_text-one  tw-text-[2rem] tw-font-bold tw-leading-snug">TiDBとMySQLと未来　*同時通訳 (当日のみ)</span>
-                                                </h4>
-                                                <div class="p-timetable-item_text js-text-more">
-                                                    <div class="p-timetable-item_text-inner">
-                                                        <p>PingCAPのセッションでは、米国本社より共同創業者兼CTOのEd HuangとMySQLのInnoDB元開発者でHeatWaveの開発リードを担っていたシニアアーキテクトのSunny Bainsが来日し、TiDBの最新情報をお届けします。</p>
-                                                    </div>
-                                                    <div class="tw-mt-2 tw-flex tw-justify-end">
-                                                        <button type="button" class="p-timetable-item_text-button js-text-more-button">
-                                                            <span>▼続きをみる</span>
-                                                            <span>▲たたむ</span>
-                                                        </button>
-                                                    </div>
-                                                </div>
-                                                <div class="tw-mt-[1.2rem] tw-grid tw-grid-cols-1 tw-gap-[1rem]">
-                                                    <div class="p-timetable-item_speaker">
-                                                        <div class="p-timetable-item_speaker-visual">
-                                                            <div class="a-image is-fit">
-                                                                <picture>
-                                                                    <source type="image/webp" srcset="<?php echo esc_url(get_template_directory_uri()); ?>/tidb-user-day/assets/img/speaker01.webp" width="120" height="120">
-                                                                    <img src="<?php echo esc_url(get_template_directory_uri()); ?>/tidb-user-day/assets/img/speaker01.png" class="" width="120" height="120" alt="Ed Huang" loading="lazy" decoding="async">
-                                                                </picture>
-                                                            </div>
-                                                        </div>
-                                                        <div class="p-timetable-item_speaker-content">
-                                                            <h5 class="tw-text-[1.6rem] tw-font-bold tw-leading-snug">PingCAP Inc.</h5>
-                                                            <p class="tw-text-[1.4rem] md:tw-text-[1.6rem] tw-mt-1">共同創業者兼CTO Ed Huang</p>
-                                                        </div>
-                                                    </div>
-                                                    <div class="p-timetable-item_speaker">
-                                                        <div class="p-timetable-item_speaker-visual">
-                                                            <div class="a-image is-fit">
-                                                                <picture>
-                                                                    <source type="image/webp" srcset="<?php echo esc_url(get_template_directory_uri()); ?>/tidb-user-day/assets/img/speaker02.webp" width="120" height="120">
-                                                                    <img src="<?php echo esc_url(get_template_directory_uri()); ?>/tidb-user-day/assets/img/speaker02.png" class="" width="120" height="120" alt="Ed Huang" loading="lazy" decoding="async">
-                                                                </picture>
-                                                            </div>
-                                                        </div>
-                                                        <div class="p-timetable-item_speaker-content">
-                                                            <h5 class="tw-text-[1.6rem] tw-font-bold tw-leading-snug">PingCAP Inc.</h5>
-                                                            <p class="tw-text-[1.4rem] md:tw-text-[1.6rem] tw-mt-1">シニアアーキテクト Sunny Bains</p>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="p-timetable-item_bottom">
-                                            <ul class="p-timetable-item_buttons">
-                                                <li>
-                                                    <a href="#" class="a-button is-border is-content-fit is-design-square is-type-grd-secondary is-disabled">
-                                                        <span class="a-button_inner ">
-                                                            <span class="a-button_text">講演資料</span>
-                                                        </span>
-                                                    </a>
-                                                </li>
-                                                <li>
-                                                    <a href="#" class="a-button is-border is-content-fit is-design-square is-type-grd-secondary">
-                                                        <span class="a-button_inner ">
-                                                            <span class="a-button_text">紹介記事</span>
-                                                        </span>
-                                                    </a>
-                                                </li>
-                                                <li>
-                                                    <a href="#" class="a-button is-border is-content-fit is-design-square is-type-grd-secondary is-disabled">
-                                                        <span class="a-button_inner ">
-                                                            <span class="a-button_text">動画：Ed Huang編</span>
-                                                        </span>
-                                                    </a>
-                                                </li>
-                                                <li>
-                                                    <a href="#" class="a-button is-border is-content-fit is-design-square is-type-grd-secondary is-disabled">
-                                                        <span class="a-button_inner ">
-                                                            <span class="a-button_text">動画：Sunny Bains編</span>
-                                                        </span>
-                                                    </a>
-                                                </li>
-                                            </ul>
                                         </div>
                                     </div>
                                     <p class="tw-text-white tw-text-[1.6rem]">
@@ -834,7 +784,7 @@ get_header();
                         <h2 class="a-heading ">
                             <span class="a-heading_text-one  tw-text-center tw-text-[3rem] md:tw-text-[4.2rem] tw-leading-normal">登録キャンペーン</span>
                         </h2>
-                        <p class="tw-text-[1.6rem] tw-mt-[6rem]">イベントに登録すると、先着200名様にPingCAPのオリジナルTシャツ、または、2万円相当のTiDB資格試験「<a href="#" class="a-text-link" target="_blank">PingCAP Certified TiDB Associate</a>」の無料パス (2024年3月31日まで有効) をプレゼントいたします。なお、このキャンペーンは、オンライン参加者を対象としています。イベント当日、オンライン参加者限定のアンケートに回答し、ご希望のプレゼントをご選択の上ご応募ください。<br>※認定資格試験「<a href="#" class="a-text-link" target="_blank">PingCAP Certified TiDB Associate</a>」は「<a href="#" class="a-text-link" target="_blank">DBAのためのTiDB基礎</a>」の内容を元に考案された試験内容となっており、TiDBの基本的な操作や概念について学ぶことができます。</p>
+                        <p class="tw-text-[1.6rem] tw-mt-[6rem]">イベントに登録すると、抽選で100名様にTiDBのオリジナルTシャツ、または、3万円相当のTiDB資格試験「<a href="https://pingcap.co.jp/education/certification/pingcap-certified-tidb-associate/" class="a-text-link" target="_blank">PingCAP Certified TiDB Associate (PCTA)</a>」の無料受講パス (お申込日から366日間有効) をプレゼントいたします。イベント当日、アンケートに回答してご希望のプレゼントをご選択の上ご応募ください。<br>※PCTAは「TiDB基礎 (TiDB Essentials)」の内容を元に考案された試験内容となっており、TiDBの基本的な操作や概念について学ぶことができます。</p>
                     </div>
                 </div>
                 <div class="l-content is-w-1172 tw-mt-8 md:tw-mt-14">
@@ -846,11 +796,11 @@ get_header();
                             <div class="tw-flex tw-justify-center tw-mt-3">
                                 <div class="a-image ">
                                     <picture>
-                                        <source media="(min-width: 751px)" type="image/webp" srcset="<?php echo esc_url(get_template_directory_uri()); ?>/tidb-user-day/assets/img/campaign_item.webp" width="1044" height="244">
-                                        <source media="(max-width: 750px)" type="image/webp" srcset="<?php echo esc_url(get_template_directory_uri()); ?>/tidb-user-day/assets/img/campaign_item_sp.webp" width="652" height="2608">
-                                        <source media="(min-width: 751px)" type="image/png" srcset="<?php echo esc_url(get_template_directory_uri()); ?>/tidb-user-day/assets/img/campaign_item.png" width="1044" height="244">
-                                        <source media="(max-width: 750px)" type="image/png" srcset="<?php echo esc_url(get_template_directory_uri()); ?>/tidb-user-day/assets/img/campaign_item_sp.png" width="652" height="2608">
-                                        <img src="<?php echo esc_url(get_template_directory_uri()); ?>/tidb-user-day/assets/img/campaign_item.png" class="" width="1044" height="244" alt="登録キャンペーン" loading="lazy" decoding="async">
+                                        <source media="(min-width: 751px)" type="image/webp" srcset="<?php echo esc_url(get_template_directory_uri()); ?>/tidb-user-day/assets/img/campaign_item.webp" width="1172" height="420">
+                                        <source media="(max-width: 750px)" type="image/webp" srcset="<?php echo esc_url(get_template_directory_uri()); ?>/tidb-user-day/assets/img/campaign_item_sp.webp" width="716" height="2036">
+                                        <source media="(min-width: 751px)" type="image/png" srcset="<?php echo esc_url(get_template_directory_uri()); ?>/tidb-user-day/assets/img/campaign_item.png" width="1172" height="420">
+                                        <source media="(max-width: 750px)" type="image/png" srcset="<?php echo esc_url(get_template_directory_uri()); ?>/tidb-user-day/assets/img/campaign_item_sp.png" width="716" height="2036">
+                                        <img src="<?php echo esc_url(get_template_directory_uri()); ?>/tidb-user-day/assets/img/campaign_item.png" class="" width="1172" height="420" alt="登録キャンペーン" loading="lazy" decoding="async">
                                     </picture>
                                 </div>
                             </div>
@@ -863,11 +813,12 @@ get_header();
                             <span class="a-heading_text-one  tw-text-[2.4rem] tw-text-center md:tw-text-left tw-leading-normal">詳細と提供条件</span>
                         </h3>
                         <ul class="p-list-dot tw-mt-5 md:tw-mt-8 tw-grid tw-grid-cols-1 tw-gap-[1.2rem]">
-                            <li><span><strong>オンライン参加申込みフォーム</strong>よりイベントにご登録いただき、かつ<strong>イベントに参加された方</strong>が対象です。</span></li>
+                            <li><span>イベントに参加された日本在住のエンジニアが対象です。</span></li>
                             <li><span>学生、個人事業主、アカデミック目的、同業他社様は対象となりません。</span></li>
-                            <li><span>同じメールアドレスまたは同一人物によるアンケートの複数回答はできません。複数の回答があった場合は、先の登録が有効になります。</span></li>
+                            <li><span>同じメールアドレスまたは同一人物によるアンケートの複数回答はできません。複数の回答があった場合は、先の登録が有効となります。</span></li>
+                            <li><span>プライベートメールアドレスでのご登録はできません。ビジネスメールアドレスでのご登録をお願いします。</span></li>
                             <li><span>当選は、賞品の発送、または当選のメール (TiDB資格試験無料受講パスの場合) をもって代えさせていただきます。賞品のお届けは、イベント後、順次行う予定です。</span></li>
-                            <li><span>ノベルティまたは無料受講パスのお受け取りには、イベント当日提供されるアンケートからご希望の賞品を選択しフォームにご入力いただく必要がございます。なお、フォームの入力ミスにより商品が届けられない場合、また応募に関して不正な行為があった場合は、当選を取り消させていただく場合がございますのであらかじめご了承ください。</span></li>
+                            <li><span>TシャツまたはTiDB資格試験無料受講パスのお受け取りには、イベント当日提供されるアンケートからご希望のノベルティを選択しフォームにご入力いただく必要がございます。なお、フォームの入力ミスにより商品が届けられない場合、また応募に関して不正な行為があった場合は、当選を取り消させていただく場合がございますのであらかじめご了承ください。</span></li>
                         </ul>
                     </div>
                     <div class="l-inner tw-mt-[4.2rem] md:tw-mt-[6rem]">
@@ -886,6 +837,27 @@ get_header();
             </div>
         </section>
         <!-- section -->
+        <section class="l-section tw-py-[4.2rem] md:tw-py-[8rem] tw-bg-[#3d3fea]" id="entry">
+            <div class="l-wrap">
+                <div class="l-content is-w-1172">
+                    <div class="l-inner">
+                        <div class="p-form">
+                            <div class="p-form_left">
+                                <h2 class="a-heading ">
+                                    <span class="a-heading_text-one  tw-text-white tw-text-[4rem] md:tw-text-[5.2rem] tw-leading-tight">TiDB User Day 2024</span>
+                                    <span class="a-heading_text-two  tw-text-white tw-text-[2.4rem] md:tw-text-[3.4rem] tw-leading-normal">イベントの参加申込</span>
+                                </h2>
+                            </div>
+                            <div class="p-form_right">
+                                <div class="p-form_item">
+                                    <!-- フォームはここに記入ください。 -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
         <?php
         Vendor\BlueprintBlocks::safe_display();
         ?>
@@ -997,6 +969,8 @@ get_header();
         </div>
     </div>
 </main>
+
+
 <?php
 
 get_footer();
