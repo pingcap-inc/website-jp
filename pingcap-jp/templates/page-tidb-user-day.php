@@ -180,7 +180,7 @@ get_header();
                                                     10:00 - 10:15
                                                 </p>
                                                 <ul class="p-timetable-item_tags tw-mt-2">
-                                                    <li data-tags="oltp">
+                                                    <li data-tags="keynote">
                                                         <span>基調講演</span>
                                                     </li>
                                                 </ul>
@@ -218,9 +218,6 @@ get_header();
                                                     <li data-tags="keynote">
                                                         <span>基調講演</span>
                                                     </li>
-                                                    <li data-tags="data">
-                                                        <span>講演資料</span>
-                                                    </li>
                                                 </ul>
                                             </div>
                                             <div class="p-timetable-item_right">
@@ -244,6 +241,17 @@ get_header();
                                                     </div>
                                                 </div>
                                             </div>
+                                        </div>
+                                        <div class="p-timetable-item_bottom">
+                                            <ul class="p-timetable-item_buttons">
+                                                <li>
+                                                    <a href="#" class="a-button is-border is-content-fit is-design-square is-type-grd-secondary is-disabled">
+                                                        <span class="a-button_inner ">
+                                                            <span class="a-button_text">講演資料</span>
+                                                        </span>
+                                                    </a>
+                                                </li>
+                                            </ul>
                                         </div>
                                     </div>
                                     <div class="p-timetable-item is-rest">
@@ -274,12 +282,12 @@ get_header();
                                             </div>
                                             <div class="p-timetable-item_right">
                                                 <h4 class="a-heading ">
-                                                    <span class="a-heading_text-one  tw-text-[2rem] tw-font-bold tw-leading-snug">Learnings from Experimenting with TiDB at Scale</span>
+                                                    <span class="a-heading_text-one  tw-text-[2rem] tw-font-bold tw-leading-snug">Learnings from Experimenting with TiDB at Scale [同時通訳]</span>
                                                 </h4>
                                                 <div class="p-timetable-item_text js-text-more">
                                                     <div class="p-timetable-item_text-inner">
                                                         <p>Our goal is to run TiDB at a very large scale. Before we can do that, we need to learn about the system behavior, bottlenecks, and sensitivity to parameters. To this end, we have been experimenting with TiDB in multiple ways - micro-benchmarking, simulated production-like workloads, chaos, and stress. We will discuss what we have learned from our experiments.<br>
-                                                            LinkedInの目標は大規模なTiDBを稼働させることです。その前に、システムの挙動、ボトルネック、パラメータ変更への影響度を知る必要があります。そのために、マイクロベンチマーク、本番環境と同様のワークロードのシミュレーション、カオス、ストレスなど、さまざまな方法でTiDBの検証を行ってきました。このセッションでは、これらの検証から得られた知見について解説します。</p>
+                                                            [和訳]LinkedInの目標は大規模なTiDBを稼働させることです。その前に、システムの挙動、ボトルネック、パラメータ変更への影響度を知る必要があります。そのために、マイクロベンチマーク、本番環境と同様のワークロードのシミュレーション、カオス、ストレスなど、さまざまな方法でTiDBの検証を行ってきました。このセッションでは、これらの検証から得られた知見について解説します。</p>
                                                     </div>
                                                     <div class="tw-mt-2 tw-flex tw-justify-end">
                                                         <button type="button" class="p-timetable-item_text-button js-text-more-button">
@@ -444,7 +452,7 @@ get_header();
                                                         </div>
                                                         <div class="p-timetable-item_speaker-content">
                                                             <h5 class="tw-text-[1.6rem] tw-font-bold tw-leading-snug">レバテック株式会社</h5>
-                                                            <p class="tw-text-[1.4rem] md:tw-text-[1.6rem] tw-mt-1">CTO室 テックリード 河村 勇樹 氏</p>
+                                                            <p class="tw-text-[1.4rem] md:tw-text-[1.6rem] tw-mt-1">CTO室　テックリード　河村 勇樹 氏</p>
                                                         </div>
                                                     </div>
                                                     <div class="p-timetable-item_speaker">
@@ -458,7 +466,7 @@ get_header();
                                                         </div>
                                                         <div class="p-timetable-item_speaker-content">
                                                             <h5 class="tw-text-[1.6rem] tw-font-bold tw-leading-snug">レバレジーズ株式会社</h5>
-                                                            <p class="tw-text-[1.4rem] md:tw-text-[1.6rem] tw-mt-1">レバテック開発部 中下 拓也 氏</p>
+                                                            <p class="tw-text-[1.4rem] md:tw-text-[1.6rem] tw-mt-1">レバテック開発部　中下 拓也 氏</p>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -529,7 +537,7 @@ get_header();
                                                         </div>
                                                         <div class="p-timetable-item_speaker-content">
                                                             <h5 class="tw-text-[1.6rem] tw-font-bold tw-leading-snug">株式会社サイバーエージェント</h5>
-                                                            <p class="tw-text-[1.4rem] md:tw-text-[1.6rem] tw-mt-1">グループIT推進本部 データプロダクトユニット 渡邉 敬之 氏</p>
+                                                            <p class="tw-text-[1.4rem] md:tw-text-[1.6rem] tw-mt-1">グループIT推進本部 データプロダクトユニット　渡邉 敬之 氏</p>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -600,7 +608,7 @@ get_header();
                                                         </div>
                                                         <div class="p-timetable-item_speaker-content">
                                                             <h5 class="tw-text-[1.6rem] tw-font-bold tw-leading-snug">株式会社 Voicy</h5>
-                                                            <p class="tw-text-[1.4rem] md:tw-text-[1.6rem] tw-mt-1">エンジニアDivision エンジニア部門責任者 山元 亮典 氏</p>
+                                                            <p class="tw-text-[1.4rem] md:tw-text-[1.6rem] tw-mt-1">エンジニアDivision　エンジニア部門責任者　山元 亮典 氏</p>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -671,7 +679,7 @@ get_header();
                                                         </div>
                                                         <div class="p-timetable-item_speaker-content">
                                                             <h5 class="tw-text-[1.6rem] tw-font-bold tw-leading-snug">株式会社Orb</h5>
-                                                            <p class="tw-text-[1.4rem] md:tw-text-[1.6rem] tw-mt-1">CTO 岸本 吉勝 氏</p>
+                                                            <p class="tw-text-[1.4rem] md:tw-text-[1.6rem] tw-mt-1">CTO　岸本 吉勝 氏</p>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -742,7 +750,7 @@ get_header();
                                                         </div>
                                                         <div class="p-timetable-item_speaker-content">
                                                             <h5 class="tw-text-[1.6rem] tw-font-bold tw-leading-snug">合同会社DMM.com</h5>
-                                                            <p class="tw-text-[1.4rem] md:tw-text-[1.6rem] tw-mt-1">プラットフォーム開発本部 アーキテクト pospome 氏</p>
+                                                            <p class="tw-text-[1.4rem] md:tw-text-[1.6rem] tw-mt-1">プラットフォーム開発本部　アーキテクト　pospome 氏</p>
                                                         </div>
                                                     </div>
                                                 </div>

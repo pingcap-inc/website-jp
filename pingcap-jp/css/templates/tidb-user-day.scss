@@ -5,3 +5,11 @@
     }
   }
 }
+
+.p-timetable-sort_list {
+  overflow-x: scroll;
+}
+
+.p-timetable-sort_checkbox + label {
+  white-space: nowrap;
+}
