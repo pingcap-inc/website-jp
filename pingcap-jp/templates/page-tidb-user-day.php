@@ -276,6 +276,18 @@ get_header();
                                                 <h4 class="a-heading ">
                                                     <span class="a-heading_text-one  tw-text-[2rem] tw-font-bold tw-leading-snug">Learnings from Experimenting with TiDB at Scale</span>
                                                 </h4>
+                                                <div class="p-timetable-item_text js-text-more">
+                                                    <div class="p-timetable-item_text-inner">
+                                                        <p>Our goal is to run TiDB at a very large scale. Before we can do that, we need to learn about the system behavior, bottlenecks, and sensitivity to parameters. To this end, we have been experimenting with TiDB in multiple ways - micro-benchmarking, simulated production-like workloads, chaos, and stress. We will discuss what we have learned from our experiments.<br>
+                                                            LinkedInの目標は大規模なTiDBを稼働させることです。その前に、システムの挙動、ボトルネック、パラメータ変更への影響度を知る必要があります。そのために、マイクロベンチマーク、本番環境と同様のワークロードのシミュレーション、カオス、ストレスなど、さまざまな方法でTiDBの検証を行ってきました。このセッションでは、これらの検証から得られた知見について解説します。</p>
+                                                    </div>
+                                                    <div class="tw-mt-2 tw-flex tw-justify-end">
+                                                        <button type="button" class="p-timetable-item_text-button js-text-more-button">
+                                                            <span>▼続きをみる</span>
+                                                            <span>▲たたむ</span>
+                                                        </button>
+                                                    </div>
+                                                </div>
                                                 <div class="tw-mt-[1.2rem] tw-grid tw-grid-cols-1 tw-gap-[1rem]">
                                                     <div class="p-timetable-item_speaker">
                                                         <div class="p-timetable-item_speaker-visual">
@@ -304,9 +316,6 @@ get_header();
                                                     </a>
                                                 </li>
                                             </ul>
-                                            <p>Our goal is to run TiDB at a very large scale. Before we can do that, we need to learn about the system behavior, bottlenecks, and sensitivity to parameters. To this end, we have been experimenting with TiDB in multiple ways - micro-benchmarking, simulated production-like workloads, chaos, and stress. We will discuss what we have learned from our experiments.<br>
-                                                LinkedInの目標は大規模なTiDBを稼働させることです。その前に、システムの挙動、ボトルネック、パラメータ変更への影響度を知る必要があります。そのために、マイクロベンチマーク、本番環境と同様のワークロードのシミュレーション、カオス、ストレスなど、さまざまな方法でTiDBの検証を行ってきました。このセッションでは、これらの検証から得られた知見について解説します。
-                                            </p>
                                         </div>
                                     </div>
                                     <div class="p-timetable-item is-rest">
@@ -339,6 +348,19 @@ get_header();
                                                 <h4 class="a-heading ">
                                                     <span class="a-heading_text-one  tw-text-[2rem] tw-font-bold tw-leading-snug">How Pinterest Leverages TiDB to Deprecate HBase [同時通訳]</span>
                                                 </h4>
+                                                <div class="p-timetable-item_text js-text-more">
+                                                    <div class="p-timetable-item_text-inner">
+                                                        <p>Pinterest was one of the largest HBase users with over 50 clusters that handled all use cases including ad recommendations. However, as the company serves a global user base of over 500 million, this NoSQL database became a bottleneck to growth due to its high maintenance costs and lack of functionality to support their business services.
+                                                            In this session, it's explained why the company chose TiDB to replace HBase as its new unified operational data store, resulting in an 80% reduction in infrastructure costs, 3-5x p99 latency reduction, and the ability to achieve read after write consistency.<br>
+                                                            [和訳] Pinterestは、広告レコメンデーションを含むすべてのユースケースを処理する50以上のクラスタを持つ最大級のHBaseユーザーでした。しかし、5億人を超えるグローバルユーザーを抱える同社にとって、このNoSQLデータベースはメンテナンスコストが高く、サービスを継続的にサポートする機能が不足していたため、成長のボトルネックとなっていました。 本セッションでは、同社がHBaseに代わる新たな統合運用データストアとしてTiDBを選択し、インフラコストを80％削減、p99レイテンシを3～5倍削減、書き込み後の読み取り一整合性を実現した理由を紹介します。</p>
+                                                    </div>
+                                                    <div class="tw-mt-2 tw-flex tw-justify-end">
+                                                        <button type="button" class="p-timetable-item_text-button js-text-more-button">
+                                                            <span>▼続きをみる</span>
+                                                            <span>▲たたむ</span>
+                                                        </button>
+                                                    </div>
+                                                </div>
                                                 <div class="tw-mt-[1.2rem] tw-grid tw-grid-cols-1 tw-gap-[1rem]">
                                                     <div class="p-timetable-item_speaker">
                                                         <div class="p-timetable-item_speaker-visual">
@@ -367,10 +389,6 @@ get_header();
                                                     </a>
                                                 </li>
                                             </ul>
-                                            <p>Pinterest was one of the largest HBase users with over 50 clusters that handled all use cases including ad recommendations. However, as the company serves a global user base of over 500 million, this NoSQL database became a bottleneck to growth due to its high maintenance costs and lack of functionality to support their business services.
-                                                In this session, it's explained why the company chose TiDB to replace HBase as its new unified operational data store, resulting in an 80% reduction in infrastructure costs, 3-5x p99 latency reduction, and the ability to achieve read after write consistency.
-                                                [和訳] Pinterestは、広告レコメンデーションを含むすべてのユースケースを処理する50以上のクラスタを持つ最大級のHBaseユーザーでした。しかし、5億人を超えるグローバルユーザーを抱える同社にとって、このNoSQLデータベースはメンテナンスコストが高く、サービスを継続的にサポートする機能が不足していたため、成長のボトルネックとなっていました。 本セッションでは、同社がHBaseに代わる新たな統合運用データストアとしてTiDBを選択し、インフラコストを80％削減、p99レイテンシを3～5倍削減、書き込み後の読み取り一整合性を実現した理由を紹介します。
-                                            </p>
                                         </div>
                                     </div>
                                     <div class="p-timetable-item is-rest">
@@ -791,11 +809,11 @@ get_header();
                     <div class="l-inner tw-mt-[4.2rem] md:tw-mt-[6rem]">
                         <div class="a-image ">
                             <picture>
-                                <source media="(min-width: 751px)" type="image/webp" srcset="<?php echo esc_url(get_template_directory_uri()); ?>/tidb-user-day/assets/img/partner.webp" width="1172" height="311">
+                                <source media="(min-width: 751px)" type="image/webp" srcset="<?php echo esc_url(get_template_directory_uri()); ?>/tidb-user-day/assets/img/partner.webp" width="1172" height="285">
                                 <source media="(max-width: 750px)" type="image/webp" srcset="<?php echo esc_url(get_template_directory_uri()); ?>/tidb-user-day/assets/img/partner_sp.webp" width="716" height="287">
-                                <source media="(min-width: 751px)" type="image/png" srcset="<?php echo esc_url(get_template_directory_uri()); ?>/tidb-user-day/assets/img/partner.png" width="1172" height="311">
+                                <source media="(min-width: 751px)" type="image/png" srcset="<?php echo esc_url(get_template_directory_uri()); ?>/tidb-user-day/assets/img/partner.png" width="1172" height="285">
                                 <source media="(max-width: 750px)" type="image/png" srcset="<?php echo esc_url(get_template_directory_uri()); ?>/tidb-user-day/assets/img/partner_sp.png" width="716" height="287">
-                                <img src="<?php echo esc_url(get_template_directory_uri()); ?>/tidb-user-day/assets/img/partner.png" class="" width="1172" height="311" alt="登壇企業" loading="lazy" decoding="async">
+                                <img src="<?php echo esc_url(get_template_directory_uri()); ?>/tidb-user-day/assets/img/partner.png" class="" width="1172" height="285" alt="登壇企業" loading="lazy" decoding="async">
                             </picture>
                         </div>
                     </div>
