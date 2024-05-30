@@ -119,7 +119,7 @@ get_header();
                                 <li>
                                     <a href="#day1" class="a-button is-left is-design-square is-type-solid-white tw-font-bold js-scroll">
                                         <span class="a-button_inner ">
-                                            <span class="a-button_text">7月3日（土）</span><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20">
+                                            <span class="a-button_text">7月3日（水）</span><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20">
                                                 <rect width="20" height="20" style="fill:none;" />
                                                 <path d="M8.74,13.34l-2.6-2.6c-.5-.5-1.3-.5-1.8,0s-.5,1.3,0,1.7h0l4.7,4.7c.3,.3,.7,.4,1,.4s.7-.1,.9-.4l4.7-4.7c.2-.2,.4-.5,.4-.9,0-.3-.1-.6-.4-.9-.2-.2-.6-.4-.9-.4s-.7,.1-.9,.4l-2.6,2.6V3.74c0-.3-.1-.6-.4-.9-.5-.5-1.3-.5-1.8,0-.1,.3-.3,.6-.3,.9V13.34h0Z" />
                                             </svg>
@@ -170,7 +170,7 @@ get_header();
                         <div class="p-timetable js-sort__table">
                             <div class="p-timetable_block" id="day1">
                                 <div class="p-timetable_head">
-                                    <h3 class="tw-text-white tw-text-[3rem] md:tw-text-[3.2rem] tw-leading-snug">7月3日(土)</h3>
+                                    <h3 class="tw-text-white tw-text-[3rem] md:tw-text-[3.2rem] tw-leading-snug">7月3日(水)</h3>
                                 </div>
                                 <div class="p-timetable_body ">
                                     <div class="p-timetable-item">
@@ -287,7 +287,7 @@ get_header();
                                                 <div class="p-timetable-item_text js-text-more">
                                                     <div class="p-timetable-item_text-inner">
                                                         <p>Our goal is to run TiDB at a very large scale. Before we can do that, we need to learn about the system behavior, bottlenecks, and sensitivity to parameters. To this end, we have been experimenting with TiDB in multiple ways - micro-benchmarking, simulated production-like workloads, chaos, and stress. We will discuss what we have learned from our experiments.<br>
-                                                            [和訳]LinkedInの目標は大規模なTiDBを稼働させることです。その前に、システムの挙動、ボトルネック、パラメータ変更への影響度を知る必要があります。そのために、マイクロベンチマーク、本番環境と同様のワークロードのシミュレーション、カオス、ストレスなど、さまざまな方法でTiDBの検証を行ってきました。このセッションでは、これらの検証から得られた知見について解説します。</p>
+                                                            [和訳] LinkedIn の目標は大規模なTiDBを稼働させることです。その前に、システムの挙動、ボトルネック、パラメータ変更への影響度を知る必要があります。そのために、マイクロベンチマーク、本番環境と同様のワークロードのシミュレーション、カオス、ストレスなど、さまざまな方法でTiDBの検証を行ってきました。このセッションでは、これらの検証から得られた知見について解説します。</p>
                                                     </div>
                                                     <div class="tw-mt-2 tw-flex tw-justify-end">
                                                         <button type="button" class="p-timetable-item_text-button js-text-more-button">
