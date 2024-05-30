@@ -5,3 +5,13 @@
     }
   }
 }
+.p-timetable-item_bottom {
+  @include media-min($medium) {
+    display: flex;
+    gap: 3.2rem;
+    p{
+      flex: 1;
+      margin-top: 0;
+    }
+  }
+}

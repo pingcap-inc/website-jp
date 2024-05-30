@@ -41,7 +41,7 @@ get_header();
                                 </div>
                                 <div class="p-outline_right">
                                     <h3 class="a-heading ">
-                                        <span class="a-heading_text-one  tw-text-[2rem] md:tw-text-[2.4rem] tw-font-bold tw-leading-snug">NewSQLデータベースTiDBの最新動向やベストプラクティスを学ぶことができるイベントです。ぜひご参加ください。</span>
+                                        <span class="a-heading_text-one  tw-text-[2rem] md:tw-text-[2.4rem] tw-font-bold tw-leading-snug">TiDBはこう使われている！</span>
                                     </h3>
                                     <p class="tw-text-[1.6rem] tw-mt-[1rem]">TiDB User Day (TiUD) は、TiDBユーザーが集結し、データベースエンジニアが最先端のアイディア、ベストプラクティス、テクニックを学び、TiDBの活用術を磨く、TiDBユーザーのための祭典です。ユーザー体験を起点とし、NewSQLデータベースのTiDBがどのように使用されているのか、ユーザーの生の声を通して、最新動向やインスピレーションを得ることができるNewSQLデータベースの日本最大級のイベントです。</p>
                                 </div>
@@ -156,6 +156,12 @@ get_header();
                                             HTAP
                                         </label>
                                     </li>
+                                    <li>
+                                        <input type="checkbox" name="timetable" id="keynote" value="keynote" class="p-timetable-sort_checkbox">
+                                        <label for="keynote">
+                                            基調講演
+                                        </label>
+                                    </li>
                                 </ul>
                             </div>
                         </div>
@@ -173,6 +179,11 @@ get_header();
                                                 <p class="p-timetable-item_date">
                                                     10:00 - 10:15
                                                 </p>
+                                                <ul class="p-timetable-item_tags tw-mt-2">
+                                                    <li data-tags="oltp">
+                                                        <span>基調講演</span>
+                                                    </li>
+                                                </ul>
                                             </div>
                                             <div class="p-timetable-item_right">
                                                 <h4 class="a-heading ">
@@ -203,10 +214,18 @@ get_header();
                                                 <p class="p-timetable-item_date">
                                                     10:15 - 10:45
                                                 </p>
+                                                <ul class="p-timetable-item_tags tw-mt-2">
+                                                    <li data-tags="keynote">
+                                                        <span>基調講演</span>
+                                                    </li>
+                                                    <li data-tags="data">
+                                                        <span>講演資料</span>
+                                                    </li>
+                                                </ul>
                                             </div>
                                             <div class="p-timetable-item_right">
                                                 <h4 class="a-heading ">
-                                                    <span class="a-heading_text-one  tw-text-[2rem] tw-font-bold tw-leading-snug">Beyond the Scalability：Subtitle: PingCAP is dedicated to building TiDB, an Open Source, Cloud Native, distributed, MySQL compatible database</span>
+                                                    <span class="a-heading_text-one  tw-text-[2rem] tw-font-bold tw-leading-snug">Beyond the Scalability：PingCAP is dedicated to building TiDB, an Open Source, Cloud Native, distributed, MySQL compatible database [同時通訳]</span>
                                                 </h4>
                                                 <div class="tw-mt-[1.2rem] tw-grid tw-grid-cols-1 tw-gap-[1rem]">
                                                     <div class="p-timetable-item_speaker">
@@ -255,7 +274,7 @@ get_header();
                                             </div>
                                             <div class="p-timetable-item_right">
                                                 <h4 class="a-heading ">
-                                                    <span class="a-heading_text-one  tw-text-[2rem] tw-font-bold tw-leading-snug">Coming soon</span>
+                                                    <span class="a-heading_text-one  tw-text-[2rem] tw-font-bold tw-leading-snug">Learnings from Experimenting with TiDB at Scale</span>
                                                 </h4>
                                                 <div class="tw-mt-[1.2rem] tw-grid tw-grid-cols-1 tw-gap-[1rem]">
                                                     <div class="p-timetable-item_speaker">
@@ -269,7 +288,7 @@ get_header();
                                                         </div>
                                                         <div class="p-timetable-item_speaker-content">
                                                             <h5 class="tw-text-[1.6rem] tw-font-bold tw-leading-snug">LinkedIn Corporation</h5>
-                                                            <p class="tw-text-[1.4rem] md:tw-text-[1.6rem] tw-mt-1">SW Engineering Director Ashish Singhai</p>
+                                                            <p class="tw-text-[1.4rem] md:tw-text-[1.6rem] tw-mt-1">SW Engineering Director Ashish Singhai 氏</p>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -285,6 +304,9 @@ get_header();
                                                     </a>
                                                 </li>
                                             </ul>
+                                            <p>Our goal is to run TiDB at a very large scale. Before we can do that, we need to learn about the system behavior, bottlenecks, and sensitivity to parameters. To this end, we have been experimenting with TiDB in multiple ways - micro-benchmarking, simulated production-like workloads, chaos, and stress. We will discuss what we have learned from our experiments.<br>
+                                                LinkedInの目標は大規模なTiDBを稼働させることです。その前に、システムの挙動、ボトルネック、パラメータ変更への影響度を知る必要があります。そのために、マイクロベンチマーク、本番環境と同様のワークロードのシミュレーション、カオス、ストレスなど、さまざまな方法でTiDBの検証を行ってきました。このセッションでは、これらの検証から得られた知見について解説します。
+                                            </p>
                                         </div>
                                     </div>
                                     <div class="p-timetable-item is-rest">
@@ -315,21 +337,21 @@ get_header();
                                             </div>
                                             <div class="p-timetable-item_right">
                                                 <h4 class="a-heading ">
-                                                    <span class="a-heading_text-one  tw-text-[2rem] tw-font-bold tw-leading-snug">Coming soon</span>
+                                                    <span class="a-heading_text-one  tw-text-[2rem] tw-font-bold tw-leading-snug">How Pinterest Leverages TiDB to Deprecate HBase [同時通訳]</span>
                                                 </h4>
                                                 <div class="tw-mt-[1.2rem] tw-grid tw-grid-cols-1 tw-gap-[1rem]">
                                                     <div class="p-timetable-item_speaker">
                                                         <div class="p-timetable-item_speaker-visual">
                                                             <div class="a-image is-fit">
                                                                 <picture>
-                                                                    <source type="image/webp" srcset="<?php echo esc_url(get_template_directory_uri()); ?>/tidb-user-day/assets/img/speaker_orb.webp" width="120" height="120">
-                                                                    <img src="<?php echo esc_url(get_template_directory_uri()); ?>/tidb-user-day/assets/img/speaker_orb.png" class="" width="120" height="120" alt="Coming soon" loading="lazy" decoding="async">
+                                                                    <source type="image/webp" srcset="<?php echo esc_url(get_template_directory_uri()); ?>/tidb-user-day/assets/img/speaker_pinterest.webp" width="120" height="120">
+                                                                    <img src="<?php echo esc_url(get_template_directory_uri()); ?>/tidb-user-day/assets/img/speaker_pinterest.png" class="" width="120" height="120" alt="Coming soon" loading="lazy" decoding="async">
                                                                 </picture>
                                                             </div>
                                                         </div>
                                                         <div class="p-timetable-item_speaker-content">
-                                                            <h5 class="tw-text-[1.6rem] tw-font-bold tw-leading-snug">Pinterest, Inc.</h5>
-                                                            <p class="tw-text-[1.4rem] md:tw-text-[1.6rem] tw-mt-1">Coming soon</p>
+                                                            <h5 class="tw-text-[1.6rem] tw-font-bold tw-leading-snug">Ex-Pinterest, Inc.</h5>
+                                                            <p class="tw-text-[1.4rem] md:tw-text-[1.6rem] tw-mt-1">VP Data Engineering　Dr. Dave Burgess 氏</p>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -345,6 +367,10 @@ get_header();
                                                     </a>
                                                 </li>
                                             </ul>
+                                            <p>Pinterest was one of the largest HBase users with over 50 clusters that handled all use cases including ad recommendations. However, as the company serves a global user base of over 500 million, this NoSQL database became a bottleneck to growth due to its high maintenance costs and lack of functionality to support their business services.
+                                                In this session, it's explained why the company chose TiDB to replace HBase as its new unified operational data store, resulting in an 80% reduction in infrastructure costs, 3-5x p99 latency reduction, and the ability to achieve read after write consistency.
+                                                [和訳] Pinterestは、広告レコメンデーションを含むすべてのユースケースを処理する50以上のクラスタを持つ最大級のHBaseユーザーでした。しかし、5億人を超えるグローバルユーザーを抱える同社にとって、このNoSQLデータベースはメンテナンスコストが高く、サービスを継続的にサポートする機能が不足していたため、成長のボトルネックとなっていました。 本セッションでは、同社がHBaseに代わる新たな統合運用データストアとしてTiDBを選択し、インフラコストを80％削減、p99レイテンシを3～5倍削減、書き込み後の読み取り一整合性を実現した理由を紹介します。
+                                            </p>
                                         </div>
                                     </div>
                                     <div class="p-timetable-item is-rest">
@@ -400,7 +426,7 @@ get_header();
                                                         </div>
                                                         <div class="p-timetable-item_speaker-content">
                                                             <h5 class="tw-text-[1.6rem] tw-font-bold tw-leading-snug">レバテック株式会社</h5>
-                                                            <p class="tw-text-[1.4rem] md:tw-text-[1.6rem] tw-mt-1">CTO室 テックリード 河村 勇樹</p>
+                                                            <p class="tw-text-[1.4rem] md:tw-text-[1.6rem] tw-mt-1">CTO室 テックリード 河村 勇樹 氏</p>
                                                         </div>
                                                     </div>
                                                     <div class="p-timetable-item_speaker">
@@ -413,8 +439,8 @@ get_header();
                                                             </div>
                                                         </div>
                                                         <div class="p-timetable-item_speaker-content">
-                                                            <h5 class="tw-text-[1.6rem] tw-font-bold tw-leading-snug">レバテック株式会社</h5>
-                                                            <p class="tw-text-[1.4rem] md:tw-text-[1.6rem] tw-mt-1">レバテック開発部 中下 拓也</p>
+                                                            <h5 class="tw-text-[1.6rem] tw-font-bold tw-leading-snug">レバレジーズ株式会社</h5>
+                                                            <p class="tw-text-[1.4rem] md:tw-text-[1.6rem] tw-mt-1">レバテック開発部 中下 拓也 氏</p>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -485,7 +511,7 @@ get_header();
                                                         </div>
                                                         <div class="p-timetable-item_speaker-content">
                                                             <h5 class="tw-text-[1.6rem] tw-font-bold tw-leading-snug">株式会社サイバーエージェント</h5>
-                                                            <p class="tw-text-[1.4rem] md:tw-text-[1.6rem] tw-mt-1">グループIT推進本部 データプロダクトユニット 渡邉 敬之</p>
+                                                            <p class="tw-text-[1.4rem] md:tw-text-[1.6rem] tw-mt-1">グループIT推進本部 データプロダクトユニット 渡邉 敬之 氏</p>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -555,8 +581,8 @@ get_header();
                                                             </div>
                                                         </div>
                                                         <div class="p-timetable-item_speaker-content">
-                                                            <h5 class="tw-text-[1.6rem] tw-font-bold tw-leading-snug">株式会社Voicy</h5>
-                                                            <p class="tw-text-[1.4rem] md:tw-text-[1.6rem] tw-mt-1">エンジニアDivision エンジニア部門責任者 山元 亮典</p>
+                                                            <h5 class="tw-text-[1.6rem] tw-font-bold tw-leading-snug">株式会社 Voicy</h5>
+                                                            <p class="tw-text-[1.4rem] md:tw-text-[1.6rem] tw-mt-1">エンジニアDivision エンジニア部門責任者 山元 亮典 氏</p>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -606,7 +632,7 @@ get_header();
                                                 </h4>
                                                 <div class="p-timetable-item_text js-text-more">
                                                     <div class="p-timetable-item_text-inner">
-                                                        <p>株式会社Orbが、決済に特化した分散台帳技術を提供しており、デジタル地域通貨の基盤として累計100を超える自治体で採用 (年間決済額数百億円)。「Orb DLT」のCassandraからTiDBへの移行によりシステムの高度化を実現したプロセスを紹介します。移行の背景と目的、技術的な挑戦と解決策、移行後の運用結果について詳しく説明します。</p>
+                                                        <p>株式会社Orbは決済に特化した分散台帳技術を提供しており、デジタル地域通貨の基盤として累計100を超える自治体で採用 (年間決済額数百億円)。「Orb DLT」のCassandraからTiDBへの移行によりシステムの高度化を実現したプロセスを紹介します。移行の背景と目的、技術的な挑戦と解決策、移行後の運用結果について詳しく説明します。</p>
                                                     </div>
                                                     <div class="tw-mt-2 tw-flex tw-justify-end">
                                                         <button type="button" class="p-timetable-item_text-button js-text-more-button">
@@ -627,7 +653,7 @@ get_header();
                                                         </div>
                                                         <div class="p-timetable-item_speaker-content">
                                                             <h5 class="tw-text-[1.6rem] tw-font-bold tw-leading-snug">株式会社Orb</h5>
-                                                            <p class="tw-text-[1.4rem] md:tw-text-[1.6rem] tw-mt-1">CTO 岸本 吉勝</p>
+                                                            <p class="tw-text-[1.4rem] md:tw-text-[1.6rem] tw-mt-1">CTO 岸本 吉勝 氏</p>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -698,7 +724,7 @@ get_header();
                                                         </div>
                                                         <div class="p-timetable-item_speaker-content">
                                                             <h5 class="tw-text-[1.6rem] tw-font-bold tw-leading-snug">合同会社DMM.com</h5>
-                                                            <p class="tw-text-[1.4rem] md:tw-text-[1.6rem] tw-mt-1">プラットフォーム開発本部 アーキテクト pospome</p>
+                                                            <p class="tw-text-[1.4rem] md:tw-text-[1.6rem] tw-mt-1">プラットフォーム開発本部 アーキテクト pospome 氏</p>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -766,9 +792,9 @@ get_header();
                         <div class="a-image ">
                             <picture>
                                 <source media="(min-width: 751px)" type="image/webp" srcset="<?php echo esc_url(get_template_directory_uri()); ?>/tidb-user-day/assets/img/partner.webp" width="1172" height="311">
-                                <source media="(max-width: 750px)" type="image/webp" srcset="<?php echo esc_url(get_template_directory_uri()); ?>/tidb-user-day/assets/img/partner_sp.webp" width="716" height="324">
+                                <source media="(max-width: 750px)" type="image/webp" srcset="<?php echo esc_url(get_template_directory_uri()); ?>/tidb-user-day/assets/img/partner_sp.webp" width="716" height="287">
                                 <source media="(min-width: 751px)" type="image/png" srcset="<?php echo esc_url(get_template_directory_uri()); ?>/tidb-user-day/assets/img/partner.png" width="1172" height="311">
-                                <source media="(max-width: 750px)" type="image/png" srcset="<?php echo esc_url(get_template_directory_uri()); ?>/tidb-user-day/assets/img/partner_sp.png" width="716" height="324">
+                                <source media="(max-width: 750px)" type="image/png" srcset="<?php echo esc_url(get_template_directory_uri()); ?>/tidb-user-day/assets/img/partner_sp.png" width="716" height="287">
                                 <img src="<?php echo esc_url(get_template_directory_uri()); ?>/tidb-user-day/assets/img/partner.png" class="" width="1172" height="311" alt="登壇企業" loading="lazy" decoding="async">
                             </picture>
                         </div>
@@ -796,11 +822,11 @@ get_header();
                             <div class="tw-flex tw-justify-center tw-mt-3">
                                 <div class="a-image ">
                                     <picture>
-                                        <source media="(min-width: 751px)" type="image/webp" srcset="<?php echo esc_url(get_template_directory_uri()); ?>/tidb-user-day/assets/img/campaign_item.webp" width="1172" height="420">
-                                        <source media="(max-width: 750px)" type="image/webp" srcset="<?php echo esc_url(get_template_directory_uri()); ?>/tidb-user-day/assets/img/campaign_item_sp.webp" width="716" height="2036">
-                                        <source media="(min-width: 751px)" type="image/png" srcset="<?php echo esc_url(get_template_directory_uri()); ?>/tidb-user-day/assets/img/campaign_item.png" width="1172" height="420">
-                                        <source media="(max-width: 750px)" type="image/png" srcset="<?php echo esc_url(get_template_directory_uri()); ?>/tidb-user-day/assets/img/campaign_item_sp.png" width="716" height="2036">
-                                        <img src="<?php echo esc_url(get_template_directory_uri()); ?>/tidb-user-day/assets/img/campaign_item.png" class="" width="1172" height="420" alt="登録キャンペーン" loading="lazy" decoding="async">
+                                        <source media="(min-width: 751px)" type="image/webp" srcset="<?php echo esc_url(get_template_directory_uri()); ?>/tidb-user-day/assets/img/campaign_item.webp" width="1172" height="502">
+                                        <source media="(max-width: 750px)" type="image/webp" srcset="<?php echo esc_url(get_template_directory_uri()); ?>/tidb-user-day/assets/img/campaign_item_sp.webp" width="716" height="2218">
+                                        <source media="(min-width: 751px)" type="image/png" srcset="<?php echo esc_url(get_template_directory_uri()); ?>/tidb-user-day/assets/img/campaign_item.jpg" width="1172" height="502">
+                                        <source media="(max-width: 750px)" type="image/png" srcset="<?php echo esc_url(get_template_directory_uri()); ?>/tidb-user-day/assets/img/campaign_item_sp.png" width="716" height="2218">
+                                        <img src="<?php echo esc_url(get_template_directory_uri()); ?>/tidb-user-day/assets/img/campaign_item.jpg" class="" width="1172" height="502" alt="登録キャンペーン" loading="lazy" decoding="async">
                                     </picture>
                                 </div>
                             </div>
