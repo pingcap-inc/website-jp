@@ -1,0 +1,15 @@
+.tidb-user-day {
+  &__entry {
+    .grid {
+      align-items: center;
+    }
+  }
+}
+
+.p-timetable-sort_list {
+  overflow-x: scroll;
+}
+
+.p-timetable-sort_checkbox + label {
+  white-space: nowrap;
+}
