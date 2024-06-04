@@ -850,9 +850,9 @@ get_header();
                                     <picture>
                                         <source media="(min-width: 751px)" type="image/webp" srcset="<?php echo esc_url(get_template_directory_uri()); ?>/tidb-user-day/assets/img/campaign_item.webp" width="1172" height="502">
                                         <source media="(max-width: 750px)" type="image/webp" srcset="<?php echo esc_url(get_template_directory_uri()); ?>/tidb-user-day/assets/img/campaign_item_sp.webp" width="716" height="2218">
-                                        <source media="(min-width: 751px)" type="image/png" srcset="<?php echo esc_url(get_template_directory_uri()); ?>/tidb-user-day/assets/img/campaign_item.jpg" width="1172" height="502">
+                                        <source media="(min-width: 751px)" type="image/png" srcset="<?php echo esc_url(get_template_directory_uri()); ?>/tidb-user-day/assets/img/campaign_item.png" width="1172" height="502">
                                         <source media="(max-width: 750px)" type="image/png" srcset="<?php echo esc_url(get_template_directory_uri()); ?>/tidb-user-day/assets/img/campaign_item_sp.png" width="716" height="2218">
-                                        <img src="<?php echo esc_url(get_template_directory_uri()); ?>/tidb-user-day/assets/img/campaign_item.jpg" class="" width="1172" height="502" alt="登録キャンペーン" loading="lazy" decoding="async">
+                                        <img src="<?php echo esc_url(get_template_directory_uri()); ?>/tidb-user-day/assets/img/campaign_item.png" class="" width="1172" height="502" alt="登録キャンペーン" loading="lazy" decoding="async">
                                     </picture>
                                 </div>
                             </div>
