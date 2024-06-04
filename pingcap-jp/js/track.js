@@ -33,7 +33,7 @@ function gtag(eventLevelVariables) {
 window.gtag = gtag;
 
 function initializeTracking() {
-	gtag({ event: 'page_view' });
+	gtag();
 
 	document.addEventListener('click', function (event) {
 		const {target} = event;
