@@ -70,7 +70,7 @@ get_header();
                                         <dl>
                                             <dt>場所</dt>
                                             <dd>
-                                                <p><span><strong>大手町三井ホール [アクセス]</strong></span></p>
+                                                <p><span><strong>大手町三井ホール [<a href="https://otemachi-hall.jp/access.html">アクセス</a>]</strong></span></p>
                                             </dd>
                                         </dl>
                                         <dl>
