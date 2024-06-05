@@ -30,7 +30,7 @@ use PingCAP\{Components, Constants};
 
 	<link rel="pingback" href="<?php bloginfo('pingback_url'); ?>">
 
-	<?php if (is_page_template('templates/page-tidb-user-day.php')) { ?>
+	<?php if (is_page_template('templates/page-tidb-user-day.php') || is_page_template('templates/page-tidb-user-day-in-person.php')) { ?>
 		<link rel="stylesheet" href="<?php echo esc_url(get_template_directory_uri()); ?>/tidb-user-day/assets/css/index.css">
 		<script src="<?php echo esc_url(get_template_directory_uri()); ?>/tidb-user-day/assets/js/main.js" defer></script>
 	<?php } ?>
