@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Template Name: TiDB User Day 2024
+ * Template Name: TiDB User Day 2024 in Person
  */
 
 use WPUtil\{Vendor};
@@ -41,9 +41,10 @@ get_header();
                                 </div>
                                 <div class="p-outline_right">
                                     <h3 class="a-heading ">
-                                        <span class="a-heading_text-one  tw-text-[2rem] md:tw-text-[2.4rem] tw-font-bold tw-leading-snug">TiDBはこう使われている！</span>
+                                        <span class="a-heading_text-one  tw-text-[2rem] md:tw-text-[2.4rem] tw-font-bold tw-leading-snug">TiDBユーザーが大集結！</span>
                                     </h3>
                                     <p class="tw-text-[1.6rem] tw-mt-[1rem]">TiDB User Day (TiUD) は、TiDBユーザーが集結し、データベースエンジニアが最先端のアイディア、ベストプラクティス、テクニックを学び、TiDBの活用術を磨く、TiDBユーザーのための祭典です。ユーザー体験を起点とし、NewSQLデータベースのTiDBがどのように使用されているのか、ユーザーの生の声を通して、最新動向やインスピレーションを得ることができるNewSQLデータベースの日本最大級のイベントです。</p>
+                                    <p>国内最大級のNewSQLデータベースカンファレンス「TiDB User Day 2024」の会場参加者向けの申し込みページです。本イベントの会場でのご参加にはPingCAP営業担当の招待が必要となります。 同業他社様のご登録、ご登録後に招待のないお申し込みと確認された場合、ご参加をご遠慮いただいておりますのであらかじめご了承ください。</p>
                                 </div>
                             </div>
                             <div class="p-outline_item">
@@ -63,25 +64,31 @@ get_header();
                                         <dl>
                                             <dt>時間</dt>
                                             <dd>
-                                                <p><strong><b>10:00 - 17:00</b> (開場 9:45)</strong></p>
+                                                <p><strong><b>10:00 - 17:00 ※9:30受付開始</b> (17:00 - 19:00 懇親会予定)</strong></p>
                                             </dd>
                                         </dl>
                                         <dl>
-                                            <dt>形式</dt>
+                                            <dt>場所</dt>
                                             <dd>
-                                                <p><span><strong>オンライン配信</strong></span>（登録アドレスにZoom視聴用URLを送付します）</p>
+                                                <p><span><strong>大手町三井ホール [アクセス]</strong></span></p>
                                             </dd>
                                         </dl>
                                         <dl>
-                                            <dt>主催</dt>
+                                            <dt>最寄駅</dt>
                                             <dd>
-                                                <p>PingCAP株式会社</p>
+                                                <p>大手町駅 出口C4 または C5出口 直結</p>
+                                            </dd>
+                                        </dl>
+                                        <dl>
+                                            <dt>定員</dt>
+                                            <dd>
+                                                <p>300名</p>
                                             </dd>
                                         </dl>
                                         <dl>
                                             <dt>参加費</dt>
                                             <dd>
-                                                <p>無料（要事前申込）</p>
+                                                <p>無料　※完全招待制<br>名刺2枚</p>
                                             </dd>
                                         </dl>
                                     </div>
@@ -778,6 +785,20 @@ get_header();
                                             <div class="p-timetable-item_right">
                                                 <h4 class="a-heading ">
                                                     <span class="a-heading_text-one  tw-text-[2rem] tw-font-bold tw-leading-snug">閉会</span>
+                                                </h4>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="p-timetable-item">
+                                        <div class="p-timetable-item_inner">
+                                            <div class="p-timetable-item_left">
+                                                <p class="p-timetable-item_date">
+                                                    17:00 - 19:00
+                                                </p>
+                                            </div>
+                                            <div class="p-timetable-item_right">
+                                                <h4 class="a-heading ">
+                                                    <span class="a-heading_text-one  tw-text-[2rem] tw-font-bold tw-leading-snug">懇親会</span>
                                                 </h4>
                                             </div>
                                         </div>
