@@ -842,16 +842,13 @@ get_header();
                 <div class="l-content is-w-1172 tw-mt-8 md:tw-mt-14">
                     <div class="l-inner">
                         <div class="p-present">
-                            <h3 class="a-heading ">
-                                <span class="a-heading_text-one  tw-text-[2.4rem] tw-text-center md:tw-text-left tw-leading-normal">オリジナルTシャツ</span>
-                            </h3>
-                            <div class="tw-flex tw-justify-center tw-mt-3">
+                            <div class="tw-flex tw-justify-center">
                                 <div class="a-image ">
                                     <picture>
                                         <source media="(min-width: 751px)" type="image/webp" srcset="<?php echo esc_url(get_template_directory_uri()); ?>/tidb-user-day/assets/img/campaign_item.webp" width="1172" height="502">
-                                        <source media="(max-width: 750px)" type="image/webp" srcset="<?php echo esc_url(get_template_directory_uri()); ?>/tidb-user-day/assets/img/campaign_item_sp.webp" width="716" height="2218">
+                                        <source media="(max-width: 750px)" type="image/webp" srcset="<?php echo esc_url(get_template_directory_uri()); ?>/tidb-user-day/assets/img/campaign_item_sp.webp" width="716" height="1671">
                                         <source media="(min-width: 751px)" type="image/png" srcset="<?php echo esc_url(get_template_directory_uri()); ?>/tidb-user-day/assets/img/campaign_item.png" width="1172" height="502">
-                                        <source media="(max-width: 750px)" type="image/png" srcset="<?php echo esc_url(get_template_directory_uri()); ?>/tidb-user-day/assets/img/campaign_item_sp.png" width="716" height="2218">
+                                        <source media="(max-width: 750px)" type="image/png" srcset="<?php echo esc_url(get_template_directory_uri()); ?>/tidb-user-day/assets/img/campaign_item_sp.png" width="716" height="1671">
                                         <img src="<?php echo esc_url(get_template_directory_uri()); ?>/tidb-user-day/assets/img/campaign_item.png" class="" width="1172" height="502" alt="登録キャンペーン" loading="lazy" decoding="async">
                                     </picture>
                                 </div>
