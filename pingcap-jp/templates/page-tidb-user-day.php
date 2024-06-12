@@ -836,7 +836,7 @@ get_header();
                         <h2 class="a-heading ">
                             <span class="a-heading_text-one  tw-text-center tw-text-[3rem] md:tw-text-[4.2rem] tw-leading-normal">登録キャンペーン</span>
                         </h2>
-                        <p class="tw-text-[1.6rem] tw-mt-[6rem]">イベントに登録すると、抽選で100名様にTiDBのオリジナルTシャツ、または、3万円相当のTiDB資格試験「<a href="https://pingcap.co.jp/education/certification/pingcap-certified-tidb-associate/" class="a-text-link" target="_blank">PingCAP Certified TiDB Associate (PCTA)</a>」の無料受講パス (お申込日から366日間有効) をプレゼントいたします。イベント当日、アンケートに回答してご希望のプレゼントをご選択の上ご応募ください。<br>※PCTAは「TiDB基礎 (TiDB Essentials)」の内容を元に考案された試験内容となっており、TiDBの基本的な操作や概念について学ぶことができます。</p>
+                        <p class="tw-text-[1.6rem] tw-mt-[6rem]">イベントに登録すると、抽選で100名様にTiDBのオリジナルTシャツ、または、3万円相当のTiDB資格試験<span class="whitespace-nowrap">「<a href="https://pingcap.co.jp/education/certification/pingcap-certified-tidb-associate/" class="a-text-link" target="_blank">PingCAP Certified TiDB Associate (PCTA)</a>」</span>の無料受講パス (お申込日から366日間有効) をプレゼントいたします。イベント当日、アンケートに回答してご希望のプレゼントをご選択の上ご応募ください。<br>※PCTAは「TiDB基礎 (TiDB Essentials)」の内容を元に考案された試験内容となっており、TiDBの基本的な操作や概念について学ぶことができます。</p>
                     </div>
                 </div>
                 <div class="l-content is-w-1172 tw-mt-8 md:tw-mt-14">
