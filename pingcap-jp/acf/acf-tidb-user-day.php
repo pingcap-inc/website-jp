@@ -874,7 +874,7 @@ acf_add_local_field_group(array(
             array(
                 'param' => 'page_template', // post_type | post | page | page_template | post_category | taxonomy | options_page
                 'operator' => '==',
-                'value' => 'templates/page-tidb-user-day.php',        // if options_page then use: acf-options  | if page_template then use:  template-example.php
+                'value' => 'templates/page-user-day.php',        // if options_page then use: acf-options  | if page_template then use:  template-example.php
                 'order_no' => 0,
                 'group_no' => 1,
             ),
