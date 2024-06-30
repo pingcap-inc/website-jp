@@ -1,10 +1,4 @@
 .banner-default {
-	&.bg-black {
-		background-repeat: repeat-x;
-		background-position: top center;
-		background-image: linear-gradient(to bottom, rgba(14, 14, 14, 0.4) 0, #000000bd 100%),
-			url(https://static.pingcap.co.jp/files/2024/06/29150254/bg-hex-pattern.png);
-	}
 	&__inner {
 		/* stylelint-disable */
 		--bottom-padding-pull-up: 0;
@@ -261,7 +255,7 @@
 	&.tmpl-get-started,
 	&.tmpl-pricing {
 		padding-bottom: 5rem;
-		@include media-min($medium) {
+		@include media-min($medium){
 			height: 300px;
 		}
 		.banner-default__inner {

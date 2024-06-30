@@ -89,11 +89,8 @@ WPUtil\Vendor\BlueprintBlocks::enforce_background_colors([
 	'block-bg-none' => 'None',
 	'block-bg-image' => 'Image',
 	'bg-black' => 'Black',
-	'bg-black-dark' => 'Black(#000)',
 	'bg-blue' => 'Blue',
 	'bg-gray' => 'Gray',
-	'bg-gradient' => 'Gradient',
-	'bg-color-gradient' => 'Color Gradient',
 
 	'block-bg-none block-bg-split' => 'White / Black'
 ]);
@@ -102,18 +99,18 @@ WPUtil\Vendor\BlueprintBlocks::enforce_background_colors([
  * Only allow specific background colors for the specified blocks
  */
 WPUtil\Vendor\BlueprintBlocks::restrict_backgrounds_for_blocks([
-	'cards' => ['block-bg-none', 'bg-black', 'bg-black-dark', 'bg-gray', 'bg-gradient'],
+	'cards' => ['block-bg-none', 'bg-black', 'bg-gray'],
 	'case-study' => ['block-bg-none'],
-	'columns' => ['block-bg-none', 'bg-black', 'bg-black-dark', 'bg-blue', 'bg-gray', 'block-bg-image', 'bg-gradient', 'bg-color-gradient'],
+	'columns' => ['block-bg-none', 'bg-black', 'bg-blue', 'bg-gray','block-bg-image'],
 	'community-activities' => ['block-bg-none'],
-	'cta' => ['block-bg-none', 'bg-black', 'bg-black-dark', 'bg-gray', 'block-bg-image'],
-	'icon-grid' => ['block-bg-none', 'bg-blue', 'bg-black', 'bg-black-dark', 'bg-gradient'],
+	'cta' => ['block-bg-none', 'bg-black', 'bg-gray', 'block-bg-image'],
+	'icon-grid' => ['block-bg-none', 'bg-blue', 'bg-black'],
 	'leadership' => ['block-bg-none'],
-	'logos' => ['block-bg-none', 'bg-black', 'bg-black-dark'],
-	'media-content' => ['block-bg-none', 'bg-black', 'bg-black-dark', 'bg-gradient'],
+	'logos' => ['block-bg-none'],
+	'media-content' => ['block-bg-none'],
 	'open-positions' => ['block-bg-none'],
 	'pricing' => ['bg-blue'],
-	'resources' => ['block-bg-none', 'block-bg-none block-bg-split', 'bg-gray'],
+	'resources' => ['block-bg-none', 'block-bg-none block-bg-split','bg-gray'],
 	'solutions' => ['block-bg-none'],
 	'stats' => ['block-bg-none'],
 	'table' => ['bg-blue'],

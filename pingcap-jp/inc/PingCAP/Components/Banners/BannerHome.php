@@ -76,7 +76,7 @@ class BannerHome implements IComponent
 	public function render(): void
 	{
 ?>
-		<div class="banner banner-home bg-black">
+		<div class="banner banner-home bg-white">
 			<div class="banner-home__inner contain">
 				<div class="banner-home__text-content">
 					<h1 class="banner-home__title"><?php echo $this->title; ?></h1>

@@ -2,110 +2,73 @@
  * Poppins
  */
 $poppins-types: (
-    "300": 300,
-    "400": 400,
-    "700": 700,
-    "800": 800,
+	"300": 300,
+	"400": 400,
+	"700": 700,
+	"800": 800
 );
 
 @each $poppins-type, $weight in $poppins-types {
-    @font-face {
-        font-family: "Poppins";
-        font-style: normal;
-        font-weight: $weight;
-        font-display: swap;
-        src: local(""),
-            url("#{$fonts-url-base}/fonts/poppins/poppins-v15-latin-#{$poppins-type}.woff2")
-                format("woff2"),
-            url("#{$fonts-url-base}/fonts/poppins/poppins-v15-latin-#{$poppins-type}.woff")
-                format("woff");
-    }
+	@font-face {
+		font-family: "Poppins";
+		font-style: normal;
+		font-weight: $weight;
+		font-display: swap;
+		src: local(""),
+			url("#{$fonts-url-base}/fonts/poppins/poppins-v15-latin-#{$poppins-type}.woff2")
+				format("woff2"),
+			url("#{$fonts-url-base}/fonts/poppins/poppins-v15-latin-#{$poppins-type}.woff")
+				format("woff");
+	}
 }
 
 /**
  * Montserrat
  */
 $montserrat-types: (
-    "700": 700,
+	"700": 700
 );
 
 @each $montserrat-type, $weight in $montserrat-types {
-    @font-face {
-        font-family: "Montserrat";
-        font-style: normal;
-        font-weight: $weight;
-        font-display: swap;
-        src: local(""),
-            url("#{$fonts-url-base}/fonts/montserrat/montserrat-#{$montserrat-type}.woff2")
-                format("woff2"),
-            url("#{$fonts-url-base}/fonts/montserrat/montserrat-#{$montserrat-type}.woff")
-                format("woff");
-    }
+	@font-face {
+		font-family: "Montserrat";
+		font-style: normal;
+		font-weight: $weight;
+		font-display: swap;
+		src: local(""),
+			url("#{$fonts-url-base}/fonts/montserrat/montserrat-#{$montserrat-type}.woff2")
+				format("woff2"),
+			url("#{$fonts-url-base}/fonts/montserrat/montserrat-#{$montserrat-type}.woff")
+				format("woff");
+	}
 }
 
 /**
  * Inter
  */
-$inter-types: (
-    "400": 400,
-    "500": 500,
-    "600": 600,
-    "700": 700,
-);
-
-@each $inter-type, $weight in $inter-types {
-    @font-face {
-        font-family: "Inter";
-        font-style: italic;
-        font-display: swap;
-        font-weight: $weight;
-        src: local(""),
-            url("#{$fonts-url-base}/fonts/inter/Inter-#{$inter-type}.woff2")
-                format("woff2");
-    }
+@font-face {
+	font-family: "Inter";
+	font-style: normal;
+	font-display: swap;
+	src: local(""), url("#{$fonts-url-base}/fonts/inter/inter.woff2") format("woff2");
 }
 
 /**
  * Prompt
  */
 $prompt-types: (
-    "Medium": 500,
-    "SemiBold": 600,
-    "Bold": 700,
+	"Medium": 500,
+	"SemiBold": 600,
+	"Bold": 700
 );
 
 @each $prompt-type, $weight in $prompt-types {
-    @font-face {
-        font-family: "Prompt";
-        font-style: normal;
-        font-weight: $weight;
-        font-display: swap;
-        src: local(""),
-            url("#{$fonts-url-base}/fonts/prompt/Prompt-#{$prompt-type}.woff2")
-                format("woff2");
-    }
-}
-
-/**
- * Lexend
- */
-$lexend-types: (
-    "400": 400,
-    "500": 500,
-    "600": 600,
-    "700": 700,
-);
-
-@each $lexend-type, $weight in $lexend-types {
-    @font-face {
-        font-family: "Lexend";
-        font-style: normal;
-        font-weight: $weight;
-        font-display: swap;
-        src: local(""),
-            url("#{$fonts-url-base}/fonts/lexend/Lexend-#{$lexend-type}.woff2")
-                format("woff2"),
-            url("#{$fonts-url-base}/fonts/lexend/Lexend-#{$lexend-type}.woff")
-                format("woff");
-    }
+	@font-face {
+		font-family: "Prompt";
+		font-style: normal;
+		font-weight: $weight;
+		font-display: swap;
+		src: local(""),
+			url("#{$fonts-url-base}/fonts/prompt/Prompt-#{$prompt-type}.woff2") format("woff2");
+	}
 }

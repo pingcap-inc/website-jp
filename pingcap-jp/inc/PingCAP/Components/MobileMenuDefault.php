@@ -31,7 +31,7 @@ class MobileMenuDefault implements IComponent
 		$field_id = uniqid('mobile_menu_');
 
 ?>
-		<div class="mobile-menu mobile-menu-default">
+		<div class="mobile-menu mobile-menu-default bg-black">
 			<nav class="mobile-menu-default__primary-links">
 				<?php
 				foreach ($this->primary_links as $link) {

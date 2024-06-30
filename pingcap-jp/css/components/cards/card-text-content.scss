@@ -1,22 +1,19 @@
 .card-text-content {
 	padding: 3.2rem;
 	border-radius: var(--card-border-radius);
-	border: 1px solid transparent;
+	border: 1px solid var(--card-border-color);
 	transition: all var(--default-transition-params);
-
-	background-clip: padding-box, border-box;
-	background-origin: padding-box, border-box;
-	background-image: var(--card-background-image);
 
 	&:hover {
 		box-shadow: var(--card-box-shadow);
-		transform: var(--card-transform);
+		transform:var(--card-transform);
 	}
 
-	&__label {
+	&__label{
 		margin-bottom: 1.6rem;
-		color: var(--card-label-color);
+		color: var(--color-black);
 	}
+
 
 	&__title-container {
 		display: flex;
@@ -24,8 +21,8 @@
 		gap: 2rem;
 	}
 
-	h5 {
-		color: var(--card-title-color);
+	h5{
+		color: #303EAB;
 	}
 
 	&__icon {

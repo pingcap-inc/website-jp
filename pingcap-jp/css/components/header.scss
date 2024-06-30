@@ -12,23 +12,7 @@ html.mobile-menu-cta-active {
 }
 
 .site-header {
-	background-color: #20222b;
 	transition: transform var(--header-transition-speed) ease-in-out;
-
-	&__bg-bar {
-		height: 4px;
-		background: linear-gradient(
-			90deg,
-			#0cb1f2 -0.01%,
-			#12c0c5 13.53%,
-			#256cd4 28.11%,
-			#15a1e6 40.61%,
-			#0ca6f2 64.05%,
-			#01ecb0 91.53%,
-			#0cf06e 99.98%
-		);
-	}
-
 	&-wrapper {
 		z-index: var(--z-header);
 		position: fixed;
@@ -39,11 +23,10 @@ html.mobile-menu-cta-active {
 
 	display: flex;
 	align-items: center;
-	padding: 1.2rem 0;
+	padding: 1.5rem 0;
 
 	&__top {
-		background: linear-gradient(90deg, #13367d -1.46%, #0f3141 37.65%, #006f5d);
-
+		background-color: #404559;
 		nav {
 			display: flex;
 			justify-content: flex-end;
@@ -54,9 +37,7 @@ html.mobile-menu-cta-active {
 				font-size: 1.4rem;
 				text-decoration: none;
 				line-height: 2rem;
-				font-weight: 700;
-				display: flex;
-				align-items: center;
+				font-weight: 500;
 			}
 		}
 		&-menu-icon {
@@ -90,11 +71,9 @@ html.mobile-menu-cta-active {
 
 	&__logo {
 		width: 132px;
-		height: 34px;
 
 		@include media-min($large) {
 			width: 150px;
-			height: 40px;
 		}
 	}
 
@@ -142,7 +121,7 @@ html.mobile-menu-cta-active {
 			width: 13.6rem;
 			min-width: unset;
 			min-height: unset;
-			height: 3.2rem;
+			height: 3.4rem;
 			padding: unset;
 		}
 	}
@@ -150,7 +129,7 @@ html.mobile-menu-cta-active {
 	&__menu {
 		display: flex;
 		align-items: center;
-		gap: 3.2rem;
+		gap: 3rem;
 	}
 
 	&__menu-primary {
@@ -158,14 +137,14 @@ html.mobile-menu-cta-active {
 
 		@include media-min($large) {
 			display: flex;
-			gap: 3.2rem;
+			gap: 3rem;
 			flex-grow: 1;
 		}
 	}
 
 	&__primary-menu-link {
 		position: relative;
-		font-weight: var(--font-weight-bold);
+		font-weight: var(--font-weight-medium);
 		color: var(--color-white);
 		text-decoration: underline;
 		text-decoration-color: transparent;

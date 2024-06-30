@@ -1,7 +1,7 @@
 <?php
 // NOTE: $values is an array of ACF field values
 
-use WPUtil\{Arrays, Component, SVG};
+use WPUtil\{Arrays, Component};
 use PingCAP\Components;
 use WPUtil\Vendor\{BlueprintBlocks};
 use Blueprint\Images;
@@ -29,7 +29,7 @@ $is_feature_right = Arrays::get_value_as_string($values, 'format');
 							'link' => $link['url'],
 							'text' => $title,
 							'style' => 'button--secondary',
-							'attributes' => ['data-gtag' => 'event:jp_navi_click,item_name:' . $title]
+							'attributes' => ['data-gtag' => 'event:eng_navi_click,item_name:' . $title]
 						]);
 						?>
 					</div>
@@ -40,7 +40,7 @@ $is_feature_right = Arrays::get_value_as_string($values, 'format');
 				</div>
 			<?php } ?>
 		</div>
-	<? } ?>
+	<?php } ?>
 	<?php
 	foreach ($link_columns as $link_column) {
 		$label = Arrays::get_value_as_string($link_column, 'label');
@@ -51,17 +51,6 @@ $is_feature_right = Arrays::get_value_as_string($values, 'format');
 		$icons = Arrays::get_value_as_array($link_column, 'links');
 	?>
 		<div class="menu-dropdown__item menu-dropdown__links-column">
-			<?php if ($label === 'Ecosystem') { ?>
-				<div class="menu-dropdown__item-ai">
-					<span class="menu-dropdown__links-column-label">
-						Capabilities
-					</span>
-					<a href="/ai/" data-gtag="event:jp_navi_click,item_name:ai">
-						<?php SVG::the_svg('general/vector-three', ['class' => 'icon-ai']); ?>
-						Vector Search
-					</a>
-				</div>
-			<?php } ?>
 			<span class="menu-dropdown__links-column-label">
 				<?php echo esc_html($label); ?>
 			</span>
@@ -70,7 +59,7 @@ $is_feature_right = Arrays::get_value_as_string($values, 'format');
 				$icon = Arrays::get_value_as_string($icons[$index], 'icon');
 				$icon_classes = ['menu-dropdown__links-column-icon', $icon];
 			?>
-				<a href="<?php echo esc_url($link->link); ?>" data-gtag="event:jp_navi_click,item_name:<?php echo $link->text; ?>">
+				<a href="<?php echo esc_url($link->link); ?>" data-gtag="event:eng_navi_click,item_name:<?php echo $link->text; ?>">
 					<i class="<?php echo esc_attr(implode(' ', $icon_classes)); ?>"></i>
 					<?php echo esc_html($link->text); ?>
 				</a>

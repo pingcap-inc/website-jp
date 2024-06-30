@@ -11,7 +11,7 @@ foreach ($featured_products as $product) {
 	$link = Arrays::get_value_as_array($product, 'product_link');
 
 ?>
-	<a class="mobile-menu-default__section-link-large" data-gtag="event:jp_navi_click,item_name:<?php echo $title; ?>" href="<?php echo esc_url($link['url']); ?>"><?php echo esc_html($title); ?></a>
+	<a class="mobile-menu-default__section-link-large" data-gtag="event:eng_navi_click,item_name:<?php echo $title; ?>" href="<?php echo esc_url($link['url']); ?>"><?php echo esc_html($title); ?></a>
 <?php
 }
 
@@ -24,12 +24,6 @@ foreach ($link_columns as $link_column) {
 
 ?>
 	<div class="mobile-menu-default__section-links-column">
-		<?php if ($label === 'Ecosystem') { ?>
-			<span class="mobile-menu-default__section-links-column-label">Capabilities</span>
-			<a href="/ai/" data-gtag="event:jp_navi_click,item_name:Vector Search" style="padding-bottom:24px;">Vector Search</a>
-		<?php
-		}
-		?>
 		<span class="mobile-menu-default__section-links-column-label"><?php echo esc_html($label); ?></span>
 		<?php
 		foreach ($links as $link) {
@@ -38,7 +32,7 @@ foreach ($link_columns as $link_column) {
 			}
 
 		?>
-			<a href="<?php echo esc_url($link->link); ?>" data-gtag="event:jp_navi_click,item_name:<?php echo $link->text; ?>"><?php echo esc_html($link->text); ?></a>
+			<a href="<?php echo esc_url($link->link); ?>" data-gtag="event:eng_navi_click,item_name:<?php echo $link->text; ?>"><?php echo esc_html($link->text); ?></a>
 		<?php
 		}
 		?>
