@@ -85,7 +85,7 @@ class Footer implements IComponent
 		$credit_url = str_replace('https://', '', get_site_url(null, '', 'https'));
 
 ?>
-		<footer class="site-footer bg-black">
+		<footer class="site-footer">
 			<div class="contain site-footer__inner">
 				<div class="site-footer__row-top">
 					<div class="site-footer__logo-social-container">
@@ -114,7 +114,7 @@ class Footer implements IComponent
 									<?php
 									foreach ($links_group->items as $item) {
 									?>
-										<a class="site-footer__links-group-link" href="<?php echo esc_url($item->url); ?>" data-gtag="event:eng_footer_click,item_name:<?php echo $item->text; ?>">
+										<a class="site-footer__links-group-link" href="<?php echo esc_url($item->url); ?>" data-gtag="event:jp_footer_click,item_name:<?php echo $item->text; ?>">
 											<?php if ($item->attr_title) {
 												SVG::the_svg('social/' . $item->attr_title, ['class' => 'site-footer__social-icon']);
 											} ?>
