@@ -113,7 +113,7 @@ WPUtil\Vendor\BlueprintBlocks::restrict_backgrounds_for_blocks([
 	'media-content' => ['block-bg-none', 'bg-black', 'bg-black-dark', 'bg-gradient'],
 	'open-positions' => ['block-bg-none'],
 	'pricing' => ['bg-blue'],
-	'resources' => ['block-bg-none', 'block-bg-none block-bg-split', 'bg-gray'],
+	'resources' => ['block-bg-none', 'block-bg-none block-bg-split', 'bg-gray', 'bg-black', 'bg-black-dark'],
 	'solutions' => ['block-bg-none'],
 	'stats' => ['block-bg-none'],
 	'table' => ['bg-blue'],
