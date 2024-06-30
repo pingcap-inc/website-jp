@@ -39,10 +39,6 @@ WPUtil\TinyMCE::set_allowed_tags(
 		),
 		'option' => array(
 			'value' => true
-		),
-		'embed' => array(
-			'type' => true,
-			'src' => true
 		)
 	)
 );

@@ -45,10 +45,10 @@ $bg-color-names: ("white", "black", "blue");
 	/*************************************
 	Header
 	**************************************/
-	--header-height: 94px;
+	--header-height: 100px;
 
 	@include media-min($large) {
-		--header-height: 100px;
+		--header-height: 105px;
 	}
 
 	--header-transition-speed: calc(var(--default-transition-speed) * 2);
@@ -133,7 +133,7 @@ $bg-color-names: ("white", "black", "blue");
 	/*************************************
 	Buttons
 	*************************************/
-	--button-border-radius: 2.4rem;
+	--button-border-radius: 0.8rem;
 
 	--button-primary-normal-bg-color: var(--color-blue);
 	--button-primary-normal-border-color: var(--color-blue);
@@ -162,8 +162,8 @@ $bg-color-names: ("white", "black", "blue");
 	/*************************************
 	Blocks
 	*************************************/
-	--block-padding-xsm-top: 1.6rem;
-	--block-padding-xsm-bottom: 1.6rem;
+	--block-padding-xsm-top: 2rem;
+	--block-padding-xsm-bottom: 2rem;
 
 	--block-padding-sm-top: 4.25rem;
 	--block-padding-sm-bottom: 4.25rem;
@@ -210,26 +210,21 @@ $bg-color-names: ("white", "black", "blue");
 	/*************************************
 	Card
 	**************************************/
-	--card-label-color: var(--color-black);
-	--card-title-color: #303eab;
 	--card-border-color: var(--color-gray-xxlight);
 	--card-box-shadow: var(--default-box-shadow);
 	--card-border-radius: 8px;
 	--card-background-color: var(--color-off-white);
 	--card-transform: translateY(-8px);
-	--card-background-image: linear-gradient(to right, #fff, #fff),
-		linear-gradient(90deg, #0ca6f2, #0aadc4, #006fc2, #0ca6f2, #01ecb0, #28ea76);
 
 	/*************************************
 	Typography
 	**************************************/
-	--font-lexend: "Lexend", "Arial", "sans-serif";
 	--font-poppins: "Poppins", "Arial", "sans-serif";
 	--font-prompt: "Prompt", "sans-serif";
 	--font-montserrat: "Montserrat", "sans-serif";
 	--font-inter: "Inter", "Arial", "sans-serif";
-	--font-code: "Montserrat", "Menlo";
-	--font-primary: var(--font-inter);
+	--font-code: "Consolas", "Menlo";
+	--font-primary: var(--font-poppins);
 
 	--font-weight-thin: 100;
 	--font-weight-xlight: 200;

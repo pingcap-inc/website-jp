@@ -119,7 +119,8 @@ span {
 }
 
 h1 {
-	font: normal normal var(--font-weight-semibold) 36px / 100% var(--font-lexend);
+	font: normal normal var(--font-weight-semibold) 36px / 100%
+			var(--font-prompt);
 	color: var(--h1-color);
 	@include media-min($medium) {
 		font-size: clamp(36px, 3.65vw, 52px);
@@ -139,7 +140,8 @@ h1 {
 }
 
 h2 {
-	font: normal normal var(--font-weight-semibold) 30px / 125% var(--font-lexend);
+	font: normal normal var(--font-weight-semibold) 30px / 125%
+		var(--font-prompt);
 	color: var(--h2-color);
 	@include media-min($medium) {
 		font-size: clamp(30px, 3.25vw, 42px);
@@ -147,7 +149,7 @@ h2 {
 }
 
 h3 {
-	font: normal normal var(--font-weight-semibold) 24px / 125% var(--font-lexend);
+	font: normal normal var(--font-weight-semibold) 24px / 125% var(--font-prompt);
 	color: var(--h3-color);
 	@include media-min($medium) {
 		font-size: clamp(24px, 3vw, 34px);
@@ -155,7 +157,7 @@ h3 {
 }
 
 h4 {
-	font: normal normal var(--font-weight-semibold) 2rem / 125% var(--font-lexend);
+	font: normal normal var(--font-weight-semibold) 2rem / 125% var(--font-prompt);
 	color: var(--h4-color);
 	@include media-min($medium) {
 		font-size: 24px;
@@ -178,7 +180,7 @@ h4 {
 }
 
 h5 {
-	font: normal normal var(--font-weight-bold) 1.8rem / 125% var(--font-lexend);
+	font: normal normal var(--font-weight-bold) 1.8rem / 125% var(--font-prompt);
 	color: var(--h5-color);
 	@include media-min($medium) {
 		font-size: 20px;
@@ -186,7 +188,7 @@ h5 {
 }
 
 h6 {
-	font: normal normal var(--font-weight-bold) 1.4rem / 150% var(--font-lexend);
+	font: normal normal var(--font-weight-bold) 1.4rem / 150% var(--font-prompt);
 	color: var(--h6-color);
 }
 

@@ -1,20 +1,18 @@
 .tmpl-front-page {
+	&.case-study--featured{
+		margin-top: -6rem;
+		@include media-min($medium){
+			margin-top: -12rem;
+		}
+	}
+	
 	&__button-section {
-		background-color: #000;
-		border-top: 1px solid;
-		border-bottom: 1px solid;
-		border-color: #474747;
-		.block-inner{
-			padding: 3.6rem 0;
-		}
-		.button-group {
+		.button-group{
 			flex-direction: column;
-			.button {
-				flex: 1;
-			}
 		}
-		@include media-min($medium) {
-			.button-group {
+		@include media-min($medium){
+			margin-top: -11rem;
+			.button-group{
 				flex-direction: row;
 				gap: 4.8rem;
 			}

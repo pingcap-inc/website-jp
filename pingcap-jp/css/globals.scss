@@ -150,8 +150,9 @@ blockquote {
 	p {
 		position: relative;
 		font-size: 2.8rem;
-		font-family: var(--font-lexend);
+		font-family: var(--font-prompt);
 		font-weight: var(--font-weight-bold);
+		font-style: italic;
 
 		&::before {
 			content: "\201C";
@@ -191,7 +192,6 @@ blockquote {
 		margin-top: 1.6rem;
 
 		font-weight: var(--font-weight-medium);
-		font-family: var(--font-lexend);
 		font-size: 2rem;
 		font-style: normal;
 		line-height: 1.5;
@@ -207,6 +207,7 @@ blockquote {
 code {
 	background: var(--color-black);
 	color: var(--color-white);
+	padding: 0.1rem 0.25rem;
 }
 
 strong {
@@ -221,6 +222,10 @@ iframe {
 pre {
 	color: var(--body-font-color);
 	white-space: normal;
+}
+
+.whitespace-nowrap {
+	white-space: nowrap;
 }
 
 // helper class from the foundation framework
