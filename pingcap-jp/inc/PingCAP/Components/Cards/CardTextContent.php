@@ -28,7 +28,7 @@ class CardTextContent implements IComponent
 	public function render(): void
 	{
 ?>
-		<div class="card-text-content bg-white">
+		<div class="card-text-content">
 
 			<?php if ($this->label) { ?>
 				<p class="card-text-content__label"><?php echo $this->label ?></p>
