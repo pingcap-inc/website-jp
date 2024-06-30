@@ -1,4 +1,5 @@
 .mobile-menu {
+	background-color: #20222B;
 	z-index: calc(var(--z-header) + 1);
 	display: flex;
 	transition: opacity 0.25s ease-in-out;
@@ -41,7 +42,7 @@
 	.mobile-menu-default__primary-title-label,
 	&__primary-link {
 		padding: 2rem 0;
-		font-size: 1.7rem;
+		font-size: 1.8rem;
 		font-weight: var(--font-weight-bold);
 		color: var(--color-white);
 		text-transform: uppercase;
@@ -74,6 +75,7 @@
 		}
 
 		span {
+			color: var(--color-white);
 			transition: color var(--default-transition-params);
 		}
 	}
@@ -129,7 +131,7 @@
 
 		a {
 			font-size: 1.4rem;
-			color: var(--anchor-link-normal-color);
+			color: var(--color-white);
 			text-decoration: none;
 			transition: color var(--default-transition-params);
 

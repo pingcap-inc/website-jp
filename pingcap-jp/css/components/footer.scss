@@ -1,5 +1,6 @@
 .site-footer {
 	padding: 5rem 0;
+	background-color: #20222B;
 
 	a {
 		color: var(--color-white);
@@ -224,6 +225,7 @@
 	&__design,
 	&__copyright {
 		font-size: 1.2rem;
+		color: #fff;
 	}
 
 	&__beian {

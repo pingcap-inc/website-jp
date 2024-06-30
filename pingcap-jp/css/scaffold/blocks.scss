@@ -1,12 +1,26 @@
 // remove default 'block-inner' top padding from the second block
 // in a series of two with the same background color
-@each $color_name in $bg-color-names {
-	/* prettier-ignore */
-	.block-container.bg-#{"" + $color_name} + .block-container.bg-#{"" + $color_name} {
-		.block-inner:not(.block-inner--has-box-container) {
-			padding-top: 0;
-		}
-	}
+// @each $color_name in $bg-color-names {
+// 	/* prettier-ignore */
+// 	.block-container.bg-#{"" + $color_name} + .block-container.bg-#{"" + $color_name} {
+// 		.block-inner:not(.block-inner--has-box-container) {
+// 			padding-top: 0;
+// 		}
+// 	}
+// }
+
+.block-border-top {
+	border-top: 1px solid rgba(71, 71, 71, 1);
+	background-color: #000;
+}
+
+.block-border-bottom {
+	border-bottom: 1px solid rgba(71, 71, 71, 1);
+}
+
+.block-border-y {
+	border-top: 1px solid rgba(71, 71, 71, 1);
+	border-bottom: 1px solid rgba(71, 71, 71, 1);
 }
 
 .block-padding-xsmall {

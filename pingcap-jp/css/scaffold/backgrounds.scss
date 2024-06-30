@@ -1,5 +1,8 @@
 .bg-black,
+.bg-black-dark,
 .bg-blue,
+.bg-dark,
+.bg-gradient,
 .block-bg-image {
 	--body-font-color: var(--color-white);
 
@@ -16,7 +19,7 @@
 	--h5-color: var(--color-black);
 	--h6-color: var(--color-black);
 
-	--body-font-color: #20222B;
+	--body-font-color: #20222b;
 
 	--button-primary-normal-border-color: var(--color-blue);
 	--button-primary-normal-bg-color: var(--color-blue);
@@ -59,7 +62,8 @@
 	background-color: var(--color-white);
 }
 
-.bg-black {
+.bg-black,
+.bg-black-dark {
 	--h1-color: var(--color-white);
 	--h2-color: var(--color-white);
 	--h3-color: var(--color-white);
@@ -102,10 +106,25 @@
 	--carousel-nav-border-active-color: #777777;
 	--color-blockquote-highlight: var(--color-white);
 
-	background-color: var(--color-black);
+	--list-bullet-color: var(--color-white);
+
+	--card-label-color: var(--color-blue);
+	--card-title-color: var(--color-white);
+	--card-background-image: linear-gradient(to right, #000, #000),
+		linear-gradient(90deg, #0ca6f2, #0aadc4, #006fc2, #0ca6f2, #01ecb0, #28ea76);
+
+	background-color: #0e0e0e;
+
+	span.long-text {
+		color: var(--color-white);
+	}
 }
 
-.bg-black-light{
+.bg-black-dark {
+	background-color: #000;
+}
+
+.bg-black-light {
 	background-color: #222731;
 }
 
@@ -123,8 +142,8 @@
 	--button-primary-normal-border-color: var(--color-blue);
 	--button-primary-normal-text-color: var(--color-white);
 
-	--button-primary-hover-bg-color: #0CA6F2;
-	--button-primary-hover-border-color: #20222B;
+	--button-primary-hover-bg-color: #0ca6f2;
+	--button-primary-hover-border-color: #20222b;
 	--button-primary-hover-text-color: var(--color-white);
 
 	--button-primary-disabled-bg-color: rgba(var(--color-rgb-black), 0.4);
@@ -153,6 +172,41 @@
 	--button-secondary-disabled-text-color: var(--color-black-5);
 
 	background-color: var(--color-off-white);
+}
+
+.bg-gradient {
+	--h1-color: var(--color-white);
+	--h2-color: var(--color-white);
+	--h3-color: var(--color-white);
+	--h4-color: var(--color-blue-light);
+	--h5-color: var(--color-white);
+	--h6-color: var(--color-white);
+
+	--list-bullet-color: var(--color-white);
+
+	background: radial-gradient(
+		75.27% 75.27% at 48.39% 92.48%,
+		rgba(14, 91, 70, 0.62) 0%,
+		rgba(0, 142, 187, 0.28) 0.01%,
+		rgba(5, 140, 116, 0.21) 31.25%,
+		rgba(29, 50, 113, 0) 100%
+	);
+	background-color: #0e0e0e;
+}
+
+.bg-color-gradient {
+	background: linear-gradient(
+		90deg,
+		#0ca6f2 -1.46%,
+		#0aadc4 7.56%,
+		#006fc2 16.61%,
+		#0ca6f2 23.05%,
+		#01ecb0 91.39%,
+		#28ea76 100%
+	);
+
+	--button-secondary-normal-text-color: var(--color-black);
+	--button-secondary-hover-text-color: var(--color-black);
 }
 
 .block-bg-image {

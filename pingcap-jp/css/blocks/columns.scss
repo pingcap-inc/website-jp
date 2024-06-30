@@ -4,6 +4,21 @@
 			align-items: center;
 		}
 	}
+	&.container-border-top {
+		.block-inner {
+			border-top: 1px solid;
+			border-image: linear-gradient(
+					90deg,
+					#0ca6f2 -1.46%,
+					#0aadc4 7.56%,
+					#006fc2 16.61%,
+					#0ca6f2 23.05%,
+					#01ecb0 91.39%,
+					#28ea76 100%
+				)
+				1;
+		}
+	}
 	.block-inner {
 		display: grid;
 		grid-template-columns: repeat(var(--grid-num-cols, 1), minmax(0, 1fr));
@@ -274,10 +289,6 @@
 
 		@include media-min($large) {
 			padding-bottom: calc(var(--block-padding-lg-bottom));
-		}
-
-		&::before {
-			bottom: 0;
 		}
 	}
 
