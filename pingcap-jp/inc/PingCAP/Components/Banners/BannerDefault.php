@@ -678,8 +678,10 @@ class BannerDefault implements IComponent
 		}
 
 	?>
-		<div class="<?php echo esc_attr(implode(' ', $banner_classes)); ?>" style="background-image: url(<?php echo $this->banner_bg ? $this->banner_bg['url'] : ''; ?>)">
-			<div class="banner-default__inner contain" data-test="<?php echo  $this->banner_bg_color; ?>">
+		<div class="<?php echo esc_attr(implode(' ', $banner_classes)); ?>" <?php if ($this->banner_bg["url"]) {
+																				echo 'style="background-image: url(' . $this->banner_bg["url"] . ')"';
+																			}; ?>>
+			<div class="banner-default__inner contain">
 				<?php
 				if ($this->banner_display_type === 'use-case' && $this->use_case_illustration) {
 					Component::render(Components\Illustration::class, [

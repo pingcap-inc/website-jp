@@ -1,21 +1,21 @@
 .banner-home {
 	position: relative;
 	padding-top: 3rem;
+	background-repeat: repeat-x;
+	background-position: top center;
+	background-image: linear-gradient(to bottom, rgba(14, 14, 14, 0.4) 0, #000000bd 100%),
+		url(https://static.pingcap.co.jp/files/2024/06/29150254/bg-hex-pattern.png);
 
-	&__title {
-		color: var(--color-black);
+	h1 {
+		line-height: 1.25;
 	}
 
 	&__content {
-		margin-top: 1.6rem;
+		margin-top: 2.4rem;
 		padding-right: 3.2rem;
 		p {
 			font-weight: 700;
 			font-size: 30px;
-			color: #8b8c93;
-		}
-		h3 {
-			color: #8b8c93;
 		}
 	}
 

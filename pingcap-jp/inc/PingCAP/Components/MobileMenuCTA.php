@@ -26,7 +26,7 @@ class MobileMenuCTA implements IComponent
 		}
 
 		?>
-		<div class="mobile-menu mobile-menu-cta bg-black">
+		<div class="mobile-menu mobile-menu-cta">
 			<div class="mobile-menu-cta__inner">
 				<?php MenuDropdowns::render_now($this->cta_dropdown_menu_id); ?>
 			</div>
