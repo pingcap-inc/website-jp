@@ -24,7 +24,7 @@ foreach ($link_columns as $link_column) {
 
 ?>
 	<div class="mobile-menu-default__section-links-column">
-		<?php if ($label === 'Ecosystem') { ?>
+		<?php if ($label === 'エコシステム') { ?>
 			<span class="mobile-menu-default__section-links-column-label">Capabilities</span>
 			<a href="/ai/" data-gtag="event:jp_navi_click,item_name:Vector Search" style="padding-bottom:24px;">Vector Search</a>
 		<?php
