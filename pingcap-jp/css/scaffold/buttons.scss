@@ -168,8 +168,8 @@ input[type="submit"],
 	}
 
 	&--large {
-		min-height: 6rem;
-		min-width: 29rem;
+		max-height: 6rem;
+		max-width: 29rem;
 		border-radius: 3rem;
 		font-size: 2rem;
 	}
