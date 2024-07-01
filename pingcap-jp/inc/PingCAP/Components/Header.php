@@ -105,8 +105,8 @@ class Header implements IComponent
 							<a href="/contact-us/" data-gtag="event:go_to_lead_form_page,button_name:Book a Demo,position:header" class="button button-blue-outline dropdown-menu-activate">
 								お問い合わせ
 							</a>
-							<a href="/get-started-tidb/" data-gtag="event:start_button_click,button_name:Start Instantly,position:header" class="button dropdown-menu-activate">
-								今すぐ始める
+							<a href="https://tidbcloud.com/free-trial/" data-gtag="event:event:go_to_cloud_signup,button_name:Start Free,product_type:serverless,position:header" class="button dropdown-menu-activate">
+								無料で始める
 							</a>
 						</div>
 					</div>
