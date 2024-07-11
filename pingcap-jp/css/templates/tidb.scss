@@ -192,6 +192,9 @@
             display: flex;
             align-items: center;
             gap: 4px;
+			.writing-mode-tb{
+				writing-mode: tb;
+			}
             @include media-min($large) {
                 font-size: 30px;
             }
