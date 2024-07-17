@@ -1,6 +1,25 @@
 <?php
+use PingCAP\Constants;
 
 $acf_group = 'user_day';
+
+//イベントページでflg_user_dayが有効な場合テンプレートを変更する。
+function custom_user_day_template_include( $template ) {
+    if ( is_singular( 'event' ) || is_singular( 'page' ) ) {
+        global $post;
+        //カスタムフィールドflg_user_dayの値を取得
+        $flg_user_day = get_post_meta($post->ID, 'flg_user_day', true);
+        //flg_user_dayがtrueの場合、テンプレートを変更
+        if($flg_user_day){
+            $new_template = locate_template( array( 'templates/page-user-day.php' ) );
+            if ( '' != $new_template ) {
+                return $new_template ;
+            }
+        }
+    }
+    return $template;
+}
+add_filter( 'template_include', 'custom_user_day_template_include', 99 );
 
 acf_add_local_field_group(array(
     'key' => 'group_' . $acf_group,
@@ -640,7 +659,7 @@ acf_add_local_field_group(array(
                                         'class' => '',
                                         'id' => '',
                                     ),
-                                    'taxonomy' => 'userdaytag',
+                                    'taxonomy' => Constants\Taxonomies::USERDAY,
                                     'add_term' => 1,
                                     'save_terms' => 0,
                                     'load_terms' => 0,
