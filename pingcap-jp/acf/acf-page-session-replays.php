@@ -112,28 +112,6 @@ acf_add_local_field_group(array(
                                 'readonly' => 0,
                                 'disabled' => 0,
                             ),
-                            array(
-                                'key' => 'field_' . $acf_group . '_tag',
-                                'label' => 'Tag',
-                                'name' => 'tag',
-                                'type' => 'text',
-                                'instructions' => '',
-                                'required' => 0,
-                                'conditional_logic' => 0,
-                                'wrapper' => array(
-                                    'width' => '',
-                                    'class' => '',
-                                    'id' => '',
-                                ),
-                                'default_value' => '',
-                                'placeholder' => '',
-                                'formatting' => 'none', // none | html
-                                'prepend' => '',
-                                'append' => '',
-                                'maxlength' => '',
-                                'readonly' => 0,
-                                'disabled' => 0,
-                            ),
                         ),
                         WPUtil\Vendor\BlueprintBlocks::safe_get_link_fields([
                             'label' => 'Download PDF Button',
