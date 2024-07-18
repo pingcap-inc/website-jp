@@ -31,7 +31,7 @@
         margin-top: calc((var(--body-top-offset) - 60px) * -1);
         padding: 8rem 0;
         background: url("https://static.pingcap.co.jp/files/2024/07/17160821/hexagon.png")
-        no-repeat center top / contain;
+            no-repeat center top / contain;
         @include media-min($medium) {
             margin-top: calc((var(--body-top-offset) - 70px) * -1);
             background-position: center -100px;
@@ -74,11 +74,15 @@
         .block-columns__video-container {
             margin-bottom: 2rem;
         }
-        .tag {
-            background-color: var(--color-blue);
+        .button {
+            background: var(--color-blue);
             border-radius: 4px;
             color: #fff;
             padding: 0.4rem 1rem;
+            min-width: auto;
+            min-height: auto;
+            height: auto;
+            line-height: normal;
         }
     }
 }
