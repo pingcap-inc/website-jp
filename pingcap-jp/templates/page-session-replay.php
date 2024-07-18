@@ -5,7 +5,7 @@
  */
 
 use WPUtil\{Arrays, Vendor};
-use WPUtil\Vendor\ACF;
+use WPUtil\Vendor\{ACF, BlueprintBlocks};
 use Blueprint\Images;
 
 get_header();
@@ -27,7 +27,7 @@ get_header();
                     foreach ($videos as $video) {
                         $video_image = Arrays::get_value_as_array($video, 'image');
                         $video_url = Arrays::get_value_as_string($video, 'url');
-                        $video_tag = Arrays::get_value_as_string($video, 'tag');
+                        $video_pdf = BlueprintBlocks::get_button_field_values('video_pdf', $video);
                     ?>
                         <div class="block-columns__column wysiwyg">
                             <a class="block-columns__video-container js--trigger-video-modal ignore-link-styles" href="<?php echo esc_url($video_url); ?>">
@@ -37,9 +37,9 @@ get_header();
                                 do_action('grav_blocks_get_video_link_button', '');
                                 ?>
                             </a>
-                            <?php if ($video_tag) { ?>
+                            <?php if ($video_pdf) { ?>
                                 <div class="text-right">
-                                    <span class="tag"><?php echo $video_tag; ?></span>
+                                    <a class="button" href="<?php echo $video_pdf->link; ?>"><?php echo $video_pdf->text; ?></a>
                                 </div>
                             <?php
                             }
