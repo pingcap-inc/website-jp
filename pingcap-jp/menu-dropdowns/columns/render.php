@@ -51,7 +51,7 @@ $is_feature_right = Arrays::get_value_as_string($values, 'format');
 		$icons = Arrays::get_value_as_array($link_column, 'links');
 	?>
 		<div class="menu-dropdown__item menu-dropdown__links-column">
-			<?php if ($label === 'Ecosystem') { ?>
+			<?php if ($label === 'エコシステム') { ?>
 				<div class="menu-dropdown__item-ai">
 					<span class="menu-dropdown__links-column-label">
 						Capabilities
