@@ -50,4 +50,8 @@ use PingCAP\{Components, Constants};
 		the_field(Constants\ACF::THEME_OPTIONS_SCRIPTS_BASE . '_global_body_top_content', 'option', false);
 	}
 
-	WPUtil\Component::render(Components\Header::class);
+	if(is_page_template('templates/page-session-replay.php')){
+		WPUtil\Component::render(Components\HeaderSessionReplay::class);
+	} else {
+		WPUtil\Component::render(Components\Header::class);
+	}

@@ -1,0 +1,84 @@
+.tmpl-session-replay {
+    &__header {
+        position: fixed;
+        top: var(--admin-bar-height, 0);
+        left: 0;
+        right: 0;
+        z-index: 2;
+        box-shadow: -15px 0 15px 0 rgba(0, 0, 0, 0.15);
+        background: url("https://static.pingcap.co.jp/files/2024/07/17154234/bkgd.png")
+            no-repeat center center/cover;
+        padding: 1.6rem 0;
+        .contain {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        &-title {
+            font-size: 20px;
+            @include media-min($medium) {
+                font-size: 26px;
+            }
+            font-weight: bold;
+            color: #fff;
+        }
+        a {
+            color: #fff;
+            text-decoration: none;
+        }
+    }
+    &__content {
+        margin-top: calc((var(--body-top-offset) - 60px) * -1);
+        padding: 8rem 0;
+        background: url("https://static.pingcap.co.jp/files/2024/07/17160821/hexagon.png")
+        no-repeat center top / contain;
+        @include media-min($medium) {
+            margin-top: calc((var(--body-top-offset) - 70px) * -1);
+            background-position: center -100px;
+        }
+        &-title {
+            color: #333334;
+        }
+    }
+    &__card {
+        margin-top: 4rem;
+        @include media-min($medium) {
+            margin-top: 8rem;
+        }
+        &-title {
+            color: #000;
+            font-size: 28px;
+            font-style: normal;
+            font-weight: 600;
+            line-height: normal;
+            @include media-min($medium) {
+                font-size: 34px;
+            }
+            margin-bottom: 4rem;
+        }
+        &-items {
+            --cards-per-row: 1;
+
+            display: grid;
+            grid-template-columns: repeat(var(--cards-per-row), 1fr);
+            gap: var(--grid-column-gutter);
+
+            @include media-min($medium) {
+                --cards-per-row: 2;
+            }
+
+            @include media-min($large) {
+                --cards-per-row: 3;
+            }
+        }
+        .block-columns__video-container {
+            margin-bottom: 2rem;
+        }
+        .tag {
+            background-color: var(--color-blue);
+            border-radius: 4px;
+            color: #fff;
+            padding: 0.4rem 1rem;
+        }
+    }
+}
