@@ -13,7 +13,7 @@ get_header();
 ?>
 <main class="tmpl-session-replay__content">
     <div class="contain">
-        <h1 class="tmpl-session-replay__content-title">Session replays</h1>
+        <h1 class="tmpl-session-replay__content-title">Session Replays</h1>
         <?php
         $replay_sections = ACF::get_field_array('session_replay_content');
         foreach ($replay_sections as $index => $replay_section) {
@@ -23,36 +23,32 @@ get_header();
             <div class="tmpl-session-replay__card">
                 <h5 class="tmpl-session-replay__card-title"><?php echo $title; ?></h5>
                 <div class="tmpl-session-replay__card-items">
-                    <div class="block-columns__column wysiwyg">
-                        <?php
-                        foreach ($videos as $video) {
-                            $video_image = Arrays::get_value_as_array($video, 'image');
-                            $video_url = Arrays::get_value_as_string($video, 'url');
-                            $video_tag = Arrays::get_value_as_string($video, 'tag');
-                        ?>
-
-                            <div class="block-columns__column wysiwyg">
-                                <a class="block-columns__video-container js--trigger-video-modal ignore-link-styles" href="<?php echo esc_url($video_url); ?>">
-                                    <?php
-                                    Images::safe_image_output($video_image, ['class' => 'block-columns__video-image']);
-
-                                    do_action('grav_blocks_get_video_link_button', '');
-                                    ?>
-                                </a>
-                                <?php if ($video_tag) { ?>
-                                    <div class="text-right">
-                                        <span class="tag"><?php echo $video_tag; ?></span>
-                                    </div>
+                    <?php
+                    foreach ($videos as $video) {
+                        $video_image = Arrays::get_value_as_array($video, 'image');
+                        $video_url = Arrays::get_value_as_string($video, 'url');
+                        $video_tag = Arrays::get_value_as_string($video, 'tag');
+                    ?>
+                        <div class="block-columns__column wysiwyg">
+                            <a class="block-columns__video-container js--trigger-video-modal ignore-link-styles" href="<?php echo esc_url($video_url); ?>">
                                 <?php
-                                }
-                                ?>
-                            </div>
-                        <?php
-                        }
-                        ?>
-                    </div>
-                </div>
+                                Images::safe_image_output($video_image, ['class' => 'block-columns__video-image']);
 
+                                do_action('grav_blocks_get_video_link_button', '');
+                                ?>
+                            </a>
+                            <?php if ($video_tag) { ?>
+                                <div class="text-right">
+                                    <span class="tag"><?php echo $video_tag; ?></span>
+                                </div>
+                            <?php
+                            }
+                            ?>
+                        </div>
+                    <?php
+                    }
+                    ?>
+                </div>
             </div>
         <?php } ?>
     </div>
