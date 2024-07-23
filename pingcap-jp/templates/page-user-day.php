@@ -5,6 +5,7 @@
  */
 
 use WPUtil\{Vendor};
+use PingCAP\Constants;
 
 get_header();
 
@@ -134,26 +135,24 @@ get_header();
                                 <span class="a-heading_text-one  tw-text-white tw-text-[3rem] md:tw-text-[4.2rem] tw-font-bold tw-text-center tw-leading-snug">タイムテーブル</span>
                             </h2>
                         </div>
-                        <?php if ($_room) : ?>
-                            <div class="l-inner tw-mt-[4rem]">
-                                <div class="p-timetable-anchor">
-                                    <ul class="p-timetable-anchor_list">
-                                        <?php while (have_rows("user_day_section_room")) : the_row(); ?>
-                                            <li>
-                                                <a href="#day_<?php echo get_row_index(); ?>" class="a-button is-left is-design-square is-type-solid-white tw-font-bold js-scroll">
-                                                    <span class="a-button_inner ">
-                                                        <span class="a-button_text"><?php echo get_sub_field("name"); ?></span><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20">
-                                                            <rect width="20" height="20" style="fill:none;" />
-                                                            <path d="M8.74,13.34l-2.6-2.6c-.5-.5-1.3-.5-1.8,0s-.5,1.3,0,1.7h0l4.7,4.7c.3,.3,.7,.4,1,.4s.7-.1,.9-.4l4.7-4.7c.2-.2,.4-.5,.4-.9,0-.3-.1-.6-.4-.9-.2-.2-.6-.4-.9-.4s-.7,.1-.9,.4l-2.6,2.6V3.74c0-.3-.1-.6-.4-.9-.5-.5-1.3-.5-1.8,0-.1,.3-.3,.6-.3,.9V13.34h0Z" />
-                                                        </svg>
-                                                    </span>
-                                                </a>
-                                            </li>
-                                        <?php endwhile; ?>
-                                    </ul>
-                                </div>
+                        <div class="l-inner tw-mt-[4rem]">
+                            <div class="p-timetable-anchor">
+                                <ul class="p-timetable-anchor_list">
+                                    <?php while (have_rows("user_day_section_room")) : the_row(); ?>
+                                        <li>
+                                            <a href="#day_<?php echo get_row_index(); ?>" class="a-button is-left is-design-square is-type-solid-white tw-font-bold js-scroll">
+                                                <span class="a-button_inner ">
+                                                    <span class="a-button_text"><?php echo get_sub_field("name"); ?></span><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20">
+                                                        <rect width="20" height="20" style="fill:none;" />
+                                                        <path d="M8.74,13.34l-2.6-2.6c-.5-.5-1.3-.5-1.8,0s-.5,1.3,0,1.7h0l4.7,4.7c.3,.3,.7,.4,1,.4s.7-.1,.9-.4l4.7-4.7c.2-.2,.4-.5,.4-.9,0-.3-.1-.6-.4-.9-.2-.2-.6-.4-.9-.4s-.7,.1-.9,.4l-2.6,2.6V3.74c0-.3-.1-.6-.4-.9-.5-.5-1.3-.5-1.8,0-.1,.3-.3,.6-.3,.9V13.34h0Z" />
+                                                    </svg>
+                                                </span>
+                                            </a>
+                                        </li>
+                                    <?php endwhile; ?>
+                                </ul>
                             </div>
-                        <?php endif; ?>
+                        </div>
                         <?php
                         $_all_terms = array();
                         if (have_rows("user_day_section_room")) {
@@ -163,7 +162,7 @@ get_header();
                                     while (have_rows("program")) {
                                         the_row();
                                         foreach (get_sub_field("tags") as $tag_id) {
-                                            $term = get_term($tag_id, "userdaytag");
+                                            $term = get_term($tag_id, Constants\Taxonomies::USERDAY);
                                             $_all_terms[$term->term_id] = $term;
                                         }
                                     }
@@ -216,7 +215,7 @@ get_header();
                                                             <?php if (get_sub_field("tags")) : ?>
                                                                 <ul class="p-timetable-item_tags tw-mt-2">
                                                                     <?php foreach (get_sub_field("tags") as $tag_id) : ?>
-                                                                        <?php $term = get_term($tag_id, "userdaytag"); ?>
+                                                                        <?php $term = get_term($tag_id, Constants\Taxonomies::USERDAY); ?>
                                                                         <li data-tags="<?php echo $term->term_id; ?>">
                                                                             <span><?php echo $term->name; ?></span>
                                                                         </li>
