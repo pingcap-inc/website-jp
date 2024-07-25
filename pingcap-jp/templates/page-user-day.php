@@ -281,7 +281,13 @@ get_header();
                                                                             </a>
                                                                         </li>
                                                                     <?php elseif (isset($link["type"]) && $link["type"] == "movie") : ?>
-
+                                                                        <li>
+                                                                            <a href="<?php echo $link["url"] ? $link["url"] : "#" ; ?>" class="a-button is-border is-content-fit js--trigger-video-modal is-design-square is-type-grd-secondary<?php echo $link["url"] ? "" : " is-disabled" ; ?>">
+                                                                            <span class="a-button_inner ">
+                                                                                <span class="a-button_text"><?php echo $link["text"] ? $link["text"] : $link["url"] ; ?></span>
+                                                                            </span>
+                                                                            </a>
+                                                                        </li>
                                                                     <?php endif; ?>
                                                                 <?php endforeach; ?>
                                                             </ul>
