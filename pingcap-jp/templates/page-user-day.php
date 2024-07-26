@@ -1,15 +1,42 @@
 <?php
 
 /**
- * Template Name: User Day
+ * Template Name: New Event Template
  */
 
 use WPUtil\{Vendor};
 use PingCAP\Constants;
 
 get_header();
-
 ?>
+<?php if ($_mv = get_field("user_day_section_mv")) : ?>
+<style>
+    <?php
+    $_image = "";
+    if( isset($_mv["sp"]) && $_mv["sp"] ){
+        $_image = wp_get_attachment_image_src( $_mv["sp"] , "full");
+    }
+    if( $_image ):
+    ?>
+    .p-hero {
+        background: url(<?php echo $_image[0] ?>) no-repeat 50%/cover;
+    }
+    <?php endif; ?>
+    <?php
+    $_image = "";
+    if( isset($_mv["pc"]) && $_mv["pc"] ){
+        $_image = wp_get_attachment_image_src( $_mv["pc"] , "full");
+    }
+    if( $_image ):
+    ?>
+    @media (min-width: 750px) {
+        .p-hero {
+            background:url(<?php echo $_image[0] ?>) no-repeat 50%/auto;
+        }
+    }
+    <?php endif; ?>
+</style>
+<?php endif; ?>
 <main class="tmpl-page">
     <div class="tidb-user-day-html">
         <section class="l-section">
