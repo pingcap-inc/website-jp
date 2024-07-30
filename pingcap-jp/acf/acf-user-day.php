@@ -19,7 +19,7 @@ function custom_user_day_template_include( $template ) {
     }
     return $template;
 }
-add_filter( 'template_include', 'custom_user_day_template_include', 99 );
+// add_filter( 'template_include', 'custom_user_day_template_include', 99 );
 
 add_action( 'acf/include_fields', function() {
 	if ( ! function_exists( 'acf_add_local_field_group' ) ) {
