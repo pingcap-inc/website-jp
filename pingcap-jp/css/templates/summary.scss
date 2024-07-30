@@ -1,0 +1,264 @@
+.tmpl-summary {
+    &__header {
+        background-color: #001524;
+        position: fixed;
+        top: var(--admin-bar-height, 0);
+        left: 0;
+        right: 0;
+        z-index: 2;
+        padding: 1.6rem 0;
+        .contain {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .button {
+            background: linear-gradient(
+                90deg,
+                #00b8ff 0%,
+                #28ffff 31.1%,
+                #08a8ff 68.9%,
+                #0064c8 100%
+            );
+            color: #000;
+            width: max-content;
+        }
+        &-title {
+            font-size: 20px;
+            @include media-min($medium) {
+                font-size: 26px;
+            }
+            font-weight: bold;
+            color: #fff;
+        }
+        &-nav {
+            display: none;
+            @include media-min(1200px) {
+                display: flex;
+                align-items: center;
+                gap: 3.2rem;
+            }
+        }
+
+        .nav-arrow {
+            color: #08c5ff;
+            width: 16px;
+            height: 16px;
+        }
+        .nav-menu {
+            padding: 1rem 0;
+            color: #fff;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            @include media-min(1200px) {
+                padding: 0;
+            }
+            font-size: 16px;
+            line-height: 36px;
+            text-decoration: none;
+            cursor: pointer;
+            transition: 0.2s ease-in-out;
+            &.active {
+                color: #08c5ff;
+            }
+        }
+        .nav-dropper {
+            @include media-min(1200px) {
+                position: absolute;
+                top: 100%;
+                left: -66px;
+                margin: 0 auto;
+                width: 200px;
+                display: none;
+            }
+            transition: 0.2s ease-in-out;
+            &__wrapper {
+                position: relative;
+                &:hover {
+                    .nav-dropper {
+                        display: block;
+                    }
+                }
+            }
+            &__content {
+                background-color: #2e2e2e;
+                border-radius: 4px;
+                font-size: 14px;
+                padding: 1rem 3.2rem 1rem 4.8rem;
+                @include media-min(1200px) {
+                    margin-top: 1rem;
+                    background-color: #000;
+                    padding: 2rem 0 2rem 2.2rem;
+                }
+                a {
+                    color: #fff;
+                    font-size: 14px;
+                    line-height: 36px;
+                    text-decoration: none;
+                    transition: 0.2s ease-in-out;
+                    display: block;
+                    &:hover {
+                        color: #08c5ff;
+                        padding-left: 0.9rem;
+                    }
+                }
+            }
+        }
+
+        .navbar-toggle {
+            @include media-min(1200px) {
+                display: none;
+            }
+
+            padding: 1rem;
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+            cursor: pointer;
+            span {
+                width: 2rem;
+                height: 2px;
+                background-color: #fff;
+            }
+        }
+        .navbar-collapse {
+            display: flex;
+            flex-direction: column;
+            align-items: normal;
+            height: 0;
+            transition: all 0.3s;
+            overflow: hidden;
+            @include media-min(1200px) {
+                display: none;
+            }
+            &.active {
+                height: 32rem;
+                margin-top: 1.6rem;
+                .button {
+                    margin-top: 1.6rem;
+                }
+            }
+            .nav-menu.active {
+                color: #08c5ff;
+            }
+        }
+    }
+    &__content {
+        text-align: center;
+        background: url(https://static.pingcap.co.jp/files/2024/07/29172013/home-banner-mb.jpg)
+            no-repeat center center/cover #0e0e0e;
+        margin-top: calc((var(--body-top-offset) - 60px) * -1);
+        padding: 8rem 0;
+        @include media-min($medium) {
+            display: flex;
+            align-items: center;
+            min-height: calc(100vh - 80px);
+            background: url(https://static.pingcap.co.jp/files/2024/07/29172016/home-banner-scaled.jpg)
+                no-repeat center 20% / cover #0e0e0e;
+            margin-top: calc((var(--body-top-offset) - 70px) * -1);
+        }
+        &-title {
+            font-weight: 600;
+            font-size: clamp(30px, 8vw, 92px);
+            line-height: 1.2;
+            background: linear-gradient(90deg, #08c5ff 0%, #ffffff 100%);
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 3.2rem;
+        }
+        .button {
+            background: linear-gradient(
+                90deg,
+                #00b8ff 0%,
+                #28ffff 31.1%,
+                #08a8ff 68.9%,
+                #0064c8 100%
+            );
+            color: #000;
+            width: max-content;
+        }
+    }
+    &__carousel {
+        width: 100%;
+        padding-bottom: 3rem;
+        overflow: hidden;
+        background-color: #000;
+
+        --size-factor: 300px;
+        --number-of-items: 14;
+        @include media-min($medium) {
+            --size-factor: 450px;
+        }
+
+        .carousel-list {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: nowrap;
+            margin-bottom: 40px;
+            width: fit-content;
+
+            &-container {
+                animation: bannermove 40s linear infinite;
+                width: calc(
+                    var(--number-of-items, 4) * var(--size-factor, 450px)
+                );
+                display: flex;
+                // position: relative;
+                // overflow: hidden;
+            }
+        }
+        .carousel-item {
+            margin-left: 1.6rem;
+            margin-right: 1.6rem;
+            width: 300px;
+            height: 200px;
+            @include media-min($medium) {
+                width: 450px;
+                height: 300px;
+            }
+            &-image {
+                width: 100%;
+                border-radius: 1.6rem;
+            }
+        }
+        .add-calendar {
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            @include media-min($large) {
+                flex-direction: row;
+                justify-content: center;
+            }
+            span,
+            a {
+                font-size: 16px;
+                color: #fff;
+            }
+            .line {
+                padding: 0 1rem;
+            }
+            a {
+                text-decoration: none;
+            }
+        }
+        .icon-calendar {
+            background: url("https://static.pingcap.com/files/2024/05/19201337/20240520-111316.png")
+                no-repeat center center/cover;
+            width: 16px;
+            height: 16px;
+            display: inline-block;
+            vertical-align: middle;
+        }
+    }
+}
+
+@keyframes bannermove {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50%);
+    }
+}
