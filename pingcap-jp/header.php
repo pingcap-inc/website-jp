@@ -1,4 +1,5 @@
 <?php
+
 use PingCAP\{Components, Constants};
 ?>
 <!doctype html>
@@ -32,7 +33,7 @@ use PingCAP\{Components, Constants};
 		<script src="<?php echo esc_url(get_template_directory_uri()); ?>/tidb-user-day/assets/js/main.js" defer></script>
 	<?php } ?>
 
-	<?php if ( get_post_meta($post->ID, 'flg_user_day', true) ) { ?>
+	<?php if (is_page_template('templates/page-user-day.php')) { ?>
 		<link rel="stylesheet" href="<?php echo esc_url(get_template_directory_uri()); ?>/userday/css/userday.css">
 		<script src="<?php echo esc_url(get_template_directory_uri()); ?>/userday/js/userday.js" defer></script>
 	<?php } ?>
