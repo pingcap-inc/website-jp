@@ -31,7 +31,7 @@ class HeaderSummary implements IComponent
                         </div>
                         <div class="nav-dropper">
                             <div class="nav-dropper__content">
-                                <a href="/tidb-user-day/2024">
+                                <a href="/tidb-user-day/jul-2024">
                                     TiDB User Day 2024
                                 </a>
                             </div>
