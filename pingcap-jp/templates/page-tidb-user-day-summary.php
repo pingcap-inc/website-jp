@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Template Name: TiDB user day summary
+ * Template Name: TiDB User Day Summary
  */
 
 use WPUtil\{Vendor};
@@ -12,7 +12,7 @@ get_header();
 <main class="tmpl-summary__content">
     <div class="contain">
         <h1 class="tmpl-summary__content-title">NewSQLデータベースは<br>もう冒険じゃない</h1>
-        <a class="button" href="/tidb-user-day/sept-2024/">アーカイブ動画を視聴する</a>
+        <a class="button" href="/tidb-user-day/jul-2024/">アーカイブ動画を視聴する</a>
     </div>
 </main>
 <section class="bg-black block-container block-columns" id="about">
