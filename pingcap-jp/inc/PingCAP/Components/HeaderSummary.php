@@ -31,13 +31,13 @@ class HeaderSummary implements IComponent
                         </div>
                         <div class="nav-dropper">
                             <div class="nav-dropper__content">
-                                <a href="/tidb-user-day/2024">
+                                <a href="/tidb-user-day/jul-2024">
                                     TiDB User Day 2024
                                 </a>
                             </div>
                         </div>
                     </div>
-                    <a class="button" href="/tidb-user-day/sept-2024/">アーカイブ動画を視聴する</a>
+                    <a class="button" href="/tidb-user-day/jul-2024/">アーカイブ動画を視聴する</a>
                 </nav>
                 <div class="navbar-toggle">
                     <span></span>
@@ -60,13 +60,13 @@ class HeaderSummary implements IComponent
                     </div>
                     <div class="nav-dropper">
                         <div class="nav-dropper__content">
-                            <a href="/tidb-user-day/2024">
+                            <a href="/tidb-user-day/jul-2024">
                                 TiDB User Day 2024
                             </a>
                         </div>
                     </div>
                 </div>
-                <a class="button" href="/tidb-user-day/sept-2024/">アーカイブ動画を視聴する</a>
+                <a class="button" href="/tidb-user-day/jul-2024/">アーカイブ動画を視聴する</a>
             </nav>
         </header>
 <?php
