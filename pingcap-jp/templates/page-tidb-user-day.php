@@ -230,17 +230,6 @@ get_header();
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="p-timetable-item_bottom">
-                                            <ul class="p-timetable-item_buttons">
-                                                <li>
-                                                    <a href="#" class="a-button is-border is-content-fit is-design-square is-type-grd-secondary is-disabled">
-                                                        <span class="a-button_inner ">
-                                                            <span class="a-button_text">講演資料</span>
-                                                        </span>
-                                                    </a>
-                                                </li>
-                                            </ul>
-                                        </div>
                                     </div>
                                     <div class="p-timetable-item is-rest">
                                         <div class="p-timetable-item_inner">
@@ -301,17 +290,6 @@ get_header();
                                                     </div>
                                                 </div>
                                             </div>
-                                        </div>
-                                        <div class="p-timetable-item_bottom">
-                                            <ul class="p-timetable-item_buttons">
-                                                <li>
-                                                    <a href="#" class="a-button is-border is-content-fit is-design-square is-type-grd-secondary is-disabled">
-                                                        <span class="a-button_inner ">
-                                                            <span class="a-button_text">講演資料</span>
-                                                        </span>
-                                                    </a>
-                                                </li>
-                                            </ul>
                                         </div>
                                     </div>
                                     <div class="p-timetable-item is-rest">
@@ -374,17 +352,6 @@ get_header();
                                                     </div>
                                                 </div>
                                             </div>
-                                        </div>
-                                        <div class="p-timetable-item_bottom">
-                                            <ul class="p-timetable-item_buttons">
-                                                <li>
-                                                    <a href="#" class="a-button is-border is-content-fit is-design-square is-type-grd-secondary is-disabled">
-                                                        <span class="a-button_inner ">
-                                                            <span class="a-button_text">講演資料</span>
-                                                        </span>
-                                                    </a>
-                                                </li>
-                                            </ul>
                                         </div>
                                     </div>
                                     <div class="p-timetable-item is-rest">
@@ -460,17 +427,6 @@ get_header();
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="p-timetable-item_bottom">
-                                            <ul class="p-timetable-item_buttons">
-                                                <li>
-                                                    <a href="#" class="a-button is-border is-content-fit is-design-square is-type-grd-secondary is-disabled">
-                                                        <span class="a-button_inner ">
-                                                            <span class="a-button_text">講演資料</span>
-                                                        </span>
-                                                    </a>
-                                                </li>
-                                            </ul>
-                                        </div>
                                     </div>
                                     <div class="p-timetable-item is-rest">
                                         <div class="p-timetable-item_inner">
@@ -530,17 +486,6 @@ get_header();
                                                     </div>
                                                 </div>
                                             </div>
-                                        </div>
-                                        <div class="p-timetable-item_bottom">
-                                            <ul class="p-timetable-item_buttons">
-                                                <li>
-                                                    <a href="#" class="a-button is-border is-content-fit is-design-square is-type-grd-secondary is-disabled">
-                                                        <span class="a-button_inner ">
-                                                            <span class="a-button_text">講演資料</span>
-                                                        </span>
-                                                    </a>
-                                                </li>
-                                            </ul>
                                         </div>
                                     </div>
                                     <div class="p-timetable-item is-rest">
@@ -602,17 +547,6 @@ get_header();
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="p-timetable-item_bottom">
-                                            <ul class="p-timetable-item_buttons">
-                                                <li>
-                                                    <a href="#" class="a-button is-border is-content-fit is-design-square is-type-grd-secondary is-disabled">
-                                                        <span class="a-button_inner ">
-                                                            <span class="a-button_text">講演資料</span>
-                                                        </span>
-                                                    </a>
-                                                </li>
-                                            </ul>
-                                        </div>
                                     </div>
                                     <div class="p-timetable-item is-rest">
                                         <div class="p-timetable-item_inner">
@@ -673,17 +607,6 @@ get_header();
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="p-timetable-item_bottom">
-                                            <ul class="p-timetable-item_buttons">
-                                                <li>
-                                                    <a href="#" class="a-button is-border is-content-fit is-design-square is-type-grd-secondary is-disabled">
-                                                        <span class="a-button_inner ">
-                                                            <span class="a-button_text">講演資料</span>
-                                                        </span>
-                                                    </a>
-                                                </li>
-                                            </ul>
-                                        </div>
                                     </div>
                                     <div class="p-timetable-item is-rest">
                                         <div class="p-timetable-item_inner">
@@ -743,17 +666,6 @@ get_header();
                                                     </div>
                                                 </div>
                                             </div>
-                                        </div>
-                                        <div class="p-timetable-item_bottom">
-                                            <ul class="p-timetable-item_buttons">
-                                                <li>
-                                                    <a href="#" class="a-button is-border is-content-fit is-design-square is-type-grd-secondary is-disabled">
-                                                        <span class="a-button_inner ">
-                                                            <span class="a-button_text">講演資料</span>
-                                                        </span>
-                                                    </a>
-                                                </li>
-                                            </ul>
                                         </div>
                                     </div>
                                     <div class="p-timetable-item">
