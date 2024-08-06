@@ -17,7 +17,7 @@ class HeaderSessionreplay implements IComponent
         <header class="tmpl-session-replay__header">
             <div class="contain">
                 <div class="tmpl-session-replay__header-title">TiDB User Day 2024</div>
-                <a href="https://pingcap.co.jp/tidb-user-day/">Home</a>
+                <a href="https://pingcap.co.jp/tidb-user-day/">ホーム</a>
             </div>
         </header>
 <?php
