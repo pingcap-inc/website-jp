@@ -352,13 +352,13 @@ get_header();
             </section>
             <!-- section -->
         <?php endif; ?>
-        <?php if ($_company = get_field("user_day_section_company")) : ?>
+        <?php if ($_company = get_field("user_day_section_company") && get_field("user_day_section_company_title") ) : ?>
             <section class="l-section tw-py-[4.2rem] md:tw-py-[8rem] tw-bg-white" id="partner">
                 <div class="l-wrap">
                     <div class="l-content is-w-1172">
                         <div class="l-inner">
                             <h2 class="a-heading ">
-                                <span class="a-heading_text-one  tw-text-center tw-text-[3rem] md:tw-text-[4.2rem] tw-leading-normal">登壇企業</span>
+                                <span class="a-heading_text-one  tw-text-center tw-text-[3rem] md:tw-text-[4.2rem] tw-leading-normal"><?php echo get_field("user_day_section_company_title"); ?></span>
                             </h2>
                         </div>
                         <?php if (get_field("user_day_section_company_pc") || get_field("user_day_section_company_sp")) : ?>
@@ -369,7 +369,7 @@ get_header();
                                     <picture>
                                         <source media="(min-width: 751px)" srcset="<?php echo $_pc[0]; ?>" width="<?php echo $_pc[1]; ?>" height="<?php echo $_pc[2]; ?>">
                                         <source media="(max-width: 750px)" srcset="<?php echo $_sp[0]; ?>" width="<?php echo $_sp[1]; ?>" height="<?php echo $_sp[2]; ?>">
-                                        <img src="<?php echo $_pc[0]; ?>" class="" width="<?php echo $_pc[1]; ?>" height="<?php echo $_pc[2]; ?>" alt="登壇企業" loading="lazy" decoding="async">
+                                        <img src="<?php echo $_pc[0]; ?>" class="" width="<?php echo $_pc[1]; ?>" height="<?php echo $_pc[2]; ?>" alt="<?php echo get_field("user_day_section_company_title"); ?>" loading="lazy" decoding="async">
                                     </picture>
                                 </div>
                             </div>
@@ -423,10 +423,10 @@ get_header();
                                 </a>
                             </li>
                         <?php endif; ?>
-                        <?php if (get_field("user_day_section_company_pc") || get_field("user_day_section_company_sp")) : ?>
+                        <?php if (get_field("user_day_section_company_title") ) : ?>
                             <li>
                                 <a href="#partner" class="p-fixed-nav-pc_link js-scroll">
-                                    登壇企業
+                                <?php echo get_field("user_day_section_company_title"); ?>
                                 </a>
                             </li>
                         <?php endif; ?>
@@ -511,10 +511,10 @@ get_header();
                                         </a>
                                     </li>
                                 <?php endif; ?>
-                                <?php if (get_field("user_day_section_company_pc") || get_field("user_day_section_company_sp")) : ?>
+                                <?php if (get_field("user_day_section_company_title")) : ?>
                                     <li>
                                         <a href="#partner" class="p-modal-nav_link js-modal__close">
-                                            登壇企業
+                                        <?php echo get_field("user_day_section_company_title"); ?>
                                         </a>
                                     </li>
                                 <?php endif; ?>
