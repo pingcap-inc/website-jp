@@ -773,7 +773,7 @@ add_action( 'acf/include_fields', function() {
 				),
 				array(
 					'key' => 'field_6665df4f6579a',
-					'label' => '登壇企業',
+					'label' => 'イベント用 大画像',
 					'name' => 'company',
 					'aria-label' => '',
 					'type' => 'group',
@@ -787,6 +787,26 @@ add_action( 'acf/include_fields', function() {
 					),
 					'layout' => 'block',
 					'sub_fields' => array(
+						array(
+							'key' => 'field_66a9048005bd8',
+							'label' => 'タイトル',
+							'name' => 'title',
+							'aria-label' => '',
+							'type' => 'text',
+							'instructions' => '未入力の場合、エリアが非表示になります。',
+							'required' => 0,
+							'conditional_logic' => 0,
+							'wrapper' => array(
+								'width' => '',
+								'class' => '',
+								'id' => '',
+							),
+							'default_value' => '',
+							'maxlength' => '',
+							'placeholder' => '',
+							'prepend' => '',
+							'append' => '',
+						),
 						array(
 							'key' => 'field_6666ac6a83d20',
 							'label' => 'pc',
