@@ -667,7 +667,7 @@ add_action( 'acf/include_fields', function() {
 										),
 										array(
 											'key' => 'field_6629c099d3b57',
-											'label' => '名前',
+											'label' => '社名',
 											'name' => 'name',
 											'aria-label' => '',
 											'type' => 'text',
@@ -688,7 +688,7 @@ add_action( 'acf/include_fields', function() {
 										),
 										array(
 											'key' => 'field_6629c0b0d3b58',
-											'label' => 'テキスト',
+											'label' => '部署名・役職名・氏名',
 											'name' => 'text',
 											'aria-label' => '',
 											'type' => 'textarea',
