@@ -137,6 +137,7 @@ get_header();
                             <?php endif; ?>
                         </div>
                     </div>
+                    <?php if (!get_field("user_day_section_cta_video_btn")) : ?>
                     <div class="l-inner tw-mt-[4.2rem] md:tw-mt-[6rem]">
                         <div class="tw-flex tw-justify-center tw-gap-3 tw-px-8 md:tw-px-0">
                             <a href="#entry" class="a-button is-content-fit is-design-square is-type-grd-primary tw-font-bold js-scroll">
@@ -149,6 +150,7 @@ get_header();
                             </a>
                         </div>
                     </div>
+                    <?php endif; ?>
                 </div>
             </div>
         </section>
@@ -309,10 +311,10 @@ get_header();
                                                                         </li>
                                                                     <?php elseif (isset($link["type"]) && $link["type"] == "movie") : ?>
                                                                         <li>
-                                                                            <a href="<?php echo $link["url"] ? $link["url"] : "#" ; ?>" class="a-button is-border is-content-fit js--trigger-video-modal is-design-square is-type-grd-secondary<?php echo $link["url"] ? "" : " is-disabled" ; ?>">
-                                                                            <span class="a-button_inner ">
-                                                                                <span class="a-button_text"><?php echo $link["text"] ? $link["text"] : $link["url"] ; ?></span>
-                                                                            </span>
+                                                                            <a href="<?php echo $link["url"] ? $link["url"] : "#"; ?>" class="a-button is-border is-content-fit js--trigger-video-modal is-design-square is-type-grd-secondary<?php echo $link["url"] ? "" : " is-disabled"; ?>">
+                                                                                <span class="a-button_inner ">
+                                                                                    <span class="a-button_text"><?php echo $link["text"] ? $link["text"] : $link["url"]; ?></span>
+                                                                                </span>
                                                                             </a>
                                                                         </li>
                                                                     <?php endif; ?>
@@ -352,7 +354,7 @@ get_header();
             </section>
             <!-- section -->
         <?php endif; ?>
-        <?php if ($_company = get_field("user_day_section_company") && get_field("user_day_section_company_title") ) : ?>
+        <?php if ($_company = get_field("user_day_section_company") && get_field("user_day_section_company_title")) : ?>
             <section class="l-section tw-py-[4.2rem] md:tw-py-[8rem] tw-bg-white" id="partner">
                 <div class="l-wrap">
                     <div class="l-content is-w-1172">
@@ -385,13 +387,8 @@ get_header();
             </section>
         <?php endif; ?>
         <?php if (get_field("user_day_section_influencer")) : ?>
-            <section class="l-section tw-py-[4.2rem] md:tw-py-[8rem] tw-bg-[#efefef]" id="influencer">
+            <section class="l-section tw-py-[4.2rem] md:tw-py-[8rem] tw-bg-white" id="influencer">
                 <?php the_field("user_day_section_influencer", null, true); ?>
-            </section>
-        <?php endif; ?>
-        <?php if (get_field("user_day_section_application")) : ?>
-            <section data-block-index="1" id="entry" class="tidb-user-day__entry bg-blue block-container block-columns block-index-1" aria-label="Columns">
-                <?php the_field("user_day_section_application", null, true); ?>
             </section>
         <?php endif; ?>
 
@@ -423,10 +420,10 @@ get_header();
                                 </a>
                             </li>
                         <?php endif; ?>
-                        <?php if (get_field("user_day_section_company_title") ) : ?>
+                        <?php if (get_field("user_day_section_company_title")) : ?>
                             <li>
                                 <a href="#partner" class="p-fixed-nav-pc_link js-scroll">
-                                <?php echo get_field("user_day_section_company_title"); ?>
+                                    <?php echo get_field("user_day_section_company_title"); ?>
                                 </a>
                             </li>
                         <?php endif; ?>
@@ -452,6 +449,20 @@ get_header();
                                     </svg>
                                     <span class="a-button_inner ">
                                         <span class="a-button_text">参加申込</span>
+                                    </span>
+                                </a>
+                            </li>
+                        <?php endif; ?>
+                        <?php if (get_field("user_day_section_cta_video_btn")) : ?>
+                            <li>
+                                <a href="#entry" class="a-button a-button is-design-square is-type-grd-primary tw-font-bold p-fixed-nav-pc_entry js-scroll">
+                                    <svg width="20" height="20" viewBox="0 0 205 205" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M102.5 203.222C158.127 203.222 203.222 158.127 203.222 102.5C203.222 46.8726 158.127 1.77777 102.5 1.77777C46.8726 1.77777 1.77777 46.8726 1.77777 102.5C1.77777 158.127 46.8726 203.222 102.5 203.222Z" stroke="white" stroke-width="6" fill="transparent" />
+                                        <path d="M70.2222 152.522V53.2551C70.2222 52.6933 70.5125 52.19 70.9988 51.9086C71.4851 51.6273 72.0661 51.6265 72.5532 51.9066L158.872 101.54C159.361 101.821 159.652 102.325 159.652 102.889C159.652 103.452 159.361 103.956 158.872 104.237L72.5532 153.871C72.0661 154.151 71.4851 154.15 70.9988 153.868C70.5125 153.587 70.2222 153.084 70.2222 152.522Z" fill="white" />
+                                        <path d="M158.875 102.889C158.875 102.753 158.837 102.417 158.484 102.214L72.1654 52.5808C71.8145 52.379 71.505 52.5143 71.3883 52.5819C71.2715 52.6494 71 52.8502 71 53.2551V152.522C71 152.927 71.2715 153.128 71.3883 153.195C71.505 153.263 71.8145 153.398 72.1655 153.196L158.484 103.563C158.837 103.36 158.875 103.024 158.875 102.889ZM160.43 102.889C160.43 103.676 160.04 104.463 159.26 104.911L72.9408 154.545C71.3853 155.439 69.4444 154.316 69.4444 152.522V53.2551C69.4444 51.4607 71.3853 50.3379 72.9408 51.2323L159.26 100.866C160.04 101.314 160.43 102.101 160.43 102.889Z" fill="white" />
+                                    </svg>
+                                    <span class="a-button_inner ">
+                                        <span class="a-button_text">アーカイブ動画</span>
                                     </span>
                                 </a>
                             </li>
@@ -514,7 +525,7 @@ get_header();
                                 <?php if (get_field("user_day_section_company_title")) : ?>
                                     <li>
                                         <a href="#partner" class="p-modal-nav_link js-modal__close">
-                                        <?php echo get_field("user_day_section_company_title"); ?>
+                                            <?php echo get_field("user_day_section_company_title"); ?>
                                         </a>
                                     </li>
                                 <?php endif; ?>
