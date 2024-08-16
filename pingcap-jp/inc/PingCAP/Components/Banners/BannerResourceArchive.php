@@ -68,6 +68,9 @@ class BannerResourceArchive implements IComponent
 			case Constants\CPT::VIDEO:
 				return CPT\Video::getArchiveTitle();
 
+			case Constants\CPT::SLIDES:
+				return CPT\Slides::getArchiveTitle();
+
 			default:
 				break;
 		}

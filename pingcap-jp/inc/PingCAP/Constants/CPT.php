@@ -18,4 +18,5 @@ abstract class CPT
 	const EBOOK_WHITEPAPER = 'ebook-whitepaper';
 	const VIDEO = 'video';
 	const SIDEBAR_CTA = 'sidebar-cta';
+	const SLIDES = 'slides';
 }
