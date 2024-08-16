@@ -1,0 +1,26 @@
+.card-slides {
+    &__image-container {
+        position: relative;
+        height: 0;
+        padding-top: 56.25%;
+        display: block;
+    }
+    &__image {
+        @include image-cover-entire-container;
+
+        display: block;
+        border-radius: var(--card-border-radius);
+    }
+    &__category {
+        font-size: 1.4rem;
+        margin-top: 1.6rem;
+    }
+    &__title {
+        margin-bottom: 1.6rem;
+        margin-top: 0.8rem;
+        a {
+            text-decoration: none;
+            color: #303eab;
+        }
+    }
+}

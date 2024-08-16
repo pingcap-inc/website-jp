@@ -31,4 +31,5 @@ abstract class ACF
 	const NEWS_SETTINGS_BASE = 'news_settings';
 	const EBOOK_WHITEPAPER_SETTINGS_BASE = 'ebook_whitepaper_settings';
 	const VIDEO_SETTINGS_BASE = 'video_settings';
+	const SLIDES_SETTINGS_BASE = 'slides_settings';
 }

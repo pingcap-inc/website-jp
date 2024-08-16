@@ -66,7 +66,7 @@ class PostsListFilter implements IComponent
                 }
                 ?>
             </select>
-            <?php if ($this->post_type !== Constants\CPT::VIDEO) { ?>
+            <?php if ($this->post_type !== Constants\CPT::VIDEO && $this->post_type !== Constants\CPT::SLIDES) { ?>
                 <select class="posts-list__archive-filter-control" name="filter_tag" id="filter_tag" aria-label="<?php esc_attr_e('Tag', Constants\TextDomains::DEFAULT); ?>">
                     <option value=""><?php esc_html_e('Filter by Tag', Constants\TextDomains::DEFAULT); ?></option>
                     <?php

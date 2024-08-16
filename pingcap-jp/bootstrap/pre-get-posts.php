@@ -149,6 +149,19 @@ add_action('pre_get_posts', function ($query) {
 	}
 
 	/**
+	 * Slides archive filtering
+	 */
+	if ($query->is_post_type_archive(PingCAP\Constants\CPT::SLIDES)) {
+		$query->set('posts_per_page', PingCAP\CPT\Slides::getPostsPerPageCount());
+
+		// phpcs:disable WordPress.Security.NonceVerification.Recommended
+		$query = PingCAP\CPT\VIDEO::modifyQueryWithFilters($query, [
+			'category' => sanitize_text_field(wp_unslash($_GET[PingCAP\Constants\QueryParams::SLIDES_ARCHIVE_FILTER_CATEGORY] ?? '')),
+		]);
+		// phpcs:enable WordPress.Security.NonceVerification.Recommended
+	}
+
+	/**
 	 * Case Study archive filtering
 	 */
 	if ($query->is_post_type_archive(PingCAP\Constants\CPT::CASE_STUDY)) {
