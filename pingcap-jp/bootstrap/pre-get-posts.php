@@ -142,8 +142,21 @@ add_action('pre_get_posts', function ($query) {
 		$query->set('posts_per_page', PingCAP\CPT\Video::getPostsPerPageCount());
 
 		// phpcs:disable WordPress.Security.NonceVerification.Recommended
-		$query = PingCAP\CPT\VIDEO::modifyQueryWithFilters($query, [
+		$query = PingCAP\CPT\Video::modifyQueryWithFilters($query, [
 			'category' => sanitize_text_field(wp_unslash($_GET[PingCAP\Constants\QueryParams::VIDEO_ARCHIVE_FILTER_CATEGORY] ?? '')),
+		]);
+		// phpcs:enable WordPress.Security.NonceVerification.Recommended
+	}
+
+	/**
+	 * Slides archive filtering
+	 */
+	if ($query->is_post_type_archive(PingCAP\Constants\CPT::SLIDES)) {
+		$query->set('posts_per_page', PingCAP\CPT\Slides::getPostsPerPageCount());
+
+		// phpcs:disable WordPress.Security.NonceVerification.Recommended
+		$query = PingCAP\CPT\Slides::modifyQueryWithFilters($query, [
+			'category' => sanitize_text_field(wp_unslash($_GET[PingCAP\Constants\QueryParams::SLIDES_ARCHIVE_FILTER_CATEGORY] ?? '')),
 		]);
 		// phpcs:enable WordPress.Security.NonceVerification.Recommended
 	}

@@ -107,4 +107,12 @@ if (function_exists('acf_add_options_page') && function_exists('acf_add_options_
 		'menu_slug' => 'video-settings',
 		'parent' => 'edit.php?post_type=' . PingCAP\Constants\CPT::VIDEO
 	]);
+
+	// slides options page
+	acf_add_options_sub_page([
+		'page_title' => 'Slides Settings',
+		'menu_title' => 'Slides Settings',
+		'menu_slug' => 'slides-settings',
+		'parent' => 'edit.php?post_type=' . PingCAP\Constants\CPT::SLIDES
+	]);
 }

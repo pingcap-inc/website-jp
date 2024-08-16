@@ -40,4 +40,6 @@ abstract class QueryParams
 	const CASE_STUDY_ARCHIVE_FILTER_SEARCH = 'search';
 
 	const VIDEO_ARCHIVE_FILTER_CATEGORY = 'category';
+
+	const SLIDES_ARCHIVE_FILTER_CATEGORY = 'category';
 }

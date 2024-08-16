@@ -141,6 +141,19 @@ add_action('rest_api_init', function () {
 
 	/**
 	 * Add a 'card_markup' field to the results returned by the
+	 * /wp/v2/slides endpoint
+	 */
+	register_rest_field(Constants\CPT::SLIDES, 'card_markup', [
+		'get_callback' => fn ($post) => WPUtil\Component::render_to_string(
+			Components\Cards\CardSlides::class,
+			[
+				'post_id' => $post['id']
+			]
+		)
+	]);
+
+	/**
+	 * Add a 'card_markup' field to the results returned by the
 	 * /wp/v2/search endpoint
 	 */
 	add_filter('rest_post_dispatch', function ($result, $server, $request) {
@@ -335,6 +348,19 @@ add_action('rest_api_init', function () {
 		$args['posts_per_page'] = CPT\Video::getPostsPerPageCount(); // phpcs:ignore
 
 		$args = CPT\Video::modifyQueryWithFilters($args, [
+			'category' => $request->get_param('category_slug') ?? '',
+		]);
+
+		return $args;
+	}, 10, 2);
+
+	/**
+	 * Add filters to slides post queries from the "load more" requests
+	 */
+	add_filter('rest_' . Constants\CPT::SLIDES . '_query', function ($args, $request) {
+		$args['posts_per_page'] = CPT\Slides::getPostsPerPageCount(); // phpcs:ignore
+
+		$args = CPT\Slides::modifyQueryWithFilters($args, [
 			'category' => $request->get_param('category_slug') ?? '',
 		]);
 
