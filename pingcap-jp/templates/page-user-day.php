@@ -141,7 +141,7 @@ get_header();
                         <div class="tw-flex tw-justify-center tw-gap-3 tw-px-8 md:tw-px-0">
                             <a href="#entry" class="a-button is-content-fit is-design-square is-type-grd-primary tw-font-bold js-scroll">
                                 <span class="a-button_inner ">
-                                    <span class="a-button_text">イベントの参加申込はこちら</span><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20">
+                                    <span class="a-button_text"><?php echo get_field("user_day_section_cta_title") ? get_field("user_day_section_cta_title") : "参加申込" ;?>はこちら</span><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20">
                                         <rect width="20" height="20" style="fill:none;" />
                                         <path d="M8.74,13.34l-2.6-2.6c-.5-.5-1.3-.5-1.8,0s-.5,1.3,0,1.7h0l4.7,4.7c.3,.3,.7,.4,1,.4s.7-.1,.9-.4l4.7-4.7c.2-.2,.4-.5,.4-.9,0-.3-.1-.6-.4-.9-.2-.2-.6-.4-.9-.4s-.7,.1-.9,.4l-2.6,2.6V3.74c0-.3-.1-.6-.4-.9-.5-.5-1.3-.5-1.8,0-.1,.3-.3,.6-.3,.9V13.34h0Z" style="fill:#fff;" />
                                     </svg>
@@ -338,7 +338,7 @@ get_header();
                                 <div class="tw-flex tw-justify-center tw-gap-3 tw-px-8 md:tw-px-0">
                                     <a href="#entry" class="a-button is-content-fit is-design-square is-type-grd-primary tw-font-bold js-scroll">
                                         <span class="a-button_inner ">
-                                            <span class="a-button_text">イベントの参加申込はこちら</span><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20">
+                                            <span class="a-button_text"><?php echo get_field("user_day_section_cta_title") ? get_field("user_day_section_cta_title") : "参加申込" ;?>はこちら</span><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20">
                                                 <rect width="20" height="20" style="fill:none;" />
                                                 <path d="M8.74,13.34l-2.6-2.6c-.5-.5-1.3-.5-1.8,0s-.5,1.3,0,1.7h0l4.7,4.7c.3,.3,.7,.4,1,.4s.7-.1,.9-.4l4.7-4.7c.2-.2,.4-.5,.4-.9,0-.3-.1-.6-.4-.9-.2-.2-.6-.4-.9-.4s-.7,.1-.9,.4l-2.6,2.6V3.74c0-.3-.1-.6-.4-.9-.5-.5-1.3-.5-1.8,0-.1,.3-.3,.6-.3,.9V13.34h0Z" style="fill:#fff;" />
                                             </svg>
@@ -451,7 +451,7 @@ get_header();
                                         <path stroke="#fff" fill="transparent" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 1v2m0 4v2m0 4v2M3 1h14a2 2 0 0 1 2 2v3a2 2 0 0 0 0 4v3a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2v-3a2 2 0 1 0 0-4V3a2 2 0 0 1 2-2Z" />
                                     </svg>
                                     <span class="a-button_inner ">
-                                        <span class="a-button_text">参加申込</span>
+                                        <span class="a-button_text"><?php echo get_field("user_day_section_cta_title") ? get_field("user_day_section_cta_title") : "参加申込" ;?></span>
                                     </span>
                                 </a>
                             </li>
@@ -477,7 +477,7 @@ get_header();
                                 <path stroke="#fff" fill="transparent" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 1v2m0 4v2m0 4v2M3 1h14a2 2 0 0 1 2 2v3a2 2 0 0 0 0 4v3a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2v-3a2 2 0 1 0 0-4V3a2 2 0 0 1 2-2Z" />
                             </svg>
                             <span class="a-button_inner ">
-                                <span class="a-button_text">参加申込</span>
+                                <span class="a-button_text"><?php echo get_field("user_day_section_cta_title") ? get_field("user_day_section_cta_title") : "参加申込" ;?></span>
                             </span>
                         </a>
                     </div>

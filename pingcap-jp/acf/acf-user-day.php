@@ -940,8 +940,28 @@ add_action( 'acf/include_fields', function() {
 					'delay' => 0,
 				),
 				array(
+					'key' => 'field_66c36c0f3e905',
+					'label' => 'CTAその他タイトル',
+					'name' => 'cta_title',
+					'aria-label' => '',
+					'type' => 'text',
+					'instructions' => '',
+					'required' => 0,
+					'conditional_logic' => 0,
+					'wrapper' => array(
+						'width' => '',
+						'class' => '',
+						'id' => '',
+					),
+					'default_value' => '',
+					'maxlength' => '',
+					'placeholder' => '',
+					'prepend' => '',
+					'append' => '',
+				),
+				array(
 					'key' => 'field_6665e018c7101',
-					'label' => '参加申込',
+					'label' => 'CTAその他',
 					'name' => 'application',
 					'aria-label' => '',
 					'type' => 'wysiwyg',
@@ -961,7 +981,7 @@ add_action( 'acf/include_fields', function() {
 				),
 				array(
 					'key' => 'field_666a7a4b98c1c',
-					'label' => '参加申込を表示する',
+					'label' => 'CTAその他を表示する',
 					'name' => 'cta_btn',
 					'aria-label' => '',
 					'type' => 'true_false',
@@ -1009,6 +1029,10 @@ add_action( 'acf/include_fields', function() {
 	'show_in_rest' => 0,
 ) );
 } );
+
+
+
+
 
 
 
