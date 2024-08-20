@@ -1,14 +1,42 @@
 <?php
 
 /**
- * Template Name: User Day
+ * Template Name: New Event Template
  */
 
 use WPUtil\{Vendor};
+use PingCAP\Constants;
 
 get_header();
-
 ?>
+<?php if ($_mv = get_field("user_day_section_mv")) : ?>
+<style>
+    <?php
+    $_image = "";
+    if( isset($_mv["sp"]) && $_mv["sp"] ){
+        $_image = wp_get_attachment_image_src( $_mv["sp"] , "full");
+    }
+    if( $_image ):
+    ?>
+    .p-hero {
+        background: url(<?php echo $_image[0] ?>) no-repeat 50%/cover;
+    }
+    <?php endif; ?>
+    <?php
+    $_image = "";
+    if( isset($_mv["pc"]) && $_mv["pc"] ){
+        $_image = wp_get_attachment_image_src( $_mv["pc"] , "full");
+    }
+    if( $_image ):
+    ?>
+    @media (min-width: 750px) {
+        .p-hero {
+            background:url(<?php echo $_image[0] ?>) no-repeat 50%/auto;
+        }
+    }
+    <?php endif; ?>
+</style>
+<?php endif; ?>
 <main class="tmpl-page">
     <div class="tidb-user-day-html">
         <section class="l-section">
@@ -113,7 +141,7 @@ get_header();
                         <div class="tw-flex tw-justify-center tw-gap-3 tw-px-8 md:tw-px-0">
                             <a href="#entry" class="a-button is-content-fit is-design-square is-type-grd-primary tw-font-bold js-scroll">
                                 <span class="a-button_inner ">
-                                    <span class="a-button_text">イベントの参加申込はこちら</span><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20">
+                                    <span class="a-button_text"><?php echo get_field("user_day_section_cta_title") ? get_field("user_day_section_cta_title") : "参加申込" ;?>はこちら</span><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20">
                                         <rect width="20" height="20" style="fill:none;" />
                                         <path d="M8.74,13.34l-2.6-2.6c-.5-.5-1.3-.5-1.8,0s-.5,1.3,0,1.7h0l4.7,4.7c.3,.3,.7,.4,1,.4s.7-.1,.9-.4l4.7-4.7c.2-.2,.4-.5,.4-.9,0-.3-.1-.6-.4-.9-.2-.2-.6-.4-.9-.4s-.7,.1-.9,.4l-2.6,2.6V3.74c0-.3-.1-.6-.4-.9-.5-.5-1.3-.5-1.8,0-.1,.3-.3,.6-.3,.9V13.34h0Z" style="fill:#fff;" />
                                     </svg>
@@ -134,26 +162,24 @@ get_header();
                                 <span class="a-heading_text-one  tw-text-white tw-text-[3rem] md:tw-text-[4.2rem] tw-font-bold tw-text-center tw-leading-snug">タイムテーブル</span>
                             </h2>
                         </div>
-                        <?php if ($_room) : ?>
-                            <div class="l-inner tw-mt-[4rem]">
-                                <div class="p-timetable-anchor">
-                                    <ul class="p-timetable-anchor_list">
-                                        <?php while (have_rows("user_day_section_room")) : the_row(); ?>
-                                            <li>
-                                                <a href="#day_<?php echo get_row_index(); ?>" class="a-button is-left is-design-square is-type-solid-white tw-font-bold js-scroll">
-                                                    <span class="a-button_inner ">
-                                                        <span class="a-button_text"><?php echo get_sub_field("name"); ?></span><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20">
-                                                            <rect width="20" height="20" style="fill:none;" />
-                                                            <path d="M8.74,13.34l-2.6-2.6c-.5-.5-1.3-.5-1.8,0s-.5,1.3,0,1.7h0l4.7,4.7c.3,.3,.7,.4,1,.4s.7-.1,.9-.4l4.7-4.7c.2-.2,.4-.5,.4-.9,0-.3-.1-.6-.4-.9-.2-.2-.6-.4-.9-.4s-.7,.1-.9,.4l-2.6,2.6V3.74c0-.3-.1-.6-.4-.9-.5-.5-1.3-.5-1.8,0-.1,.3-.3,.6-.3,.9V13.34h0Z" />
-                                                        </svg>
-                                                    </span>
-                                                </a>
-                                            </li>
-                                        <?php endwhile; ?>
-                                    </ul>
-                                </div>
+                        <div class="l-inner tw-mt-[4rem]">
+                            <div class="p-timetable-anchor">
+                                <ul class="p-timetable-anchor_list">
+                                    <?php while (have_rows("user_day_section_room")) : the_row(); ?>
+                                        <li>
+                                            <a href="#day_<?php echo get_row_index(); ?>" class="a-button is-left is-design-square is-type-solid-white tw-font-bold js-scroll">
+                                                <span class="a-button_inner ">
+                                                    <span class="a-button_text"><?php echo get_sub_field("name"); ?></span><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20">
+                                                        <rect width="20" height="20" style="fill:none;" />
+                                                        <path d="M8.74,13.34l-2.6-2.6c-.5-.5-1.3-.5-1.8,0s-.5,1.3,0,1.7h0l4.7,4.7c.3,.3,.7,.4,1,.4s.7-.1,.9-.4l4.7-4.7c.2-.2,.4-.5,.4-.9,0-.3-.1-.6-.4-.9-.2-.2-.6-.4-.9-.4s-.7,.1-.9,.4l-2.6,2.6V3.74c0-.3-.1-.6-.4-.9-.5-.5-1.3-.5-1.8,0-.1,.3-.3,.6-.3,.9V13.34h0Z" />
+                                                    </svg>
+                                                </span>
+                                            </a>
+                                        </li>
+                                    <?php endwhile; ?>
+                                </ul>
                             </div>
-                        <?php endif; ?>
+                        </div>
                         <?php
                         $_all_terms = array();
                         if (have_rows("user_day_section_room")) {
@@ -163,7 +189,7 @@ get_header();
                                     while (have_rows("program")) {
                                         the_row();
                                         foreach (get_sub_field("tags") as $tag_id) {
-                                            $term = get_term($tag_id, "userdaytag");
+                                            $term = get_term($tag_id, Constants\Taxonomies::USERDAY);
                                             $_all_terms[$term->term_id] = $term;
                                         }
                                     }
@@ -216,7 +242,7 @@ get_header();
                                                             <?php if (get_sub_field("tags")) : ?>
                                                                 <ul class="p-timetable-item_tags tw-mt-2">
                                                                     <?php foreach (get_sub_field("tags") as $tag_id) : ?>
-                                                                        <?php $term = get_term($tag_id, "userdaytag"); ?>
+                                                                        <?php $term = get_term($tag_id, Constants\Taxonomies::USERDAY); ?>
                                                                         <li data-tags="<?php echo $term->term_id; ?>">
                                                                             <span><?php echo $term->name; ?></span>
                                                                         </li>
@@ -282,7 +308,13 @@ get_header();
                                                                             </a>
                                                                         </li>
                                                                     <?php elseif (isset($link["type"]) && $link["type"] == "movie") : ?>
-
+                                                                        <li>
+                                                                            <a href="<?php echo $link["url"] ? $link["url"] : "#" ; ?>" class="a-button is-border is-content-fit js--trigger-video-modal is-design-square is-type-grd-secondary<?php echo $link["url"] ? "" : " is-disabled" ; ?>">
+                                                                            <span class="a-button_inner ">
+                                                                                <span class="a-button_text"><?php echo $link["text"] ? $link["text"] : $link["url"] ; ?></span>
+                                                                            </span>
+                                                                            </a>
+                                                                        </li>
                                                                     <?php endif; ?>
                                                                 <?php endforeach; ?>
                                                             </ul>
@@ -306,7 +338,7 @@ get_header();
                                 <div class="tw-flex tw-justify-center tw-gap-3 tw-px-8 md:tw-px-0">
                                     <a href="#entry" class="a-button is-content-fit is-design-square is-type-grd-primary tw-font-bold js-scroll">
                                         <span class="a-button_inner ">
-                                            <span class="a-button_text">イベントの参加申込はこちら</span><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20">
+                                            <span class="a-button_text"><?php echo get_field("user_day_section_cta_title") ? get_field("user_day_section_cta_title") : "参加申込" ;?>はこちら</span><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20">
                                                 <rect width="20" height="20" style="fill:none;" />
                                                 <path d="M8.74,13.34l-2.6-2.6c-.5-.5-1.3-.5-1.8,0s-.5,1.3,0,1.7h0l4.7,4.7c.3,.3,.7,.4,1,.4s.7-.1,.9-.4l4.7-4.7c.2-.2,.4-.5,.4-.9,0-.3-.1-.6-.4-.9-.2-.2-.6-.4-.9-.4s-.7,.1-.9,.4l-2.6,2.6V3.74c0-.3-.1-.6-.4-.9-.5-.5-1.3-.5-1.8,0-.1,.3-.3,.6-.3,.9V13.34h0Z" style="fill:#fff;" />
                                             </svg>
@@ -320,13 +352,13 @@ get_header();
             </section>
             <!-- section -->
         <?php endif; ?>
-        <?php if ($_company = get_field("user_day_section_company")) : ?>
+        <?php if ($_company = get_field("user_day_section_company") && get_field("user_day_section_company_title") ) : ?>
             <section class="l-section tw-py-[4.2rem] md:tw-py-[8rem] tw-bg-white" id="partner">
                 <div class="l-wrap">
                     <div class="l-content is-w-1172">
                         <div class="l-inner">
                             <h2 class="a-heading ">
-                                <span class="a-heading_text-one  tw-text-center tw-text-[3rem] md:tw-text-[4.2rem] tw-leading-normal">登壇企業</span>
+                                <span class="a-heading_text-one  tw-text-center tw-text-[3rem] md:tw-text-[4.2rem] tw-leading-normal"><?php echo get_field("user_day_section_company_title"); ?></span>
                             </h2>
                         </div>
                         <?php if (get_field("user_day_section_company_pc") || get_field("user_day_section_company_sp")) : ?>
@@ -337,7 +369,7 @@ get_header();
                                     <picture>
                                         <source media="(min-width: 751px)" srcset="<?php echo $_pc[0]; ?>" width="<?php echo $_pc[1]; ?>" height="<?php echo $_pc[2]; ?>">
                                         <source media="(max-width: 750px)" srcset="<?php echo $_sp[0]; ?>" width="<?php echo $_sp[1]; ?>" height="<?php echo $_sp[2]; ?>">
-                                        <img src="<?php echo $_pc[0]; ?>" class="" width="<?php echo $_pc[1]; ?>" height="<?php echo $_pc[2]; ?>" alt="登壇企業" loading="lazy" decoding="async">
+                                        <img src="<?php echo $_pc[0]; ?>" class="" width="<?php echo $_pc[1]; ?>" height="<?php echo $_pc[2]; ?>" alt="<?php echo get_field("user_day_section_company_title"); ?>" loading="lazy" decoding="async">
                                     </picture>
                                 </div>
                             </div>
@@ -391,10 +423,10 @@ get_header();
                                 </a>
                             </li>
                         <?php endif; ?>
-                        <?php if (get_field("user_day_section_company_pc") || get_field("user_day_section_company_sp")) : ?>
+                        <?php if (get_field("user_day_section_company_title") ) : ?>
                             <li>
                                 <a href="#partner" class="p-fixed-nav-pc_link js-scroll">
-                                    登壇企業
+                                <?php echo get_field("user_day_section_company_title"); ?>
                                 </a>
                             </li>
                         <?php endif; ?>
@@ -419,7 +451,7 @@ get_header();
                                         <path stroke="#fff" fill="transparent" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 1v2m0 4v2m0 4v2M3 1h14a2 2 0 0 1 2 2v3a2 2 0 0 0 0 4v3a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2v-3a2 2 0 1 0 0-4V3a2 2 0 0 1 2-2Z" />
                                     </svg>
                                     <span class="a-button_inner ">
-                                        <span class="a-button_text">参加申込</span>
+                                        <span class="a-button_text"><?php echo get_field("user_day_section_cta_title") ? get_field("user_day_section_cta_title") : "参加申込" ;?></span>
                                     </span>
                                 </a>
                             </li>
@@ -445,7 +477,7 @@ get_header();
                                 <path stroke="#fff" fill="transparent" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 1v2m0 4v2m0 4v2M3 1h14a2 2 0 0 1 2 2v3a2 2 0 0 0 0 4v3a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2v-3a2 2 0 1 0 0-4V3a2 2 0 0 1 2-2Z" />
                             </svg>
                             <span class="a-button_inner ">
-                                <span class="a-button_text">参加申込</span>
+                                <span class="a-button_text"><?php echo get_field("user_day_section_cta_title") ? get_field("user_day_section_cta_title") : "参加申込" ;?></span>
                             </span>
                         </a>
                     </div>
@@ -479,10 +511,10 @@ get_header();
                                         </a>
                                     </li>
                                 <?php endif; ?>
-                                <?php if (get_field("user_day_section_company_pc") || get_field("user_day_section_company_sp")) : ?>
+                                <?php if (get_field("user_day_section_company_title")) : ?>
                                     <li>
                                         <a href="#partner" class="p-modal-nav_link js-modal__close">
-                                            登壇企業
+                                        <?php echo get_field("user_day_section_company_title"); ?>
                                         </a>
                                     </li>
                                 <?php endif; ?>

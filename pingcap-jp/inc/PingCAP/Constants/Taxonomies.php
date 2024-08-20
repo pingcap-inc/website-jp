@@ -11,4 +11,5 @@ abstract class Taxonomies
 	const CUSTOMER = 'customer';
 	const LOCATION = 'location';
 	const REGION = 'region';
+	const USERDAY = 'userdaytag';
 }
