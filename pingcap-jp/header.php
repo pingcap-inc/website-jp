@@ -1,7 +1,6 @@
 <?php
 
 use PingCAP\{Components, Constants};
-
 ?>
 <!doctype html>
 <html <?php language_attributes(); ?>>
@@ -13,7 +12,6 @@ use PingCAP\{Components, Constants};
 	if (!defined('IGNORE_USER_SCRIPTS') || !constant('IGNORE_USER_SCRIPTS')) {
 		the_field(Constants\ACF::THEME_OPTIONS_SCRIPTS_BASE . '_global_head_top_content', 'option', false);
 	}
-
 	?>
 	<title><?php wp_title('&bull;'); ?></title>
 	<meta charset="<?php bloginfo('charset'); ?>">
@@ -33,6 +31,11 @@ use PingCAP\{Components, Constants};
 	<?php if (is_page_template('templates/page-tidb-user-day.php') || is_page_template('templates/page-tidb-user-day-in-person.php')) { ?>
 		<link rel="stylesheet" href="<?php echo esc_url(get_template_directory_uri()); ?>/tidb-user-day/assets/css/index.css">
 		<script src="<?php echo esc_url(get_template_directory_uri()); ?>/tidb-user-day/assets/js/main.js" defer></script>
+	<?php } ?>
+
+	<?php if (is_page_template('templates/page-user-day.php')) { ?>
+		<link rel="stylesheet" href="<?php echo esc_url(get_template_directory_uri()); ?>/userday/css/userday.css">
+		<script src="<?php echo esc_url(get_template_directory_uri()); ?>/userday/js/userday.js" defer></script>
 	<?php } ?>
 
 	<?php
