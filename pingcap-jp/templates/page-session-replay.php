@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Template Name: 2024 session replay
+ * Template Name: session replay
  */
 
 use WPUtil\{Arrays, Vendor};
