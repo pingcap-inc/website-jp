@@ -45,7 +45,7 @@ get_header();
                                     ?>
                                 </div>
                             <?php } ?>
-                            <?php if ($video_pdf) { ?>
+                            <?php if ($video_pdf->link) { ?>
                                 <div class="text-right">
                                     <a class="button" href="<?php echo $video_pdf->link; ?>"><?php echo $video_pdf->text; ?></a>
                                 </div>

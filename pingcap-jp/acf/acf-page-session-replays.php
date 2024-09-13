@@ -188,6 +188,7 @@ acf_add_local_field_group(array(
                                 'file' => 'File Download',
                                 'url' => 'URL',
                                 'page' => 'Page Link',
+                                'none' => 'None',
                             ],
                             'supports_button_styles' => false,
                         ]),
