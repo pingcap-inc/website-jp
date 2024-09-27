@@ -13,7 +13,6 @@ Component::render(Components\Banners\BannerResourceArchive::class, [
 
 ?>
 <main class="tmpl-archive tmpl-archive-blog">
-	<div class="tmpl-archive-blog__bg bg-blue"></div>
 	<?php
 	global $wp_query;
 
