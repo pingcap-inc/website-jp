@@ -127,7 +127,7 @@ $banner_fields = array_merge(
 			'name' => $acf_group . '_product_icon_image',
 			'instructions' => '',
 			'type' => 'image',
-			'required' => 1,
+			'required' => 0,
 			'conditional_logic' => array(
 				array(
 					array(
