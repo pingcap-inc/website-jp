@@ -1,101 +1,68 @@
 .banner-home {
-	position: relative;
-	padding-top: 3rem;
-	background-repeat: repeat-x;
-	background-position: top center;
-	background-image: linear-gradient(to bottom, rgba(14, 14, 14, 0.4) 0, #000000bd 100%),
-		url(https://static.pingcap.co.jp/files/2024/06/29150254/bg-hex-pattern.png);
-
-	h1 {
-		line-height: 1.25;
-	}
-
-	&__content {
-		margin-top: 2.4rem;
-		padding-right: 3.2rem;
-		p {
-			font-weight: 700;
-			font-size: 30px;
-		}
-	}
-
 	&__inner {
+		position: relative;
 		display: grid;
 		grid-template-columns: 1fr;
 		gap: var(--grid-column-gutter);
+		padding-bottom: 4rem;
 
 		@include media-min(700px) {
+			padding-bottom: 8rem;
 			grid-template-columns: repeat(12, 1fr);
 		}
 	}
-
-	&__text-content {
-		padding: 3.2rem 0;
+	&__text-container {
+		opacity: 0;
+		padding-top: 4rem;
+		position: relative;
+        z-index: 2;
 		@include media-min(700px) {
-			padding: 7rem 0;
+			padding-top: 8rem;
+			padding-bottom: 8rem;
 			grid-column: 1 / span 7;
 		}
-		@include media-min($large) {
-			padding-bottom: 10rem;
-		}
-
-		img {
-			vertical-align: middle;
-			height: 4.5rem;
-			width: auto;
-			margin-top: -2px;
+		h1 {
+			font-size: 50px;
+			font-weight: 700;
+			line-height: 56px;
+			margin-top: 3.2rem;
+			@include media-min($medium) {
+				font-size: 82px;
+				line-height: 86px;
+			}
 		}
 	}
 
-	&__video {
+	&__desc-container {
+		opacity: 0;
+		margin-top: 3.2rem;
 		@include media-min(700px) {
-			grid-column: 8 / span 5;
+			grid-column: span 6;
 		}
-		&-content {
-			@include media-min(700px) {
-				padding-top: 6.8rem;
+		p {
+			font-size: 22px;
+			font-weight: 300;
+			line-height: 28px;
+			margin-bottom: 4rem;
+			@include media-min($medium) {
+				font-size: 26px;
+				color: #a2adb9;
+				line-height: 32px;
+				width: 84%;
 			}
 		}
-		&-wrapper {
-			margin-bottom: 3.2rem;
-			@include media-min($large) {
-				position: absolute;
-				top: 10rem;
-				right: 0;
-				width: 44vw;
-				max-width: 58rem;
-				margin-bottom: 4rem;
-			}
-			@include media-min($xlarge) {
-				position: relative;
-				top: 0;
-				width: unset;
-			}
-		}
-		&-image {
-			position: absolute;
-			left: 0;
-			right: 0;
-			top: 0;
-			bottom: 0;
-			z-index: 1;
-			max-width: 60rem;
-			cursor: pointer;
-		}
+	}
 
-		.play-video-overlay__play-icon {
+	&__video-container {
+		@include media-min(700px) {
+			grid-column: span 5;
 			position: absolute;
-			left: 0;
 			right: 0;
 			top: 0;
 			bottom: 0;
-			z-index: 2;
-			margin: auto;
+			max-width: 600px;
 		}
-		video {
-			display: block;
-			width: 100%;
-			max-width: 60rem;
-		}
+		text-align: center;
+		overflow: hidden;
 	}
 }

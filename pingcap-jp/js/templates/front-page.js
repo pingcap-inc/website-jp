@@ -1,304 +1,138 @@
-import { isDesktopViewport, whenAboveDesktop, whenBelowDesktop } from '../util/viewport';
-import VideoUtil from '../util/video-util';
+import { gsap } from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
+import { isDesktopViewport } from '../util/viewport';
+import { loadEmblaCarousel } from '../util/load-dependencies';
+import EmblaAutoplay, { stopAutoplayOnHover } from '../util/embla/autoplay';
+import EmblaPagination from '../util/embla/pagination';
+
+gsap.registerPlugin(ScrollTrigger);
 
 class TemplateFrontPage {
-	constructor(el) {
-		this.el = el;
-		this.sectionEls = Array.from(this.el.querySelectorAll('.tmpl-front-page__section'));
-		this.videoButtonEl = this.el.querySelector('.play-video-overlay');
-		this.videoEl = this.el.querySelector('video');
+  constructor(el) {
+    this.el = el;
+    this.tabNavEls = Array.from(this.el.querySelectorAll('.featured-tabs__tab'));
+    this.tabContentEls = Array.from(this.el.querySelectorAll('.featured-tabs__content-item'));
 
-		this.videoButtonEl.addEventListener('click', ()=> {
-			this.el.querySelector('.banner-home__video-image').classList.add('hide');
-			this.videoEl.play();
+    gsap.fromTo(
+      '.banner-home__text-container',
+      { opacity: 0, y: 50 },
+      { opacity: 1, y: 0, duration: 1 }
+    );
+    gsap.fromTo(
+      '.banner-home__desc-container',
+      { opacity: 0, y: 50 },
+      { opacity: 1, y: 0, duration: 1 }
+    );
+    gsap.fromTo('.banner-home__video-container', { opacity: 0 }, { opacity: 1, duration: 1 });
 
-		});
-	}
+    gsap.fromTo(
+      '.case-framer',
+      {
+        y: 50,
+        opacity: 0
+      },
+      {
+        y: 0,
+        opacity: 1,
+        duration: 1,
+        stagger: 0.1,
+        scrollTrigger: {
+          trigger: '.case-framer',
+          start: 'top 80%',
+          end: 'top 30%'
+        }
+      }
+    );
 
-	loadMobileAssets() {
-		if (this.mobileAssetsLoaded) {
-			return;
-		}
+    const blockTitle = gsap.utils.toArray('.block-title');
+    blockTitle.forEach((block) => {
+      gsap.fromTo(
+        block,
+        {
+          y: 50,
+          opacity: 0
+        },
+        {
+          y: 0,
+          opacity: 1,
+          duration: 1,
+          stagger: 0.1,
+          scrollTrigger: {
+            trigger: block,
+            start: 'top 80%',
+            end: 'bottom 30%'
+          }
+        }
+      );
+    });
 
-		const assets = [
-			{
-				type: 'video',
-				sources: [
-					{
-						filename: 'home-banner.mov',
-						type: 'video/mp4; codecs="hvc1"'
-					},
-					{
-						filename: 'home-banner.webm',
-						type: 'video/webm'
-					}
-				],
-				loop: true,
-				modifierClass: 'banner-video'
-			}
-		];
+    this.testimonialInitialized = false;
+    this.initTestimonials();
 
-		assets.forEach((assetInfo, index) => {
-			const assetType = assetInfo.type ?? '';
-			const assetFile = assetInfo.filename ?? '';
+    Array.from(this.el.querySelectorAll('.button-link')).forEach((el) => {
+      el.addEventListener('click', (e) => {
+        if (el.getAttribute('href').includes('#demo')) {
+          e.preventDefault();
+          const topOffset =
+            document.querySelector('.site-header').clientHeight +
+            (document.querySelector('#wpadminbar')?.clientHeight || 0);
+          window.scrollTo({
+            top:
+              document.querySelector('#demo').getBoundingClientRect().top +
+              window.pageYOffset -
+              topOffset,
+            behavior: 'smooth'
+          });
+        }
+      });
+    });
+  }
 
-			if (!assetType) {
-				return;
-			}
+  async initTestimonials() {
+    if (this.testimonialInitialized) {
+      return;
+    }
 
-			let assetEl = null;
+    try {
+      const EmblaCarousel = await loadEmblaCarousel();
+      const emblaRootEl = this.el.querySelector('.embla-instance');
+      const emblaContainerEl = this.el.querySelector('.embla__container');
 
-			switch (assetType) {
-				case 'video':
-					assetEl = document.createElement('video');
-					assetEl.type = assetInfo.videoType ?? 'video/webm';
-					assetEl.autoplay = assetInfo.autoplay ?? true;
-					assetEl.muted = true;
-					assetEl.loop = assetInfo.loop ?? true;
+      if (!emblaRootEl) {
+        return;
+      }
 
-					if (Array.isArray(assetInfo.sources)) {
-						assetInfo.sources.forEach((source) => {
-							const sourceEl = document.createElement('source');
-							sourceEl.src = this.assetUrlBase + (source.filename ?? '');
-							sourceEl.type = source.type ?? '';
+      const emblaEl = emblaRootEl.querySelector('.embla');
+      const paginationEl = this.el.querySelector('.embla__pagination');
+      const instance = {
+        embla: EmblaCarousel(emblaEl, {
+          axis: isDesktopViewport() ? 'y' : 'x',
+          align: 'start',
+          draggable: !isDesktopViewport(),
+          loop: 1,
+          duration: 40
+        }),
+        autoplay: null
+      };
 
-							assetEl.appendChild(sourceEl);
-						});
-					} else {
-						assetEl.src = this.assetUrlBase + assetFile;
-					}
+      if (instance.embla) {
+        instance.autoplay = new EmblaAutoplay(instance.embla, 4000);
 
-					break;
+        stopAutoplayOnHover(emblaContainerEl, instance.autoplay, 1000);
+      }
 
-				default:
-					console.error(`invalid asset type specified: ${assetType}`);
-					break;
-			}
+      if (paginationEl) {
+        instance.pagination = new EmblaPagination(instance.embla, paginationEl, {
+          buttonClassName: 'embla__pagination-button'
+        });
+      }
 
-			if (assetEl) {
-				const assetClasses = [
-					'tmpl-front-page__transition-item',
-					`tmpl-front-page__transition-item--${index}`
-				];
-
-				if (assetInfo.modifierClass) {
-					assetClasses.push(
-						`tmpl-front-page__transition-item--${assetInfo.modifierClass}`
-					);
-				}
-
-				assetEl.setAttribute('playsinline', true);
-				assetEl.setAttribute('class', assetClasses.join(' '));
-
-				this.transitionItemsMobileEl.appendChild(assetEl);
-			}
-		});
-
-		this.mobileAssetsLoaded = true;
-
-		// force the videos to play after they have been added to the DOM
-		setTimeout(() => {
-			const videoEls = Array.from(this.animationContainerEl.querySelectorAll('video'));
-
-			videoEls.forEach((videoEl) => videoEl.play());
-		}, 0);
-	}
-
-	loadDesktopAssets() {
-		if (this.desktopAssetsLoaded) {
-			return;
-		}
-
-		const assets = [
-			{
-				type: 'video',
-				// filename: 'home-banner.webm',
-				sources: [
-					{
-						filename: 'home-banner.mov',
-						type: 'video/mp4; codecs="hvc1"'
-					},
-					{
-						filename: 'home-banner.webm',
-						type: 'video/webm'
-					}
-				],
-				loop: true,
-				modifierClass: 'banner-video'
-			},
-			{
-				type: 'image',
-				filename: 'home-person.png',
-				modifierClass: 'image-scale'
-			},
-			{
-				type: 'image',
-				filename: 'home-graphs.png',
-				modifierClass: 'image-scale'
-			},
-			{
-				type: 'image',
-				filename: 'home-blocks.png',
-				modifierClass: 'image-scale'
-			},
-			{
-				type: 'video',
-				// filename: 'home-last-section.webm',
-				sources: [
-					{
-						filename: 'home-last-section.mov',
-						type: 'video/mp4; codecs="hvc1"'
-					},
-					{
-						filename: 'home-last-section.webm',
-						type: 'video/webm'
-					}
-				],
-				loop: false,
-				autoplay: false,
-				modifierClass: 'last-video-transform'
-			}
-		];
-
-		assets.forEach((assetInfo, index) => {
-			const assetType = assetInfo.type ?? '';
-			const assetFile = assetInfo.filename ?? '';
-
-			if (!assetType) {
-				return;
-			}
-
-			let assetEl = null;
-
-			switch (assetType) {
-				case 'image':
-					assetEl = document.createElement('img');
-					assetEl.src = this.assetUrlBase + assetFile;
-					assetEl.alt = `animation transition item ${index}`;
-					break;
-
-				case 'video':
-					assetEl = document.createElement('video');
-					assetEl.type = assetInfo.videoType ?? 'video/webm';
-					assetEl.autoplay = assetInfo.autoplay ?? true;
-					assetEl.muted = true;
-					assetEl.loop = assetInfo.loop ?? true;
-
-					if (Array.isArray(assetInfo.sources)) {
-						assetInfo.sources.forEach((source) => {
-							const sourceEl = document.createElement('source');
-							sourceEl.src = this.assetUrlBase + (source.filename ?? '');
-							sourceEl.type = source.type ?? '';
-
-							assetEl.appendChild(sourceEl);
-						});
-					} else {
-						assetEl.src = this.assetUrlBase + assetFile;
-					}
-
-					break;
-
-				default:
-					console.error(`invalid asset type specified: ${assetType}`);
-					break;
-			}
-
-			if (assetEl) {
-				const assetClasses = [
-					'tmpl-front-page__transition-item',
-					`tmpl-front-page__transition-item--${index}`
-				];
-
-				if (assetInfo.modifierClass) {
-					assetClasses.push(
-						`tmpl-front-page__transition-item--${assetInfo.modifierClass}`
-					);
-				}
-
-				assetEl.setAttribute('class', assetClasses.join(' '));
-
-				this.transitionItemsDesktopEl.appendChild(assetEl);
-			}
-		});
-
-		this.desktopAssetsLoaded = true;
-
-		// force the videos to play after they have been added to the DOM
-		setTimeout(() => {
-			const videoEls = Array.from(this.animationContainerEl.querySelectorAll('video'));
-
-			videoEls.forEach((videoEl) => videoEl.play());
-		}, 0);
-	}
-
-	createObservers() {
-		if (this.observersCreated || !this.animationContainerEl) {
-			return;
-		}
-
-		// section observers
-		this.sectionEls.forEach((sectionEl, index) => {
-			const sectionIndex = index + 1;
-
-			const observer = new IntersectionObserver(
-				(observerEntries) => {
-					const targetEntry = observerEntries[0] || null;
-
-					if (targetEntry.isIntersecting) {
-						const curSectionIndex = parseInt(
-							this.animationContainerEl.getAttribute('data-section') ?? '-1',
-							10
-						);
-
-						if (curSectionIndex === sectionIndex) {
-							return;
-						}
-
-						this.animationContainerEl.setAttribute('data-section', sectionIndex);
-
-						const transitionEl = this.el.querySelector(
-							`.tmpl-front-page__transition-item--${sectionIndex}`
-						);
-
-						if (transitionEl) {
-							const tagName = transitionEl?.tagName?.toLowerCase() ?? '';
-
-							if (tagName === 'video' && transitionEl.readyState === 4) {
-								transitionEl.pause();
-								transitionEl.currentTime = 0;
-								transitionEl.play();
-							}
-						}
-					}
-				},
-				{
-					threshold: 1,
-					rootMargin: '-15% 0px -15% 0px'
-				}
-			);
-
-			observer.observe(sectionEl);
-		});
-
-		// banner observer
-		const bannerObserver = new IntersectionObserver(
-			(observerEntries) => {
-				const targetEntry = observerEntries[0] || null;
-
-				if (targetEntry.isIntersecting) {
-					this.animationContainerEl.setAttribute('data-section', '0');
-				}
-			},
-			{
-				threshold: 1
-			}
-		);
-
-		bannerObserver.observe(this.el.querySelector('.banner'));
-
-		// set observersCreated flag
-		this.observersCreated = true;
-	}
+      this.testimonialInitialized = true;
+    } catch (err) {
+      console.error('Embla Carousel dynamic import failed', err);
+    }
+  }
 }
 
 export default TemplateFrontPage;
