@@ -21,12 +21,12 @@ class Footer implements IComponent
 		$this->copyright_text = Arrays::get_value_as_string(
 			$params,
 			'copyright_text',
-			fn () => ACF::get_field_string(Constants\ACF::THEME_OPTIONS_FOOTER_BASE . '_copyright_text', 'option')
+			fn() => ACF::get_field_string(Constants\ACF::THEME_OPTIONS_FOOTER_BASE . '_copyright_text', 'option')
 		);
 
 		$this->social_links = array_filter(
 			ACF::get_field_array(Constants\ACF::THEME_OPTIONS_SOCIAL_BASE . '_site_links', 'option'),
-			fn ($icon) => $icon['title'] && $icon['url'] && $icon['icon']
+			fn($icon) => $icon['title'] && $icon['url'] && $icon['icon']
 		);
 
 		$this->column_link_groups = $this->getColumnIndexedLinkGroups();
@@ -70,9 +70,9 @@ class Footer implements IComponent
 
 			$col_index = intval($menu_parent->column_index ?? '0');
 
-			if ($col_index < 0 || $col_index > count($cols) - 1) {
-				$col_index = 0;
-			}
+			// if ($col_index < 0 || $col_index > count($cols) - 1) {
+			// 	$col_index = 0;
+			// }
 
 			$cols[$col_index][] = $links_group;
 		}
@@ -85,21 +85,18 @@ class Footer implements IComponent
 		$credit_url = str_replace('https://', '', get_site_url(null, '', 'https'));
 
 ?>
-		<footer class="site-footer">
+		<footer class="site-footer bg-black-dark">
 			<div class="contain site-footer__inner">
-				<div class="site-footer__row-top">
-					<div class="site-footer__logo-social-container">
-						<a href="<?php echo esc_url(site_url()); ?>" title="<?php echo esc_attr(bloginfo('name')); ?>" aria-label="Home">
-							<?php Images::safe_image_output(Logo::getLogoACFimage(), ['class' => 'site-footer__logo']); ?>
-						</a>
-						<div class="site-footer__language-links">
-							<i class="ph-globe"></i>
-							<div>
-								<a href="https://www.pingcap.com">English </a>
-								<a href="https://cn.pingcap.com/">中文</a>
-							</div>
-						</div>
+				<div class="site-footer__language-links">
+					<div class="site-footer__language-select">
+						<i class="ph-globe"></i>日本語<?php SVG::the_svg('general/chevron-down-white') ?>
 					</div>
+					<div class="site-footer__language-options">
+						<a href="https://www.pingcap.com/">English</a>
+						<a href="https://cn.pingcap.com/">中文</a>
+					</div>
+				</div>
+				<div class="site-footer__row-top">
 					<?php
 					for ($i = 0; $i < 4; $i++) {
 					?>
@@ -110,11 +107,11 @@ class Footer implements IComponent
 							foreach ($links_groups as $links_group) {
 							?>
 								<div class="site-footer__links-group">
-									<h6 class="site-footer__links-group-title"><?php echo esc_html($links_group->title); ?></h6>
+									<div class="site-footer__links-group-title"><?php echo esc_html($links_group->title); ?></div>
 									<?php
 									foreach ($links_group->items as $item) {
 									?>
-										<a class="site-footer__links-group-link" href="<?php echo esc_url($item->url); ?>" data-gtag="event:jp_footer_click,item_name:<?php echo $item->text; ?>">
+										<a class="site-footer__links-group-link" href="<?php echo esc_url($item->url); ?>" data-gtag="event:eng_footer_click,item_name:<?php echo $item->text; ?>">
 											<?php if ($item->attr_title) {
 												SVG::the_svg('social/' . $item->attr_title, ['class' => 'site-footer__social-icon']);
 											} ?>
@@ -127,10 +124,44 @@ class Footer implements IComponent
 							<?php
 							}
 							?>
+							<?php if ($i === 0) { ?>
+								<div class="site-footer__language-links">
+									<div class="site-footer__language-select">
+										<i class="ph-globe"></i>日本語<?php SVG::the_svg('general/chevron-down-white') ?>
+									</div>
+									<div class="site-footer__language-options">
+										<a href="https://www.pingcap.com/">英文 </a>
+										<a href="https://cn.pingcap.com/">中文</a>
+									</div>
+								</div>
+							<?php } ?>
 						</nav>
 					<?php
 					}
 					?>
+
+					<nav class="site-footer__col-links">
+						<div class="site-footer__links-group">
+							<div class="site-footer__links-group-title">Stay Connected</div>
+							<div class="block-cta">
+								<form class="block-cta__subscribe-form" method="POST" action="https://www.pingcap.com" data-hs-portal-id="4466002" data-hs-form-id="d74dfb7c-a14a-4f8d-ab28-eba7a00e7900" data-hs-name-field="" data-hs-email-field="email">
+									<input type="email" name="cta_email" placeholder="Enter your email *" aria-label="Enter your email address">
+								</form>
+							</div>
+							<p>Sign up to receive periodic updates and<br />feature releases to your email.</p>
+							<div class="site-footer__social-group">
+								<?php
+								foreach ($this->social_links as $item) {
+								?>
+									<a class="site-footer__social-group-link" href="<?php echo esc_url($item['url']); ?>">
+										<?php SVG::the_svg($item['icon'], ['class' => 'site-footer__social-icon']); ?>
+									</a>
+								<?php
+								}
+								?>
+							</div>
+						</div>
+					</nav>
 				</div>
 				<div class="site-footer__row-bottom">
 					<div class="site-footer__legal">
