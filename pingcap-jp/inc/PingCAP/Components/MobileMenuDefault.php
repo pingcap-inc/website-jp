@@ -91,7 +91,7 @@ class MobileMenuDefault implements IComponent
 					?>
 				</nav>
 				<div class="mobile-menu-default__menu-cta">
-					<a href="https://tidbcloud.com/free-trial/" data-gtag="event:go_to_cloud_signup,product_type:serverless,button_name:Start for Free,position:header" class="button-primary lg"><span>Start for Free</span><i class="button__arrow"></i></a>
+					<a href="https://tidbcloud.com/free-trial/" data-gtag="event:go_to_cloud_signup,product_type:serverless,button_name:Start for Free,position:header" class="button-primary lg"><span>無料で始める</span><i class="button__arrow"></i></a>
 				</div>
 			</div>
 		</div>

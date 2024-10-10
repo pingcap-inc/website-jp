@@ -8,7 +8,7 @@ $block_title = isset($block_title) && is_string($block_title) ? $block_title : A
 $block_title_desc = isset($block_title_desc) && is_string($block_title_desc) ? $block_title_desc : ACF::get_sub_field_string('block_title_desc');
 $card_type = isset($card_type) && is_string($card_type) ? $card_type : ACF::get_sub_field_string('card_type');
 
-if (!in_array($card_type, ['', 'media','solution', 'integration', 'tier'], true)) {
+if (!in_array($card_type, ['', 'media', 'solution', 'integration', 'bg', 'tier'], true)) {
 	$card_type = '';
 }
 
@@ -22,6 +22,10 @@ if (!$cards) {
 
 		case 'integration':
 			$cards = ACF::get_sub_field_array('integration_cards');
+			break;
+
+		case 'bg':
+			$cards = ACF::get_sub_field_array('bg_cards');
 			break;
 
 		case 'media':
@@ -49,6 +53,10 @@ if ($cards) {
 
 		case 'integration':
 			$num_cols = 3;
+			break;
+
+		case 'bg':
+			$num_cols = 4;
 			break;
 
 		case 'tier':
@@ -114,6 +122,21 @@ if ($cards) {
 							'title' => Arrays::get_value_as_string($card, 'title'),
 							'content' => Arrays::get_value_as_string($card, 'content'),
 							'permalink' => $link->link
+						];
+
+						break;
+
+					case 'bg':
+						$component_name = Components\Cards\CardBg::class;
+						$link = BlueprintBlocks::get_button_field_values('link', $card);
+
+						$render_params = [
+							'image' => Arrays::get_value_as_array($card, 'image'),
+							'card_bg_color' => Arrays::get_value_as_string($card, 'card_bg_color'),
+							'title' => Arrays::get_value_as_string($card, 'title'),
+							'desc' => Arrays::get_value_as_string($card, 'desc'),
+							'permalink' => $link->link,
+							'permalink_text' => $link->text
 						];
 
 						break;

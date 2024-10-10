@@ -128,7 +128,7 @@ class Header implements IComponent
 					</div>
 					<div class="site-header__cta-container">
 						<a href="https://tidbcloud.com/signin" data-gtag="event:signin_click,position:header" class="site-header__secondary-menu-link">Sign In</a>
-						<a href="https://tidbcloud.com/free-trial/" data-gtag="event:go_to_cloud_signup,product_type:serverless,button_name:Start for Free,position:header" class="button-primary sm"><span>Start for Free</span><i class="button__arrow"></i></a>
+						<a href="https://tidbcloud.com/free-trial/" data-gtag="event:go_to_cloud_signup,product_type:serverless,button_name:Start for Free,position:header" class="button-primary sm"><span>無料で始める</span><i class="button__arrow"></i></a>
 					</div>
 					<button class="site-header__mobile-menu-button" type="button" aria-label="Menu">
 						<span class="site-header__mobile-menu-button-box">

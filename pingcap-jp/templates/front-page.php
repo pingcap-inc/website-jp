@@ -1,27 +1,17 @@
 <?php
 
 use PingCAP\Components;
-use WPUtil\{Arrays, Component, Vendor};
-use Blueprint\Images;
+use WPUtil\{Component, Vendor};
 
 get_header();
 
-if (have_posts()) {
-	while (have_posts()) {
-		the_post();
+Component::render(Components\Banners\BannerHome::class);
 
 ?>
-		<main class="tmpl-front-page">
-			<div class="tmpl-front-page__scroll-container">
-				<?php
-				Component::render(Components\Banners\BannerHome::class, []);
-				?>
-			</div>
-		</main>
+<main class="tmpl-front-page">
+	<?php Vendor\BlueprintBlocks::safe_display(); ?>
+</main>
+<script src="https://unpkg.com/@dotlottie/player-component@latest/dist/dotlottie-player.mjs" type="module"></script>
 <?php
-
-		Vendor\BlueprintBlocks::safe_display();
-	}
-}
 
 get_footer();
