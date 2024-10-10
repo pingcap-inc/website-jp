@@ -1,8 +1,8 @@
 @use "sass:math";
 
-$hamburger-layer-width: 32px;
-$hamburger-layer-height: 5px;
-$hamburger-layer-spacing: 6px;
+$hamburger-layer-width: 20px;
+$hamburger-layer-height: 1px;
+$hamburger-layer-spacing: 4px;
 
 html.mobile-menu-default-active,
 html.mobile-menu-cta-active {
@@ -12,8 +12,105 @@ html.mobile-menu-cta-active {
 }
 
 .site-header {
-	background-color: #20222b;
+	background-color: #000;
 	transition: transform var(--header-transition-speed) ease-in-out;
+
+	&__hello-bar {
+		display: none;
+		background-color: #dc150b;
+		padding: .6rem 1.6rem;
+		text-align: center;
+		transition: all var(--default-transition-params);
+		cursor: pointer;
+		&.active {
+			display: block;
+		}
+		&-inner {
+			color: #fff;
+			text-decoration: none;
+			font-size: 16px;
+			.button-link {
+				padding-left: 0.8rem;
+			}
+		}
+		&-close {
+			position: absolute;
+			right: 0;
+			width: 2rem;
+			height: 2rem;
+			cursor: pointer;
+		}
+		&:hover {
+			background-color: #87120c;
+			.button-link {
+				.button__arrow {
+					background-color: #fff;
+					&::before {
+						border-color: #000;
+						transform: rotate(0);
+					}
+					&::after {
+						top: 0;
+						border-color: #000;
+						transform: rotate(45deg);
+					}
+				}
+			}
+		}
+
+		&.red {
+			background-color: #dc150b;
+			a {
+				color: #fff;
+			}
+			&:hover {
+				background-color: #87120c;
+			}
+		}
+		&.violet {
+			background-color: #9e4ec4;
+			a {
+				color: #fff;
+			}
+			&:hover {
+				background-color: #5d137d;
+			}
+		}
+		&.blue {
+			background-color: #2c80ce;
+
+			&:hover {
+				background-color: #10487b;
+			}
+		}
+		&.green {
+			background-color: #1aa8a8;
+			&:hover {
+				background-color: #0f5353;
+			}
+		}
+		&.blue,
+		&.green {
+			a,
+			.button-link {
+				color: #000;
+			}
+			.button__arrow {
+				&::before {
+					border-color: #000;
+				}
+				&::after {
+					border-color: #000;
+				}
+			}
+			&:hover {
+				a,
+				.button-link {
+					color: #fff;
+				}
+			}
+		}
+	}
 
 	&__bg-bar {
 		height: 4px;
@@ -31,7 +128,7 @@ html.mobile-menu-cta-active {
 
 	&-wrapper {
 		z-index: var(--z-header);
-		position: fixed;
+		position: sticky;
 		top: var(--admin-bar-height, 0);
 		left: 0;
 		width: 100%;
@@ -40,31 +137,8 @@ html.mobile-menu-cta-active {
 	display: flex;
 	align-items: center;
 	padding: 1.2rem 0;
-
-	&__top {
-		background: linear-gradient(90deg, #13367d -1.46%, #0f3141 37.65%, #006f5d);
-
-		nav {
-			display: flex;
-			justify-content: flex-end;
-			gap: 3.2rem;
-			padding: 0.8rem 0.6rem 0.8rem 0;
-			a {
-				color: var(--color-white);
-				font-size: 1.4rem;
-				text-decoration: none;
-				line-height: 2rem;
-				font-weight: 700;
-				display: flex;
-				align-items: center;
-			}
-		}
-		&-menu-icon {
-			font-size: 1.8rem;
-			vertical-align: middle;
-			margin-right: 0.4rem;
-			color: #fff;
-		}
+	@include media-min($large) {
+		padding: 1.8rem 0;
 	}
 
 	&__inner {
@@ -74,27 +148,13 @@ html.mobile-menu-cta-active {
 		justify-content: space-between;
 	}
 
-	&__logo-container {
-		margin-right: 2rem;
-		flex-grow: 1;
-
+	&__logo-image {
+		width: 92px;
+		height: 38px;
+		display: block;
 		@include media-min($large) {
-			max-width: calc(150px + 3rem);
-		}
-
-		a {
-			display: flex;
-			align-items: center;
-		}
-	}
-
-	&__logo {
-		width: 132px;
-		height: 34px;
-
-		@include media-min($large) {
-			width: 150px;
-			height: 40px;
+			width: 120px;
+			height: 50px;
 		}
 	}
 
@@ -102,55 +162,9 @@ html.mobile-menu-cta-active {
 		display: none;
 
 		@include media-min($large) {
-			display: block;
-		}
-	}
-
-	&__cta-button {
-		margin-left: 2.4rem;
-		background-image: linear-gradient(279.62deg, var(--color-blue-dark), var(--color-blue));
-		border-image: linear-gradient(279.62deg, var(--color-blue-dark), var(--color-blue)) 1;
-		clip-path: inset(0 round var(--default-border-radius));
-		&:hover {
-			background-image: none;
-			border-image: none;
-			background-color: transparent;
-		}
-	}
-
-	&__cta-mobile-button {
-		transition: opacity 0.25s ease-in-out;
-
-		html.mobile-menu-default-active &,
-		html.mobile-menu-cta-active & {
-			pointer-events: none;
-			opacity: 0;
-		}
-
-		@include media-min($large) {
-			display: none;
-		}
-	}
-
-	&__menu-cta {
-		gap: 1rem;
-		display: none;
-		@include media-min($large) {
 			display: flex;
+			align-items: center;
 		}
-		.button {
-			width: 13.6rem;
-			min-width: unset;
-			min-height: unset;
-			height: 3.2rem;
-			padding: unset;
-		}
-	}
-
-	&__menu {
-		display: flex;
-		align-items: center;
-		gap: 3.2rem;
 	}
 
 	&__menu-primary {
@@ -158,62 +172,29 @@ html.mobile-menu-cta-active {
 
 		@include media-min($large) {
 			display: flex;
-			gap: 3.2rem;
+			gap: 2.8rem;
 			flex-grow: 1;
 		}
 	}
 
 	&__primary-menu-link {
 		position: relative;
-		font-weight: var(--font-weight-bold);
+		font-weight: 400;
+		font-size: 15px;
+		line-height: 21px;
 		color: var(--color-white);
-		text-decoration: underline;
-		text-decoration-color: transparent;
-		text-underline-offset: 1.6rem;
+		text-decoration: none;
 		transition: all var(--default-transition-params);
 	}
 
-	&__menu-secondary {
-		display: none;
-
-		@include media-min($large) {
-			display: flex;
-			align-items: center;
-			gap: 3rem;
-			margin-left: 2rem;
-			padding-left: 2rem;
-			border-left: 1px solid #fff;
-			height: 2rem;
-		}
-	}
-
 	&__secondary-menu-link {
-		font-family: var(--font-poppins);
-		font-weight: var(--font-weight-medium);
-		font-size: 1.6rem;
-		line-height: 1.5;
+		font-size: 15px;
+		line-height: 21px;
 		color: var(--color-white);
 		text-decoration: none;
-
-		i {
-			font-size: 30px;
-			vertical-align: middle;
-			margin-left: 6px;
-		}
-	}
-
-	&__dropdown-icon {
-		position: absolute;
-		bottom: -14px;
-		left: 50%;
-		transform: translateX(-50%);
-		width: 10px;
-		height: 8px;
-		color: rgba(var(--color-rgb-white), 0.3);
-		transition: color var(--default-transition-params);
-
-		.site-header__dropdown-menu-container:hover & {
-			color: var(--color-primary);
+		margin-right: 2.4rem;
+		&:hover {
+			color: #a2adb9;
 		}
 	}
 
@@ -248,7 +229,7 @@ html.mobile-menu-cta-active {
 			}
 
 			.site-header__primary-menu-link {
-				text-decoration-color: var(--color-blue);
+				color: #a2adb9;
 			}
 
 			.menu-dropdown {
@@ -279,7 +260,7 @@ html.mobile-menu-cta-active {
 		.menu-dropdown-columns {
 			padding: 0;
 			left: 50%;
-			background-color: #282a36;
+			border: 1px solid #424d57;
 			transform: translatex(-50%);
 			box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.16);
 			border-radius: 4px;
@@ -340,7 +321,7 @@ html.mobile-menu-cta-active {
 		&::after {
 			width: $hamburger-layer-width;
 			height: $hamburger-layer-height;
-			background-color: var(--color-primary);
+			background-color: #fff;
 			border-radius: 2.5px;
 			position: absolute;
 			transition-property: transform;

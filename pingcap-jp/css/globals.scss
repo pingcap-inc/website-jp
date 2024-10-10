@@ -10,13 +10,13 @@
 
 html {
 	scroll-padding-top: var(--header-height);
+	font-variant-ligatures: no-common-ligatures;
 }
 
 body {
 	--body-top-offset: var(--header-height);
 
 	position: relative;
-	margin-top: var(--body-top-offset);
 
 	// prevent flash of white content before the header has fully animated
 	// when scrolling up quickly
@@ -144,13 +144,16 @@ blockquote {
 	margin-left: 0;
 	margin-right: 0;
 
-	font: var(--body-font);
 	color: var(--body-font-color);
+	font-weight: var(--font-weight-regular);
+	font-size: var(--body-font-size);
+	font-family: var(--font-primary);
+	line-height: var(--body-font-line-height);
 
 	p {
 		position: relative;
 		font-size: 2.8rem;
-		font-family: var(--font-lexend);
+		font-family: var(--font-moderat);
 		font-weight: var(--font-weight-bold);
 
 		&::before {
@@ -191,7 +194,7 @@ blockquote {
 		margin-top: 1.6rem;
 
 		font-weight: var(--font-weight-medium);
-		font-family: var(--font-lexend);
+		font-family: var(--font-moderat);
 		font-size: 2rem;
 		font-style: normal;
 		line-height: 1.5;
@@ -207,6 +210,7 @@ blockquote {
 code {
 	background: var(--color-black);
 	color: var(--color-white);
+	font-family: var(--font-code) !important;
 }
 
 strong {
