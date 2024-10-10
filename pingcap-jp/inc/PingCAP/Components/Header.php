@@ -4,9 +4,8 @@ namespace PingCAP\Components;
 
 use WPUtil\Interfaces\IComponent;
 use WPUtil\{Arrays, Component, Menus, MenuDropdowns, SVG};
-use WPUtil\Vendor\ACF;
-use PingCAP\{Components, Constants, Logo};
-use Blueprint\Images;
+use WPUtil\Vendor\{ACF};
+use PingCAP\{Components, Constants};
 
 class Header implements IComponent
 {
@@ -20,19 +19,19 @@ class Header implements IComponent
 		$this->primary_links = Arrays::get_value_as_array(
 			$params,
 			'primary_links',
-			fn () => Menus::get_for_location(Constants\Menus::DESKTOP_PRIMARY_MENU, [], 0)
+			fn() => Menus::get_for_location(Constants\Menus::DESKTOP_PRIMARY_MENU, [], 0)
 		);
 
 		$this->secondary_links = Arrays::get_value_as_array(
 			$params,
 			'secondary_links',
-			fn () => Menus::get_for_location(Constants\Menus::DESKTOP_SECONDARY_MENU, [], 0)
+			fn() => Menus::get_for_location(Constants\Menus::DESKTOP_SECONDARY_MENU, [], 0)
 		);
 
 		$this->cta_button_text = Arrays::get_value_as_string(
 			$params,
 			'cta_button_text',
-			fn () => ACF::get_field_string(
+			fn() => ACF::get_field_string(
 				Constants\ACF::THEME_OPTIONS_HEADER_BASE . '_cta_button_text',
 				'option'
 			)
@@ -41,29 +40,54 @@ class Header implements IComponent
 		$this->cta_dropdown_menu_id = Arrays::get_value_as_int(
 			$params,
 			'cta_dropdown_menu_id',
-			fn () => ACF::get_field_int(
+			fn() => ACF::get_field_int(
 				Constants\ACF::THEME_OPTIONS_HEADER_BASE . '_cta_dropdown_menu_id',
 				'option'
 			)
+		);
+
+		$this->hello_bar = ACF::get_field_bool(
+			Constants\ACF::THEME_OPTIONS_HELLO_BAR . '_enable_hello_bar',
+			'option'
+		);
+
+		$this->hello_bar_bg = ACF::get_field_string(
+			Constants\ACF::THEME_OPTIONS_HELLO_BAR . '_hello_bar_bg',
+			'option'
+		);
+
+		$this->hello_bar_text = ACF::get_field_string(
+			Constants\ACF::THEME_OPTIONS_HELLO_BAR . '_hello_bar_text',
+			'option'
+		);
+
+		$this->hello_bar_button = ACF::get_field_array(
+			Constants\ACF::THEME_OPTIONS_HELLO_BAR . '_hello_bar_link',
+			'option'
 		);
 	}
 
 	public function render(): void
 	{
 ?>
-		<header class="site-header-wrapper">
-			<div class="site-header__top">
-				<div class="contain">
-					<nav class="site-header__top-menu">
-						<a href="https://tidbcloud.com/signin" data-gtag="event:signin_click,position:header"><span class="site-header__top-menu-icon ph-user-circle-thin"></span>Sign In</a>
-					</nav>
-				</div>
+		<?php
+		if ($this->hello_bar) {
+			$link_target = $this->hello_bar_button['target'] ? $this->hello_bar_button['target'] : '_self';
+		?>
+			<div class="site-header__hello-bar <?php echo $this->hello_bar_bg; ?> active">
+				<a class="site-header__hello-bar-inner contain" href="<?php echo $this->hello_bar_button['url']; ?>" target="<?php echo esc_attr($link_target); ?>">
+					<?php echo $this->hello_bar_text; ?><span class="button-link"><?php echo $this->hello_bar_button['title']; ?><i class="button__arrow"></i></span>
+				</a>
 			</div>
-			<div class="site-header bg-black">
+		<?php
+		}
+		?>
+		<header class="site-header-wrapper">
+			<div class="site-header">
 				<div class="site-header__inner contain">
 					<div class="site-header__logo-container">
 						<a href="<?php echo esc_url(site_url()); ?>" title="<?php echo esc_attr(bloginfo('name')); ?>" aria-label="Home">
-							<img class="site-header__logo" src="https://static.pingcap.co.jp/files/2022/09/25230007/PingCAP-logo.png" alt="PingCAP logo" />
+							<?php SVG::the_svg('general/logo', ['class' => 'site-header__logo-image']); ?>
 						</a>
 					</div>
 					<div class="site-header__menu">
@@ -101,14 +125,10 @@ class Header implements IComponent
 							}
 							?>
 						</nav>
-						<div class="site-header__menu-cta">
-							<a href="/contact-us/" data-gtag="event:go_to_lead_form_page,button_name:Book a Demo,position:header" class="button button-blue-outline dropdown-menu-activate">
-								お問い合わせ
-							</a>
-							<a href="https://tidbcloud.com/free-trial/" data-gtag="event:event:go_to_cloud_signup,button_name:Start Free,product_type:serverless,position:header" class="button dropdown-menu-activate">
-								無料で始める
-							</a>
-						</div>
+					</div>
+					<div class="site-header__cta-container">
+						<a href="https://tidbcloud.com/signin" data-gtag="event:signin_click,position:header" class="site-header__secondary-menu-link">Sign In</a>
+						<a href="https://tidbcloud.com/free-trial/" data-gtag="event:go_to_cloud_signup,product_type:serverless,button_name:Start for Free,position:header" class="button-primary sm"><span>無料で始める</span><i class="button__arrow"></i></a>
 					</div>
 					<button class="site-header__mobile-menu-button" type="button" aria-label="Menu">
 						<span class="site-header__mobile-menu-button-box">
@@ -121,11 +141,5 @@ class Header implements IComponent
 <?php
 
 		Component::render(Components\MobileMenuDefault::class);
-
-		if ($this->cta_dropdown_menu_id) {
-			Component::render(Components\MobileMenuCTA::class, [
-				'cta_dropdown_menu_id' => $this->cta_dropdown_menu_id
-			]);
-		}
 	}
 }

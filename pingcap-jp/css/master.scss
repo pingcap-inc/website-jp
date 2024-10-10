@@ -15,9 +15,9 @@ Normalize.css
 @import "../node_modules/normalize.css/normalize";
 
 /*************************************
-Phosphor Icons Css
+Icons Css
 **************************************/
-// @import "phosphor-icons";
+@import "iconfont";
 
 /*************************************
 Scaffolding
@@ -136,6 +136,9 @@ Blocks
 @import "blocks/tabs-pricing";
 @import "blocks/table-pricing";
 @import "blocks/compare-features";
+@import "blocks/case";
+@import "blocks/tabs-slide";
+@import "blocks/testimonials-slide";
 
 /*************************************
 Templates

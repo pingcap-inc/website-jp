@@ -20,6 +20,8 @@ use PingCAP\{Components, Constants};
 	<meta name="application-name" content="<?php bloginfo('name'); ?>">
 	<meta name="referrer" content="no-referrer-when-downgrade" />
 
+	<link rel="icon" href="<?php echo esc_url(get_template_directory_uri()); ?>/media/favicon/favicon.ico">
+	<link rel="shortcut icon" href="<?php echo esc_url(get_template_directory_uri()); ?>/media/favicon/favicon.ico">
 	<link rel="apple-touch-icon" sizes="180x180" href="<?php echo esc_url(get_template_directory_uri()); ?>/media/favicon/apple-touch-icon.png">
 	<!-- <link rel="manifest" href="<?php echo esc_url(get_template_directory_uri()); ?>/media/favicon/site.webmanifest"> -->
 	<meta name="msapplication-TileColor" content="#ffffff">

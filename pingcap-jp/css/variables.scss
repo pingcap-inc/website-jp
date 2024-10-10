@@ -1,4 +1,4 @@
-$global-width: 1416px;
+$global-width: 1374px;
 $container-margin-lg: 48px;
 
 // breakpoint variables
@@ -6,9 +6,6 @@ $medium: 641px;
 $large: 1025px;
 $xlarge: 1441px;
 $xxlarge: 1921px;
-
-// $theme-url-base: "/* @echo themeUrlBase */";
-// $fonts-url-base: "/* @echo fontsUrlBase */";
 
 /*************************************
 Background Color Names
@@ -45,10 +42,10 @@ $bg-color-names: ("white", "black", "blue");
 	/*************************************
 	Header
 	**************************************/
-	--header-height: 94px;
+	--header-height: 62px;
 
 	@include media-min($large) {
-		--header-height: 100px;
+		--header-height: 86px;
 	}
 
 	--header-transition-speed: calc(var(--default-transition-speed) * 2);
@@ -66,8 +63,7 @@ $bg-color-names: ("white", "black", "blue");
 	}
 
 	@include media-min($large) {
-		--container-margin: 4.8rem;
-		--grid-column-gutter: 4.8rem;
+		--container-margin: 6.4rem;
 	}
 
 	@include media-min($xlarge) {
@@ -228,8 +224,10 @@ $bg-color-names: ("white", "black", "blue");
 	--font-prompt: "Prompt", "sans-serif";
 	--font-montserrat: "Montserrat", "sans-serif";
 	--font-inter: "Inter", "Arial", "sans-serif";
-	--font-code: "Montserrat", "Menlo";
-	--font-primary: var(--font-inter);
+	--font-moderat: "Moderat", "sans-serif";
+	--font-moderat-mono: "Moderat Mono", "sans-serif";
+	--font-code: "Moderat Mono", "Menlo";
+	--font-primary: var(--font-moderat);
 
 	--font-weight-thin: 100;
 	--font-weight-xlight: 200;
@@ -273,6 +271,7 @@ $bg-color-names: ("white", "black", "blue");
 	--form-border-radius: 8px;
 
 	--form-select-arrow-img: url("#{$theme-url-base}/media/svg/general/chevron-down-blue.svg");
+	--form-select-arrow-white-img: url("#{$theme-url-base}/media/svg/general/chevron-down-white.svg");
 
 	--form-control-border-color-default: var(--color-blue);
 	--form-control-border-color-focus: var(--color-blue);

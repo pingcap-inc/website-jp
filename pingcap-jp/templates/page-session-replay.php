@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Template Name: 2024 session replay
+ * Template Name: session replay
  */
 
 use WPUtil\{Arrays, Vendor};
@@ -30,14 +30,22 @@ get_header();
                         $video_pdf = BlueprintBlocks::get_button_field_values('video_pdf', $video);
                     ?>
                         <div class="block-columns__column wysiwyg">
-                            <a class="block-columns__video-container js--trigger-video-modal ignore-link-styles" href="<?php echo esc_url($video_url); ?>">
-                                <?php
-                                Images::safe_image_output($video_image, ['class' => 'block-columns__video-image']);
+                            <?php if ($video_url) { ?>
+                                <a class="block-columns__video-container js--trigger-video-modal ignore-link-styles" href="<?php echo esc_url($video_url); ?>">
+                                    <?php
+                                    Images::safe_image_output($video_image, ['class' => 'block-columns__video-image']);
 
-                                do_action('grav_blocks_get_video_link_button', '');
-                                ?>
-                            </a>
-                            <?php if ($video_pdf) { ?>
+                                    do_action('grav_blocks_get_video_link_button', '');
+                                    ?>
+                                </a>
+                            <?php } else { ?>
+                                <div class="block-columns__video-container">
+                                    <?php
+                                    Images::safe_image_output($video_image, ['class' => 'block-columns__video-image']);
+                                    ?>
+                                </div>
+                            <?php } ?>
+                            <?php if ($video_pdf->link) { ?>
                                 <div class="text-right">
                                     <a class="button" href="<?php echo $video_pdf->link; ?>"><?php echo $video_pdf->text; ?></a>
                                 </div>
