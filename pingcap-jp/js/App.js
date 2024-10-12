@@ -23,8 +23,10 @@ import PostsListSearch from './components/posts-list/posts-list-search';
 import PostsListEbookWhitepaper from './components/posts-list/posts-list-ebook-whitepaper';
 
 import BlockTestimonials from './blocks/testimonials';
+import BlockTestimonialsSlide from './blocks/testimonials-slide';
 import BlockOpenPositions from './blocks/open-positions';
 import BlockTabs from './blocks/tabs';
+import BlockTabsSlide from './blocks/tabs-slide';
 import BlockTabsCard from './blocks/tabs-card';
 import BlockStats from './blocks/stats';
 import BlockResources from './blocks/resources';
@@ -76,8 +78,10 @@ class App {
 			},
 			blocks: {
 				testimonials: [],
+				testimonialsSlide: [],
 				openPositions: [],
 				tabs: [],
+				tabsSlide: [],
 				tabsCard: [],
 				stats: [],
 				resources: [],
@@ -325,6 +329,15 @@ class App {
 			}
 		);
 
+		// Testimonials Slide
+		Array.from(document.querySelectorAll('.block-testimonials-slide')).forEach(
+			(blockTestimonialsSlideEl) => {
+				this.instances.blocks.testimonialsSlide.push(
+					new BlockTestimonialsSlide(blockTestimonialsSlideEl)
+				);
+			}
+		);
+
 		// Open Positions
 		Array.from(document.querySelectorAll('.block-open-positions')).forEach(
 			(blockOpenPositionsEl) => {
@@ -337,6 +350,11 @@ class App {
 		// Tabs
 		Array.from(document.querySelectorAll('.block-tabs')).forEach((blockTabsEl) => {
 			this.instances.blocks.tabs.push(new BlockTabs(blockTabsEl));
+		});
+
+		// Tabs Slide
+		Array.from(document.querySelectorAll('.block-tabs-slide')).forEach((blockTabsSlideEl) => {
+			this.instances.blocks.tabsSlide.push(new BlockTabsSlide(blockTabsSlideEl));
 		});
 
 		// Tabs
@@ -540,7 +558,7 @@ class App {
 		const stats = await response.json();
 		const starCount10K = stats.stargazers_count / 1000;
 		const starCount = Math.round(10 * starCount10K) / 10;
-		document.getElementById('github_stars').innerHTML = starCount + 'K GitHub Stars';
+		document.getElementById('github_stars').innerHTML = starCount + 'K';
 	}
 }
 

@@ -100,8 +100,8 @@ module.exports = {
             ALGOLIA_API_KEY: '"93bc58f555e0262e38528ce837bc1e71"',
           }
         : {
-            ALGOLIA_APPLICATION_ID: '"C1YRTNP2Y4"',
-            ALGOLIA_API_KEY: '"f76d236f53785622ee93a8299d77b0ce"',
+            ALGOLIA_APPLICATION_ID: '"CIDEZSADWL"',
+            ALGOLIA_API_KEY: '"aa0016c928c913d8b7c27c33046c4e41"',
           }
     ),
   ].concat(
