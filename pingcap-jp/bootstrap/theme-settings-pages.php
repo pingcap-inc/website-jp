@@ -7,6 +7,7 @@ if (function_exists('acf_add_options_page') && function_exists('acf_add_options_
 	]);
 
 	$sub_pages = [
+		'acf-theme-options-hello-bar' => 'Hello Bar',
 		'acf-theme-options-social' => 'Social Media',
 		'acf-theme-options-header' => 'Header',
 		'acf-theme-options-footer' => 'Footer',
