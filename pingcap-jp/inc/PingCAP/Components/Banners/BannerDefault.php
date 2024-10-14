@@ -310,7 +310,7 @@ class BannerDefault implements IComponent
             $params,
             'title_container_size',
             fn() => ACF::get_field_string(
-                'banner_product_title_container_size',
+                'banner_title_container_size',
                 $this->post_id
             )
         );
