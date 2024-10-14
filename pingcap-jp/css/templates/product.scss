@@ -1,0 +1,503 @@
+.tmpl-product {
+	.architecture-tabs {
+		&__tab {
+			display: flex;
+			gap: 16px;
+			align-items: center;
+			padding: 10px 20px;
+			cursor: pointer;
+			transition: all var(--default-transition-params);
+			@include media-min($medium) {
+				gap: 8px;
+				min-width: 300px;
+				flex-direction: column;
+				align-items: flex-start;
+			}
+			@include media-min($large) {
+				min-width: 380px;
+			}
+			&-image {
+				position: relative;
+				width: 32px;
+				height: 32px;
+				background-position: center;
+				background-size: contain;
+				background-repeat: no-repeat;
+			}
+			&-text {
+				flex: 1;
+			}
+			&-title {
+				font-size: 22px;
+				font-weight: 700;
+				line-height: 30px;
+				color: #fff;
+				margin-bottom: 4px;
+			}
+			p {
+				font-size: 16px;
+				font-weight: 300;
+				line-height: 24px;
+				color: #fff;
+			}
+			&.red {
+				border: 1px solid #dc150b;
+				.architecture-tabs__tab-image {
+					background-image: url(https://static.pingcap.com/files/2024/09/23004501/polygon-red.svg);
+				}
+			}
+			&.green {
+				border: 1px solid #00bdba;
+				.architecture-tabs__tab-image {
+					background-image: url(https://static.pingcap.com/files/2024/09/23004501/polygon-green.svg);
+				}
+			}
+			&.violet {
+				border: 1px solid #8446a3;
+				.architecture-tabs__tab-image {
+					background-image: url(https://static.pingcap.com/files/2024/09/23004501/polygon-violet.svg);
+				}
+			}
+			&.blue {
+				border: 1px solid #3199fb;
+				.architecture-tabs__tab-image {
+					background-image: url(https://static.pingcap.com/files/2024/09/23004501/polygon-blue.svg);
+				}
+			}
+		}
+	}
+	.block-tabs-slide__tab.active {
+		.architecture-tabs__tab.red {
+			background: linear-gradient(105.54deg, #630d09 34.3%, #c91a12 110.23%);
+			.architecture-tabs__tab-image {
+				background-image: url(https://static.pingcap.com/files/2024/09/23004501/polygon-red-active.svg);
+			}
+		}
+		.architecture-tabs__tab.green {
+			background: linear-gradient(107.22deg, #008684 33.95%, #00bdba 109.79%);
+			.architecture-tabs__tab-image {
+				background-image: url(https://static.pingcap.com/files/2024/09/23004501/polygon-green-active.svg);
+			}
+		}
+		.architecture-tabs__tab.violet {
+			background: linear-gradient(286.52deg, #9e4ec4 -6.78%, #5b0088 68.47%);
+			.architecture-tabs__tab-image {
+				background-image: url(https://static.pingcap.com/files/2024/09/23004501/polygon-violet-active.svg);
+			}
+		}
+		.architecture-tabs__tab.blue {
+			background: linear-gradient(285.17deg, #2c80ce 3.46%, #1155cc 66.14%);
+			.architecture-tabs__tab-image {
+				background-image: url(https://static.pingcap.com/files/2024/09/23004501/polygon-blue-active.svg);
+			}
+		}
+	}
+
+	.capabilities {
+		.block-media-content__container {
+			h3 {
+				font-size: 24px;
+				line-height: 30px;
+				font-weight: 700;
+				color: #000;
+				@include media-min($medium) {
+					font-size: 5rem;
+					line-height: 66px;
+				}
+			}
+			p {
+				font-size: 22px;
+				font-weight: 300;
+				line-height: 28px;
+				color: #454b51;
+			}
+		}
+	}
+
+	.features {
+		.block-inner {
+			@include media-min($large) {
+				display: flex;
+				gap: 1.6rem;
+			}
+		}
+		.block-title {
+			margin-bottom: 0;
+		}
+		&__title-container {
+			img {
+				margin: 3.2rem 0;
+			}
+			@include media-min($xlarge) {
+				width: 42%;
+			}
+		}
+		&__card-container {
+			display: grid;
+			gap: 4rem 4.8rem;
+			grid-template-columns: repeat(1, 1fr);
+			height: fit-content;
+			@include media-min($medium) {
+				grid-template-columns: repeat(2, 1fr);
+			}
+			@include media-min($xlarge) {
+				flex: 1;
+			}
+		}
+		&__card {
+			&-title {
+				font-size: 24px;
+				font-weight: 700;
+				line-height: 30px;
+				color: #fff;
+				margin: 2.8rem 0 2rem;
+			}
+			&-image-container {
+				width: 4rem;
+				height: 4rem;
+			}
+			p {
+				color: #a2adb9;
+				font-size: 16px;
+				font-weight: 300;
+				line-height: 22px;
+			}
+		}
+	}
+
+	.why {
+		&.bg-blue {
+			background-color: #10487b;
+		}
+		&.bg-green {
+			background-color: #0f5353;
+		}
+		&__title-container {
+			h3 {
+				font-size: 40px;
+				font-weight: 700;
+				line-height: 48px;
+				color: #fff;
+				@include media-min($medium) {
+					font-size: 68px;
+					line-height: 74px;
+				}
+			}
+			@include media-min($large) {
+				display: flex;
+				gap: 4.8rem;
+			}
+			.subtitle {
+				font-size: 22px;
+				font-weight: 300;
+				line-height: 28px;
+				text-align: left;
+				margin: 3.2rem 0;
+				color: #fff;
+				@include media-min($large) {
+					width: 64%;
+				}
+			}
+		}
+		&__card-container {
+			margin-top: 4rem;
+			@include media-min($medium) {
+				display: flex;
+				gap: 1px;
+			}
+		}
+		&__card {
+			flex: 1;
+			padding: 2.4rem;
+			background-color: #000;
+			&-line {
+				width: 13px;
+				height: 72px;
+				border-radius: 64px;
+			}
+			&-title {
+				font-size: 22px;
+				font-weight: 500;
+				line-height: 30px;
+				color: #fff;
+				margin: 3rem 0 1.6rem;
+			}
+			p {
+				color: #fff;
+				line-height: 24px;
+			}
+			&:nth-child(1) {
+				.why__card-line {
+					background: #c8140b;
+				}
+			}
+			&:nth-child(2) {
+				.why__card-line {
+					background: #1aa8a8;
+				}
+			}
+			&:nth-child(3) {
+				.why__card-line {
+					background: #1155cc;
+				}
+			}
+		}
+		&__product-container {
+			margin-top: 1px;
+			@include media-min($medium) {
+				display: flex;
+				gap: 1px;
+			}
+		}
+		&__product {
+			background: #00000099;
+			padding: 4.8rem 2.4rem;
+			display: flex;
+			align-items: center;
+			gap: 3rem;
+			&-image {
+				width: 72px;
+			}
+			&-content {
+				flex: 1;
+			}
+			&-title {
+				font-size: 22px;
+				font-weight: 500;
+				line-height: 30px;
+				color: #fff;
+			}
+			p {
+				font-size: 16px;
+				font-weight: 300;
+				line-height: 24px;
+				margin: 2.4rem 0;
+				color: #fff;
+			}
+		}
+		&__community {
+			&-container {
+				background: #00000099;
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				padding: 2.6rem 1.6rem;
+				@include media-min($medium) {
+					flex-direction: row;
+					padding: 2.6rem 4rem;
+					justify-content: space-between;
+				}
+				@include media-min($large) {
+					padding: 2.6rem 8rem;
+				}
+				margin-top: 1px;
+				p {
+					font-size: 16px;
+					font-weight: 300;
+					line-height: 24px;
+					color: #fff;
+					max-width: 42rem;
+				}
+			}
+			&-title {
+				font-size: 22px;
+				font-weight: 500;
+				line-height: 30px;
+				color: #fff;
+				white-space: nowrap;
+			}
+			.button-link {
+				white-space: nowrap;
+			}
+		}
+	}
+
+	.resource {
+		.block-inner {
+			@include media-min($large) {
+				display: flex;
+				gap: 1.6rem;
+			}
+		}
+		&__title {
+			margin-bottom: 4.8rem;
+			font-size: 48px;
+			font-weight: 700;
+			line-height: 52px;
+			color: #fff;
+			@include media-min($large) {
+				width: 52%;
+				margin-bottom: 0;
+			}
+		}
+		&__card-container {
+			display: flex;
+			flex-direction: column;
+			@include media-min($medium) {
+				flex-direction: row;
+			}
+			border: 1px solid #f2f2f7;
+		}
+		&__card {
+			color: #fff;
+			padding: 2.4rem;
+			flex: 1;
+			display: flex;
+			flex-direction: column;
+			&-content {
+				flex: 1;
+			}
+			&-title {
+				margin-top: 6rem;
+				font-size: 22px;
+				font-weight: 500;
+				line-height: 30px;
+			}
+			p {
+				font-size: 16px;
+				font-weight: 300;
+				line-height: 24px;
+				margin: 1.6rem 0 3rem;
+			}
+			& + .resource__card {
+				border-top: 1px solid #f2f2f7;
+				@include media-min($medium) {
+					border-left: 1px solid #f2f2f7;
+					border-top: none;
+				}
+			}
+		}
+	}
+
+	.database {
+		background: linear-gradient(180deg, #06111a 55.9%, #000 100%);
+		&__card-container {
+			display: grid;
+			gap: 4rem;
+			grid-template-columns: repeat(1, 1fr);
+			margin-top: 8rem;
+			@include media-min($medium) {
+				gap: 4rem;
+				grid-template-columns: repeat(2, 1fr);
+			}
+			@include media-min($large) {
+				grid-template-columns: repeat(3, 1fr);
+			}
+		}
+		&__card {
+			&-image-container {
+				width: 56px;
+				height: 56px;
+				margin-bottom: 18px;
+			}
+			&-title {
+				font-size: 24px;
+				font-weight: 700;
+				line-height: 30px;
+				text-align: left;
+				color: #fff;
+			}
+			ul {
+				margin-top: 1.6rem;
+			}
+			li {
+				font-size: 16px;
+				font-weight: 300;
+				line-height: 22px;
+				color: #a2adb9;
+				& + li {
+					margin-top: 1rem;
+				}
+				&::marker {
+					font-size: 1rem;
+				}
+			}
+		}
+	}
+
+	.community {
+		&__title-container {
+			@include media-min(1200px) {
+				display: flex;
+				justify-content: space-between;
+			}
+		}
+		&__card-container {
+			margin: 6.4rem 0;
+			display: flex;
+			gap: 3.2rem 1.6rem;
+			flex-wrap: wrap;
+			justify-content: center;
+			@include media-min(1200px) {
+				width: 50%;
+				justify-content: space-between;
+			}
+		}
+		&__card {
+			text-align: center;
+			flex: 1;
+			&-image-container {
+				width: 93px;
+				height: 93px;
+				margin: auto;
+			}
+			&-title {
+				font-size: 72px;
+				font-weight: 700;
+				line-height: 76px;
+				color: #fff;
+				margin: 4rem 0 2rem;
+			}
+			p {
+				font-size: 22px;
+				font-weight: 300;
+				line-height: 28px;
+				text-align: center;
+				color: #a2adb9;
+			}
+		}
+		&-tabs {
+			overflow: hidden;
+			.block-tabs-slide__content-image {
+				display: none;
+				@include media-min($medium) {
+					display: block;
+					text-align: right;
+				}
+			}
+			.block-tabs-slide__content-text {
+				display: flex;
+				flex-direction: column;
+				align-items: flex-start;
+				@include media-min($medium) {
+					padding: 32px 0;
+				}
+			}
+			&__content {
+				&-title {
+					flex: 1;
+					padding-bottom: 32px;
+				}
+			}
+		}
+	}
+
+	.integration {
+		&__card-container {
+			display: flex;
+			gap: 2.4rem;
+			justify-content: center;
+			flex-wrap: wrap;
+			margin-top: 8rem;
+			img {
+				width: 40%;
+				@include media-min($medium) {
+					width: 30%;
+				}
+				@include media-min($large) {
+					width: auto;
+				}
+			}
+		}
+	}
+}
