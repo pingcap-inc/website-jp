@@ -203,6 +203,7 @@
   }
 
   &--display-type-product {
+	overflow: hidden;
     .banner-default__text-content {
       position: relative;
       z-index: 1;
@@ -257,6 +258,9 @@
         position: absolute;
         top: 80px;
       }
+	  @include media-min($large) {
+		right: -62px;
+	}
     }
   }
 
