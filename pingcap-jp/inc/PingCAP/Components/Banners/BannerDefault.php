@@ -69,6 +69,13 @@ class BannerDefault implements IComponent
 	public array $use_case_illustration = [];
 
 	/**
+	 * The banner sub title
+	 *
+	 * @var string
+	 */
+	public string $subtitle = '';
+
+	/**
 	 * The banner title
 	 *
 	 * @var string
@@ -243,14 +250,14 @@ class BannerDefault implements IComponent
 
 	public function __construct(array $params)
 	{
-		$this->post_id = Arrays::get_value_as_int($params, 'post_id', fn () => get_the_ID());
+		$this->post_id = Arrays::get_value_as_int($params, 'post_id', fn() => get_the_ID());
 		$this->post_type = get_post_type($this->post_id);
 		$this->acf_prefix = Arrays::get_value_as_string($params, 'acf_prefix', 'banner');
 
 		$this->breadcrumbs_mode = Arrays::get_value_as_string(
 			$params,
 			'breadcrumbs_mode',
-			fn () => ACF::get_field_string(
+			fn() => ACF::get_field_string(
 				$this->acf_prefix . '_breadcrumbs_mode',
 				$this->post_id
 			)
@@ -259,7 +266,7 @@ class BannerDefault implements IComponent
 		$this->custom_breadcrumbs = Arrays::get_value_as_array(
 			$params,
 			'custom_breadcrumbs',
-			fn () => ACF::get_field_array(
+			fn() => ACF::get_field_array(
 				$this->acf_prefix . '_custom_breadcrumbs',
 				$this->post_id
 			)
@@ -268,7 +275,7 @@ class BannerDefault implements IComponent
 		$this->text_align_mode = Arrays::get_value_as_string(
 			$params,
 			'text_align_mode',
-			fn () => ACF::get_field_string(
+			fn() => ACF::get_field_string(
 				$this->acf_prefix . '_text_align_mode',
 				$this->post_id
 			)
@@ -277,7 +284,7 @@ class BannerDefault implements IComponent
 		$this->banner_bg_color = Arrays::get_value_as_string(
 			$params,
 			'banner_bg_color',
-			fn () => ACF::get_field_string(
+			fn() => ACF::get_field_string(
 				$this->acf_prefix . '_banner_bg_color',
 				$this->post_id
 			)
@@ -286,23 +293,32 @@ class BannerDefault implements IComponent
 		$this->banner_display_type = Arrays::get_value_as_string(
 			$params,
 			'banner_display_type',
-			fn () => ACF::get_field_string($this->acf_prefix . '_banner_display_type', $this->post_id)
+			fn() => ACF::get_field_string($this->acf_prefix . '_banner_display_type', $this->post_id)
 		);
 
 		$this->banner_page_template = Arrays::get_value_as_string(
 			$params,
 			'banner_page_template',
-			fn () => ACF::get_field_string($this->acf_prefix . '_banner_page_template', $this->post_id)
+			fn() => ACF::get_field_string($this->acf_prefix . '_banner_page_template', $this->post_id)
 		);
 
 		$this->banner_bg = $params['banner_bg'] ?? ACF::get_field_array($this->acf_prefix . '_banner_bg', $this->post_id);
 
-		$this->product_icon_image = $params['product_icon_image'] ?? ACF::get_field_array($this->acf_prefix . '_product_icon_image', $this->post_id);
+		$this->subtitle = ACF::get_field_string($this->acf_prefix . '_subtitle', $this->post_id);
+
+		$this->title_container_size = Arrays::get_value_as_string(
+            $params,
+            'title_container_size',
+            fn() => ACF::get_field_string(
+                'banner_product_title_container_size',
+                $this->post_id
+            )
+        );
 
 		$this->use_case_illustration = Arrays::get_value_as_array(
 			$params,
 			'use_case_illustration',
-			fn () => ACF::get_field_array($this->acf_prefix . '_use_case_illustration', $this->post_id)
+			fn() => ACF::get_field_array($this->acf_prefix . '_use_case_illustration', $this->post_id)
 		);
 
 		$this->title = Arrays::get_value_as_string($params, 'title', function () {
@@ -314,7 +330,7 @@ class BannerDefault implements IComponent
 		$this->content = Arrays::get_value_as_string(
 			$params,
 			'content',
-			fn () => ACF::get_field_string(
+			fn() => ACF::get_field_string(
 				$this->acf_prefix . '_content',
 				$this->post_id
 			)
@@ -329,7 +345,7 @@ class BannerDefault implements IComponent
 		$this->side_image_webm = Arrays::get_value_as_string(
 			$params,
 			'side_image_webm',
-			fn () => ACF::get_field_string(
+			fn() => ACF::get_field_string(
 				$this->acf_prefix . '_side_image_webm',
 				$this->post_id
 			)
@@ -338,7 +354,7 @@ class BannerDefault implements IComponent
 		$this->side_image_hevc = Arrays::get_value_as_string(
 			$params,
 			'side_image_hevc',
-			fn () => ACF::get_field_string(
+			fn() => ACF::get_field_string(
 				$this->acf_prefix . '_side_image_hevc',
 				$this->post_id
 			)
@@ -348,7 +364,7 @@ class BannerDefault implements IComponent
 			$this->side_image_is_styled = Arrays::get_value_as_bool(
 				$params,
 				'side_image_is_styled',
-				fn () => ACF::get_field_bool(
+				fn() => ACF::get_field_bool(
 					$this->acf_prefix . '_side_image_is_styled',
 					$this->post_id,
 					['default' => true]
@@ -358,7 +374,7 @@ class BannerDefault implements IComponent
 			$this->side_image_pull_up = Arrays::get_value_as_bool(
 				$params,
 				'side_image_pull_up',
-				fn () => ACF::get_field_bool(
+				fn() => ACF::get_field_bool(
 					$this->acf_prefix . '_side_image_pull_up',
 					$this->post_id,
 					['default' => false]
@@ -368,7 +384,7 @@ class BannerDefault implements IComponent
 			$this->side_image_cover = Arrays::get_value_as_bool(
 				$params,
 				'side_image_cover',
-				fn () => ACF::get_field_bool(
+				fn() => ACF::get_field_bool(
 					$this->acf_prefix . '_side_image_cover',
 					$this->post_id,
 					['default' => true]
@@ -378,7 +394,7 @@ class BannerDefault implements IComponent
 			$this->side_image_pos_horz = Arrays::get_value_as_int(
 				$params,
 				'side_image_pos_horz',
-				fn () => ACF::get_field_int(
+				fn() => ACF::get_field_int(
 					$this->acf_prefix . '_side_image_pos_horz',
 					$this->post_id,
 					['default' => 50]
@@ -388,7 +404,7 @@ class BannerDefault implements IComponent
 			$this->side_image_pos_vert = Arrays::get_value_as_int(
 				$params,
 				'side_image_pos_vert',
-				fn () => ACF::get_field_int(
+				fn() => ACF::get_field_int(
 					$this->acf_prefix . '_side_image_pos_vert',
 					$this->post_id,
 					['default' => 50]
@@ -398,7 +414,7 @@ class BannerDefault implements IComponent
 			$this->side_image_video_url = Arrays::get_value_as_string(
 				$params,
 				'side_image_video_url',
-				fn () => ACF::get_field_string(
+				fn() => ACF::get_field_string(
 					$this->acf_prefix . '_side_image_video_url',
 					$this->post_id
 				)
@@ -407,7 +423,7 @@ class BannerDefault implements IComponent
 			$this->side_image_max_width_desktop = Arrays::get_value_as_int(
 				$params,
 				'side_image_max_width_desktop',
-				fn () => ACF::get_field_int(
+				fn() => ACF::get_field_int(
 					$this->acf_prefix . '_side_image_max_width_desktop',
 					$this->post_id,
 					[
@@ -420,7 +436,7 @@ class BannerDefault implements IComponent
 			$this->side_image_max_height_desktop = Arrays::get_value_as_int(
 				$params,
 				'side_image_max_height_desktop',
-				fn () => ACF::get_field_int(
+				fn() => ACF::get_field_int(
 					$this->acf_prefix . '_side_image_max_height_desktop',
 					$this->post_id,
 					[
@@ -434,7 +450,7 @@ class BannerDefault implements IComponent
 		$this->side_video_bg = Arrays::get_value_as_bool(
 			$params,
 			'side_video_bg',
-			fn () => ACF::get_field_bool(
+			fn() => ACF::get_field_bool(
 				$this->acf_prefix . '_side_video_bg',
 				$this->post_id,
 				['default' => false]
@@ -444,7 +460,7 @@ class BannerDefault implements IComponent
 		$this->bottom_arc_enabled = Arrays::get_value_as_bool(
 			$params,
 			'bottom_arc_enabled',
-			fn () => ACF::get_field_bool(
+			fn() => ACF::get_field_bool(
 				$this->acf_prefix . '_bottom_arc_enabled',
 				$this->post_id,
 				['default' => true]
@@ -454,7 +470,7 @@ class BannerDefault implements IComponent
 		$this->bottom_arc_color = Arrays::get_value_as_string(
 			$params,
 			'bottom_arc_color',
-			fn () => ACF::get_field_string(
+			fn() => ACF::get_field_string(
 				$this->acf_prefix . '_bottom_arc_color',
 				$this->post_id,
 				['default' => 'white']
@@ -464,7 +480,7 @@ class BannerDefault implements IComponent
 		$this->first_block_pull_up = Arrays::get_value_as_bool(
 			$params,
 			'first_block_pull_up',
-			fn () => ACF::get_field_bool(
+			fn() => ACF::get_field_bool(
 				$this->acf_prefix . '_first_block_pull_up',
 				$this->post_id,
 				['default' => false]
@@ -474,7 +490,7 @@ class BannerDefault implements IComponent
 		$this->padding_bottom_enabled = Arrays::get_value_as_bool(
 			$params,
 			'padding_bottom_enabled',
-			fn () => ACF::get_field_bool(
+			fn() => ACF::get_field_bool(
 				$this->acf_prefix . '_padding_bottom_enabled',
 				$this->post_id,
 				['default' => false]
@@ -484,7 +500,7 @@ class BannerDefault implements IComponent
 		$this->side_form_id = Arrays::get_value_as_string(
 			$params,
 			'side_form_id',
-			fn () => ACF::get_field_string(
+			fn() => ACF::get_field_string(
 				$this->acf_prefix . '_side_form_id',
 				$this->post_id,
 			)
@@ -492,7 +508,7 @@ class BannerDefault implements IComponent
 		$this->side_form_portal_id = Arrays::get_value_as_string(
 			$params,
 			'side_form_portal_id',
-			fn () => ACF::get_field_string(
+			fn() => ACF::get_field_string(
 				$this->acf_prefix . '_side_form_portal_id',
 				$this->post_id,
 			)
@@ -500,7 +516,7 @@ class BannerDefault implements IComponent
 		$this->side_form_calendly_id = Arrays::get_value_as_string(
 			$params,
 			'side_form_calendly_id',
-			fn () => ACF::get_field_string(
+			fn() => ACF::get_field_string(
 				$this->acf_prefix . '_side_form_calendly_id',
 				$this->post_id,
 			)
@@ -508,7 +524,7 @@ class BannerDefault implements IComponent
 		$this->side_form_calendly_url = Arrays::get_value_as_string(
 			$params,
 			'side_form_calendly_url',
-			fn () => ACF::get_field_string(
+			fn() => ACF::get_field_string(
 				$this->acf_prefix . '_side_form_calendly_url',
 				$this->post_id,
 			)
@@ -516,7 +532,7 @@ class BannerDefault implements IComponent
 
 		$this->no_gutters = Arrays::get_value_as_bool($params, 'no_gutters', false);
 		$this->is_404 = Arrays::get_value_as_bool($params, 'is_404', false);
-		$this->customer_classes = Arrays::get_value_as_string($params, 'customer_classes', fn () => ACF::get_field_string(
+		$this->customer_classes = Arrays::get_value_as_string($params, 'customer_classes', fn() => ACF::get_field_string(
 			$this->acf_prefix . '_customer_classes',
 			$this->post_id,
 			['default' => '']
@@ -673,13 +689,17 @@ class BannerDefault implements IComponent
 
 		$banner_text_content_classes = ['banner-default__text-content'];
 
+		if($this->title_container_size) {
+			$banner_text_content_classes[] = $this->title_container_size;
+		}
+
 		if ($this->text_align_mode) {
 			$banner_text_content_classes[] = 'banner-default__text-content--center';
 		}
 
 	?>
-		<div class="<?php echo esc_attr(implode(' ', $banner_classes)); ?>" <?php if ($this->banner_bg["url"]) {
-																				echo 'style="background-image: url(' . $this->banner_bg["url"] . ')"';
+		<div class="<?php echo esc_attr(implode(' ', $banner_classes)); ?>" <?php if (isset($this->banner_bg['url']) && $this->banner_bg['url']) {
+																				echo 'style="background-image: url(' . $this->banner_bg['url'] . ')"';
 																			}; ?>>
 			<div class="banner-default__inner contain">
 				<?php
@@ -702,12 +722,12 @@ class BannerDefault implements IComponent
 				<div class="<?php echo esc_attr(implode(' ', $banner_text_content_classes)); ?>">
 					<div>
 						<div>
+
+							<?php if ($this->banner_display_type === 'product' && $this->subtitle) { ?>
+								<div class="title-mono"><?php echo $this->subtitle; ?></div>
+							<?php } ?>
+
 							<h1 class="banner-default__title">
-								<?php
-								if ($this->banner_display_type === 'product' && $this->product_icon_image) {
-									Images::safe_image_output($this->product_icon_image, ['class' => 'banner-default__product-icon-image']);
-								}
-								?>
 								<?php echo $this->title; ?>
 							</h1>
 						</div>
