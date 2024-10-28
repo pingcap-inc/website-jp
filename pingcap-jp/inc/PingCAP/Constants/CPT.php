@@ -19,4 +19,5 @@ abstract class CPT
 	const VIDEO = 'video';
 	const SIDEBAR_CTA = 'sidebar-cta';
 	const SLIDES = 'slides';
+	const SOLUTION = 'solution';
 }
