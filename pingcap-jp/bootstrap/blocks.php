@@ -35,7 +35,8 @@ add_filter('grav_blocks_plugin_settings', function ($settings, $option_key) {
 		PingCAP\Constants\CPT::CASE_STUDY,
 		PingCAP\Constants\CPT::COMMUNITY_ACTIVITY,
 		PingCAP\Constants\CPT::PRESS_RELEASE,
-		PingCAP\Constants\CPT::EBOOK_WHITEPAPER
+		PingCAP\Constants\CPT::VIDEO,
+		PingCAP\Constants\CPT::SOLUTION
 	];
 
 	// Specify which page templates the blocks editor should be visible on
