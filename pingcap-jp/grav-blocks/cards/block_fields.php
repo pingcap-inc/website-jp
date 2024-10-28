@@ -73,6 +73,7 @@ $block_fields = array(
 			'media' => 'Media',
 			'solution' => 'Solution',
 			'integration' => 'Integration',
+			'bg' => 'Bg Color',
 			'tier' => 'Tier',
 		),
 		'default_value' => '',
@@ -429,6 +430,146 @@ $block_fields = array(
 				],
 				'supports_button_styles' => false,
 				'show_text' => false
+			])
+		)
+	),
+
+	array(
+		'key' => 'field_' . $block . '_bg_cards',
+		'label' => 'Cards',
+		'name' => 'bg_cards',
+		'type' => 'repeater',
+		'instructions' => '',
+		'required' => 1,
+		'conditional_logic' => array(
+			array(
+				array(
+					'field' => 'field_' . $block . '_card_type',
+					'operator' => '==',
+					'value' => 'bg',
+				),
+			),
+		),
+		'wrapper' => array(
+			'width' => '',
+			'class' => '',
+			'id' => '',
+		),
+		'collapsed' => '',
+		'min' => 1,
+		'max' => '',
+		'layout' => 'block',         // table | block | row
+		'button_label' => 'Add Card',
+		'sub_fields' => array_merge(
+			array(
+				array (
+					'key' => 'field_' . $acf_group . '_card_bg_color',
+					'label' => 'Card Bg Color',
+					'name' => 'card_bg_color',
+					'type' => 'select',
+					'instructions' => '',
+					'required' => 0,
+					'conditional_logic' => 0,
+					'wrapper' => array (
+						'width' => '',
+						'class' => '',
+						'id' => '',
+					),
+					'choices' => array (
+						'red' => 'Red',
+						'violet' => 'Violet',
+						'blue' => 'Blue',
+						'green' => 'Green'
+					),
+					'default_value' => '',
+					'allow_null' => 0,
+					'multiple' => 0,         // allows for multi-select
+					'ui' => 0,               // creates a more stylized UI
+					'ajax' => 0,
+					'placeholder' => '',
+					'disabled' => 0,
+					'readonly' => 0,
+				),
+				array(
+					'key' => 'field_' . $block . '_card_bg_image',
+					'label' => 'Image',
+					'name' => 'image',
+					'instructions' => '',
+					'type' => 'image',
+					'required' => 0,
+					'conditional_logic' => 0,
+					'wrapper' => array(
+						'width' => '',
+						'class' => '',
+						'id' => '',
+					),
+					'return_format' => 'array',       // array | url | id
+					'preview_size' => 'thumbnail',
+					'library' => 'all',       // all | uploadedTo
+					'min_width' => '',
+					'min_height' => '',
+					'min_size' => '',
+					'max_width' => '',
+					'max_height' => '',
+					'max_size' => '',
+					'mime_types' => '',
+				),
+				array(
+					'key' => 'field_' . $block . '_card_bg_title',
+					'label' => 'Title',
+					'name' => 'title',
+					'type' => 'text',
+					'instructions' => '',
+					'required' => 1,
+					'conditional_logic' => 0,
+					'wrapper' => array(
+						'width' => '',
+						'class' => '',
+						'id' => '',
+					),
+					'default_value' => '',
+					'placeholder' => '',
+					'formatting' => 'none', // none | html
+					'prepend' => '',
+					'append' => '',
+					'maxlength' => '',
+					'readonly' => 0,
+					'disabled' => 0,
+				),
+				array(
+					'key' => 'field_' . $block . '_card_bg_desc',
+					'label' => 'Desc',
+					'name' => 'desc',
+					'type' => 'text',
+					'instructions' => '',
+					'required' => 1,
+					'conditional_logic' => 0,
+					'wrapper' => array(
+						'width' => '',
+						'class' => '',
+						'id' => '',
+					),
+					'default_value' => '',
+					'placeholder' => '',
+					'formatting' => 'none', // none | html
+					'prepend' => '',
+					'append' => '',
+					'maxlength' => '',
+					'readonly' => 0,
+					'disabled' => 0,
+				),
+			),
+			WPUtil\Vendor\BlueprintBlocks::safe_get_link_fields([
+				'label' => 'Link',
+				'name' => 'link',
+				'key_modifier' => 'bg',
+				'includes' => [
+					'page' => 'Page Link',
+					'url' => 'URL',
+					'none' => 'None',
+				],
+				'supports_button_styles' => false,
+				'show_text' => true
 			])
 		)
 	),

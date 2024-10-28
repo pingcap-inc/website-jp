@@ -95,16 +95,11 @@
 		margin-top: 0;
 
 		display: flex;
-		flex-direction: column;
 		gap: 1.6rem;
 		width: 100%;
 
 		input {
 			width: 100%;
-		}
-
-		@include media-min($medium) {
-			flex-direction: row;
 		}
 
 		@include media-min($large) {
@@ -135,5 +130,46 @@
 
 	.button {
 		min-width: unset;
+	}
+
+	&__minimal {
+		display: grid;
+		grid-template-columns: repeat(var(--grid-num-cols, 1), minmax(0, 1fr));
+		gap: var(--grid-column-gutter);
+		align-items: center;
+		padding: 40px 0;
+		overflow: hidden;
+		@include media-min($medium) {
+			padding: 40px 30px;
+			--grid-num-cols: 12;
+		}
+		@include media-min($large) {
+			padding: 64px;
+		}
+		h5 {
+			font-size: 40px;
+			font-weight: 700;
+			line-height: 48px;
+			color: #fff;
+			margin-bottom: 64px;
+			@include media-min($medium) {
+				font-size: 50px;
+				font-weight: 700;
+				line-height: 56px;
+			}
+		}
+		&-image {
+			text-align: center;
+			@include media-min($medium) {
+				grid-column: span 4;
+			}
+		}
+		&-content {
+			text-align: center;
+			@include media-min($medium) {
+				text-align: left;
+				grid-column: 5 / span 8;
+			}
+		}
 	}
 }

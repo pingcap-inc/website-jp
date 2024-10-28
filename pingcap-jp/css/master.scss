@@ -15,9 +15,9 @@ Normalize.css
 @import "../node_modules/normalize.css/normalize";
 
 /*************************************
-Phosphor Icons Css
+Icons Css
 **************************************/
-// @import "phosphor-icons";
+@import "iconfont";
 
 /*************************************
 Scaffolding
@@ -89,6 +89,7 @@ Components
 @import "components/cards/card-media";
 @import "components/cards/card-event";
 @import "components/cards/card-slides";
+@import "components/cards/card-bg";
 
 @import "components/archive/load-more";
 @import "components/archive/navigation";
@@ -136,6 +137,9 @@ Blocks
 @import "blocks/tabs-pricing";
 @import "blocks/table-pricing";
 @import "blocks/compare-features";
+@import "blocks/case";
+@import "blocks/tabs-slide";
+@import "blocks/testimonials-slide";
 
 /*************************************
 Templates
@@ -154,3 +158,5 @@ Templates
 @import "templates/tidb-user-day";
 @import "templates/session-replays";
 @import "templates/summary";
+@import "templates/product";
+@import "templates/ai";

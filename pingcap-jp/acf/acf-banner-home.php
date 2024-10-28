@@ -4,6 +4,28 @@ $acf_group = 'banner_home';
 $banner_fields = array_merge(
 	array (
 		array (
+			'key' => 'field_' . $acf_group . '_subtitle',
+			'label' => 'Subtitle',
+			'name' => $acf_group . '_subtitle',
+			'type' => 'text',
+			'instructions' => '',
+			'required' => 0,
+			'conditional_logic' => 0,
+			'wrapper' => array (
+				'width' => '',
+				'class' => '',
+				'id' => '',
+			),
+			'default_value' => '',
+			'placeholder' => '',
+			'formatting' => 'none',       // none | html
+			'prepend' => '',
+			'append' => '',
+			'maxlength' => '',
+			'readonly' => 0,
+			'disabled' => 0,
+		),
+		array (
 			'key' => 'field_' . $acf_group . '_title_override',
 			'label' => 'Title (override)',
 			'name' => $acf_group . '_title_override',
@@ -43,16 +65,29 @@ $banner_fields = array_merge(
 			'toolbar' => 'full',     // full | basic
 			'media_upload' => 0,
 		),
-	),
-	WPUtil\Vendor\BlueprintBlocks::safe_get_link_fields([
-		'label' => 'Button',
-		'name' => $acf_group . '_button',
-		'includes' => [
-			'none' => 'None',
-			'page' => 'Page Link',
-			'url' => 'URL',
-		],
-	]),
+		array (
+			'key' => 'field_' . $acf_group . '_video_url',
+			'label' => 'Side Video Url',
+			'name' => $acf_group . '_video_url',
+			'type' => 'text',
+			'instructions' => '',
+			'required' => 0,
+			'conditional_logic' => 0,
+			'wrapper' => array (
+				'width' => '',
+				'class' => '',
+				'id' => '',
+			),
+			'default_value' => '',
+			'placeholder' => '',
+			'formatting' => 'none',       // none | html
+			'prepend' => '',
+			'append' => '',
+			'maxlength' => '',
+			'readonly' => 0,
+			'disabled' => 0,
+		),
+	)
 );
 
 acf_add_local_field_group(array (

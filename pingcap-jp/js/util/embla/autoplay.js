@@ -3,14 +3,15 @@ export function stopAutoplayOnHover(hoverEl, autoplayInstance, timeout = 2000) {
 
 	const mouseLeaveCb = () => {
 		clearTimeout(mouseOverTimeout);
+		autoplayInstance.play();
 	};
 
 	const mouseEnterCb = () => {
 		mouseOverTimeout = setTimeout(() => {
 			autoplayInstance.stop();
 
-			hoverEl.removeEventListener('mouseenter', mouseEnterCb);
-			hoverEl.removeEventListener('mouseleave', mouseLeaveCb);
+			// hoverEl.removeEventListener('mouseenter', mouseEnterCb);
+			// hoverEl.removeEventListener('mouseleave', mouseLeaveCb);
 		}, timeout);
 	};
 

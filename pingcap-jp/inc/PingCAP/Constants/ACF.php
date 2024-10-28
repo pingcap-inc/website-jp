@@ -10,6 +10,7 @@ abstract class ACF
 	const MENU_DROPDOWN_RESOURCES = 'menu_dropdown_resources';
 	const MENU_DROPDOWN_CTA = 'menu_dropdown_cta';
 
+	const THEME_OPTIONS_HELLO_BAR = 'theme_options_hello_bar';
 	const THEME_OPTIONS_404_BASE = 'theme_options_404';
 	const THEME_OPTIONS_HEADER_BASE = 'theme_options_header';
 	const THEME_OPTIONS_FOOTER_BASE = 'theme_options_footer';

@@ -1,10 +1,9 @@
 <?php
 // NOTE: $values is an array of ACF field values
 
-use WPUtil\{Arrays, Component, SVG};
+use WPUtil\{Arrays, Component};
 use PingCAP\Components;
 use WPUtil\Vendor\{BlueprintBlocks};
-use Blueprint\Images;
 
 $featured_products = Arrays::get_value_as_array($values, 'featured_products');
 $link_columns = Arrays::get_value_as_array($values, 'link_columns');
@@ -17,14 +16,12 @@ $is_feature_right = Arrays::get_value_as_string($values, 'format');
 			foreach ($featured_products as $product) {
 				$link = Arrays::get_value_as_array($product, 'product_link');
 				$title = Arrays::get_value_as_string($product, 'name');
-				$icon_image = $product['icon'] ?? null;
 				$description = Arrays::get_value_as_string($product, 'description');
 			?>
 
 				<div class="menu-dropdown__feature-column">
 					<div class="menu-dropdown__feature-column-title-container">
 						<?php
-						Images::safe_image_output($icon_image, ['class' => 'menu-dropdown__feature-column-image']);
 						Component::render(Components\UI\Button::class, [
 							'link' => $link['url'],
 							'text' => $title,
@@ -45,7 +42,7 @@ $is_feature_right = Arrays::get_value_as_string($values, 'format');
 	foreach ($link_columns as $link_column) {
 		$label = Arrays::get_value_as_string($link_column, 'label');
 		$links = array_map(
-			fn ($link) => BlueprintBlocks::get_button_field_values('link', $link),
+			fn($link) => BlueprintBlocks::get_button_field_values('link', $link),
 			Arrays::get_value_as_array($link_column, 'links')
 		);
 		$icons = Arrays::get_value_as_array($link_column, 'links');
@@ -57,7 +54,7 @@ $is_feature_right = Arrays::get_value_as_string($values, 'format');
 						Capabilities
 					</span>
 					<a href="/ai/" data-gtag="event:jp_navi_click,item_name:ai">
-						<?php SVG::the_svg('general/vector-three', ['class' => 'icon-ai']); ?>
+						<i class="icon-exchange"></i>
 						Vector Search
 					</a>
 				</div>
@@ -77,6 +74,13 @@ $is_feature_right = Arrays::get_value_as_string($values, 'format');
 			<?php
 			}
 			?>
+			<?php if ($label === 'エコシステム') { ?>
+				<div class="menu-dropdown__item-pricing">
+					<a class="button button--secondary" href="/pricing/" data-gtag="event:jp_navi_click,item_name:pricing">
+						料金
+					</a>
+				</div>
+			<?php } ?>
 		</div>
 	<?php
 	}

@@ -11,7 +11,7 @@
 */
 
 $block_fields = array(
-	array (
+	array(
 		'key' => 'field_' . $block . '_display_type',
 		'label' => 'Display Type',
 		'name' => 'display_type',
@@ -19,44 +19,45 @@ $block_fields = array(
 		'instructions' => '',
 		'required' => 0,
 		'conditional_logic' => 0,
-		'wrapper' => array (
+		'wrapper' => array(
 			'width' => '',
 			'class' => '',
 			'id' => '',
 		),
-		'choices' => array (
+		'choices' => array(
 			'slim' => 'Slim (mid-page)',
-			'normal' => 'Normal (bottom of page)'
+			'normal' => 'Normal (bottom of page)',
+			'minimal' => 'Minimal'
 		),
 		'other_choice' => 0,
 		'save_other_choice' => 0,
 		'default_value' => 'slim',
 		'layout' => 'horizontal',
 	),
-	array (
+	array(
 		'key' => 'field_' . $block . '_slim_fields',
 		'label' => 'Slim Display Type Fields',
 		'name' => 'slim_fields',
 		'type' => 'group',
 		'instructions' => '',
 		'required' => 0,
-		'conditional_logic' => array (
-			array (
-				array (
+		'conditional_logic' => array(
+			array(
+				array(
 					'field' => 'field_' . $block . '_display_type',
 					'operator' => '==',
 					'value' => 'slim',
 				),
 			),
 		),
-		'wrapper' => array (
+		'wrapper' => array(
 			'width' => '',
 			'class' => '',
 			'id' => ''
 		),
 		'layout' => 'block',
 		'sub_fields' => array(
-			array (
+			array(
 				'key' => 'field_' . $block . '_slim_heading',
 				'label' => 'Heading',
 				'name' => 'heading',
@@ -64,7 +65,7 @@ $block_fields = array(
 				'instructions' => '',
 				'required' => 1,
 				'conditional_logic' => 0,
-				'wrapper' => array (
+				'wrapper' => array(
 					'width' => '',
 					'class' => '',
 					'id' => '',
@@ -78,7 +79,7 @@ $block_fields = array(
 				'readonly' => 0,
 				'disabled' => 0,
 			),
-			array (
+			array(
 				'key' => 'field_' . $block . '_bg_image',
 				'label' => 'Background Image',
 				'name' => 'bg_image',
@@ -86,7 +87,7 @@ $block_fields = array(
 				'type' => 'image',
 				'required' => 0,
 				'conditional_logic' => 0,
-				'wrapper' => array (
+				'wrapper' => array(
 					'width' => '50',
 					'class' => '',
 					'id' => '',
@@ -124,7 +125,7 @@ $block_fields = array(
 				'default_value' => '',
 				'layout' => 'horizontal',
 			),
-			array (
+			array(
 				'key' => 'field_' . $block . '_slim_action_type',
 				'label' => 'Action Type',
 				'name' => 'action_type',
@@ -132,12 +133,12 @@ $block_fields = array(
 				'instructions' => '',
 				'required' => 0,
 				'conditional_logic' => 0,
-				'wrapper' => array (
+				'wrapper' => array(
 					'width' => '',
 					'class' => '',
 					'id' => '',
 				),
-				'choices' => array (
+				'choices' => array(
 					'button' => 'Button',
 					'form' => 'Email Subscribe'
 				),
@@ -146,23 +147,23 @@ $block_fields = array(
 				'default_value' => 'button',
 				'layout' => 'horizontal',
 			),
-			array (
+			array(
 				'key' => 'field_' . $block . '_slim_button_fields',
 				'label' => 'Button Fields',
 				'name' => 'button_fields',
 				'type' => 'group',
 				'instructions' => '',
 				'required' => 0,
-				'conditional_logic' => array (
-					array (
-						array (
+				'conditional_logic' => array(
+					array(
+						array(
 							'field' => 'field_' . $block . '_slim_action_type',
 							'operator' => '==',
 							'value' => 'button',
 						),
 					),
 				),
-				'wrapper' => array (
+				'wrapper' => array(
 					'width' => '',
 					'class' => '',
 					'id' => ''
@@ -179,23 +180,23 @@ $block_fields = array(
 					'supports_button_styles' => false
 				])
 			),
-			array (
+			array(
 				'key' => 'field_' . $block . '_slim_hs_portal_id',
 				'label' => 'Portal ID',
 				'name' => 'hs_portal_id',
 				'type' => 'text',
 				'instructions' => '',
 				'required' => 1,
-				'conditional_logic' => array (
-					array (
-						array (
+				'conditional_logic' => array(
+					array(
+						array(
 							'field' => 'field_' . $block . '_slim_action_type',
 							'operator' => '==',
 							'value' => 'form',
 						),
 					),
 				),
-				'wrapper' => array (
+				'wrapper' => array(
 					'width' => '50',
 					'class' => '',
 					'id' => '',
@@ -209,23 +210,23 @@ $block_fields = array(
 				'readonly' => 0,
 				'disabled' => 0,
 			),
-			array (
+			array(
 				'key' => 'field_' . $block . '_slim_hs_form_id',
 				'label' => 'Form ID',
 				'name' => 'hs_form_id',
 				'type' => 'text',
 				'instructions' => '',
 				'required' => 1,
-				'conditional_logic' => array (
-					array (
-						array (
+				'conditional_logic' => array(
+					array(
+						array(
 							'field' => 'field_' . $block . '_slim_action_type',
 							'operator' => '==',
 							'value' => 'form',
 						),
 					),
 				),
-				'wrapper' => array (
+				'wrapper' => array(
 					'width' => '50',
 					'class' => '',
 					'id' => '',
@@ -239,23 +240,23 @@ $block_fields = array(
 				'readonly' => 0,
 				'disabled' => 0,
 			),
-			array (
+			array(
 				'key' => 'field_' . $block . '_slim_hs_email_field',
 				'label' => 'HubSpot "Email" Field',
 				'name' => 'hs_email_field',
 				'type' => 'text',
 				'instructions' => '',
 				'required' => 1,
-				'conditional_logic' => array (
-					array (
-						array (
+				'conditional_logic' => array(
+					array(
+						array(
 							'field' => 'field_' . $block . '_slim_action_type',
 							'operator' => '==',
 							'value' => 'form',
 						),
 					),
 				),
-				'wrapper' => array (
+				'wrapper' => array(
 					'width' => '',
 					'class' => '',
 					'id' => '',
@@ -271,30 +272,30 @@ $block_fields = array(
 			)
 		)
 	),
-	array (
+	array(
 		'key' => 'field_' . $block . '_normal_fields',
 		'label' => 'Normal Display Type Fields',
 		'name' => 'normal_fields',
 		'type' => 'group',
 		'instructions' => '',
 		'required' => 0,
-		'conditional_logic' => array (
-			array (
-				array (
+		'conditional_logic' => array(
+			array(
+				array(
 					'field' => 'field_' . $block . '_display_type',
 					'operator' => '==',
 					'value' => 'normal',
 				),
 			),
 		),
-		'wrapper' => array (
+		'wrapper' => array(
 			'width' => '',
 			'class' => '',
 			'id' => ''
 		),
 		'layout' => 'block',
 		'sub_fields' => array(
-			array (
+			array(
 				'key' => 'field_' . $block . '_normal_columns',
 				'label' => 'Columns',
 				'name' => 'columns',
@@ -302,7 +303,7 @@ $block_fields = array(
 				'instructions' => '',
 				'required' => 1,
 				'conditional_logic' => 0,
-				'wrapper' => array (
+				'wrapper' => array(
 					'width' => '',
 					'class' => '',
 					'id' => '',
@@ -312,8 +313,8 @@ $block_fields = array(
 				'max' => 2,
 				'layout' => 'block',         // table | block | row
 				'button_label' => 'Add Column',
-				'sub_fields' => array (
-					array (
+				'sub_fields' => array(
+					array(
 						'key' => 'field_' . $block . '_normal_columns_column_title',
 						'label' => 'Title',
 						'name' => 'title',
@@ -321,7 +322,7 @@ $block_fields = array(
 						'instructions' => '',
 						'required' => 0,
 						'conditional_logic' => 0,
-						'wrapper' => array (
+						'wrapper' => array(
 							'width' => '',
 							'class' => '',
 							'id' => '',
@@ -335,7 +336,7 @@ $block_fields = array(
 						'readonly' => 0,
 						'disabled' => 0,
 					),
-					array (
+					array(
 						'key' => 'field_' . $block . '_normal_columns_column_icon_image',
 						'label' => 'Icon Image',
 						'name' => 'icon_image',
@@ -343,7 +344,7 @@ $block_fields = array(
 						'type' => 'image',
 						'required' => 0,
 						'conditional_logic' => 0,
-						'wrapper' => array (
+						'wrapper' => array(
 							'width' => '',
 							'class' => '',
 							'id' => '',
@@ -359,7 +360,7 @@ $block_fields = array(
 						'max_size' => '',
 						'mime_types' => '',
 					),
-					array (
+					array(
 						'key' => 'field_' . $block . '_normal_columns_column_content',
 						'label' => 'Content',
 						'name' => 'content',
@@ -367,7 +368,7 @@ $block_fields = array(
 						'instructions' => '',
 						'required' => 0,
 						'conditional_logic' => 0,
-						'wrapper' => array (
+						'wrapper' => array(
 							'width' => '',
 							'class' => '',
 							'id' => '',
@@ -377,7 +378,7 @@ $block_fields = array(
 						'toolbar' => 'full',     // full | basic
 						'media_upload' => 0,
 					),
-					array (
+					array(
 						'key' => 'field_' . $block . '_normal_columns_column_buttons',
 						'label' => 'Buttons',
 						'name' => 'buttons',
@@ -385,7 +386,7 @@ $block_fields = array(
 						'instructions' => '',
 						'required' => 0,
 						'conditional_logic' => 0,
-						'wrapper' => array (
+						'wrapper' => array(
 							'width' => '',
 							'class' => '',
 							'id' => '',
@@ -409,10 +410,77 @@ $block_fields = array(
 				),
 			),
 		)
+	),
+	array(
+		'key' => 'field_' . $block . '_minimal_fields',
+		'label' => 'Minimal Display Type Fields',
+		'name' => 'minimal_fields',
+		'type' => 'group',
+		'instructions' => '',
+		'required' => 0,
+		'conditional_logic' => array(
+			array(
+				array(
+					'field' => 'field_' . $block . '_display_type',
+					'operator' => '==',
+					'value' => 'minimal',
+				),
+			),
+		),
+		'wrapper' => array(
+			'width' => '',
+			'class' => '',
+			'id' => ''
+		),
+		'layout' => 'block',
+		'sub_fields' => array(
+			array(
+				'key' => 'field_' . $block . '_minimal_image',
+				'label' => 'Left Image',
+				'name' => 'image',
+				'instructions' => '',
+				'type' => 'image',
+				'required' => 0,
+				'conditional_logic' => 0,
+				'wrapper' => array(
+					'width' => '100',
+					'class' => '',
+					'id' => '',
+				),
+				'return_format' => 'array',       // array | url | id
+				'preview_size' => 'thumbnail',
+				'library' => 'all',       // all | uploadedTo
+				'min_width' => '',
+				'min_height' => '',
+				'min_size' => '',
+				'max_width' => '',
+				'max_height' => '',
+				'max_size' => '',
+				'mime_types' => '',
+			),
+			array(
+				'key' => 'field_' . $block . '_minimal_content',
+				'label' => 'Content',
+				'name' => 'content',
+				'type' => 'wysiwyg',
+				'instructions' => '',
+				'required' => 0,
+				'conditional_logic' => 0,
+				'wrapper' => array(
+					'width' => '',
+					'class' => '',
+					'id' => '',
+				),
+				'default_value' => '',
+				'tabs' => 'all',         // all | visual | text
+				'toolbar' => 'full',     // full | basic
+				'media_upload' => 0,
+			),
+		),
 	)
 );
 
-return array (
+return array(
 	'label' => 'Call To Action',
 	'name' => $block,
 	'display' => 'block',

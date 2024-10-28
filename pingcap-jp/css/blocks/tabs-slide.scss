@@ -1,0 +1,139 @@
+.block-tabs-slide {
+	&__mobile {
+		display: flex;
+		flex-direction: column;
+		gap: 64px;
+		@include media-min($medium) {
+			display: none;
+		}
+	}
+	&__desktop {
+		display: none;
+		@include media-min($medium) {
+			display: flex;
+			flex-direction: column;
+			gap: 4rem;
+		}
+		&.row {
+			display: flex;
+			flex-direction: column-reverse;
+			gap: 4rem;
+			@include media-min($medium) {
+				flex-direction: row;
+			}
+			.block-tabs-slide__menu {
+				gap: 0;
+				flex-direction: column;
+			}
+			.block-tabs-slide__tab {
+				flex: none;
+			}
+		}
+		.block-tabs-slide__content {
+			display: none;
+			&.active {
+				display: flex;
+			}
+		}
+	}
+	&__menu {
+		display: flex;
+		gap: 32px;
+	}
+	&__tab {
+		position: relative;
+		flex: 1;
+		&-title {
+			font-size: 25px;
+			font-weight: 500;
+			line-height: 31px;
+			text-align: left;
+			padding-bottom: 8px;
+			border-bottom: 1px solid #fff;
+			color: #28333e;
+			padding-bottom: 8px;
+			border-bottom: 2px solid #28333e;
+			height: 100%;
+			cursor: pointer;
+			&::before {
+				content: "";
+				position: absolute;
+				bottom: -1px;
+				left: 0;
+				height: 1px;
+				width: 0;
+				background: #fff;
+				transition: all 1.5s ease;
+			}
+		}
+		&.active {
+			.block-tabs-slide__tab-title {
+				color: #fff;
+				&:before {
+					animation: benefit-bar 4s linear forwards;
+				}
+			}
+		}
+		@keyframes benefit-bar {
+			0% {
+				width: 0;
+			}
+
+			100% {
+				width: 100%;
+			}
+		}
+	}
+	&__panel {
+		position: relative;
+		overflow: hidden;
+		transition: height 0.4s ease;
+	}
+	&__content {
+		display: flex;
+		gap: 24px;
+		flex-direction: column;
+		@include media-min($medium) {
+			gap: 32px;
+			flex-direction: row;
+			justify-content: space-between;
+		}
+		&-title {
+			font-size: 24px;
+			font-weight: 700;
+			line-height: 30px;
+			color: #fff;
+		}
+		&-text {
+			color: #fff;
+			font-size: 18px;
+			font-weight: 300;
+			line-height: 24px;
+			@include media-min($medium) {
+				width: 375px;
+				font-size: 20px;
+				line-height: 26px;
+			}
+
+			ul {
+				margin-top: 24px;
+				margin-left: 18px;
+			}
+			li {
+				color: #a2adb9;
+				font-size: 16px;
+				font-weight: 300;
+				line-height: 22px;
+				& + li {
+					margin-top: 12px;
+				}
+				&::marker {
+					font-size: 10px;
+				}
+			}
+		}
+		&-image{
+			flex: 1;
+		}
+	}
+}

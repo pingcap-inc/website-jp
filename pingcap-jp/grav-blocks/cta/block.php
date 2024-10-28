@@ -55,6 +55,19 @@ $display_type = isset($display_type) && is_string($display_type) ? $display_type
 			}
 			?>
 		</div>
+	<?php } else if ($display_type === 'minimal') {
+		$minimal_fields = isset($minimal_fields) && is_array($minimal_fields) ? $minimal_fields : ACF::get_sub_field_array('minimal_fields');
+		$image = Arrays::get_value_as_array($minimal_fields, 'image');
+		$content = Arrays::get_value_as_string($minimal_fields, 'content');
+	?>
+		<div class="block-cta__minimal">
+			<div class="block-cta__minimal-image">
+				<?php echo Images::safe_image_output($image); ?>
+			</div>
+			<div class="block-cta__minimal-content">
+				<?php echo $content; ?>
+			</div>
+		</div>
 		<?php
 	} else {
 		$normal_fields = isset($normal_fields) && is_array($normal_fields) ? $normal_fields : ACF::get_sub_field_array('normal_fields');
@@ -65,7 +78,7 @@ $display_type = isset($display_type) && is_string($display_type) ? $display_type
 			$icon_image = Arrays::get_value_as_array($column, 'icon_image');
 			$content = Arrays::get_value_as_string($column, 'content');
 			$buttons = array_map(
-				fn ($button) => Vendor\BlueprintBlocks::get_button_field_values('button', $button),
+				fn($button) => Vendor\BlueprintBlocks::get_button_field_values('button', $button),
 				Arrays::get_value_as_array($column, 'buttons')
 			);
 

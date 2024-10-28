@@ -81,6 +81,7 @@ $banner_fields = array_merge(
 				'id' => '',
 			),
 			'choices' => array(
+				'bg-black-dark' => 'Dark',
 				'bg-black' => 'Black',
 				'bg-white' => 'White',
 			),
@@ -122,11 +123,11 @@ $banner_fields = array_merge(
 			'mime_types' => '',
 		),
 		array(
-			'key' => 'field_' . $acf_group . '_product_icon_image',
-			'label' => 'Product Icon Image',
-			'name' => $acf_group . '_product_icon_image',
+			'key' => 'field_' . $acf_group . '_title_size',
+			'label' => 'Title Container Size',
+			'name' => $acf_group . '_title_container_size',
+			'type' => 'radio',
 			'instructions' => '',
-			'type' => 'image',
 			'required' => 0,
 			'conditional_logic' => array(
 				array(
@@ -138,20 +139,49 @@ $banner_fields = array_merge(
 				),
 			),
 			'wrapper' => array(
-				'width' => '',
+				'width' => '33',
 				'class' => '',
 				'id' => '',
 			),
-			'return_format' => 'object',       // array | url | id
-			'preview_size' => 'thumbnail',
-			'library' => 'all',       // all | uploadedTo
-			'min_width' => '',
-			'min_height' => '',
-			'min_size' => '',
-			'max_width' => '',
-			'max_height' => '',
-			'max_size' => '',
-			'mime_types' => '',
+			'choices' => array(
+				'' => 'Normal',
+				'medium' => 'Medium',
+				'large' => 'Large',
+			),
+			'other_choice' => 0,
+			'save_other_choice' => 0,
+			'default_value' => '',
+			'layout' => 'horizontal',
+		),
+		array(
+			'key' => 'field_' . $acf_group . '_subtitle',
+			'label' => 'Subtitle',
+			'name' => $acf_group . '_subtitle',
+			'type' => 'text',
+			'instructions' => '',
+			'required' => 0,
+			'conditional_logic' => array(
+				array(
+					array(
+						'field' => 'field_' . $acf_group . '_banner_display_type',
+						'operator' => '==',
+						'value' => 'product',
+					),
+				),
+			),
+			'wrapper' => array(
+				'width' => '67',
+				'class' => '',
+				'id' => '',
+			),
+			'default_value' => '',
+			'placeholder' => '',
+			'formatting' => 'none',       // none | html
+			'prepend' => '',
+			'append' => '',
+			'maxlength' => '',
+			'readonly' => 0,
+			'disabled' => 0,
 		),
 		array(
 			'key' => 'field_' . $acf_group . '_use_case_illustration',
@@ -232,66 +262,21 @@ $banner_fields = array_merge(
 	]),
 	array(
 		array(
-			'key' => 'field_' . $acf_group . '_bottom_arc_enabled',
-			'label' => 'Enable bottom arc shape',
-			'name' => $acf_group . '_bottom_arc_enabled',
-			'type' => 'true_false',
-			'instructions' => '',
-			'required' => 0,
-			'conditional_logic' => 0,
-			'wrapper' => array(
-				'width' => '50',
-				'class' => '',
-				'id' => '',
-			),
-			'message' => '',
-			'ui' => 1,
-			'ui_on_text' => 'Yes',
-			'ui_off_text' => 'No',
-			'default_value' => 1,
-		),
-		array(
-			'key' => 'field_' . $acf_group . '_bottom_arc_color',
-			'label' => 'Bottom arc color',
-			'name' => $acf_group . '_bottom_arc_color',
-			'type' => 'select',
-			'instructions' => '',
-			'required' => 0,
-			'conditional_logic' => array(
-				array(
-					array(
-						'field' => 'field_' . $acf_group . '_bottom_arc_enabled',
-						'operator' => '==',
-						'value' => 1,
-					),
-				),
-			),
-			'wrapper' => array(
-				'width' => '50',
-				'class' => '',
-				'id' => '',
-			),
-			'choices' => array(
-				'white' => 'White',
-				'blue' => 'Blue'
-			),
-			'default_value' => 'white',
-			'allow_null' => 0,
-			'multiple' => 0,         // allows for multi-select
-			'ui' => 0,               // creates a more stylized UI
-			'ajax' => 0,
-			'placeholder' => '',
-			'disabled' => 0,
-			'readonly' => 0,
-		),
-		array(
 			'key' => 'field_' . $acf_group . '_first_block_pull_up',
 			'label' => '"Pull up" first block content',
 			'name' => $acf_group . '_first_block_pull_up',
 			'type' => 'true_false',
 			'instructions' => 'This option will "pull up" the first block content into the bottom portion of the banner. The only block types that support this functionality are Cards and Columns (when using the "Enable Box Container" option). If you leave this option enabled when the first block does not support the functionality, the side image in this banner will not extend over the bottom arc in the banner.',
 			'required' => 0,
-			'conditional_logic' => 0,
+			'conditional_logic' => array(
+				array(
+					array(
+						'field' => 'field_' . $acf_group . '_banner_display_type',
+						'operator' => '!=',
+						'value' => 'product',
+					),
+				),
+			),
 			'wrapper' => array(
 				'width' => '',
 				'class' => '',
@@ -310,7 +295,15 @@ $banner_fields = array_merge(
 			'type' => 'true_false',
 			'instructions' => '',
 			'required' => 0,
-			'conditional_logic' => 0,
+			'conditional_logic' => array(
+				array(
+					array(
+						'field' => 'field_' . $acf_group . '_banner_display_type',
+						'operator' => '!=',
+						'value' => 'product',
+					),
+				),
+			),
 			'wrapper' => array(
 				'width' => '50',
 				'class' => '',
@@ -329,7 +322,15 @@ $banner_fields = array_merge(
 			'type' => 'text',
 			'instructions' => 'Separate with spaces',
 			'required' => 0,
-			'conditional_logic' => 0,
+			'conditional_logic' => array(
+				array(
+					array(
+						'field' => 'field_' . $acf_group . '_banner_display_type',
+						'operator' => '!=',
+						'value' => 'product',
+					),
+				),
+			),
 			'wrapper' => array(
 				'width' => '50',
 				'class' => '',

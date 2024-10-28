@@ -5,7 +5,7 @@ use WPUtil\Vendor;
 $acf_group = 'menu_dropdown_columns';
 
 return array(
-	array (
+	array(
 		'key' => 'field_' . $acf_group . '_featured_format',
 		'label' => 'Format',
 		'name' => 'format',
@@ -13,12 +13,12 @@ return array(
 		'instructions' => '',
 		'required' => 0,
 		'conditional_logic' => 0,
-		'wrapper' => array (
+		'wrapper' => array(
 			'width' => '',
 			'class' => '',
 			'id' => '',
 		),
-		'choices' => array (
+		'choices' => array(
 			'' => 'Sidebar Left',
 			'sidebar-right' => 'Sidebar Right'
 		),
@@ -177,6 +177,25 @@ return array(
 				'disabled' => 0,
 			),
 			array(
+				'key' => 'field_' . $acf_group . '_link_column_style',
+				'label' => 'Display one per line (mobile)',
+				'name' => 'link_column_style',
+				'type' => 'true_false',
+				'instructions' => '',
+				'required' => 0,
+				'conditional_logic' => 0,
+				'wrapper' => array(
+					'width' => '',
+					'class' => '',
+					'id' => '',
+				),
+				'message' => '',
+				'ui' => 1,
+				'ui_on_text' => 'Yes',
+				'ui_off_text' => 'No',
+				'default_value' => 0,
+			),
+			array(
 				'key' => 'field_' . $acf_group . '_link_column_links',
 				'label' => 'Links',
 				'name' => 'links',
@@ -203,7 +222,7 @@ return array(
 							'instructions' => '',
 							'type' => 'text',
 							'instructions' => '',
-							'required' => 1,
+							'required' => 0,
 							'conditional_logic' => 0,
 							'wrapper' => array(
 								'width' => '',
