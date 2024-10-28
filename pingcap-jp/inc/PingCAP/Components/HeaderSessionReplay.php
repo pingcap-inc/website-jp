@@ -6,7 +6,7 @@ use WPUtil\Interfaces\IComponent;
 use WPUtil\Vendor\ACF;
 use WPUtil\{Arrays};
 
-class HeaderSessionreplay implements IComponent
+class HeaderSessionReplay implements IComponent
 {
     public int $post_id = 0;
 

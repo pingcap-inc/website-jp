@@ -77,7 +77,7 @@ $is_feature_right = Arrays::get_value_as_string($values, 'format');
 			<?php if ($label === 'エコシステム') { ?>
 				<div class="menu-dropdown__item-pricing">
 					<a class="button button--secondary" href="/pricing/" data-gtag="event:jp_navi_click,item_name:pricing">
-						Pricing
+						料金
 					</a>
 				</div>
 			<?php } ?>
