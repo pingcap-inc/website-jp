@@ -142,13 +142,13 @@ class Footer implements IComponent
 
 					<nav class="site-footer__col-links">
 						<div class="site-footer__links-group">
-							<div class="site-footer__links-group-title">Stay Connected</div>
+							<div class="site-footer__links-group-title">TiDBの最新情報</div>
 							<div class="block-cta">
 								<form class="block-cta__subscribe-form" method="POST" action="https://pingcap.co.jp" data-hs-portal-id="4466002" data-hs-form-id="2857677f-c4bf-4907-9e87-3f40c09b9bb2" data-hs-name-field="" data-hs-email-field="email">
 									<input type="email" name="cta_email" placeholder="Enter your email *" aria-label="Enter your email address">
 								</form>
 							</div>
-							<p>Sign up to receive periodic updates and<br />feature releases to your email.</p>
+							<p>サインアップするとTiDBに関する最新情報を受け取ることができます。</p>
 							<div class="site-footer__social-group">
 								<?php
 								foreach ($this->social_links as $item) {
