@@ -226,7 +226,7 @@
         font-size: 48px;
         font-weight: 700;
         line-height: 56px;
-        color: #fff;
+        color: var(--h1-color);
         margin-top: 32px;
         @include media-min($medium) {
           font-size: 68px;
