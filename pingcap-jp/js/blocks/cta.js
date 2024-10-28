@@ -56,7 +56,7 @@ class BlockCTA {
 			});
 
 		try {
-			const postData = [];
+			const postData = [{ name: 'country_picklist__sfdc_', value: 'Japan'}];
 
 			if (hsEmailField) {
 				postData.push({ name: hsEmailField, value: emailValue });
