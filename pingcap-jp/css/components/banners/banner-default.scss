@@ -210,22 +210,16 @@
       padding-top: 80px;
       @include media-min($medium) {
         grid-column: 1 / span 12;
-        padding: 80px 0 160px;
+        padding: 80px 0 140px;
         width: 60%;
       }
       @include media-min(1200px) {
         width: 50%;
         &.medium {
           width: 60%;
-          p {
-            width: 80%;
-          }
         }
         &.large {
           width: 66%;
-          p {
-            width: 80%;
-          }
         }
       }
       h1 {
@@ -247,6 +241,9 @@
         text-align: left;
         color: #a2adb9;
         margin: 3.2rem 0;
+        @include media-min(1200px) {
+          width: 80%;
+        }
       }
     }
     .banner-default__image-container {

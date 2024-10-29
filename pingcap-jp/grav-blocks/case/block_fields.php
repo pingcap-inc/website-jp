@@ -17,7 +17,29 @@ $block_fields = array(
         'name' => 'block_title',
         'type' => 'text',
         'instructions' => '',
-        'required' => 1,
+        'required' => 0,
+        'conditional_logic' => 0,
+        'wrapper' => array(
+            'width' => '',
+            'class' => '',
+            'id' => '',
+        ),
+        'default_value' => '',
+        'placeholder' => '',
+        'formatting' => 'none',       // none | html
+        'prepend' => '',
+        'append' => '',
+        'maxlength' => '',
+        'readonly' => 0,
+        'disabled' => 0,
+    ),
+    array(
+        'key' => 'field_' . $block . '_block_title_desc',
+        'label' => 'Block Title Desc',
+        'name' => 'block_title_desc',
+        'type' => 'text',
+        'instructions' => '',
+        'required' => 0,
         'conditional_logic' => 0,
         'wrapper' => array(
             'width' => '',
@@ -66,7 +88,7 @@ $block_fields = array(
                         'id' => '',
                     ),
                     'return_format' => 'object',       // array | url | id
-                    'preview_size' => 'medium',
+                    'preview_size' => 'thumbnail',
                     'library' => 'all',       // all | uploadedTo
                     'min_width' => '',
                     'min_height' => '',
@@ -133,7 +155,7 @@ $block_fields = array(
                         'class' => '',
                         'id' => '',
                     ),
-                    'post_type' => PingCAP\Constants\CPT::CASE_STUDY,
+                    'post_type' => [PingCAP\Constants\CPT::CASE_STUDY, PingCAP\Constants\CPT::BLOG, PingCAP\Constants\CPT::VIDEO],
                     'taxonomy' => array (),
                     'allow_null' => 0,
                     'multiple' => 0,

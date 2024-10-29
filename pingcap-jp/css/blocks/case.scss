@@ -1,10 +1,33 @@
 .case {
 	&-container {
-		display: flex;
-		flex-direction: column;
+		display: grid;
 		gap: 6.4rem;
+		grid-template-columns: repeat(1, 1fr);
+		@include media-min($medium) {
+			gap: 64px 40px;
+			grid-template-columns: repeat(2, 1fr);
+		}
 		@include media-min(1200px) {
-			flex-direction: row;
+			grid-template-columns: repeat(4, 1fr);
+
+			&[data-num-cols="1"],
+			&[data-num-cols="2"],
+			&[data-num-cols="3"] {
+				.case-title {
+					grid-column: auto;
+				}
+			}
+			&[data-num-cols="5"] {
+				.case-framer:nth-of-type(2){
+					grid-column-start: 4;
+				}
+			}
+		}
+
+		.case-title {
+			@include media-min($medium) {
+				grid-column: span 2 / span 2;
+			}
 		}
 
 		h5 {
@@ -21,25 +44,19 @@
 		h4 {
 			color: #fff;
 		}
+
+		.desc {
+			font-size: 22px;
+			font-weight: 300;
+			line-height: 28px;
+			color: #ffffffa6;
+		}
 	}
 	&-card {
 		display: block;
 		text-decoration: none;
 		margin-top: 0;
-		min-width: 272px;
 		transition: all var(--default-transition-params);
-		&__container {
-			display: grid;
-			gap: 6.4rem;
-			grid-template-columns: repeat(1, 1fr);
-			@include media-min($medium) {
-				gap: 4rem;
-				grid-template-columns: repeat(2, 1fr);
-			}
-			@include media-min($large) {
-				grid-template-columns: repeat(3, 1fr);
-			}
-		}
 		&__title {
 			color: #fff;
 			font-size: 24px;
@@ -51,6 +68,7 @@
 		img {
 			height: 3rem;
 			width: auto;
+			margin-top: 8px;
 		}
 		p {
 			color: #a2adb9;

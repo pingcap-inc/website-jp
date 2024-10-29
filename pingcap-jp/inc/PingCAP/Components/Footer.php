@@ -144,7 +144,7 @@ class Footer implements IComponent
 						<div class="site-footer__links-group">
 							<div class="site-footer__links-group-title">Stay Connected</div>
 							<div class="block-cta">
-								<form class="block-cta__subscribe-form" method="POST" action="https://www.pingcap.com" data-hs-portal-id="4466002" data-hs-form-id="d74dfb7c-a14a-4f8d-ab28-eba7a00e7900" data-hs-name-field="" data-hs-email-field="email">
+								<form class="block-cta__subscribe-form" method="POST" action="https://pingcap.co.jp" data-hs-portal-id="4466002" data-hs-form-id="2857677f-c4bf-4907-9e87-3f40c09b9bb2" data-hs-name-field="" data-hs-email-field="email">
 									<input type="email" name="cta_email" placeholder="Enter your email *" aria-label="Enter your email address">
 								</form>
 							</div>

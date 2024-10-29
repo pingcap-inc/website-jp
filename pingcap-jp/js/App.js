@@ -37,6 +37,7 @@ import BlockTablePricing from './blocks/table-pricing';
 
 import TemplateFrontPage from './templates/front-page';
 import ActivityPage from './templates/activity-page';
+import AIPage from './templates/ai-page';
 
 import { processExternalLinks, safeParseJSON } from './util/general-util';
 import SiteEvents, { SiteEventNames } from './util/site-events';
@@ -74,7 +75,8 @@ class App {
 			},
 			templates: {
 				frontPage: null,
-				activityPage: null
+				activityPage: null,
+				aiPage: null,
 			},
 			blocks: {
 				testimonials: [],
@@ -303,6 +305,14 @@ class App {
 		if (activityPage) {
 			this.instances.templates.activityPage = new ActivityPage(activityPage);
 		}
+
+		// ai page
+		const aiPageEl = document.querySelector('.tmpl-ai-page');
+
+		if (aiPageEl) {
+			this.instances.templates.aiPage = new AIPage(aiPageEl);
+		}
+
 
 		const tidbPage = document.querySelector('.tmpl-tidb');
 		if (tidbPage) {
