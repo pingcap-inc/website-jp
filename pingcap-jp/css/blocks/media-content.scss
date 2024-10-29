@@ -80,7 +80,7 @@
 			}
 
 			&[data-image-size="medium"] {
-				--grid-areas: ". txt txt txt txt txt img img img img img img";
+				--grid-areas: ". txt txt txt txt txt txt img img img img img";
 			}
 
 			&[data-image-size="large"] {
@@ -133,6 +133,27 @@
 		grid-area: txt;
 		padding-bottom: 4rem;
 		padding-left: 1.6rem;
+
+		h5 {
+			font-size: 40px;
+			font-weight: 700;
+			line-height: 48px;
+			color: var(--h5-color);
+			@include media-min($medium) {
+				font-size: 50px;
+				font-weight: 700;
+				line-height: 66px;
+				margin: 20px 0;
+			}
+		}
+
+		p {
+			color:  #454B51;
+		}
+
+		ul {
+			margin-top: 1.6rem;
+		}
 
 		@include media-min($medium) {
 			padding-left: 0;
