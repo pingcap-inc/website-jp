@@ -6,6 +6,11 @@
 			}
 		}
 	}
+	.workload {
+		.block-cards__container {
+			gap: 64px;
+		}
+	}
 
 	&__container {
 		--num-cols: 1;

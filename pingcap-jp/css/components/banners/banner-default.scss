@@ -206,22 +206,16 @@
     overflow: hidden;
     .banner-default__text-content {
       position: relative;
-      z-index: 1;
-      padding-top: 80px;
-      @include media-min($medium) {
-        grid-column: 1 / span 12;
-        padding: 80px 0 140px;
-        width: 60%;
-      }
-      @include media-min(1200px) {
-        width: 50%;
-        &.medium {
-          width: 60%;
-        }
-        &.large {
-          width: 66%;
-        }
-      }
+			z-index: 1;
+			padding-top: 80px;
+			@include media-min($medium) {
+				padding: 80px 0 140px;
+			}
+			@include media-min(1200px) {
+				&.large {
+					grid-column: 1 / span 8;
+				}
+			}
       h1 {
         font-size: 48px;
         font-weight: 700;
