@@ -139,13 +139,12 @@ $banner_fields = array_merge(
 				),
 			),
 			'wrapper' => array(
-				'width' => '33',
+				'width' => '50',
 				'class' => '',
 				'id' => '',
 			),
 			'choices' => array(
 				'' => 'Normal',
-				'medium' => 'Medium',
 				'large' => 'Large',
 			),
 			'other_choice' => 0,
@@ -170,7 +169,7 @@ $banner_fields = array_merge(
 				),
 			),
 			'wrapper' => array(
-				'width' => '67',
+				'width' => '50',
 				'class' => '',
 				'id' => '',
 			),
@@ -761,6 +760,15 @@ acf_add_local_field_group(array(
 				'group_no' => 1,
 			),
 		),
+		array(
+			array(
+				'param' => 'post_type', // post_type | post | page | page_template | post_category | taxonomy | options_page
+				'operator' => '==',
+				'value' => 'solution',      // if options_page then use: acf-options  | if page_template then use:  template-example.php
+				'order_no' => 0,
+				'group_no' => 1,
+			),
+		)
 	),
 	'menu_order' => 0,
 	'position' => 'acf_after_title',                // side | normal | acf_after_title
