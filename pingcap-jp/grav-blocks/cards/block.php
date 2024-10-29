@@ -8,7 +8,7 @@ $block_title = isset($block_title) && is_string($block_title) ? $block_title : A
 $block_title_desc = isset($block_title_desc) && is_string($block_title_desc) ? $block_title_desc : ACF::get_sub_field_string('block_title_desc');
 $card_type = isset($card_type) && is_string($card_type) ? $card_type : ACF::get_sub_field_string('card_type');
 
-if (!in_array($card_type, ['', 'media', 'solution', 'integration', 'bg', 'tier'], true)) {
+if (!in_array($card_type, ['', 'media', 'solution', 'integration', 'bg', 'workload', 'tier'], true)) {
 	$card_type = '';
 }
 
@@ -30,6 +30,10 @@ if (!$cards) {
 
 		case 'media':
 			$cards = ACF::get_sub_field_array('media_cards');
+			break;
+
+		case 'workload':
+			$cards = ACF::get_sub_field_array('workload_cards');
 			break;
 
 		case 'tier':
@@ -62,6 +66,11 @@ if ($cards) {
 		case 'tier':
 			$block_classes[] = 'tier';
 			break;
+
+		case 'workload':
+			$block_classes[] = 'workload';
+			break;
+
 		default:
 			$num_cols = count($cards) % 2 === 0 ? 2 : 3;
 
@@ -137,6 +146,18 @@ if ($cards) {
 							'desc' => Arrays::get_value_as_string($card, 'desc'),
 							'permalink' => $link->link,
 							'permalink_text' => $link->text
+						];
+
+						break;
+
+					case 'workload':
+						$component_name = Components\Cards\CardWorkload::class;
+
+						$render_params = [
+							'image' => Arrays::get_value_as_array($card, 'image'),
+							'subtitle' => Arrays::get_value_as_string($card, 'subtitle'),
+							'title' => Arrays::get_value_as_string($card, 'title'),
+							'content' => Arrays::get_value_as_string($card, 'content'),
 						];
 
 						break;
