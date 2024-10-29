@@ -10,7 +10,8 @@ add_shortcode('hubspot_form', function ($atts, $content = '') {
 		'salesforce_id' => '',
 		'border' => '',
 		'calendly_id' => '',
-		'calendly_url' => ''
+		'calendly_url' => '',
+		'dark' => ''
 	], $atts);
 
 	return Component::render_to_string(Components\HubSpotForm::class, [
@@ -18,6 +19,7 @@ add_shortcode('hubspot_form', function ($atts, $content = '') {
 		'form_id' => $params['form_id'],
 		'salesforce_id' => $params['salesforce_id'],
 		'border' => $params['border'],
+		'dark' => $params['dark'],
 		'calendly_id' => $params['calendly_id'],
 		'calendly_url' => $params['calendly_url']
 	]);

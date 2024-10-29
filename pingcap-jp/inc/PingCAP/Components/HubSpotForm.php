@@ -15,6 +15,7 @@ class HubSpotForm implements IComponent
 	public string $calendly_url = '';
 	public string $border = '';
 	public string $message = '';
+	public string $dark = '';
 
 	public function __construct(array $params)
 	{
@@ -24,6 +25,7 @@ class HubSpotForm implements IComponent
 		$this->calendly_id = Arrays::get_value_as_string($params, 'calendly_id');
 		$this->calendly_url = Arrays::get_value_as_string($params, 'calendly_url');
 		$this->border = Arrays::get_value_as_string($params, 'border');
+		$this->dark = Arrays::get_value_as_string($params, 'dark');
 
 		if (!$this->portal_id) {
 			$this->message = 'portal id for hubspot form must be specified';
@@ -51,7 +53,7 @@ class HubSpotForm implements IComponent
 		}
 
 		?>
-		<div class="hs-form-container bg-white <?php echo esc_attr($form_container_class); ?> <?php echo esc_attr($form_border_class); ?> <?php echo $this->calendly_url;?>">
+		<div class="hs-form-container <?php echo $this->dark ? 'dark': 'bg-white'; ?> <?php echo esc_attr($form_container_class); ?> <?php echo esc_attr($form_border_class); ?> <?php echo $this->calendly_url;?>">
 			<?php echo esc_html($this->message); ?>
 		</div>
 		<?php
