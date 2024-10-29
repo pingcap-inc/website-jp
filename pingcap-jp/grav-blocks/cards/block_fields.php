@@ -73,6 +73,7 @@ $block_fields = array(
 			'media' => 'Media',
 			'solution' => 'Solution',
 			'integration' => 'Integration',
+			'workload' => 'Workload',
 			'bg' => 'Bg Color',
 			'tier' => 'Tier',
 		),
@@ -355,7 +356,7 @@ $block_fields = array(
 					'max_size' => '',
 					'mime_types' => '',
 				),
-				array (
+				array(
 					'key' => 'field_' . $block . '_card_integration_image_size',
 					'label' => 'Enable Image Full Size',
 					'name' => 'is_full',
@@ -363,7 +364,7 @@ $block_fields = array(
 					'instructions' => '',
 					'required' => 0,
 					'conditional_logic' => 0,
-					'wrapper' => array (
+					'wrapper' => array(
 						'width' => '',
 						'class' => '',
 						'id' => '',
@@ -462,20 +463,20 @@ $block_fields = array(
 		'button_label' => 'Add Card',
 		'sub_fields' => array_merge(
 			array(
-				array (
-					'key' => 'field_' . $acf_group . '_card_bg_color',
+				array(
+					'key' => 'field_' . $block . '_card_bg_color',
 					'label' => 'Card Bg Color',
 					'name' => 'card_bg_color',
 					'type' => 'select',
 					'instructions' => '',
 					'required' => 0,
 					'conditional_logic' => 0,
-					'wrapper' => array (
+					'wrapper' => array(
 						'width' => '',
 						'class' => '',
 						'id' => '',
 					),
-					'choices' => array (
+					'choices' => array(
 						'red' => 'Red',
 						'violet' => 'Violet',
 						'blue' => 'Blue',
@@ -740,6 +741,127 @@ $block_fields = array(
 				],
 				'supports_button_styles' => false,
 			])
+		)
+	),
+
+	array(
+		'key' => 'field_' . $block . '_workload_cards',
+		'label' => 'Cards',
+		'name' => 'workload_cards',
+		'type' => 'repeater',
+		'instructions' => '',
+		'required' => 1,
+		'conditional_logic' => array(
+			array(
+				array(
+					'field' => 'field_' . $block . '_card_type',
+					'operator' => '==',
+					'value' => 'workload',
+				),
+			),
+		),
+		'wrapper' => array(
+			'width' => '',
+			'class' => '',
+			'id' => '',
+		),
+		'collapsed' => '',
+		'min' => 1,
+		'max' => '',
+		'layout' => 'block',         // table | block | row
+		'button_label' => 'Add Card',
+		'sub_fields' => array_merge(
+			array(
+				array(
+					'key' => 'field_' . $block . '_item_image',
+					'label' => 'Icon Image',
+					'name' => 'image',
+					'instructions' => '',
+					'type' => 'image',
+					'required' => 1,
+					'conditional_logic' => 0,
+					'wrapper' => array(
+						'width' => '',
+						'class' => '',
+						'id' => '',
+					),
+					'return_format' => 'array',       // array | url | id
+					'preview_size' => 'thumbnail',
+					'library' => 'all',       // all | uploadedTo
+					'min_width' => '',
+					'min_height' => '',
+					'min_size' => '',
+					'max_width' => '',
+					'max_height' => '',
+					'max_size' => '',
+					'mime_types' => '',
+				),
+				array(
+					'key' => 'field_' . $block . '_item_subtitle',
+					'label' => 'Subtitle',
+					'name' => 'subtitle',
+					'type' => 'text',
+					'instructions' => '',
+					'required' => 0,
+					'conditional_logic' => 0,
+					'wrapper' => array(
+						'width' => '',
+						'class' => '',
+						'id' => '',
+					),
+					'default_value' => '',
+					'placeholder' => '',
+					'formatting' => 'none',       // none | html
+					'prepend' => '',
+					'append' => '',
+					'maxlength' => '',
+					'readonly' => 0,
+					'disabled' => 0,
+				),
+				array(
+					'key' => 'field_' . $block . '_item_title',
+					'label' => 'Title',
+					'name' => 'title',
+					'type' => 'text',
+					'instructions' => '',
+					'required' => 0,
+					'conditional_logic' => 0,
+					'wrapper' => array(
+						'width' => '',
+						'class' => '',
+						'id' => '',
+					),
+					'default_value' => '',
+					'placeholder' => '',
+					'formatting' => 'none',       // none | html
+					'prepend' => '',
+					'append' => '',
+					'maxlength' => '',
+					'readonly' => 0,
+					'disabled' => 0,
+				),
+				array(
+					'key' => 'field_' . $block . '_item_content',
+					'label' => 'Content',
+					'name' => 'content',
+					'type' => 'textarea',
+					'instructions' => '',
+					'required' => 1,
+					'conditional_logic' => 0,
+					'wrapper' => array(
+						'width' => '',
+						'class' => '',
+						'id' => '',
+					),
+					'default_value' => '',
+					'placeholder' => '',
+					'maxlength' => '',
+					'rows' => 4,
+					'new_lines' => "\n",        // wpautop | br | ''
+					'readonly' => 0,
+					'disabled' => 0,
+				),
+			),
 		)
 	),
 
