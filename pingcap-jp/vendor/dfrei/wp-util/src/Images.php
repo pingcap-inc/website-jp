@@ -200,6 +200,7 @@ abstract class Images
 			$attr_height = $image_nodes[$i]->getAttribute('height');
 			$attr_alt = $image_nodes[$i]->getAttribute('alt');
 			$attr_src = $image_nodes[$i]->getAttribute('src');
+			$attr_style = $image_nodes[$i]->getAttribute('style');
 
 			$class_names = explode(' ', $attr_class);
 			$wp_image_id = 0;
@@ -222,15 +223,20 @@ abstract class Images
 				continue;
 			}
 
+			// $image_sizes = self::get_image_sizes_from_acf_object($wp_image_id);
+			// $ib_sources_str = self::build_ib_sources_string($image_sizes);
+
 			if (is_numeric($wp_image_id) && function_exists('acf_get_attachment')) {
 				$acf_image = acf_get_attachment($wp_image_id);
 			}
 
-			$attributes['src'] = '"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGQAAAABCAQAAACC0sM2AAAADElEQVR42mNkGCYAAAGSAAIVQ4IOAAAAAElFTkSuQmCC"'; // 100x1
-			$attributes['data-src'] =  $acf_image['url'] ?? $attr_src;
-			$attributes['class'] = '"lazy ' . $attr_class . '"';
-			$attributes['alt'] = '"' . $attr_alt . '"';
-			$attributes['title'] = '""';
+			$attributes = [
+				'src' => '"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGQAAAABCAQAAACC0sM2AAAADElEQVR42mNkGCYAAAGSAAIVQ4IOAAAAAElFTkSuQmCC"',
+				'data-src' => '"' . ($acf_image['url'] ?? $attr_src) . '"',
+				'class' => '"lazy ' . $attr_class . '"',
+				'alt' => '"' . $attr_alt . '"',
+				'title' => '""',
+			];
 
 			if ($attr_width) {
 				$attributes['width'] = '"' . $attr_width . '"';
@@ -238,6 +244,10 @@ abstract class Images
 
 			if ($attr_height) {
 				$attributes['height'] = '"' . $attr_height . '"';
+			}
+
+			if ($attr_style) {
+				$attributes['style'] = '"' . $attr_style . '"';
 			}
 
 			$attributes_str = trim(urldecode(http_build_query($attributes, '', ' ')));
