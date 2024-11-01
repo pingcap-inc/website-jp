@@ -148,7 +148,7 @@ class Footer implements IComponent
 									<input type="email" name="cta_email" placeholder="Enter your email *" aria-label="Enter your email address">
 								</form>
 							</div>
-							<p>サインアップするとTiDBに関する最新情報を受け取ることができます。</p>
+							<p class="site-footer__links-group-tip">PingCAPの<a href="/privacy-policy/">プライバシーポリシー</a>に同意し、製品、サービス、イベント等に関する連絡を受け取ることを希望します。</p>
 							<div class="site-footer__social-group">
 								<?php
 								foreach ($this->social_links as $item) {
