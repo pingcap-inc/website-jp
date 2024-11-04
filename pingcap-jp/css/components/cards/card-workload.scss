@@ -1,0 +1,33 @@
+.card-workload {
+	display: flex;
+	text-decoration: none;
+	flex-direction: column;
+	@include media-min($large){
+		flex-direction: row;
+	}
+
+	&__image {
+		width: 150px;
+		height: 150px;
+		margin-right: 20px;
+		@include media-min($medium){
+			margin-right: 40px;
+		}
+	}
+
+	&__content {
+		h5 {
+			font-size: 25px;
+			font-weight: 500;
+			line-height: 31px;
+			color: #fff;
+		}
+		p {
+			font-size: 16px;
+			font-weight: 300;
+			line-height: 22px;
+			color: #a2adb9;
+            margin: 24px 0;
+		}
+	}
+}
