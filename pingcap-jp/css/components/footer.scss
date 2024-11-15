@@ -213,6 +213,12 @@
 		}
 	}
 
+	&__links-group-tip {
+		a {
+			text-decoration: underline;
+		}
+	}
+
 	&__legal {
 		display: flex;
 		flex-direction: column;
