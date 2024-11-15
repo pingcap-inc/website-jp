@@ -76,7 +76,7 @@ class App {
 			templates: {
 				frontPage: null,
 				activityPage: null,
-				aiPage: null,
+				aiPage: null
 			},
 			blocks: {
 				testimonials: [],
@@ -121,6 +121,16 @@ class App {
 				</svg>
 			`.trim()
 		});
+
+		const hubspotTriggerEl = Array.from(document.querySelectorAll('.js--trigger-form-modal'));
+		if (hubspotTriggerEl.length && typeof window.hbspt === 'undefined') {
+			const script = document.createElement('script');
+			script.src = '//js.hsforms.net/forms/v2.js';
+			script.type = 'text/javascript';
+			script.async = true;
+
+			document.head.appendChild(script);
+		}
 
 		/**
 		 * Setup event delegators
@@ -263,9 +273,13 @@ class App {
 		});
 
 		// posts list - ebook whitepaper
-		Array.from(document.querySelectorAll('.posts-list-ebook-whitepaper')).forEach((postsListEbookWhitepaperEl) => {
-			this.instances.components.postsListEbookWhitepaper.push(new PostsListEbookWhitepaper(postsListEbookWhitepaperEl));
-		});
+		Array.from(document.querySelectorAll('.posts-list-ebook-whitepaper')).forEach(
+			(postsListEbookWhitepaperEl) => {
+				this.instances.components.postsListEbookWhitepaper.push(
+					new PostsListEbookWhitepaper(postsListEbookWhitepaperEl)
+				);
+			}
+		);
 
 		// posts list - case study
 		Array.from(document.querySelectorAll('.posts-list-case-study')).forEach(
@@ -312,7 +326,6 @@ class App {
 		if (aiPageEl) {
 			this.instances.templates.aiPage = new AIPage(aiPageEl);
 		}
-
 
 		const tidbPage = document.querySelector('.tmpl-tidb');
 		if (tidbPage) {
