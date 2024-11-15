@@ -123,7 +123,7 @@ span {
 h1 {
 	font-weight: var(--font-weight-semibold);
 	font-size: 36px;
-	line-height: 100%;
+	line-height: 125%;
 	color: var(--h1-color);
 	@include media-min($medium) {
 		font-size: clamp(36px, 3.65vw, 52px);
