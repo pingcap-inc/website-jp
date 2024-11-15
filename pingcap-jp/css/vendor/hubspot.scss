@@ -17,6 +17,10 @@
 		}
 	}
 
+	ul[role="checkbox"] {
+		list-style: none;
+	}
+
 	input[type="text"],
 	input[type="number"],
 	input[type="tel"],
@@ -92,7 +96,7 @@
 	}
 
 	select.is-placeholder {
-		color: rgba(var(--color-rgb-gray-dark), 0.4);;
+		color: rgba(var(--color-rgb-gray-dark), 0.4);
 	}
 }
 
