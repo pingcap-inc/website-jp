@@ -50,7 +50,7 @@
 	&__section-title-text {
 		font: normal normal var(--font-weight-semibold) 1.8rem / 1.72 var(--font-poppins);
 		color: var(--color-dark);
-		
+
 		&:focus,
 		&:hover {
 			color: var(--anchor-link-hover-color);
@@ -114,5 +114,25 @@
 
 	&__section-content-inner {
 		padding-bottom: 1.2rem;
+	}
+}
+.bg-black-dark {
+	.accordion__section {
+		border-color: #28333e;
+	}
+	.accordion__plus-icon {
+		background-color: transparent;
+	}
+	.accordion__section-title-text {
+		font-size: 22px;
+		font-weight: 500;
+		line-height: 29px;
+		color: #fff;
+	}
+	p,ul {
+		font-size: 16px;
+		font-weight: 300;
+		line-height: 26px;
+		color: #a2adb9;
 	}
 }
