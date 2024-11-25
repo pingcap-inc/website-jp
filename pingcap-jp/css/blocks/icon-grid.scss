@@ -3,6 +3,14 @@
 		gap: 0;
 	}
 
+	&.block-bg-none {
+		.block-icon-grid__item.wysiwyg {
+			p {
+				color: #5d6974;
+			}
+		}
+	}
+
 	&__item {
 		h5 {
 			color: var(--color-blue-dark);
@@ -10,6 +18,12 @@
 		&.wysiwyg {
 			h3 {
 				margin-top: 0;
+			}
+			p {
+				font-size: 16px;
+				font-weight: 300;
+				line-height: 22px;
+				text-align: left;
 			}
 		}
 	}
@@ -39,6 +53,9 @@
 		&--center {
 			.block-icon-grid__item {
 				text-align: center;
+				p {
+					text-align: center;
+				}
 			}
 		}
 	}

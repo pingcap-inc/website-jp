@@ -1,0 +1,249 @@
+.tmpl-operation {
+	&__banner {
+		background-color: #000;
+		background-size: contain;
+
+		@include media-min($medium) {
+			background-size: cover;
+		}
+		@include media-min($large) {
+			.banner-default__text-content--center {
+				padding-top: 120px;
+				padding-bottom: 200px;
+				grid-column: 3 / span 8;
+			}
+
+			h1 {
+				font-size: 72px;
+				line-height: 86px;
+			}
+		}
+		p {
+			font-weight: 300;
+			text-align: center;
+			color: #a2adb9;
+			margin-left: auto;
+			margin-right: auto;
+			@include media-min($medium) {
+				width: 80%;
+			}
+			@include media-min($large) {
+				font-size: 26px;
+				line-height: 34px;
+				width: 63%;
+			}
+			+ p {
+				margin-top: 36px;
+			}
+		}
+	}
+	&__logo {
+		h2 {
+			font-size: clamp(30px, 3.25vw, 36px);
+		}
+		@include media-min($large) {
+			.block-logos__logo {
+				width: 74%;
+				margin: auto;
+			}
+			.block-logos__logo-grid {
+				grid-template-columns: repeat(5, 1fr);
+			}
+		}
+	}
+	&__icon-grid {
+		@include media-min($large) {
+			.block-icon-grid__item-container {
+				margin: auto;
+				width: 80%;
+			}
+		}
+		.block-icon-grid__item {
+			p {
+				color: #a2adb9;
+			}
+		}
+	}
+	&__feature {
+		.block-inner {
+			@include media-min($large) {
+				display: flex;
+				gap: 64px !important;
+			}
+			.block-section__title-container {
+				flex: 1;
+				display: block;
+				h2 {
+					font-size: 40px;
+					font-weight: 700;
+					line-height: 48px;
+					@include media-min($medium) {
+						font-size: 60px;
+						line-height: 74px;
+						text-align: left;
+					}
+				}
+			}
+			.block-section__title-desc {
+				font-size: 22px;
+				font-weight: 300;
+				line-height: 28px;
+				text-align: left;
+				color: #5d6974;
+				margin-top: 32px;
+			}
+			.block-icon-grid__item-container {
+				flex: 2;
+			}
+		}
+	}
+	&__compare {
+		.block-title {
+			@include media-min($large) {
+				display: flex;
+				gap: 64px;
+				.desc {
+					width: 100%;
+				}
+				> div,
+				h4 {
+					flex: 1;
+				}
+			}
+			h4 {
+				margin-top: 0;
+			}
+		}
+		.table {
+			overflow: hidden;
+			overflow-x: auto;
+			display: flex;
+			.row {
+				color: #fff;
+				flex: 1;
+				min-width: 140px;
+				div {
+					height: 64px;
+					display: flex;
+					align-items: center;
+					font-size: 16px;
+					font-weight: 500;
+					line-height: 22px;
+					text-align: center;
+					justify-content: center;
+					padding: 20px 5px;
+					background: #000;
+					&:nth-of-type(even) {
+						background: #07121a;
+					}
+					&:first-child {
+						height: 68px;
+					}
+				}
+				&:first-child {
+					flex: 1.8;
+					position: sticky;
+					left: 0;
+					z-index: 1;
+					div {
+						font-size: 20px;
+						font-weight: 500;
+						line-height: 22px;
+						text-align: left;
+						justify-content: flex-start;
+					}
+				}
+				&:last-child {
+					border-radius: 6px;
+					border: 2px solid transparent;
+					overflow: hidden;
+					position: relative;
+					div {
+						background: rgba(1, 84, 87);
+						&:nth-of-type(even) {
+							background: #004043;
+						}
+						&::after {
+							content: "";
+							position: absolute;
+							left: 0;
+							top: 0;
+							right: 0;
+							bottom: 2px;
+							border: 2px solid;
+							border-image: linear-gradient(180deg, #18ffc9 0%, #22a62a 100%) 1;
+						}
+					}
+				}
+				.line {
+					position: relative;
+					&:after {
+						content: "";
+						position: absolute;
+						width: 10px;
+						height: 1px;
+						background: #414b52;
+					}
+				}
+			}
+		}
+		.table-tip {
+			color: #a2adb9;
+			font-size: 16px;
+			font-weight: 300;
+			line-height: 22px;
+			text-align: right;
+			margin-top: 20px;
+			@include media-min($medium) {
+				display: none;
+			}
+		}
+	}
+	&__customers {
+		background: linear-gradient(358.26deg, #ffffff 3.54%, #dde2e6 100.25%);
+		.cards {
+			--num-cols: 1;
+
+			display: grid;
+			grid-template-columns: repeat(var(--num-cols), 1fr);
+			gap: var(--grid-column-gutter);
+
+			@include media-min($medium) {
+				--num-cols: 2;
+			}
+
+			@include media-min($large) {
+				--num-cols: 3;
+			}
+		}
+		.card {
+			display: flex;
+			flex-direction: column;
+			align-items: flex-start;
+			padding: 3rem 3.2rem 3.2rem;
+			text-decoration: none;
+			border: 1px solid var(--card-border-color);
+			border-radius: var(--card-border-radius);
+			transition: all var(--default-transition-params);
+			cursor: pointer;
+			&-content {
+				flex: 1;
+				margin-bottom: 30px;
+			}
+			img {
+				margin-bottom: 48px;
+				height: 43px;
+				width: auto;
+			}
+			p {
+				font-size: 16px;
+				font-weight: 300;
+				line-height: 24px;
+			}
+			&:hover {
+				box-shadow: var(--card-box-shadow);
+				transform: var(--card-transform);
+			}
+		}
+	}
+}
