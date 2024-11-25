@@ -12,7 +12,8 @@ get_header();
 <main class="tmpl-summary__content">
     <div class="contain">
         <h1 class="tmpl-summary__content-title">NewSQLデータベースは<br>もう冒険じゃない</h1>
-        <a class="button" href="/tidb-user-day/jul-2024/">アーカイブ動画を視聴する</a>
+        <a class="button" href="/tidb-user-day/jul-2024/">TiUD2024アーカイブ動画を見る</a>
+        <P class="tip">次回のイベントは2025年10月3日(金)に開催します</P>
     </div>
 </main>
 <section class="bg-black block-container block-columns" id="about">

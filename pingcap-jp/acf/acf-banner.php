@@ -621,6 +621,25 @@ $banner_fields = array_merge(
 			'readonly' => 0,
 			'disabled' => 0,
 		),
+		array(
+			'key' => 'field_' . $acf_group . '_side_image_align_center',
+			'label' => 'Center the image inside the container',
+			'name' => $acf_group . '_side_image_align_center',
+			'type' => 'true_false',
+			'instructions' => '',
+			'required' => 0,
+			'conditional_logic' => 0,
+			'wrapper' => array(
+				'width' => '50',
+				'class' => '',
+				'id' => '',
+			),
+			'message' => '',
+			'ui' => 1,
+			'ui_on_text' => 'Yes',
+			'ui_off_text' => 'No',
+			'default_value' => 0,
+		),
 
 		/**
 		 * Tab: Side Form

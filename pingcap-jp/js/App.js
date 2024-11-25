@@ -198,6 +198,21 @@ class App {
 		const bannerAnimateEls = Array.from(document.querySelectorAll('.banner-animate'));
 
 		bannerAnimateEls.forEach((el) => el.classList.remove('banner-animate'));
+
+		document.addEventListener('click', function (event) {
+			const target = event.target.closest('[data-href]');
+			if (target) {
+				const url = target.getAttribute('data-href');
+				const isExternal =
+					new URL(url, window.location.origin).origin !== window.location.origin;
+
+				if (isExternal) {
+					window.open(url, '_blank');
+				} else {
+					window.location.href = url;
+				}
+			}
+		});
 	}
 
 	async initComponents() {
