@@ -194,6 +194,7 @@ input[type="submit"],
 
 .button-primary {
 	position: relative;
+	z-index: 1;
 	display: inline-flex;
 	align-items: center;
 	justify-content: center;
@@ -242,7 +243,7 @@ input[type="submit"],
 		border-radius: 50%;
 		margin: auto;
 		background: #dc150b;
-		z-index: 0;
+		z-index: -1;
 		transition: 0.5s ease-in-out;
 	}
 
