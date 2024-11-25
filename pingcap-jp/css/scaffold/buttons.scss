@@ -176,6 +176,7 @@ input[type="submit"],
 
 	&-group {
 		display: flex;
+		flex-wrap: wrap;
 		gap: 3.2rem;
 		&.center {
 			justify-content: center;
