@@ -31,7 +31,7 @@ $cards = ACF::get_sub_field_array('case_cards');
                     <?php Images::safe_image_output($image); ?>
                     <div class="case-card__title"><?php echo  $title; ?></div>
                     <p><?php echo  $desc; ?></p>
-                    <span class="button-link">Read More<i class="button__arrow"></i></span>
+                    <span class="button-link">詳細を見る<i class="button__arrow"></i></span>
                 </a>
             </div>
         <?php } ?>

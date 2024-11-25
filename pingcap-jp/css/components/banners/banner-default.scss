@@ -252,6 +252,11 @@
       @include media-min($large) {
         right: -62px;
       }
+      &--center {
+        @include media-min($large) {
+          right: 62PX;
+        }
+      }
     }
   }
 
