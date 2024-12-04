@@ -7,12 +7,12 @@ register_post_type(
 	[
 		'label' => $plural_label,
 		'description' => '',
-		'public' => false,
+		'public' => true,
 		'publicly_queryable'  => true,
 		'show_ui' => true,
 		'show_in_menu' => true,
 		'show_in_rest' => true,
-		'capability_type' => 'page',
+		'capability_type' => 'post',
 		'map_meta_cap' => true,
 		'hierarchical' => false,
 		'rewrite' => [
