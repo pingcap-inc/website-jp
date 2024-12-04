@@ -78,17 +78,11 @@
 			transform: translateY(-12px);
 			box-shadow: 0 1px 8px rgba(0, 0, 0, 0.08);
 			.button-link {
-				.button__arrow {
+				&:after {
 					background-color: #fff;
-					&::before {
-						border-color: #000;
-						transform: rotate(0);
-					}
-					&::after {
-						top: 0;
-						border-color: #000;
-						transform: rotate(45deg);
-					}
+					border-radius: 50%;
+					color: #000;
+					transform: rotate(45deg);
 				}
 			}
 		}
