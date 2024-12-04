@@ -7,8 +7,8 @@ register_post_type(
 	[
 		'label' => $plural_label,
 		'description' => '',
-		'public' => false,
-		'publicly_queryable'  => true,
+		'public' => true,
+		'publicly_queryable'  => false,
 		'show_ui' => true,
 		'show_in_menu' => true,
 		'show_in_rest' => true,
