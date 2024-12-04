@@ -1,4 +1,6 @@
 .tmpl-front-page {
+	background-color: #000;
+
 	.deploy {
 		background: linear-gradient(180deg, #06111a 55.9%, #000000 100%);
 		.contain {
@@ -122,17 +124,11 @@
 			&:hover {
 				transform: translateY(-12px);
 				.button-link {
-					.button__arrow {
+					&:after {
 						background-color: #fff;
-						&::before {
-							border-color: #000;
-							transform: rotate(0);
-						}
-						&::after {
-							top: 0;
-							border-color: #000;
-							transform: rotate(45deg);
-						}
+						border-radius: 50%;
+						color: #000;
+						transform: rotate(45deg);
 					}
 				}
 			}
@@ -220,15 +216,11 @@
 				text-decoration: none;
 				cursor: pointer;
 				&:hover {
-					.button__arrow {
-						background-color: #fff;
-						&::before {
-							border-color: #000;
-							transform: rotate(0);
-						}
-						&::after {
-							top: 0;
-							border-color: #000;
+					.button-link {
+						&:after {
+							background-color: #fff;
+							border-radius: 50%;
+							color: #000;
 							transform: rotate(45deg);
 						}
 					}
@@ -274,7 +266,7 @@
 						color: #5d6974;
 					}
 				}
-				.text-right{
+				.text-right {
 					display: block;
 				}
 			}
@@ -314,7 +306,7 @@
 			height: auto;
 		}
 		a {
-			color: #fff!important;
+			color: #fff !important;
 		}
 		.hs-button {
 			letter-spacing: 0;

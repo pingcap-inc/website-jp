@@ -1,0 +1,152 @@
+.tmpl-trust {
+	&__commitment {
+		.cards {
+			display: grid;
+			gap: 6.4rem;
+			grid-template-columns: repeat(1, 1fr);
+			margin-bottom: 40px;
+			@include media-min($medium) {
+				grid-template-columns: repeat(2, 1fr);
+			}
+			@include media-min($large) {
+				grid-template-columns: repeat(3, 1fr);
+				gap: 40px;
+			}
+		}
+		.card {
+			position: relative;
+			flex: 1;
+			padding: 54px 32px 80px 32px;
+			display: flex;
+			flex-direction: column;
+			align-items: flex-start;
+			text-decoration: none;
+			cursor: pointer;
+			transition: all var(--default-transition-params);
+
+			&__content {
+				flex: 1;
+				margin-bottom: 40px;
+			}
+
+			&__title {
+				font-size: 24px;
+				font-weight: 700;
+				line-height: 30px;
+				margin-bottom: 1.6rem;
+				color: #fff;
+				display: block;
+			}
+
+			&__desc {
+				font-weight: 300;
+				color: #fff;
+			}
+
+			&:nth-of-type(1) {
+				border: 1px solid #1aa8a8;
+				&::after {
+					content: "";
+					background: url(https://static.pingcap.com/files/2024/11/06235730/privacy.svg)
+						no-repeat center center / contain;
+					position: absolute;
+					right: 4px;
+					bottom: -50px;
+					width: 113px;
+					height: 175px;
+				}
+			}
+			&:nth-of-type(2) {
+				border: 1px solid #9e4ec4;
+				&::after {
+					content: "";
+					background: url(https://static.pingcap.com/files/2024/11/06235731/security.svg)
+						no-repeat center center / contain;
+					position: absolute;
+					right: 4px;
+					bottom: -50px;
+					width: 113px;
+					height: 175px;
+				}
+			}
+			&:nth-of-type(3) {
+				border: 1px solid #2c80ce;
+				&::after {
+					content: "";
+					background: url(https://static.pingcap.com/files/2024/11/06235728/compliance.svg)
+						no-repeat center center / contain;
+					position: absolute;
+					right: 4px;
+					bottom: -50px;
+					width: 113px;
+					height: 175px;
+				}
+			}
+
+			img {
+				position: absolute;
+				right: 0;
+				bottom: -50px;
+				z-index: 1;
+			}
+
+			&:hover {
+				transform: translateY(-12px);
+				.button-link {
+					.button__arrow {
+						background-color: #fff;
+						&::before {
+							border-color: #000;
+							transform: rotate(0);
+						}
+						&::after {
+							top: 0;
+							border-color: #000;
+							transform: rotate(45deg);
+						}
+					}
+				}
+			}
+		}
+	}
+    &__testimonials {
+        background-color: #000!important;
+    }
+	&__compliance {
+		.cards {
+			display: grid;
+			gap: 18px 28px;
+			grid-template-columns: repeat(1, 1fr);
+			margin-bottom: 40px;
+			@include media-min($medium) {
+				grid-template-columns: repeat(2, 1fr);
+			}
+			@include media-min($large) {
+				grid-template-columns: repeat(3, 1fr);
+			}
+		}
+		.card {
+			padding: 40px 36px;
+            border: 1px solid #28333E;
+			&__content {
+				h5 {
+					font-size: 24px;
+					font-weight: 700;
+					line-height: 29px;
+                    margin: 24px 0;
+				}
+				p,
+				ul {
+					font-size: 16px;
+					font-weight: 300;
+					line-height: 26px;
+					text-align: left;
+					color: #a2adb9;
+				}
+                ul{
+                    margin-top: 0;
+                }
+			}
+		}
+	}
+}

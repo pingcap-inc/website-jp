@@ -2,7 +2,10 @@
 .bg-black-dark,
 .bg-black-gradient,
 .bg-violet,
+.bg-red,
+.bg-green,
 .bg-blue,
+.bg-blue-dark,
 .bg-dark,
 .bg-gradient,
 .block-bg-image {
@@ -69,7 +72,10 @@
 .bg-black,
 .bg-black-dark,
 .bg-black-gradient,
-.bg-violet {
+.bg-violet,
+.bg-red,
+.bg-blue-dark,
+.bg-green {
 	--h1-color: var(--color-white);
 	--h2-color: var(--color-white);
 	--h3-color: var(--color-white);
@@ -146,7 +152,24 @@
 	background-color: #3c174c;
 }
 
+.bg-red {
+	background-color: #630D09;
+}
+
+.bg-green {
+	background-color: #093434;
+}
+
+.bg-blue-dark {
+	background-color: #0d3152;
+}
+
 .bg-blue {
+	background-color: var(--color-blue-dark);
+}
+
+.bg-blue,
+.bg-blue-dark {
 	--h1-color: var(--color-white);
 	--h2-color: var(--color-white);
 	--h3-color: var(--color-white);
@@ -180,8 +203,6 @@
 	--tab-nav-button-secondary-hover-text-decoration: underline;
 
 	--color-blockquote-highlight: var(--color-white);
-
-	background-color: var(--color-blue-dark);
 }
 
 .bg-gray {

@@ -41,7 +41,7 @@ class HeaderSummary implements IComponent
                             </div>
                         </div>
                     </div>
-                    <a class="button" href="/tidb-user-day/jul-2024/">アーカイブ動画を視聴する</a>
+                    <a class="button" href="/tidb-user-day/jul-2024/">TiUD2024アーカイブ動画を見る</a>
                 </nav>
                 <div class="navbar-toggle">
                     <span></span>
@@ -76,7 +76,7 @@ class HeaderSummary implements IComponent
                         </div>
                     </div>
                 </div>
-                <a class="button" href="/tidb-user-day/jul-2024/">アーカイブ動画を視聴する</a>
+                <a class="button" href="/tidb-user-day/jul-2024/">TiUD2024アーカイブ動画を見る</a>
             </nav>
         </header>
 <?php

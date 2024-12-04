@@ -271,7 +271,6 @@
 		gap: var(--grid-column-gutter);
 		@include media-min($medium) {
 			flex-direction: row;
-			justify-content: center;
 		}
 		> div {
 			flex: 1;
@@ -290,6 +289,9 @@
 		}
 		.flex-auto {
 			flex: 0 1 auto;
+		}
+		&.justify-center {
+			justify-content: center;
 		}
 		&.justify-between {
 			justify-content: space-between;

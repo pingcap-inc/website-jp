@@ -95,7 +95,10 @@ WPUtil\Vendor\BlueprintBlocks::enforce_background_colors([
 	'bg-black-dark' => 'Black(#000)',
 	'bg-black-gradient' => 'Black Gradient',
 	'bg-violet' => 'Violet',
-	'bg-blue' => 'Blue',
+	'bg-red' => 'Red',
+	'bg-green' => 'Green',
+	'bg-blue-dark' => 'Blue',
+	'bg-blue' => 'Blue(old)',
 	'bg-gray' => 'Gray',
 	'bg-gradient' => 'Gradient',
 	'bg-color-gradient' => 'Color Gradient',
@@ -111,8 +114,8 @@ WPUtil\Vendor\BlueprintBlocks::restrict_backgrounds_for_blocks([
 	'case-study' => ['block-bg-none'],
 	'columns' => ['block-bg-none', 'bg-white', 'bg-black', 'bg-black-dark', 'bg-black-gradient', 'bg-blue', 'bg-gray', 'block-bg-image', 'bg-gradient', 'bg-color-gradient'],
 	'community-activities' => ['block-bg-none'],
-	'cta' => ['block-bg-none', 'bg-black', 'bg-black-dark', 'bg-violet', 'bg-gray', 'block-bg-image'],
-	'icon-grid' => ['block-bg-none', 'bg-blue', 'bg-black', 'bg-black-dark', 'bg-gradient'],
+	'cta' => ['block-bg-none', 'bg-black', 'bg-black-dark', 'bg-violet', 'bg-red', 'bg-blue-dark', 'bg-green', 'bg-gray', 'block-bg-image'],
+	'icon-grid' => ['block-bg-none', 'bg-blue', 'bg-black', 'bg-black-dark', 'bg-black-gradient', 'bg-gradient'],
 	'leadership' => ['block-bg-none'],
 	'logos' => ['block-bg-none', 'bg-black', 'bg-black-dark'],
 	'media-content' => ['block-bg-none', 'bg-white', 'bg-black', 'bg-black-dark', 'bg-gradient'],
@@ -123,7 +126,7 @@ WPUtil\Vendor\BlueprintBlocks::restrict_backgrounds_for_blocks([
 	'stats' => ['block-bg-none'],
 	'table' => ['bg-blue'],
 	'tabs' => ['block-bg-none', 'bg-blue'],
-	'testimonials' => ['block-bg-none', 'bg-blue']
+	'testimonials' => ['block-bg-none', 'bg-blue', 'block-bg-image']
 ]);
 
 /**

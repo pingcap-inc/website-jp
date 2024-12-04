@@ -27,7 +27,7 @@ body {
 		left: 0;
 		right: 0;
 		height: var(--body-top-offset);
-		background-color: var(--color-black);
+		background-color: var(--col);
 		transform: translateY(-100%);
 	}
 
@@ -374,6 +374,16 @@ input#firstname-125bf70d-1eba-4cf8-bb1d-2e4a422a875d[type="text"] {
 	height: 4.8rem;
 }
 
+.is-40x40 {
+	width: 40px;
+	height: 40px;
+}
+
+.is-50x50 {
+	width: 50px;
+	height: 50px;
+}
+
 .is-80x80 {
 	width: 8rem;
 	height: 8rem;
@@ -382,6 +392,11 @@ input#firstname-125bf70d-1eba-4cf8-bb1d-2e4a422a875d[type="text"] {
 .is-128x128 {
 	width: 12.8rem;
 	height: 12.8rem;
+}
+
+.is-150x150 {
+	width: 150px;
+	height: 150px;
 }
 
 .is-180x120 {
