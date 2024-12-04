@@ -1,0 +1,75 @@
+.tmpl-modernize {
+	&__scale {
+		background: linear-gradient(180deg, #06111a 0%, #000000 100%);
+		.block-columns__column {
+			@include media-min($large) {
+				display: flex;
+				gap: 50px;
+				.block-title {
+					flex: 1;
+				}
+				.cards {
+					flex: 1.5;
+				}
+			}
+		}
+		.cards {
+			display: grid;
+			grid-template-columns: repeat(2, 1fr);
+			gap: 80px 50px;
+			align-self: flex-start;
+			margin-top: 32px;
+			.card {
+				flex: 1;
+				font-size: 24px;
+				font-weight: 700;
+				line-height: 30px;
+				text-align: left;
+				color: #5d6974;
+			}
+			h3 {
+				font-size: 40px;
+				line-height: 48px;
+				font-weight: 700;
+				letter-spacing: -0.08em;
+				text-align: left;
+				color: #1aa8a8;
+                @include media-min($medium) {
+                    font-size: 64px;
+                    line-height: 70px;
+                }
+			}
+		}
+	}
+	&__proven {
+		.block-title {
+			@include media-min($large) {
+				display: flex;
+				gap: 32px;
+				.desc {
+					margin-top: 32px;
+				}
+			}
+		}
+		.cards {
+			@include media-min($medium) {
+				display: flex;
+			}
+			margin-bottom: 80px;
+		}
+		.card {
+			border: 1px solid #2f353a;
+			padding: 24px 24px 40px 24px;
+			flex: 1;
+			img {
+				margin-bottom: 24px;
+			}
+			p {
+				color: #a2adb9;
+				font-size: 16px;
+				font-weight: 300;
+				line-height: 24px;
+			}
+		}
+	}
+}

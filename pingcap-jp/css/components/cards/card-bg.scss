@@ -11,26 +11,28 @@
 	&:hover {
 		transform: translateY(-12px);
 		.button-link {
-			.button__arrow {
+			&:after {
 				background-color: #fff;
-				&::before {
-					border-color: #000;
-					transform: rotate(0);
-				}
-				&::after {
-					top: 0;
-					border-color: #000;
-					transform: rotate(45deg);
-				}
+				border-radius: 50%;
+				color: #000;
+				transform: rotate(45deg);
 			}
 		}
 	}
 	&__content {
 		flex: 1;
 		margin-bottom: 20px;
+		font-size: 16px;
+		font-weight: 300;
+		line-height: 26px;
+		color: #fff;
 		img {
 			width: 60px;
 			height: 80px;
+		}
+		a,
+		p {
+			color: #fff !important;
 		}
 	}
 	&__title {

@@ -1,8 +1,8 @@
 @font-face {
 	font-family: "iconfont"; /* Project id 4677496 */
-	src: local(""), url("#{$fonts-url-base}/fonts/iconfont/iconfont.woff?t=1730186159719") format("woff"),
-		url("#{$fonts-url-base}/fonts/iconfont/iconfont.woff2?t=1730186159719") format("woff2"),
-		url("#{$fonts-url-base}/fonts/iconfont/iconfont.ttf?t=1730186159719") format("truetype");
+	src: local(""), url("#{$fonts-url-base}/fonts/iconfont/iconfont.woff?t=1732527762695") format("woff"),
+		url("#{$fonts-url-base}/fonts/iconfont/iconfont.woff2?t=1732527762695") format("woff2"),
+		url("#{$fonts-url-base}/fonts/iconfont/iconfont.ttf?t=1732527762695") format("truetype");
 }
 
 [class^="icon-"],
@@ -23,6 +23,14 @@
 	font-style: normal;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
+}
+
+.icon-arrow-secondary:before {
+  content: "\e64c";
+}
+
+.icon-arrow:before {
+  content: "\e64b";
 }
 
 .icon-newspaper:before {
@@ -232,4 +240,3 @@
 .icon-globe:before {
   content: "\e617";
 }
-  
