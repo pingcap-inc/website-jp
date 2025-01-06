@@ -17,4 +17,17 @@
 			padding-bottom: 6rem;
 		}
 	}
+
+	&.campaign {
+		background-position-x: 80%;
+		.banner-default__text-content{
+			padding-top: 12rem;
+		}
+		@include media-min($medium){
+			background-position: center center;
+			.banner-default__text-content{
+				padding-top: 6rem;
+			}
+		}
+	}
 }
