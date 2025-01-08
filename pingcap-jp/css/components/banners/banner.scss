@@ -19,14 +19,31 @@
 	}
 
 	&.campaign {
-		background-position-x: 80%;
-		.banner-default__text-content{
+		.banner-default__text-content {
 			padding-top: 12rem;
 		}
-		@include media-min($medium){
+		@include media-min($medium) {
 			background-position: center center;
-			.banner-default__text-content{
+			.banner-default__text-content {
 				padding-top: 6rem;
+			}
+		}
+	}
+	&.campaign-maintenance {
+		h1 {
+			font-size: 34px;
+			padding-bottom: 6rem;
+			@include media-min($medium) {
+				font-size: clamp(36px, 3.65vw, 52px);
+				padding-bottom: 0;
+			}
+		}
+	}
+	&.campaign-architecture{
+		h1 {
+			font-size: 27px;
+			@include media-min($medium) {
+				font-size: clamp(36px, 3.65vw, 52px);
 			}
 		}
 	}
