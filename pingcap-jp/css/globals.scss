@@ -48,6 +48,10 @@ body {
 	}
 }
 
+a {
+	color: var(--anchor-link-normal-color);
+}
+
 img {
 	max-width: 100%;
 	height: auto;
@@ -68,9 +72,15 @@ ul {
 	}
 }
 
+.table {
+	max-width: 100%;
+	overflow-y: auto;
+}
+
 table {
 	width: 100%;
 	border-collapse: collapse;
+	font-weight: 300;
 
 	box-shadow: var(--default-box-shadow);
 	border-radius: var(--default-border-radius);
@@ -260,12 +270,7 @@ pre {
 .tmpl-single-post .meta-tags,
 .tmpl-archive-sidebar .tags {
 	.tmpl-single-case-study__term-link,
-	.button {
-		background-color: var(--color-off-white);
-		background-image: none;
-		border-radius: 4px;
-		border: 1px solid transparent;
-		color: var(--color-gray-dark);
+	.tag {
 		font-size: 1.4rem;
 		font-weight: 400;
 		letter-spacing: 0;
@@ -275,12 +280,14 @@ pre {
 		min-width: unset;
 		height: unset;
 		padding: 0 0.8rem;
+		text-decoration: none;
+		line-height: 28px;
+		display: inline-block;
 		&.active,
 		&:focus,
 		&:hover {
-			background-color: var(--color-blue);
+			background-color: #000;
 			color: var(--color-white);
-			border-color: var(--color-blue);
 		}
 	}
 }

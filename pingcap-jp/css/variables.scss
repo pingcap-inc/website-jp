@@ -22,7 +22,7 @@ $bg-color-names: ("white", "black", "blue");
 	/*************************************
 	Defaults
 	**************************************/
-	--default-border-radius: 4px;
+	--default-border-radius: 0px;
 	--default-input-border-radius: 20px;
 	--default-input-min-height: 48px;
 	--default-transition-speed: 0.2s;
@@ -131,27 +131,24 @@ $bg-color-names: ("white", "black", "blue");
 	*************************************/
 	--button-border-radius: 2.4rem;
 
-	--button-primary-normal-bg-color: var(--color-blue);
-	--button-primary-normal-border-color: var(--color-blue);
-	--button-primary-normal-text-color: var(--color-white);
-
-	--button-primary-hover-bg-color: var(--color-blue);
-	--button-primary-hover-border-color: var(--color-black);
-	--button-primary-hover-text-color: var(--color-white);
+	--button-primary-normal-bg-color: #000;
+	--button-primary-normal-text-color: #fff;
+	--button-primary-hover-text-color: #fff;
+	--button-primary-hover-bg-color: #dc150b;
 
 	--button-primary-disabled-bg-color: var(--color-gray-xlight);
 	--button-primary-disabled-border-color: var(--color-gray-xlight);
 	--button-primary-disabled-text-color: var(--color-white);
 
-	--button-secondary-normal-text-color: var(--color-blue-dark);
-	--button-secondary-hover-text-color: var(--color-blue-dark);
-	--button-secondary-disabled-text-color: var(--color-black-5);
+	--button-secondary-normal-text-color: #000;
+	--button-secondary-hover-bg-color: #000;
+	--button-secondary-hover-arrow-color: #fff;
 
 	/*************************************
 	Tables
 	*************************************/
 	--table-tr-hover-bg-color: var(--color-gray-xlight);
-	--table-border-radius: 6px;
+	--table-border-radius: 0px;
 	--table-border-color: var(--color-gray-xlight);
 	--table-box-shadow: 0px 2px 16px rgba(0, 0, 0, 0.08);
 
@@ -207,11 +204,11 @@ $bg-color-names: ("white", "black", "blue");
 	Card
 	**************************************/
 	--card-label-color: var(--color-black);
-	--card-title-color: #303eab;
-	--card-border-color: var(--color-gray-xxlight);
+	--card-title-color: #000;
+	--card-border-color: #e5e8eb;
 	--card-box-shadow: var(--default-box-shadow);
-	--card-border-radius: 8px;
-	--card-background-color: var(--color-off-white);
+	--card-border-radius: 0px;
+	--card-background-color: #fff;
 	--card-transform: translateY(-8px);
 	--card-background-image: linear-gradient(to right, #fff, #fff),
 		linear-gradient(90deg, #0ca6f2, #0aadc4, #006fc2, #0ca6f2, #01ecb0, #28ea76);
@@ -252,8 +249,8 @@ $bg-color-names: ("white", "black", "blue");
 	--h5-color: var(--color-black);
 	--h6-color: var(--color-black);
 
-	--anchor-link-normal-color: var(--color-blue-dark);
-	--anchor-link-hover-color: var(--color-blue-dark);
+	--anchor-link-normal-color: #000;
+	--anchor-link-hover-color: rgba(0, 0, 0, 0.8);
 
 	/*************************************
 	Forms
@@ -262,19 +259,19 @@ $bg-color-names: ("white", "black", "blue");
 	--form-control-text-color: var(--color-black);
 	--form-control-focus-text-color: var(--color-black);
 	--form-control-placeholder-color: rgba(var(--color-rgb-gray-dark), 0.4);
-	--form-control-icon-color: var(--color-blue);
+	--form-control-icon-color: #000;
 	--form-label-color: var(--color-gray-dark);
 	--form-checkbox-radio-border-color: var(--color-gray-xxlight);
 	--form-checkbox-radio-size: 16px;
 	--form-checkbox-check-img: url("#{$theme-url-base}/media/images/check-black.png");
 	--form-radio-fill-color: #666;
-	--form-border-radius: 8px;
+	--form-border-radius: 0px;
 
-	--form-select-arrow-img: url("#{$theme-url-base}/media/svg/general/chevron-down-blue.svg");
+	--form-select-arrow-img: url("#{$theme-url-base}/media/svg/general/chevron-down.svg");
 	--form-select-arrow-white-img: url("#{$theme-url-base}/media/svg/general/chevron-down-white.svg");
 
-	--form-control-border-color-default: var(--color-blue);
-	--form-control-border-color-focus: var(--color-blue);
+	--form-control-border-color-default: #5d6974;
+	--form-control-border-color-focus: #000;
 	--form-control-disabled-opacity: 0.4;
 	--form-control-padding: 8px 20px 8px 18px;
 

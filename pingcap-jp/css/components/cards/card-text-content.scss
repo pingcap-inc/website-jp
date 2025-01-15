@@ -1,16 +1,28 @@
 .card-text-content {
 	padding: 3.2rem;
-	border-radius: var(--card-border-radius);
-	border: 1px solid transparent;
+	border: 1px solid var(--card-border-color);
+	background-color: var(--card-background-color);
 	transition: all var(--default-transition-params);
-
-	background-clip: padding-box, border-box;
-	background-origin: padding-box, border-box;
-	background-image: var(--card-background-image);
 
 	&:hover {
 		box-shadow: var(--card-box-shadow);
 		transform: var(--card-transform);
+	}
+
+	&:nth-child(4n + 1) {
+		border-color: #1aa8a8;
+	}
+
+	&:nth-child(4n + 2) {
+		border-color: #9e4ec4;
+	}
+
+	&:nth-child(4n + 3) {
+		border-color: #2c80ce;
+	}
+
+	&:nth-child(4n + 4) {
+		border-color: #83120c;
 	}
 
 	&__label {
@@ -24,10 +36,6 @@
 		gap: 2rem;
 	}
 
-	h5 {
-		color: var(--card-title-color);
-	}
-
 	&__icon {
 		width: 40px;
 		height: 40px;
@@ -36,6 +44,7 @@
 
 	&__content {
 		margin-top: 1rem;
+		font-weight: 300;
 	}
 
 	&__link {

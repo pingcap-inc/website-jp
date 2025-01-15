@@ -23,11 +23,11 @@
 		margin: auto;
 
 		@include media-min($medium) {
-			grid-template-columns: 1fr 1fr;
+			grid-template-columns: 1fr 1fr 1fr;
 		}
 
 		@include media-min($large) {
-			max-width: 500px;
+			max-width: 780px;
 		}
 	}
 
@@ -42,6 +42,6 @@
 	}
 
 	&__heading-text {
-		color: var(--color-blue-dark);
+		color: var(--color-black);
 	}
 }

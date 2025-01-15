@@ -8,9 +8,13 @@
 	color: #fff;
 	cursor: pointer;
 	transition: all var(--default-transition-params);
+	.button-link {
+		color: #fff;
+	}
 	&:hover {
 		transform: translateY(-12px);
 		.button-link {
+			color: #fff;
 			&:after {
 				background-color: #fff;
 				border-radius: 50%;
@@ -32,7 +36,7 @@
 		}
 		a,
 		p {
-			color: #fff !important;
+			color: #fff;
 		}
 	}
 	&__title {

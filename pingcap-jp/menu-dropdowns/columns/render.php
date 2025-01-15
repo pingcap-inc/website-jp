@@ -25,7 +25,7 @@ $is_feature_right = Arrays::get_value_as_string($values, 'format');
 						Component::render(Components\UI\Button::class, [
 							'link' => $link['url'],
 							'text' => $title,
-							'style' => 'button--secondary',
+							'style' => 'button-text',
 							'attributes' => ['data-gtag' => 'event:jp_navi_click,item_name:' . $title]
 						]);
 						?>
@@ -76,7 +76,7 @@ $is_feature_right = Arrays::get_value_as_string($values, 'format');
 			?>
 			<?php if ($label === 'エコシステム') { ?>
 				<div class="menu-dropdown__item-pricing">
-					<a class="button button--secondary" href="/pricing/" data-gtag="event:jp_navi_click,item_name:pricing">
+					<a class="button-text" href="/pricing/" data-gtag="event:jp_navi_click,item_name:pricing">
 						料金
 					</a>
 				</div>

@@ -1,6 +1,6 @@
 .pricing-search {
 	padding: 2rem 0 1.6rem;
-	border-top: 1px solid #3d3fea;
+	border-top: 1px solid #2C80CE;
 	width: 80%;
 	margin: auto;
 	&__inner {
@@ -10,7 +10,6 @@
 	}
 	&__tabs {
 		display: flex;
-		border-radius: 6px;
 		overflow: hidden;
 		height: 5rem;
 		margin-right: 1.4rem;
@@ -32,11 +31,10 @@
 		}
 	}
 	select {
-		border-radius: 6px;
-		border: 1px solid #00aeef;
-		background-color: #fff;
+		// border: 1px solid #00aeef;
+		// background-color: #fff;
 		height: 3rem;
-		color: #33353d;
+		// color: #33353d;
 	}
 	&__result {
 		text-align: center;

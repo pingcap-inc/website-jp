@@ -89,7 +89,7 @@ class Footer implements IComponent
 			<div class="contain site-footer__inner">
 				<div class="site-footer__language-links">
 					<div class="site-footer__language-select">
-						<i class="ph-globe"></i>日本語<?php SVG::the_svg('general/chevron-down-white') ?>
+						<i class="icon-globe"></i>日本語<?php SVG::the_svg('general/chevron-down-white') ?>
 					</div>
 					<div class="site-footer__language-options">
 						<a href="https://www.pingcap.com/">English</a>
@@ -127,7 +127,7 @@ class Footer implements IComponent
 							<?php if ($i === 0) { ?>
 								<div class="site-footer__language-links">
 									<div class="site-footer__language-select">
-										<i class="ph-globe"></i>日本語<?php SVG::the_svg('general/chevron-down-white') ?>
+										<i class="icon-globe"></i>日本語<?php SVG::the_svg('general/chevron-down-white') ?>
 									</div>
 									<div class="site-footer__language-options">
 										<a href="https://www.pingcap.com/">英文 </a>

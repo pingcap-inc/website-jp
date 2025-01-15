@@ -11,7 +11,21 @@
 
 .block-border-top {
 	border-top: 1px solid rgba(71, 71, 71, 1);
-	background-color: #000;
+}
+
+.block-inner-border-gradient-top .block-inner {
+	border-top-width: 2px;
+	border-top-style: solid;
+	border-image: linear-gradient(
+			90deg,
+			#0ca6f2 -1.46%,
+			#0aadc4 7.56%,
+			#006fc2 16.61%,
+			#0ca6f2 23.05%,
+			#01ecb0 91.39%,
+			#28ea76 100%
+		)
+		1;
 }
 
 .block-border-bottom {
@@ -37,8 +51,28 @@
 	}
 }
 
+.block-padding-large {
+	.block-inner {
+		padding-top: var(--block-padding-lg-top) !important;
+		padding-bottom: var(--block-padding-lg-bottom) !important;
+	}
+}
+
+.block-padding-top-xlarge {
+	.block-inner {
+		padding-bottom: var(--block-padding-xlg-bottom) !important;
+	}
+}
+
 .block-padding-bottom-xlarge {
 	.block-inner {
+		padding-bottom: var(--block-padding-xlg-bottom) !important;
+	}
+}
+
+.block-padding-xlarge {
+	.block-inner {
+		padding-top: var(--block-padding-xlg-top) !important;
 		padding-bottom: var(--block-padding-xlg-bottom) !important;
 	}
 }
@@ -278,20 +312,6 @@
 		}
 	}
 	h2 {
-		font-size: 40px;
-		font-weight: 700;
-		line-height: 48px;
-		color: var(--h2-color);
-		@include media-min($medium) {
-			font-size: 72px;
-			line-height: 76px;
-			* + & {
-				margin-top: 32px;
-			}
-			margin-bottom: 48px;
-		}
-	}
-	h3 {
 		font-size: 4rem;
 		line-height: 48px;
 		font-weight: 700;
@@ -299,10 +319,10 @@
 		margin: 3.2rem 0;
 		@include media-min($medium) {
 			font-size: 64px;
-			line-height: 68px;
+			line-height: 72px;
 		}
 	}
-	h4 {
+	h3 {
 		font-size: 40px;
 		font-weight: 700;
 		line-height: 48px;
@@ -310,8 +330,20 @@
 		@include media-min($medium) {
 			font-size: 60px;
 			font-weight: 700;
-			line-height: 64px;
+			line-height: 68px;
 			margin: 3.2rem 0;
+		}
+	}
+	h4 {
+		font-size: 40px;
+		font-weight: 700;
+		line-height: 48px;
+		color: var(--h5-color);
+		@include media-min($medium) {
+			font-size: 56px;
+			font-weight: 700;
+			line-height: 64px;
+			margin: 20px 0;
 		}
 	}
 	h5 {
@@ -322,7 +354,7 @@
 		@include media-min($medium) {
 			font-size: 50px;
 			font-weight: 700;
-			line-height: 56px;
+			line-height: 58px;
 			margin: 20px 0;
 		}
 	}

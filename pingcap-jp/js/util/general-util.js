@@ -1,5 +1,5 @@
 import { isIE } from './browsers';
-import {whiteListDomain} from "../config";
+import { whiteListDomain } from '../config';
 
 /**
  * Checks if the specified URL is either an external URL or a PDF file
@@ -126,13 +126,24 @@ export function copyTextToClipboard(copyText) {
 export function safeParseJSON(json, defaultValue) {
 	let result;
 	try {
-	  result = JSON.parse(json);
+		result = JSON.parse(json);
 	} catch (e) {
-	  console.error(e);
+		console.error(e);
 	}
-  
+
 	if (!result && defaultValue !== undefined) {
-	  return defaultValue;
+		return defaultValue;
 	}
 	return result;
-  }
+}
+
+export function formatWordsString(str) {
+	const stringWithSpaces = str.replace(/-/g, ' ');
+
+	const capitalizedString = stringWithSpaces
+		.split(' ')
+		.map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+		.join(' ');
+
+	return capitalizedString;
+}

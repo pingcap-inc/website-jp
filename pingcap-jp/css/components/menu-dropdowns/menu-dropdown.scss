@@ -104,7 +104,7 @@
 			}
 			&-content p {
 				font-size: 1.5rem;
-				font-weight: var(--font-weight-regular);
+				font-weight: 300;
 				color: #a2adb9;
 				padding-top: 1.6rem;
 			}
@@ -137,6 +137,7 @@
 			display: flex;
 			align-items: center;
 			font-size: 1.6rem;
+			font-weight: 300;
 			color: #a2adb9;
 			text-decoration: none;
 			white-space: noWrap;

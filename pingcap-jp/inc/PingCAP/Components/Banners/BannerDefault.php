@@ -134,14 +134,6 @@ class BannerDefault implements IComponent
 	public bool $side_image_pull_up = false;
 
 	/**
-	 * Flag indicating that the side image should be center
-	 * on large displays
-	 *
-	 * @var boolean
-	 */
-	public bool $side_image_align_center = false;
-
-	/**
 	 * Flag indicating that the side image should cover the entire image container
 	 *
 	 * @var boolean
@@ -315,13 +307,13 @@ class BannerDefault implements IComponent
 		$this->subtitle = ACF::get_field_string($this->acf_prefix . '_subtitle', $this->post_id);
 
 		$this->title_container_size = Arrays::get_value_as_string(
-            $params,
-            'title_container_size',
-            fn() => ACF::get_field_string(
-                'banner_title_container_size',
-                $this->post_id
-            )
-        );
+			$params,
+			'title_container_size',
+			fn() => ACF::get_field_string(
+				'banner_title_container_size',
+				$this->post_id
+			)
+		);
 
 		$this->use_case_illustration = Arrays::get_value_as_array(
 			$params,
@@ -451,16 +443,6 @@ class BannerDefault implements IComponent
 						'default' => 100,
 						'allow_bool' => false
 					]
-				)
-			);
-
-			$this->side_image_align_center = Arrays::get_value_as_bool(
-				$params,
-				'side_image_align_center',
-				fn() => ACF::get_field_bool(
-					$this->acf_prefix . '_side_image_align_center',
-					$this->post_id,
-					['default' => false]
 				)
 			);
 		}
@@ -707,7 +689,7 @@ class BannerDefault implements IComponent
 
 		$banner_text_content_classes = ['banner-default__text-content'];
 
-		if($this->title_container_size) {
+		if ($this->title_container_size) {
 			$banner_text_content_classes[] = $this->title_container_size;
 		}
 
@@ -797,12 +779,12 @@ class BannerDefault implements IComponent
 						$image_container_classes[] = 'banner-default__image-container--pull-up';
 					}
 
-					if($this->side_image_align_center) {
-						$image_container_classes[] = 'banner-default__image-container--center';
+					if ($this->side_image_max_height_desktop) {
+						$image_style = 'style="max-height:' . $this->side_image_max_height_desktop . 'px"';
 					}
 
 				?>
-					<div class="<?php echo esc_attr(implode(' ', $image_container_classes)); ?>">
+					<div class="<?php echo esc_attr(implode(' ', $image_container_classes)); ?>" <?php echo $image_style; ?>>
 						<?php
 						if ($this->side_image_video_url) {
 							Component::render(Components\UI\PlayVideoOverlay::class, [

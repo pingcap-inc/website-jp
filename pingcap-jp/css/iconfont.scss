@@ -1,8 +1,8 @@
 @font-face {
 	font-family: "iconfont"; /* Project id 4677496 */
-	src: local(""), url("#{$fonts-url-base}/fonts/iconfont/iconfont.woff?t=1732527762695") format("woff"),
-		url("#{$fonts-url-base}/fonts/iconfont/iconfont.woff2?t=1732527762695") format("woff2"),
-		url("#{$fonts-url-base}/fonts/iconfont/iconfont.ttf?t=1732527762695") format("truetype");
+	src: local(""), url("#{$fonts-url-base}/fonts/iconfont/iconfont.woff?t=1733983402978") format("woff"),
+		url("#{$fonts-url-base}/fonts/iconfont/iconfont.woff2?t=1733983402978") format("woff2"),
+		url("#{$fonts-url-base}/fonts/iconfont/iconfont.ttf?t=1733983402978") format("truetype");
 }
 
 [class^="icon-"],
@@ -14,15 +14,33 @@
 [class*=" icon-"]:before {
 	font-family: "iconfont" !important;
 	font-style: normal;
+  	line-height: 1;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 }
 
 .iconfont {
-	font-family: "iconfont" !important;
-	font-style: normal;
-	-webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
+  font-family: "iconfont" !important;
+  font-size: 16px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-map-pin:before {
+  content: "\e64f";
+}
+
+.icon-calendar-check:before {
+  content: "\e650";
+}
+
+.icon-confetti:before {
+  content: "\e64e";
+}
+
+.icon-globe:before {
+  content: "\e64d";
 }
 
 .icon-arrow-secondary:before {
@@ -235,8 +253,4 @@
 
 .icon-chevron-down2:before {
   content: "\e626";
-}
-
-.icon-globe:before {
-  content: "\e617";
 }
