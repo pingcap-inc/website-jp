@@ -6,8 +6,6 @@
     }
     &__image {
         display: block;
-        border-top-left-radius: var(--card-border-radius);
-        border-top-right-radius: var(--card-border-radius);
     }
 	&__content-container {
 		padding: 3.2rem;
@@ -30,10 +28,6 @@
                 padding-top: 3.2rem;
             }
             .card-event__image {
-                border-top-left-radius: var(--default-border-radius);
-                border-top-right-radius: var(--default-border-radius);
-                border-bottom-left-radius: 0;
-                border-bottom-right-radius: 0;
                 height: 100%;
             }
         }

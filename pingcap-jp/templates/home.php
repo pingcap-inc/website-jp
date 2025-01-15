@@ -14,7 +14,6 @@ Component::render(Components\Banners\BannerResourceArchive::class, [
 
 ?>
 <main class="tmpl-archive tmpl-archive-blog">
-	<div class="tmpl-archive-blog__bg bg-blue blog"></div>
 	<div class="tmpl-archive-outer-posts-container">
 		<div class="tmpl-archive-posts-container">
 			<?php
@@ -78,7 +77,7 @@ Component::render(Components\Banners\BannerResourceArchive::class, [
 
 			echo '<div class="tag-container">';
 			echo '<h4 class="tag-container-title">Categories</h4>';
-			echo '<div class="tags">';
+			echo '<div class="tags posts-categories">';
 
 			// Get the categories
 			// $link_extended = isset($_GET['tag']) ? '?tag=' . sanitize_text_field(wp_unslash($_GET['tag'] ?? '')) : '';
@@ -101,10 +100,10 @@ Component::render(Components\Banners\BannerResourceArchive::class, [
 			echo '</div>';
 
 			// Get the tags
-			echo '<div class="brand hide"></div>'; 
+			echo '<div class="posts-tags hide"></div>';
 
 			// Get the region
-			echo '<div class="region hide"></div>'; 
+			echo '<div class="region hide"></div>';
 
 			// Get the recommend
 			$recommended_list = ACF::get_field_array(Constants\ACF::BLOG_SETTINGS_BASE . '_blog_recommended_posts', 'option');
@@ -119,7 +118,7 @@ Component::render(Components\Banners\BannerResourceArchive::class, [
 
 					echo '<a class="tag-item" href="' . get_permalink($item->ID) . '">';
 					echo '<div class="tag-item-title">' . $item->post_title . '</div>';
-					echo '<div class="tag-item-content">' . get_the_category($item->ID)[0]->name . '&nbsp;&nbsp;' . get_the_time('Y-m-d', $item->ID) . '</div>';
+					echo '<div class="tag-item-content">' . get_the_category($item->ID)[0]->name . '</div>';
 					echo '</a>';
 				}
 
@@ -140,7 +139,7 @@ Component::render(Components\Banners\BannerResourceArchive::class, [
 
 					echo '<a class="tag-item" href="' . get_permalink($item->ID) . '">';
 					echo '<div class="tag-item-title">' . $item->post_title . '</div>';
-					echo '<div class="tag-item-content">' . get_the_category($item->ID)[0]->name . '&nbsp;&nbsp;' . get_the_time('Y-m-d', $item->ID) . '</div>';
+					echo '<div class="tag-item-content">' . get_the_category($item->ID)[0]->name . '</div>';
 					echo '</a>';
 				}
 
@@ -148,8 +147,8 @@ Component::render(Components\Banners\BannerResourceArchive::class, [
 				echo '</div>';
 			}
 			?>
-			<br/>
-			<a href="https://ask.pingcap.com/" class="button button--secondary">Discuss with the Community</a>
+			<br />
+			<a href="https://discord.com/invite/vYU9h56kAX" class="button button--secondary">Discuss with the Community</a>
 		</aside>
 	</div>
 </main>

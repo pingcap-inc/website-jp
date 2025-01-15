@@ -51,7 +51,7 @@
 		--pull-up-value: 0rem;
 		transform: translateY(var(--pull-up-value));
 		@include media-min($large) {
-			--pull-up-value: -26rem;
+			--pull-up-value: -20rem;
 
 			// grid-column: 1 / span 2;
 		}
@@ -80,6 +80,7 @@
 
 	&__content {
 		padding: 3rem 2rem;
+		font-weight: 300;
 		ul {
 			margin-left: 18px;
 		}

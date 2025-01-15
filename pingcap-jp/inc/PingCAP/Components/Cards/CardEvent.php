@@ -184,7 +184,7 @@ class CardEvent implements IComponent
 				if ($date_label) {
 				?>
 					<p class="card-resource__date">
-						<i class="ph-calendar-check"></i>
+						<i class="icon-calendar-check"></i>
 						<?php
 						echo $date_label . ' ' . explode(' ', $this->date_time_zone['label'])[0];
 						?>
@@ -195,7 +195,7 @@ class CardEvent implements IComponent
 
 				<?php if ($this->location) { ?>
 					<p class="card-resource__location">
-						<i class="ph-map-pin"></i>
+						<i class="icon-map-pin"></i>
 						<?php
 						echo $this->location;
 						?>

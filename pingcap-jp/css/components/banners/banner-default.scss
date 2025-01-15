@@ -1,9 +1,6 @@
 .banner-default {
 	&.bg-black {
-		background-repeat: repeat-x;
-		background-position: top center;
-		background-image: linear-gradient(to bottom, rgba(14, 14, 14, 0.4) 0, #000000bd 100%),
-			url(https://static.pingcap.co.jp/files/2024/06/29150254/bg-hex-pattern.png);
+		background-color: #000;
 	}
 	&__inner {
 		/* stylelint-disable */
@@ -39,10 +36,6 @@
 		.banner-default--side-image & {
 			/* prettier-ignore */
 			padding-bottom: calc(calc(var(--bottom-padding-pull-up) * -1) + var(--bottom-padding-use-case) + var(--bottom-padding-no-arc));
-		}
-
-		.button--secondary {
-			color: var(--color-white);
 		}
 	}
 
@@ -144,6 +137,7 @@
 		display: flex;
 		gap: 2rem;
 		flex-wrap: wrap;
+		margin-top: 24px;
 		&-cat {
 			word-wrap: break-word;
 			color: var(--anchor-link-normal-color);
@@ -193,7 +187,7 @@
 		}
 	}
 
-    &__button,
+	&__button,
 	.button-group {
 		margin-top: 3.2rem;
 	}
@@ -213,7 +207,7 @@
 			z-index: 1;
 			padding-top: 80px;
 			@include media-min($medium) {
-				padding: 80px 0 140px;
+				padding: 80px 0;
 			}
 			@include media-min(1200px) {
 				&.large {
@@ -229,7 +223,7 @@
 				@include media-min($medium) {
 					font-size: 68px;
 					font-weight: 700;
-					line-height: 74px;
+					line-height: 76px;
 				}
 			}
 			p {
@@ -245,21 +239,58 @@
 			}
 		}
 		.banner-default__image-container {
-			padding-bottom: 80px;
+			padding-bottom: 0px;
 			right: 0;
 			padding-top: 0;
 			text-align: center;
 			@include media-min($medium) {
 				position: absolute;
-				top: 80px;
+				top: 40px;
 			}
 			@include media-min($large) {
 				right: -62px;
 			}
-			&--center {
-				@include media-min($large) {
-					right: 62px;
+		}
+	}
+
+	&--display-type-solution {
+		overflow: hidden;
+		background-color: #000;
+		background-size: contain;
+
+		@include media-min($medium) {
+			background-size: cover;
+		}
+		@include media-min($large) {
+			.banner-default__text-content--center {
+				padding-top: 120px;
+				padding-bottom: 200px;
+				grid-column: 3 / span 8;
+			}
+
+			h1 {
+				font-size: 48px;
+				font-weight: 700;
+				line-height: 56px;
+				@include media-min($medium) {
+					font-size: 68px;
+					font-weight: 700;
+					line-height: 76px;
 				}
+			}
+		}
+		p {
+			text-align: center;
+			font-size: 22px;
+			line-height: 34px;
+			margin-left: auto;
+			margin-right: auto;
+			color: #a2adb9;
+			@include media-min($medium) {
+				width: 80%;
+			}
+			+ p {
+				margin-top: 36px;
 			}
 		}
 	}

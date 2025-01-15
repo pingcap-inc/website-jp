@@ -1,8 +1,9 @@
 <?php
+
 namespace PingCAP\Components\UI;
 
 use WPUtil\Interfaces\IComponent;
-use WPUtil\{ Arrays, SVG };
+use WPUtil\{Arrays, SVG};
 
 class Button implements IComponent
 {
@@ -60,10 +61,12 @@ class Button implements IComponent
 		$additional_classes = Arrays::get_value_as_array($params, 'additional_classes');
 		$attributes = Arrays::get_value_as_array($params, 'attributes');
 
-		$this->classes = ['button'];
+		$this->classes = [];
 
 		if ($this->style) {
 			$this->classes[] = esc_attr($this->style);
+		} else {
+			$this->classes = ['button'];
 		}
 
 		if ($trigger_video_modal) {
@@ -87,10 +90,10 @@ class Button implements IComponent
 			return;
 		}
 
-		?>
+?>
 		<a class="<?php echo esc_attr(implode(' ', $this->classes)); ?>" href="<?php echo esc_url($this->link); ?>" <?php echo esc_attr(implode(' ', $this->additional_attrs)); ?> <?php echo $this->gtag; ?>>
 			<?php echo esc_html($this->text); ?>
 		</a>
-		<?php
+<?php
 	}
 }

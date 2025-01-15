@@ -91,7 +91,7 @@ Component::render(Components\Banners\BannerResource::class, $banner_params);
 					<br />
 
 					<?php if (ACF::get_field_bool('enable_playground_link')) { ?>
-						<p><b><i><i class="tmpl-single-post__icon ph-confetti"></i> Want to explore TiDB without installing any software? Go to </i></b><a href="https://play.tidbcloud.com/?utm_source=pingcap&utm_medium=blogs" class="button button--secondary">TiDB Playground</a></p>
+						<p><b><i><i class="tmpl-single-post__icon icon-confetti"></i> Want to explore TiDB without installing any software? Go to </i></b><a href="https://play.tidbcloud.com/?utm_source=pingcap&utm_medium=blogs" class="button button--secondary">TiDB Playground</a></p>
 					<?php } ?>
 				</div>
 

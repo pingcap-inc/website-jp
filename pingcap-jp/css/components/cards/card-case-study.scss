@@ -5,7 +5,6 @@
 	align-items: flex-start;
 	text-decoration: none;
 	padding: 0.8rem 3.2rem 3.2rem;
-	border-radius: var(--card-border-radius);
 	border: 1px solid var(--card-border-color);
 	transition: all var(--default-transition-params);
 
@@ -40,6 +39,7 @@
 		flex-grow: 1;
 		margin-top: 1rem;
 		font-size: 1.6rem;
+		font-weight: 300;
 	}
 
 	&__title-featured {

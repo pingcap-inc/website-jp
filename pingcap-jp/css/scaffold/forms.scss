@@ -14,11 +14,12 @@ textarea,
 select {
 	transition: all var(--default-transition-speed) ease-out;
 	appearance: none;
-	border-radius: var(--form-border-radius);
 	border: 1px solid var(--form-control-border-color-default);
 	padding: var(--form-control-padding);
 	background-color: var(--form-control-background-color);
-	font: var(--body-font);
+	font-weight: var(--font-weight-regular);
+	font-size: 16px;
+	line-height: 1.5;
 	color: var(--form-control-text-color);
 	display: block;
 	width: 100%;

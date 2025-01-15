@@ -32,14 +32,8 @@ class AlgoliaPostsList {
 					},
 					parseURL() {
 						const search = encodeURIComponent(getUrlQueryArg('search', ''));
-						const categoryStr = encodeURIComponent(getUrlQueryArg('category', ''));
-						const category = categoryStr
-							? categoryStr.replace(categoryStr[0], categoryStr[0].toUpperCase())
-							: '';
-						const tagStr = decodeURIComponent(getUrlQueryArg('tag', ''));
-						const tag = tagStr
-							? tagStr.replace(tagStr[0], tagStr[0].toUpperCase())
-							: '';
+						const category = encodeURIComponent(getUrlQueryArg('category', ''));
+						const tag = decodeURIComponent(getUrlQueryArg('tag', ''));
 
 						return {
 							search: decodeURIComponent(search),
@@ -160,7 +154,6 @@ class AlgoliaPostsList {
 					<div class="card-resource__content-container">
 						<div class="card-resource__content-head">
 							<div class="card-resource__category">${item.taxonomies?.category}</div>
-							<div class="card-resource__date">${item.post_date_formatted}</div>
 						</div>
 						<h5 class="card-resource__title">${instantsearch.highlight({
 							attribute: 'post_title',
@@ -184,13 +177,13 @@ class AlgoliaPostsList {
 			.concat(items)
 			.map(
 				(item) =>
-					`<a href="${createURL(item.value)}" data-value="${item.value}" class="button ${
+					`<a href="${createURL(item.value)}" data-value="${item.value}" class="tag ${
 						item.isRefined ? 'active' : ''
 					}">${item.label}</a>`
 			)
 			.join('')}`;
 
-		[...widgetParams.container.querySelectorAll('.button')].forEach((element) => {
+		[...widgetParams.container.querySelectorAll('.tag')].forEach((element) => {
 			element.addEventListener('click', (event) => {
 				event.preventDefault();
 				const value = event.currentTarget.dataset.value;
