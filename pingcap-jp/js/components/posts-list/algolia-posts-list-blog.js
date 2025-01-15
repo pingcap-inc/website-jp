@@ -154,7 +154,6 @@ class AlgoliaPostsList {
 					<div class="card-resource__content-container">
 						<div class="card-resource__content-head">
 							<div class="card-resource__category">${item.taxonomies?.category}</div>
-							<div class="card-resource__date">${item.post_date_formatted}</div>
 						</div>
 						<h5 class="card-resource__title">${instantsearch.highlight({
 							attribute: 'post_title',
