@@ -17,7 +17,7 @@ foreach ($featured_products as $product) {
 		Component::render(Components\UI\Button::class, [
 			'link' => $link['url'],
 			'text' => $title,
-			'style' => 'button--secondary',
+			'style' => 'button-text',
 			'attributes' => ['data-gtag' => 'event:jp_navi_click,item_name:' . $title]
 		]);
 		?>
@@ -59,7 +59,7 @@ foreach ($link_columns as $link_column) {
 					Component::render(Components\UI\Button::class, [
 						'link' => $link->link,
 						'text' => $link->text,
-						'style' => 'button--secondary',
+						'style' => 'button-text',
 						'attributes' => ['data-gtag' => 'event:jp_navi_click,item_name:' . $link->text]
 					]);
 				} else {
@@ -74,7 +74,7 @@ foreach ($link_columns as $link_column) {
 	<?php if ($label === 'エコシステム') { ?>
 		<div class="mobile-menu-default__section-links-column">
 			<div class="mobile-menu-default__section-links-column-links ">
-				<a class="button button--secondary" href="/pricing/" data-gtag="event:jp_navi_click,item_name:Pricing">Pricing </a>
+				<a class="button-text" href="/pricing/" data-gtag="event:jp_navi_click,item_name:Pricing">Pricing </a>
 			</div>
 		</div>
 	<?php } ?>

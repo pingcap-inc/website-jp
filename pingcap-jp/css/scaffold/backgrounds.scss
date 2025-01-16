@@ -11,9 +11,28 @@
 .block-bg-image {
 	--body-font-color: var(--color-white);
 
-	--form-label-color: var(--color-white);
-	--form-checkbox-check-img: url("#{$theme-url-base}/media/images/check-white.png");
-	--form-radio-fill-color: var(--color-white);
+	--h1-color: var(--color-white);
+	--h2-color: var(--color-white);
+	--h3-color: var(--color-white);
+	--h4-color: var(--color-white);
+	--h5-color: var(--color-white);
+	--h6-color: var(--color-white);
+
+	--anchor-link-normal-color: var(--color-white);
+	--anchor-link-hover-color: rgba(var(--color-rgb-white), 0.8);
+
+	--button-primary-normal-bg-color: #fff;
+	--button-primary-normal-text-color: #000;
+	--button-primary-hover-text-color: #fff;
+	--button-primary-hover-bg-color: #dc150b;
+
+	--button-secondary-normal-text-color: #fff;
+	--button-secondary-hover-bg-color: #fff;
+	--button-secondary-hover-arrow-color: #000;
+
+	span.long-text {
+		color: var(--color-white);
+	}
 }
 
 .bg-white {
@@ -27,21 +46,19 @@
 	--body-font-color: #20222b;
 	--paragraph-color: #20222b;
 	--front-mono-color: #20222b;
+	--anchor-link-normal-color: #20222b;
 
-	--button-primary-normal-border-color: var(--color-blue);
-	--button-primary-normal-bg-color: var(--color-blue);
-	--button-primary-normal-border-color: var(--color-blue);
-	--button-primary-normal-text-color: var(--color-white);
+	--button-primary-normal-bg-color: #000;
+	--button-primary-normal-text-color: #fff;
 
-	--button-primary-hover-bg-color: var(--color-blue);
-	--button-primary-hover-border-color: var(--color-black);
-	--button-primary-hover-text-color: var(--color-white);
+	--button-primary-hover-text-color: #fff;
 
 	--button-primary-disabled-bg-color: rgba(var(--color-rgb-primary), 0.4);
 	--button-primary-disabled-text-color: rgba(var(--color-rgb-white), 0.7);
 
-	--button-secondary-normal-text-color: var(--color-blue-dark);
-	--button-secondary-hover-text-color: var(--color-blue-dark);
+	--button-secondary-normal-text-color: #000;
+	--button-secondary-hover-bg-color: #000;
+	--button-secondary-hover-arrow-color: #fff;
 
 	--tab-nav-button-secondary-normal-color: var(--color-blue);
 	--tab-nav-button-secondary-hover-color: var(--color-blue);
@@ -51,11 +68,8 @@
 	--form-checkbox-check-img: url("#{$theme-url-base}/media/images/check-black.png");
 	--form-radio-fill-color: #666;
 
-	--anchor-link-normal-color: var(--color-blue);
-	--anchor-link-hover-color: var(--color-blue);
-
-	--form-control-border-color-default: var(--color-blue);
-	--form-control-border-color-focus: var(--color-blue);
+	--form-control-border-color-default: #5d6974;
+	--form-control-border-color-focus: #000;
 	--form-control-background-color: var(--color-white);
 	--form-control-text-color: var(--color-black);
 	--form-control-focus-text-color: var(--color-black);
@@ -72,76 +86,34 @@
 .bg-black,
 .bg-black-dark,
 .bg-black-gradient,
-.bg-violet,
-.bg-red,
-.bg-blue-dark,
-.bg-green {
-	--h1-color: var(--color-white);
-	--h2-color: var(--color-white);
-	--h3-color: var(--color-white);
-	--h4-color: var(--color-white);
-	--h5-color: var(--color-white);
-	--h6-color: var(--color-white);
+.bg-black-light {
+	--paragraph-color: #a2adb9;
+	--front-mono-color: #a2adb9;
 
-	--anchor-link-normal-color: var(--color-white);
-	--anchor-link-hover-color: rgba(var(--color-rgb-white), 0.4);
-
-	--button-primary-normal-bg-color: var(--color-blue);
-	--button-primary-normal-border-color: var(--color-blue);
-	--button-primary-normal-text-color: var(--color-white);
-
-	--button-primary-hover-bg-color: var(--color-blue);
-	--button-primary-hover-border-color: var(--color-blue);
-	--button-primary-hover-text-color: var(--color-white);
-
-	--button-primary-disabled-bg-color: rgba(var(--color-rgb-primary), 0.4);
-	--button-primary-disabled-text-color: rgba(var(--color-rgb-white), 0.7);
-
-	--button-secondary-normal-text-color: var(--color-white);
-	--button-secondary-hover-text-color: var(--color-white);
-
-	--form-control-border-color-default: var(--color-gray);
-	--form-control-border-color-focus: var(--color-gray-light);
-	--form-control-background-color: var(--color-black);
+	--card-background-color: #000;
+	--form-label-color: var(--color-white);
+	--form-select-arrow-img: url("#{$theme-url-base}/media/svg/general/chevron-down-white.svg");
+	--form-checkbox-check-img: url("#{$theme-url-base}/media/images/check-white.png");
+	--form-radio-fill-color: var(--color-white);
+	--form-control-border-color-default: #5d6974;
+	--form-control-border-color-focus: #5d6974;
+	--form-control-background-color: #000;
 	--form-control-text-color: var(--color-white);
-	--form-control-focus-text-color: var(--color-gray-light);
-	--form-control-placeholder-color: var(--color-gray);
-	--form-control-icon-color: var(--color-primary);
+	--form-control-focus-text-color: var(--color-white);
+	--form-control-placeholder-color: #cbd1d7;
+	--form-control-icon-color: var(--color-white);
+}
 
-	--list-bullet-color: rgba(var(--color-rgb-white), 0.4);
-
-	--color-blockquote-highlight: var(--color-primary);
-
-	--carousel-nav-color: #777777;
-	--carousel-nav-active-color: var(--color-white);
-	--carousel-nav-border-color: var(--color-white);
-	--carousel-nav-border-active-color: #777777;
-	--color-blockquote-highlight: var(--color-white);
-
-	--list-bullet-color: var(--color-white);
-
-	--card-label-color: var(--color-blue);
-	--card-title-color: var(--color-white);
-	--card-background-image: linear-gradient(to right, #000, #000),
-		linear-gradient(90deg, #0ca6f2, #0aadc4, #006fc2, #0ca6f2, #01ecb0, #28ea76);
-
+.bg-black {
 	background-color: #0e0e0e;
-
-	span.long-text {
-		color: var(--color-white);
-	}
 }
 
 .bg-black-dark {
 	background-color: #000;
-	--paragraph-color: #a2adb9;
-	--front-mono-color: #a2adb9;
 }
 
 .bg-black-gradient {
 	background: linear-gradient(180deg, #000 0, #06111a 100%);
-	--paragraph-color: #a2adb9;
-	--front-mono-color: #a2adb9;
 }
 
 .bg-black-light {
@@ -153,7 +125,7 @@
 }
 
 .bg-red {
-	background-color: #630D09;
+	background-color: #630d09;
 }
 
 .bg-green {
@@ -165,7 +137,7 @@
 }
 
 .bg-blue {
-	background-color: var(--color-blue-dark);
+	background-color: #0d3152;
 }
 
 .bg-blue,
@@ -179,19 +151,16 @@
 
 	--body-font-color: var(--color-white);
 
-	--button-primary-normal-bg-color: var(--color-white);
-	--button-primary-normal-border-color: var(--color-blue);
-	--button-primary-normal-text-color: var(--color-white);
-
-	--button-primary-hover-bg-color: #0ca6f2;
-	--button-primary-hover-border-color: #20222b;
-	--button-primary-hover-text-color: var(--color-white);
+	--button-primary-normal-bg-color: #fff;
+	--button-primary-normal-text-color: #000;
+	--button-primary-hover-text-color: #fff;
 
 	--button-primary-disabled-bg-color: rgba(var(--color-rgb-black), 0.4);
 	--button-primary-disabled-text-color: rgba(var(--color-rgb-white), 0.7);
 
-	--button-secondary-normal-text-color: var(--color-white);
-	--button-secondary-hover-text-color: var(--color-white);
+	--button-secondary-normal-text-color: #fff;
+	--button-secondary-hover-bg-color: #fff;
+	--button-secondary-hover-arrow-color: #000;
 
 	--button-secondary-disabled-text-color: rgba(var(--color-rgb-black), 0.4);
 
@@ -206,9 +175,9 @@
 }
 
 .bg-gray {
-	--button-secondary-normal-text-color: var(--color-blue-dark);
-	--button-secondary-hover-text-color: var(--color-blue-dark);
-	--button-secondary-disabled-text-color: var(--color-black-5);
+	--button-secondary-normal-text-color: #000;
+	--button-secondary-hover-bg-color: #000;
+	--button-secondary-hover-arrow-color: #fff;
 
 	background-color: var(--color-off-white);
 }
@@ -244,31 +213,13 @@
 		#28ea76 100%
 	);
 
-	--button-secondary-normal-text-color: var(--color-black);
-	--button-secondary-hover-text-color: var(--color-black);
+	--button-secondary-normal-text-color: #fff;
+	--button-secondary-hover-bg-color: #fff;
+	--button-secondary-hover-arrow-color: #000;
 }
 
 .block-bg-image {
-	--h1-color: var(--color-white);
-	--h2-color: var(--color-white);
-	--h3-color: var(--color-white);
-	--h4-color: var(--color-white);
-
-	--button-primary-normal-bg-color: var(--color-white);
-	--button-primary-normal-border-color: var(--color-blue);
-	--button-primary-normal-text-color: var(--color-white);
-
-	--button-primary-disabled-bg-color: rgba(var(--color-rgb-black), 0.4);
-	--button-primary-disabled-text-color: rgba(var(--color-rgb-white), 0.7);
-
-	--button-secondary-normal-text-color: var(--color-white);
-	--button-secondary-hover-text-color: var(--color-white);
-
-	--button-secondary-disabled-text-color: rgba(var(--color-rgb-black), 0.4);
-
-	--list-bullet-color: var(--color-white);
-
-	background-color: var(--color-white);
+	background-color: #000;
 	background-repeat: no-repeat;
 	background-position: center;
 	background-size: cover;

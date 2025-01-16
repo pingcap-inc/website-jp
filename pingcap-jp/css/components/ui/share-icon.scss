@@ -10,16 +10,8 @@
 	background-color: var(--color-share-icon);
 	transition: background-color var(--default-transition-params);
 
-	&--twitter:hover {
-		background-color: var(--color-twitter);
-	}
-
-	&--facebook:hover {
-		background-color: var(--color-facebook);
-	}
-
-	&--linkedin:hover {
-		background-color: var(--color-linkedin);
+	&:hover {
+		background-color: #509DEA;
 	}
 
 	&__icon {

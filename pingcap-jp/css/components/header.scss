@@ -18,7 +18,7 @@ html.mobile-menu-cta-active {
 	&__hello-bar {
 		display: none;
 		background-color: #dc150b;
-		padding: .6rem 1.6rem;
+		padding: 0.6rem 1.6rem;
 		text-align: center;
 		transition: all var(--default-transition-params);
 		cursor: pointer;
@@ -54,7 +54,8 @@ html.mobile-menu-cta-active {
 
 		&.red {
 			background-color: #dc150b;
-			a {
+			a,
+			.button-link {
 				color: #fff;
 			}
 			&:hover {
@@ -63,7 +64,8 @@ html.mobile-menu-cta-active {
 		}
 		&.violet {
 			background-color: #9e4ec4;
-			a {
+			a,
+			.button-link {
 				color: #fff;
 			}
 			&:hover {
@@ -171,6 +173,9 @@ html.mobile-menu-cta-active {
 		color: var(--color-white);
 		text-decoration: none;
 		transition: all var(--default-transition-params);
+		&:hover {
+			color: #a2adb9;
+		}
 	}
 
 	&__secondary-menu-link {
@@ -249,7 +254,6 @@ html.mobile-menu-cta-active {
 			border: 1px solid #424d57;
 			transform: translatex(-50%);
 			box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.16);
-			border-radius: 4px;
 		}
 
 		&:first-child {

@@ -17,10 +17,6 @@
 		}
 	}
 
-	ul[role="checkbox"] {
-		list-style: none;
-	}
-
 	input[type="text"],
 	input[type="number"],
 	input[type="tel"],
@@ -48,7 +44,12 @@
 	margin-top: 4rem;
 
 	input[type="submit"] {
-		min-width: 115px;
+		min-width: 158px;
+		padding: 0;
+		transition: 0.5s ease-in-out;
+		&:hover {
+			background-color: var(--button-primary-hover-bg-color);
+		}
 	}
 }
 
@@ -56,9 +57,10 @@
 	margin-top: 3rem;
 
 	a {
-		color: var(--color-blue);
+		color: #2c80ce;
 		text-decoration: none;
 		&:hover {
+			color: #2c80ce;
 			text-decoration: underline;
 		}
 	}

@@ -3,7 +3,6 @@
 	display: block;
 	text-decoration: none;
 	border: 1px solid var(--card-border-color);
-	border-radius: var(--card-border-radius);
 	transition: all var(--default-transition-params);
 
 	&:hover {
@@ -16,10 +15,6 @@
 		box-shadow: var(--card-box-shadow);
 		&:hover {
 			transform: translateY(0);
-		}
-
-		&.post {
-			border-radius: 0 0 var(--card-border-radius) var(--card-border-radius);
 		}
 
 		@include media-min($medium) {
@@ -41,12 +36,6 @@
 				padding-top: 0;
 			}
 
-			.card-resource__image {
-				border-top-left-radius: var(--default-border-radius);
-				border-top-right-radius: var(--default-border-radius);
-				border-bottom-left-radius: 0;
-				border-bottom-right-radius: 0;
-			}
 			.card-event__content-container {
 				padding-top: 0;
 			}
@@ -69,8 +58,6 @@
 		@include image-cover-entire-container;
 
 		display: block;
-		border-top-left-radius: var(--card-border-radius);
-		border-top-right-radius: var(--card-border-radius);
 	}
 
 	&__content-container {
@@ -85,23 +72,26 @@
 			justify-content: space-between;
 			align-items: center;
 		}
+		&-status {
+			display: flex;
+			gap: 1rem;
+		}
 	}
 
 	&__category,
 	&__date {
 		font-size: 16px;
-		color: var(--color-black);
+		color: #74808b;
 	}
 
 	&__title {
-		color: #303eab;
+		color: #28333e;
 	}
 
 	&__status {
 		font-size: 14px;
 		line-height: 20px;
 		color: var(--color-white);
-		border-radius: 4px;
 		padding: 2px 6px;
 		margin-top: 0;
 		&.in-progress {
@@ -115,10 +105,29 @@
 		}
 	}
 
+	&__webinar {
+		font-size: 14px;
+		line-height: 20px;
+		color: var(--color-white);
+		padding: 2px 6px;
+		display: flex;
+		align-items: center;
+		background: #7494e6;
+		i {
+			margin-right: 0.4rem;
+			width: 1rem;
+			height: 1rem;
+			display: block;
+			background: url("#{$theme-url-base}/media/images/icon-video.png") center/contain
+				no-repeat;
+		}
+	}
+
 	&__date,
 	&__location {
 		display: flex;
 		font-size: 1.6rem;
+		font-weight: 300;
 		i {
 			vertical-align: middle;
 			margin-top: 4px;

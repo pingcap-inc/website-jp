@@ -52,7 +52,7 @@ Component::render(Components\Banners\BannerCaseStudy::class);
 								<?php
 								if (is_array($industry_terms)) {
 									$industry_links = array_map(
-										fn ($term) => sprintf('<a class="tmpl-single-case-study__term-link" href="%s">%s</a>', get_term_link($term), $term->name),
+										fn ($term) => sprintf('<a class="tag" href="%s">%s</a>', get_term_link($term), $term->name),
 										$industry_terms
 									);
 
@@ -66,7 +66,7 @@ Component::render(Components\Banners\BannerCaseStudy::class);
 
 								if (is_array($tag_terms)) {
 									$tag_links = array_map(
-										fn ($term) => sprintf('<a class="tmpl-single-case-study__term-link" href="%s">%s</a>', get_term_link($term), $term->name),
+										fn ($term) => sprintf('<a class="tag" href="%s">%s</a>', get_term_link($term), $term->name),
 										$tag_terms
 									);
 
