@@ -260,16 +260,9 @@ pre {
 	}
 }
 
-.tmpl-single-case-study__term-links-container {
-	.tmpl-single-case-study__term-link {
-		@extend %button;
-	}
-}
-
 .tmpl-single-case-study__term-links-container,
 .tmpl-single-post .meta-tags,
 .tmpl-archive-sidebar .tags {
-	.tmpl-single-case-study__term-link,
 	.tag {
 		font-size: 1.4rem;
 		font-weight: 400;
