@@ -5,9 +5,9 @@ class BlockCTA {
 		this.el = el;
 		this.subscribeFormEl = this.el.querySelector('.block-cta__subscribe-form');
 
-		if (this.subscribeFormEl) {
-			this.subscribeFormEl.addEventListener('submit', this.subscribeSubmitHandler);
-		}
+		// if (this.subscribeFormEl) {
+		// 	this.subscribeFormEl.addEventListener('submit', this.subscribeSubmitHandler);
+		// }
 	}
 
 	subscribeSubmitHandler = async (e) => {

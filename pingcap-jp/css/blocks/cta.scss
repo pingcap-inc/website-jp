@@ -55,7 +55,7 @@
 
 	&__slim-container {
 		display: flex;
-		gap: 1.6rem;
+		gap: 16px;
 		flex-direction: column;
 		justify-content: space-between;
 		align-items: center;
@@ -64,7 +64,12 @@
 		background-size: cover;
 		background-position: center;
 
+		@include media-min($medium) {
+			gap: 32px;
+		}
+
 		@include media-min($large) {
+			gap: 48px;
 			flex-direction: row;
 			padding: 8rem 9rem;
 		}
@@ -82,7 +87,6 @@
 
 	&__slim-heading {
 		text-align: center;
-		margin-bottom: 1.6rem;
 		flex: 1;
 
 		@include media-min($large) {
@@ -92,52 +96,36 @@
 	}
 
 	&__subscribe-form {
-		position: relative;
 		margin-top: 0;
-
-		display: flex;
-		align-items: center;
-		gap: 1.6rem;
 		width: 100%;
+		max-width: 240px;
 
-		input {
-			width: 100%;
-			flex: 1;
-		}
-		.button {
-			font-size: 0;
-			border-radius: 50%;
-			width: 30px;
-			height: 30px;
-			padding: 0;
-			background: transparent;
-			border: 1px solid #fff;
-			color: #fff;
-			&::before {
-				content: none;
-			}
-			&::after {
-				left: 0;
-				right: 0;
-				margin: auto;
-				font-size: 14px;
-				transition: all 0.2s;
-			}
-			&:hover {
+		.hs-form-field {
+			position: relative;
+			margin-bottom: 0;
+			input {
+				width: 100%;
+				flex: 1;
+				height: var(--default-input-min-height);
 				background: #fff;
-				&::after {
-					color: #000;
-					transform: rotate(45deg);
+				color: #000;
+				border: 1px solid var(--form-control-border-color-default);
+				&::placeholder {
+					color: var(--form-control-placeholder-color);
 				}
 			}
+			.hs-error-msgs {
+				position: absolute;
+				top: 100%;
+				left: 0;
+				line-height: 1.2;
+			}
 		}
 
-		@include media-min($large) {
-			width: auto;
-
-			input {
-				max-width: 210px;
-			}
+		.hs_recaptcha,
+		.hs_submit,
+		.hs_error_rollup {
+			display: none;
 		}
 
 		&[data-error] {
