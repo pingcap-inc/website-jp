@@ -240,36 +240,6 @@ $block_fields = array(
 				'readonly' => 0,
 				'disabled' => 0,
 			),
-			array(
-				'key' => 'field_' . $block . '_slim_hs_email_field',
-				'label' => 'HubSpot "Email" Field',
-				'name' => 'hs_email_field',
-				'type' => 'text',
-				'instructions' => '',
-				'required' => 1,
-				'conditional_logic' => array(
-					array(
-						array(
-							'field' => 'field_' . $block . '_slim_action_type',
-							'operator' => '==',
-							'value' => 'form',
-						),
-					),
-				),
-				'wrapper' => array(
-					'width' => '',
-					'class' => '',
-					'id' => '',
-				),
-				'default_value' => 'email',
-				'placeholder' => '',
-				'formatting' => 'none', // none | html
-				'prepend' => '',
-				'append' => '',
-				'maxlength' => '',
-				'readonly' => 0,
-				'disabled' => 0,
-			)
 		)
 	),
 	array(
