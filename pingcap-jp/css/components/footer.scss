@@ -14,7 +14,7 @@
 	&__row-top {
 		display: grid;
 		grid-template-columns: repeat(2, 1fr);
-		@include media-min($medium){
+		@include media-min($medium) {
 			grid-template-columns: repeat(4, 1fr);
 		}
 		@include media-min($large) {
@@ -37,7 +37,7 @@
 		.site-footer__language-links {
 			display: none;
 			@include media-min($medium) {
-				display: block;
+				display: inline-block;
 			}
 		}
 
@@ -58,18 +58,31 @@
 				width: 100%;
 			}
 			.block-cta__subscribe-form {
-				justify-content: center;
-				align-items: center;
+				max-width: 360px; 
+				margin: 0 auto;
 				@include media-min($medium) {
-					justify-content: flex-start;
+					margin: 0;
 				}
-			}
-			input {
-				background-color: transparent;
-				border-radius: unset;
-				border-color: #5d6974;
-				height: 56px;
-				max-width: 360px;
+
+				.hs-form-container{
+					width: 100%;
+				}
+				.hs-form-field {
+					position: relative;
+					margin-bottom: 0;
+					input {
+						width: 100%;
+						flex: 1;
+						height: 56px;
+						background: #000;
+						color: #fff;
+						border: 1px solid var(--form-control-border-color-default);
+					}
+					.hs-error-msgs {
+						position: relative;
+						line-height: 1.2;
+					}
+				}
 			}
 			p {
 				text-align: center;
@@ -118,6 +131,7 @@
 		position: relative;
 		margin-top: 8rem;
 		margin-bottom: 3.2rem;
+		display: inline-block;
 		cursor: pointer;
 
 		@include media-min($medium) {
@@ -210,12 +224,6 @@
 
 		&:hover {
 			color: #a2adb9;
-		}
-	}
-
-	&__links-group-tip {
-		a {
-			text-decoration: underline;
 		}
 	}
 

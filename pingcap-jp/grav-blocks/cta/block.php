@@ -41,12 +41,14 @@ $display_type = isset($display_type) && is_string($display_type) ? $display_type
 
 				case 'form':
 			?>
-					<form class="block-cta__subscribe-form" method="POST" action="<?php echo esc_url(home_url()); ?>" data-hs-portal-id="<?php echo esc_attr(Arrays::get_value_as_string($slim_fields, 'hs_portal_id')); ?>" data-hs-form-id="<?php echo esc_attr(Arrays::get_value_as_string($slim_fields, 'hs_form_id')); ?>" data-hs-name-field="<?php echo esc_attr(Arrays::get_value_as_string($slim_fields, 'hs_name_field')); ?>" data-hs-email-field="<?php echo esc_attr(Arrays::get_value_as_string($slim_fields, 'hs_email_field')); ?>">
-						<input type="email" name="cta_email" placeholder="<?php _e('Email Address', Constants\TextDomains::DEFAULT); ?>" aria-label="<?php _e('Enter your email address', Constants\TextDomains::DEFAULT); ?>">
-						<button class="button" type="submit" aria-label="<?php _e('Subscribe', Constants\TextDomains::DEFAULT); ?>">
-							&gt;
-						</button>
-					</form>
+					<div class="block-cta__subscribe-form">
+						<?php
+						$form_id = Arrays::get_value_as_string($slim_fields, 'hs_form_id');
+						if ($form_id) {
+							echo do_shortcode('[hubspot_form dark="true" portal_id="4466002" form_id="' . esc_attr($form_id) . '"]');
+						}
+						?>
+					</div>
 			<?php
 					break;
 

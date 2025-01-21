@@ -24,7 +24,7 @@ get_header();
                     <div class="wysiwyg">
                         <p>TiDB is introducing a built-in vector search to the SQL database family, enabling support for your AI applications without requiring a new database or additional technical stacks. With vectors as a new data type in MySQL, you can now store and search for vectors directly using SQL.</p>
                         <br>
-                        <div class="button-group"><a target="_blank" class="button" href="https://tidbcloud.com/free-trial/" data-gtag="event:go_to_cloud_signup,product_type:serverless,button_name:Start for Free,position:top_banner"><span class="custom-style-button">Start For Free</span></a><a target="_blank" class="button button--secondary" href="https://docs.pingcap.com/tidbcloud/vector-search-overview"><span class="pr-1 underline">Documentation</span></a></div>
+                        <div class="button-group"><a target="_blank" class="button" href="https://tidbcloud.com/free-trial/" data-gtag="event:go_to_cloud_signup,product_type:serverless,button_name:Start for Free,position:top_banner"><span class="custom-style-button">Start For Free</span></a><a target="_blank" class="button--secondary" href="https://docs.pingcap.com/tidbcloud/vector-search-overview"><span class="pr-1 underline">Documentation</span></a></div>
                     </div>
                 </div>
             </div>
@@ -35,7 +35,7 @@ get_header();
     </div>
     <section data-block-index="1" class="bg-black-dark block-container block-icon-grid block-index-1" aria-label="Icon Grid">
         <div class="block-inner contain">
-            <div class="block-icon-grid__item-container block-icon-grid__item-container--center" data-column-count="3">
+            <div class="block-icon-grid__item-container" data-column-count="3">
                 <div class="block-icon-grid__item wysiwyg">
                     <?php SVG::the_svg('ai/mysql-icon', ['no_use' => true]); ?>
                     <h4>MySQL & Vector All in One </h4>
