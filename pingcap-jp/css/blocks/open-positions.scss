@@ -12,11 +12,11 @@
 		margin: 0 auto 4rem;
 
 		@include media-min($medium) {
-			grid-template-columns: 1fr 1fr 1fr;
+			grid-template-columns: 1fr 1fr;
 		}
 
 		@include media-min($large) {
-			max-width: 900px;
+			max-width: 600px;
 		}
 
 		select {

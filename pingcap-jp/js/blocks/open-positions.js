@@ -15,7 +15,9 @@ class BlockOpenPositions {
 			return;
 		}
 
-		this.selectEls = Array.from(this.el.querySelectorAll('.block-open-positions__filter-control'));
+		this.selectEls = Array.from(
+			this.el.querySelectorAll('.block-open-positions__filter-control')
+		);
 
 		this.selectEls.forEach((el) => {
 			el.addEventListener('change', (e) => {
@@ -44,13 +46,13 @@ class BlockOpenPositions {
 
 		this.filter[name] = value;
 		const res = await this.fetchData();
-		
+
 		this.renderGroup(res);
 	}
 
 	renderFilter(data) {
-		const filters = ['location', 'group', 'commitment'];
-		filters.forEach(filter => {
+		const filters = ['location', 'department'];
+		filters.forEach((filter) => {
 			const optionEl = this.createOptionEl(data, filter);
 			const targetEl = this.filterEl.querySelector(`[name="filter_${filter}"]`);
 			if (optionEl) {
@@ -77,19 +79,27 @@ class BlockOpenPositions {
 			return [];
 		}
 
-		if (target === 'group') {
-			return [...new Set(data.map(v => v.group).sort())];
+		if (target === 'department') {
+			return [...new Set(data.map((v) => v.department).sort())];
 		}
 
-		return [...new Set(data.map(v => v.records).flat().map(v => v[target]).sort())]
+		return [
+			...new Set(
+				data
+					.map((v) => v.records)
+					.flat()
+					.map((v) => v[target])
+					.sort()
+			)
+		];
 	}
 
 	createOptionEl(groups, filter) {
 		const options = this.getOption(groups, filter);
-		const FILTER_LABEL = { location: 'Location', group: 'Team', commitment: 'Work Type' };
+		const FILTER_LABEL = { location: 'Location', department: 'Department' };
 		let el = `<option value="">Filter by ${FILTER_LABEL[filter]}</option>`;
-		options.forEach(record => {
-			el += `<option value="${record}">${record}</option>`;
+		options.forEach((record) => {
+			el += `<option value="${record}">${record || 'Uncategorized'}</option>`;
 		});
 		return el;
 	}
