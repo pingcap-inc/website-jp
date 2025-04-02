@@ -112,6 +112,55 @@ $block_fields = array(
         'readonly' => 0,
         'disabled' => 0,
     ),
+    array(
+        'key' => 'field_' . $block . '_enable_accordion_table',
+        'label' => 'Collapse to Hide Price Table',
+        'name' => 'accordion_table',
+        'type' => 'true_false',
+        'instructions' => '',
+        'required' => 0,
+        'conditional_logic' => 0,
+        'wrapper' => array(
+            'width' => '',
+            'class' => '',
+            'id' => '',
+        ),
+        'message' => '',
+        'ui' => 1,
+        'ui_on_text' => 'Yes',
+        'ui_off_text' => 'No',
+        'default_value' => 0,
+    ),
+    array(
+        'key' => 'field_' . $block . '_accordion_title',
+        'label' => 'Accordion Section Title',
+        'name' => 'accordion_title',
+        'type' => 'text',
+        'instructions' => '',
+        'required' => 1,
+        'conditional_logic' => array (
+            array (
+                array (
+                    'field' => 'field_' . $block . '_enable_accordion_table',
+                    'operator' => '==',
+                    'value' => '1',
+                ),
+            ),
+        ),
+        'wrapper' => array(
+            'width' => '',
+            'class' => '',
+            'id' => '',
+        ),
+        'default_value' => '',
+        'placeholder' => '',
+        'formatting' => 'none', // none | html
+        'prepend' => '',
+        'append' => '',
+        'maxlength' => '',
+        'readonly' => 0,
+        'disabled' => 0,
+    ),
 );
 
 return array(

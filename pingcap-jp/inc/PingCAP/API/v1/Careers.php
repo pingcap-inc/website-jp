@@ -45,6 +45,7 @@ class Careers
 			if ($existing_group_index === -1) {
 				$acum[] = [
 					'group' => $result->group,
+					'department' => $result->department,
 					'records' => []
 				];
 

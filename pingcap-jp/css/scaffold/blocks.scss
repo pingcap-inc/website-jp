@@ -277,7 +277,6 @@
 .block-title {
 	margin-bottom: 64px;
 	@include media-min($medium) {
-		margin-bottom: 80px;
 		width: 80%;
 		.desc {
 			width: 86%;

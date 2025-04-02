@@ -1,4 +1,5 @@
 <?php
+
 namespace PingCAP\Integrations;
 
 use PingCAP\Constants;
@@ -24,7 +25,7 @@ abstract class Lever
 				'default' => Constants\DefaultValues::LEVER_POSTINGS_JSON_URL
 			]
 		);
-		if($args) {
+		if ($args) {
 			$res .= '&' . $args;
 		}
 		return $res;
@@ -55,7 +56,7 @@ abstract class Lever
 	 */
 	public static function getResults(string $args): array
 	{
-		$cacheKey = self::RESULTS_CACHE_KEY.$args;
+		$cacheKey = self::RESULTS_CACHE_KEY . $args;
 		$cached_results = get_transient($cacheKey);
 
 		if (is_array($cached_results)) {
@@ -106,6 +107,7 @@ abstract class Lever
 
 		foreach ($json_results as $result) {
 			$group = trim($result->categories->team ?? '');
+			$department = trim($result->categories->department ?? '');
 			$title = trim($result->text ?? '');
 			$location = trim($result->categories->location ?? '');
 			$commitment = trim($result->categories->commitment ?? '');
@@ -115,7 +117,7 @@ abstract class Lever
 				continue;
 			}
 
-			$postings[] = new LeverCareerPosting($group, $title, $location, $commitment, $url);
+			$postings[] = new LeverCareerPosting($group, $department, $title, $location, $commitment, $url);
 		}
 
 		return $postings;

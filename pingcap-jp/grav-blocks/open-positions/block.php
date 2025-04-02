@@ -15,13 +15,10 @@ $block_title = isset($block_title) && is_string($block_title) ? $block_title : A
 	?>
 	<div class="block-open-positions__filter">
 		<select class="block-open-positions__filter-control" name="filter_location" data-role="location">
-			<option>Filter by location</option>
+			<option>Filter by Location</option>
 		</select>
-		<select class="block-open-positions__filter-control" name="filter_group" data-role="department">
-			<option>Filter by Team</option>
-		</select>
-		<select class="block-open-positions__filter-control" name="filter_commitment" data-role="commitment">
-			<option>Filter by Work Type</option>
+		<select class="block-open-positions__filter-control" name="filter_department" data-role="department">
+			<option>Filter by Department</option>
 		</select>
 	</div>
 	<div class="block-open-positions__groups loading">
