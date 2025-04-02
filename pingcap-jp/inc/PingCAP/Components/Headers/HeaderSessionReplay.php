@@ -1,6 +1,6 @@
 <?php
 
-namespace PingCAP\Components;
+namespace PingCAP\Components\Headers;
 
 use WPUtil\Interfaces\IComponent;
 use WPUtil\Vendor\ACF;

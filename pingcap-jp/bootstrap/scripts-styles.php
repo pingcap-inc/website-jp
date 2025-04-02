@@ -5,7 +5,7 @@
  */
 WPUtil\Scripts::enqueue_scripts([
 	'master_js' => [
-		'url' => get_template_directory_uri() . '/dist/js/master.min.js',
+		'url' => load_assets_from_manifest('master.js'),
 		'deps' => [],
 		'defer' => true,
 		'preload_hook' => 'global_head_top_content',
@@ -42,7 +42,7 @@ WPUtil\Scripts::enqueue_scripts([
  */
 WPUtil\Styles::enqueue_styles([
 	'master_css' => [
-		'url' => get_template_directory_uri() . '/dist/css/master.min.css',
+		'url' => load_assets_from_manifest('css/master.scss'),
 		'preload_hook' => 'global_head_top_content'
 	],
 	'icon_css' => [
