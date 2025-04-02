@@ -1,4 +1,5 @@
 import Lazyload from 'vanilla-lazyload';
+import Viewer from 'viewerjs';
 
 import Modal from './components/modal';
 import ScrollSubNav from './components/scroll-sub-nav';
@@ -93,6 +94,7 @@ class App {
 				tabsPricing: [],
 				tablePricing: []
 			},
+			viewer: null,
 			lazyload: null
 		};
 
@@ -193,6 +195,18 @@ class App {
 		SiteEvents.subscribe(SiteEventNames.LAZYLOAD_TRIGGER_UPDATE, () => {
 			this.instances.lazyLoad.update();
 		});
+
+		// single post content image lightbox
+		const postContentEl = document.querySelector('.wysiwyg--post-content');
+		if(postContentEl) {
+			this.instances.viewer = new Viewer(document.querySelector('.wysiwyg--post-content'), {
+				navbar: false,
+				title: false,
+				toolbar: false,
+				slideOnTouch: false,
+				zoomOnWheel: false,
+			  });
+		}
 
 		// remove "banner-animate" classes on page load
 		const bannerAnimateEls = Array.from(document.querySelectorAll('.banner-animate'));
