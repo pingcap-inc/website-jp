@@ -23,7 +23,8 @@
 		"normalize.css": "8",
 		"prismjs": "^1.25.0",
 		"typewriter-effect": "^2.21.0",
-		"vanilla-lazyload": "^17.8.3"
+		"vanilla-lazyload": "^17.8.3",
+		"viewerjs": "^1.11.7"
 	},
 	"devDependencies": {
 		"@babel/core": "^7.20.2",

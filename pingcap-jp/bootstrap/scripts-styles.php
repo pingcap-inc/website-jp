@@ -62,8 +62,13 @@ add_action('wp_enqueue_scripts', function () {
 		PingCAP\Constants\CPT::TRAINING,
 		PingCAP\Constants\CPT::EVENT,
 		PingCAP\Constants\CPT::CASE_STUDY,
-		PingCAP\Constants\CPT::COMMUNITY_ACTIVITY
+		PingCAP\Constants\CPT::COMMUNITY_ACTIVITY,
+		PingCAP\Constants\CPT::PRESS_RELEASE,
+		PingCAP\Constants\CPT::VIDEO
 	])) {
+
+		wp_enqueue_style('viewer-css', 'https://cdnjs.cloudflare.com/ajax/libs/viewerjs/1.11.7/viewer.css');
+
 		return;
 	}
 
