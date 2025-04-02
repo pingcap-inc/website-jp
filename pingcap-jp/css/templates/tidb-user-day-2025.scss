@@ -26,9 +26,9 @@
 			display: flex;
 			align-items: center;
 			justify-content: space-between;
+			gap: 24px;
 		}
 		.logo {
-			flex: 1;
 			img {
 				display: block;
 			}
@@ -50,9 +50,6 @@
 				position: static;
 				padding: 0;
 				background: none;
-			}
-			@include media-min($large) {
-				flex: 2;
 			}
 			&.active {
 				display: block;
