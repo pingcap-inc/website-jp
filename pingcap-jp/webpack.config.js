@@ -2,6 +2,7 @@ const path = require("path");
 const { DefinePlugin } = require("webpack");
 const BrowserSyncPlugin = require("browser-sync-webpack-plugin");
 const CopyPlugin = require("copy-webpack-plugin");
+const { WebpackManifestPlugin } = require('webpack-manifest-plugin');
 
 const devMode = process.env.NODE_ENV === "development";
 const PUBLIC_PATH =
@@ -104,6 +105,16 @@ module.exports = {
             ALGOLIA_API_KEY: '"aa0016c928c913d8b7c27c33046c4e41"',
           }
     ),
+    new WebpackManifestPlugin({
+			fileName: 'manifest.json',
+			generate: (seed, files) => {
+				const manifest = {};
+				files.forEach((file) => {
+					manifest[file.name] = file.path;
+				});
+				return manifest;
+			}
+		})
   ].concat(
     devMode
       ? [

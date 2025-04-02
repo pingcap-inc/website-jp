@@ -23,6 +23,28 @@ if (defined('LOCAL_IMAGE_REDIRECT') && WP_HOME !== null && stripos(WP_HOME, '.lo
 // media url setting
 if(get_option('upload_path')=='wp-content/uploads' || get_option('upload_path')==null) {update_option('upload_path',WP_CONTENT_DIR.'/uploads');}
 
+
+// Dynamically load bundled JS and CSS files
+function load_assets_from_manifest($file_name)
+{
+	$manifest_path = get_template_directory() . '/dist/manifest.json';
+
+	if (!file_exists($manifest_path)) {
+		error_log("Manifest file not found at: $manifest_path");
+		return;
+	}
+
+	$manifest_content = file_get_contents($manifest_path);
+	$manifest = json_decode($manifest_content, true);
+
+	if (!$manifest || !is_array($manifest)) {
+		error_log("Invalid manifest.json content.");
+		return;
+	}
+
+	return $manifest[$file_name];
+}
+
 require_once 'bootstrap/theme-setup.php';
 require_once 'bootstrap/performance.php';
 require_once 'bootstrap/media.php';

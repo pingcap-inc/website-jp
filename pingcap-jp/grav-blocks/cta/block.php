@@ -16,7 +16,7 @@ $display_type = isset($display_type) && is_string($display_type) ? $display_type
 		$action_type = Arrays::get_value_as_string($slim_fields, 'action_type');
 		$text_align_mode = Arrays::get_value_as_string($slim_fields, 'text_align_mode');
 		$bg = Arrays::get_value_as_array($slim_fields, 'bg_image');
-		$cta_slim_container_classes = ['block-cta__slim-container', $bg ? 'bg-blue' : 'bg-black'];
+		$cta_slim_container_classes = ['block-cta__slim-container', $bg ? 'bg-blue' : ''];
 		if ($text_align_mode) {
 			$cta_slim_container_classes[] = 'block-cta__slim-container--has-center';
 		}

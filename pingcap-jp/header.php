@@ -56,9 +56,11 @@ use PingCAP\{Components, Constants};
 	}
 
 	if (is_page_template('templates/page-session-replay.php')) {
-		WPUtil\Component::render(Components\HeaderSessionReplay::class);
+		WPUtil\Component::render(Components\Headers\HeaderSessionReplay::class);
 	} else if (is_page_template('templates/page-tidb-user-day-summary.php')) {
-		WPUtil\Component::render(Components\HeaderSummary::class);
+		WPUtil\Component::render(Components\Headers\HeaderSummary::class);
+	} else if (is_page_template('templates/page-tidb-user-day-2025.php')) {
+		WPUtil\Component::render(Components\Headers\HeaderTiUD2025::class);
 	} else {
 		WPUtil\Component::render(Components\Header::class);
 	}
