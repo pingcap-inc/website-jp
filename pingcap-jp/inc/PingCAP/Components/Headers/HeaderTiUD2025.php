@@ -30,6 +30,9 @@ class HeaderTiUD2025 implements IComponent
                             <a class="nav-menu" href="#">
                                 登壇企業
                             </a> -->
+                            <a class="nav-menu" href="#prize">
+                                キャンペーン
+                            </a>
                             <div class="nav-dropper__wrapper">
                                 <div class="nav-menu">
                                     開催実績
@@ -48,9 +51,6 @@ class HeaderTiUD2025 implements IComponent
                                     </div>
                                 </div>
                             </div>
-                            <a class="nav-menu" href="#prize">
-                                キャンペーン
-                            </a>
                         </div>
                         <a class="button-tiud js--trigger-form-modal" data-form-id="4e29b6c1-e7d3-4861-9e26-2bd163baee68">
                             <span>登録する</span>
