@@ -5501,6 +5501,11 @@ vary@^1, vary@~1.1.2:
   resolved "https://registry.npmmirror.com/vary/-/vary-1.1.2.tgz#2299f02c6ded30d4a5961b0b9f74524a18f634fc"
   integrity sha512-BNGbWLfd0eUPabhkXUVm0j8uuvREyTh5ovRa/dyow/BqAbZJyC+5fU+IzQOzmAKzYqYRAISoRhdQr3eIZ/PXqg==
 
+viewerjs@^1.11.7:
+  version "1.11.7"
+  resolved "https://registry.npmmirror.com/viewerjs/-/viewerjs-1.11.7.tgz#99c39b86c3f1b6debf446747a1f0e25f8be4db74"
+  integrity sha512-0JuVqOmL5v1jmEAlG5EBDR3XquxY8DWFQbFMprOXgaBB0F7Q/X9xWdEaQc59D8xzwkdUgXEMSSknTpriq95igg==
+
 watchpack@^2.4.0:
   version "2.4.0"
   resolved "https://registry.npmmirror.com/watchpack/-/watchpack-2.4.0.tgz#fa33032374962c78113f93c7f2fb4c54c9862a5d"

@@ -127,8 +127,8 @@
 		}
 	}
 	.banner {
-		background: url("https://static.pingcap.co.jp/files/2025/04/02225616/10000112922.png") center
-			center/cover no-repeat #000;
+		background: url("https://static.pingcap.co.jp/files/2025/04/02225616/10000112922.png")
+			center center/cover no-repeat #000;
 		text-align: center;
 		color: #fff;
 		font-weight: 400;
@@ -277,6 +277,18 @@
 			flex-direction: column;
 			gap: 48px;
 			margin-top: 40px;
+			div {
+				display: flex;
+				gap: 32px;
+			}
+			b {
+				font-weight: 300;
+				width: 100px;
+			}
+			span {
+				flex: 1;
+				color: #a2adb9;
+			}
 		}
 		.icon {
 			font-size: 24px;

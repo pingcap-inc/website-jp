@@ -19,15 +19,15 @@ WPUtil\Scripts::enqueue_scripts([
 				'prism' => [
 					'assetBase' => get_template_directory_uri() . '/prism-js',
 					'availableLanguages' => array_map(
-						fn ($filename) => str_ireplace('prism-', '', basename($filename, '.min.js')),
+						fn($filename) => str_ireplace('prism-', '', basename($filename, '.min.js')),
 						glob(get_template_directory() . '/prism-js/languages/*.min.js')
 					),
 					'availableThemes' => array_map(
-						fn ($filename) => basename($filename, '.min.css'),
+						fn($filename) => basename($filename, '.min.css'),
 						glob(get_template_directory() . '/prism-js/themes/*.min.css')
 					),
 					'availablePlugins' => array_map(
-						fn ($filename) => str_ireplace('prism-', '', basename($filename, '.min.js')),
+						fn($filename) => str_ireplace('prism-', '', basename($filename, '.min.js')),
 						glob(get_template_directory() . '/prism-js/plugins/*.min.js')
 					),
 				]
@@ -62,8 +62,13 @@ add_action('wp_enqueue_scripts', function () {
 		PingCAP\Constants\CPT::TRAINING,
 		PingCAP\Constants\CPT::EVENT,
 		PingCAP\Constants\CPT::CASE_STUDY,
-		PingCAP\Constants\CPT::COMMUNITY_ACTIVITY
-	])) {
+		PingCAP\Constants\CPT::COMMUNITY_ACTIVITY,
+		PingCAP\Constants\CPT::PRESS_RELEASE,
+		PingCAP\Constants\CPT::VIDEO
+	]) || is_page_template('templates/page-tidb-user-day-2025.php')) {
+
+		wp_enqueue_style('viewer-css', 'https://cdnjs.cloudflare.com/ajax/libs/viewerjs/1.11.7/viewer.css');
+
 		return;
 	}
 
