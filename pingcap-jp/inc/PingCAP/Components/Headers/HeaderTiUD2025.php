@@ -24,18 +24,36 @@ class HeaderTiUD2025 implements IComponent
                             <a class="nav-menu" href="#about">
                                 開催概要
                             </a>
-                            <a class="nav-menu" href="#">
+                            <!-- <a class="nav-menu" href="#">
                                 タイムテーブル
                             </a>
                             <a class="nav-menu" href="#">
                                 登壇企業
-                            </a>
+                            </a> -->
+                            <div class="nav-dropper__wrapper">
+                                <div class="nav-menu">
+                                    開催実績
+                                </div>
+                                <div class="nav-dropper">
+                                    <div class="nav-dropper__content">
+                                        <a href="/tidb-user-day/jul-2024">
+                                            TiDB User Day 2024
+                                        </a>
+                                        <a href="/tidb-user-day/jul-2023">
+                                            TiDB User Day 2023
+                                        </a>
+                                        <a href="/tidb-user-day/jul-2022">
+                                            TiDB User Day 2022
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
                             <a class="nav-menu" href="#prize">
                                 キャンペーン
                             </a>
                         </div>
-                        <a class="button js--trigger-form-modal" data-form-id="4e29b6c1-e7d3-4861-9e26-2bd163baee68">
-                            <div>登録する</div>
+                        <a class="button-tiud js--trigger-form-modal" data-form-id="4e29b6c1-e7d3-4861-9e26-2bd163baee68">
+                            <span>登録する</span>
                         </a>
                     </nav>
                     <div class="navbar-toggle">

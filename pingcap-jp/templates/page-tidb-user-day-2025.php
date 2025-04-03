@@ -16,7 +16,7 @@ get_header();
             <?php echo ACF::get_field_string('banner_content'); ?>
         </div>
     </div>
-    <section class="block-options-padding-remove-top block-options-padding-remove-bottom bg-black-dark block-container block-columns" aria-label="Columns">
+    <section class="block-options-padding-remove-top introduction bg-black-dark block-container block-columns" aria-label="Columns">
         <div class="block-inner contain grid is-12" data-num-col="1" data-format="">
             <div class="block-columns__column wysiwyg">
                 <?php echo ACF::get_field_string('carousel_content'); ?>
@@ -56,6 +56,24 @@ get_header();
     </section>
     <?php echo Vendor\BlueprintBlocks::safe_display(); ?>
 </div>
+
+<script>
+    const navbarEl = document.querySelector('.navbar-toggle');
+    const navEl = document.querySelector('.tmpl-tidb-user-day-2025__header nav');
+    const navMenuEls = document.querySelectorAll('.tmpl-tidb-user-day-2025__header .nav-menu');
+    navbarEl.addEventListener('click', () => {
+        if (navEl.classList.contains('active')) {
+            navEl.classList.remove('active');
+        } else {
+            navEl.classList.add('active');
+        }
+    });
+    navMenuEls.forEach(el => {
+        el.addEventListener('click', () => {
+            navEl.classList.remove('active');
+        })
+    });
+</script>
 
 <?php
 
