@@ -38,7 +38,7 @@ acf_add_local_field_group(array (
 				'id' => '',
 			),
 			'default_value' => '',
-			'tabs' => 'all',         // all | visual | text
+			'tabs' => 'text',         // all | visual | text
 			'toolbar' => 'full',     // full | basic
 			'media_upload' => 0,
 		),
@@ -75,7 +75,7 @@ acf_add_local_field_group(array (
 				'id' => '',
 			),
 			'default_value' => '',
-			'tabs' => 'all',         // all | visual | text
+			'tabs' => 'text',         // all | visual | text
 			'toolbar' => 'full',     // full | basic
 			'media_upload' => 0,
 		),
@@ -158,7 +158,7 @@ acf_add_local_field_group(array (
 				'id' => '',
 			),
 			'default_value' => '',
-			'tabs' => 'all',         // all | visual | text
+			'tabs' => 'text',         // all | visual | text
 			'toolbar' => 'full',     // full | basic
 			'media_upload' => 0,
 		),
