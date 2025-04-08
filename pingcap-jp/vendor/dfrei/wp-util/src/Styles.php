@@ -34,10 +34,6 @@ abstract class Styles
 				}
 			}
 
-			if (!isset($_SERVER['RUN_ENV'])) {
-				$style['url'] = str_replace(get_template_directory_uri(), 'https://static.pingcap.co.jp', $style['url']);
-			}
-
 			// add a preload tag if a preload hook is specified
 			if (isset($style['preload_hook']) && $style['preload_hook']) {
 				$url = $style['url'];
