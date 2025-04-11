@@ -54,9 +54,6 @@
 			&.active {
 				display: block;
 			}
-			&.active {
-				display: block;
-			}
 		}
 		.nav {
 			display: flex;
@@ -254,7 +251,7 @@
 			}
 		}
 		.title {
-			animation: fadeInDown 2s;
+			animation: fadeInDown 1s;
 		}
 		@keyframes fadeInDown {
 			0% {
