@@ -26,9 +26,9 @@
 			display: flex;
 			align-items: center;
 			justify-content: space-between;
+			gap: 24px;
 		}
 		.logo {
-			flex: 1;
 			img {
 				display: block;
 			}
@@ -44,15 +44,12 @@
 			left: 30%;
 			text-align: center;
 			padding-left: 32px;
-			@include media-min(880px) {
+			@include media-min(980px) {
 				display: flex;
 				justify-content: space-between;
 				position: static;
 				padding: 0;
 				background: none;
-			}
-			@include media-min($large) {
-				flex: 2;
 			}
 			&.active {
 				display: block;
@@ -65,7 +62,7 @@
 			justify-content: space-between;
 			gap: 32px;
 			align-items: flex-start;
-			@include media-min(880px) {
+			@include media-min(980px) {
 				flex-direction: row;
 				margin-right: 32px;
 				align-items: center;
@@ -78,10 +75,12 @@
 			font-weight: 500;
 			font-size: 18px;
 			line-height: 21px;
-			cursor: pointer;
+			&a {
+				cursor: pointer;
+			}
 		}
 		.nav-dropper {
-			@include media-min(880px) {
+			@include media-min(980px) {
 				position: absolute;
 				top: 100%;
 				left: -66px;
@@ -103,7 +102,7 @@
 				border-radius: 4px;
 				font-size: 14px;
 				padding-left: 32px;
-				@include media-min(880px) {
+				@include media-min(980px) {
 					margin-top: 1rem;
 					background-color: #000;
 					padding: 2rem;
@@ -132,7 +131,7 @@
 			width: 196px;
 			display: block;
 			cursor: pointer;
-			@include media-min(880px) {
+			@include media-min(980px) {
 				margin-top: 0;
 			}
 
@@ -154,7 +153,7 @@
 			}
 		}
 		.navbar-toggle {
-			@include media-min(880px) {
+			@include media-min(980px) {
 				display: none;
 			}
 
