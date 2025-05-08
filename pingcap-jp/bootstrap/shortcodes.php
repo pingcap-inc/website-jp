@@ -2,8 +2,9 @@
 
 use WPUtil\{Component, SVG};
 use PingCAP\Components;
+use PingCAP\Integrations\Gartner;
 
-add_shortcode('hubspot_form', function ($atts, $content = '') {
+add_shortcode('hubspot_form', function ($attrs, $content = '') {
 	$params = shortcode_atts([
 		'portal_id' => '',
 		'form_id' => '',
@@ -12,7 +13,7 @@ add_shortcode('hubspot_form', function ($atts, $content = '') {
 		'calendly_id' => '',
 		'calendly_url' => '',
 		'dark' => ''
-	], $atts);
+	], $attrs);
 
 	return Component::render_to_string(Components\HubSpotForm::class, [
 		'portal_id' => $params['portal_id'],
@@ -25,11 +26,11 @@ add_shortcode('hubspot_form', function ($atts, $content = '') {
 	]);
 });
 
-add_shortcode('video', function ($atts, $content = '') {
+add_shortcode('video', function ($attrs, $content = '') {
 	$params = shortcode_atts([
 		'url' => '',
 		'image' => '',
-	], $atts);
+	], $attrs);
 
 	return Component::render_to_string(Components\Video::class, [
 		'url' => $params['url'],
@@ -38,10 +39,10 @@ add_shortcode('video', function ($atts, $content = '') {
 });
 
 // Add menu shortcode that allows for adding a sitemap menu to WYSIWYG editors
-add_shortcode('menu', function ($atts, $content = null) {
+add_shortcode('menu', function ($attrs, $content = null) {
 	$params = shortcode_atts([
 		'name' => ''
-	], $atts);
+	], $attrs);
 
 	if (!$params['name']) {
 		return '';
@@ -73,6 +74,19 @@ add_shortcode('table-icon', function ($attrs) {
 	}
 
 	return '<div class="block-table__icon-container">' . SVG::get_svg('table-block/table_' . $svg_name, ['class' => implode(' ', $svg_classes)]) . '</div>';
+});
+
+add_shortcode('svg', function ($attrs) {
+	$params = shortcode_atts([
+		'name' => '',
+		'class' => '',
+	], $attrs);
+
+	return SVG::get_svg($params['name'], ['no_use' => true, 'class' => $params['class']]);
+});
+
+add_shortcode('gartner', function () {
+	return Gartner::enqueueGartner();
 });
 
 add_shortcode('user_day_btn_anc', function () {

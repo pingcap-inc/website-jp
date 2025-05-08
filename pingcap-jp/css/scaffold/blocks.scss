@@ -278,12 +278,20 @@
 	margin-bottom: 64px;
 	@include media-min($medium) {
 		width: 80%;
+		margin-bottom: 80px;
+
 		.desc {
 			width: 86%;
 		}
 	}
 	@include media-min(1200px) {
 		width: 62%;
+	}
+	&.margin-remove-bottom {
+		margin-bottom: 0;
+		@include media-min($medium) {
+			margin-bottom: 0;
+		}
 	}
 	&.full {
 		width: 100%;

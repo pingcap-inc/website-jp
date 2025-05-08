@@ -59,7 +59,7 @@ class CardMedia implements IComponent
     {
         $container_tag = $this->permalink ? 'a' : 'div';
         $container_attrs = [
-            'class' => 'card-media bg-white'
+            'class' => 'card-media'
         ];
 
         if ($this->permalink) {
