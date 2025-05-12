@@ -102,9 +102,9 @@ class BannerCaseStudy implements IComponent
 
 		$this->post_id = Arrays::get_value_as_int($params, 'post_id', fn () => get_the_ID());
 
-		// $customer_term = CPT\CaseStudy::getCustomerTerm($this->post_id);
+		$customer_term = CPT\CaseStudy::getCustomerTerm($this->post_id);
 
-		// $this->customer_logo = Taxonomies\Customer::getLogoDarkImageACFObject($customer_term->term_id);
+		$this->customer_logo = Taxonomies\Customer::getLogoDarkImageACFObject($customer_term->term_id);
 		$this->title = Arrays::get_value_as_string($params, 'title', fn () => get_the_title($this->post_id));
 
 		$this->text_align_mode = Arrays::get_value_as_string(
@@ -183,7 +183,7 @@ class BannerCaseStudy implements IComponent
 					$params,
 					'side_image_max_height_desktop',
 					fn () => ACF::get_field_int(
-						$this->acf_prefix . '_side_image_max_height_desktop',
+						$this->$banner_prefix . '_side_image_max_height_desktop',
 						$this->post_id,
 						[
 							'default' => 188,
@@ -302,7 +302,7 @@ class BannerCaseStudy implements IComponent
 					<div>
 						<?php
 						if ($this->customer_logo) {
-							Images::safe_image_output($this->customer_logo, ['class' => 'is-h-48']);
+							Images::safe_image_output($this->customer_logo, ['class' => 'banner-case-study__image']);
 						}
 						?>
 						<h1 class="banner-case-study__title"><?php echo esc_html($this->title); ?></h1>

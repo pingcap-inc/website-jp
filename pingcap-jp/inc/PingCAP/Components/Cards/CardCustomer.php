@@ -63,7 +63,7 @@ class CardCustomer implements IComponent
 	public function render(): void
 	{
 		?>
-		<div class="card-customer bg-white">
+		<div class="card-customer">
 			<?php
 			if ($this->customer_logo)
 			{

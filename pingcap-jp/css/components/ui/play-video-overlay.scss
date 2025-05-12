@@ -5,14 +5,12 @@
 	right: 0;
 	bottom: 0;
 	left: 0;
+	padding: 12px 24px;
 	display: flex;
-	justify-content: center;
-	align-items: center;
+	justify-content: flex-end;
+	align-items: flex-end;
 
 	&__play-icon {
-		width: min(200px, 45%);
-		height: min(200px, 45%);
-		color: var(--color-primary);
 		transition: transform var(--default-transition-params);
 
 		.play-video-overlay:hover & {

@@ -1,22 +1,59 @@
-export function stopAutoplayOnHover(hoverEl, autoplayInstance, timeout = 2000) {
-	let mouseOverTimeout = 0;
+export function stopAutoplayOnHover(
+	hoverEl,
+	autoplayInstance,
+	{ debounce = 300, timeout = 2000 } = {}
+) {
+	if (!hoverEl || !autoplayInstance) return () => {};
 
-	const mouseLeaveCb = () => {
-		clearTimeout(mouseOverTimeout);
-		autoplayInstance.play();
-	};
+	let debounceTimeout = null;
+	let stopTimeout = null;
+	let isStopped = false;
 
-	const mouseEnterCb = () => {
-		mouseOverTimeout = setTimeout(() => {
-			autoplayInstance.stop();
+	function clearDebounce() {
+		if (debounceTimeout !== null) {
+			clearTimeout(debounceTimeout);
+			debounceTimeout = null;
+		}
+	}
 
-			// hoverEl.removeEventListener('mouseenter', mouseEnterCb);
-			// hoverEl.removeEventListener('mouseleave', mouseLeaveCb);
-		}, timeout);
-	};
+	function clearStopTimeout() {
+		if (stopTimeout !== null) {
+			clearTimeout(stopTimeout);
+			stopTimeout = null;
+		}
+	}
 
-	hoverEl.addEventListener('mouseenter', mouseEnterCb);
-	hoverEl.addEventListener('mouseleave', mouseLeaveCb);
+	function onMouseLeave() {
+		clearDebounce();
+		clearStopTimeout();
+		if (isStopped) {
+			autoplayInstance.play();
+			isStopped = false;
+		}
+	}
+
+	function onMouseEnter() {
+		clearDebounce();
+		debounceTimeout = setTimeout(() => {
+			clearStopTimeout();
+			stopTimeout = setTimeout(() => {
+				autoplayInstance.stop();
+				isStopped = true;
+			}, timeout);
+		}, debounce);
+	}
+
+	function cleanup() {
+		clearDebounce();
+		clearStopTimeout();
+		hoverEl.removeEventListener('mouseenter', onMouseEnter);
+		hoverEl.removeEventListener('mouseleave', onMouseLeave);
+	}
+
+	hoverEl.addEventListener('mouseenter', onMouseEnter);
+	hoverEl.addEventListener('mouseleave', onMouseLeave);
+
+	return cleanup;
 }
 
 class EmblaAutoplay {
