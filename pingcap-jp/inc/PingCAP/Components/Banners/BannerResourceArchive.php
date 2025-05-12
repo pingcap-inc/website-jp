@@ -37,7 +37,7 @@ class BannerResourceArchive implements IComponent
 		$this->post_type = Arrays::get_value_as_string($params, 'post_type', Constants\CPT::BLOG);
 		$this->title = Arrays::get_value_as_string($params, 'title', fn () => $this->getTitle());
 		$this->display_filters = Arrays::get_value_as_bool($params, 'display_filters', true);
-		$this->banner_bg_color = Arrays::get_value_as_string($params, 'banner_bg_color', 'bg-black');
+		$this->banner_bg_color = Arrays::get_value_as_string($params, 'banner_bg_color', 'bg-black-dark');
 		$this->banner_image = Arrays::get_value_as_array($params, 'banner', fn () => $this->getBanner());
 	}
 

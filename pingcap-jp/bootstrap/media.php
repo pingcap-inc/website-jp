@@ -32,15 +32,6 @@ WPUtil\ThemeSupport::post_thumbnails(300, 300, true);
 // 	]
 // ]);
 
-add_filter('intermediate_image_sizes_advanced', function ($sizes) {
-	unset($sizes['medium']);
-	unset($sizes['medium_large']);
-	unset($sizes['large']);
-	unset($sizes['xlarge']);
-	return $sizes;
-});
-
-
 // add ImageBuddy 'data-ib-sources' values to background images
 add_filter('grav_blocks_background_image_attributes', function ($bg_image_attrs, $block_attrs, $acf_image_object) {
 	$bg_image_attrs['style'] = 'background-image: url(data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==);';
@@ -56,9 +47,12 @@ add_filter('grav_blocks_image_tag', function ($default_markup, $tag, $attributes
 		return $default_markup;
 	}
 
-	$attributes['src'] = '"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGQAAAABCAQAAACC0sM2AAAADElEQVR42mNkGCYAAAGSAAIVQ4IOAAAAAElFTkSuQmCC"'; // 100x1
-	$attributes['data-src'] = $acf_image_object['url'];
-	$attributes['class'] = '"lazy ' . str_replace('"', '', $attributes['class']) . '"';
+	$attributes['src'] = $acf_image_object['url'];
+	if (!$attributes['data-lazy-ignore']) {
+		$attributes['src'] = '"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGQAAAABCAQAAACC0sM2AAAADElEQVR42mNkGCYAAAGSAAIVQ4IOAAAAAElFTkSuQmCC"'; // 100x1
+		$attributes['data-src'] = $acf_image_object['url'];
+		$attributes['class'] = '"lazy ' . str_replace('"', '', $attributes['class'] ?? '') . '"';
+	}
 	$attributes['title'] = '""';
 
 	// check for elements specific image instances by classname

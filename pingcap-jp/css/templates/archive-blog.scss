@@ -10,44 +10,6 @@
 		@include media-min($medium) {
 			height: 22vw;
 		}
-		&.blog {
-			height: 50rem;
-			max-height: unset;
-			top: 0;
-		}
-	}
-	.tmpl-archive-outer-posts-container {
-		align-items: normal;
-		display: flex;
-		flex-direction: column-reverse;
-		margin: 0 auto;
-		max-width: var(--container-max-width);
-		width: 100%;
-		@include media-min($medium) {
-			align-items: flex-start;
-			flex-direction: row;
-		}
-	}
-	.tmpl-archive-posts-container {
-		margin-top: 4rem;
-		@include media-min($medium) {
-			flex: 0 0 66.66667%;
-			margin-top: 0;
-			max-width: 66.66667%;
-			width: 66.66667%;
-		}
-	}
-	.tmpl-archive-sidebar {
-		@include media-max($medium) {
-			margin-top: 3.2rem;
-			position: relative;
-		}
-		@include media-min($medium) {
-			flex: 0 0 calc(33.33333% - 4rem);
-			margin-left: 4rem;
-			max-width: calc(33.33333% - 4rem);
-			width: calc(33.33333% - 4rem);
-		}
 	}
 	.posts-list {
 		padding-bottom: var(--block-padding-sm-bottom);
@@ -66,20 +28,12 @@
 		}
 
 		&-blog-algolia {
-			margin-bottom: 0;
-			transform: translateY(0);
-			@include media-min($large) {
-				transform: translateY(0);
-				margin-bottom: 0;
-				padding-bottom: var(--block-padding-lg-bottom);
+			.posts-list__row-featured{
+				max-width: var(--container-max-width);
 			}
-			.posts-list__row-featured {
-				max-width: unset;
-				.card-resource__image-container {
-					@include media-min($medium) {
-						display: none;
-					}
-				}
+			
+			.posts-list__cards-container{
+				gap: 64px 32px;
 			}
 		}
 

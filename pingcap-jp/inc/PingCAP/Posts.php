@@ -1,4 +1,5 @@
 <?php
+
 namespace PingCAP;
 
 abstract class Posts
@@ -109,5 +110,41 @@ abstract class Posts
 		$return_posts = array_merge($return_posts, $most_recent_posts);
 
 		return $return_posts;
+	}
+
+	public static function getPostTagsData($post_id = 0): array
+	{
+		$tags = get_the_tags($post_id);
+		$tag_data = array();
+
+		if ($tags) {
+			foreach ($tags as $tag) {
+				$tag_data[] = array(
+					'value'  => $tag->slug,
+					'slug'  => $tag->slug,
+					'label' => $tag->name,
+				);
+			}
+		}
+
+		return $tag_data;
+	}
+
+	public static function getPostCategoryData($post_id = 0): array
+	{
+		$categories = get_the_category($post_id);
+		$category_data = array();
+
+		if ($categories) {
+			foreach ($categories as $category) {
+				$category_data[] = array(
+					'value'  => $category->slug,
+					'slug'  => $category->slug,
+					'label' => $category->name,
+				);
+			}
+		}
+
+		return $category_data;
 	}
 }
