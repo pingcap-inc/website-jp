@@ -48,9 +48,8 @@ class AlgoliaPostsList {
 
 						return {
 							search: indexUiState?.query,
-							category:
-								indexUiState.menu?.['taxonomies.category']?.toLocaleLowerCase(),
-							tag: indexUiState.menu?.['taxonomies.post_tag']
+							category: indexUiState.menu?.['post_category.value'],
+							tag: indexUiState.menu?.['post_tag.value']
 						};
 					},
 
@@ -59,8 +58,8 @@ class AlgoliaPostsList {
 							[indexName]: {
 								query: routeState.search,
 								menu: {
-									'taxonomies.category': routeState.category,
-									'taxonomies.post_tag': routeState.tag
+									'post_category.value': routeState.category,
+									'post_tag.value': routeState.tag
 								}
 							}
 						};
@@ -76,6 +75,7 @@ class AlgoliaPostsList {
 		};
 
 		this.initSearch([]);
+		this.showNoResultsMessage(false);
 	}
 
 	initSearch() {
@@ -92,9 +92,8 @@ class AlgoliaPostsList {
 				container: this.cardsContainerEl
 			}),
 			customMenu({
-				container: document.querySelector('.tags'),
-				attribute: 'taxonomies.category',
-				sortBy: ['name:asc']
+				container: document.querySelector('#filter_category'),
+				attribute: 'post_category.value'
 			}),
 			customRegionMenu({
 				container: document.querySelector('.region'),
@@ -147,19 +146,22 @@ class AlgoliaPostsList {
 		widgetParams.container.innerHTML = `${hits
 			.map(
 				(item) => `
-				<a class="card-resource bg-white" href="${item.permalink}">
-					<div class="card-resource__image-container">
-						<img class="lazy card-resource__image" data-src="${item.images.hero?.url}">
+				<a class="card-blog" href="${item.permalink}">
+					<div class="card-blog__image-container">
+						<img class="lazy card-blog__image" data-src="${item.images.hero?.url}">
 					</div>
-					<div class="card-resource__content-container">
-						<div class="card-resource__content-head">
-							<div class="card-resource__category">${item.taxonomies?.category}</div>
-							<div class="card-resource__date">${item.post_date_formatted}</div>
+					<div class="card-blog__content-container">
+						<div>
+						<div class="card-blog__content-head">
+							<div class="card-blog__category">${item.taxonomies?.category}</div>
+							<div class="card-blog__date">${item.post_date_formatted}</div>
 						</div>
-						<h5 class="card-resource__title">${instantsearch.highlight({
+						<h5 class="card-blog__title">${instantsearch.highlight({
 							attribute: 'post_title',
 							hit: item
 						})}</h5>
+						</div>
+						<div class="card-blog__author"><img src="${item.author_avatar_url}">${item.post_author.display_name}</div>
 					</div>
 				</a>
 			`
@@ -171,27 +173,13 @@ class AlgoliaPostsList {
 		SiteEvents.publish(SiteEventNames.LAZYLOAD_TRIGGER_UPDATE);
 	}
 
-	renderMenu(renderOptions) {
-		const { widgetParams, createURL, refine, items } = renderOptions;
-		widgetParams.container.innerHTML = `
-		${[{ value: '', label: 'All' }]
-			.concat(items)
-			.map(
-				(item) =>
-					`<a href="${createURL(item.value)}" data-value="${item.value}" class="tag ${
-						item.isRefined ? 'active' : ''
-					}">${item.label}</a>`
-			)
-			.join('')}`;
-
-		[...widgetParams.container.querySelectorAll('.tag')].forEach((element) => {
-			element.addEventListener('click', (event) => {
-				event.preventDefault();
-				const value = event.currentTarget.dataset.value;
-				this.filter.category = value;
-				refine(value);
+	renderMenu(renderOptions, isFirstRender) {
+		const { refine, widgetParams } = renderOptions;
+		if (isFirstRender) {
+			widgetParams.container.addEventListener('change', (e) => {
+				refine(e.currentTarget.value ?? '');
 			});
-		});
+		}
 	}
 
 	async renderRegionMenu(renderOptions, isFirstRender) {
