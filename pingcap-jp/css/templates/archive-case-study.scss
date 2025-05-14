@@ -1,16 +1,3 @@
 .tmpl-archive-case-study {
-	padding-bottom: 8.5rem;
-
-	@include media-min($large) {
-		padding-bottom: 12.5rem;
-	}
-
-	&--filtered {
-		margin-top: -14rem;
-	}
-	.posts-list {
-		&__no-results-container {
-			margin-top: 150px;
-		}
-	}
+	padding-bottom: 2rem;
 }

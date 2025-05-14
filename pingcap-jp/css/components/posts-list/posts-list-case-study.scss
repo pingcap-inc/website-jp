@@ -5,23 +5,16 @@
 		--cards-per-row: 1;
 
 		@include media-min($medium) {
-			--cards-per-row: 3;
+			--cards-per-row: 2;
 		}
 
 		@include media-min($large) {
-			--cards-per-row: 4;
+			--cards-per-row: 3;
 		}
 	}
 
 	&__overflow-container {
 		overflow: hidden;
-		padding-bottom: 1.5rem;
-		padding-top: 10rem;
-		margin-top: -10rem;
-	}
-
-	&__featured-slides {
-		margin-top: -12rem;
 	}
 
 	&__featured-container {
@@ -38,9 +31,6 @@
 
 		.tmpl-archive-case-study--filtered & {
 			display: none;
-		}
-
-		.case-study--featured {
 		}
 
 		.embla {
@@ -61,6 +51,9 @@
 
 		.embla__slide {
 			padding-left: var(--featured-card-gap);
+			flex: 0 0 80%;
+			min-width: 0;
+			max-width: 1063px;
 		}
 
 		.embla__nav-button {
@@ -78,7 +71,7 @@
 		margin-top: 2rem;
 	}
 
-	&__filters-container{
-		padding: 7rem 0 4rem;
+	&__filters-container {
+		padding: 3rem 0 4rem;
 	}
 }

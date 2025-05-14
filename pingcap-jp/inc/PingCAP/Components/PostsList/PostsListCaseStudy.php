@@ -48,6 +48,8 @@ class PostsListCaseStudy implements IComponent
 	 */
 	public array $orphaned_customer_terms = [];
 
+	public array $featured_card = [];
+
 
 	public function __construct(array $params)
 	{
@@ -64,6 +66,9 @@ class PostsListCaseStudy implements IComponent
 			);
 		});
 		$this->orphaned_customer_terms = Arrays::get_value_as_array($params, 'orphaned_customer_terms');
+		$this->featured_card = ACF::get_field_array(Constants\ACF::CASE_STUDY_SETTINGS_BASE . '_featured_posts', 'option', [
+			'default' => []
+		]);
 	}
 
 	protected function getValidPostIds(): array
@@ -94,45 +99,50 @@ class PostsListCaseStudy implements IComponent
 				'pre_content_render_callback' => function () {
 					$featured_ids = CPT\CaseStudy::getFeaturedIds();
 
-					$autoplay_enabled = ACF::get_field_int(
-						Constants\ACF::CASE_STUDY_SETTINGS_BASE . '_featured_posts_autoplay_enabled',
-						'option',
-						[ 'default' => 1 ]
-					);
-
-					$autoplay_speed = ACF::get_field_int(
-						Constants\ACF::CASE_STUDY_SETTINGS_BASE . '_featured_posts_autoplay_speed',
-						'option',
-						['default' => 4000]
-					);
-
 					$post_ids = $this->getValidPostIds();
 					$tax_params = $post_ids ? ['object_ids' => $post_ids] : [];
-			
+
 					$cur_industry = CPT\CaseStudy::getIndustryQueryParamValue();
 					$industry_options = Taxonomy::get_taxonomy_filter_options(
 						Constants\Taxonomies::INDUSTRY,
 						$tax_params
 					);
-			
+
 					$cur_search = CPT\CaseStudy::getSearchQueryParamValue();
 
-					if ($featured_ids) {
+					if (isset($this->featured_card) && count($this->featured_card)) {
 			?>
-					<div class="posts-list-case-study__featured-container bg-blue">
-						<div class="posts-list-case-study__featured-slides contain embla-instance" data-transition-speed="10" data-autoplay-enabled="<?php echo esc_attr($autoplay_enabled); ?>" data-autoplay-speed="<?php echo esc_attr($autoplay_speed); ?>">
+					<div class="posts-list-case-study__featured-container">
+						<div class="posts-list-case-study__featured-slides contain embla-instance" data-autoplay-enabled data-autoplay-speed>
 							<div class="embla">
 								<div class="embla__container">
 									<?php
-									foreach ($featured_ids as $id) {
+									foreach ($this->featured_card as $card) {
+										$video_image = Arrays::get_value_as_string($card, 'video_image');
+										$video_url = Arrays::get_value_as_string($card, 'video_url');
+										$title = Arrays::get_value_as_string($card, 'title');
+										$name = Arrays::get_value_as_string($card, 'name');
+										$position = Arrays::get_value_as_string($card, 'position');
 									?>
 										<div class="embla__slide">
-											<?php
-											Component::render(Components\CaseStudyFeatured::class, [
-												'post_id' => $id,
-												'is_featured' => true
-											]);
-											?>
+											<div class="card-case-study--featured js--trigger-video-modal" data-video-url="<?php echo $video_url; ?>">
+												<div class="video-container">
+													<?php
+													Component::render(Components\Video::class, [
+														'image' => $video_image,
+														'url' => $video_url
+													]);
+													?>
+												</div>
+												<div class="text-container">
+													<div>
+														<div class="title"><?php echo $title; ?></div>
+														<div class="name"><?php echo $name; ?></div>
+														<div class="position"><?php echo $position; ?></div>
+													</div>
+													<div class="button-link">Watch the Video</div>
+												</div>
+											</div>
 										</div>
 									<?php
 									}
@@ -144,6 +154,7 @@ class PostsListCaseStudy implements IComponent
 							<div class="embla__pagination"></div>
 						</div>
 					</div>
+			<?php } ?>
 
 					<div class="posts-list-case-study__filters-container contain">
 						<div class="banner-case-study-archive__filters">
@@ -179,7 +190,6 @@ class PostsListCaseStudy implements IComponent
 						</div>
 					</div>
 			<?php
-					}
 				},
 				'post_render_cards_callback' => function () {
 					if ($this->orphaned_customer_terms) {

@@ -307,7 +307,7 @@
 	&__video-image {
 		@include image-cover-entire-container;
 
-		object-fit: contain;
+		object-fit: cover;
 		border-radius: var(--default-border-radius);
 	}
 }

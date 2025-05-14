@@ -139,7 +139,7 @@ class App {
 		 */
 		setupEventDelegators('body', {
 			'js--trigger-video-modal': (el) => {
-				const videoUrl = el.href || '';
+				const videoUrl = el.href || el.getAttribute('data-video-url');
 
 				showVideoModal(videoUrl);
 			},

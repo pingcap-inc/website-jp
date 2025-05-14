@@ -1,6 +1,8 @@
 .banner-case-study-archive {
 	padding-top: 6rem;
-	padding-bottom: 10rem;
+	@include media-min($medium) {
+		padding-top: 8rem;
+	}
 
 	&__row-filters {
 		display: flex;
@@ -41,7 +43,21 @@
 		}
 	}
 
+	h1 {
+		font-size: 48px;
+		font-weight: 700;
+		line-height: 56px;
+		color: #fff;
+		@include media-min($medium) {
+			font-size: 68px;
+			line-height: 76px;
+		}
+	}
+
 	&__heading-text {
-		color: var(--color-black);
+		font-weight: 300;
+		font-size: 26px;
+		line-height: 31px;
+		color: #a2adb9;
 	}
 }

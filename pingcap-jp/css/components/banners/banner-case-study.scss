@@ -1,6 +1,6 @@
 .banner-case-study {
 	overflow-x: hidden; // see "hack" note below
-	padding-top: 5rem;
+	// padding-top: 5rem;
 
 	// -- begin hack
 	//
@@ -19,12 +19,17 @@
 	// If Safari could support "overflow-x: clip" none of this would be necessary (ノಠ益ಠ)ノ彡┻━┻
 	//
 
-	padding-bottom: 4rem;
+	// padding-bottom: 4rem;
 
 	// -- end hack
 
 	.banner-default__text-content {
+		padding-top: 4rem;
+		&.has-image {
+			padding-bottom: 0;
+		}
 		@include media-min($medium) {
+			padding-top: 6rem;
 			grid-column: 2 / span 10;
 			&.has-image {
 				grid-column: 2 / span 6;
@@ -90,7 +95,19 @@
 
 	&__title {
 		margin-top: 2rem;
-		font-size: clamp(24px,3vw,34px);
+		font-size: 24px;
+		line-height: 120%;
+		@include media-min($medium) {
+			line-height: 100%;
+			font-size: clamp(24px, 3vw, 34px);
+		}
+	}
+
+	&__image {
+		height: 2.4rem;
+		@include media-min($medium) {
+			height: 4.8rem;
+		}
 	}
 
 	&__testimonial,
@@ -118,18 +135,22 @@
 		align-items: flex-start;
 		gap: 1rem;
 
-		padding: 3rem;
+		margin: 6rem 0 4rem;
+		padding: 3.2rem;
 
 		border-radius: var(--default-border-radius);
 		box-shadow: var(--default-box-shadow);
 
 		@include media-min($large) {
 			grid-column: 8 / span 5;
-			padding: 4rem;
 		}
 
 		&--has-image {
 			padding-top: 0;
+		}
+
+		blockquote cite {
+			font-size: 1.6rem;
 		}
 	}
 
@@ -152,19 +173,19 @@
 		}
 	}
 
-	&__image-container {
-		padding-top: 56.25%;
-	}
+	// &__image-container {
+	// 	padding-top: 56.25%;
+	// }
 
-	&__image {
-		@include image-cover-entire-container;
-		left: auto;
-		width: auto;
-		height: auto;
-		object-position: var(--pos-x, 50%) var(--pos-y, 50%);
-		border-radius: var(--default-border-radius);
-		box-shadow: var(--default-box-shadow);
-	}
+	// &__image {
+	// 	@include image-cover-entire-container;
+	// 	left: auto;
+	// 	width: auto;
+	// 	height: auto;
+	// 	object-position: var(--pos-x, 50%) var(--pos-y, 50%);
+	// 	border-radius: var(--default-border-radius);
+	// 	box-shadow: var(--default-box-shadow);
+	// }
 
 	&__additional-content {
 		margin-top: 2.5rem;

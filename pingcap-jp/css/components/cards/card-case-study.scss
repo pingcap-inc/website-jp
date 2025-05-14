@@ -4,31 +4,93 @@
 	flex-direction: column;
 	align-items: flex-start;
 	text-decoration: none;
-	padding: 0.8rem 3.2rem 3.2rem;
+	padding: 4rem 3.2rem 3.2rem 3.2rem;
 	border: 1px solid var(--card-border-color);
 	transition: all var(--default-transition-params);
 
 	&:hover {
-		box-shadow: var(--card-box-shadow);
 		transform:var(--card-transform);
+	}
+
+	&--featured {
+		height: 100%;
+		padding: 16px 20px;
+		border: 1px solid #28333e;
+		background: #06111a;
+		display: flex;
+		flex-direction: column;
+		gap: 32px;
+		max-width: 1063px;
+		cursor: pointer;
+		@include media-min($large) {
+			flex-direction: row;
+		}
+		.video-container {
+			max-width: 670px;
+			@include media-min($large) {
+				flex: 3;
+			}
+		}
+		.block-columns__video-container {
+			margin-bottom: 0;
+		}
+		.text-container {
+			height: 100%;
+			padding: 30px 0;
+			display: flex;
+			flex-direction: column;
+			justify-content: space-between;
+			@include media-min($medium) {
+				flex: 1;
+			}
+		}
+		.title {
+			font-weight: 400;
+			font-size: 22px;
+			line-height: 30px;
+			color: #fff;
+		}
+		.name,
+		.position {
+			font-weight: 400;
+			font-size: 16px;
+			line-height: 22px;
+		}
+		.name {
+			color: #fff;
+			margin-top: 32px;
+		}
+		.position {
+			color: #a2adb9;
+		}
+		.button-link {
+			align-self: flex-start;
+			margin-top: 32px;
+		}
+		&:hover {
+			.play-video-overlay__play-icon {
+				transform: scale(1.2);
+			}
+			.button-link {
+				&:after {
+					color: var(--button-secondary-hover-arrow-color);
+					background-color: var(--button-secondary-hover-bg-color);
+					border-radius: 50%;
+					transform: rotate(45deg);
+				}
+			}
+		}
 	}
 
 	&__image-container {
 		position: relative;
 		width: 100%;
-		height: 120px;
-
-		.card-case-study--featured & {
-			height: 175px;
-		}
+		height: 50px;
 	}
 
 	&__image {
 		@include image-cover-entire-container("contain");
-
-		.card-case-study--featured & {
-			@include image-cover-entire-container("contain", "center left");
-		}
+		width: auto;
 	}
 
 	&__customer-name {
@@ -40,6 +102,8 @@
 		margin-top: 1rem;
 		font-size: 1.6rem;
 		font-weight: 300;
+		color: #a2adb9;
+		margin-top: 32px;
 	}
 
 	&__title-featured {
@@ -47,10 +111,34 @@
 	}
 
 	&__button {
-		margin-top: 1rem;
-
-		.card-case-study--featured & {
-			margin-top: 3rem;
+		width: 100%;
+		margin-top: 64px;
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: flex-end;
+		gap: 32px;
+		.video {
+			font-weight: 500;
+			font-size: 17px;
+			line-height: 23px;
+			color: #fff;
+			display: flex;
+			align-items: center;
+			gap: 10px;
+			text-decoration: none;
+			i {
+				width: 18px;
+				height: 18px;
+				display: block;
+				background: url("https://static.pingcap.com/files/2025/04/21224526/icon-video.png")
+					no-repeat center/contain;
+				transition: transform var(--default-transition-params);
+			}
+			&:hover {
+				i {
+					transform: scale(1.2);
+				}
+			}
 		}
 	}
 

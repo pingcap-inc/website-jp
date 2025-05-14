@@ -10,7 +10,8 @@ Component::render(Components\Banners\BannerCaseStudyArchive::class);
 
 $tmpl_classes = [
 	'tmpl-archive',
-	'tmpl-archive-case-study'
+	'tmpl-archive-case-study',
+	'bg-black-dark'
 ];
 
 $orphaned_customer_terms = [];
