@@ -7,6 +7,7 @@ use PingCAP\Components;
 $block_title = isset($block_title) && is_string($block_title) ? $block_title : ACF::get_sub_field_string('block_title');
 $block_title_desc = isset($block_title_desc) && is_string($block_title_desc) ? $block_title_desc : ACF::get_sub_field_string('block_title_desc');
 $card_type = isset($card_type) && is_string($card_type) ? $card_type : ACF::get_sub_field_string('card_type');
+$card_num_cols = isset($card_num_cols) && is_string($card_num_cols) ? $card_num_cols : ACF::get_sub_field_string('card_num_cols');
 
 if (!in_array($card_type, ['', 'media', 'solution', 'integration', 'bg', 'workload', 'tier'], true)) {
 	$card_type = '';
@@ -60,7 +61,7 @@ if ($cards) {
 			break;
 
 		case 'bg':
-			$num_cols = 4;
+			$num_cols = count($cards) % 3 === 0 ? 3 : 4;
 			break;
 
 		case 'tier':
@@ -76,6 +77,10 @@ if ($cards) {
 
 			if (count($cards) === 1) {
 				$num_cols = 1;
+			}
+
+			if ($card_num_cols) {
+				$num_cols = $card_num_cols;
 			}
 
 			break;
@@ -199,6 +204,8 @@ if ($cards) {
 
 						$render_params = [
 							'svg_icon' => Arrays::get_value_as_array($card, 'svg_icon'),
+							'image_position' => Arrays::get_value_as_string($card, 'image_position'),
+							'border_color' => Arrays::get_value_as_string($card, 'border_color'),
 							'title' => Arrays::get_value_as_string($card, 'title'),
 							'label' => Arrays::get_value_as_string($card, 'label'),
 							'content' => Arrays::get_value_as_string($card, 'content'),

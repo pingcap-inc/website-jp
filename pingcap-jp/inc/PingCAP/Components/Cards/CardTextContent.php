@@ -9,6 +9,8 @@ use Blueprint\Images;
 class CardTextContent implements IComponent
 {
 	public $svg_icon = null;
+	public string $image_position = '';
+	public string $border_color = '';
 	public string $label = '';
 	public string $title = '';
 	public string $content = '';
@@ -18,6 +20,8 @@ class CardTextContent implements IComponent
 	public function __construct(array $params)
 	{
 		$this->svg_icon = Arrays::get_value_as_array($params, 'svg_icon');
+		$this->image_position = Arrays::get_value_as_string($params, 'image_position');
+		$this->border_color = Arrays::get_value_as_string($params, 'border_color');
 		$this->label = Arrays::get_value_as_string($params, 'label');
 		$this->title = Arrays::get_value_as_string($params, 'title');
 		$this->content = Arrays::get_value_as_string($params, 'content');
@@ -28,13 +32,13 @@ class CardTextContent implements IComponent
 	public function render(): void
 	{
 ?>
-		<div class="card-text-content">
+		<div class="card-text-content <?php echo $this->border_color; ?>">
 
 			<?php if ($this->label) { ?>
 				<p class="card-text-content__label"><?php echo $this->label ?></p>
 			<?php } ?>
 
-			<div class="card-text-content__title-container">
+			<div class="card-text-content__title-container <?php echo $this->image_position; ?>">
 				<?php
 				if ($this->svg_icon) {
 					Images::safe_image_output($this->svg_icon, [

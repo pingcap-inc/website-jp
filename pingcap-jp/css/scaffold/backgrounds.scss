@@ -103,10 +103,14 @@
 	--form-control-focus-text-color: var(--color-white);
 	--form-control-placeholder-color: #cbd1d7;
 	--form-control-icon-color: var(--color-white);
-}
 
-.bg-black {
-	background-color: #0e0e0e;
+	p,
+	ul {
+		font-size: 16px;
+		font-weight: 300;
+		line-height: 26px;
+		color: var(--paragraph-color);
+	}
 }
 
 .bg-black {
@@ -119,6 +123,9 @@
 
 .bg-black-gradient {
 	background: linear-gradient(180deg, #000 0, #06111a 100%);
+	&.reverse {
+		background: linear-gradient(0, #000 0, #06111a 100%);
+	}
 }
 
 .bg-black-light {

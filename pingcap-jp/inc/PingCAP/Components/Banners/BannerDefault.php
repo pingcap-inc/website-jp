@@ -176,6 +176,13 @@ class BannerDefault implements IComponent
 	public int $side_image_max_height_desktop = 100;
 
 	/**
+	 * Image position right zero
+	 *
+	 * @var boolean
+	 */
+	public bool $side_image_position = false;
+
+	/**
 	 * The form id
 	 *
 	 * @var string
@@ -201,6 +208,12 @@ class BannerDefault implements IComponent
 	 * @var string
 	 */
 	public string $side_form_calendly_url = '';
+	/**
+	 * The form theme
+	 *
+	 * @var string
+	 */
+	public string $side_form_theme = '';
 
 	/**
 	 * Flag indicating that the bottom arc shape is enabled
@@ -445,6 +458,16 @@ class BannerDefault implements IComponent
 					]
 				)
 			);
+
+			$this->side_image_position = Arrays::get_value_as_bool(
+				$params,
+				'side_image_position',
+				fn() => ACF::get_field_bool(
+					$this->acf_prefix . '_side_image_position',
+					$this->post_id,
+					['default' => false]
+				)
+			);
 		}
 
 		$this->side_video_bg = Arrays::get_value_as_bool(
@@ -526,6 +549,14 @@ class BannerDefault implements IComponent
 			'side_form_calendly_url',
 			fn() => ACF::get_field_string(
 				$this->acf_prefix . '_side_form_calendly_url',
+				$this->post_id,
+			)
+		);
+		$this->side_form_theme = Arrays::get_value_as_string(
+			$params,
+			'side_form_theme',
+			fn() => ACF::get_field_string(
+				$this->acf_prefix . '_side_form_theme',
 				$this->post_id,
 			)
 		);
@@ -720,7 +751,7 @@ class BannerDefault implements IComponent
 				}
 				?>
 				<div class="<?php echo esc_attr(implode(' ', $banner_text_content_classes)); ?>">
-					<div>
+					<div class="wrap">
 						<div>
 
 							<?php if ($this->banner_display_type === 'product' && $this->subtitle) { ?>
@@ -778,13 +809,13 @@ class BannerDefault implements IComponent
 					if ($this->side_image_pull_up) {
 						$image_container_classes[] = 'banner-default__image-container--pull-up';
 					}
-
-					if ($this->side_image_max_height_desktop) {
-						$image_style = 'style="max-height:' . $this->side_image_max_height_desktop . 'px"';
+					
+					if ($this->side_image_position) {
+						$image_container_classes[] = 'banner-default__image-container--position-right';
 					}
 
 				?>
-					<div class="<?php echo esc_attr(implode(' ', $image_container_classes)); ?>" <?php echo $image_style; ?>>
+					<div class="<?php echo esc_attr(implode(' ', $image_container_classes)); ?>">
 						<?php
 						if ($this->side_image_video_url) {
 							Component::render(Components\UI\PlayVideoOverlay::class, [
@@ -809,7 +840,8 @@ class BannerDefault implements IComponent
 							'portal_id' => $this->side_form_portal_id,
 							'form_id' => $this->side_form_id,
 							'calendly_id' => $this->side_form_calendly_id,
-							'calendly_url' => $this->side_form_calendly_url
+							'calendly_url' => $this->side_form_calendly_url,
+							'dark' => $this->side_form_theme
 						]);
 						?>
 					</div>
