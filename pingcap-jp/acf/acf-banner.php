@@ -38,7 +38,8 @@ $banner_fields = array_merge(
 			'choices' => array(
 				'' => 'Default',
 				'use-case' => 'Use Case',
-				'product' => 'Product'
+				'product' => 'Product',
+				'solution' => 'Solution'
 			),
 			'other_choice' => 0,
 			'save_other_choice' => 0,
@@ -103,6 +104,13 @@ $banner_fields = array_merge(
 						'field' => 'field_' . $acf_group . '_banner_display_type',
 						'operator' => '==',
 						'value' => '',
+					),
+				),
+				array(
+					array(
+						'field' => 'field_' . $acf_group . '_banner_display_type',
+						'operator' => '==',
+						'value' => 'solution',
 					),
 				),
 			),
@@ -321,15 +329,7 @@ $banner_fields = array_merge(
 			'type' => 'text',
 			'instructions' => 'Separate with spaces',
 			'required' => 0,
-			'conditional_logic' => array(
-				array(
-					array(
-						'field' => 'field_' . $acf_group . '_banner_display_type',
-						'operator' => '!=',
-						'value' => 'product',
-					),
-				),
-			),
+			'conditional_logic' => 0,
 			'wrapper' => array(
 				'width' => '50',
 				'class' => '',
@@ -622,11 +622,11 @@ $banner_fields = array_merge(
 			'disabled' => 0,
 		),
 		array(
-			'key' => 'field_' . $acf_group . '_side_image_align_center',
-			'label' => 'Center the image inside the container',
-			'name' => $acf_group . '_side_image_align_center',
+			'key' => 'field_' . $acf_group . '_side_image_position',
+			'label' => 'Align Image To The Right',
+			'name' => $acf_group . '_side_image_position',
 			'type' => 'true_false',
-			'instructions' => '',
+			'instructions' => 'Do not exceed the content area',
 			'required' => 0,
 			'conditional_logic' => 0,
 			'wrapper' => array(
@@ -748,6 +748,28 @@ $banner_fields = array_merge(
 			'readonly' => 0,
 			'disabled' => 0,
 		),
+		array(
+			'key' => 'field_' . $acf_group . '_side_form_theme',
+			'label' => 'Side Form Theme',
+			'name' => $acf_group . '_side_form_theme',
+			'type' => 'radio',
+			'instructions' => '',
+			'required' => 0,
+			'conditional_logic' => 0,
+			'wrapper' => array(
+				'width' => '50',
+				'class' => '',
+				'id' => '',
+			),
+			'choices' => array(
+				'0' => 'White',
+				'1' => 'Dark',
+			),
+			'other_choice' => 0,
+			'save_other_choice' => 0,
+			'default_value' => '',
+			'layout' => 'horizontal',
+		),
 	)
 );
 
@@ -775,6 +797,20 @@ acf_add_local_field_group(array(
 				'param' => 'post', // post_type | post | page | page_template | post_category | taxonomy | options_page
 				'operator' => '!=',
 				'value' => get_option('page_on_front'),      // if options_page then use: acf-options  | if page_template then use:  template-example.php
+				'order_no' => 0,
+				'group_no' => 1,
+			),
+			array(
+				'param' => 'page_template', // post_type | post | page | page_template | post_category | taxonomy | options_page
+				'operator' => '!=',
+				'value' => 'templates/page-product.php',      // if options_page then use: acf-options  | if page_template then use:  template-example.php
+				'order_no' => 0,
+				'group_no' => 1,
+			),
+			array(
+				'param' => 'page_template', // post_type | post | page | page_template | post_category | taxonomy | options_page
+				'operator' => '!=',
+				'value' => 'templates/page-product-serverless.php',      // if options_page then use: acf-options  | if page_template then use:  template-example.php
 				'order_no' => 0,
 				'group_no' => 1,
 			),

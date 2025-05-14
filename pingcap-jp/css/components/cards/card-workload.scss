@@ -2,17 +2,15 @@
 	display: flex;
 	text-decoration: none;
 	flex-direction: column;
+	align-items: flex-start;
+	gap: 40px;
 	@include media-min($large){
 		flex-direction: row;
 	}
 
 	&__image {
-		width: 150px;
-		height: 150px;
-		margin-right: 20px;
-		@include media-min($medium){
-			margin-right: 40px;
-		}
+		max-width: 150px;
+		max-height: 150px;
 	}
 
 	&__content {
