@@ -47,12 +47,14 @@ add_filter('grav_blocks_image_tag', function ($default_markup, $tag, $attributes
 		return $default_markup;
 	}
 
-	$attributes['src'] = $acf_image_object['url'];
-	if (!$attributes['data-lazy-ignore']) {
+	if (isset($attributes['data-lazy-ignore'])) {
+		$attributes['src'] = $acf_image_object['url'];
+	} else {
 		$attributes['src'] = '"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGQAAAABCAQAAACC0sM2AAAADElEQVR42mNkGCYAAAGSAAIVQ4IOAAAAAElFTkSuQmCC"'; // 100x1
 		$attributes['data-src'] = $acf_image_object['url'];
 		$attributes['class'] = '"lazy ' . str_replace('"', '', $attributes['class'] ?? '') . '"';
 	}
+
 	$attributes['title'] = '""';
 
 	// check for elements specific image instances by classname

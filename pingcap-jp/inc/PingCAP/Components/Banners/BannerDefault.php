@@ -315,7 +315,26 @@ class BannerDefault implements IComponent
 			fn() => ACF::get_field_string($this->acf_prefix . '_banner_page_template', $this->post_id)
 		);
 
+		$this->banner_min_height_desktop = Arrays::get_value_as_int(
+			$params,
+			'banner_min_height_desktop',
+			fn() => ACF::get_field_int(
+				$this->acf_prefix . '_banner_min_height_desktop',
+				$this->post_id,
+			)
+		);
+
+		$this->banner_min_height_mobile = Arrays::get_value_as_int(
+			$params,
+			'banner_min_height_mobile',
+			fn() => ACF::get_field_int(
+				$this->acf_prefix . '_banner_min_height_mobile',
+				$this->post_id,
+			)
+		);
+
 		$this->banner_bg = $params['banner_bg'] ?? ACF::get_field_array($this->acf_prefix . '_banner_bg', $this->post_id);
+		$this->banner_bg_mb = $params['banner_bg_mb'] ?? ACF::get_field_array($this->acf_prefix . '_banner_bg_mb', $this->post_id);
 
 		$this->subtitle = ACF::get_field_string($this->acf_prefix . '_subtitle', $this->post_id);
 
@@ -718,6 +737,20 @@ class BannerDefault implements IComponent
 			$banner_classes[] = 'banner-default--has-video';
 		}
 
+		$banner_inline_classes = [];
+		if ($this->banner_bg) {
+			$banner_inline_classes[] = '--banner-background-image:url(' . $this->banner_bg['url'] . ')';
+		}
+		if ($this->banner_bg_mb) {
+			$banner_inline_classes[] = '--banner-background-image-mb:url(' . $this->banner_bg_mb['url']. ')';
+		}
+		if ($this->banner_min_height_desktop) {
+			$banner_inline_classes[] = '--banner-min-height-desktop:' . $this->banner_min_height_desktop . 'px';
+		}
+		if ($this->banner_min_height_mobile) {
+			$banner_inline_classes[] = '--banner-min-height-mobile:' . $this->banner_min_height_mobile . 'px';
+		}
+
 		$banner_text_content_classes = ['banner-default__text-content'];
 
 		if ($this->title_container_size) {
@@ -729,8 +762,8 @@ class BannerDefault implements IComponent
 		}
 
 	?>
-		<div class="<?php echo esc_attr(implode(' ', $banner_classes)); ?>" <?php if (isset($this->banner_bg['url']) && $this->banner_bg['url']) {
-																				echo 'style="background-image: url(' . $this->banner_bg['url'] . ')"';
+		<div class="<?php echo esc_attr(implode(' ', $banner_classes)); ?>" <?php if (!empty($banner_inline_classes)) {
+																				echo 'style="' . implode(';', $banner_inline_classes) . '"';
 																			}; ?>>
 			<div class="banner-default__inner contain">
 				<?php
@@ -809,7 +842,7 @@ class BannerDefault implements IComponent
 					if ($this->side_image_pull_up) {
 						$image_container_classes[] = 'banner-default__image-container--pull-up';
 					}
-					
+
 					if ($this->side_image_position) {
 						$image_container_classes[] = 'banner-default__image-container--position-right';
 					}
