@@ -358,7 +358,12 @@
 		&-list {
 			.timeline {
 				display: flex;
-				gap: 32px;
+				flex-direction: column;
+				gap: 16px;
+				@include media-min($medium) {
+					gap: 32px;
+					flex-direction: row;
+				}
 				& + .timeline {
 					margin-top: 24px;
 				}
@@ -370,27 +375,36 @@
 			}
 			.time {
 				display: flex;
-				flex-direction: column;
-				justify-content: center;
-				align-items: center;
 				font-weight: 700;
-				font-size: 24px;
+				font-size: 18px;
 				color: #fff;
-				span {
-					font-weight: 300;
+				align-items: center;
+				gap: 4px;
+				@include media-min($medium) {
+					font-size: 24px;
+					justify-content: center;
+					flex-direction: column;
+				}
+				.line {
+					width: 32px;
+					height: 1px;
+					background: #fff;
+					@include media-min($medium) {
+						width: 1px;
+						height: 32px;
+					}
 				}
 			}
 			.card {
-				padding: 28px 24px;
+				padding: 16px 12px;
 				display: flex;
-				flex-direction: column;
 				border-radius: 5px;
 				flex: 1;
 				justify-content: center;
+				align-items: center;
 				@include media-min($medium) {
+					padding: 28px 24px;
 					justify-content: flex-start;
-					align-items: center;
-					flex-direction: row;
 				}
 				&.red {
 					border: 1px solid #87120c;
@@ -406,12 +420,14 @@
 				}
 				.image-container {
 					&.has-image {
-						width: 104px;
-						height: 104px;
+						width: 64px;
+						height: 64px;
 						border-radius: 50%;
+						margin-right: 8px;
 						overflow: hidden;
-						margin-bottom: 32px;
 						@include media-min($medium) {
+							width: 104px;
+							height: 104px;
 							margin-bottom: 0;
 							margin-right: 48px;
 						}
@@ -426,17 +442,21 @@
 					}
 				}
 				.content {
-					@include media-min($medium) {
-						flex: 1;
-					}
+					flex: 1;
 					p {
 						color: #fff;
-						margin-top: 16px;
+						margin-top: 8px;
+						@include media-min($medium) {
+							margin-top: 16px;
+						}
 					}
 				}
 				h3 {
+					font-size: 18px;
 					font-weight: 700;
-					font-size: 24px;
+					@include media-min($medium) {
+						font-size: 24px;
+					}
 				}
 				.desc {
 					font-weight: 300;

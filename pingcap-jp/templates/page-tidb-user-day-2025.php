@@ -77,7 +77,7 @@ get_header();
                         $agenda_summary = Arrays::get_value_as_string($list, 'agenda_summary');
                     ?>
                         <div class="timeline <?php echo $agenda_summary ? 'timeline--has-summary js--trigger-tiud-summary-modal' : ''; ?>">
-                            <div class="time"><?php echo $agenda_start_time; ?><span>|</span><?php echo $agenda_end_time; ?></div>
+                            <div class="time"><?php echo $agenda_start_time; ?><span class="line"></span><?php echo $agenda_end_time; ?></div>
                             <div class="card <?php echo $agenda_card_color ?> <?php echo !$agenda_image ? 'bg-' . $agenda_card_color : ''; ?>">
                                 <div class="image-container <?php echo $agenda_image ? 'has-image' : ''; ?>">
                                     <?php Images::safe_image_output($agenda_image, ['data-lazy-ignore' => 1]); ?>
