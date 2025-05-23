@@ -27,12 +27,15 @@ class HeaderTiUD2025 implements IComponent
                             <div class="nav-menu" href="#">
                                 タイムテーブル
                             </div>
-                            <div class="nav-menu" href="#">
+                            <a class="nav-menu" href="#partner">
                                 登壇企業
-                            </div>
-                            <div class="nav-menu" href="#prize">
+                            </a>
+                            <a class="nav-menu" href="#sponsors">
+                                スポンサー
+                            </a>
+                            <a class="nav-menu" href="#prize">
                                 キャンペーン
-                            </div>
+                            </a>
                             <div class="nav-dropper__wrapper">
                                 <div class="nav-menu">
                                     開催実績

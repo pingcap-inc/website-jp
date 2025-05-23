@@ -79,3 +79,12 @@ export function showFormModal(el) {
 		}
 	});
 }
+
+export function showTiudSummaryModal(el) {
+	const tmpl = el.querySelector('.card').outerHTML;
+
+	Modal.show(tmpl, {
+		modalClass: 'modal modal-tiud-agenda',
+		closeDuration: 0
+	});
+}

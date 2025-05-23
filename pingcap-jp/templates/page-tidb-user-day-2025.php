@@ -4,6 +4,7 @@
  * Template Name: TiDB User Day 2025
  */
 
+use Blueprint\Images;
 use WPUtil\{Arrays, Vendor};
 use WPUtil\Vendor\ACF;
 
@@ -51,9 +52,58 @@ get_header();
 
     <section id="about" class="about bg-black-gradient block-container">
         <div class="block-inner contain">
-           <?php echo ACF::get_field_string('about_content'); ?>
+            <?php echo ACF::get_field_string('about_content'); ?>
         </div>
     </section>
+
+    <?php
+    $agenda_list = ACF::get_field_array('agenda_list');
+    if (count($agenda_list)) {
+    ?>
+        <section id="agenda" class="agenda bg-black-dark block-container">
+            <div class="block-inner contain">
+                <div class="block-title">
+                    <h4><?php echo ACF::get_field_string('agenda_block_title'); ?></h4>
+                </div>
+                <div class="agenda-list">
+                    <?php
+                    foreach ($agenda_list as $list) {
+                        $agenda_card_color = Arrays::get_value_as_string($list, 'agenda_card_color');
+                        $agenda_start_time = Arrays::get_value_as_string($list, 'agenda_start_time');
+                        $agenda_end_time = Arrays::get_value_as_string($list, 'agenda_end_time');
+                        $agenda_image = Arrays::get_value_as_array($list, 'agenda_image');
+                        $agenda_title = Arrays::get_value_as_string($list, 'agenda_title');
+                        $agenda_desc = Arrays::get_value_as_string($list, 'agenda_desc');
+                        $agenda_summary = Arrays::get_value_as_string($list, 'agenda_summary');
+                    ?>
+                        <div class="timeline <?php echo $agenda_summary ? 'timeline--has-summary js--trigger-tiud-summary-modal' : ''; ?>">
+                            <div class="time"><?php echo $agenda_start_time; ?><span>|</span><?php echo $agenda_end_time; ?></div>
+                            <div class="card <?php echo $agenda_card_color ?> <?php echo !$agenda_image ? 'bg-' . $agenda_card_color : ''; ?>">
+                                <div class="image-container <?php echo $agenda_image ? 'has-image' : ''; ?>">
+                                    <?php Images::safe_image_output($agenda_image, ['data-lazy-ignore' => 1]); ?>
+                                </div>
+                                <div class="content">
+                                    <h3><?php echo $agenda_title; ?></h3>
+                                    <?php if ($agenda_desc) { ?>
+                                        <p><?php echo $agenda_desc; ?></p>
+                                    <?php } ?>
+                                    <?php if ($agenda_summary) { ?>
+                                        <div class="summary"><?php echo $agenda_summary; ?></div>
+                                    <?php } ?>
+                                </div>
+                            </div>
+                        </div>
+                    <?php
+                    }
+                    ?>
+
+                </div>
+            </div>
+        </section>
+    <?php
+    }
+    ?>
+
     <?php echo Vendor\BlueprintBlocks::safe_display(); ?>
 </div>
 
