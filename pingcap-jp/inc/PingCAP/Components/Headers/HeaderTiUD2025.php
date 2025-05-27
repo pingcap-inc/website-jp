@@ -55,7 +55,11 @@ class HeaderTiUD2025 implements IComponent
                                 </div>
                             </div>
                         </div>
-                        <a class="button-tiud js--trigger-form-modal" data-form-id="4e29b6c1-e7d3-4861-9e26-2bd163baee68">
+                        <?php
+                        $currentPath = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
+                        $isInPerson = strpos($currentPath, 'in-person') !== false;
+                        ?>
+                        <a class="button-tiud js--trigger-form-modal" data-form-id="<?php echo $isInPerson ? '7468f90a-1056-4d73-80e9-87f8efcc18a8' : '4e29b6c1-e7d3-4861-9e26-2bd163baee68'; ?>">
                             <span>登録する</span>
                         </a>
                     </nav>
