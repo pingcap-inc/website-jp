@@ -33,7 +33,7 @@ class HeaderTiUD2025 implements IComponent
                             <a class="nav-menu" href="#sponsors">
                                 スポンサー
                             </a>
-                            <a class="nav-menu" href="#prize">
+                            <a class="nav-menu" href="#campaign">
                                 キャンペーン
                             </a>
                             <div class="nav-dropper__wrapper">
