@@ -66,6 +66,8 @@ class PostsListFilter implements IComponent
                 }
                 ?>
             </select>
+            <select class="posts-list__archive-filter-control hide" name="filter_tag" id="filter_tag" aria-label="<?php esc_attr_e('Tag', Constants\TextDomains::DEFAULT); ?>">
+            </select>
             <?php if ($this->post_type !== Constants\CPT::VIDEO && $this->post_type !== Constants\CPT::SLIDES) {
                 Component::render(Components\UI\InputWithIcon::class, [
                     'is_form' => false,

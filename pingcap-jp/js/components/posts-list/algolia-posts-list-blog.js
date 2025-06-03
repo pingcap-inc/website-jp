@@ -95,6 +95,10 @@ class AlgoliaPostsList {
 				container: document.querySelector('#filter_category'),
 				attribute: 'post_category.value'
 			}),
+			customMenu({
+				container: document.querySelector('#filter_tag'),
+				attribute: 'post_tag.value'
+			}),
 			customRegionMenu({
 				container: document.querySelector('.region'),
 				attribute: 'display_region'
