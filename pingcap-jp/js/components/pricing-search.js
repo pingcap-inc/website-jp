@@ -7,8 +7,9 @@ class PricingSearch {
 		this.provider = 'aws';
 
 		const pricing = {
-			aws: { 2: 692, 4: 1339, 8: 2656, 16: 5250, 32: 10342 },
-			gcp: { 2: 754, 4: 1405, 8: 2862, 16: 5297 }
+			aws: { 4: 1376, 8: 2591, 16: 5096, 32: 10107 },
+			gcp: { 4: 1406, 8: 2623, 16: 5146 },
+			azure: { 8: 2680, 16: 5259 }
 		};
 
 		this.tabEls.forEach((tabEl) => {
@@ -21,7 +22,9 @@ class PricingSearch {
 				e.currentTarget.classList.add('active');
 				this.provider = e.currentTarget.getAttribute('data-provider');
 				this.selectEl.innerHTML = '<option>選択する</option>';
-				this.selectEl.innerHTML += Object.keys(pricing[this.provider]).map(v => `<option value="${v}">${v} vCPU</option>">`);
+				this.selectEl.innerHTML += Object.keys(pricing[this.provider]).map(
+					(v) => `<option value="${v}">${v} vCPU</option>">`
+				);
 				this.selectEl.selectedIndex = 0;
 				this.resultEl.innerHTML = '<span class="pricing-search__tip">Price / month</span>';
 			});
