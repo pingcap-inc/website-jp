@@ -80,7 +80,7 @@ Component::render(Components\Banners\BannerResource::class, $banner_params);
 							<?php
 							foreach ($posttags as $tag) {
 								if ($post_type == 'post') {
-									echo '<a href="/blog?tag=' . strtolower($tag->name) . '" class="tag">' . $tag->name . '</a>';
+									echo '<a href="/blog?tag=' . $tag->slug . '" class="tag">' . $tag->name . '</a>';
 								} else {
 									echo '<a href="' . get_term_link($tag) . '" class="tag">' . $tag->name . '</a>';
 								}
