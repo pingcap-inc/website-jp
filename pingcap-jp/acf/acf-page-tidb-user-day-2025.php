@@ -1,30 +1,30 @@
 <?php
 $acf_group = 'tmpl_page_tidb_user_day_2025';
 
-acf_add_local_field_group(array (
+acf_add_local_field_group(array(
 	'key' => 'group_' . $acf_group,
 	'title' => 'TiDB User Day 2025 Content Settings',
-	'fields' => array (
+	'fields' => array(
 		/**
-         * Tab: Banner
-         */
-        array(
-            'key' => 'field_' . $acf_group . '_tab_banner',
-            'label' => 'Banner',
-            'name' => 'tab_banner',
-            'type' => 'tab',
-            'instructions' => '',
-            'required' => 0,
-            'conditional_logic' => 0,
-            'wrapper' => array(
-                'width' => '',
-                'class' => '',
-                'id' => '',
-            ),
-            'placement' => 'top',
-            'endpoint' => 0,          // end tabs to start a new group
-        ),
-		array (
+		 * Tab: Banner
+		 */
+		array(
+			'key' => 'field_' . $acf_group . '_tab_banner',
+			'label' => 'Banner',
+			'name' => 'tab_banner',
+			'type' => 'tab',
+			'instructions' => '',
+			'required' => 0,
+			'conditional_logic' => 0,
+			'wrapper' => array(
+				'width' => '',
+				'class' => '',
+				'id' => '',
+			),
+			'placement' => 'top',
+			'endpoint' => 0,          // end tabs to start a new group
+		),
+		array(
 			'key' => 'field_' . $acf_group . '_banner_content',
 			'label' => 'Content',
 			'name' => 'banner_content',
@@ -32,7 +32,7 @@ acf_add_local_field_group(array (
 			'instructions' => '',
 			'required' => 0,
 			'conditional_logic' => 0,
-			'wrapper' => array (
+			'wrapper' => array(
 				'width' => '',
 				'class' => '',
 				'id' => '',
@@ -43,25 +43,25 @@ acf_add_local_field_group(array (
 			'media_upload' => 0,
 		),
 		/**
-         * Tab: Carousel
-         */
-        array(
-            'key' => 'field_' . $acf_group . '_tab_carousel',
-            'label' => 'Carousel',
-            'name' => 'tab_carousel',
-            'type' => 'tab',
-            'instructions' => '',
-            'required' => 0,
-            'conditional_logic' => 0,
-            'wrapper' => array(
-                'width' => '',
-                'class' => '',
-                'id' => '',
-            ),
-            'placement' => 'top',
-            'endpoint' => 0,          // end tabs to start a new group
-        ),
-		array (
+		 * Tab: Carousel
+		 */
+		array(
+			'key' => 'field_' . $acf_group . '_tab_carousel',
+			'label' => 'Carousel',
+			'name' => 'tab_carousel',
+			'type' => 'tab',
+			'instructions' => '',
+			'required' => 0,
+			'conditional_logic' => 0,
+			'wrapper' => array(
+				'width' => '',
+				'class' => '',
+				'id' => '',
+			),
+			'placement' => 'top',
+			'endpoint' => 0,          // end tabs to start a new group
+		),
+		array(
 			'key' => 'field_' . $acf_group . '_carousel_content',
 			'label' => 'Content',
 			'name' => 'carousel_content',
@@ -69,7 +69,7 @@ acf_add_local_field_group(array (
 			'instructions' => '',
 			'required' => 0,
 			'conditional_logic' => 0,
-			'wrapper' => array (
+			'wrapper' => array(
 				'width' => '',
 				'class' => '',
 				'id' => '',
@@ -79,7 +79,7 @@ acf_add_local_field_group(array (
 			'toolbar' => 'full',     // full | basic
 			'media_upload' => 0,
 		),
-        array (
+		array(
 			'key' => 'field_' . $acf_group . '_carousel_list',
 			'label' => 'Carousel image',
 			'name' => 'carousel_list',
@@ -87,7 +87,7 @@ acf_add_local_field_group(array (
 			'instructions' => '',
 			'required' => 1,
 			'conditional_logic' => 0,
-			'wrapper' => array (
+			'wrapper' => array(
 				'width' => '',
 				'class' => '',
 				'id' => '',
@@ -97,54 +97,54 @@ acf_add_local_field_group(array (
 			'max' => '',
 			'layout' => 'block',         // table | block | row
 			'button_label' => 'Add Image',
-			'sub_fields' => array (
+			'sub_fields' => array(
 				array(
-                    'key' => 'field_' . $acf_group . '_carousel_image',
-                    'label' => 'Image',
-                    'name' => 'carousel_image',
-                    'instructions' => '',
-                    'type' => 'image',
-                    'required' => 0,
-                    'conditional_logic' => 0,
-                    'wrapper' => array(
-                        'width' => '',
-                        'class' => '',
-                        'id' => '',
-                    ),
-                    'return_format' => 'url',       // array | url | id
-                    'preview_size' => 'medium',
-                    'library' => 'all',       // all | uploadedTo
-                    'min_width' => '',
-                    'min_height' => '',
-                    'min_size' => '',
-                    'max_width' => '',
-                    'max_height' => '',
-                    'max_size' => '',
-                    'mime_types' => '',
-                ),
+					'key' => 'field_' . $acf_group . '_carousel_image',
+					'label' => 'Image',
+					'name' => 'carousel_image',
+					'instructions' => '',
+					'type' => 'image',
+					'required' => 0,
+					'conditional_logic' => 0,
+					'wrapper' => array(
+						'width' => '',
+						'class' => '',
+						'id' => '',
+					),
+					'return_format' => 'url',       // array | url | id
+					'preview_size' => 'medium',
+					'library' => 'all',       // all | uploadedTo
+					'min_width' => '',
+					'min_height' => '',
+					'min_size' => '',
+					'max_width' => '',
+					'max_height' => '',
+					'max_size' => '',
+					'mime_types' => '',
+				),
 			),
 		),
-        
+
 		/**
-         * Tab: About
-         */
-        array(
-            'key' => 'field_' . $acf_group . '_tab_about',
-            'label' => 'About',
-            'name' => 'tab_about',
-            'type' => 'tab',
-            'instructions' => '',
-            'required' => 0,
-            'conditional_logic' => 0,
-            'wrapper' => array(
-                'width' => '',
-                'class' => '',
-                'id' => '',
-            ),
-            'placement' => 'top',
-            'endpoint' => 0,          // end tabs to start a new group
-        ),
-		array (
+		 * Tab: About
+		 */
+		array(
+			'key' => 'field_' . $acf_group . '_tab_about',
+			'label' => 'About',
+			'name' => 'tab_about',
+			'type' => 'tab',
+			'instructions' => '',
+			'required' => 0,
+			'conditional_logic' => 0,
+			'wrapper' => array(
+				'width' => '',
+				'class' => '',
+				'id' => '',
+			),
+			'placement' => 'top',
+			'endpoint' => 0,          // end tabs to start a new group
+		),
+		array(
 			'key' => 'field_' . $acf_group . '_about_content',
 			'label' => 'Content',
 			'name' => 'about_content',
@@ -152,7 +152,7 @@ acf_add_local_field_group(array (
 			'instructions' => '',
 			'required' => 0,
 			'conditional_logic' => 0,
-			'wrapper' => array (
+			'wrapper' => array(
 				'width' => '',
 				'class' => '',
 				'id' => '',
@@ -164,25 +164,25 @@ acf_add_local_field_group(array (
 		),
 
 		/**
-         * Tab: Agenda
-         */
-        array(
-            'key' => 'field_' . $acf_group . '_tab_agenda',
-            'label' => 'Agenda',
-            'name' => 'tab_agenda',
-            'type' => 'tab',
-            'instructions' => '',
-            'required' => 0,
-            'conditional_logic' => 0,
-            'wrapper' => array(
-                'width' => '',
-                'class' => '',
-                'id' => '',
-            ),
-            'placement' => 'top',
-            'endpoint' => 0,          // end tabs to start a new group
-        ),
-		array (
+		 * Tab: Agenda
+		 */
+		array(
+			'key' => 'field_' . $acf_group . '_tab_agenda',
+			'label' => 'Agenda',
+			'name' => 'tab_agenda',
+			'type' => 'tab',
+			'instructions' => '',
+			'required' => 0,
+			'conditional_logic' => 0,
+			'wrapper' => array(
+				'width' => '',
+				'class' => '',
+				'id' => '',
+			),
+			'placement' => 'top',
+			'endpoint' => 0,          // end tabs to start a new group
+		),
+		array(
 			'key' => 'field_' . $acf_group . '_agenda_block_title',
 			'label' => 'Block Title',
 			'name' => 'agenda_block_title',
@@ -190,7 +190,7 @@ acf_add_local_field_group(array (
 			'instructions' => '',
 			'required' => 0,
 			'conditional_logic' => 0,
-			'wrapper' => array (
+			'wrapper' => array(
 				'width' => '',
 				'class' => '',
 				'id' => '',
@@ -204,7 +204,7 @@ acf_add_local_field_group(array (
 			'readonly' => 0,
 			'disabled' => 0,
 		),
-		array (
+		array(
 			'key' => 'field_' . $acf_group . '_agenda_list',
 			'label' => 'Agenda',
 			'name' => 'agenda_list',
@@ -212,7 +212,7 @@ acf_add_local_field_group(array (
 			'instructions' => '',
 			'required' => 0,
 			'conditional_logic' => 0,
-			'wrapper' => array (
+			'wrapper' => array(
 				'width' => '',
 				'class' => '',
 				'id' => '',
@@ -222,8 +222,8 @@ acf_add_local_field_group(array (
 			'max' => '',
 			'layout' => 'block',         // table | block | row
 			'button_label' => 'Add Agenda',
-			'sub_fields' => array (
-				array (
+			'sub_fields' => array(
+				array(
 					'key' => 'field_' . $acf_group . '_agenda_card_color',
 					'label' => 'Card Color',
 					'name' => 'agenda_card_color',
@@ -231,12 +231,12 @@ acf_add_local_field_group(array (
 					'instructions' => '',
 					'required' => 0,
 					'conditional_logic' => 0,
-					'wrapper' => array (
+					'wrapper' => array(
 						'width' => '',
 						'class' => '',
 						'id' => '',
 					),
-					'choices' => array (
+					'choices' => array(
 						'red' => 'Red',
 						'green' => 'Green',
 						'blue' => 'Blue',
@@ -251,7 +251,7 @@ acf_add_local_field_group(array (
 					'disabled' => 0,
 					'readonly' => 0,
 				),
-				array (
+				array(
 					'key' => 'field_' . $acf_group . '_agenda_start_time',
 					'label' => 'Start Time',
 					'name' => 'agenda_start_time',
@@ -259,29 +259,7 @@ acf_add_local_field_group(array (
 					'instructions' => '',
 					'required' => 0,
 					'conditional_logic' => 0,
-					'wrapper' => array (
-						'width' => '50',
-						'class' => '',
-						'id' => '',
-					),
-					'default_value' => '',
-					'placeholder' => '',
-					'formatting' => 'none',       // none | html
-					'prepend' => '',
-					'append' => '',
-					'maxlength' => '',
-					'readonly' => 0,
-					'disabled' => 0,
-				),
-				array (
-					'key' => 'field_' . $acf_group . '_agenda_end_time',
-					'label' => 'End Time',
-					'name' => 'agenda_end_time',
-					'type' => 'text',
-					'instructions' => '',
-					'required' => 0,
-					'conditional_logic' => 0,
-					'wrapper' => array (
+					'wrapper' => array(
 						'width' => '50',
 						'class' => '',
 						'id' => '',
@@ -296,30 +274,124 @@ acf_add_local_field_group(array (
 					'disabled' => 0,
 				),
 				array(
-                    'key' => 'field_' . $acf_group . '_agenda_image',
-                    'label' => 'Avatar',
-                    'name' => 'agenda_image',
-                    'instructions' => '',
-                    'type' => 'image',
-                    'required' => 0,
-                    'conditional_logic' => 0,
-                    'wrapper' => array(
-                        'width' => '',
-                        'class' => '',
-                        'id' => '',
-                    ),
-                    'return_format' => 'array',       // array | url | id
-                    'preview_size' => 'thumbnail',
-                    'library' => 'all',       // all | uploadedTo
-                    'min_width' => '',
-                    'min_height' => '',
-                    'min_size' => '',
-                    'max_width' => '',
-                    'max_height' => '',
-                    'max_size' => '',
-                    'mime_types' => '',
-                ),
-				array (
+					'key' => 'field_' . $acf_group . '_agenda_end_time',
+					'label' => 'End Time',
+					'name' => 'agenda_end_time',
+					'type' => 'text',
+					'instructions' => '',
+					'required' => 0,
+					'conditional_logic' => 0,
+					'wrapper' => array(
+						'width' => '50',
+						'class' => '',
+						'id' => '',
+					),
+					'default_value' => '',
+					'placeholder' => '',
+					'formatting' => 'none',       // none | html
+					'prepend' => '',
+					'append' => '',
+					'maxlength' => '',
+					'readonly' => 0,
+					'disabled' => 0,
+				),
+				array(
+					'key' => 'field_' . $acf_group . '_agenda_image',
+					'label' => 'Avatar',
+					'name' => 'agenda_image',
+					'instructions' => '',
+					'type' => 'image',
+					'required' => 0,
+					'conditional_logic' => 0,
+					'wrapper' => array(
+						'width' => '',
+						'class' => '',
+						'id' => '',
+					),
+					'return_format' => 'array',       // array | url | id
+					'preview_size' => 'thumbnail',
+					'library' => 'all',       // all | uploadedTo
+					'min_width' => '',
+					'min_height' => '',
+					'min_size' => '',
+					'max_width' => '',
+					'max_height' => '',
+					'max_size' => '',
+					'mime_types' => '',
+				),
+				array(
+					'key' => 'field_' . $acf_group . '_has_multiple_avatar',
+					'label' => 'Has Multiple Avatars',
+					'name' => 'has_multiple_avatar',
+					'type' => 'true_false',
+					'instructions' => '',
+					'required' => 0,
+					'conditional_logic' => 0,
+					'wrapper' => array(
+						'width' => '',
+						'class' => '',
+						'id' => '',
+					),
+					'message' => '',
+					'ui' => 1,
+					'ui_on_text' => 'Yes',
+					'ui_off_text' => 'No',
+					'default_value' => 0,
+				),
+				array(
+					'key' => 'field_' . $acf_group . '_multiple_avatar',
+					'label' => 'Avatars',
+					'name' => 'multiple_avatar',
+					'type' => 'repeater',
+					'instructions' => '',
+					'required' => 0,
+					'conditional_logic' => array(
+						array(
+							array(
+								'field' => 'field_' . $acf_group . '_has_multiple_avatar',
+								'operator' => '==',
+								'value' => 1,
+							),
+						),
+					),
+					'wrapper' => array(
+						'width' => '',
+						'class' => '',
+						'id' => '',
+					),
+					'collapsed' => '',
+					'min' => 0,
+					'max' => '',
+					'layout' => 'block',         // table | block | row
+					'button_label' => 'Add Avatar',
+					'sub_fields' => array(
+						array(
+							'key' => 'field_' . $acf_group . '_avatar',
+							'label' => 'Avatar',
+							'name' => 'avatar',
+							'instructions' => '',
+							'type' => 'image',
+							'required' => 0,
+							'conditional_logic' => 0,
+							'wrapper' => array(
+								'width' => '',
+								'class' => '',
+								'id' => '',
+							),
+							'return_format' => 'array',       // array | url | id
+							'preview_size' => 'thumbnail',
+							'library' => 'all',       // all | uploadedTo
+							'min_width' => '',
+							'min_height' => '',
+							'min_size' => '',
+							'max_width' => '',
+							'max_height' => '',
+							'max_size' => '',
+							'mime_types' => '',
+						),
+					)
+				),
+				array(
 					'key' => 'field_' . $acf_group . '_agenda_title',
 					'label' => 'Title',
 					'name' => 'agenda_title',
@@ -327,7 +399,7 @@ acf_add_local_field_group(array (
 					'instructions' => '',
 					'required' => 1,
 					'conditional_logic' => 0,
-					'wrapper' => array (
+					'wrapper' => array(
 						'width' => '',
 						'class' => '',
 						'id' => '',
@@ -341,7 +413,7 @@ acf_add_local_field_group(array (
 					'readonly' => 0,
 					'disabled' => 0,
 				),
-				array (
+				array(
 					'key' => 'field_' . $acf_group . '_agenda_desc',
 					'label' => 'Desc',
 					'name' => 'agenda_desc',
@@ -349,7 +421,7 @@ acf_add_local_field_group(array (
 					'instructions' => '',
 					'required' => 0,
 					'conditional_logic' => 0,
-					'wrapper' => array (
+					'wrapper' => array(
 						'width' => '',
 						'class' => '',
 						'id' => '',
@@ -363,7 +435,7 @@ acf_add_local_field_group(array (
 					'readonly' => 0,
 					'disabled' => 0,
 				),
-				array (
+				array(
 					'key' => 'field_' . $acf_group . '_agenda_summary',
 					'label' => 'Summary',
 					'name' => 'agenda_summary',
@@ -371,7 +443,7 @@ acf_add_local_field_group(array (
 					'instructions' => '',
 					'required' => 0,
 					'conditional_logic' => 0,
-					'wrapper' => array (
+					'wrapper' => array(
 						'width' => '',
 						'class' => '',
 						'id' => '',
@@ -387,9 +459,9 @@ acf_add_local_field_group(array (
 			),
 		),
 	),
-	'location' => array (
-		array (
-			array (
+	'location' => array(
+		array(
+			array(
 				'param' => 'page_template', // post_type | post | page | page_template | post_category | taxonomy | options_page
 				'operator' => '==',
 				'value' => 'templates/page-tidb-user-day-2025.php',      // if options_page then use: acf-options  | if page_template then use:  template-example.php
@@ -403,7 +475,7 @@ acf_add_local_field_group(array (
 	'style' => 'default', // default | seamless
 	'label_placement' => 'top', // top | left
 	'instruction_placement' => 'label', // label | field
-	'hide_on_screen' => array (
+	'hide_on_screen' => array(
 		// 0 => 'permalink',
 		// 1 => 'the_content',
 		// 2 => 'excerpt',

@@ -75,12 +75,23 @@ get_header();
                         $agenda_title = Arrays::get_value_as_string($list, 'agenda_title');
                         $agenda_desc = Arrays::get_value_as_string($list, 'agenda_desc');
                         $agenda_summary = Arrays::get_value_as_string($list, 'agenda_summary');
+                        $has_multiple_avatar = Arrays::get_value_as_bool($list, 'has_multiple_avatar');
+                        $multiple_avatar = Arrays::get_value_as_array($list, 'multiple_avatar');
                     ?>
                         <div class="timeline <?php echo $agenda_summary ? 'timeline--has-summary js--trigger-tiud-summary-modal' : ''; ?>">
                             <div class="time"><?php echo $agenda_start_time; ?><span class="line"></span><?php echo $agenda_end_time; ?></div>
                             <div class="card <?php echo $agenda_card_color ?> <?php echo !$agenda_image ? 'bg-' . $agenda_card_color : ''; ?>">
-                                <div class="image-container <?php echo $agenda_image ? 'has-image' : ''; ?>">
-                                    <?php Images::safe_image_output($agenda_image, ['data-lazy-ignore' => 1]); ?>
+                                <div>
+                                    <div class="image-container <?php echo $agenda_image ? 'has-image' : ''; ?> <?php echo $has_multiple_avatar ? 'has-multiple' : ''; ?>">
+                                        <?php Images::safe_image_output($agenda_image, ['data-lazy-ignore' => 1]); ?>
+                                    </div>
+                                    <?php if ($has_multiple_avatar) { ?>
+                                        <div class="avatars">
+                                            <?php foreach ($multiple_avatar as $avatar) {
+                                                Images::safe_image_output(Arrays::get_value_as_array($avatar, 'avatar'), ['data-lazy-ignore' => 1]);
+                                            }  ?>
+                                        </div>
+                                    <?php } ?>
                                 </div>
                                 <div class="content">
                                     <h3><?php echo $agenda_title; ?></h3>

@@ -418,6 +418,15 @@
 				&.green {
 					border: 1px solid #0f5353;
 				}
+				.avatars {
+					display: none;
+					img {
+						width: 64px;
+						height: 64px;
+						border-radius: 50%;
+						overflow: hidden;
+					}
+				}
 				.image-container {
 					&.has-image {
 						width: 64px;

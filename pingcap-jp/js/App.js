@@ -44,7 +44,7 @@ import { processExternalLinks, safeParseJSON } from './util/general-util';
 import SiteEvents, { SiteEventNames } from './util/site-events';
 import { createSingleUseObserver } from './util/intersection-observer';
 import setupEventDelegators from './util/setup-event-delegators';
-import { showVideoModal, showFormModal, showTiudSummaryModal } from './util/modal-helpers';
+import { showVideoModal, showFormModal, showTiUDSummaryModal } from './util/modal-helpers';
 import { loadPrismJS } from './util/load-dependencies';
 import {
 	autodetectCodeElLanguage,
@@ -147,7 +147,7 @@ class App {
 				showFormModal(el);
 			},
 			'js--trigger-tiud-summary-modal': (el) => {
-				showTiudSummaryModal(el);
+				showTiUDSummaryModal(el);
 			}
 		});
 
