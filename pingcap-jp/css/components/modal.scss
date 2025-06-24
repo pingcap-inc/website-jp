@@ -221,6 +221,25 @@ html.modal-active {
 				width: 100%;
 				height: 100%;
 			}
+			&.has-multiple {
+				display: none;
+			}
+		}
+		.avatars {
+			display: flex;
+			gap: 8px;
+			flex-direction: column;
+			img {
+				width: 64px;
+				height: 64px;
+				border-radius: 50%;
+				overflow: hidden;
+				display: block;
+				@include media-min($medium) {
+					width: 114px;
+					height: 114px;
+				}
+			}
 		}
 		.content {
 			flex: 1;

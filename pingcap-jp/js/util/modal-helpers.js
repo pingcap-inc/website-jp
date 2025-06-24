@@ -80,7 +80,7 @@ export function showFormModal(el) {
 	});
 }
 
-export function showTiudSummaryModal(el) {
+export function showTiUDSummaryModal(el) {
 	const tmpl = el.querySelector('.card').outerHTML;
 
 	Modal.show(tmpl, {
