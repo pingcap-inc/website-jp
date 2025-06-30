@@ -23,9 +23,9 @@ class HeaderTiUD2025 implements IComponent
                             <a class="nav-menu" href="#about">
                                 開催概要
                             </a>
-                            <div class="nav-menu" href="#agenda">
+                            <a class="nav-menu" href="#agenda">
                                 タイムテーブル
-                            </div>
+                            </a>
                             <a class="nav-menu" href="#speakers">
                                 登壇企業
                             </a>
