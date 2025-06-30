@@ -3,7 +3,6 @@
 namespace PingCAP\Components\Headers;
 
 use WPUtil\Interfaces\IComponent;
-use WPUtil\{SVG};
 
 class HeaderTiUD2025 implements IComponent
 {
@@ -24,10 +23,10 @@ class HeaderTiUD2025 implements IComponent
                             <a class="nav-menu" href="#about">
                                 開催概要
                             </a>
-                            <div class="nav-menu" href="#">
+                            <div class="nav-menu" href="#agenda">
                                 タイムテーブル
                             </div>
-                            <a class="nav-menu" href="#partner">
+                            <a class="nav-menu" href="#speakers">
                                 登壇企業
                             </a>
                             <a class="nav-menu" href="#sponsors">
