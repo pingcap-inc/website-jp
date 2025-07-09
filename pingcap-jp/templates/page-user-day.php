@@ -190,9 +190,17 @@ get_header();
                                 if (have_rows("program")) {
                                     while (have_rows("program")) {
                                         the_row();
-                                        foreach (get_sub_field("tags") as $tag_id) {
+
+                                        $tag_ids = get_sub_field('tags');
+                                        if (empty($tag_ids) || !is_array($tag_ids)) {
+                                            continue;
+                                        }    
+
+                                        foreach ($tag_ids as $tag_id) {
                                             $term = get_term($tag_id, Constants\Taxonomies::USERDAY);
-                                            $_all_terms[$term->term_id] = $term;
+                                            if ($term && !is_wp_error($term)) {
+                                                $_all_terms[$term->term_id] = $term;
+                                            }
                                         }
                                     }
                                 }
