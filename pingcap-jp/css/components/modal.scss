@@ -181,6 +181,7 @@ html.modal-active {
 .modal-tiud-agenda {
 	border-radius: 5px;
 	margin: 0 16px;
+	max-height: calc(100% - 16rem);
 	.modal__content {
 		padding: 0;
 		background: #06111a;
@@ -228,7 +229,11 @@ html.modal-active {
 		.avatars {
 			display: flex;
 			gap: 8px;
-			flex-direction: column;
+			flex-direction: row;
+			flex-wrap: wrap;
+			@include media-min($medium) {
+				flex-direction: column;
+			}
 			img {
 				width: 64px;
 				height: 64px;
