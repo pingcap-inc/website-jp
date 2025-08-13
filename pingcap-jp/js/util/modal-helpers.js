@@ -76,6 +76,12 @@ export function showFormModal(el) {
 		target: '.modal-form .modal__form-container',
 		onFormReady: function () {
 			Modal.setLoading(false);
+		},
+		onFormSubmitted: function () {
+			const content = document.querySelector('.modal__content-container');
+			if (content) {
+				content.scrollTo({ top: 0, behavior: 'smooth' });
+			}
 		}
 	});
 }
