@@ -40,6 +40,7 @@ class BlockTabs {
 			}
 		})
 
+		Prism && Prism.highlightAll();
 		SiteEvents.publish(SiteEventNames.LAZYLOAD_TRIGGER_UPDATE);
 	}
 }

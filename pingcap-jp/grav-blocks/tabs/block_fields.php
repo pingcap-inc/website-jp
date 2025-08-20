@@ -78,6 +78,32 @@ $block_fields = array(
 		'disabled' => 0,
 	),
 	array (
+		'key' => 'field_' . $block . '_nav_block_title',
+		'label' => 'Navigation Block Title',
+		'name' => 'nav_block_title',
+		'type' => 'wysiwyg',
+		'instructions' => '',
+		'required' => 0,
+		'conditional_logic' => array (
+			array (
+				array (
+					'field' => 'field_' . $block . '_format',
+					'operator' => '==',
+					'value' => '',
+				),
+			),
+		),
+		'wrapper' => array (
+			'width' => '',
+			'class' => '',
+			'id' => '',
+		),
+		'default_value' => '',
+		'tabs' => 'all',         // all | visual | text
+		'toolbar' => 'full',     // full | basic
+		'media_upload' => 0,
+	),
+	array (
 		'key' => 'field_' . $block . '_nav_content',
 		'label' => 'Navigation Content',
 		'name' => 'nav_content',

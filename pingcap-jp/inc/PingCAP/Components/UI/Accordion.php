@@ -110,7 +110,7 @@ class Accordion implements IComponent
 					<label class="accordion__section-title" for="<?php echo esc_attr($section_id); ?>">
 						<span class="accordion__plus-icon"></span>
 						<<?php echo esc_attr($this->title_text_tag); ?> class="accordion__section-title-text">
-							<?php echo esc_html($section->title ?? ''); ?>
+							<?php echo $section->title ?? ''; ?>
 						</<?php echo esc_attr($this->title_text_tag); ?>>
 					</label>
 					<div class="accordion__section-content">

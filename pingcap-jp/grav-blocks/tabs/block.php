@@ -13,6 +13,7 @@ $format = isset($format) && is_string($format) ? $format : ACF::get_sub_field_st
 if ($sections) {
 	$nav_title = isset($nav_title) && is_string($nav_title) ? $nav_title : ACF::get_sub_field_string('nav_title');
 	$nav_title_desc = isset($nav_title_desc) && is_string($nav_title_desc) ? $nav_title_desc : ACF::get_sub_field_string('nav_title_desc');
+	$nav_block_title = isset($nav_block_title) && is_string($nav_block_title) ? $nav_block_title : ACF::get_sub_field_string('nav_block_title');
 	$nav_content = isset($nav_content) && is_string($nav_content) ? $nav_content : ACF::get_sub_field_string('nav_content');
 	$tabs_desktop_classes = ['block-tabs__container-desktop'];
 	if ($format === 'column') {
@@ -62,10 +63,16 @@ if ($sections) {
 		<?php } ?>
 		<section class="<?php echo esc_attr(implode(' ', $tabs_desktop_classes)); ?>">
 			<aside class="block-tabs__desktop-nav">
+				<?php
+				if ($nav_block_title) {
+					echo wp_kses_post(wpautop($nav_block_title));
+				}
+				?>
+
 				<?php if (!$format) {
 					foreach ($sections as $index => $section) {
 						$section_key = Tabs::getSectionId($index);
-						$title = Arrays::get_value_as_string($section,'title');
+						$title = Arrays::get_value_as_string($section, 'title');
 
 						$btn_classes = [
 							'button',
@@ -78,7 +85,7 @@ if ($sections) {
 						}
 				?>
 						<button class="<?php echo esc_attr(implode(' ', $btn_classes)); ?>" data-section-id="<?php echo esc_attr($section_key); ?>">
-							<?php echo esc_html($title); ?>
+							<?php echo $title; ?>
 						</button>
 				<?php
 					}
@@ -138,11 +145,11 @@ if ($sections) {
 				<?php
 				foreach ($sections as $index => $values) {
 					$section_key = Tabs::getSectionId($index);
-					Tabs::renderSection($values, $section_key, true, $format === 'column', $column_num);
+					Tabs::renderSection($values, $section_key, true, $format === 'column', $column_num, $index === 0);
 				} ?>
 			</div>
 		</section>
 	</div>
 <?php
-	
+
 }

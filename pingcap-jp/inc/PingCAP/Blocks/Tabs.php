@@ -48,7 +48,7 @@ abstract class Tabs
 				<?php
 				if (!$column && $show_title && $title) {
 				?>
-					<h2 class="block-tabs__section-title"><?php echo esc_html($title); ?></h2>
+					<h2 class="block-tabs__section-title"><?php echo $title; ?></h2>
 				<?php
 				}
 				?>

@@ -125,8 +125,8 @@ WPUtil\Vendor\BlueprintBlocks::restrict_backgrounds_for_blocks([
 	'solutions' => ['block-bg-none'],
 	'stats' => ['block-bg-none'],
 	'table' => ['bg-blue'],
-	'tabs' => ['block-bg-none', 'bg-blue'],
-	'testimonials' => ['block-bg-none', 'bg-blue', 'block-bg-image']
+	'tabs' => ['block-bg-none', 'bg-blue', 'bg-black-dark'],
+	'testimonials' => ['block-bg-none', 'bg-black-dark', 'bg-blue', 'block-bg-image']
 ]);
 
 /**

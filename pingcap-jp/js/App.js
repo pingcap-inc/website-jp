@@ -353,7 +353,7 @@ class App {
 		}
 
 		// ai page
-		const aiPageEl = document.querySelector('.tmpl-ai-page');
+		const aiPageEl = document.querySelector('.tmpl-ai-page__example');
 
 		if (aiPageEl) {
 			this.instances.templates.aiPage = new AIPage(aiPageEl);
@@ -523,6 +523,9 @@ class App {
 		try {
 			await loadPlugin('toolbar');
 			await loadPlugin('copy-to-clipboard');
+			await loadPlugin('command-line');
+			await loadPlugin('line-numbers');
+			await loadPlugin('line-highlight');
 		} catch (err) {
 			console.error(err);
 		}
