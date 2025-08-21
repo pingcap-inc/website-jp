@@ -48,17 +48,6 @@ $is_feature_right = Arrays::get_value_as_string($values, 'format');
 		$icons = Arrays::get_value_as_array($link_column, 'links');
 	?>
 		<div class="menu-dropdown__item menu-dropdown__links-column">
-			<?php if ($label === 'エコシステム') { ?>
-				<div class="menu-dropdown__item-ai">
-					<span class="menu-dropdown__links-column-label">
-						Capabilities
-					</span>
-					<a href="/ai/" data-gtag="event:jp_navi_click,item_name:ai">
-						<i class="icon-exchange"></i>
-						Vector Search
-					</a>
-				</div>
-			<?php } ?>
 			<span class="menu-dropdown__links-column-label">
 				<?php echo esc_html($label); ?>
 			</span>
