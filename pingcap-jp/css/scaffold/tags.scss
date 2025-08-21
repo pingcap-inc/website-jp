@@ -1,13 +1,35 @@
 .tag {
 	font: normal normal var(--font-weight-regular) 1.4rem / 1.72 var(--font-primary);
 	color: #000;
-	background-color: #E5E8EB;
+	background-color: #e5e8eb;
 	padding: 0.4rem 1.6rem;
 	white-space: normal;
 }
 
-.tags{
+.tags {
 	display: flex;
 	flex-wrap: wrap;
-	gap: .8rem;
+	gap: 0.8rem;
+	&.outline {
+		.tag {
+			background-color: transparent;
+			border-radius: 16px;
+			color: #a2adb9;
+			&.gray {
+				border: 1px solid #8b96a2;
+			}
+			&.red {
+				border: 1px solid #dc150b;
+			}
+			&.green {
+				border: 1px solid #1aa8a8;
+			}
+			&.violet {
+				border: 1px solid #9E4EC4;
+			}
+			&.blue {
+				border: 1px solid #2C80CE;
+			}
+		}
+	}
 }

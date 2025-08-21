@@ -278,7 +278,6 @@
 	margin-bottom: 64px;
 	@include media-min($medium) {
 		width: 80%;
-		margin-bottom: 80px;
 
 		.desc {
 			width: 86%;
@@ -291,14 +290,6 @@
 		margin-bottom: 0;
 		@include media-min($medium) {
 			margin-bottom: 0;
-		}
-	}
-	&.full {
-		width: 100%;
-		@include media-min($medium) {
-			.desc {
-				width: 80%;
-			}
 		}
 	}
 	&.center {
@@ -318,17 +309,31 @@
 			}
 		}
 	}
+	&.full {
+		width: 100%;
+		@include media-min($medium) {
+			.desc {
+				width: 80%;
+			}
+		}
+	}
 	h2 {
 		font-size: 4rem;
 		line-height: 48px;
 		font-weight: 700;
 		color: var(--h3-color);
-		margin: 3.2rem 0;
 		@include media-min($medium) {
 			font-size: 64px;
 			line-height: 72px;
 		}
+		& + * {
+			margin-top: 32px;
+		}
 	}
+	* + h2 {
+		margin-top: 32px;
+	}
+
 	h3 {
 		font-size: 40px;
 		font-weight: 700;
@@ -358,12 +363,15 @@
 		font-weight: 700;
 		line-height: 48px;
 		color: var(--h5-color);
+		margin-bottom: 20px;
 		@include media-min($medium) {
 			font-size: 50px;
 			font-weight: 700;
 			line-height: 58px;
-			margin: 20px 0;
 		}
+	}
+	* + h5 {
+		margin-top: 20px;
 	}
 	.desc {
 		margin-bottom: 32px;
@@ -373,6 +381,9 @@
 		color: var(--paragraph-color);
 		@include media-min($medium) {
 			font-size: 22px;
+		}
+		b {
+			font-weight: bold;
 		}
 	}
 }

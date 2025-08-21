@@ -194,7 +194,7 @@
 	code {
 		background: var(--post-content-code-bg-color);
 		color: var(--post-content-code-text-color);
-		white-space: pre-wrap !important;
+		overflow: auto;
 	}
 
 	.is-h-full {

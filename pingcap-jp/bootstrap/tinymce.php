@@ -20,6 +20,14 @@ WPUtil\TinyMCE::set_options(array(
 
 WPUtil\TinyMCE::set_allowed_tags(
 	array(
+		'input' => array(
+			'id' => true,
+			'type' => true,
+			'min' => true,
+			'max' => true,
+			'step' => true,
+			'value' => true,
+		),
 		'ol' => array(
 			'start' => true
 		),

@@ -1,8 +1,8 @@
 @font-face {
 	font-family: "iconfont"; /* Project id 4677496 */
-	src: local(""), url("#{$fonts-url-base}/fonts/iconfont/iconfont.woff?t=1744876458418") format("woff"),
-		url("#{$fonts-url-base}/fonts/iconfont/iconfont.woff2?t=1744876458418") format("woff2"),
-		url("#{$fonts-url-base}/fonts/iconfont/iconfont.ttf?t=1744876458418") format("truetype");
+	src: local(""), url("#{$fonts-url-base}/fonts/iconfont/iconfont.woff?t=1754991019431") format("woff"),
+		url("#{$fonts-url-base}/fonts/iconfont/iconfont.woff2?t=1754991019431") format("woff2"),
+		url("#{$fonts-url-base}/fonts/iconfont/iconfont.ttf?t=1754991019431") format("truetype");
 }
 
 [class^="icon-"],
@@ -25,6 +25,70 @@
   font-style: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-graph:before {
+  content: "\e6fb";
+}
+
+.icon-chart:before {
+  content: "\e6fc";
+}
+
+.icon-chat:before {
+  content: "\e6fa";
+}
+
+.icon-filter:before {
+  content: "\e6f9";
+}
+
+.icon-search:before {
+  content: "\e6f8";
+}
+
+.icon-hexagon-medium:before {
+  content: "\e6f7";
+}
+
+.icon-hexagon-high:before {
+  content: "\e6f6";
+}
+
+.icon-hexagon-low:before {
+  content: "\e6f5";
+}
+
+.icon-clock-r:before {
+  content: "\e6f4";
+}
+
+.icon-signal-medium:before {
+  content: "\e6f1";
+}
+
+.icon-signal-low:before {
+  content: "\e6f3";
+}
+
+.icon-signal-high:before {
+  content: "\e6f2";
+}
+
+.icon-scale-t:before {
+  content: "\e6ef";
+}
+
+.icon-ai-t:before {
+  content: "\e6f0";
+}
+
+.icon-ppt:before {
+  content: "\e6ee";
+}
+
+.icon-price:before {
+  content: "\e6ed";
 }
 
 .icon-card-t:before {
