@@ -35,14 +35,6 @@ foreach ($link_columns as $link_column) {
 	);
 	$icons = Arrays::get_value_as_array($link_column, 'links');
 ?>
-	<?php if ($label === 'エコシステム') { ?>
-		<div class="mobile-menu-default__section-links-column">
-			<div class="mobile-menu-default__section-links-column-label">Capabilities</div>
-			<div class="mobile-menu-default__section-links-column-links ">
-				<a href="/ai/" data-gtag="event:jp_navi_click,item_name:Vector Search"><i class="menu-dropdown__links-column-icon icon-exchange"></i>Vector Search</a>
-			</div>
-		</div>
-	<?php } ?>
 	<div class="mobile-menu-default__section-links-column">
 		<?php if ($label) { ?>
 			<div class="mobile-menu-default__section-links-column-label"><?php echo esc_html($label); ?></div>
