@@ -1,0 +1,51 @@
+.pillar-cta {
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: cover;
+	background-color: #2436e3;
+	margin: 28px 0;
+	&.medium {
+		.image-container {
+			img {
+				max-width: 80%;
+				@include media-min($large) {
+					max-width: 100%;
+				}
+			}
+		}
+		.content-container {
+			flex: 1.5;
+		}
+	}
+	&-container {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		padding: 28px 16px;
+		@include media-min($large) {
+			padding: 28px 10px 28px 36px;
+			flex-direction: row;
+		}
+		.image-container {
+			flex: 1;
+			text-align: center;
+		}
+		.content-container {
+			margin-top: 16px;
+			flex: 3;
+			@include media-min($medium) {
+				margin-left: 32px;
+			}
+		}
+		.title {
+			font-weight: 400;
+			font-size: 24px;
+			line-height: 36px;
+			color: #fff;
+			margin-bottom: 30px;
+		}
+		img {
+			max-width: 230px;
+		}
+	}
+}

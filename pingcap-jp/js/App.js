@@ -39,6 +39,7 @@ import BlockTablePricing from './blocks/table-pricing';
 import TemplateFrontPage from './templates/front-page';
 import ActivityPage from './templates/activity-page';
 import AIPage from './templates/ai-page';
+import PillarPage from './templates/pillar-page';
 
 import { processExternalLinks, safeParseJSON } from './util/general-util';
 import SiteEvents, { SiteEventNames } from './util/site-events';
@@ -77,7 +78,8 @@ class App {
 			templates: {
 				frontPage: null,
 				activityPage: null,
-				aiPage: null
+				aiPage: null,
+				pillarPage: null
 			},
 			blocks: {
 				testimonials: [],
@@ -362,6 +364,12 @@ class App {
 		const tidbPage = document.querySelector('.tmpl-tidb');
 		if (tidbPage) {
 			this.loadRepoInfo();
+		}
+
+		// Pillar page
+		const pillarPage = document.querySelector('.tmpl-pillar');
+		if (pillarPage) {
+			this.instances.templates.pillarPage = new PillarPage(pillarPage);
 		}
 	}
 
