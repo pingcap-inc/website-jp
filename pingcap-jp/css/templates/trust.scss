@@ -7,10 +7,7 @@
 			margin-bottom: 40px;
 			@include media-min($medium) {
 				grid-template-columns: repeat(2, 1fr);
-			}
-			@include media-min($large) {
-				grid-template-columns: repeat(3, 1fr);
-				gap: 40px;
+				gap: 80px 32px;
 			}
 		}
 		.card {
@@ -82,6 +79,19 @@
 					height: 175px;
 				}
 			}
+			&:nth-of-type(4) {
+				border: 1px solid #DC150B;
+				&::after {
+					content: "";
+					background: url(https://static.pingcap.com/files/2025/09/12023412/resiliency.svg)
+						no-repeat center center / contain;
+					position: absolute;
+					right: 4px;
+					bottom: -50px;
+					width: 113px;
+					height: 175px;
+				}
+			}
 
 			img {
 				position: absolute;
@@ -93,17 +103,11 @@
 			&:hover {
 				transform: translateY(-12px);
 				.button-link {
-					.button__arrow {
+					&:after {
 						background-color: #fff;
-						&::before {
-							border-color: #000;
-							transform: rotate(0);
-						}
-						&::after {
-							top: 0;
-							border-color: #000;
-							transform: rotate(45deg);
-						}
+						border-radius: 50%;
+						color: #000;
+						transform: rotate(45deg);
 					}
 				}
 			}
