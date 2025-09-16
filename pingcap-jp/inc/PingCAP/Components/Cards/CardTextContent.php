@@ -16,9 +16,11 @@ class CardTextContent implements IComponent
 	public string $content = '';
 	public string $link_text = '';
 	public string $link_url = '';
+	public bool $hide_content = false;
 
 	public function __construct(array $params)
 	{
+		$this->hide_content = Arrays::get_value_as_bool($params, 'hide_content');
 		$this->svg_icon = Arrays::get_value_as_array($params, 'svg_icon');
 		$this->image_position = Arrays::get_value_as_string($params, 'image_position');
 		$this->border_color = Arrays::get_value_as_string($params, 'border_color');
@@ -31,8 +33,17 @@ class CardTextContent implements IComponent
 
 	public function render(): void
 	{
+		$classes = ['card-text-content'];
+
+		if ($this->hide_content) {
+			$classes[] = 'hide-content';
+		}
+
+		if ($this->border_color) {
+			$classes[] = $this->border_color;
+		}
 ?>
-		<div class="card-text-content <?php echo $this->border_color; ?>">
+		<div class="<?php echo esc_attr(implode(' ', $classes)); ?>">
 
 			<?php if ($this->label) { ?>
 				<p class="card-text-content__label"><?php echo $this->label ?></p>

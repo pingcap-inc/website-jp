@@ -1,0 +1,38 @@
+.tmpl-education {
+	&.certificate-cta {
+		background: linear-gradient(to bottom, #000 44%, #06111a 44%, #06111a 80%, #000 80%);
+        .container{
+            display: flex;
+            flex-direction: column;
+            gap: 32px;
+            @include media-min($medium) {
+                flex-direction: row;
+            }
+            @include media-min($large) {
+                gap: 48px;
+            }
+        }
+		.content {
+			display: flex;
+			flex-direction: column;
+			justify-content: space-between;
+			padding: 36px 0;
+            gap: 16px;
+		}
+	}
+    .course-info {
+        display: flex;
+        gap: 3.2rem;
+        flex-wrap: wrap;
+        margin-top: 16px;
+        .icons {
+            gap: 4px;
+            align-items: center;
+            color: #a2adb9;
+            &:before {
+                color: #fff;
+                font-size: 20px;
+            }
+        }
+    }
+}

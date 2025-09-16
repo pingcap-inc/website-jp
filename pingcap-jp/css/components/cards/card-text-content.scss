@@ -3,6 +3,27 @@
 	border: 1px solid var(--card-border-color);
 	background-color: var(--card-background-color);
 	transition: all var(--default-transition-params);
+	&.hide-content {
+		height: max-content;
+		padding-bottom: 16px;
+		cursor: pointer;
+		.card-text-content__icon {
+			width: auto;
+			height: auto;
+		}
+		.card-text-content__content {
+			height: 0;
+			overflow: hidden;
+			transition: all var(--default-transition-params);
+		}
+
+		&:hover {
+			.card-text-content__content {
+				padding-bottom: 16px;
+				height: max-content;
+			}
+		}
+	}
 
 	&:hover {
 		box-shadow: var(--card-box-shadow);
@@ -58,8 +79,20 @@
 	&__content {
 		margin-top: 16px;
 		font-weight: 300;
+		ul {
+			margin-left: 20px;
+		}
+		* + ul {
+			margin-top: 16px;
+		}
+		ul + * {
+			margin-top: 16px;
+		}
+		b {
+			color: #fff;
+		}
 	}
-	
+
 	&__link {
 		margin-top: 1rem;
 	}
