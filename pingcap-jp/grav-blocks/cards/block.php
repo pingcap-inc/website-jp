@@ -149,6 +149,7 @@ if ($cards) {
 							'card_bg_color' => Arrays::get_value_as_string($card, 'card_bg_color'),
 							'title' => Arrays::get_value_as_string($card, 'title'),
 							'desc' => Arrays::get_value_as_string($card, 'desc'),
+							'has_demo' => Arrays::get_value_as_bool($card, 'has_demo'),
 							'permalink' => $link->link,
 							'permalink_text' => $link->text
 						];
@@ -172,6 +173,7 @@ if ($cards) {
 						$link = BlueprintBlocks::get_button_field_values('link', $card);
 
 						$render_params = [
+							'has_border' => Arrays::get_value_as_bool($card, 'has_border'),
 							'icon_type' => Arrays::get_value_as_string($card, 'icon_type'),
 							'icon_image' => Arrays::get_value_as_array($card, 'icon_image'),
 							'icon_font' => Arrays::get_value_as_string($card, 'icon_font'),
@@ -208,6 +210,7 @@ if ($cards) {
 							'border_color' => Arrays::get_value_as_string($card, 'border_color'),
 							'title' => Arrays::get_value_as_string($card, 'title'),
 							'label' => Arrays::get_value_as_string($card, 'label'),
+							'hide_content' => Arrays::get_value_as_bool($card, 'hide_content'),
 							'content' => Arrays::get_value_as_string($card, 'content'),
 							'link_text' => $link->text,
 							'link_url' => $link->link

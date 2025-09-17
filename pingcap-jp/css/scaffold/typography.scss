@@ -5,7 +5,7 @@
  *	Need an rem value that matches 13px? 1.3rem
  *	Need an rem value that matches 27px? 2.7rem
  */
- :root {
+:root {
 	font-size: 10px;
 }
 
@@ -123,7 +123,7 @@ span {
 h1 {
 	font-weight: var(--font-weight-semibold);
 	font-size: 36px;
-	line-height: 125%;
+	line-height: 100%;
 	color: var(--h1-color);
 	@include media-min($medium) {
 		font-size: clamp(36px, 3.65vw, 52px);
@@ -225,6 +225,12 @@ h6 {
 	line-height: 1.44;
 }
 
+.medium,
+%medium-text {
+	font-size: calc(var(--body-font-size));
+	line-height: 1.625;
+}
+
 small,
 .small,
 %small-text {
@@ -249,12 +255,12 @@ small,
 	text-align: right;
 }
 
-.text-white {
-	color: var(--color-white) !important;
+.text-gray {
+	color: var(--paragraph-color);
 }
 
-.text-gray {
-	color: #A2ADB9;
+.text-white {
+	color: var(--color-white) !important;
 }
 
 .text-blue {

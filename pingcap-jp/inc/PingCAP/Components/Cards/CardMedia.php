@@ -43,9 +43,17 @@ class CardMedia implements IComponent
      */
     public string $permalinkText = '';
 
+    /**
+     * The media border
+     *
+     * @var bool
+     */
+    public string $has_border = '';
+
 
     public function __construct(array $params)
     {
+        $this->has_border = Arrays::get_value_as_bool($params, 'has_border');
         $this->icon_type = Arrays::get_value_as_string($params, 'icon_type');
         $this->icon_image = Arrays::get_value_as_array($params, 'icon_image');
         $this->icon_font = Arrays::get_value_as_string($params, 'icon_font');
@@ -61,6 +69,10 @@ class CardMedia implements IComponent
         $container_attrs = [
             'class' => 'card-media'
         ];
+
+        if($this->has_border) {
+            $container_attrs['class'] = 'card-media has-border';
+        }
 
         if ($this->permalink) {
             $container_attrs['href'] = esc_url($this->permalink);
