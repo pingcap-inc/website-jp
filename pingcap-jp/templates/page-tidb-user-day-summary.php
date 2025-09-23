@@ -9,117 +9,23 @@ use WPUtil\{Vendor};
 get_header();
 
 ?>
-<main class="tmpl-summary__content">
+<main class="tmpl-summary__content bg-black-dark">
+    <div class="banner-container">
+        <!-- <video class="banner-video" src="https://static.pingcap.co.jp/files/2023/06/12233132/20230613-143048.mp4" autoplay loop muted playsinline></video> -->
+        <img class="banner-image" src="https://static.pingcap.co.jp/files/2025/09/22105904/banner-scaled.jpg">
+        <img class="banner-overlay" src="https://static.pingcap.co.jp/files/2025/09/22105653/banner-overlay.png">
+    </div>
     <div class="contain">
-        <h1 class="tmpl-summary__content-title">NewSQLデータベースは<br>もう冒険じゃない</h1>
-        <a class="button-tiud" href="/tidb-user-day/jul-2024/">TiUD2024アーカイブ動画を見る</a>
-        <P class="tip">次回のイベントは2025年10月3日(金)に開催します</P>
+        <h1 class="tmpl-summary__content-title">2025年 NewSQLの旅</h1>
+        <div>本イベントは終了しました。<br /> たくさんのご参加ありがとうございました！</div>
+        <div class="button-group">
+            <a class="button js--trigger-form-modal" data-form-id="cc527b2b-dcf3-4d9a-97f6-fd72fc97e9e8">録画視聴に登録</a>
+            <a href="https://tidbcloud.com/free-trial/" class="button-link">無料ではじめる</a>
+        </div>
     </div>
 </main>
-<section class="bg-black block-container block-columns" id="about">
-    <div class="contain block-inner grid is-8" data-num-col="1">
-        <div class="block-columns__column wysiwyg">
-            <div class="block-section__title-container">
-                <h2 class="block-section__title">イベントについて</h2>
-            </div>
-            <p>TiDB User Day (TiUD) は、TiDBユーザーが集結し、データベースエンジニアが最先端のアイディア、ベストプラクティス、テクニックを学び、TiDBの活用術を磨く、TiDBユーザーのための祭典です。ユーザー体験を起点とし、NewSQLデータベースのTiDBがどのように使用されているのか、ユーザーの生の声を通して、最新動向やインスピレーションを得ることができるNewSQLデータベースの日本最大級のイベントです。
-            </p>
-        </div>
-    </div>
-</section>
 
-<div class="tmpl-summary__carousel">
-    <div class="carousel-list-container">
-        <div class="carousel-list">
-            <div class="carousel-item">
-                <img src="https://static.pingcap.co.jp/files/2024/07/29194040/TiUD2024_Loop_Photo_1_600x400.png" class="carousel-item-image">
-            </div>
-            <div class="carousel-item">
-                <img src="https://static.pingcap.co.jp/files/2024/07/29194040/TiUD2024_Loop_Photo_2_600x400.png" class="carousel-item-image">
-            </div>
-            <div class="carousel-item">
-                <img src="https://static.pingcap.co.jp/files/2024/07/29194040/TiUD2024_Loop_Photo_3_600x400.png" class="carousel-item-image">
-            </div>
-            <div class="carousel-item">
-                <img src="https://static.pingcap.co.jp/files/2024/07/29194040/TiUD2024_Loop_Photo_4_600x400.png" class="carousel-item-image">
-            </div>
-            <div class="carousel-item">
-                <img src="https://static.pingcap.co.jp/files/2024/07/29194040/TiUD2024_Loop_Photo_5_600x400.png" class="carousel-item-image">
-            </div>
-            <div class="carousel-item">
-                <img src="https://static.pingcap.co.jp/files/2024/07/29194040/TiUD2024_Loop_Photo_6_600x400.png" class="carousel-item-image">
-            </div>
-            <div class="carousel-item">
-                <img src="https://static.pingcap.co.jp/files/2024/07/29194040/TiUD2024_Loop_Photo_7_600x400.png" class="carousel-item-image">
-            </div>
-            <div class="carousel-item">
-                <img src="https://static.pingcap.co.jp/files/2024/07/29194040/TiUD2024_Loop_Photo_8_600x400.png" class="carousel-item-image">
-            </div>
-            <div class="carousel-item">
-                <img src="https://static.pingcap.co.jp/files/2024/07/29194040/TiUD2024_Loop_Photo_9_600x400.png" class="carousel-item-image">
-            </div>
-            <div class="carousel-item">
-                <img src="https://static.pingcap.co.jp/files/2024/07/29194040/TiUD2024_Loop_Photo_10_600x400.png" class="carousel-item-image">
-            </div>
-            <div class="carousel-item">
-                <img src="https://static.pingcap.co.jp/files/2024/07/29194040/TiUD2024_Loop_Photo_11_600x400.png" class="carousel-item-image">
-            </div>
-            <div class="carousel-item">
-                <img src="https://static.pingcap.co.jp/files/2024/07/29194040/TiUD2024_Loop_Photo_12_600x400.png" class="carousel-item-image">
-            </div>
-            <div class="carousel-item">
-                <img src="https://static.pingcap.co.jp/files/2024/07/29194040/TiUD2024_Loop_Photo_13_600x400.png" class="carousel-item-image">
-            </div>
-            <div class="carousel-item">
-                <img src="https://static.pingcap.co.jp/files/2024/07/29194040/TiUD2024_Loop_Photo_14_600x400.png" class="carousel-item-image">
-            </div>
-        </div>
-        <div class="carousel-list">
-            <div class="carousel-item">
-                <img src="https://static.pingcap.co.jp/files/2024/07/29194040/TiUD2024_Loop_Photo_1_600x400.png" class="carousel-item-image">
-            </div>
-            <div class="carousel-item">
-                <img src="https://static.pingcap.co.jp/files/2024/07/29194040/TiUD2024_Loop_Photo_2_600x400.png" class="carousel-item-image">
-            </div>
-            <div class="carousel-item">
-                <img src="https://static.pingcap.co.jp/files/2024/07/29194040/TiUD2024_Loop_Photo_3_600x400.png" class="carousel-item-image">
-            </div>
-            <div class="carousel-item">
-                <img src="https://static.pingcap.co.jp/files/2024/07/29194040/TiUD2024_Loop_Photo_4_600x400.png" class="carousel-item-image">
-            </div>
-            <div class="carousel-item">
-                <img src="https://static.pingcap.co.jp/files/2024/07/29194040/TiUD2024_Loop_Photo_5_600x400.png" class="carousel-item-image">
-            </div>
-            <div class="carousel-item">
-                <img src="https://static.pingcap.co.jp/files/2024/07/29194040/TiUD2024_Loop_Photo_6_600x400.png" class="carousel-item-image">
-            </div>
-            <div class="carousel-item">
-                <img src="https://static.pingcap.co.jp/files/2024/07/29194040/TiUD2024_Loop_Photo_7_600x400.png" class="carousel-item-image">
-            </div>
-            <div class="carousel-item">
-                <img src="https://static.pingcap.co.jp/files/2024/07/29194040/TiUD2024_Loop_Photo_8_600x400.png" class="carousel-item-image">
-            </div>
-            <div class="carousel-item">
-                <img src="https://static.pingcap.co.jp/files/2024/07/29194040/TiUD2024_Loop_Photo_9_600x400.png" class="carousel-item-image">
-            </div>
-            <div class="carousel-item">
-                <img src="https://static.pingcap.co.jp/files/2024/07/29194040/TiUD2024_Loop_Photo_10_600x400.png" class="carousel-item-image">
-            </div>
-            <div class="carousel-item">
-                <img src="https://static.pingcap.co.jp/files/2024/07/29194040/TiUD2024_Loop_Photo_11_600x400.png" class="carousel-item-image">
-            </div>
-            <div class="carousel-item">
-                <img src="https://static.pingcap.co.jp/files/2024/07/29194040/TiUD2024_Loop_Photo_12_600x400.png" class="carousel-item-image">
-            </div>
-            <div class="carousel-item">
-                <img src="https://static.pingcap.co.jp/files/2024/07/29194040/TiUD2024_Loop_Photo_13_600x400.png" class="carousel-item-image">
-            </div>
-            <div class="carousel-item">
-                <img src="https://static.pingcap.co.jp/files/2024/07/29194040/TiUD2024_Loop_Photo_14_600x400.png" class="carousel-item-image">
-            </div>
-        </div>
-    </div>
-</div>
+<?php Vendor\BlueprintBlocks::safe_display(); ?>
 
 <script>
     const navbarEl = document.querySelector('.navbar-toggle');
@@ -139,7 +45,5 @@ get_header();
     });
 </script>
 <?php
-
-Vendor\BlueprintBlocks::safe_display();
 
 get_footer();
