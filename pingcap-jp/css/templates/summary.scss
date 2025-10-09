@@ -168,6 +168,9 @@
 				top: 0;
 				z-index: 1;
 			}
+			.banner-image {
+				height: calc(100% - 1px);
+			}
 			.banner-overlay {
 				position: absolute;
 				width: 100%;
