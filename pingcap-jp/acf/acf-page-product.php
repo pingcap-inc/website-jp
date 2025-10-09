@@ -30,7 +30,7 @@ acf_add_local_field_group(array(
             'name' => 'features_block_title',
             'type' => 'wysiwyg',
             'instructions' => '',
-            'required' => 1,
+            'required' => 0,
             'conditional_logic' => 0,
             'wrapper' => array(
                 'width' => '',
@@ -182,7 +182,7 @@ acf_add_local_field_group(array(
             'name' => 'product_advantages_title',
             'type' => 'text',
             'instructions' => '',
-            'required' => 1,
+            'required' => 0,
             'conditional_logic' => 0,
             'wrapper' => array(
                 'width' => '',
@@ -413,7 +413,7 @@ acf_add_local_field_group(array(
             'name' => 'product_resources_title',
             'type' => 'text',
             'instructions' => '',
-            'required' => 1,
+            'required' => 0,
             'conditional_logic' => 0,
             'wrapper' => array(
                 'width' => '',

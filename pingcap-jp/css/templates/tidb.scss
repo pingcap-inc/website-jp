@@ -354,6 +354,16 @@
 				margin-top: -13rem;
 			}
 		}
+		&.pricing {
+			@include media-min($large) {
+				--num-cols: 2;
+				gap: 8px;
+			}
+			@include media-min(1300px) {
+				--num-cols: 4;
+				gap: 8px;
+			}
+		}
 		&-item {
 			display: flex;
 			flex-direction: column;
@@ -426,13 +436,13 @@
 				& > div:first-child {
 					flex: 1;
 				}
-				&.red {
-					border-color: #83120c;
-				}
 				h4 {
 					margin-top: 1rem;
 					& + * {
 						margin-top: 0.4rem;
+					}
+					@include media-min($medium) {
+						font-size: 20px;
 					}
 				}
 				ul {
@@ -441,16 +451,63 @@
 					}
 					padding-bottom: 3.2rem;
 					border: none;
+					color: #a2adb9;
+					list-style: none;
 				}
 				li {
-					margin: 0 0 1rem 1.2rem;
+					margin: 0 0 1rem 0;
 					line-height: 2rem;
+					display: flex;
+					gap: 8px;
+					i {
+						color: #52cc7a;
+						font-size: 18px;
+					}
+				}
+				&:nth-child(1) {
+					border-color: #28333e;
+					h4 {
+						color: #d454b4;
+					}
+				}
+				&:nth-child(2) {
+					border-color: #fff;
+					h4 {
+						color: #948de2;
+						display: flex;
+						align-items: center;
+						justify-content: center;
+						gap: 8px;
+						white-space: nowrap;
+					}
+					.tag {
+						background: #000;
+						color: #fff;
+						border: 1px solid #28333e;
+						border-radius: 16px;
+						padding: 0 10px;
+						display: flex;
+						align-items: center;
+						font-size: 12px;
+					}
+				}
+				&:nth-child(3) {
+					border-color: #28333e;
+					h4 {
+						color: #79d2d2;
+					}
+				}
+				&.row {
+					border-color: #28333e!important;
+					h4 {
+						color: #fff;
+					}
 				}
 			}
 			&-bottom {
 				width: 80%;
 				margin: auto;
-				border-top: 1px solid #2c80ce;
+				border-top: 1px solid #28333e;
 				text-align: center;
 				padding-top: 8px;
 			}

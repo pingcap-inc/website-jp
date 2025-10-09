@@ -1,12 +1,15 @@
 .pricing-search {
 	padding: 2rem 0 1.6rem;
-	border-top: 1px solid #2C80CE;
+	border-top: 1px solid #28333e;
 	width: 80%;
 	margin: auto;
 	&__inner {
 		display: flex;
-		align-items: flex-end;
 		justify-content: center;
+		flex-direction: column;
+		align-items: center;
+		text-align: center;
+		gap: 8px;
 	}
 	&__tabs {
 		display: flex;

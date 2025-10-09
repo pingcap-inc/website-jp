@@ -1,6 +1,40 @@
 .tmpl-front-page {
 	background-color: #000;
 
+	.block-media-content__container {
+		h3 {
+			font-size: 24px;
+			line-height: 30px;
+			font-weight: 700;
+			color: #000;
+			@include media-min($medium) {
+				font-size: 5rem;
+				line-height: 66px;
+			}
+		}
+		p {
+			font-size: 22px;
+			font-weight: 300;
+			line-height: 28px;
+			color: #A2ADB9;
+		}
+	}
+
+	.intro {
+		&-container {
+			display: flex;
+			flex-direction: column;
+			gap: 32px;
+			@include media-min(900px){
+				flex-direction: row;
+				justify-content: space-between;
+			}
+			img {
+				max-width: 280px;
+			}
+		}
+	}
+
 	.deploy {
 		background: linear-gradient(180deg, #06111a 55.9%, #000000 100%);
 		.contain {

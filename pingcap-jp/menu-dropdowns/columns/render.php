@@ -4,6 +4,7 @@
 use WPUtil\{Arrays, Component};
 use PingCAP\Components;
 use WPUtil\Vendor\{BlueprintBlocks};
+use Blueprint\Images;
 
 $featured_products = Arrays::get_value_as_array($values, 'featured_products');
 $link_columns = Arrays::get_value_as_array($values, 'link_columns');
@@ -14,6 +15,7 @@ $is_feature_right = Arrays::get_value_as_string($values, 'format');
 		<div class="menu-dropdown__item menu-dropdown__feature">
 			<?php
 			foreach ($featured_products as $product) {
+				$icon = Arrays::get_value_as_array($product, 'icon');
 				$link = Arrays::get_value_as_array($product, 'product_link');
 				$title = Arrays::get_value_as_string($product, 'name');
 				$description = Arrays::get_value_as_string($product, 'description');
@@ -21,13 +23,16 @@ $is_feature_right = Arrays::get_value_as_string($values, 'format');
 
 				<div class="menu-dropdown__feature-column">
 					<div class="menu-dropdown__feature-column-title-container">
-						<?php
-						Component::render(Components\UI\Button::class, [
-							'link' => $link['url'],
-							'text' => $title,
-							'style' => 'button-text',
-							'attributes' => ['data-gtag' => 'event:jp_navi_click,item_name:' . $title]
-						]);
+						<?php if ($icon) { ?>
+							<a class="logo-link" href="<?php echo $link['url']; ?>" data-tag="event:eng_navi_click,item_name:<?php echo $title; ?>"><?php Images::safe_image_output($icon); ?></a>
+						<?php } else {
+							Component::render(Components\UI\Button::class, [
+								'link' => $link['url'],
+								'text' => $title,
+								'style' => 'button-text',
+								'attributes' => ['data-gtag' => 'event:eng_navi_click,item_name:' . $title]
+							]);
+						}
 						?>
 					</div>
 					<div class="menu-dropdown__feature-column-content">
@@ -63,13 +68,6 @@ $is_feature_right = Arrays::get_value_as_string($values, 'format');
 			<?php
 			}
 			?>
-			<?php if ($label === 'エコシステム') { ?>
-				<div class="menu-dropdown__item-pricing">
-					<a class="button-text" href="/pricing/" data-gtag="event:jp_navi_click,item_name:pricing">
-						料金
-					</a>
-				</div>
-			<?php } ?>
 		</div>
 	<?php
 	}
