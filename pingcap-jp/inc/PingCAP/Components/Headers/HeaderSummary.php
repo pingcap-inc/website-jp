@@ -79,7 +79,7 @@ class HeaderSummary implements IComponent
                         </div>
                     </div>
                 </div>
-                <a class="button-tiud" href="/tidb-user-day/jul-2024/">TiUD2024アーカイブ動画を見る</a>
+                <a class="button button-white button-tiud js--trigger-form-modal" data-form-id="cc527b2b-dcf3-4d9a-97f6-fd72fc97e9e8">録画視聴に登録</a>
             </nav>
         </header>
 <?php
