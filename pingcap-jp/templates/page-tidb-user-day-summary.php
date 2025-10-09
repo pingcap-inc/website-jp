@@ -12,9 +12,8 @@ get_header();
 <main class="tmpl-summary__content bg-black-dark">
     <div class="banner-container">
         <!-- <video class="banner-video" src="https://static.pingcap.co.jp/files/2023/06/12233132/20230613-143048.mp4" autoplay loop muted playsinline></video> -->
-        <img class="banner-image" src="https://static.pingcap.co.jp/files/2025/10/09111810/20251009-101718-scaled.jpeg">
-        <!-- <img class="banner-overlay" src="https://static.pingcap.co.jp/files/2025/09/22105653/banner-overlay.png"> -->
-        <img class="banner-overlay" src="https://static.pingcap.co.jp/files/2025/09/25120647/20250925-110518.png">
+        <img class="banner-image" src="https://static.pingcap.co.jp/files/2025/10/09143243/20251009-133131-scaled.jpeg">
+        <img class="banner-overlay" src="https://static.pingcap.co.jp/files/2025/10/09143232/20251009-133147.png">
     </div>
     <div class="contain">
         <h1 class="tmpl-summary__content-title">2025年 NewSQLの旅</h1>
