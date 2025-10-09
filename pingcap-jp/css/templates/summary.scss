@@ -1,18 +1,18 @@
 .tmpl-summary {
 	&__header {
-		background-color: #001524;
+		background-color: rgba(0, 0, 0, 0.7);
 		position: fixed;
 		top: var(--admin-bar-height, 0);
 		left: 0;
 		right: 0;
-		z-index: 2;
+		z-index: 10;
 		padding: 1.6rem 0;
 		.contain {
 			display: flex;
 			justify-content: space-between;
 			align-items: center;
 		}
-        .button-tiud {
+		.button-tiud {
 			display: inline-flex;
 			justify-content: center;
 			align-items: center;
@@ -44,6 +44,9 @@
 			}
 		}
 		&-title {
+			display: flex;
+			align-items: center;
+			gap: 16px;
 			font-size: 20px;
 			@include media-min($medium) {
 				font-size: 26px;
@@ -165,28 +168,65 @@
 		}
 	}
 	&__content {
+		position: relative;
 		text-align: center;
-		background: url(https://static.pingcap.co.jp/files/2024/07/29172013/home-banner-mb.jpg)
-			no-repeat center center/cover #0e0e0e;
-		margin-top: calc((var(--body-top-offset) - 60px) * -1);
-		padding: 8rem 0;
+		text-align: center;
+		font-weight: 400;
+		font-size: 18px;
+		line-height: 40px;
+		color: #fff;
 		@include media-min($medium) {
+			font-size: 26px;
 			display: flex;
 			align-items: center;
-			min-height: calc(100vh - 80px);
-			background: url(https://static.pingcap.co.jp/files/2024/07/29172016/home-banner-scaled.jpg)
-				no-repeat center 20% / cover #0e0e0e;
-			margin-top: calc((var(--body-top-offset) - 70px) * -1);
+			min-height: calc(100vh);
+			max-height: 800px;
+		}
+		.banner-container {
+			position: absolute;
+			width: 100%;
+			height: 100%;
+			.banner-video,
+			.banner-image {
+				position: absolute;
+				width: 100%;
+				height: 100%;
+				object-fit: cover;
+				left: 0;
+				top: 0;
+				z-index: 1;
+			}
+			.banner-overlay {
+				position: absolute;
+				width: 100%;
+				height: 100%;
+				left: 0;
+				top: 0;
+				z-index: 2;
+			}
+		}
+		.contain {
+			position: relative;
+			z-index: 3;
+			padding-top: 160px;
+			padding-bottom: 80px;
+			@include media-min($medium) {
+				padding-bottom: 120px;
+			}
 		}
 		&-title {
 			font-weight: 600;
 			font-size: clamp(30px, 8vw, 92px);
 			line-height: 1.2;
-			background: linear-gradient(90deg, #08c5ff 0%, #ffffff 100%);
-			background-clip: text;
-			-webkit-background-clip: text;
-			-webkit-text-fill-color: transparent;
+			color: #fff;
 			margin-bottom: 3.2rem;
+		}
+		.button-group {
+			justify-content: center;
+			margin-top: 64px;
+			.button-link {
+				color: #fff;
+			}
 		}
 		.button-tiud {
 			display: inline-flex;

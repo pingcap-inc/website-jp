@@ -15,7 +15,10 @@ class HeaderSummary implements IComponent
 ?>
         <header class="tmpl-summary__header">
             <div class="contain">
-                <div class="tmpl-summary__header-title">TiDB User Day</div>
+                <div class="tmpl-summary__header-title">
+                    <?php SVG::the_svg('general/ti'); ?>
+                    TiDB User Day
+                </div>
                 <nav class="tmpl-summary__header-nav">
                     <a class="nav-menu" href="/tidb-user-day/">
                         ホーム
@@ -41,7 +44,7 @@ class HeaderSummary implements IComponent
                             </div>
                         </div>
                     </div>
-                    <a class="button-tiud" href="/tidb-user-day/jul-2024/">TiUD2024アーカイブ動画を見る</a>
+                    <a class="button button-white js--trigger-form-modal" data-form-id="cc527b2b-dcf3-4d9a-97f6-fd72fc97e9e8">録画視聴に登録</a>
                 </nav>
                 <div class="navbar-toggle">
                     <span></span>
