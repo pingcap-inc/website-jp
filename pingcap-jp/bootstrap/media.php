@@ -32,6 +32,43 @@ WPUtil\ThemeSupport::post_thumbnails(300, 300, true);
 // 	]
 // ]);
 
+// Disable automatic image resizing for large images (especially GIFs)
+add_filter('big_image_size_threshold', '__return_false');
+
+/**
+ * Skip thumbnail generation for GIF files to avoid memory issues
+ * during animated GIF processing (Imagick often fails on large GIFs)
+ */
+add_filter('intermediate_image_sizes_advanced', function($sizes, $metadata) {
+    if (isset($metadata['file']) && preg_match('/\.gif$/i', $metadata['file'])) {
+        return []; // Remove all intermediate sizes for GIFs
+    }
+    return $sizes;
+}, 10, 2);
+
+/**
+ * Prefer GD image editor over Imagick.
+ * GD does not try to process animated GIF frames individually,
+ * which helps avoid failures or corrupted uploads.
+ */
+add_filter('wp_image_editors', function($editors) {
+    return ['WP_Image_Editor_GD', 'WP_Image_Editor_Imagick'];
+});
+
+/**
+ * Prevent WP Offload Media from uploading intermediate sizes of GIFs.
+ * (Optional: Only needed if thumbnails still show up in S3)
+ */
+add_filter('as3cf_pre_filter_attachment_metadata', function($data, $attachment_id) {
+    $file = get_attached_file($attachment_id);
+    if (preg_match('/\.gif$/i', $file)) {
+        if (isset($data['sizes'])) {
+            unset($data['sizes']); // Remove resized versions before offload
+        }
+    }
+    return $data;
+}, 10, 2);
+
 // add ImageBuddy 'data-ib-sources' values to background images
 add_filter('grav_blocks_background_image_attributes', function ($bg_image_attrs, $block_attrs, $acf_image_object) {
 	$bg_image_attrs['style'] = 'background-image: url(data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==);';
