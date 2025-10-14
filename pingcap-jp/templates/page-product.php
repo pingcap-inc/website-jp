@@ -17,6 +17,7 @@ Component::render(Components\Banners\BannerDefault::class);
 <main class="tmpl-product">
     <?php Vendor\BlueprintBlocks::safe_display(); ?>
 
+    <?php if(ACF::get_field_string('features_block_title')) { ?>
     <section class="features block-container bg-black-dark">
         <div class="block-inner contain">
             <div class="features__title-container">
@@ -41,7 +42,9 @@ Component::render(Components\Banners\BannerDefault::class);
             </div>
         </div>
     </section>
+    <?php } ?>
 
+    <?php if(ACF::get_field_string('product_advantages_title')) { ?>
     <section class="why block-container <?php echo ACF::get_field_string('product_advantages_bg'); ?>">
         <div class="block-inner contain">
             <div class="why__title-container">
@@ -85,7 +88,9 @@ Component::render(Components\Banners\BannerDefault::class);
             </div>
         </div>
     </section>
+    <?php } ?>
 
+    <?php if(ACF::get_field_string('product_resources_title')) { ?>
     <section class="resource block-container bg-black-dark">
         <div class="block-inner contain">
             <div class="resource__title"><?php echo ACF::get_field_string('product_resources_title'); ?></div>
@@ -112,6 +117,7 @@ Component::render(Components\Banners\BannerDefault::class);
             </div>
         </div>
     </section>
+    <?php } ?>
 
 </main>
 

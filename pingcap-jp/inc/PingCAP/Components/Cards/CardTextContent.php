@@ -58,7 +58,7 @@ class CardTextContent implements IComponent
 					// SVG::the_svg($this->svg_icon, ['class' => 'card-text-content__icon']);
 				}
 				?>
-				<h5 class="card-text-content__title"><?php echo esc_html($this->title); ?></h5>
+				<h5 class="card-text-content__title"><?php echo $this->title; ?></h5>
 			</div>
 			<div class="card-text-content__content">
 				<?php echo wp_kses_post(wpautop($this->content)); ?>

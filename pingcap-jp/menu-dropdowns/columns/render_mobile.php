@@ -3,23 +3,28 @@
 
 use WPUtil\{Arrays, Component, Vendor};
 use PingCAP\Components;
+use Blueprint\Images;
 
 $featured_products = Arrays::get_value_as_array($values, 'featured_products');
 $link_columns = Arrays::get_value_as_array($values, 'link_columns');
 
 foreach ($featured_products as $product) {
+	$icon = Arrays::get_value_as_array($product, 'icon');
 	$link = Arrays::get_value_as_array($product, 'product_link');
 	$title = Arrays::get_value_as_string($product, 'name');
 	$description = Arrays::get_value_as_string($product, 'description');
 ?>
 	<div class="mobile-menu-default__primary-section">
-		<?php
-		Component::render(Components\UI\Button::class, [
-			'link' => $link['url'],
-			'text' => $title,
-			'style' => 'button-text',
-			'attributes' => ['data-gtag' => 'event:jp_navi_click,item_name:' . $title]
-		]);
+		<?php if ($icon) { ?>
+			<a class="logo-link" href="<?php echo $link['url']; ?>" data-tag="event:eng_navi_click,item_name:<?php echo $title; ?>"><?php Images::safe_image_output($icon); ?></a>
+		<?php } else {
+			Component::render(Components\UI\Button::class, [
+				'link' => $link['url'],
+				'text' => $title,
+				'style' => 'button-text',
+				'attributes' => ['data-gtag' => 'event:eng_navi_click,item_name:' . $title]
+			]);
+		}
 		?>
 		<?php echo $description; ?>
 	</div>
@@ -63,12 +68,5 @@ foreach ($link_columns as $link_column) {
 			?>
 		</div>
 	</div>
-	<?php if ($label === 'エコシステム') { ?>
-		<div class="mobile-menu-default__section-links-column">
-			<div class="mobile-menu-default__section-links-column-links ">
-				<a class="button-text" href="/pricing/" data-gtag="event:jp_navi_click,item_name:Pricing">Pricing </a>
-			</div>
-		</div>
-	<?php } ?>
 <?php
 }

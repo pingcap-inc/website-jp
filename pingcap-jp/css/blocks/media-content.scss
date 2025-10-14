@@ -149,6 +149,7 @@
 
 		p {
 			color:  #454B51;
+			font-size: 22px;
 		}
 
 		ul {
@@ -167,6 +168,12 @@
 			ul {
 				width: 80%;
 			}
+		}
+	}
+
+	&.bg-black-dark {
+		.block-media-content__content-container p {
+			color: #A2ADB9;
 		}
 	}
 

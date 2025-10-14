@@ -102,11 +102,17 @@
 				height: 20px;
 				margin-right: 10px;
 			}
-			&-content p {
-				font-size: 1.5rem;
-				font-weight: 300;
-				color: #a2adb9;
-				padding-top: 1.6rem;
+			&-content {
+				margin-top: 16px;
+				p {
+					font-size: 1.5rem;
+					font-weight: 300;
+					color: #a2adb9;
+				}
+			}
+			.logo-link {
+				display: flex;
+				align-items: center;
 			}
 			&:not(:first-child) {
 				margin-top: 3.2rem;

@@ -1,17 +1,12 @@
 .tmpl-product {
 	.architecture-tabs {
 		&__tab {
-			display: flex;
-			gap: 16px;
-			align-items: center;
 			padding: 10px 20px;
 			cursor: pointer;
 			transition: all var(--default-transition-params);
 			@include media-min($medium) {
 				gap: 8px;
 				min-width: 300px;
-				flex-direction: column;
-				align-items: flex-start;
 			}
 			@include media-min($large) {
 				min-width: 380px;
@@ -26,6 +21,9 @@
 			}
 			&-text {
 				flex: 1;
+				display: flex;
+				align-items: center;
+				gap: 12px;
 			}
 			&-title {
 				font-size: 22px;
@@ -58,6 +56,12 @@
 					background-image: url(https://static.pingcap.com/files/2024/09/23004501/polygon-violet.svg);
 				}
 			}
+			&.yellow {
+				border: 1px solid #e1a141;
+				.architecture-tabs__tab-image {
+					background-image: url(https://static.pingcap.com/files/2025/09/27060413/polygon-yellow.svg);
+				}
+			}
 			&.blue {
 				border: 1px solid #3199fb;
 				.architecture-tabs__tab-image {
@@ -83,6 +87,12 @@
 			background: linear-gradient(286.52deg, #9e4ec4 -6.78%, #5b0088 68.47%);
 			.architecture-tabs__tab-image {
 				background-image: url(https://static.pingcap.com/files/2024/09/23004501/polygon-violet-active.svg);
+			}
+		}
+		.architecture-tabs__tab.yellow {
+			background: linear-gradient(287.43deg, #e1a141 16.57%, #a8752b 83.43%);
+			.architecture-tabs__tab-image {
+				background-image: url(https://static.pingcap.com/files/2025/09/27060745/polygon-yellow-active.svg);
 			}
 		}
 		.architecture-tabs__tab.blue {
@@ -115,7 +125,8 @@
 	}
 
 	.features {
-		.block-inner {
+		.block-inner,
+		.features-inner {
 			@include media-min($large) {
 				display: flex;
 				gap: 1.6rem;
@@ -313,7 +324,8 @@
 	}
 
 	.resource {
-		.block-inner {
+		.block-inner,
+		.resource-inner {
 			@include media-min($large) {
 				display: flex;
 				gap: 1.6rem;
@@ -496,6 +508,142 @@
 				}
 				@include media-min($large) {
 					width: auto;
+				}
+			}
+		}
+	}
+
+	.deploy {
+		&-cards {
+			display: grid;
+			gap: 6.4rem;
+			grid-template-columns: repeat(1, 1fr);
+			@include media-min($medium) {
+				grid-template-columns: repeat(2, 1fr);
+			}
+		}
+		&-card {
+			position: relative;
+			flex: 1;
+			padding: 2.4rem;
+			display: flex;
+			flex-direction: column;
+			align-items: flex-start;
+			text-decoration: none;
+			cursor: pointer;
+			transition: all var(--default-transition-params);
+
+			&__container {
+				flex: 1;
+				margin-bottom: 2rem;
+			}
+
+			&__title {
+				font-size: 24px;
+				font-weight: 700;
+				line-height: 30px;
+				margin-bottom: 1.6rem;
+				color: #fff;
+				display: block;
+			}
+
+			&__desc {
+				margin: 30px 0;
+				ul {
+					color: #a2adb9;
+					font-weight: 300;
+					font-size: 16px;
+					line-height: 26px;
+				}
+			}
+
+			&:nth-of-type(1) {
+				border: 1px solid #9e4ec4;
+				&::after {
+					content: "";
+					background: url(https://static.pingcap.com/files/2024/09/10210554/serverless-icon-1.svg)
+						no-repeat center center / contain;
+					position: absolute;
+					right: 4px;
+					bottom: -50px;
+					width: 76px;
+					height: 117px;
+				}
+			}
+			&:nth-of-type(2) {
+				border: 1px solid #2c80ce;
+				&::after {
+					content: "";
+					background: url(https://static.pingcap.com/files/2024/09/10210550/self-icon-2.svg)
+						no-repeat center center / contain;
+					position: absolute;
+					right: 4px;
+					bottom: -50px;
+					width: 76px;
+					height: 108px;
+				}
+			}
+
+			img {
+				position: absolute;
+				right: 0;
+				bottom: -50px;
+				z-index: 1;
+			}
+
+			&:hover {
+				transform: translateY(-12px);
+				.button-link {
+					&:after {
+						background-color: #fff;
+						border-radius: 50%;
+						color: #000;
+						transform: rotate(45deg);
+					}
+				}
+			}
+		}
+	}
+
+	.edition {
+		.card-text-content {
+			.button {
+				margin-top: 60px;
+				margin-bottom: 16px;
+			}
+			.tip {
+				display: flex;
+				gap: 8px;
+				align-items: center;
+				img {
+					width: 20px;
+				}
+			}
+			&:nth-of-type(1) {
+				.card-text-content__title {
+					color: #d454b4;
+				}
+			}
+			&:nth-of-type(2) {
+				border-color: #fff;
+				.card-text-content__title {
+					color: #948de2;
+					display: flex;
+					gap: 12px;
+					.tag {
+						background: #000;
+						color: #fff;
+						border: 1px solid #28333e;
+						border-radius: 16px;
+						padding: 0 12px;
+						display: flex;
+						align-items: center;
+					}
+				}
+			}
+			&:nth-of-type(3) {
+				.card-text-content__title {
+					color: #79d2d2;
 				}
 			}
 		}
