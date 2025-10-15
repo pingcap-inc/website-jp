@@ -28,12 +28,12 @@
         }
     }
     &__content {
-        margin-top: calc((var(--body-top-offset) - 60px) * -1);
+        margin-top: 60px;
         padding: 8rem 0;
         background: url("https://static.pingcap.co.jp/files/2024/07/17160821/hexagon.png")
             no-repeat center top / contain;
         @include media-min($medium) {
-            margin-top: calc((var(--body-top-offset) - 70px) * -1);
+            margin-top: 70px;
             background-position: center -100px;
         }
         &-title {
