@@ -30,8 +30,9 @@
     &__content {
         margin-top: 60px;
         padding: 8rem 0;
-        background: url("https://static.pingcap.co.jp/files/2024/07/17160821/hexagon.png")
-            no-repeat center top / contain;
+        background-position: center top;
+        background-repeat: no-repeat;
+        background-size: contain;
         @include media-min($medium) {
             margin-top: 70px;
             background-position: center -100px;
@@ -71,11 +72,16 @@
                 --cards-per-row: 3;
             }
         }
+        .button-group {
+            justify-content: flex-end;
+        }
         .block-columns__video-container {
             margin-bottom: 2rem;
         }
-        .button {
-            background: var(--color-blue);
+        &.blue {
+            .button {
+                background: var(--color-blue);
+            }
         }
     }
 }

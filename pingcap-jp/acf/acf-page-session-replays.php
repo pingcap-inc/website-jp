@@ -74,6 +74,56 @@ acf_add_local_field_group(array(
             'disabled' => 0,
         ),
         array(
+            'key' => 'field_' . $acf_group . '_content_bg',
+            'label' => 'Content Background',
+            'name' => 'content_bg',
+            'instructions' => '',
+            'type' => 'image',
+            'required' => 0,
+            'conditional_logic' => 0,
+            'wrapper' => array(
+                'width' => '',
+                'class' => '',
+                'id' => '',
+            ),
+            'return_format' => 'url',       // array | url | id
+            'preview_size' => 'thumbnail',
+            'library' => 'all',       // all | uploadedTo
+            'min_width' => '',
+            'min_height' => '',
+            'min_size' => '',
+            'max_width' => '',
+            'max_height' => '',
+            'max_size' => '',
+            'mime_types' => '',
+        ),
+        array(
+            'key' => 'field_' . $acf_group . '_button_color',
+            'label' => 'Button Color',
+            'name' => 'button_color',
+            'type' => 'select',
+            'instructions' => '',
+            'required' => 0,
+            'conditional_logic' => 0,
+            'wrapper' => array(
+                'width' => '',
+                'class' => '',
+                'id' => '',
+            ),
+            'choices' => array(
+                '' => 'Black',
+                'blue' => 'Blue',
+            ),
+            'default_value' => '',
+            'allow_null' => 0,
+            'multiple' => 0,         // allows for multi-select
+            'ui' => 0,               // creates a more stylized UI
+            'ajax' => 0,
+            'placeholder' => '',
+            'disabled' => 0,
+            'readonly' => 0,
+        ),
+        array(
             'key' => 'field_' . $acf_group . '_content',
             'label' => 'Sections',
             'name' => 'session_replay_content',
@@ -180,7 +230,46 @@ acf_add_local_field_group(array(
                                 'readonly' => 0,
                                 'disabled' => 0,
                             ),
+                            array(
+                                'key' => 'field_' . $acf_group . '_has_another_link',
+                                'label' => 'Has Another Link',
+                                'name' => 'has_another_link',
+                                'type' => 'true_false',
+                                'instructions' => '',
+                                'required' => 0,
+                                'conditional_logic' => 0,
+                                'wrapper' => array(
+                                    'width' => '',
+                                    'class' => '',
+                                    'id' => '',
+                                ),
+                                'message' => '',
+                                'ui' => 1,
+                                'ui_on_text' => 'Yes',
+                                'ui_off_text' => 'No',
+                                'default_value' => 0,
+                            ),
                         ),
+                        WPUtil\Vendor\BlueprintBlocks::safe_get_link_fields([
+                            'label' => 'Another Button',
+                            'name' => 'another_link',
+                            'includes' => [
+                                'file' => 'File Download',
+                                'url' => 'URL',
+                                'page' => 'Page Link',
+                                'none' => 'None',
+                            ],
+                            'supports_button_styles' => false,
+                            'conditional_logic' => array(
+                                array(
+                                    array(
+                                        'field' => 'field_' . $acf_group . '_has_another_link',
+                                        'operator' => '==',
+                                        'value' => 1,
+                                    ),
+                                ),
+                            ),
+                        ]),
                         WPUtil\Vendor\BlueprintBlocks::safe_get_link_fields([
                             'label' => 'Download PDF Button',
                             'name' => 'video_pdf',
