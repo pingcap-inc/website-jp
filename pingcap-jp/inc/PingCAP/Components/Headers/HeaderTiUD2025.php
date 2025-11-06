@@ -41,6 +41,9 @@ class HeaderTiUD2025 implements IComponent
                                 </div>
                                 <div class="nav-dropper">
                                     <div class="nav-dropper__content">
+                                        <a href="/tidb-user-day/oct-2025">
+                                            TiDB User Day 2025
+                                        </a>
                                         <a href="/tidb-user-day/jul-2024">
                                             TiDB User Day 2024
                                         </a>
@@ -59,7 +62,7 @@ class HeaderTiUD2025 implements IComponent
                         $isInPerson = strpos($currentPath, 'in-person') !== false;
                         ?>
                         <a class="button-tiud js--trigger-form-modal" data-form-id="<?php echo $isInPerson ? '7468f90a-1056-4d73-80e9-87f8efcc18a8' : '4e29b6c1-e7d3-4861-9e26-2bd163baee68'; ?>">
-                            <span>登録する</span>
+                            <span>動画を視聴する</span>
                         </a>
                     </nav>
                     <div class="navbar-toggle">
