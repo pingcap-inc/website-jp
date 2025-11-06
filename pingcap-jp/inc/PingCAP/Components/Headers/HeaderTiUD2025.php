@@ -61,7 +61,7 @@ class HeaderTiUD2025 implements IComponent
                         $currentPath = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
                         $isInPerson = strpos($currentPath, 'in-person') !== false;
                         ?>
-                        <a class="button-tiud js--trigger-form-modal" data-form-id="<?php echo $isInPerson ? '7468f90a-1056-4d73-80e9-87f8efcc18a8' : '4e29b6c1-e7d3-4861-9e26-2bd163baee68'; ?>">
+                        <a class="button-tiud js--trigger-form-modal" data-form-id="<?php echo $isInPerson ? '7468f90a-1056-4d73-80e9-87f8efcc18a8' : 'cc527b2b-dcf3-4d9a-97f6-fd72fc97e9e8'; ?>">
                             <span>動画を視聴する</span>
                         </a>
                     </nav>
