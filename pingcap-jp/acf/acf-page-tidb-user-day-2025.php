@@ -85,7 +85,7 @@ acf_add_local_field_group(array(
 			'name' => 'carousel_list',
 			'type' => 'repeater',
 			'instructions' => '',
-			'required' => 1,
+			'required' => 0,
 			'conditional_logic' => 0,
 			'wrapper' => array(
 				'width' => '',
@@ -93,7 +93,7 @@ acf_add_local_field_group(array(
 				'id' => '',
 			),
 			'collapsed' => '',
-			'min' => 1,
+			'min' => '',
 			'max' => '',
 			'layout' => 'block',         // table | block | row
 			'button_label' => 'Add Image',
