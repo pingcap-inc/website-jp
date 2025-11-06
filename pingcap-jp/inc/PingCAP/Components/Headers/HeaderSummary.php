@@ -32,6 +32,9 @@ class HeaderSummary implements IComponent
                         </div>
                         <div class="nav-dropper">
                             <div class="nav-dropper__content">
+                                <a href="/tidb-user-day/oct-2025">
+                                    TiDB User Day 2025
+                                </a>
                                 <a href="/tidb-user-day/jul-2024">
                                     TiDB User Day 2024
                                 </a>
@@ -44,7 +47,7 @@ class HeaderSummary implements IComponent
                             </div>
                         </div>
                     </div>
-                    <a class="button button-white js--trigger-form-modal" data-form-id="cc527b2b-dcf3-4d9a-97f6-fd72fc97e9e8">録画視聴に登録</a>
+                    <a class="button button-white js--trigger-form-modal" data-form-id="cc527b2b-dcf3-4d9a-97f6-fd72fc97e9e8">動画を視聴する</a>
                 </nav>
                 <div class="navbar-toggle">
                     <span></span>
@@ -67,6 +70,9 @@ class HeaderSummary implements IComponent
                     </div>
                     <div class="nav-dropper">
                         <div class="nav-dropper__content">
+                            <a href="/tidb-user-day/oct-2025">
+                                TiDB User Day 2025
+                            </a>
                             <a href="/tidb-user-day/jul-2024">
                                 TiDB User Day 2024
                             </a>
@@ -79,7 +85,7 @@ class HeaderSummary implements IComponent
                         </div>
                     </div>
                 </div>
-                <a class="button button-white button-tiud js--trigger-form-modal" data-form-id="cc527b2b-dcf3-4d9a-97f6-fd72fc97e9e8">録画視聴に登録</a>
+                <a class="button button-white button-tiud js--trigger-form-modal" data-form-id="cc527b2b-dcf3-4d9a-97f6-fd72fc97e9e8">動画を視聴する</a>
             </nav>
         </header>
 <?php
