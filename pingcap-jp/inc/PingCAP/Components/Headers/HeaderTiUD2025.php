@@ -11,6 +11,8 @@ class HeaderTiUD2025 implements IComponent
 
     public function render(): void
     {
+        $currentPath = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
+        $isWhyNewSQL = strpos($currentPath, 'why-newsql') !== false;
 ?>
         <header class="tmpl-tidb-user-day-2025__header">
             <div class="header">
@@ -20,50 +22,68 @@ class HeaderTiUD2025 implements IComponent
                     </a>
                     <nav>
                         <div class="nav">
-                            <a class="nav-menu" href="#about">
-                                開催概要
-                            </a>
-                            <a class="nav-menu" href="#agenda">
-                                タイムテーブル
-                            </a>
-                            <a class="nav-menu" href="#speakers">
-                                登壇企業
-                            </a>
-                            <a class="nav-menu" href="#sponsors">
-                                スポンサー
-                            </a>
-                            <a class="nav-menu" href="#campaign">
-                                キャンペーン
-                            </a>
-                            <div class="nav-dropper__wrapper">
-                                <div class="nav-menu">
-                                    開催実績
-                                </div>
-                                <div class="nav-dropper">
-                                    <div class="nav-dropper__content">
-                                        <a href="/tidb-user-day/oct-2025">
-                                            TiDB User Day 2025
-                                        </a>
-                                        <a href="/tidb-user-day/jul-2024">
-                                            TiDB User Day 2024
-                                        </a>
-                                        <a href="/tidb-user-day/jul-2023">
-                                            TiDB User Day 2023
-                                        </a>
-                                        <a href="/tidb-user-day/jul-2022">
-                                            TiDB User Day 2022
-                                        </a>
+                            <?php if ($isWhyNewSQL) { ?>
+                                <a class="nav-menu" href="#about">
+                                    イベント概要
+                                </a>
+                                <a class="nav-menu" href="#agenda">
+                                    タイムテーブル
+                                </a>
+                                <a class="nav-menu" href="#campaign">
+                                    キャンペーン
+                                </a>
+                            <?php } else { ?>
+                                <a class="nav-menu" href="#about">
+                                    開催概要
+                                </a>
+                                <a class="nav-menu" href="#agenda">
+                                    タイムテーブル
+                                </a>
+                                <a class="nav-menu" href="#speakers">
+                                    登壇企業
+                                </a>
+                                <a class="nav-menu" href="#sponsors">
+                                    スポンサー
+                                </a>
+                                <a class="nav-menu" href="#campaign">
+                                    キャンペーン
+                                </a>
+                                <div class="nav-dropper__wrapper">
+                                    <div class="nav-menu">
+                                        開催実績
+                                    </div>
+                                    <div class="nav-dropper">
+                                        <div class="nav-dropper__content">
+                                            <a href="/tidb-user-day/oct-2025">
+                                                TiDB User Day 2025
+                                            </a>
+                                            <a href="/tidb-user-day/jul-2024">
+                                                TiDB User Day 2024
+                                            </a>
+                                            <a href="/tidb-user-day/jul-2023">
+                                                TiDB User Day 2023
+                                            </a>
+                                            <a href="/tidb-user-day/jul-2022">
+                                                TiDB User Day 2022
+                                            </a>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
+                            <?php } ?>
                         </div>
                         <?php
                         $currentPath = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
                         $isInPerson = strpos($currentPath, 'in-person') !== false;
+                        if (!$isWhyNewSQL) {
                         ?>
-                        <a class="button-tiud js--trigger-form-modal" data-form-id="<?php echo $isInPerson ? '7468f90a-1056-4d73-80e9-87f8efcc18a8' : 'cc527b2b-dcf3-4d9a-97f6-fd72fc97e9e8'; ?>">
-                            <span>動画を視聴する</span>
-                        </a>
+                            <a class="button-tiud js--trigger-form-modal" data-form-id="<?php echo $isInPerson ? '7468f90a-1056-4d73-80e9-87f8efcc18a8' : 'cc527b2b-dcf3-4d9a-97f6-fd72fc97e9e8'; ?>">
+                                <span>動画を視聴する</span>
+                            </a>
+                        <?php } else { ?>
+                            <a class="button-tiud js--trigger-form-modal" data-form-id="7a7fd9ac-550d-4a3d-a660-72a7297fe28d">
+                                <span>登録する</span>
+                            </a>
+                        <?php } ?>
                     </nav>
                     <div class="navbar-toggle">
                         <span></span>

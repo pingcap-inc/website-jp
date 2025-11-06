@@ -25,30 +25,34 @@ get_header();
         </div>
     </section>
 
-    <section class="carousel block-options-padding-remove-top bg-black-dark">
-        <div class="carousel-list-container">
-            <div class="carousel-list">
-                <?php
-                $image_list = ACF::get_field_array('carousel_list');
-                foreach ($image_list as $image) {
-                    echo '<div class="carousel-item">';
-                    echo '<img src="' . Arrays::get_value_as_string($image, 'carousel_image') . '" class="carousel-item-image">';
-                    echo '</div>';
-                }
-                ?>
+    <?php
+    $image_list = ACF::get_field_array('carousel_list');
+    if (count($image_list) > 0) {
+    ?>
+        <section class="carousel block-options-padding-remove-top bg-black-dark">
+            <div class="carousel-list-container">
+                <div class="carousel-list">
+                    <?php
+                    foreach ($image_list as $image) {
+                        echo '<div class="carousel-item">';
+                        echo '<img src="' . Arrays::get_value_as_string($image, 'carousel_image') . '" class="carousel-item-image">';
+                        echo '</div>';
+                    }
+                    ?>
+                </div>
+                <div class="carousel-list">
+                    <?php
+                    $image_list = ACF::get_field_array('carousel_list');
+                    foreach ($image_list as $image) {
+                        echo '<div class="carousel-item">';
+                        echo '<img src="' . Arrays::get_value_as_string($image, 'carousel_image') . '" class="carousel-item-image">';
+                        echo '</div>';
+                    }
+                    ?>
+                </div>
             </div>
-            <div class="carousel-list">
-                <?php
-                $image_list = ACF::get_field_array('carousel_list');
-                foreach ($image_list as $image) {
-                    echo '<div class="carousel-item">';
-                    echo '<img src="' . Arrays::get_value_as_string($image, 'carousel_image') . '" class="carousel-item-image">';
-                    echo '</div>';
-                }
-                ?>
-            </div>
-        </div>
-    </section>
+        </section>
+    <?php } ?>
 
     <section id="about" class="about bg-black-gradient block-container">
         <div class="block-inner contain">
