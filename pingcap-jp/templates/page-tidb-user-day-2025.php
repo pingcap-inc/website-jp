@@ -10,9 +10,12 @@ use WPUtil\Vendor\ACF;
 
 get_header();
 
+$currentPath = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
+$isWhyNewSQL = strpos($currentPath, 'why-newsql') !== false;
+
 ?>
 <div class="tmpl-tidb-user-day-2025">
-    <div class="banner">
+    <div class="banner <?php echo $isWhyNewSQL ? 'why-newsql':''; ?>">
         <div class="inner">
             <?php echo ACF::get_field_string('banner_content'); ?>
         </div>
