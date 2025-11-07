@@ -183,6 +183,13 @@
 			font-size: 40px;
 			line-height: 60px;
 		}
+		&.why-newsql {
+			padding-top: 140px;
+			background-image: url("https://static.pingcap.co.jp/files/2025/11/07111533/20251107-101453.jpeg");
+			@include media-min($medium) {
+				padding-top: 200px;
+			}
+		}
 		.inner {
 			display: inline-block;
 			align-items: center;
