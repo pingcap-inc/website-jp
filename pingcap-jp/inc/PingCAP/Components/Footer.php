@@ -129,7 +129,7 @@ class Footer implements IComponent
 										<i class="icon-globe"></i>日本語<?php SVG::the_svg('general/chevron-down-white') ?>
 									</div>
 									<div class="site-footer__language-options">
-										<a href="https://www.pingcap.com/">英文 </a>
+										<a href="https://www.pingcap.com/">English </a>
 									</div>
 								</div>
 							<?php } ?>
