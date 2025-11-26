@@ -93,7 +93,6 @@ class Footer implements IComponent
 					</div>
 					<div class="site-footer__language-options">
 						<a href="https://www.pingcap.com/">English</a>
-						<a href="https://cn.pingcap.com/">中文</a>
 					</div>
 				</div>
 				<div class="site-footer__row-top">
@@ -131,7 +130,6 @@ class Footer implements IComponent
 									</div>
 									<div class="site-footer__language-options">
 										<a href="https://www.pingcap.com/">英文 </a>
-										<a href="https://cn.pingcap.com/">中文</a>
 									</div>
 								</div>
 							<?php } ?>
