@@ -355,7 +355,7 @@ class App {
 		}
 
 		// ai page
-		const aiPageEl = document.querySelector('.tmpl-ai-page__example');
+		const aiPageEl = document.querySelector('.tmpl-ai-page');
 
 		if (aiPageEl) {
 			this.instances.templates.aiPage = new AIPage(aiPageEl);
@@ -622,9 +622,37 @@ class App {
 	async loadRepoInfo() {
 		const response = await fetch('https://api.github.com/repos/pingcap/tidb');
 		const stats = await response.json();
-		const starCount10K = stats.stargazers_count / 1000;
-		const starCount = Math.round(10 * starCount10K) / 10;
-		document.getElementById('github_stars').innerHTML = starCount + 'K';
+		const starEl = document.getElementById('github_stars');
+		if (stats.stargazers_count && starEl) {
+			const starCount10K = stats.stargazers_count / 1000;
+			const starCount = Math.round(10 * starCount10K) / 10;
+			starEl.innerHTML = starCount + 'K';
+		}
+
+		const prRes = await fetch(
+			`https://api.github.com/search/issues?q=repo:pingcap/tidb+type:pr`
+		);
+		const prData = await prRes.json();
+		const prEl = document.getElementById('pull_requests');
+		if (prData.total_count && prEl) {
+			const prCount10K = prData.total_count / 1000;
+			const prCount = Math.round(10 * prCount10K) / 10;
+			prEl.innerHTML = prCount + 'K';
+		}
+
+		// const contribRes = await fetch(`https://api.github.com/repos/pingcap/tidb/contributors?per_page=1&anon=true`);
+		// const linkHeader = contribRes.headers.get('Link');
+		// let contributors = 0;
+		// if (linkHeader) {
+		// 	const match = linkHeader.match(/&page=(\d+)>; rel="last"/);
+		// 	contributors = match ? parseInt(match[1], 10) : 1;
+		// } else {
+		// 	const contribData = await contribRes.json();
+		// 	contributors = contribData.length;
+		// }
+		// const contributorsCount10K = contributors / 1000;
+		// const contributorsCount = Math.round(10 * contributorsCount10K) / 10;
+		// document.getElementById('contributors').innerHTML = contributorsCount + 'K';
 	}
 }
 

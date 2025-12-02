@@ -7,6 +7,7 @@ class ScrollSubNav {
 		this.type = this.el.getAttribute('data-type');
 		this.subNavEls = Array.from(this.el.querySelectorAll('.sub-nav__link'));
 		this.contentEls = [];
+		this.contentIds = [];
 
 		if (!this.subNavEls.length) {
 			return;
@@ -17,6 +18,7 @@ class ScrollSubNav {
 			const contentEl = document.querySelector(id);
 			if (contentEl) {
 				this.contentEls[index] = contentEl;
+				this.contentIds[index] = contentEl.id;
 			}
 
 			subNavEl.addEventListener('click', (e) => {
@@ -33,7 +35,14 @@ class ScrollSubNav {
 	}
 
 	init() {
-		const id = getUrlQueryArg('tab', '') || this.contentEls[0].id;
+		let id = getUrlQueryArg('tab', '') || this.contentEls[0].id;
+
+		if (!getUrlQueryArg('tab', '') && location.hash && document.querySelector(location.hash)) {
+			id = location.hash.replace('#', '');
+			if (!id.includes(this.contentIds)) {
+				id = this.contentIds[0];
+			}
+		}
 
 		this.setTabActive(id);
 		this.setTabContentActive(id);
