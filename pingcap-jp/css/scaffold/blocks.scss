@@ -317,6 +317,9 @@
 			}
 		}
 	}
+	.desc.full {
+		width: 100%;
+	}
 	h2 {
 		font-size: 4rem;
 		line-height: 48px;
@@ -343,8 +346,13 @@
 			font-size: 60px;
 			font-weight: 700;
 			line-height: 68px;
-			margin: 3.2rem 0;
 		}
+		& + * {
+			margin-top: 32px;
+		}
+	}
+	* + h3 {
+		margin-top: 32px;
 	}
 	h4 {
 		font-size: 40px;
@@ -355,8 +363,13 @@
 			font-size: 56px;
 			font-weight: 700;
 			line-height: 64px;
-			margin: 20px 0;
 		}
+		& + * {
+			margin-top: 20px;
+		}
+	}
+	* + h4 {
+		margin-top: 20px;
 	}
 	h5 {
 		font-size: 40px;

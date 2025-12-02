@@ -27,6 +27,8 @@ WPUtil\TinyMCE::set_allowed_tags(
 			'max' => true,
 			'step' => true,
 			'value' => true,
+			'style' => true,
+			'checked' => true,
 		),
 		'ol' => array(
 			'start' => true
@@ -129,6 +131,7 @@ WPUtil\TinyMCE::set_allowed_tags(
 			'result' => true,
 		),
 		'g' => array(
+			'id' => true,
 			'class' => true,
 			'filter' => true,
 			'mask' => true,
@@ -171,6 +174,15 @@ WPUtil\TinyMCE::set_allowed_tags(
 			'x' => true,
 			'y' => true,
 			'maskunits' => true,
+		),
+		'dotlottie-player' => array(
+			'src' => true,
+			'background' => true,
+			'speed' => true,
+			'direction' => true,
+			'playMode' => true,
+			'loop' => true,
+			'autoplay' => true
 		)
 	)
 );
