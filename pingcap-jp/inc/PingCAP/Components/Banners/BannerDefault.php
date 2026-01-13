@@ -216,6 +216,13 @@ class BannerDefault implements IComponent
 	public string $side_form_theme = '';
 
 	/**
+	 * The side right content
+	 *
+	 * @var string
+	 */
+	public string $side_content = '';
+
+	/**
 	 * Flag indicating that the bottom arc shape is enabled
 	 *
 	 * @var boolean
@@ -499,6 +506,16 @@ class BannerDefault implements IComponent
 			)
 		);
 
+		$this->side_content = Arrays::get_value_as_string(
+			$params,
+			'side_content',
+			fn() => ACF::get_field_string(
+				$this->acf_prefix . '_side_content',
+				$this->post_id,
+				['default' => '']
+			)
+		);
+
 		$this->bottom_arc_enabled = Arrays::get_value_as_bool(
 			$params,
 			'bottom_arc_enabled',
@@ -737,6 +754,10 @@ class BannerDefault implements IComponent
 			$banner_classes[] = 'banner-default--has-video';
 		}
 
+		if ($this->side_content) {
+			$banner_classes[] = 'banner-default--has-side-content';
+		}
+
 		$banner_inline_classes = [];
 		if ($this->banner_bg) {
 			$banner_inline_classes[] = '--banner-background-image:url(' . $this->banner_bg['url'] . ')';
@@ -893,6 +914,12 @@ class BannerDefault implements IComponent
 							}
 							?>
 						</div>
+					</div>
+				<?php } ?>
+
+				<?php if ($this->side_content) { ?>
+					<div class="banner-default__side-content">
+							<?php echo $this->side_content; ?>
 					</div>
 				<?php } ?>
 

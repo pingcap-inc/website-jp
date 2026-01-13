@@ -74,3 +74,22 @@ add_action('wp_enqueue_scripts', function () {
 
 	wp_dequeue_style('wp-block-library');
 }, 20);
+
+add_action('wp_enqueue_scripts', function () {
+	wp_register_style('cost-estimation-css', get_template_directory_uri() . '/cost-estimation/widget-DeVV1i0I.css', [], null);
+	wp_register_script(
+		'cost-estimation-js',
+		get_template_directory_uri() . '/cost-estimation/widget-D1oL1247.js',
+		[],
+		null,
+		true
+	);
+	// wp_register_style('cost-estimation-css', 'https://static.pingcap.com/cost-estimation/widget-C3rzkZzz.css', [], null);
+	// wp_register_script(
+	// 	'cost-estimation-js',
+	// 	'https://static.pingcap.com/cost-estimation/widget-DOKu5ylC.js',
+	// 	[],
+	// 	null,
+	// 	true
+	// );
+});

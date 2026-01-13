@@ -112,3 +112,23 @@ add_shortcode('pillar_cta', function ($attrs) {
 		'classes' => $params['classes']
 	]);
 });
+
+add_shortcode('cost_estimation', function ($atts) {
+	$atts = shortcode_atts([
+		'custom-url' => '',
+		'product-type' => ''
+	], $atts);
+
+	wp_enqueue_style('cost-estimation-css');
+	wp_enqueue_script('cost-estimation-js');
+
+	$id = 'cost-estimation-widget';
+
+	return '
+    <div
+      class="cost-estimation-widget"
+	  data-custom-url="' . esc_attr($atts['custom-url']) . '"
+	  data-product-type="' . esc_attr($atts['product-type']) . '"
+    ></div>
+  ';
+});

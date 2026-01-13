@@ -848,6 +848,44 @@ $banner_fields = array_merge(
 			'default_value' => '',
 			'layout' => 'horizontal',
 		),
+
+		/**
+		 * Tab: Side Content
+		 */
+		array(
+			'key' => 'field_' . $acf_group . '_tab_side_content',
+			'label' => 'Side Content',
+			'name' => $acf_group . '_tab_side_content',
+			'type' => 'tab',
+			'instructions' => '',
+			'required' => 0,
+			'conditional_logic' => 0,
+			'wrapper' => array(
+				'width' => '',
+				'class' => '',
+				'id' => '',
+			),
+			'placement' => 'top',
+			'endpoint' => 0,          // end tabs to start a new group
+		),
+		array(
+			'key' => 'field_' . $acf_group . '_side_content',
+			'label' => 'Side Content',
+			'name' => $acf_group . '_side_content',
+			'type' => 'wysiwyg',
+			'instructions' => '',
+			'required' => 0,
+			'conditional_logic' => 0,
+			'wrapper' => array(
+				'width' => '',
+				'class' => '',
+				'id' => '',
+			),
+			'default_value' => '',
+			'tabs' => 'all',         // all | visual | text
+			'toolbar' => 'full',     // full | basic
+			'media_upload' => 0,
+		),
 	)
 );
 
