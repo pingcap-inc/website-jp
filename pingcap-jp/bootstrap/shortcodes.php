@@ -116,6 +116,7 @@ add_shortcode('pillar_cta', function ($attrs) {
 add_shortcode('cost_estimation', function ($atts) {
 	$atts = shortcode_atts([
 		'custom-url' => '',
+		'custom-secondary-url' => '',
 		'product-type' => ''
 	], $atts);
 
@@ -128,6 +129,7 @@ add_shortcode('cost_estimation', function ($atts) {
     <div
       class="cost-estimation-widget"
 	  data-custom-url="' . esc_attr($atts['custom-url']) . '"
+	  data-custom-secondary-url="' . esc_attr($atts['custom-secondary-url']) . '"
 	  data-product-type="' . esc_attr($atts['product-type']) . '"
     ></div>
   ';
