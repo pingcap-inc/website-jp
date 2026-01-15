@@ -27,11 +27,14 @@ class HeaderTiDBCloudCampaign implements IComponent
                             <a class="nav-menu" href="https://labs.tidb.io/ja">
                                 オンライン学習
                             </a>
-                            <a class="nav-menu" href="/event/">
+                            <a class="nav-menu" href="#campaign">
                                 キャンペーン
                             </a>
                             <a class="nav-menu" href="/case-study/">
                                 事例記事
+                            </a>
+                            <a class="nav-menu" target="_blank" href="https://www.pingcap.com/ai/">
+                                AI機能
                             </a>
                             <a class="nav-menu" href="/tidb-user-day/">
                                 TiUD
