@@ -144,6 +144,21 @@ html.modal-active {
 
 		max-height: 90vh;
 	}
+
+	&__demo-container {
+		padding-bottom: calc(56.33% + 27px);
+		height: 0;
+		position: relative;
+		width: 100%;
+	}
+
+	&__demo-embed {
+		height: 100%;
+		width: 100%;
+		position: absolute;
+		top: 0;
+		left: 0;
+	}
 }
 
 .modal-video {
@@ -175,6 +190,12 @@ html.modal-active {
 	border-radius: 0.4rem;
 	@include media-min($medium) {
 		max-width: 60rem;
+	}
+}
+
+.modal-demo {
+	.modal__content {
+		padding: 0;
 	}
 }
 

@@ -141,6 +141,18 @@
 		}
 	}
 
+	&--has-side-content {
+		.banner-default__text-content,.banner-default__side-content{
+			grid-column: 1 / span 12;
+		}
+		@include media-min($large) {
+			.banner-default__text-content,.banner-default__side-content {
+				grid-column: span 6;
+			}
+
+		}
+	}
+
 	&__form-content {
 		position: relative;
 		padding-bottom: 4rem;

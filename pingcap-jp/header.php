@@ -61,6 +61,8 @@ use PingCAP\{Components, Constants};
 		WPUtil\Component::render(Components\Headers\HeaderSummary::class);
 	} else if (is_page_template('templates/page-tidb-user-day-2025.php')) {
 		WPUtil\Component::render(Components\Headers\HeaderTiUD2025::class);
+	} else if (strpos(parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH), 'tidb-cloud-get-started') !== false) {
+		WPUtil\Component::render(Components\Headers\HeaderTiDBCloudCampaign::class);
 	} else {
 		WPUtil\Component::render(Components\Header::class);
 	}

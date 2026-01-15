@@ -86,6 +86,35 @@ export function showFormModal(el) {
 	});
 }
 
+export function showDemoModal(demoUrl) {
+	if (!demoUrl) {
+		return;
+	}
+
+	Modal.show('', {
+		modalClass: 'modal modal-demo',
+		closeDuration: 0
+	});
+
+	Modal.setContent(
+		`<div class="modal__demo-container sl-embed">
+			<iframe class="modal__demo-embed sl-embed"
+				src="${demoUrl}"
+				frameborder="0"
+				allow="fullscreen"
+				allowfullscreen>
+			</iframe>
+		</div>`,
+		false
+	);
+
+	const iframeEl = document.querySelector('.modal__demo-embed');
+
+	iframeEl.addEventListener('load', () => {
+		Modal.setLoading(false);
+	});
+}
+
 export function showTiUDSummaryModal(el) {
 	const tmpl = el.querySelector('.card').outerHTML;
 

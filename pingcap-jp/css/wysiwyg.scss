@@ -201,36 +201,42 @@
 		height: 100%;
 	}
 
-	.flex {
-		display: flex;
-		flex-direction: column;
-		gap: var(--grid-column-gutter);
-		@include media-min($medium) {
-			flex-direction: row;
+	&--column-content {
+		.flex {
+			display: flex;
+			flex-direction: column;
+			gap: var(--grid-column-gutter);
+			@include media-min($medium) {
+				flex-direction: row;
+			}
+			> div {
+				flex: 1;
+			}
+			&.flex-row {
+				flex-direction: row;
+			}
+			&.flex-wrap {
+				flex-wrap: wrap;
+			}
+			&.item-center {
+				align-items: center;
+			}
+			&.gap-4 {
+				gap: 1.6rem;
+			}
+			.flex-auto {
+				flex: 0 1 auto;
+			}
+			&.justify-center {
+				justify-content: center;
+			}
+			&.justify-between {
+				justify-content: space-between;
+			}
 		}
-		> div {
-			flex: 1;
-		}
-		&.flex-row {
-			flex-direction: row;
-		}
-		&.flex-wrap {
-			flex-wrap: wrap;
-		}
-		&.item-center {
-			align-items: center;
-		}
-		&.gap-4 {
-			gap: 1.6rem;
-		}
-		.flex-auto {
-			flex: 0 1 auto;
-		}
-		&.justify-center {
-			justify-content: center;
-		}
-		&.justify-between {
-			justify-content: space-between;
-		}
+	}
+
+	.cost-estimation-widget span {
+		color: inherit;
 	}
 }

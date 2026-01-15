@@ -40,12 +40,13 @@ import TemplateFrontPage from './templates/front-page';
 import ActivityPage from './templates/activity-page';
 import AIPage from './templates/ai-page';
 import PillarPage from './templates/pillar-page';
+import CampaignPage from './templates/tidb-cloud-campaign-page';
 
 import { processExternalLinks, safeParseJSON } from './util/general-util';
 import SiteEvents, { SiteEventNames } from './util/site-events';
 import { createSingleUseObserver } from './util/intersection-observer';
 import setupEventDelegators from './util/setup-event-delegators';
-import { showVideoModal, showFormModal, showTiUDSummaryModal } from './util/modal-helpers';
+import { showVideoModal, showFormModal, showDemoModal,showTiUDSummaryModal } from './util/modal-helpers';
 import { loadPrismJS } from './util/load-dependencies';
 import {
 	autodetectCodeElLanguage,
@@ -79,7 +80,8 @@ class App {
 				frontPage: null,
 				activityPage: null,
 				aiPage: null,
-				pillarPage: null
+				pillarPage: null,
+				CampaignPage: [],
 			},
 			blocks: {
 				testimonials: [],
@@ -147,6 +149,9 @@ class App {
 			},
 			'js--trigger-form-modal': (el) => {
 				showFormModal(el);
+			},
+			'js--trigger-demo-modal': (el) => {
+				showDemoModal(el.href || el.getAttribute('data-demo-url'));
 			},
 			'js--trigger-tiud-summary-modal': (el) => {
 				showTiUDSummaryModal(el);
@@ -370,6 +375,13 @@ class App {
 		const pillarPage = document.querySelector('.tmpl-pillar');
 		if (pillarPage) {
 			this.instances.templates.pillarPage = new PillarPage(pillarPage);
+		}
+		// Campaign page
+		const campaignPages = document.querySelectorAll('.tmpl-tidb-cloud-campaign');
+		if (campaignPages) {
+			campaignPages.forEach((campaignPage) => {
+				this.instances.templates.CampaignPage.push(new CampaignPage(campaignPage));
+			});
 		}
 	}
 
