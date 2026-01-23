@@ -20,7 +20,7 @@ if ($pricing) {
 ?>
     <div class="block-table-pricing__container contain">
         <div class="block-table-pricing__content">
-            <?php if ($is_accordion) { 
+            <?php if ($is_accordion) {
                 $field_id = uniqid('accordion_table_');
                 $section_id = $field_id . '_0';
             ?>
@@ -35,7 +35,7 @@ if ($pricing) {
                         <?php } ?>
                         <div class="block-table-pricing__selector-container">
                             <div class="block-table-pricing__provider-selector">
-                                <p>Provider</p>
+                                <p>プロバイダ</p>
                                 <select data-providers-data="<?php echo htmlspecialchars(json_encode($providers_data)); ?>">
                                     <?php
                                     foreach ($providers_data as $provider_id => $provider_name) {
@@ -47,7 +47,7 @@ if ($pricing) {
                                 </select>
                             </div>
                             <div class="block-table-pricing__region-selector">
-                                <p>Region</p>
+                                <p>リージョン</p>
                                 <select>
                                     <?php
                                     foreach ($regions_data as $region_id => $region_name) {
@@ -59,7 +59,7 @@ if ($pricing) {
                                 </select>
                             </div>
                             <p>
-                                Want to try TiDB Cloud in another region?
+                                別のリージョンでTiDB Cloudをお試しになりたいですか？
                                 <br />
                                 <?php
                                 Component::render(Components\UI\Button::class, [
