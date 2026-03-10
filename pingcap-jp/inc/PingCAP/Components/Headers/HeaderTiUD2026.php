@@ -22,14 +22,10 @@ class HeaderTiUD2026 implements IComponent
                     </a>
                     <nav>
                         <div class="nav">
-
-                            <a class="nav-menu" href="#about">
-                                開催概要
-                            </a>
                             <a class="nav-menu" href="#agenda">
                                 タイムテーブル
                             </a>
-                            <a class="nav-menu" href="#speakers">
+                            <a class="nav-menu" href="#partner">
                                 登壇企業
                             </a>
                             <a class="nav-menu" href="#sponsors">
@@ -60,19 +56,9 @@ class HeaderTiUD2026 implements IComponent
                                 </div>
                             </div>
                         </div>
-                        <?php
-                        $currentPath = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
-                        $isInPerson = strpos($currentPath, 'in-person') !== false;
-                        if (!$isWhyNewSQL) {
-                        ?>
-                            <a class="button-tiud js--trigger-form-modal" data-form-id="<?php echo $isInPerson ? '7468f90a-1056-4d73-80e9-87f8efcc18a8' : 'cc527b2b-dcf3-4d9a-97f6-fd72fc97e9e8'; ?>">
-                                <span>動画を視聴する</span>
-                            </a>
-                        <?php } else { ?>
-                            <a class="button-tiud js--trigger-form-modal" data-form-id="7a7fd9ac-550d-4a3d-a660-72a7297fe28d">
-                                <span>登録する</span>
-                            </a>
-                        <?php } ?>
+                        <a class="button-tiud js--trigger-form-modal" data-form-id="7a7fd9ac-550d-4a3d-a660-72a7297fe28d">
+                            <span>登録する</span>
+                        </a>
                     </nav>
                     <div class="navbar-toggle">
                         <span></span>
