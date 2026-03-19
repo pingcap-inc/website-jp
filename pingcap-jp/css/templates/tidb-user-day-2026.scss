@@ -163,6 +163,7 @@
 
 			&:hover {
 				span {
+					color: #fff;
 					background: linear-gradient(90deg, #038cf1 0%, #0ba0d2 100%);
 				}
 			}
@@ -190,12 +191,14 @@
 	.banner {
 		position: relative;
 		padding-top: 180px;
-		padding-bottom: 160px;
+		padding-bottom: 80px;
 		color: #fff;
 
 		h1 {
 			color: #fff;
-
+			background: linear-gradient(90deg, #1DECFB 0%, #0B5CE6 78.85%);
+			-webkit-background-clip: text;
+			-webkit-text-fill-color: transparent;
 			@include media-min($large) {
 				font-size: 82px;
 			}
