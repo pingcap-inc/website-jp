@@ -56,7 +56,7 @@ class HeaderTiUD2026 implements IComponent
                                 </div>
                             </div>
                         </div>
-                        <a class="button-tiud js--trigger-form-modal" data-form-id="7a7fd9ac-550d-4a3d-a660-72a7297fe28d">
+                        <a class="button-tiud js--trigger-form-modal" data-form-id="2c77365f-067c-4762-9c04-db33bd056bd5">
                             <span>登録する</span>
                         </a>
                     </nav>
