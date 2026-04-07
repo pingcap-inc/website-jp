@@ -445,6 +445,13 @@
 						font-size: 20px;
 					}
 				}
+				.tip {
+					display: flex;
+					gap: 4px;
+					align-items: center;
+					justify-content: center;
+					min-height: 25px;
+				}
 				ul {
 					& + * {
 						margin-top: 0;
