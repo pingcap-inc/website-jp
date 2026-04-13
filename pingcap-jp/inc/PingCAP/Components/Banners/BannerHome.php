@@ -50,6 +50,13 @@ class BannerHome implements IComponent
 	 */
 	public string $video_url = '';
 
+	/**
+	 * Whether to show the video or the image/lottie
+	 *
+	 * @var bool
+	 */
+	public bool $is_video = true;
+
 
 	public function __construct(array $params)
 	{
@@ -71,6 +78,7 @@ class BannerHome implements IComponent
 			)
 		);
 		$this->subtitle = ACF::get_field_string('banner_home_subtitle', $this->post_id);
+		$this->is_video = Arrays::get_value_as_bool($params, 'is_video', fn() => ACF::get_field_bool('banner_home_is_video', $this->post_id));
 	}
 
 	public function render(): void
@@ -88,8 +96,13 @@ class BannerHome implements IComponent
 							<?php echo $this->content; ?>
 						</div>
 					</div>
-					<div class="banner-home__video-container">
-						<dotlottie-player src="<?php echo $this->video_url; ?>" background="transparent" speed="1" direction="1" playMode="normal" loop autoplay></dotlottie-player>
+					<div class="banner-home__video-container <?php echo $this->is_video ? 'video' : ''; ?>">
+						<?php if ($this->is_video) : ?>
+							<video src="<?php echo $this->video_url; ?>" autoplay muted loop playsinline webkit-playsinline preload="auto"></video>
+						<?php else : ?>
+							<img class="banner-home__hero-poster" src="https://static.pingcap.com/files/2026/03/13004420/webhero-poster.webp" fetchpriority="high" alt="TiDB Distributed SQL Database" width="600" height="718">
+							<dotlottie-player src="<?php echo $this->video_url; ?>" background="transparent" speed="1" direction="1" playMode="normal" loop autoplay></dotlottie-player>
+						<?php endif; ?>
 					</div>
 				</div>
 			</div>

@@ -1,0 +1,131 @@
+<?php
+
+use WPUtil\Vendor;
+
+$acf_group = 'menu_dropdown_ai';
+
+return array(
+	array(
+		'key' => 'field_' . $acf_group . '_section_label',
+		'label' => 'Section Label',
+		'name' => 'section_label',
+		'type' => 'text',
+		'instructions' => 'e.g. "TIDB FOR AGENTIC AI"',
+		'required' => 0,
+		'conditional_logic' => 0,
+		'wrapper' => array(
+			'width' => '',
+			'class' => '',
+			'id' => '',
+		),
+		'default_value' => '',
+		'placeholder' => '',
+		'formatting' => 'none',
+		'prepend' => '',
+		'append' => '',
+		'maxlength' => '',
+		'readonly' => 0,
+		'disabled' => 0,
+	),
+	array(
+		'key' => 'field_' . $acf_group . '_links',
+		'label' => 'Links',
+		'name' => 'links',
+		'type' => 'repeater',
+		'instructions' => '',
+		'required' => 0,
+		'conditional_logic' => 0,
+		'wrapper' => array(
+			'width' => '',
+			'class' => '',
+			'id' => '',
+		),
+		'collapsed' => '',
+		'min' => 1,
+		'max' => 10,
+		'layout' => 'block',
+		'button_label' => 'Add Link',
+		'sub_fields' => array_merge(
+			array(
+				array(
+					'key' => 'field_' . $acf_group . '_link_icon',
+					'label' => 'Icon',
+					'name' => 'icon',
+					'instructions' => '',
+					'type' => 'image',
+					'required' => 0,
+					'conditional_logic' => 0,
+					'wrapper' => array(
+						'width' => '',
+						'class' => '',
+						'id' => '',
+					),
+					'return_format' => 'object',
+					'preview_size' => 'medium',
+					'library' => 'all',
+					'min_width' => '',
+					'min_height' => '',
+					'min_size' => '',
+					'max_width' => '',
+					'max_height' => '',
+					'max_size' => '',
+					'mime_types' => '',
+				),
+				array(
+					'key' => 'field_' . $acf_group . '_link_title',
+					'label' => 'Title',
+					'name' => 'title',
+					'type' => 'text',
+					'instructions' => '',
+					'required' => 1,
+					'conditional_logic' => 0,
+					'wrapper' => array(
+						'width' => '',
+						'class' => '',
+						'id' => '',
+					),
+					'default_value' => '',
+					'placeholder' => '',
+					'formatting' => 'none',
+					'prepend' => '',
+					'append' => '',
+					'maxlength' => '',
+					'readonly' => 0,
+					'disabled' => 0,
+				),
+				array(
+					'key' => 'field_' . $acf_group . '_link_description',
+					'label' => 'Description',
+					'name' => 'description',
+					'type' => 'text',
+					'instructions' => '',
+					'required' => 0,
+					'conditional_logic' => 0,
+					'wrapper' => array(
+						'width' => '',
+						'class' => '',
+						'id' => '',
+					),
+					'default_value' => '',
+					'placeholder' => '',
+					'formatting' => 'none',
+					'prepend' => '',
+					'append' => '',
+					'maxlength' => '',
+					'readonly' => 0,
+					'disabled' => 0,
+				),
+			),
+			Vendor\BlueprintBlocks::safe_get_link_fields([
+				'name' => 'link',
+				'label' => 'Link',
+				'includes' => [
+					'page' => 'Page Link',
+					'url' => 'URL'
+				],
+				'show_text' => false,
+				'supports_button_styles' => false
+			])
+		),
+	),
+);

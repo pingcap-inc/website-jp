@@ -66,6 +66,22 @@ $banner_fields = array_merge(
 			'media_upload' => 0,
 		),
 		array (
+			'key' => 'field_' . $acf_group . '_is_video',
+			'label' => 'Is Video',
+			'name' => $acf_group . '_is_video',
+			'type' => 'true_false',
+			'instructions' => 'Enable to show the video, disable to show the image/lottie animation',
+			'required' => 0,
+			'conditional_logic' => 0,
+			'wrapper' => array (
+				'width' => '',
+				'class' => '',
+				'id' => '',
+			),
+			'default_value' => 0,
+			'ui' => 1,
+		),
+		array (
 			'key' => 'field_' . $acf_group . '_video_url',
 			'label' => 'Side Video Url',
 			'name' => $acf_group . '_video_url',
@@ -100,6 +116,15 @@ acf_add_local_field_group(array (
 				'param' => 'post', // post_type | post | page | page_template | post_category | taxonomy | options_page
 				'operator' => '==',
 				'value' => get_option('page_on_front'),      // if options_page then use: acf-options  | if page_template then use:  template-example.php
+				'order_no' => 0,
+				'group_no' => 1,
+			),
+		),
+		array(
+			array(
+				'param' => 'page_template', // post_type | post | page | page_template | post_category | taxonomy | options_page
+				'operator' => '==',
+				'value' => 'templates/page-home.php',      // if options_page then use: acf-options  | if page_template then use:  template-example.php
 				'order_no' => 0,
 				'group_no' => 1,
 			),

@@ -7,8 +7,8 @@
 		padding-bottom: 4rem;
 
 		@include media-min(700px) {
-			padding-bottom: 8rem;
 			grid-template-columns: repeat(12, 1fr);
+			padding-bottom: 0;
 		}
 	}
 	&__text-container {
@@ -17,7 +17,7 @@
 		position: relative;
         z-index: 2;
 		@include media-min(700px) {
-			padding-top: 8rem;
+			padding-top: 6rem;
 			padding-bottom: 8rem;
 			grid-column: 1 / span 7;
 		}
@@ -28,8 +28,19 @@
 			margin-top: 3.2rem;
 			@include media-min($medium) {
 				font-size: 82px;
-				line-height: 90px;
+				line-height: 80px;
 			}
+		}
+
+		.hero-badge-dot {
+			width: 6px;
+			height: 6px;
+			vertical-align: middle;
+			border-radius: 50%;
+			display: inline-block;
+			background: #dc1508;
+			margin-right: 8px;
+			animation: pulse 1.8s ease-in-out infinite;
 		}
 	}
 
@@ -45,10 +56,13 @@
 			line-height: 28px;
 			margin-bottom: 4rem;
 			@include media-min($medium) {
-				font-size: 26px;
+				font-size: 24px;
 				color: #a2adb9;
 				line-height: 32px;
 				width: 84%;
+			}
+			strong {
+				color: #fff;
 			}
 		}
 	}
@@ -64,5 +78,23 @@
 		}
 		text-align: center;
 		overflow: hidden;
+		&.video {
+			display: flex;
+			align-items: center;
+			@include media-min(700px) {
+				padding-bottom: 80px;
+				position: absolute;
+				top: 0;
+				bottom: 60px;
+				right: 0;
+				padding: 0;
+				grid-column: none;
+				max-width: 700px;
+				margin: auto;
+			}
+			@include media-min($large) {
+				right: -62px;
+			}
+		}
 	}
 }
