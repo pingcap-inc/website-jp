@@ -153,6 +153,22 @@
 					}
 				}
 			}
+			&.dark {
+				background-color: #000;
+				background-image: url("");
+				.content {
+					.right {
+						border-color: transparent;
+						border-image: linear-gradient(90deg, #000, #fff, #000) 1;
+						@include media-min($large) {
+							border-image: linear-gradient(180deg, #000, #fff, #000) 1;
+						}
+					}
+					.or {
+						color: #000;
+					}
+				}
+			}
 		}
 		&__certificate {
 			.wysiwyg {

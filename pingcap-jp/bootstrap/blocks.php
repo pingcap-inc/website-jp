@@ -94,6 +94,7 @@ WPUtil\Vendor\BlueprintBlocks::enforce_background_colors([
 	'bg-black' => 'Black',
 	'bg-black-dark' => 'Black(#000)',
 	'bg-black-gradient' => 'Black Gradient',
+	'bg-black-gradient reverse' => 'Black Gradient(reverse)',
 	'bg-violet' => 'Violet',
 	'bg-red' => 'Red',
 	'bg-green' => 'Green',
