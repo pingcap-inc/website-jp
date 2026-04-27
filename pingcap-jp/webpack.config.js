@@ -98,7 +98,7 @@ module.exports = {
 			process.env.NODE_ENV === 'prod'
 				? {
 						ALGOLIA_APPLICATION_ID: '"6V3WEPHYM6"',
-						ALGOLIA_API_KEY: '"93bc58f555e0262e38528ce837bc1e71"'
+						ALGOLIA_API_KEY: '"bbbdf3eb577a3f174cf43e3663626c97"'
 				  }
 				: {
 						ALGOLIA_APPLICATION_ID: '"CIDEZSADWL"',
