@@ -103,6 +103,28 @@ $banner_fields = array_merge(
 			'readonly' => 0,
 			'disabled' => 0,
 		),
+		array (
+			'key' => 'field_' . $acf_group . '_video_url_mobile',
+			'label' => 'Side Video Url (Mobile)',
+			'name' => $acf_group . '_video_url_mobile',
+			'type' => 'text',
+			'instructions' => 'Optional. Shown on mobile (<700px). Falls back to the desktop video if empty.',
+			'required' => 0,
+			'conditional_logic' => 0,
+			'wrapper' => array (
+				'width' => '',
+				'class' => '',
+				'id' => '',
+			),
+			'default_value' => '',
+			'placeholder' => '',
+			'formatting' => 'none',       // none | html
+			'prepend' => '',
+			'append' => '',
+			'maxlength' => '',
+			'readonly' => 0,
+			'disabled' => 0,
+		),
 	)
 );
 

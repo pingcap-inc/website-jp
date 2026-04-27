@@ -51,6 +51,13 @@ class BannerHome implements IComponent
 	public string $video_url = '';
 
 	/**
+	 * The banner video url for mobile
+	 *
+	 * @var string
+	 */
+	public string $video_url_mobile = '';
+
+	/**
 	 * Whether to show the video or the image/lottie
 	 *
 	 * @var bool
@@ -64,6 +71,7 @@ class BannerHome implements IComponent
 		$this->acf_prefix = Arrays::get_value_as_string($params, 'acf_prefix', 'banner_home');
 
 		$this->video_url = ACF::get_field_string('banner_home_video_url', $this->post_id);
+		$this->video_url_mobile = ACF::get_field_string('banner_home_video_url_mobile', $this->post_id);
 		$this->title = Arrays::get_value_as_string($params, 'title', function () {
 			$title_override = ACF::get_field_string('banner_home_title_override', $this->post_id);
 
@@ -98,7 +106,14 @@ class BannerHome implements IComponent
 					</div>
 					<div class="banner-home__video-container <?php echo $this->is_video ? 'video' : ''; ?>">
 						<?php if ($this->is_video) : ?>
-							<video src="<?php echo $this->video_url; ?>" autoplay muted loop playsinline webkit-playsinline preload="auto"></video>
+							<?php $mobile_video_url = $this->video_url_mobile ?: $this->video_url; ?>
+							<video id="banner-home-video" class="banner-home__video" poster="https://static.pingcap.co.jp/files/2026/04/27194212/20260424-144302.jpeg" autoplay muted loop playsinline webkit-playsinline preload="auto" fetchpriority="high" data-src-desktop="<?php echo $this->video_url; ?>" data-src-mobile="<?php echo $mobile_video_url; ?>"></video>
+							<script>
+							(function () {
+								var v = document.getElementById('banner-home-video');
+								v.src = window.matchMedia('(min-width: 700px)').matches ? v.dataset.srcDesktop : v.dataset.srcMobile;
+							})();
+							</script>
 						<?php else : ?>
 							<img class="banner-home__hero-poster" src="https://static.pingcap.com/files/2026/03/13004420/webhero-poster.webp" fetchpriority="high" alt="TiDB Distributed SQL Database" width="600" height="718">
 							<dotlottie-player src="<?php echo $this->video_url; ?>" background="transparent" speed="1" direction="1" playMode="normal" loop autoplay></dotlottie-player>

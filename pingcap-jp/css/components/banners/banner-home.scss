@@ -12,10 +12,9 @@
 		}
 	}
 	&__text-container {
-		opacity: 0;
 		padding-top: 4rem;
 		position: relative;
-        z-index: 2;
+		z-index: 2;
 		@include media-min(700px) {
 			padding-top: 6rem;
 			padding-bottom: 8rem;
@@ -26,6 +25,8 @@
 			font-weight: 700;
 			line-height: 56px;
 			margin-top: 3.2rem;
+			opacity: 0;
+			animation: banner-home-fadeUp 1s ease forwards;
 			@include media-min($medium) {
 				font-size: 82px;
 				line-height: 80px;
@@ -46,6 +47,7 @@
 
 	&__desc-container {
 		opacity: 0;
+		animation: banner-home-fadeUp 1s ease 0.2s forwards;
 		margin-top: 3.2rem;
 		@include media-min(700px) {
 			grid-column: span 6;
@@ -68,12 +70,9 @@
 	}
 
 	&__video-container {
+		position: relative;
 		@include media-min(700px) {
 			grid-column: span 5;
-			position: absolute;
-			right: 0;
-			top: 0;
-			bottom: 0;
 			max-width: 600px;
 		}
 		text-align: center;
@@ -85,16 +84,54 @@
 				padding-bottom: 80px;
 				position: absolute;
 				top: 0;
-				bottom: 60px;
+				bottom: 150px;
 				right: 0;
 				padding: 0;
 				grid-column: none;
-				max-width: 700px;
+				max-width: 1520px;
 				margin: auto;
 			}
 			@include media-min($large) {
 				right: -62px;
 			}
+		}
+	}
+
+	.banner-home__hero-poster {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		z-index: -1;
+		transition: opacity 0.3s ease;
+	}
+
+	dotlottie-player {
+		@include media-min(700px) {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			z-index: 1;
+		}
+		opacity: 0;
+		transition: opacity 0.3s ease;
+		&.is-ready {
+			opacity: 1;
+		}
+	}
+
+	@keyframes banner-home-fadeUp {
+		from {
+			opacity: 0;
+			transform: translateY(50px);
+		}
+		to {
+			opacity: 1;
+			transform: translateY(0);
 		}
 	}
 }
