@@ -40,7 +40,7 @@ class HeaderTiDBCloudCampaign implements IComponent
                                 TiUD
                             </a>
                         </div>
-                        <a class="button" href="/contact-us/">お問い合わせ</a>
+                        <a class="button" href="https://tidbcloud.com/free-trial/">無料サインアップ</a>
                     </nav>
                     <div class="navbar-toggle">
                         <span></span>
