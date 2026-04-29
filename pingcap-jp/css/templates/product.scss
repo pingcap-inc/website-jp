@@ -24,13 +24,14 @@
 				display: flex;
 				align-items: center;
 				gap: 12px;
+				margin-bottom: 4px;
 			}
 			&-title {
 				font-size: 22px;
 				font-weight: 700;
 				line-height: 30px;
 				color: #fff;
-				margin-bottom: 4px;
+				margin-top: 0;
 			}
 			p {
 				font-size: 16px;
@@ -103,27 +104,6 @@
 		}
 	}
 
-	.capabilities {
-		.block-media-content__container {
-			h3 {
-				font-size: 24px;
-				line-height: 30px;
-				font-weight: 700;
-				color: #000;
-				@include media-min($medium) {
-					font-size: 5rem;
-					line-height: 66px;
-				}
-			}
-			p {
-				font-size: 22px;
-				font-weight: 300;
-				line-height: 28px;
-				color: #454b51;
-			}
-		}
-	}
-
 	.features {
 		.block-inner,
 		.features-inner {
@@ -184,7 +164,7 @@
 			background-color: #0f5353;
 		}
 		&__title-container {
-			h3 {
+			h2 {
 				font-size: 40px;
 				font-weight: 700;
 				line-height: 48px;
@@ -349,6 +329,7 @@
 				flex-direction: row;
 			}
 			border: 1px solid #f2f2f7;
+			margin-top: 0;
 		}
 		&__card {
 			color: #fff;
@@ -557,7 +538,7 @@
 				}
 			}
 
-			&:nth-of-type(1) {
+			&.cloud {
 				border: 1px solid #9e4ec4;
 				&::after {
 					content: "";
@@ -570,7 +551,7 @@
 					height: 117px;
 				}
 			}
-			&:nth-of-type(2) {
+			&.self-managed {
 				border: 1px solid #2c80ce;
 				&::after {
 					content: "";
@@ -607,6 +588,7 @@
 
 	.edition {
 		.card-text-content {
+			padding: 32px 16px;
 			.button {
 				margin-top: 60px;
 				margin-bottom: 16px;
@@ -619,6 +601,11 @@
 					width: 20px;
 				}
 			}
+			&__title {
+				display: flex;
+				gap: 12px;
+				font-size: 20px;
+			}
 			&:nth-of-type(1) {
 				.card-text-content__title {
 					color: #d454b4;
@@ -628,23 +615,27 @@
 				border-color: #fff;
 				.card-text-content__title {
 					color: #948de2;
-					display: flex;
-					gap: 12px;
-					.tag {
-						background: #000;
-						color: #fff;
-						border: 1px solid #28333e;
-						border-radius: 16px;
-						padding: 0 12px;
-						display: flex;
-						align-items: center;
-					}
 				}
 			}
 			&:nth-of-type(3) {
+				border-color: #2C80CE;
+				.card-text-content__title {
+					color: #509dea;
+				}
+			}
+			&:nth-of-type(4) {
 				.card-text-content__title {
 					color: #79d2d2;
 				}
+			}
+			.tag {
+				background: #000;
+				color: #fff;
+				border: 1px solid #28333e;
+				border-radius: 16px;
+				padding: 0 6px;
+				display: flex;
+				align-items: center;
 			}
 		}
 	}
