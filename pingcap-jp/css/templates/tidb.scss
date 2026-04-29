@@ -355,13 +355,12 @@
 			}
 		}
 		&.pricing {
-			@include media-min($large) {
-				--num-cols: 2;
-				gap: 8px;
-			}
-			@include media-min(1300px) {
-				--num-cols: 4;
-				gap: 8px;
+			&.two {
+				margin-top: 16px;
+				@include media-min($medium) {
+					margin-top: 16px;
+					--num-cols: 2;
+				}
 			}
 		}
 		&-item {
@@ -433,10 +432,27 @@
 				height: 100%;
 				justify-content: flex-start;
 				padding: 2.4rem 3rem 3rem;
+				border-color: #28333e;
 				& > div:first-child {
 					flex: 1;
 				}
-				h4 {
+				.tag {
+					background: #000;
+					color: #fff;
+					border: 1px solid #28333e;
+					border-radius: 16px;
+					padding: 0 10px;
+					display: flex;
+					align-items: center;
+					font-size: 12px;
+				}
+				h2 {
+					display: flex;
+					align-items: center;
+					justify-content: center;
+					gap: 8px;
+					white-space: nowrap;
+					color: #fff;
 					margin-top: 1rem;
 					& + * {
 						margin-top: 0.4rem;
@@ -444,13 +460,18 @@
 					@include media-min($medium) {
 						font-size: 20px;
 					}
-				}
-				.tip {
-					display: flex;
-					gap: 4px;
-					align-items: center;
-					justify-content: center;
-					min-height: 25px;
+					&.pink {
+						color: #d454b4;
+					}
+					&.violet {
+						color: #948de2;
+					}
+					&.green {
+						color: #79d2d2;
+					}
+					&.blue {
+						color: #2c80ce;
+					}
 				}
 				ul {
 					& + * {
@@ -471,44 +492,11 @@
 						font-size: 18px;
 					}
 				}
-				&:nth-child(1) {
-					border-color: #28333e;
-					h4 {
-						color: #d454b4;
-					}
-				}
-				&:nth-child(2) {
+				&.border-color-white {
 					border-color: #fff;
-					h4 {
-						color: #948de2;
-						display: flex;
-						align-items: center;
-						justify-content: center;
-						gap: 8px;
-						white-space: nowrap;
-					}
-					.tag {
-						background: #000;
-						color: #fff;
-						border: 1px solid #28333e;
-						border-radius: 16px;
-						padding: 0 10px;
-						display: flex;
-						align-items: center;
-						font-size: 12px;
-					}
 				}
-				&:nth-child(3) {
-					border-color: #28333e;
-					h4 {
-						color: #79d2d2;
-					}
-				}
-				&.row {
-					border-color: #28333e!important;
-					h4 {
-						color: #fff;
-					}
+				&.border-color-blue {
+					border-color: #2c80ce;
 				}
 			}
 			&-bottom {
