@@ -14,10 +14,80 @@ class AlgoliaPostsList {
 		this.moreButton = this.el.querySelector('.js__load-more');
 		this.noResultsContainer = this.el.querySelector('[data-no-results-container]');
 		this.loadingSpinner = this.el.querySelector('.posts-list__loader-container');
-		const indexName = this.cardsContainerEl.getAttribute('data-index-name') || 'wp_posts_post';
+		this.indexName = this.cardsContainerEl.getAttribute('data-index-name') || 'wp_posts_post';
+
+		// cache common containers to avoid repeated DOM queries
+		this.searchBoxContainer = document.querySelector('#form_filter_search');
+		this.filterCategoryContainer = document.querySelector('#filter_category');
+		this.filterTagContainer = document.querySelector('#filter_tag');
+		this.regionContainer = document.querySelector('.region');
+
+		// instantiate instantsearch later in setup() so we can set initialUiState based on region/search
+
+		this.filter = {
+			search: getUrlQueryArg('search', ''),
+			category: getUrlQueryArg('category', ''),
+			tag: getUrlQueryArg('tag', ''),
+			region: ''
+		};
+
+		this.initialRegion = '';
+
+		// fetch region before initializing search so we can apply it once via configure.filters
+		this.setup();
+		this.showNoResultsMessage(false);
+	}
+
+	async setup() {
+		const isBot = /bot|crawler|spider|crawling/i.test(navigator.userAgent);
+
+		if (isBot) {
+			return;
+		}
+		try {
+			if (this.regionContainer) {
+				const response = await fetch('https://get.geojs.io/v1/ip/country.json');
+				const { country } = await response.json();
+				const region = getRegion(country);
+				if (region) {
+					this.initialRegion = region.toLowerCase();
+					this.filter.region = this.initialRegion;
+				}
+			}
+		} catch (e) {
+			// ignore geo failures and continue without region
+		}
+
+		// instantiate instantsearch after region is known so we can set an initial non-empty query
+		const indexName = this.indexName;
+		const initialSearch = getUrlQueryArg('search', '');
+		const initialUiState = {};
+		if (initialSearch && initialSearch.trim() !== '') {
+			initialUiState[indexName] = { query: initialSearch };
+		} else if (this.initialRegion) {
+			// use a single space to ensure our searchClient forwards the request
+			initialUiState[indexName] = { query: ' ' };
+		}
 
 		this.search = instantsearch({
-			searchClient: AlgoliaClient,
+			searchClient: {
+				...AlgoliaClient,
+				search(requests) {
+					const safeRequests = requests.map((req) => {
+						const q = req.params?.query?.trim();
+
+						return {
+							...req,
+							params: {
+								...req.params,
+								query: q || ' ' // fallback
+							}
+						};
+					});
+
+					return AlgoliaClient.search(safeRequests);
+				}
+			},
 			indexName,
 			routing: {
 				router: history({
@@ -27,14 +97,12 @@ class AlgoliaPostsList {
 						if (queryString) {
 							return `${origin}${pathname}?${queryString}`;
 						}
-
 						return `${origin}${pathname}`;
 					},
 					parseURL() {
 						const search = encodeURIComponent(getUrlQueryArg('search', ''));
 						const category = encodeURIComponent(getUrlQueryArg('category', ''));
 						const tag = decodeURIComponent(getUrlQueryArg('tag', ''));
-
 						return {
 							search: decodeURIComponent(search),
 							category,
@@ -45,11 +113,12 @@ class AlgoliaPostsList {
 				stateMapping: {
 					stateToRoute(uiState) {
 						const indexUiState = uiState[indexName];
+						const q = indexUiState?.query?.trim();
 
 						return {
-							search: indexUiState?.query,
-							category: indexUiState.menu?.['post_category.value'],
-							tag: indexUiState.menu?.['post_tag.value']
+							search: q || undefined,
+							category: indexUiState?.menu?.['post_category.value'],
+							tag: indexUiState?.menu?.['post_tag.value']
 						};
 					},
 
@@ -65,17 +134,11 @@ class AlgoliaPostsList {
 						};
 					}
 				}
-			}
+			},
+			initialUiState: Object.keys(initialUiState).length ? initialUiState : undefined
 		});
 
-		this.filter = {
-			search: getUrlQueryArg('search', ''),
-			category: getUrlQueryArg('category', ''),
-			tag: getUrlQueryArg('tag', '')
-		};
-
-		this.initSearch([]);
-		this.showNoResultsMessage(false);
+		this.initSearch();
 	}
 
 	initSearch() {
@@ -84,52 +147,76 @@ class AlgoliaPostsList {
 		const customMenu = connectMenu(this.renderMenu.bind(this));
 		const customRegionMenu = connectMenu(this.renderRegionMenu.bind(this));
 
-		this.search.addWidgets([
-			customSearchBox({
-				container: document.querySelector('#form_filter_search')
-			}),
-			customInfiniteHits({
-				container: this.cardsContainerEl
-			}),
-			customMenu({
-				container: document.querySelector('#filter_category'),
-				attribute: 'post_category.value'
-			}),
-			customMenu({
-				container: document.querySelector('#filter_tag'),
-				attribute: 'post_tag.value'
-			}),
-			customRegionMenu({
-				container: document.querySelector('.region'),
-				attribute: 'display_region'
-			}),
-			configure({
-				hitsPerPage: 12
-			})
-		]);
+		const widgets = [];
+		if (this.searchBoxContainer) {
+			widgets.push(customSearchBox({ container: this.searchBoxContainer }));
+		}
+
+		widgets.push(customInfiniteHits({ container: this.cardsContainerEl }));
+
+		if (this.filterCategoryContainer) {
+			widgets.push(
+				customMenu({
+					container: this.filterCategoryContainer,
+					attribute: 'post_category.value'
+				})
+			);
+		}
+
+		if (this.filterTagContainer) {
+			widgets.push(
+				customMenu({ container: this.filterTagContainer, attribute: 'post_tag.value' })
+			);
+		}
+
+		if (this.regionContainer) {
+			widgets.push(
+				customRegionMenu({ container: this.regionContainer, attribute: 'display_region' })
+			);
+		}
+
+		// Apply initial region filter if available so region does not trigger a second refine
+		const configureOpts = { hitsPerPage: 12 };
+		if (this.initialRegion) {
+			configureOpts.filters = `display_region:${this.initialRegion}`;
+		}
+
+		widgets.push(configure(configureOpts));
+
+		this.search.addWidgets(widgets);
 		this.search.start();
 	}
 
 	renderSearchBox(renderOptions, isFirstRender) {
 		const { refine, isSearchStalled, widgetParams } = renderOptions;
 		if (isFirstRender) {
-			const input = widgetParams.container.querySelector('input');
-			const button = widgetParams.container.querySelector('.input-with-icon__submit');
+			const input = widgetParams.container?.querySelector('input');
+			const button = widgetParams.container?.querySelector('.input-with-icon__submit');
 
-			const handlerSearch = (value) => {
-				this.filter.search = value;
-				refine(value);
-			};
+			if (input && button) {
+				const handlerSearch = (value) => {
+					const query = value.trim();
 
-			input.addEventListener('keydown', (event) => {
-				if (event.keyCode === 13) {
-					handlerSearch(event.target.value);
-				}
-			});
+					this.filter.search = query;
 
-			button.addEventListener('click', () => {
-				handlerSearch(input.value);
-			});
+					if (!query) {
+						refine(' ');
+						return;
+					}
+
+					refine(query);
+				};
+
+				input.addEventListener('keydown', (event) => {
+					if (event.keyCode === 13) {
+						handlerSearch(event.target.value);
+					}
+				});
+
+				button.addEventListener('click', () => {
+					handlerSearch(input.value);
+				});
+			}
 		}
 
 		this.showLoadingSpinner(isSearchStalled);
@@ -138,14 +225,16 @@ class AlgoliaPostsList {
 	renderInfiniteHits(renderOptions, isFirstRender) {
 		const { hits, widgetParams, showMore, isLastPage } = renderOptions;
 
-		if (isFirstRender) {
+		if (isFirstRender && this.moreButton) {
 			this.moreButton.addEventListener('click', () => {
 				showMore();
 			});
 		}
 
-		const methods = isLastPage ? 'add' : 'remove';
-		this.moreButton.classList[methods]('hide');
+		if (this.moreButton) {
+			const methods = isLastPage ? 'add' : 'remove';
+			this.moreButton.classList[methods]('hide');
+		}
 
 		widgetParams.container.innerHTML = `${hits
 			.map(
@@ -165,14 +254,19 @@ class AlgoliaPostsList {
 							hit: item
 						})}</h5>
 						</div>
-						<div class="card-blog__author"><img src="${item.author_avatar_url}">${item.post_author.display_name}</div>
+						<div class="card-blog__author"><img src="${item.author_avatar_url}">${
+					item.post_author.display_name
+				}</div>
 					</div>
 				</a>
 			`
 			)
 			.join('')}`;
 
-		this.showNoResultsMessage(!hits.length);
+		// Avoid flashing "no results" on initial render before network response
+		if (!isFirstRender) {
+			this.showNoResultsMessage(!hits.length);
+		}
 
 		SiteEvents.publish(SiteEventNames.LAZYLOAD_TRIGGER_UPDATE);
 	}
@@ -186,14 +280,12 @@ class AlgoliaPostsList {
 		}
 	}
 
-	async renderRegionMenu(renderOptions, isFirstRender) {
-		const { refine } = renderOptions;
-		if (isFirstRender) {
-			const response = await fetch('https://get.geojs.io/v1/ip/country.json');
-			const { country } = await response.json();
-			if (getRegion(country)) {
-				refine(getRegion(country).toLowerCase());
-			}
+	renderRegionMenu(renderOptions, isFirstRender) {
+		const { refine, widgetParams } = renderOptions;
+		if (isFirstRender && widgetParams?.container) {
+			widgetParams.container.addEventListener('change', (e) => {
+				refine(e.currentTarget.value ?? '');
+			});
 		}
 	}
 

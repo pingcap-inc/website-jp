@@ -90,6 +90,9 @@ class PostsListFilter implements IComponent
                 ]);
             }
             ?>
+            <?php if ($this->post_type === Constants\CPT::BLOG) { ?>
+                <div class="region hide"></div>
+            <?php } ?>
         </div>
 <?php
     }
