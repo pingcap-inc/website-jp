@@ -90,18 +90,42 @@ class Header implements IComponent
 							<?php SVG::the_svg('general/logo', ['class' => 'site-header__logo-image']); ?>
 						</a>
 					</div>
-					<div class="site-header__menu">
-						<nav class="site-header__menu-primary">
-							<?php
-							foreach ($this->primary_links as $link) {
-								$title = trim($link->title ?? '');
-								$url = trim($link->url ?? '');
-								$dropdown_id = intval($link->dropdown_id ?? '0');
-								$dropdown_classes = ['site-header__dropdown-menu-container'];
-								$template_name = ACF::get_field_string('template', $dropdown_id);
+					<?php if (!$this->is_ads_page) { ?>
+						<div class="site-header__menu">
+							<nav class="site-header__menu-primary">
+								<?php
+								foreach ($this->primary_links as $link) {
+									$title = trim($link->title ?? '');
+									$url = trim($link->url ?? '');
+									$dropdown_id = intval($link->dropdown_id ?? '0');
+									$dropdown_classes = ['site-header__dropdown-menu-container'];
+									$template_name = ACF::get_field_string('template', $dropdown_id);
+									$classes = (array) ($link->classes ?? []);
+									$link_classes = array_merge(['site-header__primary-menu-link'], $classes);
+									$aria_label = ($title === 'AI') ? 'AI features are live' : '';
 
-								if (!$title || (!$dropdown_id && !$url)) {
-									continue;
+									if (!$title || (!$dropdown_id && !$url)) {
+										continue;
+									}
+
+									if ($template_name === 'columns' || $template_name === 'ai') {
+										$dropdown_classes = ['site-header__dropdown-menu-container', 'site-header__dropdown-menu-container-relative'];
+									}
+
+									if ($dropdown_id) {
+								?>
+										<div class="<?php echo esc_attr(implode(' ', $dropdown_classes)); ?>">
+											<a class="<?php echo esc_attr(implode(' ', $link_classes)); ?>" href="<?php echo esc_url($url); ?>"<?php echo $aria_label ? ' aria-label="' . esc_attr($aria_label) . '"' : ''; ?> data-dropdown-id="<?php echo esc_attr($dropdown_id); ?>">
+												<?php echo esc_html($title); ?>
+											</a>
+											<?php MenuDropdowns::render_now($dropdown_id); ?>
+										</div>
+									<?php
+									} else {
+									?>
+										<a class="<?php echo esc_attr(implode(' ', $link_classes)); ?>" href="<?php echo esc_url($url); ?>"><?php echo esc_html($title); ?></a>
+								<?php
+									}
 								}
 
 								if ($template_name === 'columns') {

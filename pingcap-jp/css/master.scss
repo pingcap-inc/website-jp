@@ -112,10 +112,11 @@ Components
 @import "components/posts-list/posts-list-case-study";
 
 @import "components/menu-dropdowns/menu-dropdown";
-@import "components/menu-dropdowns/menu-dropdown-products";
-@import "components/menu-dropdowns/menu-dropdown-solutions";
-@import "components/menu-dropdowns/menu-dropdown-resources";
-@import "components/menu-dropdowns/menu-dropdown-cta";
+// @import "components/menu-dropdowns/menu-dropdown-products";
+// @import "components/menu-dropdowns/menu-dropdown-solutions";
+// @import "components/menu-dropdowns/menu-dropdown-resources";
+// @import "components/menu-dropdowns/menu-dropdown-cta";
+@import "components/menu-dropdowns/menu-dropdown-ai";
 
 /*************************************
 Blocks
@@ -142,6 +143,7 @@ Blocks
 @import "blocks/table-pricing";
 @import "blocks/compare-features";
 @import "blocks/case";
+@import "blocks/case-slide";
 @import "blocks/tabs-slide";
 @import "blocks/testimonials-slide";
 

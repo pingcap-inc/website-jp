@@ -68,7 +68,8 @@ class SiteEvents {
  */
 export const SiteEventNames = {
 	LAZYLOAD_TRIGGER_UPDATE: 'lazyload-trigger-update',
-	MODAL_VIDEO_OPEN: 'modal-video-open'
+	MODAL_VIDEO_OPEN: 'modal-video-open',
+	PRISM_READY: 'prism-ready'
 };
 
 export default new SiteEvents();

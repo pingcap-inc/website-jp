@@ -17,16 +17,23 @@ class BlockTabsSlide {
 		this.maxHeight = 0;
 		this.intervalId = null;
 		this.autoSwitchDelay = 4000;
+		this.autoplayEnabled = this.el.querySelector('.block-inner')?.dataset.autoplay !== '0';
 
 		this.tabNavEls.forEach((tabNavEl, index) => {
-			tabNavEl.addEventListener('mouseenter', () => {
-				this.stopAutoSwitch();
-				this.switchDesktopTab(index);
-			});
+			if (this.autoplayEnabled) {
+				tabNavEl.addEventListener('mouseenter', () => {
+					this.stopAutoSwitch();
+					this.switchDesktopTab(index);
+				});
 
-			tabNavEl.addEventListener('mouseleave', () => {
-				this.startAutoSwitch();
-			});
+				tabNavEl.addEventListener('mouseleave', () => {
+					this.startAutoSwitch();
+				});
+			} else {
+				tabNavEl.addEventListener('click', () => {
+					this.switchDesktopTab(index);
+				});
+			}
 		});
 		this.tabContentEls.forEach((tabContentEl) => {
 			tabContentEl.addEventListener('mouseenter', () => {
@@ -34,12 +41,16 @@ class BlockTabsSlide {
 			});
 
 			tabContentEl.addEventListener('mouseleave', () => {
-				this.startAutoSwitch();
+				if (this.autoplayEnabled) {
+					this.startAutoSwitch();
+				}
 			});
 		});
 
 		this.switchDesktopTab(0);
-		this.startAutoSwitch();
+		if (this.autoplayEnabled) {
+			this.startAutoSwitch();
+		}
 	}
 
 	switchDesktopTab(index) {

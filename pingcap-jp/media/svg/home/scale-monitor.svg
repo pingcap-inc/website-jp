@@ -1,0 +1,74 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 566 362">
+
+<text x="21" y="31" font-size="13" fill="#fff" opacity="0.55">CLUSTER AUTOSCALING</text>
+<text class="p1-live" x="442" y="31" font-size="13" fill="#1AA8A8">&#x25CF; live</text>
+
+<rect x="15" y="46" width="536" height="138" rx="7" fill="#fff" fill-opacity="0.03"/>
+<text x="30" y="63" font-size="12" fill="#fff" opacity="0.35">Request Units / second</text>
+
+<text x="30" y="84"  font-size="10" fill="#fff" opacity="0.5">10K</text>
+<text x="30" y="107" font-size="10" fill="#fff" opacity="0.5">5K</text>
+<text x="30" y="131" font-size="10" fill="#fff" opacity="0.5">1K</text>
+<text x="30" y="171" font-size="10" fill="#fff" opacity="0.5">0</text>
+
+<line x1="76" y1="81"  x2="521" y2="81"  stroke="#fff" stroke-width="0.5" opacity="0.06"/>
+<line x1="76" y1="104" x2="521" y2="104" stroke="#fff" stroke-width="0.5" opacity="0.06"/>
+<line x1="76" y1="128" x2="521" y2="128" stroke="#fff" stroke-width="0.5" opacity="0.06"/>
+<line x1="76" y1="166" x2="521" y2="166" stroke="#fff" stroke-width="0.5" opacity="0.06"/>
+
+<g class="p1-curve">
+  <path d="M 76,169 C 103,169 124,166 151,159 C 179,150 206,129 233,107 C 245,93 254,85 269,81 C 281,78 294,79 309,87 C 330,99 357,127 390,150 C 415,163 451,168 521,169 L 521,169 Z"
+    fill="#DC150B" opacity="0.14"/>
+  <path d="M 76,169 C 103,169 124,166 151,159 C 179,150 206,129 233,107 C 245,93 254,85 269,81 C 281,78 294,79 309,87 C 330,99 357,127 390,150 C 415,163 451,168 521,169"
+    fill="none" stroke="#DC150B" stroke-width="4" stroke-linecap="round"/>
+</g>
+
+<g class="p1-tracker">
+  <line x1="76" x2="76" y1="78" y2="171" stroke="#fff" stroke-width="2" stroke-dasharray="4 4"/>
+</g>
+
+<g class="p1-zero-cost">
+  <rect x="45" y="109" width="100" height="24" rx="12" fill="#111" stroke="rgba(255,255,255,0.3)" stroke-width="0.75"/>
+  <line x1="82" y1="133" x2="82" y2="163" stroke="rgba(255,255,255,0.3)" stroke-width="1" stroke-dasharray="3 3"/>
+  <text x="95" y="126" text-anchor="middle" font-size="13" fill="#fff">Zero cost</text>
+</g>
+<g class="p1-workload">
+  <rect x="179" y="32" width="200" height="24" rx="12" fill="#111" stroke="rgba(255,255,255,0.3)" stroke-width="0.75"/>
+  <line x1="278" y1="56" x2="269" y2="75" stroke="rgba(255,255,255,0.3)" stroke-width="1" stroke-dasharray="3 3"/>
+  <text x="279" y="49" text-anchor="middle" font-size="13" fill="#fff">costs follow workload</text>
+</g>
+<g class="p1-decrease">
+  <rect x="324" y="77" width="151" height="24" rx="12" fill="#111" stroke="rgba(255,255,255,0.3)" stroke-width="0.75"/>
+  <line x1="372" y1="101" x2="363" y2="127" stroke="rgba(255,255,255,0.3)" stroke-width="1" stroke-dasharray="3 3"/>
+  <text x="400" y="94" text-anchor="middle" font-size="13" fill="#fff">costs decrease</text>
+</g>
+
+<rect x="15"  y="196" width="166" height="71" rx="7" fill="#fff" fill-opacity="0.03"/>
+<text x="30"  y="215" font-size="12" fill="#fff" opacity="0.5">RU</text>
+<text class="p1-ru10" x="30" y="246" font-size="25" fill="#DC150B" opacity="0">10</text>
+<text class="p1-ru20" x="30" y="246" font-size="25" fill="#DC150B" opacity="0">20</text>
+<text class="p1-ru40" x="30" y="246" font-size="25" fill="#DC150B" opacity="0">40</text>
+
+<rect x="194" y="196" width="179" height="71" rx="7" fill="#fff" fill-opacity="0.03"/>
+<text x="209" y="215" font-size="12" fill="#fff"   opacity="0.5">STORAGE</text>
+<text x="209" y="243" font-size="22" fill="#1AA8A8" opacity="0.85">500 GB</text>
+<text x="209" y="258" font-size="10" fill="#fff"   opacity="0.4">independent</text>
+
+<rect x="384" y="196" width="166" height="71" rx="7" fill="#fff" fill-opacity="0.03"/>
+<text x="400" y="215" font-size="12" fill="#fff"   opacity="0.5">COST / hr</text>
+<text class="p1-c0"   x="400" y="246" font-size="25" fill="#1AA8A8" opacity="0">$0.00</text>
+<text class="p1-c48"  x="400" y="246" font-size="25" fill="#509DEA" opacity="0">$0.48</text>
+<text class="p1-c192" x="400" y="246" font-size="25" fill="#F35048" opacity="0">$1.92</text>
+
+<rect x="15" y="278" width="536" height="47" rx="7" fill="#fff" fill-opacity="0.03"/>
+<text x="30"  y="297" font-size="12" fill="#fff" opacity="0.5">EVENTS</text>
+<text class="p1-ev1" x="109" y="297" font-size="12" fill="#1AA8A8" opacity="0">&#x2191; scale-out RU 10&#x2192;20</text>
+<text class="p1-ev2" x="109" y="297" font-size="12" fill="#F35048" opacity="0">&#x2191; scale-out RU 20&#x2192;40</text>
+<text class="p1-ev3" x="109" y="297" font-size="12" fill="#509DEA" opacity="0">&#x2193; scale-in RU 40&#x2192;20</text>
+<text class="p1-ev4" x="109" y="297" font-size="12" fill="#1AA8A8" opacity="0">&#x2193; scale-to-zero (idle)</text>
+<text class="p1-sl1" x="30"  y="315" font-size="10" fill="#fff" opacity="0">agent workloads increasing</text>
+<text class="p1-sl2" x="30"  y="315" font-size="10" fill="#fff" opacity="0">peak demand detected</text>
+<text class="p1-sl3" x="30"  y="315" font-size="10" fill="#fff" opacity="0">demand decreasing</text>
+<text class="p1-sl4" x="30"  y="315" font-size="10" fill="#fff" opacity="0">no active workloads</text>
+
+</svg>

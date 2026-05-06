@@ -194,6 +194,25 @@ html.mobile-menu-cta-active {
 		align-items: center;
 		height: 100%;
 
+		.site-header__primary-menu-link.ai {
+			background: #dc150b;
+			padding-left: 20px;
+			margin-right: 12px;
+			&::after {
+				content: "";
+				content: "";
+				position: absolute;
+				left: 10px;
+				top: 8px;
+				width: 4px;
+				height: 4px;
+				border-radius: 50%;
+				display: block;
+				background: #fff;
+				animation: pulse 1.8s ease-in-out infinite;
+			}
+		}
+
 		.site-header__primary-menu-link,
 		.site-header__cta-button {
 			position: relative;
@@ -248,7 +267,8 @@ html.mobile-menu-cta-active {
 			opacity: 0;
 			pointer-events: none;
 		}
-		.menu-dropdown-columns {
+		.menu-dropdown-columns,
+		.menu-dropdown-ai {
 			padding: 0;
 			left: 50%;
 			border: 1px solid #424d57;

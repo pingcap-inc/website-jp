@@ -101,6 +101,22 @@ $block_fields = array(
 		'layout' => 'horizontal'
 	),
 	array(
+		'key' => 'field_' . $block . '_autoplay',
+		'label' => 'Autoplay',
+		'name' => 'autoplay',
+		'type' => 'true_false',
+		'instructions' => 'Enable auto-play for the tabs carousel',
+		'required' => 0,
+		'conditional_logic' => 0,
+		'wrapper' => array(
+			'width' => '',
+			'class' => '',
+			'id' => '',
+		),
+		'default_value' => 1,
+		'ui' => 1,
+	),
+	array(
 		'key' => 'field_' . $block . '_sections',
 		'label' => 'Sections',
 		'name' => 'sections',

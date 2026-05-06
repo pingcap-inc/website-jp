@@ -65,6 +65,17 @@
 				background: #fff;
 				transition: all 1.5s ease;
 			}
+			&.no-autoplay {
+				transition: color 0.2s ease;
+				&:hover {
+					color: #fff;
+				}
+				&::before {
+					width: 100%;
+					background: transparent;
+					transition: all 0.2s ease;
+				}
+			}
 		}
 		&.active {
 			.block-tabs-slide__tab-title {
@@ -72,6 +83,12 @@
 				&:before {
 					animation: benefit-bar 4s linear forwards;
 				}
+			}
+		}
+		&.active {
+			.block-tabs-slide__tab-title.no-autoplay::before {
+				background: #fff;
+				animation: none;
 			}
 		}
 		@keyframes benefit-bar {

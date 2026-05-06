@@ -35,6 +35,7 @@ import BlockCarousel from './blocks/carousel';
 import BlockCTA from './blocks/cta';
 import BlockPricing from './blocks/pricing';
 import BlockTablePricing from './blocks/table-pricing';
+import BlockCaseSlide from './blocks/case-slide';
 
 import TemplateFrontPage from './templates/front-page';
 import ActivityPage from './templates/activity-page';
@@ -96,7 +97,8 @@ class App {
 				cta: [],
 				pricing: [],
 				tabsPricing: [],
-				tablePricing: []
+				tablePricing: [],
+				caseSlide: [],
 			},
 			viewer: null,
 			lazyload: null
@@ -475,6 +477,11 @@ class App {
 		Array.from(document.querySelectorAll('.block-pricing-new')).forEach((blockPricingEl) => {
 			this.instances.blocks.pricing.push(new BlockPricing(blockPricingEl));
 		});
+
+		// Case Slide
+		Array.from(document.querySelectorAll('.block-case-slide')).forEach((blockCaseSlideEl) => {
+			this.instances.blocks.caseSlide.push(new BlockCaseSlide(blockCaseSlideEl));
+		});
 	}
 
 	initSocialShare() {
@@ -553,6 +560,8 @@ class App {
 		if (window.Prism && typeof window.Prism === 'object') {
 			window.Prism?.highlightAll();
 		}
+
+		SiteEvents.publish(SiteEventNames.PRISM_READY);
 	}
 
 	initUTMSessionStorage() {

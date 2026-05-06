@@ -7,11 +7,12 @@ $format = isset($format) && is_array($format) ? $format : ACF::get_sub_field_str
 $format_title = isset($format_title) && is_array($format_title) ? $format_title : ACF::get_sub_field_string('format_title');
 $sections = isset($sections) && is_array($sections) ? $sections : ACF::get_sub_field_array('sections');
 $has_block_title =  ACF::get_sub_field_bool('has_block_title');
+$autoplay = ACF::get_sub_field_bool('autoplay');
 
 if ($sections) {
 
 ?>
-	<div class="block-inner contain">
+	<div class="block-inner contain" data-autoplay="<?php echo $autoplay ? '1' : '0'; ?>">
 		<?php
 		if ($has_block_title) {
 			echo ACF::get_sub_field_string('block_title');
@@ -40,7 +41,7 @@ if ($sections) {
 					$title_content = Arrays::get_value_as_string($section, 'title_content');
 					echo '<div class="block-tabs-slide__tab">';
 					if ($format_title === 'title') {
-						echo '<div class="block-tabs-slide__tab-title">' . $title . '</div>';
+						echo '<h3 class="block-tabs-slide__tab-title' . (!$autoplay ? ' no-autoplay' : '') . '">' . $title . '</h3>';
 					} else {
 						echo $title_content;
 					}
