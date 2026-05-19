@@ -8,12 +8,39 @@ WPUtil\REST::register_routes('pingcap/v1', [
 ]);
 
 add_action('rest_api_init', function () {
+	// Expose common Yoast SEO postmeta keys via the REST API so clients
+	// can read/update Yoast fields for posts and custom post types.
+	$yoast_meta_keys = [
+		'_yoast_wpseo_title',
+		'_yoast_wpseo_metadesc',
+		'_yoast_wpseo_canonical',
+		'_yoast_wpseo_opengraph-title',
+		'_yoast_wpseo_opengraph-description',
+		'_yoast_wpseo_opengraph-image',
+	];
+
+	$post_types_for_yoast = [
+		Constants\CPT::BLOG,
+	];
+
+	foreach ($post_types_for_yoast as $pt) {
+		foreach ($yoast_meta_keys as $meta_key) {
+			register_post_meta($pt, $meta_key, [
+				'type' => 'string',
+				'single' => true,
+				'show_in_rest' => true,
+				'auth_callback' => function () {
+					return current_user_can('edit_posts');
+				},
+			]);
+		}
+	}
 	/**
 	 * Add a 'card_markup' field to the results returned by the
 	 * /wp/v2/posts endpoint
 	 */
 	register_rest_field(Constants\CPT::BLOG, 'card_markup', [
-		'get_callback' => fn ($post) => WPUtil\Component::render_to_string(
+		'get_callback' => fn($post) => WPUtil\Component::render_to_string(
 			Components\Cards\CardResource::class,
 			[
 				'post_id' => $post['id'],
@@ -28,7 +55,7 @@ add_action('rest_api_init', function () {
 	 * /wp/v2/event endpoint
 	 */
 	register_rest_field(Constants\CPT::EVENT, 'card_markup', [
-		'get_callback' => fn ($post) => WPUtil\Component::render_to_string(
+		'get_callback' => fn($post) => WPUtil\Component::render_to_string(
 			Components\Cards\CardEvent::class,
 			[
 				'post_id' => $post['id'],
@@ -43,7 +70,7 @@ add_action('rest_api_init', function () {
 	 * /wp/v2/training endpoint
 	 */
 	register_rest_field(Constants\CPT::TRAINING, 'card_markup', [
-		'get_callback' => fn ($post) => WPUtil\Component::render_to_string(
+		'get_callback' => fn($post) => WPUtil\Component::render_to_string(
 			Components\Cards\CardResource::class,
 			[
 				'post_id' => $post['id'],
@@ -58,7 +85,7 @@ add_action('rest_api_init', function () {
 	 * /wp/v2/partner endpoint
 	 */
 	register_rest_field(Constants\CPT::PARTNER, 'card_markup', [
-		'get_callback' => fn ($post) => WPUtil\Component::render_to_string(
+		'get_callback' => fn($post) => WPUtil\Component::render_to_string(
 			Components\Cards\CardResource::class,
 			[
 				'post_id' => $post['id'],
@@ -73,7 +100,7 @@ add_action('rest_api_init', function () {
 	 * /wp/v2/ebook-whitepaper endpoint
 	 */
 	register_rest_field(Constants\CPT::EBOOK_WHITEPAPER, 'card_markup', [
-		'get_callback' => fn ($post) => WPUtil\Component::render_to_string(
+		'get_callback' => fn($post) => WPUtil\Component::render_to_string(
 			Components\Cards\CardResource::class,
 			[
 				'post_id' => $post['id'],
@@ -88,7 +115,7 @@ add_action('rest_api_init', function () {
 	 * /wp/v2/press-release endpoint
 	 */
 	register_rest_field(Constants\CPT::PRESS_RELEASE, 'card_markup', [
-		'get_callback' => fn ($post) => WPUtil\Component::render_to_string(
+		'get_callback' => fn($post) => WPUtil\Component::render_to_string(
 			Components\Cards\CardResource::class,
 			[
 				'post_id' => $post['id'],
@@ -103,7 +130,7 @@ add_action('rest_api_init', function () {
 	 * /wp/v2/news endpoint
 	 */
 	register_rest_field(Constants\CPT::NEWS, 'card_markup', [
-		'get_callback' => fn ($post) => WPUtil\Component::render_to_string(
+		'get_callback' => fn($post) => WPUtil\Component::render_to_string(
 			Components\Cards\CardNews::class,
 			[
 				'post_id' => $post['id'],
@@ -118,7 +145,7 @@ add_action('rest_api_init', function () {
 	 * /wp/v2/case-study endpoint
 	 */
 	register_rest_field(Constants\CPT::CASE_STUDY, 'card_markup', [
-		'get_callback' => fn ($post) => WPUtil\Component::render_to_string(
+		'get_callback' => fn($post) => WPUtil\Component::render_to_string(
 			Components\Cards\CardCaseStudy::class,
 			[
 				'post_id' => $post['id']
@@ -131,7 +158,7 @@ add_action('rest_api_init', function () {
 	 * /wp/v2/video endpoint
 	 */
 	register_rest_field(Constants\CPT::VIDEO, 'card_markup', [
-		'get_callback' => fn ($post) => WPUtil\Component::render_to_string(
+		'get_callback' => fn($post) => WPUtil\Component::render_to_string(
 			Components\Cards\CardVideo::class,
 			[
 				'post_id' => $post['id']
@@ -144,7 +171,7 @@ add_action('rest_api_init', function () {
 	 * /wp/v2/slides endpoint
 	 */
 	register_rest_field(Constants\CPT::SLIDES, 'card_markup', [
-		'get_callback' => fn ($post) => WPUtil\Component::render_to_string(
+		'get_callback' => fn($post) => WPUtil\Component::render_to_string(
 			Components\Cards\CardSlides::class,
 			[
 				'post_id' => $post['id']
