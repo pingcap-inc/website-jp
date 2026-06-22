@@ -11,7 +11,7 @@
 
 	&:hover {
 		box-shadow: var(--card-box-shadow);
-		transform:var(--card-transform);
+		transform: var(--card-transform);
 	}
 
 	&__image-container {
@@ -32,6 +32,6 @@
 		flex-grow: 1;
 		margin-top: 0.5rem;
 		font-size: 1.4rem;
-		color: var(--color-gray-dark);
+		color: #a2adb9;
 	}
 }
