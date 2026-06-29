@@ -22,35 +22,41 @@ get_header();
             </div>
         </div>
     </section>
-    <section class="carousel block-options-padding-remove-top  bg-black-gradient block-container block-carousel" aria-label="carousel">
-        <div class="block-inner contain">
-            <h2><?php echo ACF::get_field_string('carousel_title'); ?></h2>
-            <div class="block-carousel__container embla-instance">
-                <div class="embla-wrapper">
-                    <div class="embla">
-                        <div class="embla__container">
-                            <?php
-                            foreach (ACF::get_field_array('carousel_list') as $item) {
-                                $carousel_image = Arrays::get_value_as_array($item, 'carousel_image');
-                            ?>
+    <?php
+    $carousel_list = ACF::get_field_array('carousel_list');
+    if (count($carousel_list)) {
+    ?>
+        <section class="carousel block-options-padding-remove-top  bg-black-gradient block-container block-carousel" aria-label="carousel">
+            <div class="block-inner contain">
+                <h2><?php echo ACF::get_field_string('carousel_title'); ?></h2>
+                <div class="block-carousel__container embla-instance">
+                    <div class="embla-wrapper">
+                        <div class="embla">
+                            <div class="embla__container">
+                                <?php
+                                foreach ($carousel_list as $item) {
+                                    $carousel_image = Arrays::get_value_as_array($item, 'carousel_image');
+                                ?>
 
-                                <div class="embla__slide">
-                                    <?php
-                                    Images::safe_image_output($carousel_image);
-                                    ?>
-                                </div>
-                            <?php
-                            }
-                            ?>
+                                    <div class="embla__slide">
+                                        <?php
+                                        Images::safe_image_output($carousel_image);
+                                        ?>
+                                    </div>
+                                <?php
+                                }
+                                ?>
+                            </div>
+                            <div class="embla__pagination"></div>
                         </div>
-                        <div class="embla__pagination"></div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
+    <?php
+    }
+    ?>
 
- 
 
     <?php
     $agenda_lists = ACF::get_field_array('agenda_lists');
