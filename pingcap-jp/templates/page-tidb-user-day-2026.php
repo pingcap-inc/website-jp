@@ -193,14 +193,19 @@ get_header();
                         foreach ($exhibitors_list as $exhibitor) {
                             $company_logo = Arrays::get_value_as_array($exhibitor, 'company_logo');
                             $company_case_url = Arrays::get_value_as_string($exhibitor, 'company_case_url');
+                            $company_logo_height = Arrays::get_value_as_string($exhibitor, 'company_logo_height');
+                            $logo_attrs = ['data-ib-no-cache' => 1, 'class' => 'lazy block-logos__logo-image'];
+                            if ($company_logo_height !== '') {
+                                $logo_attrs['style'] = 'height:' . intval($company_logo_height) . 'px;';
+                            }
                         ?>
                             <div class="block-logos__column">
                                 <?php if ($company_case_url) { ?>
                                     <a href="<?php echo esc_url($company_case_url); ?>" target="_blank" rel="noopener noreferrer">
-                                        <?php Images::safe_image_output($company_logo, ['data-ib-no-cache' => 1, 'class' => 'lazy block-logos__logo-image']); ?>
+                                        <?php Images::safe_image_output($company_logo, $logo_attrs); ?>
                                     </a>
                                 <?php } else {
-                                    Images::safe_image_output($company_logo, ['data-ib-no-cache' => 1, 'class' => 'lazy block-logos__logo-image']);
+                                    Images::safe_image_output($company_logo, $logo_attrs);
                                 } ?>
                             </div>
                         <?php
@@ -227,14 +232,19 @@ get_header();
                         foreach ($sponsors_list as $sponsor) {
                             $company_logo = Arrays::get_value_as_array($sponsor, 'company_logo');
                             $company_case_url = Arrays::get_value_as_string($sponsor, 'company_case_url');
+                            $company_logo_height = Arrays::get_value_as_string($sponsor, 'company_logo_height');
+                            $logo_attrs = ['data-ib-no-cache' => 1, 'class' => 'lazy block-logos__logo-image'];
+                            if ($company_logo_height !== '') {
+                                $logo_attrs['style'] = 'height:' . intval($company_logo_height) . 'px;';
+                            }
                         ?>
                             <div class="block-logos__column">
                                 <?php if ($company_case_url) { ?>
                                     <a href="<?php echo esc_url($company_case_url); ?>" target="_blank" rel="noopener noreferrer">
-                                        <?php Images::safe_image_output($company_logo, ['data-ib-no-cache' => 1, 'class' => 'lazy block-logos__logo-image']); ?>
+                                        <?php Images::safe_image_output($company_logo, $logo_attrs); ?>
                                     </a>
                                 <?php } else {
-                                    Images::safe_image_output($company_logo, ['data-ib-no-cache' => 1, 'class' => 'lazy block-logos__logo-image']);
+                                    Images::safe_image_output($company_logo, $logo_attrs);
                                 } ?>
                             </div>
                         <?php
