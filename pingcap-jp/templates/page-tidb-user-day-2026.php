@@ -12,6 +12,35 @@ get_header();
 
 ?>
 <div class="tmpl-tidb-user-day-2026">
+    <?php $tiud_bg = get_template_directory_uri() . '/media/images/20260719-223627.jpeg'; ?>
+    <button type="button" class="tiud-popup-trigger js-modal" data-modal="tiud-popup-modal" style="display:none;"></button>
+
+    <div class="o-modal" data-modal-id="tiud-popup-modal">
+        <div class="o-modal_wrap tiud-popup__wrap">
+            <div class="o-modal_inner">
+                <div class="tiud-popup__content">
+                    <div class="tiud-popup__inner" style="background-image: url('https://static.pingcap.co.jp/files/2026/07/21103551/20260719-223627.jpeg');">
+                        <button type="button" class="o-modal_close js-modal__close" aria-label="閉じる">× close</button>
+                        <div class="tiud-popup__body">
+                            <h3 class="tiud-popup__title"><span class="tiud-popup__gift">🎁</span> TiDB User Day 2026 早期ご登録キャンペーン開催中！</h3>
+                            <p class="tiud-popup__highlight">先着200名様限定！</p>
+                            <p class="tiud-popup__lead">TiDB User Day 2026 にご登録いただいた方の中から、<br>抽選で<strong>50名様にAmazonデジタルギフトカード（1,000円分）</strong>をプレゼント！</p>
+                            <a class="tiud-popup__cta js-modal__close js--trigger-form-modal" data-form-id="2c77365f-067c-4762-9c04-db33bd056bd5">今すぐ登録</a>
+                        </div>
+                        <div class="tiud-popup__notes">
+                            <p>※キャンペーン主催：PingCAP株式会社</p>
+                            <p>※AmazonはAmazon.com, Inc.またはその関連会社の商標です。</p>
+                            <p>※当選者の発表は、イベント終了後、ご登録いただいたメールアドレスへのご連絡をもって代えさせていただきます。</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="o-modal_bg js-modal__close"></div>
+    </div>
+
+    <!-- Floating CTA shown after popup is closed -->
+    <a id="tiud-floating-cta" class="tiud-floating-cta" href="#campaign" aria-hidden="true">早期登録キャンペーン</a>
     <div class="banner">
         <?php echo ACF::get_field_string('banner_content'); ?>
     </div>
@@ -288,6 +317,55 @@ get_header();
             navEl.classList.remove('active');
         })
     });
+</script>
+
+<script>
+    (function() {
+        const modal = document.querySelector('.o-modal[data-modal-id="tiud-popup-modal"]');
+        const floating = document.getElementById('tiud-floating-cta');
+
+        function showFloating() {
+            if (!floating) return;
+            floating.setAttribute('aria-hidden', 'false');
+            floating.classList.add('is-visible');
+        }
+
+        function hideFloating() {
+            if (!floating) return;
+            floating.setAttribute('aria-hidden', 'true');
+            floating.classList.remove('is-visible');
+        }
+
+        function openModal() {
+            if (!modal) return;
+            modal.classList.add('is-active');
+        }
+
+        function closeModal() {
+            if (!modal) return;
+            modal.classList.remove('is-active');
+        }
+
+        document.addEventListener('click', function(e) {
+            const closeEl = e.target.closest('.js-modal__close');
+            if (closeEl) {
+                closeModal();
+                showFloating();
+            }
+        });
+
+        if (floating) {
+            floating.addEventListener('click', function(e) {
+                e.preventDefault();
+                openModal();
+            });
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            hideFloating();
+            setTimeout(openModal, 300);
+        });
+    })();
 </script>
 
 <script>
