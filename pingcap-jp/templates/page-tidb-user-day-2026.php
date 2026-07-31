@@ -223,29 +223,48 @@ get_header();
     $sponsors_list = ACF::get_field_array('sponsors_list');
     if (count($sponsors_list)) {
     ?>
+        <?php
+        // Split the flat sponsor list into rows: a new row starts on every item
+        // flagged with "sponsor_row_break".
+        $sponsor_rows = [];
+        foreach ($sponsors_list as $sponsor_index => $sponsor) {
+            if ($sponsor_index === 0 || Arrays::get_value_as_bool($sponsor, 'sponsor_row_break')) {
+                $sponsor_rows[] = [];
+            }
+            $sponsor_rows[count($sponsor_rows) - 1][] = $sponsor;
+        }
+        ?>
         <section id="sponsors" class="sponsors bg-black-dark block-container block-logos" aria-label="Logos">
             <div class="block-inner contain">
                 <h2><?php echo ACF::get_field_string('sponsors_title'); ?></h2>
                 <div class="block-logos__logo">
-                    <div class="block-logos__logo-grid">
+                    <div class="block-logos__logo-rows">
                         <?php
-                        foreach ($sponsors_list as $sponsor) {
-                            $company_logo = Arrays::get_value_as_array($sponsor, 'company_logo');
-                            $company_case_url = Arrays::get_value_as_string($sponsor, 'company_case_url');
-                            $company_logo_height = Arrays::get_value_as_string($sponsor, 'company_logo_height');
-                            $logo_attrs = ['data-ib-no-cache' => 1, 'class' => 'lazy block-logos__logo-image'];
-                            if ($company_logo_height !== '') {
-                                $logo_attrs['style'] = 'height:' . intval($company_logo_height) . 'px;';
-                            }
+                        foreach ($sponsor_rows as $sponsor_row) {
                         ?>
-                            <div class="block-logos__column">
-                                <?php if ($company_case_url) { ?>
-                                    <a href="<?php echo esc_url($company_case_url); ?>" target="_blank" rel="noopener noreferrer">
-                                        <?php Images::safe_image_output($company_logo, $logo_attrs); ?>
-                                    </a>
-                                <?php } else {
-                                    Images::safe_image_output($company_logo, $logo_attrs);
-                                } ?>
+                            <div class="block-logos__logo-row">
+                                <?php
+                                foreach ($sponsor_row as $sponsor) {
+                                    $company_logo = Arrays::get_value_as_array($sponsor, 'company_logo');
+                                    $company_case_url = Arrays::get_value_as_string($sponsor, 'company_case_url');
+                                    $company_logo_height = Arrays::get_value_as_string($sponsor, 'company_logo_height');
+                                    $logo_attrs = ['data-ib-no-cache' => 1, 'class' => 'lazy block-logos__logo-image'];
+                                    if ($company_logo_height !== '') {
+                                        $logo_attrs['style'] = 'height:' . intval($company_logo_height) . 'px;';
+                                    }
+                                ?>
+                                    <div class="block-logos__column">
+                                        <?php if ($company_case_url) { ?>
+                                            <a href="<?php echo esc_url($company_case_url); ?>" target="_blank" rel="noopener noreferrer">
+                                                <?php Images::safe_image_output($company_logo, $logo_attrs); ?>
+                                            </a>
+                                        <?php } else {
+                                            Images::safe_image_output($company_logo, $logo_attrs);
+                                        } ?>
+                                    </div>
+                                <?php
+                                }
+                                ?>
                             </div>
                         <?php
                         }
