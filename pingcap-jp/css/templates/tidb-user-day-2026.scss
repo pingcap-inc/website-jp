@@ -769,6 +769,31 @@
 		}
 	}
 
+	.sponsors {
+		// Sponsor logos are grouped into rows in the template; each row wraps
+		// on its own when it runs out of space.
+		.block-logos__logo-rows {
+			display: flex;
+			flex-direction: column;
+			gap: var(--grid-column-gutter);
+		}
+
+		.block-logos__logo-row {
+			display: flex;
+			flex-wrap: wrap;
+			align-items: center;
+			gap: var(--grid-column-gutter);
+		}
+
+		// Keep the logos at their intrinsic ratio.
+		.block-logos__logo-image {
+			flex: 0 0 auto;
+			width: auto;
+			max-width: 100%;
+			object-fit: contain;
+		}
+	}
+
 	.campaign {
 		h2 {
 			@include media-min($large) {
