@@ -722,14 +722,17 @@
 		}
 
 		.agenda-tabs__nav-item {
-			padding: 4px 24px;
+			padding: 6px 42px;
 			background: rgba(255, 255, 255, 0.1);
 			border: 1px solid #fff;
 			color: #fff;
 			cursor: pointer;
 			transition: all 0.3s ease;
-			font-size: 22px;
+			font-size: 28px;
 			font-weight: 500;
+			@include media-min($medium) {
+				padding: 6px 92px;
+			}
 		}
 
 		.agenda-tabs__nav-item:hover {
