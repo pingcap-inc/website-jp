@@ -24,7 +24,7 @@ get_header();
                         <div class="tiud-popup__body">
                             <h3 class="tiud-popup__title"><span class="tiud-popup__gift">🎁</span> TiDB User Day 2026 早期ご登録キャンペーン開催中！</h3>
                             <p class="tiud-popup__highlight">先着200名様限定！</p>
-                            <p class="tiud-popup__lead">TiDB User Day 2026 にご登録いただいた方の中から、<br>抽選で<strong>50名様にAmazonデジタルギフトカード（1,000円分）</strong>をプレゼント！</p>
+                            <p class="tiud-popup__lead">TiDB User Day 2026 にご登録いただいた方の中から、<br>抽選で<strong>50名様にAmazon eギフトカード（1,000円分）</strong>をプレゼント！</p>
                             <a class="tiud-popup__cta js-modal__close js--trigger-form-modal" data-form-id="2c77365f-067c-4762-9c04-db33bd056bd5">今すぐ登録</a>
                         </div>
                         <div class="tiud-popup__notes">
