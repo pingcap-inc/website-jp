@@ -13,6 +13,7 @@ class Header implements IComponent
 	public array $secondary_links = [];
 	public string $cta_button_text = '';
 	public int $cta_dropdown_menu_id = 0;
+	public bool $is_ads_page = false;
 
 	public function __construct(array $params)
 	{
@@ -127,29 +128,10 @@ class Header implements IComponent
 								<?php
 									}
 								}
-
-								if ($template_name === 'columns') {
-									$dropdown_classes = ['site-header__dropdown-menu-container', 'site-header__dropdown-menu-container-relative'];
-								}
-
-								if ($dropdown_id) {
 							?>
-									<div class="<?php echo esc_attr(implode(' ', $dropdown_classes)); ?>">
-										<a class="site-header__primary-menu-link" href="<?php echo esc_url($url); ?>" data-dropdown-id="<?php echo esc_attr($dropdown_id); ?>">
-											<?php echo esc_html($title); ?>
-										</a>
-										<?php MenuDropdowns::render_now($dropdown_id); ?>
-									</div>
-								<?php
-								} else {
-								?>
-									<a class="site-header__primary-menu-link" href="<?php echo esc_url($url); ?>"><?php echo esc_html($title); ?></a>
-							<?php
-								}
-							}
-							?>
-						</nav>
-					</div>
+							</nav>
+						</div>
+					<?php } ?>
 					<div class="site-header__cta-container">
 						<a href="https://tidbcloud.com/signin" data-gtag="event:signin_click,position:header" class="site-header__secondary-menu-link">Sign In</a>
 						<a href="https://tidbcloud.com/free-trial/" data-gtag="event:go_to_cloud_signup,product_type:serverless,button_name:Start for Free,position:header" class="button-primary sm"><span>無料で始める</span><i class="button__arrow"></i></a>
