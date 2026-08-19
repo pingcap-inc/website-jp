@@ -90,9 +90,11 @@ class CardBg implements IComponent
                 <div class="card-bg__title"><?php echo $this->title; ?></div>
                 <?php echo wp_kses_post(wpautop($this->desc)); ?>
             </div>
+            <?php if ($this->permalink_text): ?>
             <div class="text-right">
                 <span class="button-link"><?php echo $this->permalink_text; ?><i class="button__arrow"></i></span>
             </div>
+            <?php endif; ?>
         </<?php echo esc_attr($tag); ?>>
 <?php
     }

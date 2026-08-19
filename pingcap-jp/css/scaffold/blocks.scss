@@ -320,7 +320,8 @@
 	.desc.full {
 		width: 100%;
 	}
-	h2 {
+	h2,
+	.heading-default {
 		font-size: 4rem;
 		line-height: 48px;
 		font-weight: 700;
@@ -333,11 +334,13 @@
 			margin-top: 32px;
 		}
 	}
-	* + h2 {
+	* + h2,
+	* + .heading-default {
 		margin-top: 32px;
 	}
 
-	h3 {
+	h3,
+	.heading-xl {
 		font-size: 40px;
 		font-weight: 700;
 		line-height: 48px;
@@ -351,10 +354,12 @@
 			margin-top: 32px;
 		}
 	}
-	* + h3 {
+	* + h3,
+	* + .heading-xl {
 		margin-top: 32px;
 	}
-	h4 {
+	h4,
+	.heading-lg {
 		font-size: 40px;
 		font-weight: 700;
 		line-height: 48px;
@@ -368,10 +373,12 @@
 			margin-top: 20px;
 		}
 	}
-	* + h4 {
+	* + h4,
+	* + .heading-lg {
 		margin-top: 20px;
 	}
-	h5 {
+	h5,
+	.heading-sm {
 		font-size: 40px;
 		font-weight: 700;
 		line-height: 48px;
@@ -383,7 +390,8 @@
 			line-height: 58px;
 		}
 	}
-	* + h5 {
+	* + h5,
+	* + .heading-sm {
 		margin-top: 20px;
 	}
 	.desc {
