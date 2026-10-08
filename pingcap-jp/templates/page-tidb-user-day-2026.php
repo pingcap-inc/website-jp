@@ -350,11 +350,26 @@ get_header();
 
 <script>
     (function() {
+        // Early-registration campaign popup expires at 2026-10-09 23:59 JST (UTC+9).
+        // The offset is part of the literal, so this resolves to the same instant in
+        // every browser timezone. The check runs client side so it is unaffected by
+        // WP cron or page/CDN caching.
+        const POPUP_DEADLINE = Date.parse('2026-10-09T23:59:00+09:00');
+
         const modal = document.querySelector('.o-modal[data-modal-id="tiud-popup-modal"]');
         const floating = document.getElementById('tiud-floating-cta');
+        const trigger = document.querySelector('.tiud-popup-trigger');
+        let openTimer = null;
+        let expiryTimer = null;
+        let expiryWatcher = null;
+        let expired = false;
+
+        function isExpired() {
+            return Date.now() >= POPUP_DEADLINE;
+        }
 
         function showFloating() {
-            if (!floating) return;
+            if (!floating || isExpired()) return;
             floating.setAttribute('aria-hidden', 'false');
             floating.classList.add('is-visible');
         }
@@ -366,13 +381,61 @@ get_header();
         }
 
         function openModal() {
-            if (!modal) return;
+            if (!modal || isExpired()) return;
             modal.classList.add('is-active');
         }
 
         function closeModal() {
             if (!modal) return;
             modal.classList.remove('is-active');
+        }
+
+        // Tear the popup down for good: close it, drop the overlay and every element
+        // that could bring it back, and stop all pending timers.
+        function expirePopup() {
+            if (expired) return;
+            expired = true;
+
+            if (openTimer !== null) {
+                clearTimeout(openTimer);
+                openTimer = null;
+            }
+            if (expiryTimer !== null) {
+                clearTimeout(expiryTimer);
+                expiryTimer = null;
+            }
+            if (expiryWatcher !== null) {
+                clearInterval(expiryWatcher);
+                expiryWatcher = null;
+            }
+
+            closeModal();
+            hideFloating();
+
+            [modal, floating, trigger].forEach(function(el) {
+                if (el && el.parentNode) {
+                    el.parentNode.removeChild(el);
+                }
+            });
+        }
+
+        function scheduleExpiry() {
+            const remaining = POPUP_DEADLINE - Date.now();
+
+            if (remaining <= 0) {
+                expirePopup();
+                return;
+            }
+
+            // setTimeout caps out at ~24.8 days, so re-arm in chunks until the deadline.
+            expiryTimer = setTimeout(scheduleExpiry, Math.min(remaining, 2147483647));
+
+            // Backup poll, for tabs that were suspended or a clock that jumped forward.
+            if (expiryWatcher === null) {
+                expiryWatcher = setInterval(function() {
+                    if (isExpired()) expirePopup();
+                }, 30000);
+            }
         }
 
         document.addEventListener('click', function(e) {
@@ -391,9 +454,15 @@ get_header();
         }
 
         document.addEventListener('DOMContentLoaded', function() {
+            if (isExpired()) {
+                expirePopup();
+                return;
+            }
             hideFloating();
-            setTimeout(openModal, 300);
+            openTimer = setTimeout(openModal, 300);
         });
+
+        scheduleExpiry();
     })();
 </script>
 
